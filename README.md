@@ -76,4 +76,4 @@ Use `CITATION.cff` in this repository. If a DOI is added later through Zenodo, p
 ## Contact
 
 Peter Viviani  
-Email: pmvivi@gmail.com
+Email: peter@aumara.xyz
