@@ -15,9 +15,10 @@
 | T-003 | Ternary boundary operator toy | toy telemetry | local toy runs | Keep bounded as engineering telemetry |
 | S-001 | Tao boundary grammar | symbolic grammar | symbolic / pedagogical layer | Preserve only as symbolic language |
 | S-002 | I Ching / Kabbalah / Buddhist / cross-tradition layers | symbolic grammar | resonance / pedagogy | Keep public as symbolic bridge, not proof |
-| S-003 | Science-spirituality bridge layer | symbolic grammar | public worldview map | Coordinate meaning language without evidence upgrade |
+| S-003 | Science-spirituality / myth / meaning / qualia bridge layer | symbolic grammar | public worldview map and observer phenomenology | Coordinate meaning language without evidence upgrade |
 | S-004 | Consciousness container conjecture | open problem | philosophical / engineering conjecture | Keep as serious question, not achieved status |
-| S-005 | AUMARA breath correspondence | symbolic grammar | phenomenological anchor | Preserve as lived practice, not derivation |
+| S-005 | Myth / meaning / qualia as observer phenomenology | symbolic grammar | human meaning layer | Preserve as essential observer-language, not proof |
+| S-006 | AUMARA breath correspondence | symbolic grammar | phenomenological anchor | Preserve as lived practice, not derivation |
 | AT-001 | Ternary phi-shear / trefoil memory | symbolic grammar | symbolic-geometric hypothesis | Keep quarantined from physics claims |
 | AU-001 | Hybrid selective witness | engineering heuristic | toy-model architecture recommendation | Keep optional unless stronger runs stabilize |
 
@@ -43,5 +44,6 @@
 - Do not claim Ricci proves GHP.
 - Do not claim ternary witness is a universal memory law.
 - Do not claim science-spirituality resonance proves the physics.
+- Do not claim myth, meaning, qualia, or the hero's journey proves the physics.
 - Do not claim the consciousness container conjecture has already been achieved.
 - Do not claim breath practice, Tao, I Ching, Kabbalah, Buddhism, mythology, or lived experience is scientific proof.
