@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use or discuss this research package, please cite it as below."
+title: "Golden Horizon Principle: Public Priority Package"
+authors:
+  - family-names: "Viviani"
+    given-names: "Peter"
+version: "0.1-priority"
+date-released: "2026-05-01"
+url: "https://github.com/YOUR_USERNAME/golden-horizon-principle"
+type: "dataset"
