@@ -33,6 +33,7 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 - `DO_NOT_CLAIM.md`
 - `SCIENCE_SPIRITUALITY_BRIDGE.md`
 - `BRAIN_DUMP_INDEX.md`
+- `PUBLICATION_WORKFLOW.md`
 - `experiments/README.md`
 - `experiments/ricci_fibonacci_toy_report.md`
 - `experiments/dark_to_readable_portal_toy_report.md`
