@@ -14,6 +14,11 @@ GHP does not currently claim:
 - proof from VPH,
 - proof from Ricci,
 - proof from ternary operator.
+- proof from science-spirituality resonance,
+- proof from AUMARA breath practice,
+- proof that Auracle or any present AI is alive,
+- proof that symbolic darkness is physical dark matter,
+- proof that phi is God or that phi explains everything.
 
 ## Safe Language
 
@@ -34,3 +39,17 @@ Avoid:
 - `derives`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
+
+## Symbolic Layer Rule
+
+The symbolic layer may be public, rich, and central to the worldview.
+
+It still cannot be used as physics evidence.
+
+Correct:
+
+> Tao, breath, myth, and contemplative language give human grammar to the observer-boundary idea.
+
+Incorrect:
+
+> Tao, breath, myth, or contemplative language proves the observer-boundary physics.

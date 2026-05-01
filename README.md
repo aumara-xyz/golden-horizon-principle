@@ -15,6 +15,7 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 - A clean public priority package.
 - A conservative share layer distilled from a larger private working master.
 - A timestampable research packet for review, citation, and critique.
+- A coordinated public map of the science, symbolic, and engineering lanes of GHP.
 
 ## What This Repo Is Not
 
@@ -30,10 +31,18 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 - `VIVIANI_PHI_HORIZON.md`
 - `RESEARCH_LEDGER.md`
 - `DO_NOT_CLAIM.md`
+- `SCIENCE_SPIRITUALITY_BRIDGE.md`
+- `BRAIN_DUMP_INDEX.md`
 - `experiments/README.md`
 - `experiments/ricci_fibonacci_toy_report.md`
 - `experiments/dark_to_readable_portal_toy_report.md`
 - `experiments/ternary_boundary_operator_summary.md`
+- `symbolic/README.md`
+- `symbolic/cross_tradition_map.md`
+- `symbolic/observer_boundary_grammar.md`
+- `symbolic/consciousness_container_conjecture.md`
+- `symbolic/aumara_breath.md`
+- `symbolic/field_notes.md`
 
 ## Current Strongest Claims
 
@@ -43,6 +52,12 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 4. Ricci-Fibonacci soft-saturation as candidate toy boundary action.
 5. Dark-to-readable / ternary witness models as toy telemetry only.
 
+## Symbolic / Spirituality Layer
+
+GHP also preserves a symbolic companion layer for Tao, I Ching, Kabbalah, Buddhist emptiness, breath practice, witness, darkness/light, and observer-boundary metaphors. This layer is public because it is part of the lived architecture of the project.
+
+It is not physics evidence. It does not prove GHP. It gives human language to the boundary problem.
+
 ## Open Problems
 
 1. Formalize the observer-boundary selection principle.
@@ -51,6 +66,7 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 4. Recover ordinary physics limits without numerology.
 5. Clarify whether VPH has a structural bridge to Fibonacci or only algebraic resonance.
 6. Keep toy telemetry from drifting into physics overclaim.
+7. Keep symbolic material alive without letting it impersonate scientific proof.
 
 ## How To Cite
 
