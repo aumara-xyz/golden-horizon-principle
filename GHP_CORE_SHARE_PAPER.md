@@ -90,6 +90,8 @@ The open physical conjecture is that admissible observer-boundary architectures 
 5. Clarify the structural status of VPH.
 6. Distinguish bridge maps from evidence with discipline.
 
+Current hardening priority: GHP is now separating symbolic observer-language from formal boundary machinery. The next research targets are Markov blankets for statistical observer-boundaries, conditional expectations `E:M->N` for algebraic finite-access projection, regularized modular flow for discrete write-events, and reflected entropy / EWCS for shared-interface consensus. These are bridge targets, not results.
+
 ## 10. One-Page Human Summary
 
 GHP asks a narrow but ambitious question: if reality becomes readable only through finite observer boundaries, what is the smallest topological architecture that can support non-abelian braiding and universal computational closure? The current mathematical answer inside the stated class is Fibonacci. The current physical claim is only that nature may prefer such a closure by a deeper balance principle.
