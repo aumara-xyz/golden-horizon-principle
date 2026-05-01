@@ -64,7 +64,7 @@ The open physical conjecture is that admissible observer-boundary architectures 
 
 ## 7. What Is Not Claimed
 
-- GHP is not a completed Theory of Everything.
+- GHP does not yet recover GR, QFT, and the Standard Model inside one completed framework.
 - GHP does not derive GR, QFT, or the Standard Model.
 - GHP does not prove consciousness.
 - VPH does not prove GHP.
@@ -96,4 +96,4 @@ Current hardening priority: GHP is now separating symbolic observer-language fro
 
 GHP asks a narrow but ambitious question: if reality becomes readable only through finite observer boundaries, what is the smallest topological architecture that can support non-abelian braiding and universal computational closure? The current mathematical answer inside the stated class is Fibonacci. The current physical claim is only that nature may prefer such a closure by a deeper balance principle.
 
-That makes GHP strongest as an architectural research program, not as a completed world-model. The theorem-grade core is real. The bridge to physics remains open. The toy models help test language and candidate mechanisms, but they do not count as empirical confirmation.
+That makes GHP strongest as an architectural research program and observer-boundary selection proposal. The theorem-grade core is real. The bridge to physics remains open. The toy models help test language and candidate mechanisms, but they do not count as empirical confirmation.

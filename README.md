@@ -4,7 +4,7 @@ This repository preserves a timestamped public research package for the Golden H
 
 ## Status
 
-Speculative research program with theorem-grade mathematical components, verified internal computations, toy-model telemetry, and open physical conjectures. Not a completed Theory of Everything.
+Speculative research program with theorem-grade mathematical components, verified internal computations, toy-model telemetry, and open physical conjectures.
 
 ## Core Idea
 
