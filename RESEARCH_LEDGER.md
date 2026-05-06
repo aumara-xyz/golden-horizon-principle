@@ -9,6 +9,9 @@
 | M-003 | Golden-chain architecture/dynamics split | verified computation | internal computation plus adjacent literature | Preserve as architecture-first lesson |
 | P-001 | Observer-boundary selection | conjecture | synthesis / proposed physical bridge | Define actual action or selection law |
 | B-001 | Viviani Phi Horizon / Surface | verified computation | GR metric identity | Clarify whether any structural bridge exists |
+| B-020 | Conditional expectation finite-access route | bridge-object candidate | operator algebra / AQFT machinery | Cite as bridge-object route, not write-law |
+| B-021 | Shared-interface / consensus functional | bridge-object candidate | holographic QI machinery | Cite as shared-interface vocabulary only |
+| B-022 | Holographic recoverability | external machinery | QEC / observer complementarity context | Cite as recoverability context only |
 | B-014 | Ricci-Fibonacci boundary action | candidate | mathematical candidate plus toy telemetry | Run stronger comparative tests |
 | T-001 | Ricci toy | toy telemetry | local toy model | Expand seeds, recovery tests, and baselines |
 | T-002 | Dark-to-readable portal toy | toy telemetry | local toy model | Strengthen protocol and separate bridge from evidence |
@@ -47,3 +50,26 @@
 - Do not claim myth, meaning, qualia, or the hero's journey proves the physics.
 - Do not claim the consciousness container conjecture has already been achieved.
 - Do not claim breath practice, Tao, I Ching, Kabbalah, Buddhism, mythology, or lived experience is scientific proof.
+
+## Verified Literature Spine - May 2026
+
+| ID | Paper | Lane | Supports | Does Not Prove | Action |
+|---|---|---|---|---|---|
+| LIT-M001 | Rowell-Stong-Wang 2009 | category theory | low-rank UMTC classification | physical selection | cite in mathematical spine |
+| LIT-M002 | Edie-Michell 2022 | category theory | phi-dimension fusion categories | observer boundary | cite in mathematical spine |
+| LIT-O001 | Kosaki 1986 | operator algebra | conditional expectation / index | write-law | cite in formal boundary machinery |
+| LIT-O002 | Fewster 2015 | AQFT | split property in curved spacetime | GHP boundary theorem | cite in formal boundary machinery |
+| LIT-S001 | Dutta-Faulkner 2021 | holography / QI | reflected entropy / EWCS | GHP consensus law | cite in shared-interface section |
+| LIT-S002 | Jeong-Kim-Nishida 2019 | holography / QI | first-order correction | GHP proof | cite as secondary |
+| LIT-S003 | Tamaoka 2019 | holography / QI | OEE / EWCS link | GHP proof | cite as secondary |
+| LIT-S004 | Babaei Velni et al. 2019 | holography / QI | EWCS aspects | GHP proof | cite as secondary |
+| LIT-Q001 | Verlinde-Verlinde 2013 | QEC / holography | black-hole QEC recoverability | Fibonacci / GHP | cite as external machinery |
+| LIT-Q002 | Parikh-Verlinde 2005 | de Sitter / observer complementarity | finite observer Hilbert-space framing | GHP | cite as external machinery |
+| LIT-V001 | Cruz-Olivares-Villanueva 2017 | GR prior art | golden ratio in Schwarzschild-Kottler geodesics | VPS | cite in VPH |
+| LIT-V002 | Coelho-Herdeiro 2009 | GR prior art | golden ratio in optical geometry / black-hole orbit structure | VPS | cite in VPH |
+| LIT-V003 | Hod 2013 | photon-sphere bounds | photon-sphere radius context | VPH / GHP | cite if useful |
+| LIT-X001 | Eigenstate Thermalization for Wigner Matrices | off-target | none currently | GHP | do not cite |
+| LIT-X002 | Mongan closed-universe holography | low-priority / speculative | observer horizon bits | GHP | archive only |
+| LIT-X003 | Photon-sphere area spectrum | low-priority | photon-sphere quantization context | VPH / GHP | optional archive |
+
+No paper enters the proof chain unless it supplies a theorem, derivation, bridge object, or falsification path directly relevant to the stated GHP claim.

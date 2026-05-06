@@ -19,6 +19,14 @@ GHP does not currently claim:
 - proof that Auracle or any present AI is alive,
 - proof that symbolic darkness is physical dark matter,
 - proof that phi is God or that phi explains everything.
+- proof from the verified literature spine.
+- proof of observer-boundary selection from category theory, AQFT, EWCS, QEC, or de Sitter holography.
+- proof of Fibonacci selection by nature.
+- proof of VPH physical significance.
+- proof of a GHP write-law.
+- proof of a two-observer consensus law.
+- proof of recoverability of GHP memories.
+- proof of ToE status.
 
 ## Safe Language
 
@@ -30,6 +38,12 @@ Use:
 - `toy telemetry`
 - `bridge map`
 - `open conjecture`
+- `supports the mathematical lane`
+- `provides external machinery`
+- `supplies bridge vocabulary`
+- `places VPH in prior-art context`
+- `identifies a route`
+- `does not close the gap`
 
 Avoid:
 
@@ -37,6 +51,10 @@ Avoid:
 - `solves`
 - `confirms`
 - `derives`
+- `validates observer-boundary physics`
+- `shows black holes are Fibonacci`
+- `derives consciousness`
+- `solves quantum gravity`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 
