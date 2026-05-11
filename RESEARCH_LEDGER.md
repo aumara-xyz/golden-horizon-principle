@@ -65,6 +65,7 @@
 | LIT-S004 | Babaei Velni et al. 2019 | holography / QI | EWCS aspects | GHP proof | cite as secondary |
 | LIT-Q001 | Verlinde-Verlinde 2013 | QEC / holography | black-hole QEC recoverability | Fibonacci / GHP | cite as external machinery |
 | LIT-Q002 | Parikh-Verlinde 2005 | de Sitter / observer complementarity | finite observer Hilbert-space framing | GHP | cite as external machinery |
+| LIT-QF001 | Dumitrescu et al. 2022, Nature, "Dynamical topological phase realized in a trapped-ion quantum simulator" | Quantum information / dynamical topological phases | External analogue for Fibonacci/quasiperiodic temporal structure protecting edge information. | GHP, VPH, observer-boundary selection, consciousness, literal two-time physics, or phi as universal code. | Cite as external analogue in architecture/dynamics split and information-protection discussion. |
 | LIT-V001 | Cruz-Olivares-Villanueva 2017 | GR prior art | golden ratio in Schwarzschild-Kottler geodesics | VPS | cite in VPH |
 | LIT-V002 | Coelho-Herdeiro 2009 | GR prior art | golden ratio in optical geometry / black-hole orbit structure | VPS | cite in VPH |
 | LIT-V003 | Hod 2013 | photon-sphere bounds | photon-sphere radius context | VPH / GHP | cite if useful |

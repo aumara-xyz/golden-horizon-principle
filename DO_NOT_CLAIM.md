@@ -27,6 +27,10 @@ GHP does not currently claim:
 - proof of a two-observer consensus law.
 - proof of recoverability of GHP memories.
 - proof of ToE status.
+- proof from Fibonacci pulse experiments.
+- proof that quasiperiodic drives establish literal two-time physics.
+- proof that Fibonacci anyons and Fibonacci pulse sequences are the same object.
+- proof that improved qubit coherence validates observer-boundary physics.
 
 ## Safe Language
 
@@ -44,6 +48,7 @@ Use:
 - `places VPH in prior-art context`
 - `identifies a route`
 - `does not close the gap`
+- `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
 
 Avoid:
 
@@ -55,6 +60,10 @@ Avoid:
 - `shows black holes are Fibonacci`
 - `derives consciousness`
 - `solves quantum gravity`
+- `Fibonacci pulse experiments prove GHP`
+- `quasiperiodic drives prove two literal time dimensions`
+- `Fibonacci anyons and Fibonacci pulse sequences are the same object`
+- `improved qubit coherence validates observer-boundary physics`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

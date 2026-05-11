@@ -113,6 +113,10 @@ The organizing schema is:
 
 This protects GHP from naive golden-ratio numerology by distinguishing architectural invariants from dynamical universality classes.
 
+### Fibonacci Quasiperiodic Driving as External Information-Protection Analogue
+
+Dumitrescu et al. demonstrated an emergent dynamical symmetry-protected topological phase in a quasiperiodically driven trapped-ion quantum simulator using a Fibonacci pulse sequence. The phase dynamically protected edge qubits from control errors, cross-talk, and stray fields. This does not prove GHP, nor does it identify Fibonacci as a universal physical selector. It does, however, supply an external experimental analogue for a narrow GHP-compatible lesson: Fibonacci/quasiperiodic temporal structure can function as protective information architecture rather than mere aesthetic pattern.
+
 ## 7. Observer-Boundary Selection
 
 GHP proposes that admissible observer-boundary architectures may settle at a balance point of a topological information-cost functional, with \(D^2\) as the first candidate cost.
@@ -195,6 +199,7 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 | Fibonacci categorical minimality | theorem-grade within stated domain | establishes the mathematical floor in the stated class |
 | Fibonacci fusion rule and quantum dimension | theorem | explains the algebraic appearance of \(\phi\) |
 | Golden-chain computation | verified-computation | shows architecture / dynamics split |
+| Dumitrescu et al. quasiperiodic-drive experiment | external analogue | shows Fibonacci / quasiperiodic temporal structure protecting edge information in a dynamical topological phase |
 | Negative golden-ratio dynamics tests | rejected / corrective | prevents self-sealing numerology |
 | VPH Schwarzschild identity | verified-computation | gives a metric-level GR-side golden fixed point |
 | Conditional expectation / split-property route | bridge-object candidate | makes finite access more precise without supplying a write-law |
@@ -206,6 +211,7 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 | Lane | Literature | Supports | Does not prove |
 |---|---|---|---|
 | theorem-grade / established math | Rowell-Stong-Wang; Edie-Michell; Ostrik; Freedman-Larsen-Wang; Jones | Fibonacci is mathematically natural inside the stated categorical lane | physical selection by nature |
+| external analogue / experiment | Dumitrescu et al. | Fibonacci / quasiperiodic temporal structure can protect edge qubits in a dynamical topological phase | GHP, observer-boundary selection, VPH, literal two-time physics, or Fibonacci anyons |
 | physical conjecture / bridge target | Kosaki; Fewster; Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al.; Verlinde-Verlinde; Parikh-Verlinde | bridge vocabulary for finite access, shared interface, and recoverability | a GHP write-law, a GHP consensus law, or Dynamics Gap closure |
 | GR prior-art context | Cruz-Olivares-Villanueva; Coelho-Herdeiro; Hod | prior distinguished-radius / golden-ratio structure in black-hole geometry | VPH, GHP, or observer-boundary selection |
 | symbolic / meaning layer | preserved only in the full master | bounded phenomenology and human vocabulary | scientific evidence |
@@ -235,6 +241,7 @@ GHP does not currently claim:
 - proof that Bell tests, hidden-sector searches, cosmology watchlists, or portal toy telemetry validate GHP,
 - proof that dark matter is consciousness or symbolic darkness,
 - proof that quantum measurement requires human consciousness,
+- proof that Fibonacci pulse experiments prove GHP, observer-boundary selection, literal two-time physics, or that Fibonacci pulse sequences and Fibonacci anyons are the same object,
 - proof that software or toy-model results count as physical evidence.
 
 ## 15. Primary Falsification Paths
@@ -297,6 +304,7 @@ The best first review questions are:
 - Cruz, N., Olivares, M., Villanueva, J.R. “The Golden Ratio in Schwarzschild-Kottler Black Holes.” *European Physical Journal C* 77, 123 (2017). DOI: 10.1140/epjc/s10052-017-4670-7. arXiv:1701.03166.
 - Coelho, F.S., Herdeiro, C.A.R. “Relativistic Euler’s Three-Body Problem, Optical Geometry, and the Golden Ratio.” *Physical Review D* 80, 104036 (2009). DOI: 10.1103/PhysRevD.80.104036. arXiv:0909.4413.
 - Hod, S. “Upper Bound on the Radii of Black-Hole Photonspheres.” *Physics Letters B* 727, 345–348 (2013). DOI: 10.1016/j.physletb.2013.10.047.
+- Dumitrescu, P.T., Bohnet, J.G., Gaebler, J.P., Hankin, A., Hayes, D., Kumar, A., Neyenhuis, B., Vasseur, R., Potter, A.C. “Dynamical topological phase realized in a trapped-ion quantum simulator.” *Nature* 607, 463–467 (2022). DOI: 10.1038/s41586-022-04853-4. arXiv:2107.09676.
 
 ## 19. Quarantined Note On Meaning
 
@@ -308,6 +316,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.008 | `GHP_v1_618_MASTER.md` | Added conservative literature hardening note for Dumitrescu et al. (2022) as an external analogue: Fibonacci / quasiperiodic temporal structure can protect edge information in a dynamical topological phase without upgrading GHP, VPH, observer-boundary selection, or two-time claims. |
 | core-v0.007 | `GHP_v1_618_MASTER.md` | Literature hardening pass: added verified citation spine for categorical minimality, operator-algebraic finite-access routes, EWCS / reflected-entropy bridge vocabulary, holographic recoverability context, and VPH prior-art placement without proof upgrade. |
 | core-v0.006 | `GHP_v1_618_MASTER.md` | Hardened for adversarial sharing: reduced early symbolic framing, compressed meta sections, removed the meaning lane from the main claim map, and moved the symbolic note to a short quarantined ending section. |
 | core-v0.005 | `GHP_v1_618_MASTER.md` | Expanded for friend-facing review; added bounded myth / meaning / qualia lane as observer phenomenology; strengthened novelty, falsification, formal-boundary, and reviewer-question sections. |
