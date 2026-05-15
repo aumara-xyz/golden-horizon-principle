@@ -31,6 +31,12 @@ GHP does not currently claim:
 - proof that quasiperiodic drives establish literal two-time physics.
 - proof that Fibonacci anyons and Fibonacci pulse sequences are the same object.
 - proof that improved qubit coherence validates observer-boundary physics.
+- proof that Hoffman trace logic proves GHP.
+- proof that Markov trace logic forces Fibonacci.
+- proof that the Fibonacci Markov kernel proves physical selection.
+- proof that hidden-state dwell time derives VPH.
+- proof that memory creates the external world.
+- proof that the write-law is solved.
 
 ## Safe Language
 
@@ -49,6 +55,7 @@ Use:
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
+- `Hoffman-style trace logic supplies a Markov-chain language for observer-relative access, while Perron-Frobenius normalization gives Fibonacci fusion a clean stochastic bridge kernel`
 
 Avoid:
 
@@ -64,6 +71,12 @@ Avoid:
 - `quasiperiodic drives prove two literal time dimensions`
 - `Fibonacci anyons and Fibonacci pulse sequences are the same object`
 - `improved qubit coherence validates observer-boundary physics`
+- `Hoffman trace logic proves GHP`
+- `Markov trace logic forces Fibonacci`
+- `the Fibonacci Markov kernel proves physical selection`
+- `hidden-state dwell time derives VPH`
+- `memory creates the external world`
+- `the write-law is solved`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

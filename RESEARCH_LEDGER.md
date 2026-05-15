@@ -12,6 +12,7 @@
 | B-020 | Conditional expectation finite-access route | bridge-object candidate | operator algebra / AQFT machinery | Cite as bridge-object route, not write-law |
 | B-021 | Shared-interface / consensus functional | bridge-object candidate | holographic QI machinery | Cite as shared-interface vocabulary only |
 | B-022 | Holographic recoverability | external machinery | QEC / observer complementarity context | Cite as recoverability context only |
+| BRIDGE-H001 | Hoffman Trace Logic Bridge and Markovized Fibonacci Fusion | formal bridge candidate / no-go clarification | Markov trace formalism plus Perron-Frobenius normalized Fibonacci kernel | Implement OP 203 toy comparison against nearby stochastic kernels; keep OP 204 exploratory only |
 | B-014 | Ricci-Fibonacci boundary action | candidate | mathematical candidate plus toy telemetry | Run stronger comparative tests |
 | T-001 | Ricci toy | toy telemetry | local toy model | Expand seeds, recovery tests, and baselines |
 | T-002 | Dark-to-readable portal toy | toy telemetry | local toy model | Strengthen protocol and separate bridge from evidence |
@@ -45,6 +46,12 @@
 - Do not claim software success validates GHP.
 - Do not claim VPH proves GHP.
 - Do not claim Ricci proves GHP.
+- Do not claim Hoffman trace logic proves GHP.
+- Do not claim Markov trace logic forces Fibonacci.
+- Do not claim the Fibonacci Markov kernel proves physical selection.
+- Do not claim hidden-state dwell time derives VPH.
+- Do not claim memory creates the external world.
+- Do not claim the write-law is solved.
 - Do not claim ternary witness is a universal memory law.
 - Do not claim science-spirituality resonance proves the physics.
 - Do not claim myth, meaning, qualia, or the hero's journey proves the physics.
@@ -66,6 +73,7 @@
 | LIT-Q001 | Verlinde-Verlinde 2013 | QEC / holography | black-hole QEC recoverability | Fibonacci / GHP | cite as external machinery |
 | LIT-Q002 | Parikh-Verlinde 2005 | de Sitter / observer complementarity | finite observer Hilbert-space framing | GHP | cite as external machinery |
 | LIT-QF001 | Dumitrescu et al. 2022, Nature, "Dynamical topological phase realized in a trapped-ion quantum simulator" | Quantum information / dynamical topological phases | External analogue for Fibonacci/quasiperiodic temporal structure protecting edge information. | GHP, VPH, observer-boundary selection, consciousness, literal two-time physics, or phi as universal code. | Cite as external analogue in architecture/dynamics split and information-protection discussion. |
+| LIT-H001 | Hoffman, Prakash, Chattopadhyay 2024, "Traces of Consciousness" | observer-relative access / trace logic | Observer-relative access language; memory-time-adjacent trace-chain vocabulary. | GHP, Fibonacci selection, VPH, consciousness derivation, or write-law closure. | Cite as bridge-language only; TODO: VERIFY EXACT HOFFMAN TRACE LOGIC CITATION before final publication. |
 | LIT-V001 | Cruz-Olivares-Villanueva 2017 | GR prior art | golden ratio in Schwarzschild-Kottler geodesics | VPS | cite in VPH |
 | LIT-V002 | Coelho-Herdeiro 2009 | GR prior art | golden ratio in optical geometry / black-hole orbit structure | VPS | cite in VPH |
 | LIT-V003 | Hod 2013 | photon-sphere bounds | photon-sphere radius context | VPH / GHP | cite if useful |

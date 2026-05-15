@@ -67,6 +67,7 @@ If correct, this would not necessarily replace other physics programs. It could 
 | B-020 | Conditional expectation finite-access route | bridge-object candidate | Kosaki; Fewster | finite-access / subsystem route |
 | B-021 | Shared-interface / consensus functional | bridge-object candidate | Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al. | two-observer vocabulary |
 | B-022 | Holographic recoverability | external-machinery | Verlinde-Verlinde; Parikh-Verlinde | recoverability context only |
+| B-023 | Hoffman trace logic / Fibonacci Markov kernel bridge | bridge-object candidate | Markov trace formalism plus Perron-Frobenius normalization of Fibonacci fusion matrix | observer-relative access / memory-time bridge |
 
 ## 5. Mathematical Spine
 
@@ -155,6 +156,10 @@ E_t:M_t\to N_t,
 
 a time-indexed conditional expectation whose thresholded or dissipative behavior could produce discrete write, witness, or release events. Naming that route is not the same as constructing it.
 
+### Hoffman Trace Logic as Markov Access Bridge
+
+Hoffman-style trace logic supplies a useful Markov-chain language for observer-relative access: an observer sees only the trace of a larger hidden process on the subset of states it can read or record. This aligns with GHP's OPM lineage, where experienced time is the ordering of written memory states rather than an external master clock. A Perron-Frobenius normalization of the Fibonacci fusion matrix \(N_\tau=\begin{bmatrix}0&1\\1&1\end{bmatrix}\) yields a stochastic kernel \(P_{\text{Fib}}=\begin{bmatrix}0&1\\ \phi^{-2}&\phi^{-1}\end{bmatrix}\) with stationary weights proportional to \((1,\phi^2)\), normalized by \(D^2=1+\phi^2=2+\phi\). This does not prove GHP, does not show that trace logic selects Fibonacci, and does not derive the VPH identity. It does, however, provide a precise bridge candidate: Fibonacci fusion architecture can be represented as a Markov-style observer-access kernel.
+
 ## 9. Shared-Interface And Recoverability
 
 The strongest current vocabulary for a quantitative two-observer shared-interface functional comes from holographic information theory. Dutta-Faulkner gives the canonical-purification / reflected-entropy relation to the entanglement wedge cross-section; Jeong-Kim-Nishida studies first-order corrections to the reflected-entropy / EWCS relation; Tamaoka introduces odd entanglement entropy as another EWCS-related boundary quantity; and Babaei Velni, Mohammadi Mozaffar, and Vahidinia study several geometric and information-theoretic aspects of EWCS.
@@ -194,17 +199,18 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 
 ## 11. Evidence And Support
 
-| Support | Status | What it does |
-|---|---|---|
-| Fibonacci categorical minimality | theorem-grade within stated domain | establishes the mathematical floor in the stated class |
-| Fibonacci fusion rule and quantum dimension | theorem | explains the algebraic appearance of \(\phi\) |
-| Golden-chain computation | verified-computation | shows architecture / dynamics split |
-| Dumitrescu et al. quasiperiodic-drive experiment | external analogue | shows Fibonacci / quasiperiodic temporal structure protecting edge information in a dynamical topological phase |
-| Negative golden-ratio dynamics tests | rejected / corrective | prevents self-sealing numerology |
-| VPH Schwarzschild identity | verified-computation | gives a metric-level GR-side golden fixed point |
-| Conditional expectation / split-property route | bridge-object candidate | makes finite access more precise without supplying a write-law |
-| EWCS / reflected-entropy route | bridge-object candidate | supplies shared-interface vocabulary, not a GHP law |
-| QEC / finite observer Hilbert-space route | external-machinery | supplies recoverability context, not a GHP result |
+| Support | Status | What it does | What it does not do |
+|---|---|---|---|
+| Fibonacci categorical minimality | theorem-grade within stated domain | establishes the mathematical floor in the stated class | does not prove physical selection |
+| Fibonacci fusion rule and quantum dimension | theorem | explains the algebraic appearance of \(\phi\) | does not prove GHP |
+| Golden-chain computation | verified-computation | shows architecture / dynamics split | does not show phi governs all dynamics |
+| Dumitrescu et al. quasiperiodic-drive experiment | external analogue | shows Fibonacci / quasiperiodic temporal structure protecting edge information in a dynamical topological phase | does not prove GHP or literal two-time physics |
+| Hoffman trace logic / Markovized Fibonacci fusion | formal bridge candidate | gives stochastic-kernel representation of Fibonacci fusion architecture and a language for hidden-process access | does not prove trace logic selects Fibonacci, does not derive VPH, does not close write law |
+| Negative golden-ratio dynamics tests | rejected / corrective | prevents self-sealing numerology | does not supply a positive derivation |
+| VPH Schwarzschild identity | verified-computation | gives a metric-level GR-side golden fixed point | does not prove GHP |
+| Conditional expectation / split-property route | bridge-object candidate | makes finite access more precise without supplying a write-law | does not derive a write-law |
+| EWCS / reflected-entropy route | bridge-object candidate | supplies shared-interface vocabulary | does not supply a GHP law |
+| QEC / finite observer Hilbert-space route | external-machinery | supplies recoverability context | does not prove a GHP memory code |
 
 ## 12. What This Literature Does And Does Not Prove
 
@@ -242,6 +248,12 @@ GHP does not currently claim:
 - proof that dark matter is consciousness or symbolic darkness,
 - proof that quantum measurement requires human consciousness,
 - proof that Fibonacci pulse experiments prove GHP, observer-boundary selection, literal two-time physics, or that Fibonacci pulse sequences and Fibonacci anyons are the same object,
+- proof that Hoffman trace logic proves GHP,
+- proof that Markov trace logic forces Fibonacci,
+- proof that the Fibonacci Markov kernel proves physical selection,
+- proof that Markov hidden-state dwell time derives VPH,
+- proof that memory creates the external world,
+- proof that the write-law is solved,
 - proof that software or toy-model results count as physical evidence.
 
 ## 15. Primary Falsification Paths
@@ -305,6 +317,7 @@ The best first review questions are:
 - Coelho, F.S., Herdeiro, C.A.R. “Relativistic Euler’s Three-Body Problem, Optical Geometry, and the Golden Ratio.” *Physical Review D* 80, 104036 (2009). DOI: 10.1103/PhysRevD.80.104036. arXiv:0909.4413.
 - Hod, S. “Upper Bound on the Radii of Black-Hole Photonspheres.” *Physics Letters B* 727, 345–348 (2013). DOI: 10.1016/j.physletb.2013.10.047.
 - Dumitrescu, P.T., Bohnet, J.G., Gaebler, J.P., Hankin, A., Hayes, D., Kumar, A., Neyenhuis, B., Vasseur, R., Potter, A.C. “Dynamical topological phase realized in a trapped-ion quantum simulator.” *Nature* 607, 463–467 (2022). DOI: 10.1038/s41586-022-04853-4. arXiv:2107.09676.
+- Hoffman, D., Prakash, C., Chattopadhyay, S. “Traces of Consciousness.” *Preprints.org* (2024). DOI: 10.20944/preprints202410.1305.v1. TODO: verify final publication status before formal journal submission use.
 
 ## 19. Quarantined Note On Meaning
 
@@ -316,6 +329,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.009 | `GHP_v1_618_MASTER.md` | Added Hoffman Trace Logic Bridge / Markovized Fibonacci Fusion note as a formal bridge candidate: observer-relative access, memory-time interpretation, and Perron-Frobenius normalized Fibonacci kernel without proof upgrade, VPH derivation, or write-law closure. |
 | core-v0.008 | `GHP_v1_618_MASTER.md` | Added conservative literature hardening note for Dumitrescu et al. (2022) as an external analogue: Fibonacci / quasiperiodic temporal structure can protect edge information in a dynamical topological phase without upgrading GHP, VPH, observer-boundary selection, or two-time claims. |
 | core-v0.007 | `GHP_v1_618_MASTER.md` | Literature hardening pass: added verified citation spine for categorical minimality, operator-algebraic finite-access routes, EWCS / reflected-entropy bridge vocabulary, holographic recoverability context, and VPH prior-art placement without proof upgrade. |
 | core-v0.006 | `GHP_v1_618_MASTER.md` | Hardened for adversarial sharing: reduced early symbolic framing, compressed meta sections, removed the meaning lane from the main claim map, and moved the symbolic note to a short quarantined ending section. |
