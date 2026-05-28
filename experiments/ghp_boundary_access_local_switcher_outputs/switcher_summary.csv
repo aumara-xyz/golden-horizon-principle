@@ -1,0 +1,17 @@
+switcher,target_family_accuracy,noise_level
+always_fibonacci,0.2526661197703035,
+always_generic_ternary,0.7473338802296965,
+linear_probe,0.8901856961742114,
+oracle,1.0,
+always_fibonacci,0.2567381687051563,0.2
+always_generic_ternary,0.7432618312948437,0.2
+linear_probe,0.9034164838841593,0.2
+oracle,1.0,0.2
+always_fibonacci,0.25018679019725043,0.3
+always_generic_ternary,0.7498132098027496,0.3
+linear_probe,0.9019351464435147,0.3
+oracle,1.0,0.3
+always_fibonacci,0.2510546160450965,0.4
+always_generic_ternary,0.7489453839549035,0.4
+linear_probe,0.8651584723933251,0.4
+oracle,1.0,0.4

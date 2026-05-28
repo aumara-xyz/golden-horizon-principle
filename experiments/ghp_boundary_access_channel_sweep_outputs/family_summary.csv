@@ -1,0 +1,7 @@
+family,label,mean_score,mean_no_balance,mean_channel_core,blended_wins,no_balance_wins,core_wins
+fibonacci_fibblock_return,Fibonacci block-return control,0.7899259568248516,0.7851579973410504,0.736015905896504,14,0,0
+fibonacci_alt_return,Fibonacci alternating return control,0.7897803852138642,0.7851831165639696,0.7361075517341222,4,0,0
+fibonacci,Fibonacci,0.7886677744317159,0.7918353235305534,0.7424332745497272,9,27,27
+tribonacci_control,non-Fibonacci control,0.7801690248100487,0.7740171235768352,0.7236031756207966,0,0,0
+binary_abelian,binary abelian,0.7631224478081321,0.7554811995105915,0.7035050150716122,0,0,0
+generic_ternary,generic ternary,0.7272349122823857,0.7344248235820259,0.6823504541040403,0,0,0

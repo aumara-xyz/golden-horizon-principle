@@ -1,0 +1,11 @@
+feature,importance
+helper_wake_cos,10.593643674644303
+helper_entropy,8.226005130806833
+helper_deep_cos,7.906864710545856
+damage_wake_cos,2.668953963017644
+damage_deep_overlap,0.9571718717385614
+damage_entropy,0.9063946833774459
+entropy_gap,0.8801990876776232
+damage_helper_cos,0.749703107724831
+damage_deep_cos,0.5200954058099303
+damage_helper_overlap,0.08685638880051957

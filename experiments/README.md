@@ -11,3 +11,6 @@ Included:
 - Ricci-Fibonacci toy
 - Dark-to-readable portal toy
 - Ternary boundary operator toy
+- Golden Zipper observer-memory corridor
+- Boundary Access Channel corridor
+- `ghp_bridge_lab_notebook.md` for the live bridge-object story

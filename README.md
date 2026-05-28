@@ -30,6 +30,8 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 - `GHP_CORE_SHARE_PAPER.md`
 - `VIVIANI_PHI_HORIZON.md`
 - `RESEARCH_LEDGER.md`
+- `GHP_MATH_COLLABORATOR_HANDOFF.md`
+- `GHP_RECENT_RESEARCH_DUMP_2026-05-28.md`
 - `DO_NOT_CLAIM.md`
 - `SCIENCE_SPIRITUALITY_BRIDGE.md`
 - `BRAIN_DUMP_INDEX.md`
@@ -52,6 +54,8 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 3. Viviani Phi Horizon / Surface as a metric-level Schwarzschild golden fixed-point identity.
 4. Ricci-Fibonacci soft-saturation as candidate toy boundary action.
 5. Dark-to-readable / ternary witness models as toy telemetry only.
+6. Boundary Access Channel as the current best bridge-object toy corridor.
+7. Local switcher results suggesting finite observers may infer which correction geometry to use from boundary symptoms alone.
 
 ## Symbolic / Spirituality Layer
 

@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.007  
+**Version:** core-v0.010  
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `GHP_RESEARCH_LEDGER.md`  
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -63,11 +63,12 @@ If correct, this would not necessarily replace other physics programs. It could 
 | M-003 | Architecture / dynamics split in golden chain | verified-computation | internal computation plus established golden-chain / tricritical-Ising literature | central lesson |
 | P-001 | Observer-boundary selection by \(D^2\) or related action functional | candidate | open conjectural bridge | physical conjecture |
 | P-002 | SYK / golden-chain beta test | open | pre-registered falsification path | falsification path |
-| B-001 | Viviani Phi Horizon Schwarzschild identity | verified-computation | metric-level GR identity | GR-side anchor only |
+| B-001 | Viviani Phi Horizon / Surface Schwarzschild identity | verified-computation | metric-level GR identity | GR-side anchor only |
 | B-020 | Conditional expectation finite-access route | bridge-object candidate | Kosaki; Fewster | finite-access / subsystem route |
 | B-021 | Shared-interface / consensus functional | bridge-object candidate | Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al. | two-observer vocabulary |
 | B-022 | Holographic recoverability | external-machinery | Verlinde-Verlinde; Parikh-Verlinde | recoverability context only |
 | B-023 | Hoffman trace logic / Fibonacci Markov kernel bridge | bridge-object candidate | Markov trace formalism plus Perron-Frobenius normalization of Fibonacci fusion matrix | observer-relative access / memory-time bridge |
+| B-024 | Multi-scale FEP / Markov-blanket route | bridge-object candidate | Kirchhoff-Parr-Palacios-Friston; Waade et al.; Possati | observer-boundary statistical structure / private-to-public corridor |
 
 ## 5. Mathematical Spine
 
@@ -133,6 +134,20 @@ This is a selection conjecture, not a derivation.
 
 The missing object is the boundary write law: the rule by which a finite boundary decides what becomes durable record, what remains live but unresolved, and what returns to unregistered potential.
 
+### Bridge Spine
+
+The current bridge program is modular rather than monolithic. Different external frameworks appear to supply different missing pieces of the same observer-boundary problem:
+
+- **Multi-scale FEP / Markov blankets:** statistical observer-boundary and nested private-to-public corridor.
+- **Conditional expectation / split property:** finite-access projection and subsystem structure.
+- **Regularized modular flow plus write / witness / release:** candidate route from continuous process to discrete record events.
+- **EWCS / reflected entropy:** shared-interface geometry for two observers.
+- **Holographic QEC:** recoverability under partial access or local damage.
+- **VPH:** exact GR-side fixed-point anchor.
+- **GHP itself:** candidate architectural selector asking whether Fibonacci is the first admissible readable closure tying these lanes together.
+
+No single item on this list proves GHP. The point of the list is narrower: each framework may contribute one bridge piece that GHP currently lacks.
+
 ## 8. Formal Boundary Machinery
 
 The next hardening step is to turn observer-language into formal bridge objects.
@@ -145,6 +160,8 @@ The current bridge-object stack is:
 - **Write / Witness / Release:** operational action alphabet for memory-boundary behavior.
 - **Reflected entropy / EWCS:** candidate shared-interface / consensus measure for two observers.
 - **Holographic QEC:** recoverable boundary memory scaffold.
+
+Within the current external theory stack, multi-scale FEP is the clearest statistical-boundary socket. It gives GHP a disciplined language for nested observer-boundaries, finite access, and the private-to-public corridor without requiring GHP to identify variational free energy itself as the final physical law. In the master this appears as one of the main docking lanes; in the core paper it should be read as bridge vocabulary, not as a solved derivation.
 
 Kosaki extends Jones-style index theory to arbitrary factors and supplies a precise operator-algebraic setting in which conditional expectations can express structured access or coarse graining. Fewster develops the split property in locally covariant QFT in curved spacetime and gives a rigorous route for understanding local regions as subsystems. The conditional-expectation route and split-property route are bridge-object candidates for making finite observer access precise. They do not yet supply a derived write-law.
 
@@ -168,7 +185,7 @@ EWCS / reflected entropy therefore supplies the strongest current candidate voca
 
 For recoverability, Verlinde-Verlinde frames black-hole information in quantum-error-correction terms, while Parikh-Verlinde provides finite-observer Hilbert-space context in de Sitter holography. These references support the recoverability lane as external machinery. They do not prove Fibonacci structure, GHP selection, or a GHP memory code.
 
-## 10. VPH As GR-Side Anchor
+## 10. Viviani Phi Horizon / Surface As GR-Side Anchor
 
 The Viviani Phi Horizon / Surface is a metric-level Schwarzschild identity. It identifies the radius
 
@@ -179,6 +196,8 @@ r = \phi r_s
 where the static-observer redshift factor equals the normalized radius under the chosen self-reference condition.
 
 This is interesting because the same quadratic form \(x^2=x+1\) appears in the Fibonacci quantum-dimension equation and in the VPH fixed-point condition. But the same equation is not automatically the same object.
+
+VPH matters in the core paper not because it proves observer-boundary selection, but because it is one of the few exact GR-side identities in the entire program that can be written down, checked directly, and kept under hard scope control. If a future bridge between observer-boundary architecture and ordinary geometry is real, it should eventually cash out in exact targets of this kind rather than rhetorical resemblance alone.
 
 VPH is:
 
@@ -206,8 +225,9 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 | Golden-chain computation | verified-computation | shows architecture / dynamics split | does not show phi governs all dynamics |
 | Dumitrescu et al. quasiperiodic-drive experiment | external analogue | shows Fibonacci / quasiperiodic temporal structure protecting edge information in a dynamical topological phase | does not prove GHP or literal two-time physics |
 | Hoffman trace logic / Markovized Fibonacci fusion | formal bridge candidate | gives stochastic-kernel representation of Fibonacci fusion architecture and a language for hidden-process access | does not prove trace logic selects Fibonacci, does not derive VPH, does not close write law |
+| Multi-scale FEP / Markov blankets | bridge-object candidate | gives a formal statistical language for nested observer-boundaries and private-to-public access structure | does not derive Fibonacci selection, does not close the write law, does not solve the dynamics gap |
 | Negative golden-ratio dynamics tests | rejected / corrective | prevents self-sealing numerology | does not supply a positive derivation |
-| VPH Schwarzschild identity | verified-computation | gives a metric-level GR-side golden fixed point | does not prove GHP |
+| Viviani Phi Horizon / Surface Schwarzschild identity | verified-computation | gives a metric-level GR-side golden fixed point | does not prove GHP |
 | Conditional expectation / split-property route | bridge-object candidate | makes finite access more precise without supplying a write-law | does not derive a write-law |
 | EWCS / reflected-entropy route | bridge-object candidate | supplies shared-interface vocabulary | does not supply a GHP law |
 | QEC / finite observer Hilbert-space route | external-machinery | supplies recoverability context | does not prove a GHP memory code |
@@ -329,6 +349,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.010 | `GHP_v1_618_MASTER.md` | Added a compact Bridge Spine section so the share paper states how existing frameworks contribute different missing observer-boundary pieces, and strengthened the VPH section to explain why it remains in core as a GR-side exact anchor without proof upgrade. |
 | core-v0.009 | `GHP_v1_618_MASTER.md` | Added Hoffman Trace Logic Bridge / Markovized Fibonacci Fusion note as a formal bridge candidate: observer-relative access, memory-time interpretation, and Perron-Frobenius normalized Fibonacci kernel without proof upgrade, VPH derivation, or write-law closure. |
 | core-v0.008 | `GHP_v1_618_MASTER.md` | Added conservative literature hardening note for Dumitrescu et al. (2022) as an external analogue: Fibonacci / quasiperiodic temporal structure can protect edge information in a dynamical topological phase without upgrading GHP, VPH, observer-boundary selection, or two-time claims. |
 | core-v0.007 | `GHP_v1_618_MASTER.md` | Literature hardening pass: added verified citation spine for categorical minimality, operator-algebraic finite-access routes, EWCS / reflected-entropy bridge vocabulary, holographic recoverability context, and VPH prior-art placement without proof upgrade. |

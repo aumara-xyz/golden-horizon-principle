@@ -1,0 +1,9 @@
+ablation,target_family_accuracy
+full_probe,0.8901856961742114
+damage_only,0.8662962686752679
+no_helper_alignment,0.8662962686752679
+no_entropy,0.8491808984015711
+entropy_only,0.7473338802296965
+overlap_only,0.7473338802296965
+helper_only,0.7471598677505158
+simple_heuristic,0.734208367514356

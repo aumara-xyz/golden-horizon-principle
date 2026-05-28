@@ -55,11 +55,13 @@ No lane is allowed to impersonate proof in another lane.
 ## Best Reader Path
 
 1. `README.md`
-2. `GHP_CORE_SHARE_PAPER.md`
-3. `RESEARCH_LEDGER.md`
-4. `SCIENCE_SPIRITUALITY_BRIDGE.md`
-5. `symbolic/README.md`
-6. `DO_NOT_CLAIM.md`
+2. `GHP_MATH_COLLABORATOR_HANDOFF.md`
+3. `GHP_CORE_SHARE_PAPER.md`
+4. `RESEARCH_LEDGER.md`
+5. `GHP_RECENT_RESEARCH_DUMP_2026-05-28.md`
+6. `SCIENCE_SPIRITUALITY_BRIDGE.md`
+7. `symbolic/README.md`
+8. `DO_NOT_CLAIM.md`
 
 ## The Hardest Open Question
 

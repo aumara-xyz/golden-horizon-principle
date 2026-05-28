@@ -1,0 +1,7 @@
+pack,target_family_accuracy
+all_four,0.8366644293633629
+strange_compass,0.7724413950829045
+familiarity_only,0.7473338802296965
+surprise_only,0.7473338802296965
+two_feelings,0.7473338802296965
+simple_compass_heuristic,0.25274069654709524
