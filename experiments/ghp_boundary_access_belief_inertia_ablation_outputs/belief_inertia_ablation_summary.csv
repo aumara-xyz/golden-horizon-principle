@@ -1,0 +1,11 @@
+ablation,target_family_accuracy
+all_axes,0.9284933005195516
+groove_compass,0.9237203868048823
+pull_plus_raw_fit,0.8454023417107912
+pull_plus_scaled_fit,0.8438859472493598
+raw_fit_only,0.7724413950829045
+scaled_fit_only,0.76969448380441
+pull_plus_feelings,0.7478310587416412
+pull_only,0.7473338802296965
+pull_plus_tension,0.7473338802296965
+tension_only,0.7473338802296965

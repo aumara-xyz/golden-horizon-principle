@@ -1,0 +1,10 @@
+pack,target_family_accuracy
+all_axes,0.9284933005195516
+groove_compass,0.9237203868048823
+raw_groove_compass,0.8366644293633629
+raw_compass_only,0.7724413950829045
+compass_only,0.76969448380441
+feelings_plus_inertia,0.7478807765928357
+feelings_only,0.7473338802296965
+inertia_only,0.7473338802296965
+simple_inertia_heuristic,0.7349665647450717

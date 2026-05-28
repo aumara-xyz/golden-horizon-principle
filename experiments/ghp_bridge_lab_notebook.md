@@ -1654,6 +1654,209 @@ versus
 - That distinction is real enough to compress part of the selector.
 - It is not yet enough to carry the whole selector by itself.
 
+## Belief-Inertia Switcher
+
+Artifact:
+
+- `experiments/ghp_boundary_access_belief_inertia_switcher.py`
+- `experiments/ghp_boundary_access_belief_inertia_switcher_outputs/report.md`
+
+Result:
+
+- best compact pack `all_axes`: about `0.928`
+- `groove_compass`: about `0.924`
+- `raw_groove_compass`: about `0.837`
+- `raw_compass_only`: about `0.772`
+- `feelings_plus_inertia`: about `0.748`
+- `inertia_only`: about `0.747`
+
+Interpretation:
+
+- This is a stronger result than the plain strange-familiar compression.
+- The pure "surprising and familiar" language by itself still stalls around the earlier compact result.
+- The big lift appears only when the same fit/clash language is tied to the current groove.
+
+So the best current observer-language read is:
+
+```text
+not just
+"does this feel strange?"
+
+but
+"does this strange thing fit the song already playing,
+or does it press against it and make a knot?"
+```
+
+- That is a much better compact sentence for the selector.
+- It does **not** mean inertia alone is the signal.
+- Inertia by itself stays near baseline.
+- The gain comes from coupling surprise-and-fit to the current groove.
+
+## Belief-Inertia Ablation
+
+Artifact:
+
+- `experiments/ghp_boundary_access_belief_inertia_ablation.py`
+- `experiments/ghp_boundary_access_belief_inertia_ablation_outputs/report.md`
+
+Result:
+
+- `all_axes`: about `0.928`
+- `groove_compass`: about `0.924`
+- `pull_plus_raw_fit`: about `0.845`
+- `pull_plus_scaled_fit`: about `0.844`
+- `raw_fit_only`: about `0.772`
+- `pull_only`: about `0.747`
+
+Interpretation:
+
+- This was the honest red-team pass.
+- The big win is **not** just helper-alignment leakage.
+- If one leaked helper clue were doing all the work, `pull_only` would have stayed high. It did not.
+- If the raw fit/clash pair were sufficient by itself, `raw_fit_only` would have stayed near the top. It did not.
+
+So the cleaner read is:
+
+```text
+the selector seems to need both:
+1. does this new thing fit or clash
+2. how is it pulling against the current groove
+```
+
+- That is stronger than the earlier story.
+- It means the compact observer-language is becoming less mushy and more structured.
+
+## Selector Generalization
+
+Artifact:
+
+- `experiments/ghp_boundary_access_selector_generalization.py`
+- `experiments/ghp_boundary_access_selector_generalization_outputs/report.md`
+
+Result:
+
+- `clean_current`: strange-familiar all-four reaches `1.000`
+- `uniform_mix_mid`: groove-compass reaches about `0.957`
+- `gaussian_mix_mid`: groove-compass reaches about `0.874`
+- `permute_mix_mid`: groove-compass reaches about `0.844`
+- `delayed_uniform_mid`: full local switcher reaches about `0.792`
+- `cross_family_mid`: belief-all-axes reaches about `0.771`
+
+Interpretation:
+
+- This is a useful portability result.
+- The groove-aware selector is not just a one-world trick.
+- It travels best across several shifted worlds, especially the ones that still preserve a meaningful fit/clash structure under corruption.
+- The plain strange-familiar pack is much more brittle than it first looked, even though it is perfect in the clean-current lane.
+- The full local switcher still owns the delayed-helper lane, which suggests temporal misalignment may need richer local evidence than the compact groove selector currently carries.
+
+So the best current read is:
+
+```text
+the selector is becoming transportable,
+but different shifted worlds still expose different needs
+```
+
+## Label-Free Regime Discovery
+
+Question:
+
+- If we stop naming the two jobs ahead of time, do the feature clouds naturally split into a "coherence tether" pile and a "contradiction scrubber" pile on their own?
+
+Setup:
+
+- Train unlabeled two-cluster k-means on the same uniform-smear training worlds used in the selector-generalization pass.
+- Test transfer of the discovered two-cluster split onto held-out shifted worlds.
+- Compare four feature spaces:
+  - raw `base_features`
+  - compact `strange_features`
+  - compact `groove_features`
+  - full `belief_features`
+
+Result:
+
+- The label-free split is weaker than the trained selector.
+- Best held-out transfer alignment:
+  - `strange_features`: about `0.748`
+  - `belief_features`: about `0.711`
+  - `groove_features`: about `0.653`
+  - `base_features`: about `0.584`
+- No representation comes close to the trained groove-aware selector scores.
+
+Important details:
+
+- `strange_features` transfer surprisingly well into `clean_current`, `gaussian_mix_mid`, and `permute_mix_mid`.
+- `groove_features` become almost perfect in `clean_current`, but collapse badly in `cross_family_mid` and only partially recover elsewhere.
+- The best-oracle remap on held-out data is identical to transfer accuracy in every case, which means the clusters are not just label-flipped; the split itself is blurry.
+
+Safest read:
+
+- This is an important demotion.
+- The two jobs do not yet look like a raw natural species split in feature space.
+- The chooser still looks more real than the piles.
+
+So the best current sentence is:
+
+```text
+the selector may be the real object,
+while the two correction regimes are only partly legible without it
+```
+
+Why this matters:
+
+- It keeps us honest.
+- It suggests the next formal step should be a selector equation or write-law candidate, not a triumphant claim that the jobs are already self-separating by pure geometry.
+
+## Selector Scalar Sweep
+
+Question:
+
+- Can we compress the chooser into one small hand-shaped scalar score instead of a richer multi-axis selector?
+
+Setup:
+
+- Sweep small nonnegative coefficients over a score of the form:
+
+```text
+score = a*novel_but_fits - b*foreign_pressure + c*wake_pull - d*belief_tension
+```
+
+- Fit only the threshold on training rows, then evaluate held-out rows.
+
+Result:
+
+- Best score:
+
+```text
+novel_but_fits - 2*foreign_pressure + 2*wake_pull
+```
+
+- Held-out accuracy: about `0.793`
+- Train accuracy: about `0.795`
+- Noise breakdown:
+  - `0.20`: about `0.774`
+  - `0.30`: about `0.812`
+  - `0.40`: about `0.792`
+
+Safest read:
+
+- This is real progress toward a formal selector, but it is not enough.
+- A tiny score captures part of the chooser’s shape.
+- It does not come close to the richer groove-aware selector near `0.928`.
+
+So the honest sentence is:
+
+```text
+there may be a small selector spine,
+but the full chooser is still thicker than one neat line
+```
+
+Why this matters:
+
+- It gives us a first candidate equation instead of only vibe language.
+- It also tells us not to overstate it.
+- The next formal pass should probably look for a slightly richer low-dimensional rule, not pretend the whole problem collapsed to one scalar overnight.
+
 Interpretation:
 
 - This branch helps the observer-side language a lot:
