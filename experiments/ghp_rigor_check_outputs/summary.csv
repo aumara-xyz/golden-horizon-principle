@@ -1,0 +1,4 @@
+check_id,anchor,status,max_error,threshold,scope,note
+VPH-001,Viviani Phi Surface / Schwarzschild fixed point,pass,0.0,1.0e-80,Areal-radius Schwarzschild static-observer identity only; not a horizon proof.,"At x=r/r_s=phi, gamma=1/sqrt(1-1/x) equals x. Perturbed-radius negative control error was 2.92705098312e-20."
+MRK-001,Markovized Fibonacci fusion kernel,pass,0.0,1.0e-80,Perron-Frobenius normalized bridge kernel only; not physical selection.,"Rows sum to 1 and stationary weights are proportional to (1, phi^2). Wrong-kernel negative control drift was 0.17082039325."
+MTC-001,Rank-2 categorical floor / Fibonacci D^2,pass,0.0,1.0e-80,Script-level check covers the rank-2 fusion-ring family x^2=1+m x. Full UMTC and braiding-universal minimality still relies on cited classification theorems.,"Minimum non-pointed checked case is m=1, d=1.6180339887498948482, D^2=3.6180339887498948482. Pointed m=0 is smaller but excluded."

@@ -1,0 +1,13 @@
+pack,dimensions,overall_accuracy
+six_compass_with_pull,6,0.8382980315844623
+five_groove_compass,5,0.8355662001347205
+all_axes,11,0.8339944614924033
+seven_compass_with_pull_tension,7,0.8238904273632213
+three_fit_inertia_pull,3,0.8027468003891924
+one_scalar_spine,1,0.7531621884589477
+two_fit_pull,2,0.7205299004565526
+two_fit_tension,2,0.71450490232767
+four_spine_basis,4,0.7106878227677569
+three_novel_foreign_pull,3,0.7094903076117057
+three_fit_pull_surprise,3,0.700022453409176
+pull_balance_control,3,0.6786168699947609

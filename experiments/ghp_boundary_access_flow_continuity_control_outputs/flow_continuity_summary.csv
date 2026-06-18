@@ -1,0 +1,7 @@
+pack,dimensions,overall_accuracy
+order_plus_flow,25,0.8520798583048166
+baseline_plus_order_flow,31,0.8181693119873438
+order_relation_only,8,0.7860987395319244
+baseline_plus_flow,23,0.776262617577769
+flow_only,17,0.7544580675115643
+baseline_six,6,0.7256719343799976

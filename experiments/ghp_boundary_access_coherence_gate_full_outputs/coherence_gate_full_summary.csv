@@ -1,0 +1,9 @@
+policy,overall_accuracy
+oracle_order_or_capacity,0.8683994935577568
+coherence_linear_gate,0.8400983093766292
+coherence_disagreement_gate,0.8400983093766292
+coherence_margin_gate,0.839725925374246
+opportunity_linear_gate,0.837566098160423
+threshold_gate,0.8325016757280107
+capacity_only,0.8244581812765324
+order_plus_flow,0.8088925299769122

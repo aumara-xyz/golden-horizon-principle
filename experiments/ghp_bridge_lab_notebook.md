@@ -1857,6 +1857,420 @@ Why this matters:
 - It also tells us not to overstate it.
 - The next formal pass should probably look for a slightly richer low-dimensional rule, not pretend the whole problem collapsed to one scalar overnight.
 
+## Low-Dimensional Chooser
+
+Question:
+
+- How small can the chooser get before it stops traveling across worlds?
+
+Setup:
+
+- Train on the uniform-smear worlds.
+- Test on shifted worlds:
+  - clean current
+  - cross-family
+  - delayed helper
+  - Gaussian mix
+  - permuted mix
+  - uniform mix
+- Compare a one-score selector, several two- and three-axis selectors, the original 5D groove compass, and slightly richer 6D / 7D variants.
+
+Result:
+
+- Best overall:
+  - `six_compass_with_pull`: about `0.838`
+- Close second:
+  - `five_groove_compass`: about `0.836`
+- `all_axes`: about `0.834`
+- Best 3D pack:
+  - `three_fit_inertia_pull`: about `0.803`
+- 1D scalar spine:
+  - about `0.753`
+
+Best-pack scenario breakdown:
+
+- `clean_current`: about `0.856`
+- `cross_family_mid`: about `0.763`
+- `delayed_uniform_mid`: about `0.740`
+- `gaussian_mix_mid`: about `0.872`
+- `permute_mix_mid`: about `0.849`
+- `uniform_mix_mid`: about `0.955`
+
+Safest read:
+
+- The portable chooser is not one magic scalar.
+- It also does not need the full 11D bag.
+- In this toy, the best size looks roughly like five to six local axes.
+
+So the best current sentence is:
+
+```text
+the smallest honest chooser is compact,
+but still multi-signal
+```
+
+Why this matters:
+
+- This narrows the formal target.
+- The next pass should not chase either extreme:
+  - not a giant opaque model
+  - not a fake one-line miracle
+- The likely object is a compact coupled selector with enough room to track familiarity, surprise, inertia, fit, foreign pressure, and local pull.
+
+## Low-Dimensional Failure Map
+
+Question:
+
+- Where does the compact chooser start to slip?
+
+Setup:
+
+- Train the same compact packs on uniform-smear worlds.
+- Test a wider helper/noise grid:
+  - current
+  - uniform mix
+  - Gaussian mix
+  - delayed uniform
+  - permuted mix
+  - cross-family mix
+- Noise levels:
+  - `0.00`, `0.15`, `0.30`, `0.45`, `0.60`
+
+Result:
+
+- Best mean pack:
+  - `six_compass_with_pull`: about `0.825`
+- Worst lane for the best pack:
+  - `permute_mix_0.60`: about `0.658`
+- Comparison:
+  - `five_groove_compass`: about `0.818`
+  - `all_axes`: about `0.816`
+  - `three_fit_inertia_pull`: about `0.790`
+  - `one_scalar_spine`: about `0.748`
+
+Best-pack map:
+
+- Uniform smear stays strong:
+  - `uniform_mix_0.30`: about `0.947`
+  - `uniform_mix_0.45`: about `0.951`
+  - `uniform_mix_0.60`: about `0.934`
+- Gaussian degrades only at high noise:
+  - `gaussian_mix_0.60`: about `0.788`
+- Delayed and cross-family degrade gradually:
+  - `delayed_uniform_0.60`: about `0.761`
+  - `cross_family_0.60`: about `0.749`
+- High permutation is the sharpest break:
+  - `permute_mix_0.60`: about `0.658`
+
+Safest read:
+
+- The compact chooser handles smear better than internal rearrangement.
+- High permutation / scrambled-order failure is now the main weak point.
+- This fits the earlier "contradiction scrubber" story: order-scramble is not the same problem as noisy blur.
+
+So the next best test is:
+
+```text
+can an explicit order-scramble repair layer rescue the compact chooser
+without hurting the normal lanes?
+```
+
+## Order-Scramble Repair Pass
+
+Question:
+
+- Can rank-shape comparison rescue high internal permutation without hurting normal lanes?
+
+Setup:
+
+- Add sorted-profile comparisons:
+  - helper vs wake/deep after sorting vector values
+  - damaged vs helper/wake/deep after sorting vector values
+  - scramble signatures from sorted cosine minus normal cosine
+- Compare:
+  - `baseline_six`
+  - `rank_shape_only`
+  - `helper_rank_only`
+  - `damage_rank_only`
+  - `scramble_signature_only`
+  - `six_plus_rank_shape`
+  - `six_plus_scramble_signature`
+
+First result:
+
+- `six_plus_rank_shape`: almost perfect
+- `rank_shape_only`: almost perfect
+- `damage_rank_only`: almost perfect
+- `helper_rank_only`: baseline-ish
+- `scramble_signature_only`: baseline-ish
+
+Initial temptation:
+
+```text
+rank-shape repair solves order-scramble
+```
+
+But the ablation warns:
+
+```text
+damage-rank alone carries almost the whole result
+```
+
+So the safer read is:
+
+- Rank shape contains a powerful clue.
+- But it may be reading how the toy damage generator builds internal-vs-coherent cases.
+- This needs controls before any promotion.
+
+## Coherent-Chunk Control
+
+Question:
+
+- Was the rank-shape win only because coherent `cross_family` used a full-family truth histogram while internal variants used local chunks?
+
+Setup:
+
+- Replace coherent full-family truth with a local cross-family chunk.
+- Re-run the same rank-shape repair packs.
+
+Result:
+
+- `six_plus_rank_shape`: about `0.999`
+- `rank_shape_only`: about `0.997`
+- `damage_rank_only`: about `0.991`
+- `baseline_six`: about `0.824`
+
+Safest read:
+
+- The win is not only a full-truth-vs-chunk size artifact.
+- But `damage_rank_only` still carries most of the result.
+- That means rank-profile matching is the real control.
+
+## Rank-Matched Control
+
+Question:
+
+- Does the repair survive after coherent and internal variants are forced to share the same ranked-value profile?
+
+Setup:
+
+- Build coherent `cross_rankmatched` events:
+  - keep the cross-family local ordering
+  - assign it the same sorted value profile as the local readable signal
+- This removes the easy rank-profile shortcut.
+
+Result:
+
+- `damage_rank_only`: about `0.748`
+- `rank_shape_only`: about `0.748`
+- `baseline_six`: about `0.719`
+- `six_plus_rank_shape`: about `0.706`
+- `six_plus_scramble_signature`: about `0.705`
+
+Safest read:
+
+- The near-perfect rank-shape result was mostly a toy construction artifact.
+- It came from rank-profile separability, not a general order-scramble repair law.
+- Once rank profiles are matched, the easy repair disappears.
+
+This is a good demotion.
+
+The result now says:
+
+```text
+rank shape is a useful diagnostic,
+but not the final repair
+```
+
+Next target:
+
+```text
+order-aware repair after rank-profile shortcuts are removed
+```
+
+That means the next repair cannot only ask:
+
+```text
+do the sorted shapes match?
+```
+
+It has to ask something closer to:
+
+```text
+which local order relations survive enough to recover continuity?
+```
+
+## Order-Relation Control
+
+Question:
+
+- After rank-profile shortcuts are removed, do order relations recover the chooser?
+
+Setup:
+
+- Use the rank-matched control world, where coherent and scrambled variants share the same ranked-value profile.
+- Test:
+  - baseline 6D chooser
+  - order-relation features only
+  - baseline plus order-relation features
+- Order-relation features include rank correlations and top-index overlaps between damaged, helper, wake, and deep-trace vectors.
+
+Result:
+
+- `baseline_six`: about `0.719`
+- `order_relation_only`: about `0.780`
+- `baseline_plus_order_relation`: about `0.827`
+
+Best-pack scenario map:
+
+- Most lanes recover into the `0.82` to `0.87` range.
+- Strong examples:
+  - `current`: about `0.860`
+  - `uniform_mix_0.60`: about `0.861`
+  - `gaussian_mix_0.60`: about `0.836`
+  - `delayed_uniform_0.60`: about `0.840`
+- Weak lanes remain:
+  - `cross_family_0.60`: about `0.495`
+  - `permute_mix_0.60`: about `0.733`
+
+Safest read:
+
+- This is the best honest repair signal after the rank-shape demotion.
+- Once the easy rank-profile shortcut is removed, order relations still carry meaningful signal.
+- But they do not fully solve the hard lanes.
+
+So the updated sentence is:
+
+```text
+rank shape was mostly shortcut,
+but order relation is a real partial repair signal
+```
+
+Next target:
+
+```text
+transition-aware repair:
+not just which bins are ordered,
+but how local order changes across time
+```
+
+## Flow-Continuity Control
+
+Question:
+
+- Does the chooser improve when it tracks local order moving through time?
+
+Setup:
+
+- Stay in the hard rank-matched control world, where easy ranked-value shortcuts are removed.
+- Add flow features:
+  - damaged movement from previous local readable state
+  - helper movement
+  - wake movement
+  - deep-trace movement
+  - cosine, rank-correlation, and top-delta overlap between those local motions
+- Compare:
+  - baseline 6D chooser
+  - order-relation only
+  - flow only
+  - baseline plus flow
+  - order plus flow
+  - baseline plus order plus flow
+
+Result:
+
+- `baseline_six`: about `0.726`
+- `flow_only`: about `0.754`
+- `order_relation_only`: about `0.786`
+- `baseline_plus_flow`: about `0.776`
+- `baseline_plus_order_flow`: about `0.818`
+- `order_plus_flow`: about `0.852`
+
+Best-pack map:
+
+- `order_plus_flow` is best overall.
+- It holds most lanes in the `0.85` to `0.88` range.
+- High permutation improves strongly:
+  - `permute_mix_0.60`: about `0.877`
+- The main remaining weak lane:
+  - `cross_family_0.60`: about `0.718`
+
+Safest read:
+
+- Flow is not enough by itself.
+- Order is not enough by itself.
+- Order plus flow is the strongest honest signal after rank-profile shortcuts are removed.
+
+So the current best sentence is:
+
+```text
+the observer repairs better by tracking ordered motion,
+not by staring at frozen shape
+```
+
+Why this matters:
+
+- This directly supports the newer correction:
+
+```text
+not frozen snapshot repair
+but flow-continuity repair
+```
+
+- It also gives us the next weak point:
+
+```text
+high coherent cross-family mixture
+```
+
+That suggests the next chooser may need to distinguish:
+
+```text
+new coherent external flow
+from
+old internal scrambled flow
+```
+
+## External-Flow Signal
+
+Question:
+
+- Does an external-flow signal help distinguish new coherent flow from old scrambled flow?
+
+Setup:
+
+- Stay in the rank-matched flow-control world.
+- Add features intended to detect whether damaged motion is pulled more by the helper stream than by old deep inertia.
+- Compare:
+  - `order_plus_flow`
+  - `external_flow_only`
+  - `order_flow_external`
+
+Result:
+
+- `order_plus_flow`: about `0.852`
+- `order_flow_external`: about `0.851`
+- `external_flow_only`: about `0.754`
+- The weak lane does not improve:
+  - `cross_family_0.60`: still about `0.718`
+
+Safest read:
+
+- Simple external-flow pull does not solve the remaining coherent-cross-family weak lane.
+- The problem is probably not just "can the observer detect an external stream?"
+- The harder question is likely:
+
+```text
+can the observer afford to integrate a coherent outside stream
+without losing its own continuity?
+```
+
+Next target:
+
+```text
+update-cost / boundary-compatibility / integration-capacity
+```
+
 Interpretation:
 
 - This branch helps the observer-side language a lot:
@@ -1868,6 +2282,386 @@ the witness gets saturated, knotted, rigid, or re-embedded
 
 - That fits the newer GHP correction better than older "broken reality" wording.
 - Keep it as a phenomenology / structure note for memory, inertia, witness capacity, and re-embedding.
+
+## Integration-Capacity Control
+
+Question:
+
+- Does update-cost / boundary-compatibility help when coherent external flow is hard to integrate?
+
+Setup:
+
+- Stay in the rank-matched flow-control world.
+- Add capacity features:
+  - novelty cost from damaged state to deep trace
+  - boundary cost from helper to wake
+  - deep update cost from helper to deep trace
+  - self-stability between wake and deep trace
+  - external compatibility between damaged, helper, and wake
+  - integration capacity and rupture pressure
+  - helper-vs-wake and helper-vs-deep flow costs
+- Compare:
+  - `order_plus_flow`
+  - `capacity_only`
+  - `order_flow_capacity`
+  - `order_flow_capacity_external`
+
+Result:
+
+- `order_plus_flow`: about `0.852`
+- `order_flow_capacity`: about `0.848`
+- `order_flow_capacity_external`: about `0.848`
+- `capacity_only`: about `0.737`
+- Naively adding capacity does not fix the hard lane:
+  - `cross_family_0.60`: about `0.718` for `order_plus_flow`
+  - about `0.673` to `0.699` after adding capacity packs
+- But capacity-only is strong in that specific lane:
+  - `cross_family_0.60`: about `0.880`
+- Its cost is severe elsewhere:
+  - `permute_mix_0.60`: about `0.524`
+  - `gaussian_mix_0.60`: about `0.660`
+
+Safest read:
+
+- Capacity language is useful, but not as a general chooser.
+- Ordered motion remains the best broad signal.
+- Capacity looks more like a specialized alarm for coherent outside flow: it sees the high cross-family lane, but mistakes other hard motion cases.
+- That means the next problem is gating, not direct fusion.
+
+So the updated sentence is:
+
+```text
+the receiver's capacity is not the steering wheel,
+but it may be the alarm bell for coherent outside flow
+```
+
+Next target:
+
+```text
+gated re-embedding:
+when should the chooser trust ordered flow,
+and when should it hand control to the capacity alarm?
+```
+
+## Gated Re-embedding
+
+Question:
+
+- Can capacity act as a gated alarm instead of a general chooser?
+
+Setup:
+
+- Use a targeted hard-lane grid rather than the full broad sweep:
+  - current
+  - high coherent cross-family mix
+  - high permutation
+  - high Gaussian
+  - high delayed uniform
+  - high uniform smear
+- Train on train seeds and evaluate on held-out test seeds.
+- Compare:
+  - `order_plus_flow`
+  - `capacity_only`
+  - `trained_capacity_gate`
+  - `disagreement_capacity_gate`
+  - `oracle_order_or_capacity`
+
+Result:
+
+- `oracle_order_or_capacity`: about `0.868`
+- `trained_capacity_gate`: about `0.837`
+- `disagreement_capacity_gate`: about `0.837`
+- `capacity_only`: about `0.824`
+- `order_plus_flow`: about `0.809`
+
+Scenario clue:
+
+- The trained gate strongly improves coherent cross-family lanes:
+  - `cross_family_0.45`: about `0.991`
+  - `cross_family_0.60`: about `0.984`
+- It opens only sparingly:
+  - `cross_family_0.60`: about `15%`
+  - `current`: about `1%`
+  - `delayed_uniform_0.60`: about `2%`
+- But it still loses performance in some non-cross lanes compared with the oracle ceiling.
+
+Safest read:
+
+- This is a real architecture clue, not a proof.
+- Capacity should not replace ordered flow.
+- Capacity may serve as a sparse alarm for coherent outside flow.
+- The oracle ceiling says there is learnable headroom, but the current gate is still not the final form.
+
+So the updated sentence is:
+
+```text
+normal repair follows ordered motion;
+foreign coherent flow may need a sparse re-embedding gate
+```
+
+Next target:
+
+```text
+make the gate less blunt:
+separate coherent outside flow from other hard motion
+without sacrificing the ordinary lanes
+```
+
+## Gate Hardening Scout
+
+Question:
+
+- Can the capacity alarm become less blunt by separating coherent outside flow from other hard motion?
+
+Setup:
+
+- Use a shortened scout run:
+  - 64 time steps
+  - one trial per scenario
+  - two train seeds
+  - one held-out test seed
+- Compare:
+  - `order_plus_flow`
+  - `capacity_only`
+  - `opportunity_linear_gate`
+  - `coherence_linear_gate`
+  - `coherence_margin_gate`
+  - `threshold_gate`
+  - `oracle_order_or_capacity`
+
+Result:
+
+- `oracle_order_or_capacity`: about `0.882`
+- `coherence_margin_gate`: about `0.844`
+- `coherence_linear_gate`: about `0.843`
+- `opportunity_linear_gate`: about `0.838`
+- `threshold_gate`: about `0.836`
+- `capacity_only`: about `0.824`
+- `order_plus_flow`: about `0.803`
+
+Gate clue:
+
+- The coherent-foreign gate opens heavily on the cross-family lanes:
+  - `cross_family_0.45`: about `0.929`
+  - `cross_family_0.60`: about `0.954`
+- It stays closed on the hardest non-cross lanes:
+  - `gaussian_mix_0.60`: `0.000`
+  - `permute_mix_0.60`: `0.000`
+- It still opens too often on ordinary current:
+  - `current`: about `0.239`
+- A margin/disagreement guard reduces ordinary-current openings:
+  - `current`: about `0.026`
+
+Safest read:
+
+- This is scout telemetry only, not promotion.
+- But the direction is clean:
+
+```text
+the gate should detect outside-but-coherent structure,
+not generic capacity usefulness
+```
+
+Next target:
+
+```text
+full-size coherence-gate rerun,
+then reduce false openings on ordinary current
+```
+
+## Coherence-Gate Full Rerun
+
+Question:
+
+- Does the coherent-foreign gate survive the full targeted hard-lane grid?
+
+Setup:
+
+- Use the full target grid:
+  - current
+  - cross-family `0.30`, `0.45`, `0.60`
+  - delayed uniform `0.60`
+  - Gaussian `0.60`
+  - permutation `0.60`
+  - uniform `0.60`
+- Use all train seeds and held-out test seeds.
+- Use three trials per scenario and the full time horizon.
+- Compare:
+  - `order_plus_flow`
+  - `capacity_only`
+  - `opportunity_linear_gate`
+  - `coherence_linear_gate`
+  - `coherence_disagreement_gate`
+  - `coherence_margin_gate`
+  - `threshold_gate`
+  - `oracle_order_or_capacity`
+
+Result:
+
+- `oracle_order_or_capacity`: about `0.868`
+- `coherence_linear_gate`: about `0.840`
+- `coherence_disagreement_gate`: about `0.840`
+- `coherence_margin_gate`: about `0.840`
+- `opportunity_linear_gate`: about `0.838`
+- `threshold_gate`: about `0.833`
+- `capacity_only`: about `0.824`
+- `order_plus_flow`: about `0.809`
+
+Gate clue:
+
+- Unguarded coherence gate opens very strongly on coherent cross-family lanes:
+  - `cross_family_0.45`: about `0.961`
+  - `cross_family_0.60`: about `0.974`
+- It also opens too often on ordinary current:
+  - `current`: about `0.380`
+- The margin/disagreement guard keeps current openings sparse:
+  - `current`: about `0.022`
+- It also avoids false openings on other hard non-cross lanes:
+  - `gaussian_mix_0.60`: about `0.001`
+  - `permute_mix_0.60`: `0.000`
+  - `delayed_uniform_0.60`: about `0.001`
+
+Safest read:
+
+- The scout direction survived the full rerun.
+- The gain is modest, not explosive.
+- The best current gate is not generic "capacity usefulness."
+- It is:
+
+```text
+detect outside-but-coherent structure,
+then open only when sparse guard conditions allow it
+```
+
+Remaining gap:
+
+- Oracle order-or-capacity stays higher at about `0.868`.
+- The current learned gate is useful but not final.
+- Next target is to learn the missing oracle-like context without illegal truth access.
+
+## Exact-Anchor Rigor Check
+
+Question:
+
+- Can the exact algebraic anchors in the core paper survive a small machine-check harness with negative controls?
+
+Setup:
+
+- Add `experiments/ghp_rigor_check.py`.
+- Check:
+  - `VPH-001`: Schwarzschild static-observer fixed point at `r = phi r_s`
+  - `MRK-001`: Perron-Frobenius normalized Fibonacci Markov kernel
+  - `MTC-001`: rank-2 fusion-ring floor `x^2 = 1 + m x`, with pointed `m=0` excluded
+- Include negative controls:
+  - perturbed VPH radius must fail
+  - wrong lower-row Markov kernel must drift
+  - pointed rank-2 control is smaller but excluded from the non-pointed lane
+
+Result:
+
+- `VPH-001`: pass
+- `MRK-001`: pass
+- `MTC-001`: pass
+- report:
+  - `experiments/ghp_rigor_check_outputs/report.md`
+
+Safest read:
+
+- This is algebraic anchor validation only.
+- It does not prove GHP.
+- It does not prove physical selection.
+- It does not solve the write-law.
+- It does harden the paper's exact-check lane and gives future Codex runs a clean target to rerun.
+
+So the updated sentence is:
+
+```text
+the exact anchors click shut,
+but the bridge from anchors to physics remains the open problem
+```
+
+## Oracle-Gap Probe
+
+Question:
+
+- Can legal local context learn when capacity should override order, without using illegal truth access?
+
+Setup:
+
+- Add `experiments/ghp_boundary_access_oracle_gap_probe.py`.
+- Default mode is a scout pass:
+  - scout hard-lane grid
+  - two train seeds
+  - one held-out test seed
+  - one trial per scenario
+  - 64 time steps
+- Full confirmation can be run later with:
+
+```bash
+GHP_ORACLE_GAP_FULL=1 python3 experiments/ghp_boundary_access_oracle_gap_probe.py
+```
+
+Result:
+
+- `oracle_order_or_capacity`: about `0.882`
+- best legal local-context gate: about `0.849`
+- `coherence_margin_gate`: about `0.844`
+- `capacity_only`: about `0.824`
+- `order_plus_flow`: about `0.803`
+
+Bucket map:
+
+- both heads correct: about `0.745`
+- order-only correct: about `0.058`
+- capacity-only correct: about `0.080`
+- both heads wrong: about `0.118`
+
+Safest read:
+
+- Richer legal context can shave a little more off the oracle gap.
+- The gap is not just "find a better switch."
+- A meaningful part of the remaining problem is a third state:
+
+```text
+neither order nor capacity is reliable yet
+```
+
+## Failure-Sentinel Probe
+
+Question:
+
+- Can legal local context detect the both-wrong rows where neither order-plus-flow nor capacity-only works?
+
+Setup:
+
+- Add `experiments/ghp_boundary_access_failure_sentinel.py`.
+- Default mode is a scout pass matching the oracle-gap scout.
+- Full confirmation can be run later with:
+
+```bash
+GHP_FAILURE_SENTINEL_FULL=1 python3 experiments/ghp_boundary_access_failure_sentinel.py
+```
+
+Result:
+
+- best sentinel: `order_capacity_context_sparse_5pct_false_alarm`
+- open rate: about `0.080`
+- precision: about `0.577`
+- both-wrong recall: about `0.390`
+- both-correct false open rate: about `0.045`
+- order-only and capacity-only false open rate: `0.000`
+
+Safest read:
+
+- "I should not decide yet" is partially learnable.
+- This is not a win condition by itself.
+- It is a strong architectural clue: the next Boundary Access policy should have three actions, not two.
+
+```text
+hold order,
+open to capacity,
+or pause and refetch / rebuild evidence
+```
 
 ## Specialist-Facing Framing
 

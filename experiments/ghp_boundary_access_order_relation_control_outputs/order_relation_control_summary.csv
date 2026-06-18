@@ -1,0 +1,4 @@
+pack,dimensions,overall_accuracy
+baseline_plus_order_relation,14,0.826832794107524
+order_relation_only,8,0.7804501961864115
+baseline_six,6,0.7193364080677359

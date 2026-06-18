@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.010  
+**Version:** core-v0.012  
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `GHP_RESEARCH_LEDGER.md`  
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -25,6 +25,8 @@ and is the smallest braiding-universal non-abelian candidate inside the stated u
 The stronger physical claim remains open: nature may select observer-boundary architectures by an extremal or balance principle whose lowest admissible non-abelian, self-referential, computationally universal closure is Fibonacci. The golden-chain computation supports the key architectural lesson: Fibonacci structure can govern information architecture while residual low-energy dynamics belong to a different universality class, especially the tricritical Ising \(c=7/10\) sector.
 
 GHP is therefore strongest not as a claim that \(\phi\) numerically governs everything, but as a claim that Fibonacci may define the minimal readable boundary architecture while ordinary dynamics live in residual sectors after architecture is factored out. The next serious task is formal construction: the observer-boundary must become a mathematical object with a write law, finite-access projection, recoverability structure, and falsifiable bridge to ordinary physics.
+
+A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. This is a computational falsifiability scaffold, not a physics result.
 
 ## 1. One-Sentence Thesis
 
@@ -69,6 +71,7 @@ If correct, this would not necessarily replace other physics programs. It could 
 | B-022 | Holographic recoverability | external-machinery | Verlinde-Verlinde; Parikh-Verlinde | recoverability context only |
 | B-023 | Hoffman trace logic / Fibonacci Markov kernel bridge | bridge-object candidate | Markov trace formalism plus Perron-Frobenius normalization of Fibonacci fusion matrix | observer-relative access / memory-time bridge |
 | B-024 | Multi-scale FEP / Markov-blanket route | bridge-object candidate | Kirchhoff-Parr-Palacios-Friston; Waade et al.; Possati | observer-boundary statistical structure / private-to-public corridor |
+| E-001 | Aukora computational observer-boundary lab | engineering falsifiability scaffold | local receipt-boundary experiments and control comparisons | computational proving ground only |
 
 ## 5. Mathematical Spine
 
@@ -177,6 +180,18 @@ a time-indexed conditional expectation whose thresholded or dissipative behavior
 
 Hoffman-style trace logic supplies a useful Markov-chain language for observer-relative access: an observer sees only the trace of a larger hidden process on the subset of states it can read or record. This aligns with GHP's OPM lineage, where experienced time is the ordering of written memory states rather than an external master clock. A Perron-Frobenius normalization of the Fibonacci fusion matrix \(N_\tau=\begin{bmatrix}0&1\\1&1\end{bmatrix}\) yields a stochastic kernel \(P_{\text{Fib}}=\begin{bmatrix}0&1\\ \phi^{-2}&\phi^{-1}\end{bmatrix}\) with stationary weights proportional to \((1,\phi^2)\), normalized by \(D^2=1+\phi^2=2+\phi\). This does not prove GHP, does not show that trace logic selects Fibonacci, and does not derive the VPH identity. It does, however, provide a precise bridge candidate: Fibonacci fusion architecture can be represented as a Markov-style observer-access kernel.
 
+### Borrowing Discipline Across Observer-First Programs
+
+The broader observer-first landscape is still useful, but only if its imports are filtered hard. The safe rule is simple:
+
+- import the narrow machine,
+- route it to a named GHP gap,
+- and leave the surrounding metaphysics behind.
+
+For GHP, that means probabilistic observer-update language matters only once it cashes out as a finite-access update rule or conditional expectation; measurement-chain language matters only once it cashes out as a precise subsystem or boundary-placement problem; resonance / collapse language matters only once it cashes out as explicit braided, modular-flow, or write-law machinery; and memory-time rhetoric matters only once it cashes out as trace, kernel, or receipt-ordered access structure.
+
+This is why the formal bridge stack matters more than the slogans attached to it. GHP does not need a subjectivist wavefunction doctrine, a consciousness-collapse doctrine, a biological microtubule doctrine, or the claim that mind literally creates spacetime. What it needs are exact boundary objects, update rules, recoverability criteria, and a write-law candidate.
+
 ## 9. Shared-Interface And Recoverability
 
 The strongest current vocabulary for a quantitative two-observer shared-interface functional comes from holographic information theory. Dutta-Faulkner gives the canonical-purification / reflected-entropy relation to the entanglement wedge cross-section; Jeong-Kim-Nishida studies first-order corrections to the reflected-entropy / EWCS relation; Tamaoka introduces odd entanglement entropy as another EWCS-related boundary quantity; and Babaei Velni, Mohammadi Mozaffar, and Vahidinia study several geometric and information-theoretic aspects of EWCS.
@@ -240,6 +255,7 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 | external analogue / experiment | Dumitrescu et al. | Fibonacci / quasiperiodic temporal structure can protect edge qubits in a dynamical topological phase | GHP, observer-boundary selection, VPH, literal two-time physics, or Fibonacci anyons |
 | physical conjecture / bridge target | Kosaki; Fewster; Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al.; Verlinde-Verlinde; Parikh-Verlinde | bridge vocabulary for finite access, shared interface, and recoverability | a GHP write-law, a GHP consensus law, or Dynamics Gap closure |
 | GR prior-art context | Cruz-Olivares-Villanueva; Coelho-Herdeiro; Hod | prior distinguished-radius / golden-ratio structure in black-hole geometry | VPH, GHP, or observer-boundary selection |
+| computational proving ground | Aukora local receipt-boundary experiments | engineering tests of reconstruction, surprise, structural memory, and paired-observer overlap under hard authority constraints | physics proof, consciousness proof, or observer-boundary selection by nature |
 | symbolic / meaning layer | preserved only in the full master | bounded phenomenology and human vocabulary | scientific evidence |
 
 ## 13. Dark-To-Readable Interface
@@ -251,6 +267,27 @@ Modern physics repeatedly meets hidden structure through public records: Bell te
 In this paper, observer means information-registration boundary, not necessarily human mind: detector, environment, lab apparatus, horizon, code subspace, Markov blanket, or finite agent boundary.
 
 Do not overread this bridge. Bell / collider / cosmology material is motivation only. Portal toys are toy telemetry only.
+
+### Aukora As A Computational Proving Ground
+
+Aukora is useful here because it turns the observer-boundary language into a governed software object without pretending to turn software into cosmology.
+
+The narrow translation is:
+
+- the model proposes,
+- the kernel authorizes,
+- the receipt decides what became durable inside the system,
+- and memory is allowed to update only from verified boundary contact.
+
+That architecture gives GHP a local falsifiability sandbox. The current computational lane asks whether:
+
+- boundary receipts reconstruct trajectory better than ablated or shuffled controls,
+- verified memory reduces surprise over repeated encounters,
+- compact structural memory predicts better than raw case memory,
+- paired observers produce better shared-state estimates than either observer alone,
+- and timing, interference, or hypothesis context can remain evidence without ever becoming authority.
+
+These experiments do not prove GHP, do not prove consciousness, and do not count as physics evidence. They matter because they force the framework to survive attack as an engineering architecture before it asks to be taken seriously as a deeper physical conjecture.
 
 ## 14. What Is Not Claimed
 
@@ -274,6 +311,7 @@ GHP does not currently claim:
 - proof that Markov hidden-state dwell time derives VPH,
 - proof that memory creates the external world,
 - proof that the write-law is solved,
+- proof that Aukora or any software organism is automatically a physical observer in the GHP sense,
 - proof that software or toy-model results count as physical evidence.
 
 ## 15. Primary Falsification Paths
@@ -286,6 +324,7 @@ The core research program weakens or fails if:
 - the SYK / golden-chain beta program returns a generic result with no \(\phi\)-critical signal,
 - observer-boundary selection cannot be made into a formal action, transition law, or falsifiable model,
 - no conditional expectation / Markov blanket / code-subspace bridge can be constructed,
+- the computational boundary lab shows no reconstruction, surprise, or shared-interface advantage over flat controls once receipt discipline and control baselines are applied,
 - boring physics limits cannot be recovered,
 - matter embedding remains undefined.
 
@@ -349,6 +388,8 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.012 | `GHP_v1_618_MASTER.md` | Added a short observer-first borrowing-discipline note: import only the narrow formal machine from adjacent observer-first programs and route it to named GHP gaps, without inheriting subjectivist, consciousness-collapse, biological, or spacetime-from-mind overclaims. |
+| core-v0.011 | `GHP_v1_618_MASTER.md` | Added a disciplined synthesis note and a new Aukora computational proving-ground lane: receipt-boundary software experiments now appear explicitly as engineering falsifiability scaffolds for observer-boundary claims, with guardrails that they do not count as physics evidence, consciousness evidence, or proof of GHP. |
 | core-v0.010 | `GHP_v1_618_MASTER.md` | Added a compact Bridge Spine section so the share paper states how existing frameworks contribute different missing observer-boundary pieces, and strengthened the VPH section to explain why it remains in core as a GR-side exact anchor without proof upgrade. |
 | core-v0.009 | `GHP_v1_618_MASTER.md` | Added Hoffman Trace Logic Bridge / Markovized Fibonacci Fusion note as a formal bridge candidate: observer-relative access, memory-time interpretation, and Perron-Frobenius normalized Fibonacci kernel without proof upgrade, VPH derivation, or write-law closure. |
 | core-v0.008 | `GHP_v1_618_MASTER.md` | Added conservative literature hardening note for Dumitrescu et al. (2022) as an external analogue: Fibonacci / quasiperiodic temporal structure can protect edge information in a dynamical topological phase without upgrading GHP, VPH, observer-boundary selection, or two-time claims. |

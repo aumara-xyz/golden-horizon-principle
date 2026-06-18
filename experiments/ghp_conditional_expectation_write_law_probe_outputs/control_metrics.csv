@@ -1,0 +1,6 @@
+policy,replay_accuracy,false_write_rate,missed_write_rate,public_bits,inadmissible
+thresholded_projection,1.0,0.0,0.0,264576,False
+always_write,0.0,1.0,0.0,419512,False
+never_write,0.0008333333333333334,0.0,1.0,190056,False
+shuffled_projection,0.0,0.29460093896713613,0.7212643678160919,263840,False
+raw_state_leak_cheat,1.0,0.0,0.0,264976,True

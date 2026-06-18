@@ -1,0 +1,6 @@
+pack,mean_accuracy,worst_scenario,worst_accuracy,best_scenario,best_accuracy,scenarios_below_075,scenarios_below_070
+six_compass_with_pull,0.8245620625277326,permute_mix_0.60,0.6575637800934243,uniform_mix_0.45,0.9512544802867383,2,1
+five_groove_compass,0.8177543195879711,permute_mix_0.60,0.6406755300035932,uniform_mix_0.45,0.953405017921147,4,3
+all_axes,0.8163842270778005,permute_mix_0.45,0.6892634664712349,uniform_mix_0.60,0.9578163771712159,3,1
+three_fit_inertia_pull,0.7899304989688839,cross_family_0.30,0.7455110497237569,permute_mix_0.30,0.841374269005848,2,0
+one_scalar_spine,0.7484409982200153,uniform_mix_0.15,0.737281976744186,cross_family_0.15,0.7653670530382859,16,0

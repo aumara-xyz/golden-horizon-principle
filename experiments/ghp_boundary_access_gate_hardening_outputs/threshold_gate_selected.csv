@@ -1,0 +1,2 @@
+require_disagreement,min_capacity_margin,max_order_margin,train_accuracy,train_open_rate
+True,0.05,0.5499999999999999,0.823170731707317,0.12728658536585366

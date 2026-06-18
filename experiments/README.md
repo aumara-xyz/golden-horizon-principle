@@ -8,9 +8,20 @@ They are used to clarify candidate mechanisms, engineering heuristics, and failu
 
 Included:
 
+- Exact-anchor rigor checks for algebraic GHP claims
 - Ricci-Fibonacci toy
 - Dark-to-readable portal toy
+- Music / surprise / horizon claim audit
+- Aukora loop falsifiability probe
+- Receipt boundary reconstruction probe
+- Multi-observer interference probe
+- Two-observer shared-reality probe
+- Swarm quorum probe
+- Hypothesis context authority probe
+- Structural vs case memory probe
+- Conditional expectation write-law probe
 - Ternary boundary operator toy
 - Golden Zipper observer-memory corridor
 - Boundary Access Channel corridor
+- Boundary Access oracle-gap and failure-sentinel probes
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story
