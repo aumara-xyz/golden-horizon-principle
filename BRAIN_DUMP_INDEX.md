@@ -1,6 +1,6 @@
 # Brain Dump Index
 
-This file gives the public repo a coordinated map of the wider GHP organism without publishing the private master document.
+This file gives the public repo a coordinated map of the wider GHP organism. The default package is still the public priority layer, but this repo may also carry explicit archival mirrors when Peter requests publication.
 
 ## One-Line Thesis
 

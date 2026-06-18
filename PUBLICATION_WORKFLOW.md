@@ -2,7 +2,7 @@
 
 This repository is the public priority package for the Golden Horizon Principle.
 
-The full local working master remains private unless Peter explicitly requests a specific file be made public.
+The full local working master remains private unless Peter explicitly requests a specific file be made public. When that happens, the repo may include an explicit archival mirror alongside the normal public package.
 
 ## Sync Rule
 

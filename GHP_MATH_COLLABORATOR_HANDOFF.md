@@ -9,7 +9,7 @@ The best current public entry points are:
 3. `experiments/ghp_bridge_lab_notebook.md`
 4. `GHP_RECENT_RESEARCH_DUMP_2026-05-28.md`
 
-The full archival master referenced throughout the project is `GHP_v1_618_MASTER.md`. It is not published inside this repo.
+The full archival master referenced throughout the project is `GHP_v1_618_MASTER.md`. It is now mirrored inside this repo by explicit author request, while the share paper and public ledger remain the default first reader path.
 
 ## One-Paragraph Explanation
 

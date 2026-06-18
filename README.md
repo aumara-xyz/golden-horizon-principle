@@ -14,6 +14,7 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 
 - A clean public priority package.
 - A conservative share layer distilled from a larger private working master.
+- An explicit archival mirror for selected master files when Peter requests publication.
 - A timestampable research packet for review, citation, and critique.
 - A coordinated public map of the science, symbolic, and engineering lanes of GHP.
 
@@ -27,7 +28,9 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 
 ## Core Files
 
+- `GHP_v1_618_MASTER.md`
 - `GHP_CORE_SHARE_PAPER.md`
+- `GHP_RESEARCH_LEDGER.md`
 - `VIVIANI_PHI_HORIZON.md`
 - `RESEARCH_LEDGER.md`
 - `GHP_MATH_COLLABORATOR_HANDOFF.md`
