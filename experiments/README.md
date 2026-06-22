@@ -32,6 +32,8 @@ Included:
 - Live Telemetry Bridge proxy
 - Boundary Trace Refinement probes
 - Boundary Sequence & Witness probes
+- Boundary Snap / Reconnection probe
+- VPH extendability / coordinate-artifact probe
 - Shear Continuity Memory probe
 - Aukora HRT-002 integration handoff
 - Aukora HRT-002 Guardian build prompt

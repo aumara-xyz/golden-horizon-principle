@@ -29,8 +29,15 @@ Important prior lab summary, for context only:
 - Witness footprint survived as active held tension:
   action F1 0.9983.
   private reconstruction 0.0272.
+- Witness plateau and boundary hysteresis survived as telemetry candidates:
+  WPF-002 plateau gap 0.0214.
+  HYS-001 hysteresis gap 0.1292.
 - Sequence aftershock did not survive:
   next-stability gain only 0.00028.
+- Snap/reconnection did not survive promotion:
+  SNAP-001 looked promising, but fake high-confidence spikes fooled it.
+  SNAP-002 fake-fire rate 0.9711.
+  SNAP-003 context guard F1 only 0.3505.
 - Full Shear Engine did not survive:
   shear memory did not beat memoryless or forced coherence.
 
@@ -42,10 +49,12 @@ Build now:
 - local fixture test for mode signal vs shuffled control;
 - local fixture test for private/authority non-reconstruction;
 - witness held-tension telemetry as advisory write-only metadata.
+- optional transition-window logging for offline snap/hysteresis retesting only.
 
 Do not build:
 - full Shear Engine;
 - sequence-aftershock law;
+- live snap/reconnection decision logic;
 - Fibonacci cadence;
 - latency-as-primary Chronos payload;
 - GHP physics / Hawking / consciousness / Markov-blanket claims;
@@ -78,6 +87,7 @@ Required safe event schema:
 - safeEntropyOrLogprobProxy if already available
 - stabilityDelta or hypothesisStabilityDelta if already available
 - heldTensionScore optional, advisory only
+- transitionWindowId optional, offline analysis only
 - source: activeInference | gate | hypothesisMemory | testFixture
 
 Forbidden fields, including nested keys:
@@ -101,10 +111,12 @@ Security conditions:
    Unknown fields do not pass through.
 3. Witness held-tension score is write-only to telemetry.
    It must have no read path into gate/access-control logic.
-4. Telemetry cannot authorize, deny, retry, accelerate, or alter any gate decision.
-5. Latency is secondary evidence only. Never authority.
-6. No raw PoP material or signature body in telemetry.
-7. No generic meta: any / payload: any escape hatch unless recursively scrubbed.
+4. Transition-window / snap / hysteresis metadata is offline-analysis only.
+   It must have no read path into gate/access-control logic.
+5. Telemetry cannot authorize, deny, retry, accelerate, or alter any gate decision.
+6. Latency is secondary evidence only. Never authority.
+7. No raw PoP material or signature body in telemetry.
+8. No generic meta: any / payload: any escape hatch unless recursively scrubbed.
 
 Tests to add:
 1. Sanitizer allows only approved public fields.
@@ -113,13 +125,17 @@ Tests to add:
 4. Fixture write/witness/release events produce sanitized trace records.
 5. Trace recording cannot affect gate verdict.
 6. Held-tension metadata cannot grant capability or alter verdict.
-7. Stored traces contain zero forbidden keys.
-8. Synthetic fixture classifier/control:
+7. Transition-window metadata cannot grant capability or alter verdict.
+8. Stored traces contain zero forbidden keys.
+9. Synthetic fixture classifier/control:
    - public trace predicts receiptMode above shuffled labels by at least 0.15 macro-F1;
    - private/authority reconstruction from public trace stays near chance;
    - inadmissible private-field positive control only works when illegally injected and must be marked forbidden.
-9. Latency-only fixture is insufficient or secondary; do not treat latency as the main carrier.
-10. Optional temporal-channel guard:
+10. Fake-snap safety:
+   - high confidence/stability spikes without durable write must not trigger live behavior;
+   - snap/reconnection labels, if present, must be offline-only and explicitly non-authoritative.
+11. Latency-only fixture is insufficient or secondary; do not treat latency as the main carrier.
+12. Optional temporal-channel guard:
    - rate limit, aggregate, or jitter export if telemetry emission cadence itself could leak gate timing;
    - add a test or TODO proving timing is not a covert authority or private-state channel.
 
@@ -131,6 +147,7 @@ GREEN only if:
 - no forbidden fields are stored;
 - telemetry has no authorization path;
 - witness metadata is advisory/write-only;
+- transition-window/snap metadata is offline-only;
 - local HRT-002 fixture test passes.
 
 YELLOW if:
@@ -143,6 +160,7 @@ RED if:
 - scanner is blocklist-only or non-recursive;
 - arbitrary meta/payload bypass exists;
 - witness metadata changes verdicts;
+- snap or transition-window metadata changes verdicts;
 - tests are missing.
 
 Report:
@@ -150,6 +168,7 @@ Report:
 - exact telemetry schema;
 - test output;
 - whether anything is fixture-only vs wired;
+- whether transition-window/snap is strictly offline;
 - any fields that could not be instrumented yet;
 - remaining risks before sandbox/live apply.
 ```

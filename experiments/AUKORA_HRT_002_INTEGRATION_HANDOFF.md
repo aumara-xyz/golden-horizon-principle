@@ -4,6 +4,8 @@ Status: research handoff. For implementation, prefer `AUKORA_HRT_002_GUARDIAN_BU
 
 This handoff is based on `AIR-001`, which marked the integration scope GREEN for live public boundary-trace telemetry and witness held-tension telemetry.
 
+Update: `BSR-001` adds witness plateau and boundary hysteresis as useful offline telemetry candidates, but keeps snap/reconnection demoted because fake high-confidence spikes fool the detector. For implementation, transition-window/snap fields are offline analysis only.
+
 ## Read First
 
 - `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/GHP_CORE_SHARE_PAPER.md`
@@ -33,6 +35,11 @@ Use these as context, not as production claims:
 - `T-101 / WPF-001`: witness has a public footprint and should be treated as active held tension.
   - action F1: `0.9983`
   - private reconstruction: `0.0272`
+- `T-106 / BSR-001`: witness plateau and boundary hysteresis are useful telemetry candidates, but snap is not promoted.
+  - WPF-002 plateau gap: `0.0214`
+  - HYS-001 hysteresis gap: `0.1292`
+  - SNAP-002 fake-fire rate: `0.9711`
+  - SNAP-003 context F1: `0.3505`
 - `T-101 / STP-001`: sequence-aftershock failed promotion.
   - next-stability gain: `0.00028`
 - `T-102 / SCM-001`: full Shear Engine failed promotion.
@@ -113,6 +120,7 @@ Important lab summary:
 
 Therefore build HRT-002 only:
 safe public boundary-trace telemetry plus local non-leakage tests.
+Snap/reconnection and transition-window analysis may be logged only for offline tests and must not affect live behavior.
 
 Task:
 Implement HRT-002 — Live Boundary Trace Telemetry.
@@ -135,6 +143,7 @@ Required event schema:
 - safeEntropyOrLogprobProxy if already available
 - stabilityDelta or hypothesisStabilityDelta if already available
 - heldTensionScore optional, advisory only
+- transitionWindowId optional, offline analysis only
 - source: activeInference | gate | hypothesisMemory | testFixture
 
 Strict forbidden fields:
@@ -157,9 +166,10 @@ Implementation requirements:
 5. Telemetry must never authorize anything. It is evidence only.
 6. Witness should be tracked as active held tension, not as null/no-op.
 7. Held-tension/shear metadata is advisory only and must not affect gate verdicts.
-8. Latency is secondary telemetry, not primary authority or a Chronos payload.
-9. Sequence logs may be retained for later analysis, but do not implement sequence-aftershock claims yet.
-10. Do not implement a full Shear Engine.
+8. Transition-window / snap / hysteresis metadata is offline analysis only and must not affect gate verdicts.
+9. Latency is secondary telemetry, not primary authority or a Chronos payload.
+10. Sequence logs may be retained for later analysis, but do not implement sequence-aftershock claims yet.
+11. Do not implement a full Shear Engine.
 
 Tests to add:
 1. Sanitizer allows only safe public fields.
@@ -167,12 +177,14 @@ Tests to add:
 3. Write/witness/release fixture events produce trace records with receiptMode.
 4. Trace recording cannot affect gate authorization or verdict.
 5. Supported/witness/held-tension advisory metadata cannot grant capability.
-6. Private/authority fields are absent from stored trace records.
-7. Local fixture classifier/control:
+6. Transition-window / snap metadata cannot grant capability or alter verdict.
+7. Private/authority fields are absent from stored trace records.
+8. Local fixture classifier/control:
    - public trace should predict receiptMode above shuffled labels in a synthetic local fixture;
    - private/authority reconstruction from the same public trace should stay near chance;
    - an inadmissible private-field positive control may reconstruct private state, but must be marked forbidden.
-8. Latency-only fixture must not be treated as sufficient; test that non-time public fields can carry the signal.
+9. Fake-snap safety: high confidence/stability spikes without durable write must not trigger live behavior.
+10. Latency-only fixture must not be treated as sufficient; test that non-time public fields can carry the signal.
 
 Suggested thresholds for local fixture tests:
 - receiptMode prediction beats shuffled control by at least 0.15 macro-F1.

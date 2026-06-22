@@ -1,14 +1,14 @@
 # Golden Horizon Principle
 
-This repository preserves a timestamped public research package for the Golden Horizon Principle (GHP), an observer-boundary framework proposing that Fibonacci topological architecture may be the minimal braiding-universal boundary structure through which reality becomes readable to observers.
+This repository preserves a timestamped public research package for the Golden Horizon Principle (GHP), an observer-boundary framework asking whether Fibonacci topological architecture is the minimal braiding-universal boundary structure through which hidden structure becomes readable, writable, recoverable, and shareable to finite observers.
 
 ## Status
 
-Speculative research program with theorem-grade mathematical components, verified internal computations, toy-model telemetry, and open physical conjectures.
+Speculative research program with theorem-grade mathematical components, verified internal computations, engineering falsifiability scaffolds, toy-model telemetry, and open physical conjectures.
 
 ## Core Idea
 
-GHP is strongest as an architectural principle: Fibonacci / phi structure may belong to the observer-boundary architecture, while ordinary physical dynamics may live in residual sectors.
+GHP is strongest as an architectural principle: Fibonacci / phi structure may belong to observer-boundary architecture, while ordinary physical dynamics may live in residual sectors. The current public discipline is to promote only what survives controls: categorical minimality, exact VPH scalar identity, and safe Aukora boundary telemetry are kept separate from physical proof claims.
 
 ## What This Repo Is
 
@@ -17,6 +17,7 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 - An explicit archival mirror for selected master files when Peter requests publication.
 - A timestampable research packet for review, citation, and critique.
 - A coordinated public map of the science, symbolic, and engineering lanes of GHP.
+- A record of failed, demoted, and mixed tests so the framework cannot self-seal by forgetting controls.
 
 ## What This Repo Is Not
 
@@ -24,15 +25,17 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 - Not proof of consciousness physics.
 - Not proof of dark matter, Tao, or simulation theory.
 - Not a completed derivation of GR, QFT, or the Standard Model.
+- Not proof from VPH, Aukora, sonoluminescence, or toy telemetry.
 - Not medical, spiritual, or financial advice.
 
 ## Core Files
 
 - `GHP_v1_618_MASTER.md`
 - `GHP_CORE_SHARE_PAPER.md`
-- `GHP_RESEARCH_LEDGER.md`
 - `VIVIANI_PHI_HORIZON.md`
+- `VPH_preprint_v8.md`
 - `RESEARCH_LEDGER.md`
+- `GHP_RESEARCH_LEDGER.md` (older archival ledger mirror)
 - `GHP_MATH_COLLABORATOR_HANDOFF.md`
 - `GHP_RECENT_RESEARCH_DUMP_2026-05-28.md`
 - `DO_NOT_CLAIM.md`
@@ -54,11 +57,11 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 
 1. Fibonacci categorical minimality inside a stated braiding-universal topological class.
 2. Golden-chain architecture/dynamics split.
-3. Viviani Phi Horizon / Surface as a metric-level Schwarzschild golden fixed-point identity.
-4. Ricci-Fibonacci soft-saturation as candidate toy boundary action.
-5. Dark-to-readable / ternary witness models as toy telemetry only.
+3. Viviani Phi Horizon / Surface as an exact Schwarzschild scalar fixed-point identity, hardened against bad-coordinate readings.
+4. Aukora HRT boundary telemetry as an engineering invariant: safe public trace can describe boundary mode while private state and authority remain unrecoverable.
+5. Witness as active held tension in toy/software telemetry, not a null trace and not authority.
 6. Boundary Access Channel as the current best bridge-object toy corridor.
-7. Local switcher results suggesting finite observers may infer which correction geometry to use from boundary symptoms alone.
+7. Ricci-Fibonacci, dark-to-readable, ternary, snap/reconnection, and Shear branches as toy telemetry or demoted/mixed scaffolds only.
 
 ## Symbolic / Spirituality Layer
 
@@ -73,8 +76,9 @@ It is not physics evidence. It does not prove GHP. It gives human language to th
 3. Complete stronger falsification paths, including beta-band style tests.
 4. Recover ordinary physics limits without numerology.
 5. Clarify whether VPH has a structural bridge to Fibonacci or only algebraic resonance.
-6. Keep toy telemetry from drifting into physics overclaim.
-7. Keep symbolic material alive without letting it impersonate scientific proof.
+6. Run HRT-002 live safely in Aukora without telemetry becoming authority.
+7. Keep toy telemetry from drifting into physics overclaim.
+8. Keep symbolic material alive without letting it impersonate scientific proof.
 
 ## How To Cite
 

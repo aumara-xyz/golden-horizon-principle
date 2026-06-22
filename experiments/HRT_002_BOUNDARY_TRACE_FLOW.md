@@ -27,6 +27,7 @@ flowchart LR
   subgraph PublicTrace["Public Boundary Trace"]
     T["event id, timestamp, mode, verdict, refusal cause"]
     W["safe confidence / stability / held-tension metadata"]
+    X["transition-window id / snap inputs (offline only)"]
   end
 
   subgraph OfflineAudit["Offline Audit Only"]
@@ -42,15 +43,20 @@ flowchart LR
   S --> F
   F --> T
   F --> W
+  F --> X
   T --> C
   W --> C
+  X --> C
   T --> N
   W --> N
+  X --> N
 
   T -. forbidden .-> G
   W -. forbidden .-> G
+  X -. forbidden .-> G
   T -. forbidden .-> K
   W -. forbidden .-> K
+  X -. forbidden .-> K
 ```
 
 ## Current Lab Result
@@ -60,6 +66,7 @@ flowchart LR
 | BTA-001 | pass | action macro-F1 `0.7624` vs shuffled `0.3333`; private `0.0230`; authority `0.0730` |
 | WPF-001 | pass | witness action F1 `0.9983`; private `0.0272` |
 | STP-001 | not promoted | sequence gain `0.00028` |
+| BSR-001 | mixed | witness plateau and hysteresis passed; snap/reconnection not promoted after fake-spike and context-guard failures |
 | SCM-001 / HCM-001 | not promoted | no public-policy gain over memoryless baseline |
 | AIR-001 | green for HRT + witness only | build HRT-002 telemetry-only |
 
@@ -68,3 +75,5 @@ flowchart LR
 Build a boundary stethoscope, not a gate.
 
 HRT-002 may help later analysis understand the boundary. It must never authorize, deny, retry, accelerate, or alter a gate decision.
+
+Snap/reconnection telemetry, if logged, is offline analysis only.

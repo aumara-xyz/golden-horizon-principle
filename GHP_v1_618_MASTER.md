@@ -78,6 +78,8 @@ If you read this note and then immediately violate Rule 2 by producing a shorter
 
 **GHP-PACKET-20260622-01 note.** This live archival packet records the **Aukora boundary-trace telemetry hardening pass**. It adds Addendum AY, updates the core-share paper to `core-v0.014`, and records the HRT/BTR/BTA/WPF/AIR result chain in the ledger. Status: engineering handoff candidate only. The survived invariant is narrow: safe public telemetry can describe boundary mode while private state and authority remain unrecoverable, and telemetry must never become authorization. The pass explicitly demotes latency-primary Chronos, Fibonacci cadence, write-shockwave, sequence-aftershock, and full Shear Engine claims in this lane. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No claim that Aukora proves GHP, Markov blankets, Hawking radiation, EWCS, holography, or the write law.
 
+**GHP-PACKET-20260622-02 note.** This live archival packet records the **VPH coordinate/extendability hardening pass and BSR snap-control update**. It adds Addendum AZ, updates the core-share paper to `core-v0.015`, records VPH-EXT-001 in the ledger, and updates Addendum AY to include the post-BTA snap tests. Status: claim hygiene / engineering-scaffold refinement only. VPH is strengthened as a Schwarzschild scalar identity using Killing-vector norm and areal radius, while remaining explicitly not a technical horizon, curvature singularity, causal boundary, or GHP proof. Sonoluminescence remains analogy only. In the Aukora lane, witness plateau and hysteresis survive as telemetry candidates, while snap/reconnection remains offline-only because fake high-confidence spikes fool the detector. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence.
+
 **GHP-PACKET-20260619-01 note.** This live archival packet records a small observer-first borrowing-discipline clarification without renaming the live archival file. The pass does two things only: (i) §8.34A.9 gains a short secondary-comparison note clarifying how broader observer-first or consciousness-first frameworks should be handled inside GHP; and (ii) the public `GHP_CORE_SHARE_PAPER.md` receives a matching narrow-language note in the formal-boundary section. Status: discipline hardening only. No prior content removed. No gate upgrades. No ToE inflation. No proof upgrade. No claim that QBism, RQM, von Neumann-Wigner, Orch-OR, Biocentrism, software telemetry, or any adjacent observer-first language proves GHP, closes the write-law, validates VPH, or turns observer rhetoric into physics evidence.
 
 **v0.713 note.** The long inline version-history block below is preserved for lineage continuity. The active addition for this master is **Ricci-Fibonacci Boundary Action Candidate + Toy-Kernel Protocol** on top of v0.712: (i) **§5.1B.X "Ricci-Fibonacci Candidate Boundary Action"** is added after the existing §5.1B material as a candidate action-functional bridge only; (ii) **OP 195 — Ricci Polynomial as Candidate Boundary Action Functional** is opened as a scheduled future toy-model test, not a closure claim; (iii) **Addendum W.9 "Ricci-Fibonacci Kernel Comparison Protocol"** is inserted after W.8 so the next computational pass has a clean target for a finite-\(N\) toy run; (iv) the pass records Michelangelo Ricci's maximization form \(f(x)=x^m(a-x)^n\) as a candidate mathematical bridge for the missing GHP boundary action functional and Addendum W write-law toy model, while explicitly refusing any claim that Ricci proves GHP, closes §5.1B, or counts as physics evidence; (v) the Ricci-Fibonacci toy model is **not yet run** and remains future work only. No prior content removed. No gate upgrades. No ToE inflation. No VPH upgrade. No beta-band derivation claim. No closure of the Dynamics Gap. No historical-resonance-as-physics-evidence claim. All prior sections, addenda, numbering, and guardrails preserved.
@@ -14908,6 +14910,11 @@ The relevant tests currently read:
 | STP-001 | FAIL / do not promote | next-stability gain `0.00028` | Sequence aftershock is not demonstrated. |
 | SCM-001 / HCM-001 | FAIL / do not promote | public policies tied around `0.5263`; hybrid no better | Do not integrate full Shear Engine from this lane. |
 | AIR-001 | GREEN for HRT + witness only | HRT GREEN, witness GREEN, sequence YELLOW, shear RED | Build HRT-002 only, with explicit demotions. |
+| WPF-002 | PASS | plateau gap `0.0214`; witness retry `0.3158`; release retry `0.6125` | Witness has a low-amplitude held-tension plateau between Write spike and Release scatter. |
+| SNAP-001 | PASS / insufficient alone | snap F1 `0.8442`; precision `0.7495` | A center-heavy before/after detector sees a Write-like transition shape. |
+| SNAP-002 | FAIL / do not promote | fake-fire rate `0.9711` | Fake high-confidence spikes fool the snap detector. |
+| SNAP-003 | FAIL / do not promote | context F1 `0.3505` | Surrounding context alone does not carry enough snap signal. |
+| HYS-001 | PASS | hysteresis gap `0.1292` | Boundary transitions show friction/memory shape worth logging, not authorizing. |
 
 ## AY.4 Demotions
 
@@ -14918,6 +14925,7 @@ The following are not promoted by this packet:
 - Fibonacci cadence windows;
 - write-shockwave / direct physical aftereffect;
 - sequence-aftershock law;
+- snap/reconnection as live decision feature;
 - full Shear Engine integration;
 - consciousness evidence;
 - physical observer-boundary evidence.
@@ -14939,6 +14947,7 @@ HRT-002 should record a safe public cross-section around boundary decisions:
 - retry count;
 - safe confidence / entropy / stability proxies;
 - optional held-tension score for witness, advisory only;
+- optional transition-window ID for offline snap/hysteresis analysis only;
 - source label.
 
 It must not record:
@@ -14959,8 +14968,9 @@ Required guardrails:
 3. fail-closed behavior on forbidden nested keys;
 4. no read path from telemetry into gate authorization;
 5. no witness score path into gate authorization;
-6. timing treated as secondary evidence only;
-7. temporal covert-channel guard if cadence could leak private state.
+6. no snap/hysteresis score path into gate authorization;
+7. timing treated as secondary evidence only;
+8. temporal covert-channel guard if cadence could leak private state.
 
 ## AY.6 Relation to GHP
 
@@ -14992,9 +15002,75 @@ The strongest safe sentence is:
 - Latency is the primary payload.
 - Fibonacci cadence is validated.
 - The Shear Engine is ready for core integration.
+- Snap/reconnection is ready as live decision logic.
 - Software telemetry is physics evidence.
 
 **End of Addendum AY.**
+
+---
+
+## Addendum AZ — VPH Coordinate/Extendability Discipline and Boundary-Collapse Analogy
+
+## AZ.1 Status
+
+Status: VPH CLAIM-HYGIENE HARDENING / VALIDATION HARNESS.
+
+This addendum records the VPH-EXT-001 probe and the corresponding update to the Viviani Phi Surface preprint. It does not upgrade the VPS into a horizon, a physical singularity, a causal boundary, a thermodynamic transition, or proof of GHP.
+
+The hardening is narrow:
+
+> **The VPS is admissible in Schwarzschild because it can be stated as a scalar identity, not because a chosen radial coordinate looks golden.**
+
+## AZ.2 The bad-map test
+
+General relativity teaches that an apparent boundary can be a coordinate artifact. The Schwarzschild event horizon is singular in Schwarzschild coordinates but extendable in better coordinates; the central singularity is different because curvature blows up and geodesics end.
+
+The VPS must therefore pass a coordinate/artifact discipline:
+
+\[
+\sqrt{-g(\xi,\xi)}\,r = r_s,
+\]
+
+where \(g(\xi,\xi)\) is the norm of the static timelike Killing vector and \(r\) is the areal radius.
+
+In Schwarzschild, these are geometric objects. Replacing \(r\) with an arbitrary monotone radial coordinate and imposing the same-looking equation is not admissible; those fake fixed points move.
+
+## AZ.3 VPH-EXT-001 result
+
+The probe records:
+
+| Probe | Status | Result | Meaning |
+|---|---:|---|---|
+| VPH-001 | PASS | residuals `2.220e-16 / 2.220e-16` | The exact \(\gamma(\phi r_s)=\phi\) identity and invariant product hold numerically. |
+| VPH-002 | PASS | Killing norm `0.618033988750`; finite curvature proxy `0.668737080010` | VPS is outside the horizon with nonzero Killing norm and finite curvature. |
+| VPH-EXT-001 | PASS | invariant root spread `0.000e+00`; nearest bad-coordinate offset `0.381966` | The invariant root survives, while bad-coordinate fixed points move. |
+| VPH-SONO-001 | PASS | analogy-only discipline | Sonoluminescence is analogy only, not evidence or proof. |
+
+## AZ.4 Sonoluminescence placement
+
+Acoustic cavitation / sonoluminescence is useful as a conservative image:
+
+> nonlinear collapse of a driven boundary can convert hidden acoustic/interference structure into visible emission.
+
+This image belongs to boundary-readability language only. It does not support the VPS identity, does not derive \(\phi\), does not imply over-unity energy, and does not upgrade the VPS into a dynamical, thermodynamic, or causal horizon.
+
+## AZ.5 Strongest safe sentence
+
+The strongest safe sentence is:
+
+> The Viviani Phi Surface is an exact Schwarzschild scalar fixed surface, hardened against bad-coordinate readings by its expression in Killing-vector norm and areal radius; it is not a horizon, not a singularity, and not evidence that GHP physics is true.
+
+## AZ.6 Do Not Claim
+
+- VPH proves GHP.
+- VPH is a technical horizon.
+- VPH is a null surface, Killing horizon, trapped surface, curvature singularity, or endpoint of spacetime.
+- Sonoluminescence proves or supports VPH.
+- Sonoluminescence derives \(\phi\).
+- The coordinate/artifact probe proves physical selection.
+- A Schwarzschild scalar identity solves the GHP write law.
+
+**End of Addendum AZ.**
 
 ---
 

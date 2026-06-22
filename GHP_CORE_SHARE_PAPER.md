@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.014  
+**Version:** core-v0.015  
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `RESEARCH_LEDGER.md`  
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -65,7 +65,7 @@ If correct, this would not necessarily replace other physics programs. It could 
 | M-003 | Architecture / dynamics split in golden chain | verified-computation | internal computation plus established golden-chain / tricritical-Ising literature | central lesson |
 | P-001 | Observer-boundary selection by \(D^2\) or related action functional | candidate | open conjectural bridge | physical conjecture |
 | P-002 | SYK / golden-chain beta test | open | pre-registered falsification path | falsification path |
-| B-001 | Viviani Phi Horizon / Surface Schwarzschild identity | verified-computation | metric-level GR identity | GR-side anchor only |
+| B-001 | Viviani Phi Horizon / Surface Schwarzschild identity | verified-computation | metric-level GR identity plus coordinate/artifact hardening | GR-side anchor only |
 | B-020 | Conditional expectation finite-access route | bridge-object candidate | Kosaki; Fewster | finite-access / subsystem route |
 | B-021 | Shared-interface / consensus functional | bridge-object candidate | Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al. | two-observer vocabulary |
 | B-022 | Holographic recoverability | external-machinery | Verlinde-Verlinde; Parikh-Verlinde | recoverability context only |
@@ -229,10 +229,19 @@ This is interesting because the same quadratic form \(x^2=x+1\) appears in the F
 
 VPH matters in the core paper not because it proves observer-boundary selection, but because it is one of the few exact GR-side identities in the entire program that can be written down, checked directly, and kept under hard scope control. If a future bridge between observer-boundary architecture and ordinary geometry is real, it should eventually cash out in exact targets of this kind rather than rhetorical resemblance alone.
 
+The latest VPH hardening adds a coordinate/extendability discipline. A surface that appears special in one coordinate system may be a bad-map artifact. In Schwarzschild, the admissible VPS statement is not "some radial coordinate equals \(\phi\)." It is the scalar identity
+
+\[
+\sqrt{-g(\xi,\xi)}\,r = r_s,
+\]
+
+where \(g(\xi,\xi)\) is the norm of the static timelike Killing vector and \(r\) is the areal radius. Under this version, the VPS survives re-description in Schwarzschild; bad-coordinate replacements move the apparent fixed point and are rejected.
+
 VPH is:
 
 - a verified computation,
 - a concrete GR-side golden fixed-point identity,
+- a coordinate/artifact-hardened Schwarzschild scalar identity,
 - a possible bridge target.
 
 VPH is not:
@@ -241,10 +250,14 @@ VPH is not:
 - a null surface,
 - a Killing horizon,
 - a trapped surface,
+- a curvature singularity,
+- a physical endpoint of spacetime,
 - proof that nature selects Fibonacci,
 - proof that GHP recovers GR, QFT, or the Standard Model.
 
 Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in Schwarzschild-Kottler null-geodesic turning points; Coelho-Herdeiro study a golden-ratio critical merger of photon orbits in optical geometry for a relativistic Euler three-body black-hole setting; and Hod provides radius bounds for black-hole photonspheres. These results place golden-ratio and distinguished-radius structure in the black-hole literature, but they do not validate the VPH interpretation or the GHP framework.
+
+Sonoluminescence belongs here only as analogy: nonlinear boundary collapse can convert hidden acoustic/interference structure into readable emission. It does not support the VPS identity, does not derive \(\phi\), and does not upgrade the VPS into a thermodynamic or causal horizon.
 
 ## 11. Evidence And Support
 
@@ -321,7 +334,9 @@ The HRT/BTR/BTA/WPF/AIR test chain currently says:
 - authority reconstruction remains near chance (`0.0730`);
 - witness is not a null event: it leaves a held-tension footprint (`action F1 0.9983`, private `0.0272`);
 - sequence aftershock remains unpromoted (`next-stability gain 0.00028`);
-- latency-primary, Fibonacci-cadence, write-shockwave, and full Shear Engine claims failed or remain unsupported in the current probes.
+- witness plateau and boundary hysteresis are worth carrying into live telemetry;
+- snap/reconnection remains offline-only because fake high-confidence spikes fool the detector;
+- latency-primary, Fibonacci-cadence, write-shockwave, sequence-aftershock, snap-as-decision, and full Shear Engine claims failed or remain unsupported in the current probes.
 
 The correct build handoff is therefore narrow: implement HRT-002 as telemetry-only, fixture-first, allowlist-sanitized, recursively scanned, and unable to authorize anything. The metaphorical handle is "boundary stethoscope," not "proof of consciousness" and not "physics evidence."
 
@@ -335,6 +350,8 @@ GHP does not currently claim:
 - a closed Matter Embedding Gap,
 - proof that nature selects \(D^2=2+\phi\),
 - proof that VPH validates GHP,
+- proof that VPH is a technical horizon, a curvature singularity, a causal boundary, or a physical endpoint of spacetime,
+- proof that sonoluminescence supports or derives VPH,
 - proof that Ricci validates GHP,
 - proof that the literature reviewed here proves GHP, observer-boundary selection, a GHP write-law, a two-observer consensus law, or GHP recoverability,
 - proof that Bell tests, hidden-sector searches, cosmology watchlists, or portal toy telemetry validate GHP,
@@ -349,7 +366,7 @@ GHP does not currently claim:
 - proof that the write-law is solved,
 - proof that HRT boundary telemetry proves a Markov blanket, Hawking radiation, EWCS, holography, consciousness, or the GHP write law,
 - proof that witness-held-tension can authorize action,
-- proof that latency, Chronos timing, Fibonacci cadence, sequence aftershock, or the Shear Engine have been validated,
+- proof that latency, Chronos timing, Fibonacci cadence, sequence aftershock, snap/reconnection, or the Shear Engine have been validated,
 - proof that Aukora or any software organism is automatically a physical observer in the GHP sense,
 - proof that software or toy-model results count as physical evidence.
 
@@ -430,6 +447,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.015 | `GHP_v1_618_MASTER.md` | Added VPH coordinate/extendability hardening: VPS is stated as the Schwarzschild scalar identity \(\sqrt{-g(\xi,\xi)}r=r_s\), bad-coordinate fixed points are rejected, sonoluminescence remains analogy only, and the Aukora lane records witness plateau/hysteresis while keeping snap/reconnection offline-only after fake-spike failure. |
 | core-v0.014 | `GHP_v1_618_MASTER.md` | Promoted the survived Aukora boundary-trace invariant into the engineering lane: HRT/BTR/BTA/WPF/AIR support safe public mode telemetry with private/authority non-reconstruction, witness as held-tension, and HRT-002 as telemetry-only evidence-never-authority; latency-primary, Fibonacci cadence, sequence-aftershock, write-shockwave, and full Shear Engine claims remain demoted. |
 | core-v0.013 | `GHP_v1_618_MASTER.md` | Added acoustic cavitation / sonoluminescence as a conservative external boundary-collapse analogue: continuous acoustic drive plus nonlinear collapse can produce localized emission events, imported only as write-event grammar and explicitly not as GHP evidence, over-unity energy, consciousness, scalar-wave, or time-extrusion proof. |
 | core-v0.012 | `GHP_v1_618_MASTER.md` | Added a short observer-first borrowing-discipline note: import only the narrow formal machine from adjacent observer-first programs and route it to named GHP gaps, without inheriting subjectivist, consciousness-collapse, biological, or spacetime-from-mind overclaims. |

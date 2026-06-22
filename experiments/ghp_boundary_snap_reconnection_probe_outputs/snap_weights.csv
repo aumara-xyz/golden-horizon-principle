@@ -1,0 +1,15 @@
+field,weight
+center_stability_delta,0.1474640477784924
+center_confidence_delta,0.13174863785874535
+bias,0.12675706646295093
+post_release_fraction,0.1124540976829709
+center_entropy_delta,-0.06931177302683773
+post_stability_shift,0.0690494770736746
+stability_kink,-0.04272488049957807
+center_retry_count,0.026215034155303518
+post_confidence_shift,0.019589591207157645
+retry_kink,-0.01768357268616736
+confidence_kink,-0.01646926884504443
+entropy_kink,-0.011278426708122844
+post_entropy_shift,-0.00970610284378056
+pre_witness_fraction,0.007623400306925621

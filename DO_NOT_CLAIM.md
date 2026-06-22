@@ -12,6 +12,9 @@ GHP does not currently claim:
 - proof from toy models,
 - proof from CERN / DESI / Nobel / Bell,
 - proof from VPH,
+- proof that VPH is a technical horizon, curvature singularity, causal boundary, or physical endpoint,
+- proof from sonoluminescence,
+- proof from Aukora HRT boundary telemetry,
 - proof from Ricci,
 - proof from ternary operator.
 - proof from science-spirituality resonance,
@@ -37,6 +40,8 @@ GHP does not currently claim:
 - proof that hidden-state dwell time derives VPH.
 - proof that memory creates the external world.
 - proof that the write-law is solved.
+- proof that witness-held-tension authorizes action.
+- proof that snap/reconnection is ready as live decision logic.
 
 ## Safe Language
 
@@ -52,6 +57,8 @@ Use:
 - `provides external machinery`
 - `supplies bridge vocabulary`
 - `places VPH in prior-art context`
+- `VPH is a Schwarzschild scalar fixed-surface identity, not a horizon`
+- `Aukora HRT is engineering telemetry only: evidence may guide analysis, never authorize`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -77,6 +84,11 @@ Avoid:
 - `hidden-state dwell time derives VPH`
 - `memory creates the external world`
 - `the write-law is solved`
+- `VPH is a horizon`
+- `sonoluminescence proves VPH`
+- `Aukora telemetry proves GHP`
+- `witness-held-tension authorizes action`
+- `snap/reconnection is validated as live decision logic`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

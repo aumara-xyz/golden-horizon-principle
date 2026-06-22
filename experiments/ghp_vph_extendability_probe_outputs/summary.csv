@@ -1,0 +1,5 @@
+probe,status,metric,value,safe_read
+VPH-001,PASS,abs(gamma(phi)-phi) / abs(sqrt(-xi^2)*r-rs),2.220e-16 / 2.220e-16,The exact Schwarzschild fixed point and invariant product identity hold at phi.
+VPH-002,PASS,sqrt(-xi^2)_VPS / K_dimless_VPS / sqrt(-xi^2)_near_horizon,0.618033988750 / 0.668737080010 / 0.000031622778,VPS is outside the horizon with nonzero Killing norm and finite curvature; it is not a null/Killing horizon.
+VPH-EXT-001,PASS,invariant_root_spread / nearest_bad-coordinate_offset,0.000e+00 / 0.381966,"The invariant VPS survives coordinate changes, while bad-coordinate fixed points move; this is the extendability/artifact discipline."
+VPH-SONO-001,PASS,allowed_status / forbidden_upgrades,"analogy_only / evidence,proof,horizon,dynamics","Sonoluminescence can illustrate nonlinear boundary collapse into readable emission, but it does not support or upgrade the VPS identity."
