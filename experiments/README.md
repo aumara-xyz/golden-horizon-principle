@@ -33,10 +33,14 @@ Included:
 - Boundary Trace Refinement probes
 - Boundary Sequence & Witness probes
 - Boundary Snap / Reconnection probe
+- Accord Promotion probe
+- Accord Survivor Stress probe
+- Accord Firewall & Prompt probe
 - VPH extendability / coordinate-artifact probe
 - Shear Continuity Memory probe
 - Aukora HRT-002 integration handoff
 - Aukora HRT-002 Guardian build prompt
+- Aukora HRT Accord next build prompt
 - `HRT_002_BOUNDARY_TRACE_FLOW.md` for the HRT-002 boundary stethoscope graph
 - Ternary boundary operator toy
 - Golden Zipper observer-memory corridor

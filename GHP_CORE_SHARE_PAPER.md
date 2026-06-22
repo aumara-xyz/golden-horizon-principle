@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.015  
+**Version:** core-v0.016  
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `RESEARCH_LEDGER.md`  
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -26,7 +26,7 @@ The stronger physical claim remains open: nature may select observer-boundary ar
 
 GHP is therefore strongest not as a claim that \(\phi\) numerically governs everything, but as a claim that Fibonacci may define the minimal readable boundary architecture while ordinary dynamics live in residual sectors after architecture is factored out. The next serious task is formal construction: the observer-boundary must become a mathematical object with a write law, finite-access projection, recoverability structure, and falsifiable bridge to ordinary physics.
 
-A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. The current strongest survived result is a boundary-trace telemetry invariant: a scrubbed public cross-section can predict boundary mode while private state and authority remain unrecoverable. This is a computational falsifiability scaffold, not a physics result.
+A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. The current strongest survived result is a boundary-trace telemetry invariant with an Accord promotion law: a scrubbed public cross-section can predict boundary mode while private state and authority remain unrecoverable, and only typed, leak-free, falsifiable traces may become telemetry. This is a computational falsifiability scaffold, not a physics result.
 
 ## 1. One-Sentence Thesis
 
@@ -72,7 +72,8 @@ If correct, this would not necessarily replace other physics programs. It could 
 | B-023 | Hoffman trace logic / Fibonacci Markov kernel bridge | bridge-object candidate | Markov trace formalism plus Perron-Frobenius normalization of Fibonacci fusion matrix | observer-relative access / memory-time bridge |
 | B-024 | Multi-scale FEP / Markov-blanket route | bridge-object candidate | Kirchhoff-Parr-Palacios-Friston; Waade et al.; Possati | observer-boundary statistical structure / private-to-public corridor |
 | E-001 | Aukora computational observer-boundary lab | engineering falsifiability scaffold | local receipt-boundary experiments and control comparisons | computational proving ground only |
-| E-002 | Aukora HRT boundary-trace telemetry | engineering handoff candidate | HRT/BTR/BTA/WPF/AIR local probes and controls | safe public telemetry only; evidence never authority |
+| E-002 | Aukora HRT boundary-trace telemetry | engineering handoff candidate | HRT/BTR/BTA/WPF/AIR/AAP/ASS/AFP local probes and controls | safe public telemetry only; evidence never authority |
+| E-003 | HRT Accord promotion law | engineering hygiene scaffold | promotion, survivor-stress, and prompt-firewall probes | typed telemetry may be logged; no telemetry may authorize |
 
 ## 5. Mathematical Spine
 
@@ -286,6 +287,7 @@ Sonoluminescence belongs here only as analogy: nonlinear boundary collapse can c
 | physical conjecture / bridge target | Kosaki; Fewster; Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al.; Verlinde-Verlinde; Parikh-Verlinde | bridge vocabulary for finite access, shared interface, and recoverability | a GHP write-law, a GHP consensus law, or Dynamics Gap closure |
 | GR prior-art context | Cruz-Olivares-Villanueva; Coelho-Herdeiro; Hod | prior distinguished-radius / golden-ratio structure in black-hole geometry | VPH, GHP, or observer-boundary selection |
 | computational proving ground | Aukora local receipt-boundary experiments | engineering tests of reconstruction, surprise, structural memory, and paired-observer overlap under hard authority constraints | physics proof, consciousness proof, or observer-boundary selection by nature |
+| engineering hygiene | Aukora HRT Accord probes | promotion law, survivor stress, schema firewall, and outgoing prompt hygiene for safe telemetry | authority, identity proof, consciousness proof, physics proof, or live snap/Shear behavior |
 | symbolic / meaning layer | preserved only in the full master | bounded phenomenology and human vocabulary | scientific evidence |
 
 ## 13. Dark-To-Readable Interface
@@ -327,7 +329,7 @@ The strongest survived invariant is:
 
 > **Canonical public telemetry may describe boundary mode, but it may not carry private state, verifier internals, authority tokens, or any path back into authorization.**
 
-The HRT/BTR/BTA/WPF/AIR test chain currently says:
+The HRT/BTR/BTA/WPF/AIR/AAP/ASS/AFP test chain currently says:
 
 - adversarial public boundary traces predict receipt mode above shuffled control (`macro-F1 0.7624` vs `0.3333`);
 - private-state reconstruction from that public trace remains near chance (`0.0230`);
@@ -337,8 +339,12 @@ The HRT/BTR/BTA/WPF/AIR test chain currently says:
 - witness plateau and boundary hysteresis are worth carrying into live telemetry;
 - snap/reconnection remains offline-only because fake high-confidence spikes fool the detector;
 - latency-primary, Fibonacci-cadence, write-shockwave, sequence-aftershock, snap-as-decision, and full Shear Engine claims failed or remain unsupported in the current probes.
+- the Accord promotion probe passes with zero authority leaks and zero stage mismatches: HRT boundary mode, witness plateau, and canonicalization categories may become typed telemetry; hysteresis remains offline; snap/reconnection, sequence-aftershock, latency-primary, full Shear Engine, timing-payload language, consciousness, identity, and physics claims remain fenced;
+- the survivor-stress probe supports the surviving telemetry under whole-regime holdout (`min action_f1 0.7608`) while private and authority reconstruction stay low (`0.0538` and `0.1143`), hidden-only perturbation causes zero advisory flips, and timing bucketing reduces action signal while preserving low private/authority reconstruction;
+- canonicalization telemetry is leak-free in the stress test but not automatically compression-safe on tiny payloads, because per-event hash references can add overhead;
+- the firewall/prompt probe rejects recursive private/authority schema attacks, verifies that the promotion lattice cannot create authority or reward weaker evidence, confirms the outgoing build prompt contains the hard laws, and leaks no exact attack payloads.
 
-The correct build handoff is therefore narrow: implement HRT-002 as telemetry-only, fixture-first, allowlist-sanitized, recursively scanned, and unable to authorize anything. The metaphorical handle is "boundary stethoscope," not "proof of consciousness" and not "physics evidence."
+The correct build handoff is therefore narrow: implement HRT-002 / Accord as telemetry-only, fixture-first, allowlist-sanitized, recursively scanned, stress-tested under holdouts and ablations, and unable to authorize anything. The metaphorical handle is "boundary stethoscope," not "proof of consciousness" and not "physics evidence."
 
 ## 14. What Is Not Claimed
 
@@ -366,6 +372,8 @@ GHP does not currently claim:
 - proof that the write-law is solved,
 - proof that HRT boundary telemetry proves a Markov blanket, Hawking radiation, EWCS, holography, consciousness, or the GHP write law,
 - proof that witness-held-tension can authorize action,
+- proof that the HRT Accord promotion law proves GHP or solves the observer-boundary write law,
+- proof that canonicalization telemetry is always compression,
 - proof that latency, Chronos timing, Fibonacci cadence, sequence aftershock, snap/reconnection, or the Shear Engine have been validated,
 - proof that Aukora or any software organism is automatically a physical observer in the GHP sense,
 - proof that software or toy-model results count as physical evidence.
@@ -382,6 +390,7 @@ The core research program weakens or fails if:
 - no conditional expectation / Markov blanket / code-subspace bridge can be constructed,
 - the computational boundary lab shows no reconstruction, surprise, or shared-interface advantage over flat controls once receipt discipline and control baselines are applied,
 - HRT-002 fails to predict boundary mode above shuffled controls from safe public fields, leaks private or authority state, or creates any telemetry path that can influence authorization,
+- the HRT Accord cannot enforce a typed allowlist, recursive forbidden-field rejection, no-authority read paths, hidden-perturbation invariance, timing-channel bounds, and report-leak scans,
 - boring physics limits cannot be recovered,
 - matter embedding remains undefined.
 
@@ -447,6 +456,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.016 | `GHP_v1_618_MASTER.md` | Added the HRT Accord promotion stack: AAP/ASS/AFP probe results harden the Aukora engineering lane with a promotion law, survivor stress tests, schema/prompt firewall, and explicit constraints that telemetry may be typed evidence only, never authority; canonicalization is leak-free but not automatically compression-safe on tiny payloads. |
 | core-v0.015 | `GHP_v1_618_MASTER.md` | Added VPH coordinate/extendability hardening: VPS is stated as the Schwarzschild scalar identity \(\sqrt{-g(\xi,\xi)}r=r_s\), bad-coordinate fixed points are rejected, sonoluminescence remains analogy only, and the Aukora lane records witness plateau/hysteresis while keeping snap/reconnection offline-only after fake-spike failure. |
 | core-v0.014 | `GHP_v1_618_MASTER.md` | Promoted the survived Aukora boundary-trace invariant into the engineering lane: HRT/BTR/BTA/WPF/AIR support safe public mode telemetry with private/authority non-reconstruction, witness as held-tension, and HRT-002 as telemetry-only evidence-never-authority; latency-primary, Fibonacci cadence, sequence-aftershock, write-shockwave, and full Shear Engine claims remain demoted. |
 | core-v0.013 | `GHP_v1_618_MASTER.md` | Added acoustic cavitation / sonoluminescence as a conservative external boundary-collapse analogue: continuous acoustic drive plus nonlinear collapse can produce localized emission events, imported only as write-event grammar and explicitly not as GHP evidence, over-unity energy, consciousness, scalar-wave, or time-extrusion proof. |

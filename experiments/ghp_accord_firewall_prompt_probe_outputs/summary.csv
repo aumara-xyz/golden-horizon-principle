@@ -1,0 +1,6 @@
+probe,status,metric,value,safe_read
+AFP-001,PASS,legal_accept_rate / adversarial_reject_rate / false_accepts,1.0000 / 1.0000 / 0,The HRT schema can promote only if allowed typed records pass and recursive authority/private injections fail closed.
+AFP-002,PASS,unsafe_violations / authority_leaks / monotonic_violations,0 / 0 / 0,"The promotion lattice must never create authority, promote private/authority reconstruction, or reward weaker evidence."
+AFP-003,PASS,missing_required_laws / bad_command_patterns,0 / 0,The outgoing prompt is usable only if it carries the hard laws and does not accidentally instruct forbidden builds.
+AFP-004,PASS,missing_handoff_artifacts,0,"The build handoff should reference real local artifacts, not ghost files."
+AFP-005,PASS,exact_attack_token_leaks_in_outputs,0,The firewall report must not leak exact attack payloads used to test the scanner.

@@ -8,7 +8,7 @@ Speculative research program with theorem-grade mathematical components, verifie
 
 ## Core Idea
 
-GHP is strongest as an architectural principle: Fibonacci / phi structure may belong to observer-boundary architecture, while ordinary physical dynamics may live in residual sectors. The current public discipline is to promote only what survives controls: categorical minimality, exact VPH scalar identity, and safe Aukora boundary telemetry are kept separate from physical proof claims.
+GHP is strongest as an architectural principle: Fibonacci / phi structure may belong to observer-boundary architecture, while ordinary physical dynamics may live in residual sectors. The current public discipline is to promote only what survives controls: categorical minimality, exact VPH scalar identity, and safe Aukora boundary telemetry are kept separate from physical proof claims. The latest Aukora Accord probes add a stricter promotion law: typed, leak-free, falsifiable telemetry may be logged; telemetry may never authorize.
 
 ## What This Repo Is
 
@@ -59,9 +59,10 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 2. Golden-chain architecture/dynamics split.
 3. Viviani Phi Horizon / Surface as an exact Schwarzschild scalar fixed-point identity, hardened against bad-coordinate readings.
 4. Aukora HRT boundary telemetry as an engineering invariant: safe public trace can describe boundary mode while private state and authority remain unrecoverable.
-5. Witness as active held tension in toy/software telemetry, not a null trace and not authority.
-6. Boundary Access Channel as the current best bridge-object toy corridor.
-7. Ricci-Fibonacci, dark-to-readable, ternary, snap/reconnection, and Shear branches as toy telemetry or demoted/mixed scaffolds only.
+5. HRT Accord promotion law as engineering hygiene: boundary mode, witness plateau, and canonicalization categories may become typed telemetry only after controls; hysteresis stays offline; snap, sequence-aftershock, latency-primary, timing-payload language, and Shear remain fenced.
+6. Witness as active held tension in toy/software telemetry, not a null trace and not authority.
+7. Boundary Access Channel as the current best bridge-object toy corridor.
+8. Ricci-Fibonacci, dark-to-readable, ternary, snap/reconnection, and Shear branches as toy telemetry or demoted/mixed scaffolds only.
 
 ## Symbolic / Spirituality Layer
 
@@ -76,7 +77,7 @@ It is not physics evidence. It does not prove GHP. It gives human language to th
 3. Complete stronger falsification paths, including beta-band style tests.
 4. Recover ordinary physics limits without numerology.
 5. Clarify whether VPH has a structural bridge to Fibonacci or only algebraic resonance.
-6. Run HRT-002 live safely in Aukora without telemetry becoming authority.
+6. Run HRT-002 / Accord live safely in Aukora without telemetry becoming authority, including allowlist/schema tests, no-authority read-path tests, witness/hysteresis offline evaluators, timing-channel bounds, canonicalization leak scans, and promotion-lattice property checks.
 7. Keep toy telemetry from drifting into physics overclaim.
 8. Keep symbolic material alive without letting it impersonate scientific proof.
 

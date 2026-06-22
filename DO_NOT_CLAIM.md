@@ -42,6 +42,10 @@ GHP does not currently claim:
 - proof that the write-law is solved.
 - proof that witness-held-tension authorizes action.
 - proof that snap/reconnection is ready as live decision logic.
+- proof that the HRT Accord promotion law proves GHP.
+- proof that HRT telemetry can ever authorize action.
+- proof that canonicalization telemetry is always compression-safe.
+- proof that timing metadata may be used as payload or authority.
 
 ## Safe Language
 
@@ -59,6 +63,8 @@ Use:
 - `places VPH in prior-art context`
 - `VPH is a Schwarzschild scalar fixed-surface identity, not a horizon`
 - `Aukora HRT is engineering telemetry only: evidence may guide analysis, never authorize`
+- `HRT Accord is a promotion discipline for typed telemetry, not a gate`
+- `canonicalization telemetry can be leak-free while still adding hash-reference overhead`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -89,6 +95,10 @@ Avoid:
 - `Aukora telemetry proves GHP`
 - `witness-held-tension authorizes action`
 - `snap/reconnection is validated as live decision logic`
+- `HRT Accord solves the write-law`
+- `canonicalization telemetry is automatically compression`
+- `timing is payload`
+- `timing is authority`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

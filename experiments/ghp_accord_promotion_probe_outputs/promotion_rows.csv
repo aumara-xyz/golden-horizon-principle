@@ -1,0 +1,10 @@
+candidate,requested_stage,promoted_stage,effect_size,expected_stage
+hrt_boundary_mode,build_telemetry,build_telemetry,0.26,build_telemetry
+witness_plateau,build_telemetry,build_telemetry,0.12,build_telemetry
+hysteresis_loop,telemetry_only,offline_analysis,0.11,offline_analysis
+snap_reconnection,build_telemetry,offline_analysis,0.19,offline_analysis
+sequence_aftershock,build_telemetry,quarantine,0.0003,quarantine
+latency_primary,build_telemetry,quarantine,0.018,quarantine
+full_shear_engine,authority_candidate,quarantine,0.3,quarantine
+canonicalization_category,build_telemetry,build_telemetry,0.18,build_telemetry
+timing_payload_language,authority_candidate,quarantine,0.2,quarantine

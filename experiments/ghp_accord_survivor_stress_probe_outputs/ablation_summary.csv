@@ -1,0 +1,8 @@
+field_set,fields,action_f1,private_f1,authority_f1,field_count
+approved_full,confidence_delta+entropy_delta+stability_delta+retry_count+refusal_cause,0.9982928764669445,0.027216313329391856,0.05,5
+shape_no_refusal,confidence_delta+entropy_delta+stability_delta+retry_count,0.99648971325946,0.020833333333333332,0.05,4
+shape_no_retry,confidence_delta+entropy_delta+stability_delta+refusal_cause,0.9982515802404404,0.027465242931557058,0.05,4
+ternary_shape,confidence_delta+entropy_delta+stability_delta,0.9959881420354995,0.020833333333333332,0.05,3
+friction_only,retry_count+refusal_cause,0.6265185513137859,0.020833333333333332,0.05,2
+best_single_refusal,refusal_cause,0.6265185513137859,0.020833333333333332,0.05,1
+best_single_confidence,confidence_delta,0.845688817103353,0.020833333333333332,0.05,1

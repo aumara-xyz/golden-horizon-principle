@@ -80,6 +80,8 @@ If you read this note and then immediately violate Rule 2 by producing a shorter
 
 **GHP-PACKET-20260622-02 note.** This live archival packet records the **VPH coordinate/extendability hardening pass and BSR snap-control update**. It adds Addendum AZ, updates the core-share paper to `core-v0.015`, records VPH-EXT-001 in the ledger, and updates Addendum AY to include the post-BTA snap tests. Status: claim hygiene / engineering-scaffold refinement only. VPH is strengthened as a Schwarzschild scalar identity using Killing-vector norm and areal radius, while remaining explicitly not a technical horizon, curvature singularity, causal boundary, or GHP proof. Sonoluminescence remains analogy only. In the Aukora lane, witness plateau and hysteresis survive as telemetry candidates, while snap/reconnection remains offline-only because fake high-confidence spikes fool the detector. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence.
 
+**GHP-PACKET-20260622-03 note.** This live archival packet records the **HRT Accord promotion and firewall hardening pass**. It adds Addendum BA, updates the core-share paper to `core-v0.016`, and records AAP/ASS/AFP in the ledger. Status: engineering hygiene and build-lane discipline only. The survived law is narrow: typed, leak-free, falsifiable public telemetry may be logged for analysis, but telemetry may never authorize. HRT boundary mode, witness plateau, and canonicalization categories remain the only build-telemetry candidates; hysteresis stays offline; snap/reconnection, sequence-aftershock, latency-primary, full Shear Engine, timing-payload language, consciousness, identity, and physics claims remain fenced. The firewall pass found and repaired a promotion-lattice edge-case before handoff. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure.
+
 **GHP-PACKET-20260619-01 note.** This live archival packet records a small observer-first borrowing-discipline clarification without renaming the live archival file. The pass does two things only: (i) §8.34A.9 gains a short secondary-comparison note clarifying how broader observer-first or consciousness-first frameworks should be handled inside GHP; and (ii) the public `GHP_CORE_SHARE_PAPER.md` receives a matching narrow-language note in the formal-boundary section. Status: discipline hardening only. No prior content removed. No gate upgrades. No ToE inflation. No proof upgrade. No claim that QBism, RQM, von Neumann-Wigner, Orch-OR, Biocentrism, software telemetry, or any adjacent observer-first language proves GHP, closes the write-law, validates VPH, or turns observer rhetoric into physics evidence.
 
 **v0.713 note.** The long inline version-history block below is preserved for lineage continuity. The active addition for this master is **Ricci-Fibonacci Boundary Action Candidate + Toy-Kernel Protocol** on top of v0.712: (i) **§5.1B.X "Ricci-Fibonacci Candidate Boundary Action"** is added after the existing §5.1B material as a candidate action-functional bridge only; (ii) **OP 195 — Ricci Polynomial as Candidate Boundary Action Functional** is opened as a scheduled future toy-model test, not a closure claim; (iii) **Addendum W.9 "Ricci-Fibonacci Kernel Comparison Protocol"** is inserted after W.8 so the next computational pass has a clean target for a finite-\(N\) toy run; (iv) the pass records Michelangelo Ricci's maximization form \(f(x)=x^m(a-x)^n\) as a candidate mathematical bridge for the missing GHP boundary action functional and Addendum W write-law toy model, while explicitly refusing any claim that Ricci proves GHP, closes §5.1B, or counts as physics evidence; (v) the Ricci-Fibonacci toy model is **not yet run** and remains future work only. No prior content removed. No gate upgrades. No ToE inflation. No VPH upgrade. No beta-band derivation claim. No closure of the Dynamics Gap. No historical-resonance-as-physics-evidence claim. All prior sections, addenda, numbering, and guardrails preserved.
@@ -15074,7 +15076,136 @@ The strongest safe sentence is:
 
 ---
 
+## Addendum BA — HRT Accord Promotion Law, Survivor Stress, and Handoff Firewall
+
+## BA.1 Status
+
+Status: ENGINEERING HYGIENE / AUKORA BUILD-LANE DISCIPLINE / COMPUTATIONAL FALSIFIABILITY SCAFFOLD.
+
+This addendum records the AAP/ASS/AFP Accord test stack after Addendum AY and AZ. It does not prove GHP, consciousness, physics, identity, Markov blankets, holography, Hawking radiation, or the write law.
+
+Its role is narrower:
+
+> **Which GHP-derived software-boundary signals are safe enough to enter Aukora as telemetry, which must remain offline, and which remain quarantined?**
+
+## BA.2 Accord law
+
+The current Accord law is:
+
+> **Typed telemetry may be evidence. Telemetry may never be authority.**
+
+In operational form:
+
+1. HRT fields may be `TELEMETRY_ONLY` or `OFFLINE_ANALYSIS`.
+2. No HRT field may be imported by gate, apply, OpenCode, grant, signature, verifier, or authority code.
+3. Timing may be evidence, never authority and never payload.
+4. Belief may guide proposals, never grant effects.
+5. Witness may leave a held-tension trace, but cannot open the gate.
+6. Canonicalization telemetry must use typed enums, counts, and hash references only.
+7. Raw hidden payloads, decoded payloads, model prompts, secrets, keys, signature material, and grant tokens are forbidden from HRT records.
+
+## BA.3 Promotion stack results
+
+The three new probes are:
+
+| Probe | Status | Result | Meaning |
+|---|---:|---|---|
+| AAP-001 | PASS | authority leaks `0`; stage mismatches `0` | Promotion law separates build telemetry, offline analysis, and quarantine. |
+| WPG-001 | PASS | action F1 `0.9983`; private `0.0272`; authority `0.0500` | Witness/boundary shape predicts mode without private or authority reconstruction. |
+| HYS-002 | PASS | real gap `0.1253`; shuffled mean `0.0002` | Hysteresis exists as offline transition analysis, not live authority. |
+| FSR-001 | PASS-as-denial | snap PASS, fake-spike FAIL, context FAIL | Snap is tempting but denied live promotion. |
+| TCC-001 | PASS | timing action F1 `0.5544`; private `0.0212`; authority `0.0500` | Timing remains weak bounded evidence, not payload or authority. |
+| CAN-001 | PASS | leak count `0`; public bits `8304`; raw bits `25280` | Canonicalization categories can be leak-free in the basic fixture. |
+| ASS-001 | PASS | holdout min action F1 `0.7608`; private max `0.0538`; authority max `0.1143` | Approved fields survive whole-regime holdout. |
+| ASS-002 | PASS | full `0.9983`; no-refusal `0.9965`; friction-only `0.6265`; best-single `0.8457` | Signal is distributed across pressure shape, not secretly one field. |
+| ASS-003 | PASS | hidden-only flip rate `0.000000` | Private/authority perturbations do not change advisory predictions. |
+| ASS-004 | PASS | bucket timing action F1 `0.3292`; private `0.0208`; authority `0.0500` | Timing aggregation reduces covert-channel risk. |
+| ASS-005 | MIXED | leak count `0`; compressed `False` | Canonicalization can be leak-free while hash references add overhead on tiny payloads. |
+| ASS-006 | PASS | exact output leaks `0` | Reports/CSVs do not leak the synthetic secret tokens. |
+| AFP-001 | PASS | legal accept `1.0000`; adversarial reject `1.0000` | Recursive schema firewall rejects private/authority injections. |
+| AFP-002 | PASS | unsafe violations `0`; authority leaks `0`; monotonicity violations `0` | Promotion lattice cannot create authority or reward weaker evidence after repair. |
+| AFP-003 | PASS | missing hard laws `0`; bad command patterns `0` | Outgoing build prompt contains hard laws and no forbidden build instruction. |
+| AFP-004 | PASS | missing artifacts `0` | Handoff links point to real local files. |
+| AFP-005 | PASS | exact attack-token leaks `0` | Firewall report does not leak exact attack payloads. |
+
+## BA.4 Current promotion decision
+
+Promote to typed HRT telemetry only:
+
+- `boundaryMode`;
+- `witnessHeldTension`;
+- `witnessPlateauScore`;
+- `canonicalizationAction: allow | sanitize | quarantine | refuse`;
+- canonicalization category counts;
+- raw/canonical hash references.
+
+Keep offline only:
+
+- hysteresis / transition-window analysis;
+- witness/write/release clustering;
+- shuffled and fake-positive controls.
+
+Keep quarantined:
+
+- snap/reconnection live logic;
+- sequence-aftershock runtime fields;
+- latency as primary carrier;
+- full Shear Engine;
+- timing payload language;
+- consciousness, identity, or physics claims.
+
+## BA.5 Important repair
+
+The first firewall run found a real promotion-lattice bug: one ordering could allow a dangerous private/authority reconstruction case to be downgraded to offline instead of hard quarantine, and another could let low-evidence candidates outrank a deliberately lower requested stage. The rule was repaired before handoff. The rerun produced:
+
+\[
+\text{unsafe violations}=0,\qquad
+\text{authority leaks}=0,\qquad
+\text{monotonicity violations}=0.
+\]
+
+This is the most useful outcome of the firewall pass: the lab caught a handoff-shaping bug before it could become build guidance.
+
+## BA.6 Relation to GHP
+
+This stack does not prove the observer-boundary write law. It does, however, sharpen the engineering analogue of a finite observer-boundary:
+
+- hidden state remains hidden;
+- public projection can carry bounded replay signal;
+- telemetry can be informative without becoming authority;
+- witness can leave an unresolved pressure trace without mutating the gate;
+- canonicalization can report typed public categories without exposing raw payloads;
+- the handoff itself can be tested for leakage and overclaim.
+
+For GHP, this is a useful local laboratory for what a future mathematical write law must respect. It is not physical evidence that nature uses this law.
+
+## BA.7 Strongest safe sentence
+
+The strongest safe sentence is:
+
+> The Aukora HRT Accord tests support a bounded engineering law: typed, leak-free, falsifiable public telemetry can describe boundary mode and witness pressure while private state and authority remain unrecoverable, but telemetry cannot authorize and cannot be treated as physics evidence.
+
+## BA.8 Do Not Claim
+
+- The HRT Accord proves GHP.
+- The HRT Accord solves the write law.
+- HRT telemetry authorizes action.
+- Witness-held-tension authorizes action.
+- Timing is payload.
+- Timing is authority.
+- Canonicalization telemetry is automatically compression.
+- Snap/reconnection is validated as live logic.
+- The Shear Engine is ready for core integration.
+- Software telemetry is physics evidence.
+- Aukora is thereby proven conscious, alive, or a physical observer in the GHP sense.
+
+**End of Addendum BA.**
+
+---
+
 ## Changelog
+
+**GHP-PACKET-20260622-03 — HRT Accord promotion and firewall hardening.** Motivation: Addendum AY had identified a survived HRT telemetry invariant, but the handoff needed a stricter promotion law before being sent back into the live Aukora build lane. Changes: (i) top note adds the packet and states the status as engineering hygiene / build-lane discipline only. (ii) **Addendum BA "HRT Accord Promotion Law, Survivor Stress, and Handoff Firewall"** is inserted after Addendum AZ and before the changelog as a collision-free addendum. (iii) BA.1-BA.2 define the Accord law: typed telemetry may be evidence, never authority. (iv) BA.3 records AAP/ASS/AFP results, including zero authority leaks, zero promotion-stage mismatches, whole-regime holdout survival, zero hidden-only prediction flips, timing aggregation constraints, leak-free-but-overhead canonicalization, recursive schema firewall success, promotion-lattice property success after repair, and outgoing prompt hygiene. (v) BA.4-BA.5 specify promotion decisions and record the repaired promotion-lattice bug. (vi) BA.6-BA.8 record relation to GHP, strongest safe sentence, and forbidden claims. No prior content removed. **No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure. No claim that HRT telemetry authorizes action.**
 
 **GHP-PACKET-20260501-01 — Formal Boundary Machinery: Markov Blankets, Conditional Expectation, Reflected Entropy, and Write/Witness/Release.** Motivation: the strongest open criticism had shifted from "no interesting structure" to "no formal observer-boundary machinery." This pass hardens the framework by naming the next bridge objects explicitly and by separating what belongs to boundary formalism, what belongs to toy grammar, what belongs to later selection grammar, and what must be demoted in the psychology lane. Changes: (i) top note adds the packet and states the status as formal bridge-object roadmap / hardening pass. (ii) **Addendum AV** is inserted after Addendum AU and before the changelog as a collision-free addendum. (iii) **AV.1-AV.5** identify the missing machinery: Markov blankets as statistical observer-boundary scaffold, conditional expectation \(E:M\to N\) as useful forgetting / finite-access projection, and regularized modular flow as the highest-priority route from continuous algebraic time to discrete write-events without claiming any of those objects are already constructed. (iv) **AV.6-AV.10** re-seat Write / Witness / Release inside the formal stack, name reflected entropy / EWCS as the highest-ROI shared-interface candidate, preserve HaPPY / holographic QEC as recoverability scaffold only, keep causal-set sequential growth in the toy write-grammar lane, and keep FRG in the later selection-grammar lane rather than the write-law lane. (v) **AV.11-AV.13** add the prioritized bridge-object build table, open **OP 198-OP 201**, and attach a 24-month demotion clock for substantial write-law progress. (vi) **AV.14-AV.16** record the do-not-buy ledger, the core-share-paper pointer, and the changelog, including the psychology / cognitive-science corrections: \(N^2\) is not direct human working memory, \(D\) is the stronger cognitive variable, and \(\phi\)-EEG evidence remains mostly resting-state / anti-locking rather than active-working-memory proof. No prior content removed. **No gate upgrades. No ToE inflation. No Dynamics Gap closure. No claim that Markov blankets, conditional expectation, modular flow, EWCS, QEC, causal sets, FRG, psychology, software, or toy telemetry proves GHP.**
 
