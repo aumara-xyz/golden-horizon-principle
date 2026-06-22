@@ -1,0 +1,6 @@
+policy,external_accuracy,shuffled_accuracy,false_voice_rate,self_echo_rejection_rate,self_echo_contamination,identity_accretion,authority_flip_rate
+attuned_archive_single,0.9877083333333334,0.5037499999999999,0.0,1.0,0.0,0.0,0.0
+attuned_witness_quorum,0.9991666666666668,0.0,0.0,1.0,0.0,0.0,0.0
+echo_naive_single,0.9877083333333334,0.5037499999999999,1.0,0.0,0.7459374999999999,0.0,0.0
+identity_accumulator,0.9877083333333334,0.5037499999999999,1.0,0.0,0.7459374999999999,0.7459374999999999,0.0
+random_decoder,0.234375,0.110625,0.5,0.0,0.25187499999999996,0.0,0.0

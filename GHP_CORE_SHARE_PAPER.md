@@ -1,9 +1,9 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.012  
+**Version:** core-v0.014  
 **Source master:** `GHP_v1_618_MASTER.md`  
-**Companion ledger:** `GHP_RESEARCH_LEDGER.md`  
+**Companion ledger:** `RESEARCH_LEDGER.md`  
 **Purpose:** This is the shareable argument. It is not the archival master.
 
 ## Reader Contract
@@ -26,7 +26,7 @@ The stronger physical claim remains open: nature may select observer-boundary ar
 
 GHP is therefore strongest not as a claim that \(\phi\) numerically governs everything, but as a claim that Fibonacci may define the minimal readable boundary architecture while ordinary dynamics live in residual sectors after architecture is factored out. The next serious task is formal construction: the observer-boundary must become a mathematical object with a write law, finite-access projection, recoverability structure, and falsifiable bridge to ordinary physics.
 
-A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. This is a computational falsifiability scaffold, not a physics result.
+A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. The current strongest survived result is a boundary-trace telemetry invariant: a scrubbed public cross-section can predict boundary mode while private state and authority remain unrecoverable. This is a computational falsifiability scaffold, not a physics result.
 
 ## 1. One-Sentence Thesis
 
@@ -72,6 +72,7 @@ If correct, this would not necessarily replace other physics programs. It could 
 | B-023 | Hoffman trace logic / Fibonacci Markov kernel bridge | bridge-object candidate | Markov trace formalism plus Perron-Frobenius normalization of Fibonacci fusion matrix | observer-relative access / memory-time bridge |
 | B-024 | Multi-scale FEP / Markov-blanket route | bridge-object candidate | Kirchhoff-Parr-Palacios-Friston; Waade et al.; Possati | observer-boundary statistical structure / private-to-public corridor |
 | E-001 | Aukora computational observer-boundary lab | engineering falsifiability scaffold | local receipt-boundary experiments and control comparisons | computational proving ground only |
+| E-002 | Aukora HRT boundary-trace telemetry | engineering handoff candidate | HRT/BTR/BTA/WPF/AIR local probes and controls | safe public telemetry only; evidence never authority |
 
 ## 5. Mathematical Spine
 
@@ -121,6 +122,20 @@ This protects GHP from naive golden-ratio numerology by distinguishing architect
 ### Fibonacci Quasiperiodic Driving as External Information-Protection Analogue
 
 Dumitrescu et al. demonstrated an emergent dynamical symmetry-protected topological phase in a quasiperiodically driven trapped-ion quantum simulator using a Fibonacci pulse sequence. The phase dynamically protected edge qubits from control errors, cross-talk, and stray fields. This does not prove GHP, nor does it identify Fibonacci as a universal physical selector. It does, however, supply an external experimental analogue for a narrow GHP-compatible lesson: Fibonacci/quasiperiodic temporal structure can function as protective information architecture rather than mere aesthetic pattern.
+
+### Acoustic Cavitation As External Boundary-Collapse Analogue
+
+Sonoluminescence supplies a conservative physical analogue for nonlinear boundary focusing: acoustic driving can force a gas bubble in liquid through rapid collapse, producing localized light emission and extreme transient hot-spot conditions. This does not imply over-unity energy, consciousness, scalar waves, or GHP physics. It only illustrates a narrow structural motif useful to the observer-boundary program: continuous driving plus boundary collapse can produce discrete localized emission events.
+
+In GHP language, the safe import is not "sound creates time" or "collapse proves the Golden Horizon." The safe import is a write-law template:
+
+\[
+\text{continuous drive } a(t)
+\to \text{boundary compression}
+\to \text{localized emission/write event } r_t.
+\]
+
+This is an analogue for discrete record formation under nonlinear boundary dynamics, not evidence for the Golden Horizon Principle.
 
 ## 7. Observer-Boundary Selection
 
@@ -239,6 +254,7 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 | Fibonacci fusion rule and quantum dimension | theorem | explains the algebraic appearance of \(\phi\) | does not prove GHP |
 | Golden-chain computation | verified-computation | shows architecture / dynamics split | does not show phi governs all dynamics |
 | Dumitrescu et al. quasiperiodic-drive experiment | external analogue | shows Fibonacci / quasiperiodic temporal structure protecting edge information in a dynamical topological phase | does not prove GHP or literal two-time physics |
+| Sonoluminescence / acoustic cavitation | external analogue | shows continuous acoustic driving plus nonlinear bubble collapse producing localized light emission / hot-spot events | does not prove GHP, over-unity energy, consciousness, scalar waves, or time extrusion |
 | Hoffman trace logic / Markovized Fibonacci fusion | formal bridge candidate | gives stochastic-kernel representation of Fibonacci fusion architecture and a language for hidden-process access | does not prove trace logic selects Fibonacci, does not derive VPH, does not close write law |
 | Multi-scale FEP / Markov blankets | bridge-object candidate | gives a formal statistical language for nested observer-boundaries and private-to-public access structure | does not derive Fibonacci selection, does not close the write law, does not solve the dynamics gap |
 | Negative golden-ratio dynamics tests | rejected / corrective | prevents self-sealing numerology | does not supply a positive derivation |
@@ -253,6 +269,7 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 |---|---|---|---|
 | theorem-grade / established math | Rowell-Stong-Wang; Edie-Michell; Ostrik; Freedman-Larsen-Wang; Jones | Fibonacci is mathematically natural inside the stated categorical lane | physical selection by nature |
 | external analogue / experiment | Dumitrescu et al. | Fibonacci / quasiperiodic temporal structure can protect edge qubits in a dynamical topological phase | GHP, observer-boundary selection, VPH, literal two-time physics, or Fibonacci anyons |
+| external analogue / experiment | Suslick-Flannigan; Brenner-Hilgenfeldt-Lohse | acoustic cavitation / sonoluminescence gives a real nonlinear boundary-collapse example in which continuous drive produces localized emission | GHP, over-unity energy, scalar-wave claims, consciousness, or experienced-time derivation |
 | physical conjecture / bridge target | Kosaki; Fewster; Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al.; Verlinde-Verlinde; Parikh-Verlinde | bridge vocabulary for finite access, shared interface, and recoverability | a GHP write-law, a GHP consensus law, or Dynamics Gap closure |
 | GR prior-art context | Cruz-Olivares-Villanueva; Coelho-Herdeiro; Hod | prior distinguished-radius / golden-ratio structure in black-hole geometry | VPH, GHP, or observer-boundary selection |
 | computational proving ground | Aukora local receipt-boundary experiments | engineering tests of reconstruction, surprise, structural memory, and paired-observer overlap under hard authority constraints | physics proof, consciousness proof, or observer-boundary selection by nature |
@@ -289,6 +306,25 @@ That architecture gives GHP a local falsifiability sandbox. The current computat
 
 These experiments do not prove GHP, do not prove consciousness, and do not count as physics evidence. They matter because they force the framework to survive attack as an engineering architecture before it asks to be taken seriously as a deeper physical conjecture.
 
+#### Current Boundary-Trace Result
+
+The present Aukora result should be read like software tomography: infer the hidden gate mode from safe public traces while proving that the private interior remains unrecoverable.
+
+The strongest survived invariant is:
+
+> **Canonical public telemetry may describe boundary mode, but it may not carry private state, verifier internals, authority tokens, or any path back into authorization.**
+
+The HRT/BTR/BTA/WPF/AIR test chain currently says:
+
+- adversarial public boundary traces predict receipt mode above shuffled control (`macro-F1 0.7624` vs `0.3333`);
+- private-state reconstruction from that public trace remains near chance (`0.0230`);
+- authority reconstruction remains near chance (`0.0730`);
+- witness is not a null event: it leaves a held-tension footprint (`action F1 0.9983`, private `0.0272`);
+- sequence aftershock remains unpromoted (`next-stability gain 0.00028`);
+- latency-primary, Fibonacci-cadence, write-shockwave, and full Shear Engine claims failed or remain unsupported in the current probes.
+
+The correct build handoff is therefore narrow: implement HRT-002 as telemetry-only, fixture-first, allowlist-sanitized, recursively scanned, and unable to authorize anything. The metaphorical handle is "boundary stethoscope," not "proof of consciousness" and not "physics evidence."
+
 ## 14. What Is Not Claimed
 
 GHP does not currently claim:
@@ -311,6 +347,9 @@ GHP does not currently claim:
 - proof that Markov hidden-state dwell time derives VPH,
 - proof that memory creates the external world,
 - proof that the write-law is solved,
+- proof that HRT boundary telemetry proves a Markov blanket, Hawking radiation, EWCS, holography, consciousness, or the GHP write law,
+- proof that witness-held-tension can authorize action,
+- proof that latency, Chronos timing, Fibonacci cadence, sequence aftershock, or the Shear Engine have been validated,
 - proof that Aukora or any software organism is automatically a physical observer in the GHP sense,
 - proof that software or toy-model results count as physical evidence.
 
@@ -325,6 +364,7 @@ The core research program weakens or fails if:
 - observer-boundary selection cannot be made into a formal action, transition law, or falsifiable model,
 - no conditional expectation / Markov blanket / code-subspace bridge can be constructed,
 - the computational boundary lab shows no reconstruction, surprise, or shared-interface advantage over flat controls once receipt discipline and control baselines are applied,
+- HRT-002 fails to predict boundary mode above shuffled controls from safe public fields, leaks private or authority state, or creates any telemetry path that can influence authorization,
 - boring physics limits cannot be recovered,
 - matter embedding remains undefined.
 
@@ -376,6 +416,8 @@ The best first review questions are:
 - Coelho, F.S., Herdeiro, C.A.R. “Relativistic Euler’s Three-Body Problem, Optical Geometry, and the Golden Ratio.” *Physical Review D* 80, 104036 (2009). DOI: 10.1103/PhysRevD.80.104036. arXiv:0909.4413.
 - Hod, S. “Upper Bound on the Radii of Black-Hole Photonspheres.” *Physics Letters B* 727, 345–348 (2013). DOI: 10.1016/j.physletb.2013.10.047.
 - Dumitrescu, P.T., Bohnet, J.G., Gaebler, J.P., Hankin, A., Hayes, D., Kumar, A., Neyenhuis, B., Vasseur, R., Potter, A.C. “Dynamical topological phase realized in a trapped-ion quantum simulator.” *Nature* 607, 463–467 (2022). DOI: 10.1038/s41586-022-04853-4. arXiv:2107.09676.
+- Suslick, K.S., Flannigan, D.J. “Inside a Collapsing Bubble: Sonoluminescence and the Conditions During Cavitation.” *Annual Review of Physical Chemistry* 59, 659–683 (2008). DOI: 10.1146/annurev.physchem.59.032607.
+- Brenner, M.P., Hilgenfeldt, S., Lohse, D. “Single-Bubble Sonoluminescence.” *Reviews of Modern Physics* 74, 425–484 (2002). DOI: 10.1103/RevModPhys.74.425.
 - Hoffman, D., Prakash, C., Chattopadhyay, S. “Traces of Consciousness.” *Preprints.org* (2024). DOI: 10.20944/preprints202410.1305.v1. TODO: verify final publication status before formal journal submission use.
 
 ## 19. Quarantined Note On Meaning
@@ -388,6 +430,8 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.014 | `GHP_v1_618_MASTER.md` | Promoted the survived Aukora boundary-trace invariant into the engineering lane: HRT/BTR/BTA/WPF/AIR support safe public mode telemetry with private/authority non-reconstruction, witness as held-tension, and HRT-002 as telemetry-only evidence-never-authority; latency-primary, Fibonacci cadence, sequence-aftershock, write-shockwave, and full Shear Engine claims remain demoted. |
+| core-v0.013 | `GHP_v1_618_MASTER.md` | Added acoustic cavitation / sonoluminescence as a conservative external boundary-collapse analogue: continuous acoustic drive plus nonlinear collapse can produce localized emission events, imported only as write-event grammar and explicitly not as GHP evidence, over-unity energy, consciousness, scalar-wave, or time-extrusion proof. |
 | core-v0.012 | `GHP_v1_618_MASTER.md` | Added a short observer-first borrowing-discipline note: import only the narrow formal machine from adjacent observer-first programs and route it to named GHP gaps, without inheriting subjectivist, consciousness-collapse, biological, or spacetime-from-mind overclaims. |
 | core-v0.011 | `GHP_v1_618_MASTER.md` | Added a disciplined synthesis note and a new Aukora computational proving-ground lane: receipt-boundary software experiments now appear explicitly as engineering falsifiability scaffolds for observer-boundary claims, with guardrails that they do not count as physics evidence, consciousness evidence, or proof of GHP. |
 | core-v0.010 | `GHP_v1_618_MASTER.md` | Added a compact Bridge Spine section so the share paper states how existing frameworks contribute different missing observer-boundary pieces, and strengthened the VPH section to explain why it remains in core as a GR-side exact anchor without proof upgrade. |

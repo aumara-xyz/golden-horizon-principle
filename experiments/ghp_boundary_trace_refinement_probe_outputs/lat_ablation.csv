@@ -1,0 +1,6 @@
+field_set,fields,action_f1
+latency_only,latency_us,0.17240115835158676
+retry_only,retry_count,0.5423316999340897
+non_time,refusal_cause+confidence_delta+entropy_delta+stability_delta+queue_pressure,0.9999738908766949
+no_latency,retry_count+refusal_cause+confidence_delta+entropy_delta+stability_delta+queue_pressure,0.9999738908766949
+full,latency_us+retry_count+refusal_cause+confidence_delta+entropy_delta+stability_delta+queue_pressure,1.0

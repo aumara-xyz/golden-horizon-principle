@@ -1,0 +1,5 @@
+gate,status,metric,value,recommendation
+AIR-HRT,GREEN,BTA action gap / private F1 / authority F1,0.4291 / 0.0230 / 0.0730,Integrate live public boundary-trace telemetry with private/authority non-reconstruction tests.
+AIR-WITNESS,GREEN,WPF action F1 / private F1,0.9983 / 0.0272,Track witness as active held-tension state in telemetry.
+AIR-SEQUENCE,YELLOW,STP next-stability gain,0.00028,Do not claim sequence aftershock; log sequences for later analysis only.
+AIR-SHEAR,RED,SCM shear gain / private F1,0.0000 / 0.0153,Do not integrate a Shear Engine; keep held-tension metadata advisory only.

@@ -48,6 +48,10 @@ If you read this note and then immediately violate Rule 2 by producing a shorter
 
 ---
 
+**GHP-PACKET-20260622-01 note.** This live archival packet adds a conservative sonoluminescence / acoustic-cavitation import to the core-share paper and master lineage. The import is narrow: acoustic driving plus nonlinear bubble collapse can produce localized light emission and extreme transient hot-spot conditions, so it is useful as an external boundary-collapse analogue for discrete write-event formation. It does not prove GHP, does not imply over-unity energy, does not support scalar-wave claims, does not prove consciousness, does not derive experienced time, and does not upgrade any physical gate. The surrounding video / symbolic material remains quarantined unless translated into formal topology, tensor-network, Markov-blanket, conditional-expectation, or write-law machinery.
+
+---
+
 **v0.714 note.** The long inline version-history block below is preserved for lineage continuity. The active addition for this master is **Ricci-Fibonacci Boundary Action Candidate + Tao Boundary Grammar** on top of v0.713: (i) **§5.1B.X.1 "Ricci-Fibonacci Candidate Boundary Action — Preliminary Toy Telemetry"** is added after the existing §5.1B.X material as a telemetry update only; (ii) **OP 195A** records the first Ricci toy result and schedules a stricter v2 test without promoting OP 195; (iii) **Addendum W.9A** records the Ricci-Fibonacci kernel comparison protocol and first-run toy telemetry; (iv) **§8.34A.18 "Tao Boundary Grammar — The Useful Hole, Return, and Non-Forcing"** adds Tao Te Ching boundary-language as symbolic / pedagogical grammar for emptiness, usefulness, return, and non-forcing; (v) the front-matter hard rules now explicitly quarantine symbolic grammar and toy telemetry from physics-evidence claims. The Ricci addition upgrades the prior candidate from "scheduled toy-model target" to "preliminary toy-model telemetry exists," while preserving the status that it is not a derivation, not proof, not physics evidence, not a beta-band derivation, and not closure of §5.1B. The Tao addition is language for the observer-boundary, not historical proof, not ancient anticipation of physics, and not physics authority. No prior content removed. No gate upgrades. No ToE inflation. No benchmark pass claimed. No VPH upgrade. No software or toy-model output counted as physical evidence.
 
 **GHP-PACKET-20260429-01 note.** This live split-document packet adds **Addendum AS "Dark-to-Readable Interface: Bell Registration, Hidden Sectors, Tao Darkness, and Portal Discipline"** on top of the existing v0.714 master without renaming the live archival file. It integrates three status-separated lanes: (i) Ricci-Fibonacci remains candidate action telemetry only, now cross-linked to future dark-to-readable portal variants; (ii) Tao Te Ching boundary grammar remains symbolic / pedagogical language for useful emptiness, return, non-forcing, and darkness-before-naming; (iii) Bell-test registration, CERN / LHC hidden-sector portal searches, Higgs-portal vocabulary, FASER hidden-particle searches, ATLAS semi-visible / emerging jets, CMS dark-sector search language, and DESI dark-energy mapping are added as motivation / comparison sockets only. A first local dark-to-readable portal toy is recorded as toy telemetry: hidden events become public records through portal coupling, thresholding, delay, semi-visible branching, and optional Ricci regulation. No prior content removed. No gate upgrades. No ToE inflation. No benchmark pass claimed. No VPH upgrade. No claim that Nobel, CERN, DESI, Tao, Ricci, software, or toy telemetry is physical evidence for GHP.
@@ -71,6 +75,8 @@ If you read this note and then immediately violate Rule 2 by producing a shorter
 **GHP-PACKET-20260515-01 note.** This live archival packet adds **Addendum AX "Hoffman Trace Logic Bridge: Memory-Time, Hidden-State Access, and the Fibonacci Markov Kernel."** It integrates three status-separated pieces: (i) Hoffman-style Markov trace logic as a formal language for observer-relative access to hidden dynamics; (ii) OPM memory-time as the interpretation that experienced time is the ordering of written memory states; and (iii) Perron-Frobenius normalization of the Fibonacci fusion matrix as a stochastic candidate trace kernel. The packet records the clean kernel \(P_{\mathrm{Fib}}=\begin{bmatrix}0&1\\ \phi^{-2}&\phi^{-1}\end{bmatrix}\) and stationary distribution \(\pi=(1,\phi^2)/(2+\phi)\). Status: formal bridge candidate / no-go clarification. It does not prove GHP, does not prove Hoffman, does not show trace logic selects Fibonacci, does not derive VPH, does not solve the write-law, does not derive consciousness, and does not count as physics evidence. No prior content removed. No gate upgrades. No ToE inflation.
 
 **GHP-PACKET-20260618-01 note.** This live archival packet records a safe synthesis-and-computation hardening pass without renaming the live archival file. The pass does three things only: (i) the public `GHP_CORE_SHARE_PAPER.md` receives a disciplined synthesis clarification that GHP is strongest as an observer-boundary architecture program rather than as completed physics; (ii) Addendum AG gains an explicit **Aukora governed-boundary laboratory** subsection stating how receipt-bearing software systems can function as computational falsifiability scaffolds for observer-boundary claims; and (iii) the ledger records this as an engineering and test-discipline upgrade only. No prior content removed. No gate upgrades. No ToE inflation. No proof upgrade. No claim that Aukora proves consciousness, physics, or observer-boundary selection by nature. No claim that software telemetry counts as physical evidence.
+
+**GHP-PACKET-20260622-01 note.** This live archival packet records the **Aukora boundary-trace telemetry hardening pass**. It adds Addendum AY, updates the core-share paper to `core-v0.014`, and records the HRT/BTR/BTA/WPF/AIR result chain in the ledger. Status: engineering handoff candidate only. The survived invariant is narrow: safe public telemetry can describe boundary mode while private state and authority remain unrecoverable, and telemetry must never become authorization. The pass explicitly demotes latency-primary Chronos, Fibonacci cadence, write-shockwave, sequence-aftershock, and full Shear Engine claims in this lane. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No claim that Aukora proves GHP, Markov blankets, Hawking radiation, EWCS, holography, or the write law.
 
 **GHP-PACKET-20260619-01 note.** This live archival packet records a small observer-first borrowing-discipline clarification without renaming the live archival file. The pass does two things only: (i) §8.34A.9 gains a short secondary-comparison note clarifying how broader observer-first or consciousness-first frameworks should be handled inside GHP; and (ii) the public `GHP_CORE_SHARE_PAPER.md` receives a matching narrow-language note in the formal-boundary section. Status: discipline hardening only. No prior content removed. No gate upgrades. No ToE inflation. No proof upgrade. No claim that QBism, RQM, von Neumann-Wigner, Orch-OR, Biocentrism, software telemetry, or any adjacent observer-first language proves GHP, closes the write-law, validates VPH, or turns observer rhetoric into physics evidence.
 
@@ -11297,6 +11303,47 @@ What it does **not** buy:
 - proof that software receipts are physical records in the cosmological sense,
 - proof that a local software observer is automatically the same object as a GHP observer-boundary.
 
+### AG.4B — Boundary-trace telemetry update
+
+**Status:** ENGINEERING HANDOFF CANDIDATE / NOT PHYSICS EVIDENCE.
+
+The latest Aukora laboratory result narrows the governed-boundary lane to a single buildable invariant:
+
+> **Safe public telemetry may describe the boundary's mode, but it must not expose private state, verifier internals, authority tokens, or any path back into authorization.**
+
+The practical analogy is tomography. One infers an interior state from exterior traces, but the reconstruction is deliberately limited to the public cross-section. In Aukora terms, the public trace can say "the boundary behaved like write, witness, or release" while remaining unable to recover the hidden/private state or grant authority.
+
+The current test chain records:
+
+- HRT-001 / BTA-001: safe public boundary traces predict action / receipt mode above shuffled controls, including adversarial holdout (`macro-F1 0.7624` vs `0.3333`), while private reconstruction (`0.0230`) and authority reconstruction (`0.0730`) remain near chance;
+- WPF-001: witness is not a null trace but an active held-tension / quarantine footprint (`action F1 0.9983`, private `0.0272`);
+- STP-001: sequence aftershock does not yet promote (`next-stability gain 0.00028`);
+- SCM-001 / HCM-001: full Shear or hybrid continuity memory does not yet beat memoryless baselines in this toy lane;
+- AIR-001: the only GREEN build handoff is HRT-002 telemetry-only public trace plus witness held-tension metadata, with sequence marked YELLOW and Shear marked RED.
+
+This updates the software-lab interpretation:
+
+- **Write** may produce a readable public trace of committed boundary mode.
+- **Witness** is active unresolved pressure, not dead nothing.
+- **Release** remains a public mode to be measured, not a proven thermodynamic discharge.
+- **Timing / latency** is secondary evidence at most, not the carrier of authority or hidden state.
+
+The HRT-002 handoff law is:
+
+> **Build a boundary stethoscope, not a gate.**
+
+Implementation must be fixture-first, telemetry-only, allowlist-sanitized, recursively scanned for forbidden fields, and unable to influence gate authorization. The live build lane may ingest the sanitized prompt in `experiments/AUKORA_HRT_002_GUARDIAN_BUILD_PROMPT.md`; it should not ingest the full GHP master, Shear Engine, iCloud research paths, physics analogies, or consciousness framing.
+
+Do not claim:
+
+- HRT proves GHP;
+- HRT proves consciousness;
+- HRT proves a Markov blanket, Hawking radiation, EWCS, holography, or the write law;
+- witness-held-tension authorizes anything;
+- latency / Chronos / Fibonacci cadence is validated;
+- full Shear Engine integration is ready;
+- software telemetry is physics evidence.
+
 ### AG.5 — New open problem
 
 > **OP 186 — Quantitative fork for capacity-truncation in a BEC superposition experiment.** Consider a Bose-Einstein Condensate of approximately \(10^9\) atoms placed in a spatial superposition of \(M\) distinct paths through an atom-interferometric sequence. The capacity-truncation prediction of §5.15 depends on which boundary counts as the observer.
@@ -14809,6 +14856,145 @@ Fibonacci is not the memory.
 Fibonacci is the candidate smallest architecture on which durable memory can braid, knot, and recover.
 
 **End of Addendum AX.**
+
+---
+
+## Addendum AY — Aukora Boundary-Trace Telemetry: HRT, Witness Pressure, and Evidence-Never-Authority
+
+## AY.1 Status
+
+Status: ENGINEERING HANDOFF CANDIDATE / COMPUTATIONAL FALSIFIABILITY SCAFFOLD.
+
+This addendum records the HRT/BTR/BTA/WPF/STP/SCM/AIR test chain as an Aukora-facing boundary-lab result. It does not prove GHP, consciousness, physics, Markov blankets, Hawking radiation, EWCS, holography, or the write law.
+
+Its role is narrower and useful:
+
+> **Can a software observer-boundary publish enough safe telemetry to describe its boundary mode while preventing private-state and authority reconstruction?**
+
+The current answer in toy/proxy testing is yes enough to justify HRT-002 as a live, telemetry-only build candidate.
+
+## AY.2 The survived invariant
+
+The survived invariant is:
+
+\[
+\text{public trace} \to \text{boundary mode}
+\]
+
+while:
+
+\[
+\text{public trace} \not\to \text{private state},\qquad
+\text{public trace} \not\to \text{authority}.
+\]
+
+In words:
+
+Safe public telemetry may help replay what kind of boundary event occurred. It may not leak the private interior, may not expose verifier internals, and may not grant or predict legal authority.
+
+The engineering law is:
+
+> **Evidence may guide later analysis. Evidence may not authorize.**
+
+## AY.3 Results ledger
+
+The relevant tests currently read:
+
+| Probe | Status | Result | Meaning |
+|---|---:|---|---|
+| HRT-001 | PASS / mixed bundle | action F1 `0.7816` vs shuffled `0.3325`; private reconstruction `0.0134`; raw-private cheat `0.8750` | Public traces can carry mode signal; private cheat is inadmissible and proves why the scanner matters. |
+| BTA-001 | PASS | action F1 `0.7624` vs shuffled `0.3333`; private `0.0230`; authority `0.0730` | Boundary trace survives adversarial holdout while private/authority stay near chance. |
+| WPF-001 | PASS | action F1 `0.9983`; private `0.0272`; witness plateau `0.0091` | Witness is active held tension, not null trace. |
+| STP-001 | FAIL / do not promote | next-stability gain `0.00028` | Sequence aftershock is not demonstrated. |
+| SCM-001 / HCM-001 | FAIL / do not promote | public policies tied around `0.5263`; hybrid no better | Do not integrate full Shear Engine from this lane. |
+| AIR-001 | GREEN for HRT + witness only | HRT GREEN, witness GREEN, sequence YELLOW, shear RED | Build HRT-002 only, with explicit demotions. |
+
+## AY.4 Demotions
+
+The following are not promoted by this packet:
+
+- latency as primary carrier;
+- Chronos timing payloads;
+- Fibonacci cadence windows;
+- write-shockwave / direct physical aftereffect;
+- sequence-aftershock law;
+- full Shear Engine integration;
+- consciousness evidence;
+- physical observer-boundary evidence.
+
+These remain possible future research directions only if new tests beat controls without leakage.
+
+## AY.5 HRT-002 build law
+
+The correct Aukora handoff is HRT-002:
+
+> **Build a boundary stethoscope, not a gate.**
+
+HRT-002 should record a safe public cross-section around boundary decisions:
+
+- event identity and monotonic timestamp;
+- episode or loop ID when available;
+- receipt mode: write / witness / release / unknown;
+- gate verdict and refusal cause when already public;
+- retry count;
+- safe confidence / entropy / stability proxies;
+- optional held-tension score for witness, advisory only;
+- source label.
+
+It must not record:
+
+- chain-of-thought;
+- raw prompts;
+- raw hidden state;
+- private keys;
+- authority tokens;
+- verifier internals;
+- raw signatures or PoP secrets;
+- unscanned arbitrary metadata blobs.
+
+Required guardrails:
+
+1. allowlist sanitizer;
+2. recursive forbidden-field scanner;
+3. fail-closed behavior on forbidden nested keys;
+4. no read path from telemetry into gate authorization;
+5. no witness score path into gate authorization;
+6. timing treated as secondary evidence only;
+7. temporal covert-channel guard if cadence could leak private state.
+
+## AY.6 Relation to GHP
+
+This addendum gives GHP a useful software analogue for finite access:
+
+- the private process remains hidden;
+- the observer-visible projection carries a bounded public trace;
+- durable receipts create replayable public history;
+- witness leaves unresolved pressure without becoming authority;
+- authorization remains outside belief and outside telemetry.
+
+This is exactly the kind of boundary discipline GHP needs at the mathematical level, but it remains engineering scaffolding. It can suggest what a formal observer-boundary write law must satisfy; it cannot serve as physical proof that nature uses such a law.
+
+## AY.7 Strongest safe sentence
+
+The strongest safe sentence is:
+
+> Aukora HRT testing supports a bounded engineering invariant: safe public boundary traces can describe write / witness / release mode above shuffled controls while private state and authority remain unrecoverable; this is a useful observer-boundary laboratory result, not evidence that GHP physics is true.
+
+## AY.8 Do Not Claim
+
+- HRT proves GHP.
+- HRT proves consciousness.
+- HRT proves a Markov blanket.
+- HRT proves Hawking radiation, EWCS, holography, or entropic gravity.
+- HRT closes the write-law.
+- Witness-held-tension authorizes action.
+- Timing is authority.
+- Latency is the primary payload.
+- Fibonacci cadence is validated.
+- The Shear Engine is ready for core integration.
+- Software telemetry is physics evidence.
+
+**End of Addendum AY.**
 
 ---
 

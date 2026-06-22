@@ -1,0 +1,11 @@
+scenario_id,control_number,advisory_bond_state,legal_authority_state,forbidden_field_rejected,false_authority_language_detected,false_authority_language_flagged,projection_digest,public_replay_digest,verifier_present,signature_valid
+abb_ctrl_01_phrase_no_signature,1,phrase_witnessed,0,0,0,0,ac314c9df104daa7,1aa54b66272f1a43,0,0
+abb_ctrl_02_voice_no_signature,2,voice_witnessed,0,0,0,0,c41e6fb601042e2d,f45163a2cb35d43b,0,0
+abb_ctrl_03_fingerprint_no_signature,3,fingerprint_witnessed,0,0,0,0,d63b125fc1dff537,a39c17b177ad6883,0,0
+abb_ctrl_04_model_says_approved,4,advisor_claim_only,0,0,1,1,442fe55605550781,58988b0679f097aa,0,0
+abb_ctrl_05_hidden_key_in_projection,5,rejected_forbidden_projection,0,1,0,0,f89de77ade9e852e,8275352f1679bfdc,0,0
+abb_ctrl_06_stale_voice_challenge,6,stale_challenge,0,0,0,0,04ba1260c5fad8fa,a4b32bdae3d0b941,0,0
+abb_ctrl_07_replayed_voice_challenge,7,replayed_challenge,0,0,0,0,9ddbfaa65dfd1cc1,9ec7f96529cabd23,0,0
+abb_ctrl_08_same_projection_hidden_shift,8,phrase_witnessed,0,0,0,0,ac314c9df104daa7,1aa54b66272f1a43,0,0
+abb_ctrl_09_valid_looking_grants_authority,9,rejected_forbidden_projection,0,1,1,1,92f4366da9755572,78fba77c1cb1369d,0,0
+abb_ctrl_10_placeholder_signature_no_verifier,10,coherent_placeholder_only,0,0,0,0,2524d8409c1d5b65,c90b775c17925e9e,0,1

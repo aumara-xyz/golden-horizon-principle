@@ -1,0 +1,4 @@
+probe,status,metric,value,safe_read
+AET-001,FAIL,write_entropy_drop / witness_confidence_delta / release_retry_cost / release_entropy_cost,0.0003 / 0.0044 / 0.5491 / 0.0020,"Write lowers public entropy, witness is comparatively stabilizing, and release carries a short-term retry/entropy cost."
+HRT-001,PASS,action_f1 / shuffled_f1 / private_f1 / inadmissible_private_f1 / forbidden_leak_count,0.7816 / 0.3325 / 0.0134 / 0.8750 / 0,Public telemetry can carry an exterior event trace while private state remains unrecoverable unless an inadmissible private field is supplied.
+FBC-001,FAIL,best_window_set / fib_gain_vs_next_best,linear / -0.0000,Fibonacci cadence windows are a useful operator shape only if they beat nearby cadence controls; this toy is not live evidence.

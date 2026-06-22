@@ -1,0 +1,5 @@
+probe,status,metric,value,safe_read
+MCT-001,PASS,minimal_fields / action_f1 / private_f1 / compressed_bits,entropy_delta / 0.9514 / 0.0226 / 200,A narrow public telemetry cross-section is useful only if it predicts boundary mode while private state remains unrecoverable.
+MBT-001,PASS,action_f1 / shuffled_f1 / private_bucket_f1 / private_authority_f1 / inadmissible_private_f1,1.0000 / 0.3345 / 0.0368 / 0.1420 / 0.9167,A Markov-blanket analogue requires public boundary signal plus conditional private-state non-recoverability.
+WNT-001,FAIL,witness_latency_gap_us / witness_retry_gap / trace_quietness_gap,298.23 / -0.0523 / 0.0249,Witness is a useful low-friction state only if it is quieter than write/release while remaining distinguishable.
+LAT-001,FAIL,full_f1 / no_latency_f1 / latency_only_f1 / non_time_f1,1.0000 / 1.0000 / 0.1724 / 1.0000,Latency is a carrier only if removing or isolating it materially changes event prediction.

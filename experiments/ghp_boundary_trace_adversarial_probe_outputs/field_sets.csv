@@ -1,0 +1,6 @@
+field_set,fields,action_f1,shuffled_f1,private_f1,authority_f1,bits
+full,latency_us+retry_count+refusal_cause+confidence_delta+entropy_delta+stability_delta+queue_pressure,0.755300487356125,0.3331225976381246,0.03925495063349898,0.09088945322244237,704
+minimal_noisy,entropy_delta,0.3537442306269188,0.29069247631745215,0.014492753623188403,0.0500945079084147,200
+cross_section,refusal_cause+confidence_delta+entropy_delta+stability_delta,0.7624062616433198,0.3333168834744927,0.023043419650513985,0.07299237956214402,504
+no_entropy,latency_us+retry_count+refusal_cause+confidence_delta+stability_delta+queue_pressure,0.8333917407556526,0.32455426744365146,0.031056627460595287,0.07276271909771123,664
+latency_only,latency_us,0.5206084965780943,0.2980210616552802,0.015023090468183738,0.05,176
