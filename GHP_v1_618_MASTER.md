@@ -82,6 +82,8 @@ If you read this note and then immediately violate Rule 2 by producing a shorter
 
 **GHP-PACKET-20260622-03 note.** This live archival packet records the **HRT Accord promotion and firewall hardening pass**. It adds Addendum BA, updates the core-share paper to `core-v0.016`, and records AAP/ASS/AFP in the ledger. Status: engineering hygiene and build-lane discipline only. The survived law is narrow: typed, leak-free, falsifiable public telemetry may be logged for analysis, but telemetry may never authorize. HRT boundary mode, witness plateau, and canonicalization categories remain the only build-telemetry candidates; hysteresis stays offline; snap/reconnection, sequence-aftershock, latency-primary, full Shear Engine, timing-payload language, consciousness, identity, and physics claims remain fenced. The firewall pass found and repaired a promotion-lattice edge-case before handoff. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure.
 
+**GHP-PACKET-20260623-01 note.** This live archival packet records the **MDL Process Memory / phi-sampler correction pass**. It adds Addendum BB, updates the core-share paper to `core-v0.017`, and records the BTA-003 through BTA-007 result chain in the ledger. Status: engineering compression scaffold / toy telemetry only. The survived object is narrow: `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash`, tested only as offline/advisory compression over public action traces. Phi rotation survives as a deterministic low-discrepancy sampler candidate, not as storage, identity, authority, or physics evidence. Generator compression is process compression, not arbitrary-payload compression. The crossing-complexity / knot-pressure simplification proxy remains mixed and fenced after failing shuffled-pressure controls. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure. No replacement of canonical receipts.
+
 **GHP-PACKET-20260619-01 note.** This live archival packet records a small observer-first borrowing-discipline clarification without renaming the live archival file. The pass does two things only: (i) §8.34A.9 gains a short secondary-comparison note clarifying how broader observer-first or consciousness-first frameworks should be handled inside GHP; and (ii) the public `GHP_CORE_SHARE_PAPER.md` receives a matching narrow-language note in the formal-boundary section. Status: discipline hardening only. No prior content removed. No gate upgrades. No ToE inflation. No proof upgrade. No claim that QBism, RQM, von Neumann-Wigner, Orch-OR, Biocentrism, software telemetry, or any adjacent observer-first language proves GHP, closes the write-law, validates VPH, or turns observer rhetoric into physics evidence.
 
 **v0.713 note.** The long inline version-history block below is preserved for lineage continuity. The active addition for this master is **Ricci-Fibonacci Boundary Action Candidate + Toy-Kernel Protocol** on top of v0.712: (i) **§5.1B.X "Ricci-Fibonacci Candidate Boundary Action"** is added after the existing §5.1B material as a candidate action-functional bridge only; (ii) **OP 195 — Ricci Polynomial as Candidate Boundary Action Functional** is opened as a scheduled future toy-model test, not a closure claim; (iii) **Addendum W.9 "Ricci-Fibonacci Kernel Comparison Protocol"** is inserted after W.8 so the next computational pass has a clean target for a finite-\(N\) toy run; (iv) the pass records Michelangelo Ricci's maximization form \(f(x)=x^m(a-x)^n\) as a candidate mathematical bridge for the missing GHP boundary action functional and Addendum W write-law toy model, while explicitly refusing any claim that Ricci proves GHP, closes §5.1B, or counts as physics evidence; (v) the Ricci-Fibonacci toy model is **not yet run** and remains future work only. No prior content removed. No gate upgrades. No ToE inflation. No VPH upgrade. No beta-band derivation claim. No closure of the Dynamics Gap. No historical-resonance-as-physics-evidence claim. All prior sections, addenda, numbering, and guardrails preserved.
@@ -15203,7 +15205,138 @@ The strongest safe sentence is:
 
 ---
 
+## Addendum BB — MDL Process Memory, Phi-Sampler Correction, and Crossing-Complexity Fence
+
+## BB.1 Status
+
+Status: ENGINEERING COMPRESSION SCAFFOLD / TOY TELEMETRY / AUKORA OFFLINE-ADVISORY CANDIDATE.
+
+This addendum records the BTA-003 through BTA-007 result chain. It does not prove GHP, consciousness, physics, identity, Markov blankets, holography, or the write law. It does not make phi a storage medium, a base-reality address space, a cryptographic key, a sampler authority, or an identity primitive.
+
+Its role is narrower:
+
+> **Can public action traces be represented by a compact replayable process model plus explicit residuals, while canonical receipts remain the source of truth?**
+
+## BB.2 Core object
+
+The survived engineering object is:
+
+\[
+\mathrm{MDLProcessMemory}
+= \mathrm{generator}
++ \mathrm{public\ seed/state}
++ \mathrm{explicit\ residuals}
++ \mathrm{replay\ hash}.
+\]
+
+In plain terms:
+
+> Store the blueprint, store the public state needed to replay it, and store every correction where the blueprint fails.
+
+This is a compression hypothesis, not a replacement for receipts. Canonical receipts remain truth. MDLProcessMemory is advisory context only, and only after exact replay verification.
+
+## BB.3 Result chain
+
+| Probe | Status | Result | Meaning |
+|---|---:|---|---|
+| BTA-003A | PASS | generator bits constant; ratio `6.14` at 1k and `122.71` at 20k | A compact formula can emit long generated structure, but this is generic generator compression. |
+| BTA-003B | PASS | `phi_rotation` friction `0.2297` vs PRNG `0.3582`, phi digits `0.3609`, argmax `1.0317`; `sqrt2_rotation` slightly best at `0.2284` | Phi rotation is a useful low-discrepancy sampler candidate, not uniquely magic. |
+| BTA-003C | FAIL | `phi_ternary` friction `3.7121` vs PRNG `3.5753` and always-advance `3.5658` | Write/Witness/Release pointer semantics do not promote. |
+| BTA-004A | PASS / non-unique | `phi_inv` ranks `6/50`; best random alpha `0.2238`, phi `0.2298`, random median `0.2577` | Phi is strong but not uniquely best among irrational rotations. |
+| BTA-004B | PASS | generated phi ratio `0.0156`; random payload ratio `4.3308` | Generator compression works on generated structure, not arbitrary data. |
+| BTA-004C | PASS | base-capacity spread `3.43` bits | Changing base changes glyph count, not underlying information content. |
+| BTA-005A | PASS | phi rule+residual/action ratio `0.0192`; PRNG `2.2615` | Rule-plus-residual memory compresses rule-shaped traces and rejects random traces. |
+| BTA-005B | PASS | mixed ratio `2.5855`; human-jitter `0.5352`; phi `0.0192` | Residual cost stays explicit when traces are not clean single-generator outputs. |
+| BTA-005C | PASS | argmax ratio `0.1541` | The MDL method finds non-phi rules when those generated the trace. |
+| BTA-006A | PASS | exact replay `1.0000`; tamper detection `1.0000` | Compact summaries must replay exactly and detect residual tampering. |
+| BTA-006B | PASS | private leak `0.0000`; hidden perturbation stable `1.0000`; illegal-positive reject `1.0000` | MDL memory can be built from public traces without leaking or responding to hidden/authority fields in the toy guard. |
+| BTA-006C | PASS | phi summary/action ratio `0.2541`; PRNG `3.7938`; PRNG promote `0.0000` | Rule-shaped traces may become advisory candidates; random traces remain fenced. |
+| BTA-007A | MIXED | phi pressure gap `0.0155`; sqrt2 gap `-0.0642` | Crossing-complexity proxy does not reliably beat shuffled controls. |
+| BTA-007B | MIXED | phi mode `argmax`; sqrt2 mode `reset_sqrt2`; PRNG improvement `0.1032` | Strategy selectivity is weak; do not trigger live simplification. |
+| BTA-007C | PASS | replay `1.0000`; leak `0.0000` | Simplification summaries can be replay-safe, but the trigger did not promote. |
+
+## BB.4 Promotion decision
+
+Promote only as offline/advisory test candidate:
+
+- `MDLProcessMemory` over public sandbox traces;
+- generator comparison: `phi_rotation`, `sqrt2_rotation`, van-der-Corput / Sobol-style controls, argmax, PRNG, and current baseline;
+- exact replay check;
+- residual tamper check;
+- private/authority leak scan;
+- hidden-only perturbation stability;
+- summary-size comparison against compressed public action history.
+
+Do not promote:
+
+- phi decimal digits as memory;
+- phi as base reality;
+- phi as primary live sampler before live sandbox benchmarks;
+- ternary phi pointer control;
+- base-N glyph density as compression proof;
+- crossing-complexity / knot-pressure as live reset trigger;
+- sampler state as identity or authority;
+- MDL summaries as receipt replacements.
+
+## BB.5 Aukora handoff law
+
+The handoff law is:
+
+\[
+\mathrm{summary\_bits}
+< \mathrm{compressed\_public\_action\_history\_bits}
+\]
+
+and:
+
+1. exact replay passes;
+2. tamper detection passes;
+3. no private or authority leakage occurs;
+4. hidden-only perturbations do not change the summary;
+5. no telemetry-to-authority read path exists;
+6. canonical receipts remain source of truth.
+
+If any of these fail, the MDL summary stays unpromoted.
+
+## BB.6 Relation to GHP
+
+This addendum gives GHP a cleaner computational compression analogue:
+
+- hidden process remains hidden;
+- public trace may be replayed by a compact process model;
+- residuals mark exactly where the process model fails;
+- the replay hash makes compression auditable;
+- non-rule-shaped traces become expensive rather than falsely elegant.
+
+This is useful because GHP needs a future mathematical account of how finite observers compress repeated boundary history without losing auditability. It is not physical evidence that nature uses phi, Fibonacci, or MDL process memory.
+
+## BB.7 Strongest safe sentence
+
+The strongest safe sentence is:
+
+> BTA-003 through BTA-006 support an Aukora-facing engineering candidate: public action traces may sometimes be compressed as generator plus explicit residuals plus replay hash, with phi rotation as one strong low-discrepancy sampler candidate; BTA-007 keeps topological simplification / knot-pressure live control fenced until it beats shuffled controls.
+
+## BB.8 Do Not Claim
+
+- MDLProcessMemory proves GHP.
+- MDLProcessMemory replaces canonical receipts.
+- Phi rotation is uniquely selected.
+- Phi decimal digits are normal, base reality, or storage.
+- Generator compression compresses arbitrary payloads.
+- The sampler authorizes action.
+- The sampler is identity.
+- Ternary pointer control is validated.
+- Crossing-complexity proves when to reset the sampler.
+- Knot pressure is literal knot theory here.
+- Software compression telemetry is physics evidence.
+
+**End of Addendum BB.**
+
+---
+
 ## Changelog
+
+**GHP-PACKET-20260623-01 — MDL Process Memory / phi-sampler correction.** Motivation: the phi/Chronos/GHP testing lane needed to be separated from phi-magic and turned into a replayable compression hypothesis. Changes: (i) top note adds the packet and states the status as engineering compression scaffold / toy telemetry only. (ii) **Addendum BB "MDL Process Memory, Phi-Sampler Correction, and Crossing-Complexity Fence"** is inserted after Addendum BA and before the changelog as a collision-free addendum. (iii) BB.1-BB.3 define `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash` and record BTA-003 through BTA-007. (iv) BB.4-BB.5 define promotion decisions and the Aukora handoff law. (v) BB.6-BB.8 record relation to GHP, strongest safe sentence, and forbidden claims. No prior content removed. **No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure. No receipt replacement. No live topological simplification trigger.**
 
 **GHP-PACKET-20260622-03 — HRT Accord promotion and firewall hardening.** Motivation: Addendum AY had identified a survived HRT telemetry invariant, but the handoff needed a stricter promotion law before being sent back into the live Aukora build lane. Changes: (i) top note adds the packet and states the status as engineering hygiene / build-lane discipline only. (ii) **Addendum BA "HRT Accord Promotion Law, Survivor Stress, and Handoff Firewall"** is inserted after Addendum AZ and before the changelog as a collision-free addendum. (iii) BA.1-BA.2 define the Accord law: typed telemetry may be evidence, never authority. (iv) BA.3 records AAP/ASS/AFP results, including zero authority leaks, zero promotion-stage mismatches, whole-regime holdout survival, zero hidden-only prediction flips, timing aggregation constraints, leak-free-but-overhead canonicalization, recursive schema firewall success, promotion-lattice property success after repair, and outgoing prompt hygiene. (v) BA.4-BA.5 specify promotion decisions and record the repaired promotion-lattice bug. (vi) BA.6-BA.8 record relation to GHP, strongest safe sentence, and forbidden claims. No prior content removed. **No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure. No claim that HRT telemetry authorizes action.**
 

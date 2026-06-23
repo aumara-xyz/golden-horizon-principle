@@ -1,0 +1,4 @@
+probe,status,metric,value,safe_read
+BTA-007A,MIXED,real pressure improvement gap over shuffled control,phi_gap=0.0155; sqrt2_gap=-0.0642,A crossing-complexity proxy is useful only if real high-pressure windows select cheaper future replay than shuffled-pressure windows.
+BTA-007B,MIXED,strategy selectivity / PRNG non-promotion,phi_mode=argmax; sqrt2_mode=reset_sqrt2; prng_improvement=0.1032,Simplification must select the matching compact family when one exists and avoid treating random traces as clean topology.
+BTA-007C,PASS,exact replay and leak scan,replay=1.0000; leak=0.0000,Any simplification summary must replay public actions and carry no private or authority-shaped fields.

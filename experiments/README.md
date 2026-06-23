@@ -46,4 +46,9 @@ Included:
 - Golden Zipper observer-memory corridor
 - Boundary Access Channel corridor
 - Boundary Access oracle-gap and failure-sentinel probes
+- Phi Coordinate Sampler probe
+- Phi sampler uniqueness / compression envelope probe
+- MDL process memory probe
+- MDL process memory promotion guard
+- Crossing-complexity simplification probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

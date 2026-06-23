@@ -1,0 +1,5 @@
+payload,raw_bits,zlib_bits,best_generator,best_seed,generator_patch_bits,mismatch_rate,generator_vs_raw_ratio,zlib_vs_raw_ratio
+phi_generated,12288,1008,phi_inv,7,192,0.0,0.015625,0.08203125
+sqrt2_generated,12288,1144,sqrt2_minus_1,13,192,0.0,0.015625,0.09309895833333333
+random_payload,12288,18192,e_minus_2,31,53217,0.863037109375,4.330810546875,1.48046875
+structured_periodic,12288,584,sqrt3_minus_1_frac,0,52407,0.849853515625,4.264892578125,0.047526041666666664

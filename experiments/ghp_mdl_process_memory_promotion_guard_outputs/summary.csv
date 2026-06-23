@@ -1,0 +1,4 @@
+probe,status,metric,value,safe_read
+BTA-006A,PASS,exact replay / tamper detection,exact=1.0000; tamper=1.0000,A compact memory artifact must replay public actions exactly and detect residual tampering by hash mismatch.
+BTA-006B,PASS,leak / hidden perturbation / illegal-positive rejection,leak=0.0000; hidden_stable=1.0000; illegal_reject=1.0000,MDL memory must be built from public action traces only; hidden/private/authority fields must neither leak nor alter the summary.
+BTA-006C,PASS,promotion selectivity,phi_ratio=0.2541; prng_ratio=3.7938; prng_promote=0.0000,Only compact rule-shaped traces should become advisory candidates; random traces must remain fenced.

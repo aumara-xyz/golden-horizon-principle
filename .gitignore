@@ -1,1 +1,12 @@
 .DS_Store
+
+# Local-only canonical working folders.
+/VIDEO/
+/NEW GHP VIDEO/
+/Essentia Foundation/
+/REVIEWS */
+/arch/
+/GHP PATCHES/
+/GHP_VERSIONING/
+/VIVIANI PHI HORIZON 🌈/
+/GHP_WORKING_MASTER_CONTROL.md

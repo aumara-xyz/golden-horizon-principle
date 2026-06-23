@@ -46,6 +46,11 @@ GHP does not currently claim:
 - proof that HRT telemetry can ever authorize action.
 - proof that canonicalization telemetry is always compression-safe.
 - proof that timing metadata may be used as payload or authority.
+- proof that phi decimal digits are normal, uniquely physical, or a base-reality address space.
+- proof that phi-coordinate sampling reduces live Aukora friction before sandbox traces beat PRNG, argmax, phi-digit, and other low-discrepancy controls without authority leakage.
+- proof that a phi generator compresses arbitrary payloads rather than only processes with matching generated structure.
+- proof that MDL process memory can replace receipt history without explicit residuals and replay checks.
+- proof that crossing-complexity / knot-pressure telemetry justifies live sampler resets or topological simplification triggers.
 
 ## Safe Language
 
@@ -65,6 +70,10 @@ Use:
 - `Aukora HRT is engineering telemetry only: evidence may guide analysis, never authorize`
 - `HRT Accord is a promotion discipline for typed telemetry, not a gate`
 - `canonicalization telemetry can be leak-free while still adding hash-reference overhead`
+- `phi rotation is a deterministic low-discrepancy proposal-sampler candidate, not authority or physics evidence`
+- `generator compression compresses generated process, not arbitrary data`
+- `MDL process memory means rule plus explicit residuals, compared against compressed action history and replay`
+- `crossing-complexity is an offline public telemetry proxy until it beats shuffled controls`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -99,6 +108,11 @@ Avoid:
 - `canonicalization telemetry is automatically compression`
 - `timing is payload`
 - `timing is authority`
+- `phi decimal digits are base reality`
+- `phi-coordinate sampling proves GHP`
+- `phi generators give free compression`
+- `rule memory can replace receipts`
+- `knot pressure proves when to reset the sampler`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

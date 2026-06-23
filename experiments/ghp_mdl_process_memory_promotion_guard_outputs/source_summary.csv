@@ -1,0 +1,6 @@
+source,generator_mode,summary_ratio_mean,mismatch_rate_mean,exact_replay_rate,leak_rate,hidden_stability_rate,tamper_detection_rate,illegal_positive_reject_rate,promotable_rate
+phi_rotation,phi_rotation,0.25409150889672594,0.0,1.0,0.0,1.0,1.0,1.0,1.0
+sqrt2_rotation,sqrt2_rotation,0.3085451411775119,0.0,1.0,0.0,1.0,1.0,1.0,1.0
+argmax,argmax,0.731471368488692,0.0166015625,1.0,0.0,1.0,1.0,1.0,0.0
+human_jitter,argmax,1.2891063658519304,0.1175537109375,1.0,0.0,1.0,1.0,1.0,0.0
+prng,argmax,3.7937530121246117,0.657470703125,1.0,0.0,1.0,1.0,1.0,0.0

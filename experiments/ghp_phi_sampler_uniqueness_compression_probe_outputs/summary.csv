@@ -1,0 +1,4 @@
+probe,status,metric,value,safe_read
+BTA-004A,PASS,phi_rank / best / random_median / rational_best,phi_rank=6/50; best=random_alpha_21:0.2238; phi=0.2298; random_median=0.2577; rational_best=0.3066,Phi is useful only if it behaves like a strong low-discrepancy sampler; this test does not allow uniqueness unless it beats the broader irrational family.
+BTA-004B,PASS,generator compression ratio on generated vs arbitrary payload,phi_generated_ratio=0.0156; random_payload_ratio=4.3308,"Generator compression works on generated structure, not arbitrary data. This supports proposal scheduling, not universal compression."
+BTA-004C,PASS,same integer encoded across bases,capacity_spread_bits=3.43,"Changing base changes symbol count and glyph density, but not the information content of the underlying state."
