@@ -28,30 +28,55 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 - Not proof from VPH, Aukora, sonoluminescence, or toy telemetry.
 - Not medical, spiritual, or financial advice.
 
-## Core Files
+## Start Here
 
-- `GHP_v1_618_MASTER.md`
-- `GHP_CORE_SHARE_PAPER.md`
-- `VIVIANI_PHI_HORIZON.md`
-- `VPH_preprint_v8.md`
-- `RESEARCH_LEDGER.md`
-- `GHP_RESEARCH_LEDGER.md` (older archival ledger mirror)
-- `GHP_MATH_COLLABORATOR_HANDOFF.md`
-- `GHP_RECENT_RESEARCH_DUMP_2026-05-28.md`
-- `DO_NOT_CLAIM.md`
-- `SCIENCE_SPIRITUALITY_BRIDGE.md`
-- `BRAIN_DUMP_INDEX.md`
-- `PUBLICATION_WORKFLOW.md`
-- `experiments/README.md`
-- `experiments/ricci_fibonacci_toy_report.md`
-- `experiments/dark_to_readable_portal_toy_report.md`
-- `experiments/ternary_boundary_operator_summary.md`
-- `symbolic/README.md`
-- `symbolic/cross_tradition_map.md`
-- `symbolic/observer_boundary_grammar.md`
-- `symbolic/consciousness_container_conjecture.md`
-- `symbolic/aumara_breath.md`
-- `symbolic/field_notes.md`
+For a first reader, use these files in this order:
+
+1. `GHP_CORE_SHARE_PAPER.md` — the concise public argument.
+2. `DO_NOT_CLAIM.md` — the safety rail against overclaiming.
+3. `GHP_RESEARCH_LEDGER.md` — claim status, evidence type, and current test results.
+4. `VIVIANI_PHI_HORIZON.md` — short VPH overview.
+5. `VPH_preprint_v8.md` — technical VPH preprint.
+6. `GHP_FEP_INTERFACE_PREPRINT.md` — FEP / observer-boundary interface preprint.
+
+## Full Archive
+
+- `GHP_v1_618_MASTER.md` — full archival master / living research organism.
+
+This file is intentionally large and historically layered. It is kept public by author request for timestamping and auditability, but it is not the recommended first read.
+
+## Sonoluminescence-To-Aukora Chain
+
+The acoustic-cavitation / sonoluminescence breakthrough is preserved as a conservative boundary-collapse analogy, not as physics evidence. It spawned the HRT / witness / Accord / MDL Process Memory test lane now being used to shape Aukora kernel work.
+
+Start here:
+
+- `experiments/SONOLUMINESCENCE_TO_AUKORA_TEST_CHAIN.md`
+- `experiments/HRT_002_BOUNDARY_TRACE_FLOW.md`
+- `experiments/ghp_boundary_trace_adversarial_probe_outputs/report.md`
+- `experiments/ghp_accord_firewall_prompt_probe_outputs/report.md`
+- `experiments/ghp_mdl_process_memory_promotion_guard_outputs/report.md`
+
+Survived engineering object:
+
+```text
+MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash
+```
+
+Hard limit:
+
+```text
+canonical receipts remain truth;
+telemetry and compression are advisory only;
+neither may authorize action.
+```
+
+## Repository Map
+
+- `experiments/` — raw toy probes, controls, reports, and Aukora handoff candidates.
+- `symbolic/` — bounded symbolic / contemplative language for observer-boundary meaning.
+- `archive/` — old prompts, drafts, handoffs, sources, and administrative notes moved out of the first-click root.
+- `PUBLICATION_WORKFLOW.md` — publication and public-package discipline.
 
 ## Current Strongest Claims
 
@@ -62,7 +87,8 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 5. HRT Accord promotion law as engineering hygiene: boundary mode, witness plateau, and canonicalization categories may become typed telemetry only after controls; hysteresis stays offline; snap, sequence-aftershock, latency-primary, timing-payload language, and Shear remain fenced.
 6. Witness as active held tension in toy/software telemetry, not a null trace and not authority.
 7. Boundary Access Channel as the current best bridge-object toy corridor.
-8. Ricci-Fibonacci, dark-to-readable, ternary, snap/reconnection, and Shear branches as toy telemetry or demoted/mixed scaffolds only.
+8. MDL Process Memory as replayable advisory compression over public traces only.
+9. Ricci-Fibonacci, dark-to-readable, ternary, snap/reconnection, crossing-complexity, and Shear branches as toy telemetry or demoted/mixed scaffolds only.
 
 ## Symbolic / Spirituality Layer
 

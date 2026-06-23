@@ -3,7 +3,7 @@
 
 **Version:** core-v0.017
 **Source master:** `GHP_v1_618_MASTER.md`  
-**Companion ledger:** `RESEARCH_LEDGER.md`  
+**Companion ledger:** `GHP_RESEARCH_LEDGER.md`
 **Purpose:** This is the shareable argument. It is not the archival master.
 
 ## Reader Contract

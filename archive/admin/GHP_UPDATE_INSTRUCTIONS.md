@@ -17,33 +17,32 @@ The ledger updates first. The master updates second. The core paper updates last
 
 ## Local + GitHub Sync Rule
 
-When GHP is updated locally on this computer, Codex must also check whether the public GitHub package needs to be updated.
+When GHP is updated locally on this computer, Codex must also check whether the public GitHub repository needs to be updated.
 
 Local authoritative files remain in:
 
 - `GOLDEN HORIZON PRINCIPLE 🔱/`
 
-Public GitHub package lives in:
+Public GitHub repository:
 
-- local folder: `../golden-horizon-principle/`
 - public repo: `https://github.com/aumara-xyz/golden-horizon-principle`
 
 ### Canonical Path Lock
 
 The local authoritative folder is always `GOLDEN HORIZON PRINCIPLE 🔱/`.
 
-Do not treat `../golden-horizon-principle/` as the source of truth. That folder is only a public GitHub package / publish target. Every update must begin in `GOLDEN HORIZON PRINCIPLE 🔱/`, then be distilled or synced outward if public release is appropriate.
+Do not recreate or work from `../golden-horizon-principle/`. That old lowercase folder was archived after the 2026-06-23 recovery. Every update must begin in `GOLDEN HORIZON PRINCIPLE 🔱/`, which is now also the Git working tree.
 
-Before editing any GHP file, Codex must verify the working directory path and state which folder is being edited. If the path is not `GOLDEN HORIZON PRINCIPLE 🔱/` or an explicitly intended public package sync, stop and correct the path before making changes.
+Before editing any GHP file, Codex must verify the working directory path and state which folder is being edited. If the path is not `GOLDEN HORIZON PRINCIPLE 🔱/`, stop and correct the path before making changes.
 
 Incident note: on 2026-06-23, BTA-003 through BTA-007 work was accidentally performed first in the public package folder. The recovery rule is: merge important public-package work back into the canonical folder, preserve both backups, then publish from canonical outward.
 
 Default behavior:
 
 1. Update the local canonical files first: ledger, master, core paper, instructions, and any relevant local experiment/report files.
-2. If the material is public-facing, update the distilled public GitHub package too.
-3. Commit and push the public package after the public files are updated.
-4. If GitHub auth or network access blocks the push, leave the public package committed locally if possible and report the exact blocker plus the next command needed.
+2. If the material is public-facing, update the public-facing files in the same canonical Git working tree.
+3. Commit and push after the public files are updated.
+4. If GitHub auth or network access blocks the push, leave the change committed locally if possible and report the exact blocker plus the next command needed.
 
 Privacy rule:
 
@@ -83,8 +82,8 @@ Do not use vague labels like "evidence" when a narrower label applies.
 3. Update `GHP_v1_618_MASTER.md` only if the packet belongs in the archival master.
 4. Update `GHP_CORE_SHARE_PAPER.md` only if the claim passes the strength filter.
 5. Update `GHP_UPDATE_INSTRUCTIONS.md` when the workflow itself changes.
-6. Check whether the public GitHub package needs matching distilled updates.
-7. If public-facing files changed, commit and push `../golden-horizon-principle/`.
+6. Check whether the public GitHub repository needs matching distilled updates.
+7. If public-facing files changed, commit and push from `GOLDEN HORIZON PRINCIPLE 🔱/`.
 8. If a claim weakens, use a demotion or retraction packet.
 9. If more than three packets happen in one day, make a daily rollup before continuing.
 10. For a shareable release, core and ledger versions must match.

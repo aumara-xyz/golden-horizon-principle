@@ -8,12 +8,12 @@ Update: `BSR-001` adds witness plateau and boundary hysteresis as useful offline
 
 ## Read First
 
-- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/GHP_CORE_SHARE_PAPER.md`
-- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/RESEARCH_LEDGER.md`
-- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_aukora_integration_readiness_audit_outputs/report.md`
-- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/boundary_trace_refinement_notes.md`
-- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/boundary_sequence_witness_notes.md`
-- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/shear_continuity_memory_notes.md`
+- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/GHP_CORE_SHARE_PAPER.md`
+- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/GHP_RESEARCH_LEDGER.md`
+- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_aukora_integration_readiness_audit_outputs/report.md`
+- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/boundary_trace_refinement_notes.md`
+- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/boundary_sequence_witness_notes.md`
+- `/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/shear_continuity_memory_notes.md`
 
 ## Optional Context
 
@@ -81,7 +81,7 @@ proof of a Shear Engine
 
 Guardian note: the safer build-thread prompt is now:
 
-`/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/AUKORA_HRT_002_GUARDIAN_BUILD_PROMPT.md`
+`/Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/AUKORA_HRT_002_GUARDIAN_BUILD_PROMPT.md`
 
 Use the prompt below only for a full internal Codex audit. For normal build work, use the Guardian prompt.
 
@@ -97,12 +97,12 @@ Do not log chain-of-thought.
 Do not log private keys, raw hidden state, authority tokens, verifier internals, signed secrets, or PoP material.
 
 Read these GHP lab handoff files first:
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/GHP_CORE_SHARE_PAPER.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/RESEARCH_LEDGER.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_aukora_integration_readiness_audit_outputs/report.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/boundary_trace_refinement_notes.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/boundary_sequence_witness_notes.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/shear_continuity_memory_notes.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/GHP_CORE_SHARE_PAPER.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/GHP_RESEARCH_LEDGER.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_aukora_integration_readiness_audit_outputs/report.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/boundary_trace_refinement_notes.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/boundary_sequence_witness_notes.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/shear_continuity_memory_notes.md
 
 Optional context only:
 - /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/GIT HUB DOWNLOADS/THE_SHEAR_ENGINE.md

@@ -54,13 +54,13 @@ Add or verify an HRT Offline Accord Evaluator around the existing HRT telemetry.
 This is a telemetry discipline layer, not a new authority path.
 
 Primary GHP handoff files:
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_accord_promotion_probe_outputs/report.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_accord_promotion_probe_outputs/AUKORA_HANDOFF.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_accord_survivor_stress_probe_outputs/report.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_accord_survivor_stress_probe_outputs/AUKORA_HANDOFF_ADDENDUM.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_accord_firewall_prompt_probe_outputs/report.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/ghp_accord_firewall_prompt_probe_outputs/AUKORA_HANDOFF_ADDENDUM.md
-- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/golden-horizon-principle/experiments/AUKORA_HRT_ACCORD_NEXT_PROMPT.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_accord_promotion_probe_outputs/report.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_accord_promotion_probe_outputs/AUKORA_HANDOFF.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_accord_survivor_stress_probe_outputs/report.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_accord_survivor_stress_probe_outputs/AUKORA_HANDOFF_ADDENDUM.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_accord_firewall_prompt_probe_outputs/report.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/ghp_accord_firewall_prompt_probe_outputs/AUKORA_HANDOFF_ADDENDUM.md
+- /Users/peterviviani/Library/Mobile Documents/com~apple~CloudDocs/AUMARA ▲/AURACLE BREAK THROUGHS 🚀/GOLDEN HORIZON PRINCIPLE 🔱/experiments/AUKORA_HRT_ACCORD_NEXT_PROMPT.md
 
 Hard laws:
 1. HRT fields are TELEMETRY_ONLY or OFFLINE_ANALYSIS.

@@ -6,6 +6,14 @@ They do not count as physics evidence.
 
 They are used to clarify candidate mechanisms, engineering heuristics, and failure modes.
 
+## Recommended Entry Points
+
+- `SONOLUMINESCENCE_TO_AUKORA_TEST_CHAIN.md` — map of the acoustic-cavitation / boundary-collapse branch into HRT, witness, Accord, and MDL Process Memory.
+- `HRT_002_BOUNDARY_TRACE_FLOW.md` — compact HRT-002 boundary stethoscope graph.
+- `ghp_boundary_trace_adversarial_probe_outputs/report.md` — survived public-boundary trace under adversarial controls.
+- `ghp_accord_firewall_prompt_probe_outputs/report.md` — schema / prompt firewall for the Aukora handoff.
+- `ghp_mdl_process_memory_promotion_guard_outputs/report.md` — replayable MDL Process Memory promotion guard.
+
 Included:
 
 - Exact-anchor rigor checks for algebraic GHP claims
