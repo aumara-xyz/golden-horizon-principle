@@ -1,0 +1,6 @@
+probe,metric,value,control,verdict,safe_read
+MEB-003A,central_symmetry_score,1.0,0.0,PASS,D4 is exactly centrally symmetric; this blocks intrinsic matter/antimatter asymmetry without extra structure.
+MEB-003B,reflection_closure_score,1.0,0.0,PASS,D4 is reflection-closed; intrinsic chirality is not available from the bare scaffold.
+MEB-003C,chirality_imbalance_lower_is_nonchiral,0.0024535576586049773,0.024999999999999998,PASS,Sampled oriented volumes show no strong intrinsic handedness; this is a chirality obstruction.
+MEB-003D,orientation_breaking_needed,1.0,0.0,PASS,A bare D4/24-cell scaffold needs an extra orientation-breaking rule before it can model chiral matter.
+MEB-003E,symmetry_cancellation_score,1.0,0.0,PASS,"D4 has exact vector/cubic cancellation as a scaffold, but this is not Standard Model anomaly cancellation."

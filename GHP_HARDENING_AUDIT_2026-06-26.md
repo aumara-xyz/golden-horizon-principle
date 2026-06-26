@@ -165,6 +165,35 @@ Unsafe read:
 D4 directly derives the Standard Model gauge group.
 ```
 
+## Wave 7 — D4 Chirality Obstruction
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_d4_chirality_obstruction_probe.py` | PASS 5/5 | The bare D4 / 24-cell scaffold is centrally symmetric, reflection-closed, and non-chiral; an extra orientation-breaking rule is required before any chiral-matter bridge is plausible. |
+
+Measured results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-003A central symmetry | 1.000000 | 0.000000 |
+| MEB-003B reflection closure | 1.000000 | 0.000000 |
+| MEB-003C chirality imbalance, lower is non-chiral | 0.002454 | 0.025000 |
+| MEB-003D orientation breaking needed | 1.000000 | 0.000000 |
+| MEB-003E toy symmetry cancellation | 1.000000 | 0.000000 |
+
+Safe read:
+
+```text
+The bare 24-cell is a strong symmetric scaffold, but it cannot by itself
+explain chiral matter.
+```
+
+Unsafe read:
+
+```text
+D4 derives weak chirality or chiral fermions.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -189,6 +218,7 @@ Port these into real HRT sandbox traces first:
 - MDL summaries replacing canonical receipts.
 - 24-cell labels as Standard Model charges.
 - Algorithmic Sonoluminescence as a matter-creation law.
+- D4 alone as a chirality mechanism.
 
 ## Bottom Line
 
@@ -198,6 +228,6 @@ The public package is stronger after this pass because the survived claims remai
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
 
-The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002.
+The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4.
 
 That is the current hard edge.
