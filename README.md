@@ -34,10 +34,11 @@ For a first reader, use these files in this order:
 
 1. `GHP_CORE_SHARE_PAPER.md` — the concise public argument.
 2. `DO_NOT_CLAIM.md` — the safety rail against overclaiming.
-3. `GHP_RESEARCH_LEDGER.md` — claim status, evidence type, and current test results.
-4. `VIVIANI_PHI_HORIZON.md` — short VPH overview.
-5. `VPH_preprint_v8.md` — technical VPH preprint.
-6. `GHP_FEP_INTERFACE_PREPRINT.md` — FEP / observer-boundary interface preprint.
+3. `GHP_HARDENING_AUDIT_2026-06-26.md` — latest math / telemetry sanity pass before external sharing.
+4. `GHP_RESEARCH_LEDGER.md` — claim status, evidence type, and current test results.
+5. `VIVIANI_PHI_HORIZON.md` — short VPH overview.
+6. `VPH_preprint_v8.md` — technical VPH preprint.
+7. `GHP_FEP_INTERFACE_PREPRINT.md` — FEP / observer-boundary interface preprint.
 
 ## Full Archive
 
