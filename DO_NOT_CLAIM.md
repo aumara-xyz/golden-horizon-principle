@@ -11,6 +11,7 @@ GHP does not currently claim:
 - proof from software,
 - proof from toy models,
 - proof from CERN / DESI / Nobel / Bell,
+- proof from BAO / CMB / cosmological freeze-out,
 - proof from VPH,
 - proof that VPH is a technical horizon, curvature singularity, causal boundary, or physical endpoint,
 - proof from sonoluminescence,
@@ -54,6 +55,11 @@ GHP does not currently claim:
 - proof that trapped-light / vortex-localization analogies validate matter models, consciousness, observer selection, GHP physics, or authority.
 - proof that the 24-cell / D4 root system derives Standard Model gauge charges, particles, matter, chirality, hypercharge, generations, or masses.
 - proof that naive D4 orientation-breaking derives weak chirality, fermions, anomaly cancellation, or a physical matter mechanism.
+- proof that dark matter is the observer.
+- proof that dark energy is consciousness.
+- proof that evolving dark energy validates GHP.
+- proof that the BAO ruler is phi.
+- proof that the Big Bang is black-hole output.
 
 ## Safe Language
 
@@ -83,6 +89,9 @@ Use:
 - `F4 is a stronger D4-plus-dual-layer scaffold, but F4 projection currently blocks naive chiral-matter recovery`
 - `E6 roots remain too symmetric, while the E6 27-weight orbit is a representation-level scaffold, not a particle derivation`
 - `E6 27 branching gives a controlled 16+10+1 bookkeeping scaffold, not SO(10) or Standard Model physics`
+- `BAO / CMB cosmological freeze-out is an external record-law analogue only`
+- `the sound horizon is a standard cosmological ruler, not a GHP-derived phi object`
+- `DESI dark-energy hints are a watchlist item, not GHP validation`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -138,6 +147,15 @@ Avoid:
 - `the E6 16+10+1 branch derives SO(10)`
 - `the 16 block is a Standard Model generation`
 - `the complement charge is hypercharge`
+- `BAO proves GHP`
+- `CMB proves GHP`
+- `DESI proves GHP`
+- `dark matter is the observer`
+- `dark energy is consciousness`
+- `evolving dark energy validates GHP`
+- `the BAO ruler is phi`
+- `holography means the universe is fake`
+- `the Big Bang is proven black-hole output`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

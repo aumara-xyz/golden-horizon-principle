@@ -341,6 +341,37 @@ The 16 block is a Standard Model generation, the complement charge is
 hypercharge, or this proves SO(10) / Standard Model physics.
 ```
 
+## Wave 12 — Cosmological Freeze-Out Record Probe
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_cosmological_freezeout_record_probe.py` | PASS 5/5 | The BAO / CMB-style record-law pattern survives as a synthetic toy: hidden oscillation can freeze into a durable public ruler record reconstructed later by finite observers, while no-freeze / shuffled controls and hidden-phase leakage checks block the overclaim. |
+
+Measured CFR-001 results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| CFR-001A frozen ruler contrast | 123.226523 | -7.733957 |
+| CFR-001B no-freeze control contrast | 123.226523 | -2.308229 |
+| CFR-001C noisy observer median contrast | 61.188331 | -3.515720 |
+| CFR-001D expansion-rescaled comoving error Mpc | 1.250000 | 5.000000 |
+| CFR-001E hidden phase leak score | 0.000333 | 0.050000 |
+
+Safe read:
+
+```text
+BAO / CMB freeze-out is a strong external analogy for GHP's
+dark-to-readable record problem: hidden early dynamics can become
+durable public records.
+```
+
+Unsafe read:
+
+```text
+BAO, CMB, DESI, dark matter, dark energy, evolving dark energy,
+black-hole-output cosmology, or phi-in-BAO proves GHP.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -370,6 +401,12 @@ Port these into real HRT sandbox traces first:
 - F4 or F4 projection as a matter / chiral-fermion derivation.
 - E6 roots or E6 27 weights as a Standard Model derivation.
 - E6 16+10+1 branching as SO(10), hypercharge, anomaly cancellation, or particle derivation.
+- BAO / CMB / DESI as GHP proof.
+- Dark matter as the observer.
+- Dark energy as consciousness.
+- Evolving dark energy as GHP validation.
+- Phi-in-BAO without derivation.
+- Black-hole-output Big Bang / cosmology claims.
 
 ## Bottom Line
 
@@ -379,6 +416,6 @@ The public package is stronger after this pass because the survived claims remai
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
 
-The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough. MEB-005 and MEB-006 show F4 is a stronger scaffold but still does not close the matter/chirality gap. MEB-007 and MEB-008 move the lane to E6: roots alone still fail, but the E6 27-weight orbit becomes the first clean representation-level scaffold worth branching. MEB-009 shows that branch exists as 16+10+1 under an explicit complement-charge rule, while still stopping before physics claims.
+The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough. MEB-005 and MEB-006 show F4 is a stronger scaffold but still does not close the matter/chirality gap. MEB-007 and MEB-008 move the lane to E6: roots alone still fail, but the E6 27-weight orbit becomes the first clean representation-level scaffold worth branching. MEB-009 shows that branch exists as 16+10+1 under an explicit complement-charge rule, while still stopping before physics claims. CFR-001 adds a separate cosmology analogy lane: freeze-out records are real and useful vocabulary for dark-to-readable reconstruction, but they do not upgrade the physics claim.
 
 That is the current hard edge.

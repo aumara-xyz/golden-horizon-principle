@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.022
+**Version:** core-v0.023
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `GHP_RESEARCH_LEDGER.md`
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -26,7 +26,7 @@ The stronger physical claim remains open: nature may select observer-boundary ar
 
 GHP is therefore strongest not as a claim that \(\phi\) numerically governs everything, but as a claim that Fibonacci may define the minimal readable boundary architecture while ordinary dynamics live in residual sectors after architecture is factored out. The next serious task is formal construction: the observer-boundary must become a mathematical object with a write law, finite-access projection, recoverability structure, and falsifiable bridge to ordinary physics.
 
-A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. The current strongest survived result is a boundary-trace telemetry invariant with an Accord promotion law: a scrubbed public cross-section can predict boundary mode while private state and authority remain unrecoverable, and only typed, leak-free, falsifiable traces may become telemetry. A newer compression lane adds a narrow replayable candidate, `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash`, for advisory compression of public traces only. The latest boundary-localization probe imports a "trapped light" / vortex intuition only as an engineering analogy: structured closed-loop traces localize, persist, and compress better than randomized controls in a synthetic sandbox, suggesting sharper Aukora HRT test shapes. This is a computational falsifiability scaffold, not a physics result.
+A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. The current strongest survived result is a boundary-trace telemetry invariant with an Accord promotion law: a scrubbed public cross-section can predict boundary mode while private state and authority remain unrecoverable, and only typed, leak-free, falsifiable traces may become telemetry. A newer compression lane adds a narrow replayable candidate, `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash`, for advisory compression of public traces only. The latest boundary-localization probe imports a "trapped light" / vortex intuition only as an engineering analogy: structured closed-loop traces localize, persist, and compress better than randomized controls in a synthetic sandbox, suggesting sharper Aukora HRT test shapes. The latest cosmology import is similarly conservative: BAO / CMB freeze-out supply a real external record-law analogue in which hidden early dynamics become durable public records reconstructed later by finite observers. This is a computational and conceptual falsifiability scaffold, not a physics result.
 
 ## 1. One-Sentence Thesis
 
@@ -76,6 +76,7 @@ If correct, this would not necessarily replace other physics programs. It could 
 | E-003 | HRT Accord promotion law | engineering hygiene scaffold | promotion, survivor-stress, and prompt-firewall probes | typed telemetry may be logged; no telemetry may authorize |
 | E-004 | MDL Process Memory | engineering compression scaffold | BTA-003 through BTA-007 local probes | advisory replay-compression only; canonical receipts remain truth |
 | E-005 | Trapped-light / boundary-localization probe | engineering analogy hardening scaffold | CBT/IRF/LEI/MDL-LOC/VTR local controls | useful test shapes for localization, witness footprint, loop persistence, and MDL compression; not physics evidence |
+| E-006 | Cosmological freeze-out record probe | external analogue plus synthetic record-law toy | BAO / CMB literature plus CFR-001 local controls | hidden dynamics can freeze into durable public records; not GHP evidence, not dark-sector ontology, not phi cosmology |
 
 ## 5. Mathematical Spine
 
@@ -274,6 +275,7 @@ The related "trapped light" / vortex-language branch is treated even more narrow
 | Dumitrescu et al. quasiperiodic-drive experiment | external analogue | shows Fibonacci / quasiperiodic temporal structure protecting edge information in a dynamical topological phase | does not prove GHP or literal two-time physics |
 | Sonoluminescence / acoustic cavitation | external analogue | shows continuous acoustic driving plus nonlinear bubble collapse producing localized light emission / hot-spot events | does not prove GHP, over-unity energy, consciousness, scalar waves, or time extrusion |
 | Trapped-light / vortex localization | engineering analogy only | supplies test shapes for localized loop persistence, boundary footprints, and MDL compression over public traces | does not prove matter is trapped light, Kelvin vortex atoms, GHP physics, or consciousness |
+| BAO / CMB cosmological freeze-out | external analogue | shows early hidden dynamics becoming durable public records used for later reconstruction | does not prove GHP, phi selection, dark-sector observerhood, evolving dark energy, or write-law closure |
 | Hoffman trace logic / Markovized Fibonacci fusion | formal bridge candidate | gives stochastic-kernel representation of Fibonacci fusion architecture and a language for hidden-process access | does not prove trace logic selects Fibonacci, does not derive VPH, does not close write law |
 | Multi-scale FEP / Markov blankets | bridge-object candidate | gives a formal statistical language for nested observer-boundaries and private-to-public access structure | does not derive Fibonacci selection, does not close the write law, does not solve the dynamics gap |
 | Negative golden-ratio dynamics tests | rejected / corrective | prevents self-sealing numerology | does not supply a positive derivation |
@@ -289,6 +291,7 @@ The related "trapped light" / vortex-language branch is treated even more narrow
 | theorem-grade / established math | Rowell-Stong-Wang; Edie-Michell; Ostrik; Freedman-Larsen-Wang; Jones | Fibonacci is mathematically natural inside the stated categorical lane | physical selection by nature |
 | external analogue / experiment | Dumitrescu et al. | Fibonacci / quasiperiodic temporal structure can protect edge qubits in a dynamical topological phase | GHP, observer-boundary selection, VPH, literal two-time physics, or Fibonacci anyons |
 | external analogue / experiment | Suslick-Flannigan; Brenner-Hilgenfeldt-Lohse | acoustic cavitation / sonoluminescence gives a real nonlinear boundary-collapse example in which continuous drive produces localized emission | GHP, over-unity energy, scalar-wave claims, consciousness, or experienced-time derivation |
+| external analogue / cosmology | DESI Collaboration; Eisenstein et al.; Planck Collaboration | BAO / CMB show freeze-out records and standard-ruler reconstruction from early-universe dynamics | GHP, phi selection, dark-sector ontology, black-hole-output cosmology, or evolving dark energy as settled fact |
 | physical conjecture / bridge target | Kosaki; Fewster; Dutta-Faulkner; Jeong-Kim-Nishida; Tamaoka; Babaei Velni et al.; Verlinde-Verlinde; Parikh-Verlinde | bridge vocabulary for finite access, shared interface, and recoverability | a GHP write-law, a GHP consensus law, or Dynamics Gap closure |
 | GR prior-art context | Cruz-Olivares-Villanueva; Coelho-Herdeiro; Hod | prior distinguished-radius / golden-ratio structure in black-hole geometry | VPH, GHP, or observer-boundary selection |
 | computational proving ground | Aukora local receipt-boundary experiments | engineering tests of reconstruction, surprise, structural memory, and paired-observer overlap under hard authority constraints | physics proof, consciousness proof, or observer-boundary selection by nature |
@@ -304,6 +307,32 @@ Modern physics repeatedly meets hidden structure through public records: Bell te
 In this paper, observer means information-registration boundary, not necessarily human mind: detector, environment, lab apparatus, horizon, code subspace, Markov blanket, or finite agent boundary.
 
 Do not overread this bridge. Bell / collider / cosmology material is motivation only. Portal toys are toy telemetry only.
+
+### Cosmological Freeze-Out As Record-Law Analogue
+
+The baryon acoustic oscillation (BAO) sound horizon is the cleanest cosmology-side analogy for GHP's record-law problem. In standard cosmology, early photon-baryon acoustic dynamics propagate until recombination / the drag epoch freezes a characteristic comoving scale into the matter distribution. Later galaxy surveys reconstruct that fossil ruler from public large-scale correlations. The cosmic microwave background is the companion public radiation record of last scattering.
+
+The structural pattern is:
+
+```text
+continuous primordial acoustic dynamics
+-> recombination / drag-epoch freeze-out
+-> durable spatial correlation imprint
+-> galaxy / CMB / lensing records
+-> finite observer reconstruction
+```
+
+The standard sound-horizon object is:
+
+\[
+r_s(z_d)=\int_{z_d}^{\infty}\frac{c_s(z)}{H(z)}\,dz,
+\]
+
+where \(c_s(z)\) is the photon-baryon sound speed and \(H(z)\) is the expansion rate. This is a physical standard ruler from cosmology, not a GHP-derived object and not a hidden \(\phi\) claim.
+
+DESI DR2 sharpened this record-law comparison because it reports BAO measurements from more than 14 million galaxies and quasars over the first three survey years. Its combined-data hints of dynamical dark energy are worth watching, but they remain active cosmology, not a GHP validation.
+
+The local CFR-001 probe is only a synthetic toy for the same record-law shape. It passed 5/5 checks: frozen-ruler contrast, no-freeze / shuffled controls, noisy finite-observer reconstruction, expansion-rescaled recovery, and hidden-phase non-leakage. The safe lesson is that "hidden oscillation -> freeze-out -> durable public imprint -> later reconstruction" is a precise test pattern for GHP's dark-to-readable interface. The unsafe lesson is forbidden: BAO, CMB, DESI, dark matter, dark energy, or \(\phi\) do not prove GHP.
 
 ### Aukora As A Computational Proving Ground
 
@@ -534,6 +563,9 @@ The best first review questions are:
 - Dumitrescu, P.T., Bohnet, J.G., Gaebler, J.P., Hankin, A., Hayes, D., Kumar, A., Neyenhuis, B., Vasseur, R., Potter, A.C. “Dynamical topological phase realized in a trapped-ion quantum simulator.” *Nature* 607, 463–467 (2022). DOI: 10.1038/s41586-022-04853-4. arXiv:2107.09676.
 - Suslick, K.S., Flannigan, D.J. “Inside a Collapsing Bubble: Sonoluminescence and the Conditions During Cavitation.” *Annual Review of Physical Chemistry* 59, 659–683 (2008). DOI: 10.1146/annurev.physchem.59.032607.
 - Brenner, M.P., Hilgenfeldt, S., Lohse, D. “Single-Bubble Sonoluminescence.” *Reviews of Modern Physics* 74, 425–484 (2002). DOI: 10.1103/RevModPhys.74.425.
+- Eisenstein, D.J. et al. “Detection of the Baryon Acoustic Peak in the Large-Scale Correlation Function of SDSS Luminous Red Galaxies.” *Astrophysical Journal* 633, 560–574 (2005). DOI: 10.1086/466512. arXiv:astro-ph/0501171.
+- Planck Collaboration. “Planck 2018 results. VI. Cosmological parameters.” *Astronomy & Astrophysics* 641, A6 (2020). DOI: 10.1051/0004-6361/201833910. arXiv:1807.06209.
+- DESI Collaboration, Abdul-Karim, M. et al. “DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints.” *Physical Review D* 112, 083515 (2025). DOI: 10.1103/tr6y-kpc6. arXiv:2503.14738.
 - Hoffman, D., Prakash, C., Chattopadhyay, S. “Traces of Consciousness.” *Preprints.org* (2024). DOI: 10.20944/preprints202410.1305.v1. TODO: verify final publication status before formal journal submission use.
 
 ## 19. Quarantined Note On Meaning
@@ -546,6 +578,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.023 | `GHP_v1_618_MASTER.md` | Added cosmological freeze-out / BAO / CMB as a conservative external analogue for dark-to-readable record formation, plus CFR-001 synthetic record-law probe (`5/5`). No proof upgrade: no dark-sector observerhood, no phi-in-BAO, no black-hole-output cosmology, and no claim that evolving dark energy validates GHP. |
 | core-v0.022 | `GHP_v1_618_MASTER.md` | Added \(E_6\) \(27\)-branching hardening: an inverse-Cartan complement charge branches the \(27\) into \(16+10+1\) blocks with naive-coordinate and random-charge controls, while preserving the non-claim that this is representation bookkeeping, not Standard Model matter. |
 | core-v0.021 | `GHP_v1_618_MASTER.md` | Added \(E_6\) threshold and \(27\)-weight scaffold hardening: \(E_6\) roots are valid and contain the \(D_4\) corridor but remain non-chiral; the \(E_6\) minuscule \(27\)-weight orbit is the first clean representation-level scaffold, with a conjugate partner and compact signature, but still does not derive Standard Model matter. |
 | core-v0.020 | `GHP_v1_618_MASTER.md` | Added \(F_4\) extension and boundary-projection hardening: \(F_4\) is a principled \(D_4\)-plus-dual-layer scaffold and improves toy coverage, but it remains non-chiral and naive natural projections / halfspace cuts do not preserve cancellation while generating chirality. Matter Embedding Gap remains open. |

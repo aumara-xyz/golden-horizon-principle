@@ -14,6 +14,7 @@ They are used to clarify candidate mechanisms, engineering heuristics, and failu
 - `ghp_accord_firewall_prompt_probe_outputs/report.md` — schema / prompt firewall for the Aukora handoff.
 - `ghp_mdl_process_memory_promotion_guard_outputs/report.md` — replayable MDL Process Memory promotion guard.
 - `ghp_trapped_light_boundary_localization_probe_outputs/report.md` — trapped-light / boundary-localization engineering analogy probe.
+- `ghp_cosmological_freezeout_record_probe_outputs/report.md` — BAO / CMB-style freeze-out record-law analogy probe.
 
 Included:
 
@@ -70,4 +71,5 @@ Included:
 - E6 representation threshold probe
 - E6 27-weight scaffold probe
 - E6 27 branching probe
+- Cosmological freeze-out record probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

@@ -1,0 +1,6 @@
+probe,metric,value,control,verdict,safe_read
+CFR-001A,frozen_ruler_contrast,123.2265234636976,-7.73395698377873,PASS,A frozen public correlation record has a strong ruler contrast; shuffled control does not.
+CFR-001B,no_freeze_control_contrast,123.2265234636976,-2.30822866434387,PASS,"Without a preferred frozen scale, the smooth public background lacks a ruler contrast."
+CFR-001C,noisy_observer_median_contrast,61.18833071338088,-3.5157196854921637,PASS,Finite noisy observers can still reconstruct the durable record better than shuffled controls.
+CFR-001D,expansion_rescaled_comoving_error_mpc,1.25,5.0,PASS,The comoving ruler remains recoverable after expansion rescaling in the toy setup.
+CFR-001E,hidden_phase_leak_score,0.0003333333333333333,0.05,PASS,"The public record recovers the frozen scale, not arbitrary hidden phase labels."

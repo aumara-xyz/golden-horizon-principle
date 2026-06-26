@@ -86,6 +86,8 @@ If you read this note and then immediately violate Rule 2 by producing a shorter
 
 **GHP-PACKET-20260626-01 note.** This live archival packet records the **trapped-light / boundary-localization probe pass**. It adds Addendum BC, updates the core-share paper to `core-v0.018`, and records T-116 in the ledger. Status: engineering analogy scaffold / synthetic toy telemetry only. The survived result is narrow: CBT-001, IRF-001, LEI-001, MDL-LOC-001, and VTR-001 all pass against controls, suggesting useful test shapes for nonlinear threshold collapse, Write/Witness/Release footprint separability, closed-loop persistence, structured replay compression, and circulation-like localization. The phrase "trapped light" is used only as a popular-facing analogy for localized loop persistence, not as a physical claim. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No claim that matter is trapped photons. No Kelvin vortex atom proof. No observer-selection proof. No authority path.
 
+**GHP-PACKET-20260626-02 note.** This live archival packet records the **cosmological freeze-out / BAO / CMB record-law hardening pass**. It extends Addendum AS and updates the core-share paper to `core-v0.023`. Status: external analogue / synthetic record-law toy only. The survived import is narrow: early hidden acoustic dynamics can freeze into durable public records later reconstructed by finite observers, as in BAO sound-horizon and CMB record language. CFR-001 passes 5/5 synthetic controls for frozen-ruler contrast, no-freeze / shuffled controls, noisy observer reconstruction, expansion-rescaled recovery, and hidden-phase non-leakage. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No claim that BAO, CMB, DESI, dark matter, dark energy, evolving dark energy, black-hole cosmology, or phi-in-BAO proves GHP.
+
 **GHP-PACKET-20260619-01 note.** This live archival packet records a small observer-first borrowing-discipline clarification without renaming the live archival file. The pass does two things only: (i) §8.34A.9 gains a short secondary-comparison note clarifying how broader observer-first or consciousness-first frameworks should be handled inside GHP; and (ii) the public `GHP_CORE_SHARE_PAPER.md` receives a matching narrow-language note in the formal-boundary section. Status: discipline hardening only. No prior content removed. No gate upgrades. No ToE inflation. No proof upgrade. No claim that QBism, RQM, von Neumann-Wigner, Orch-OR, Biocentrism, software telemetry, or any adjacent observer-first language proves GHP, closes the write-law, validates VPH, or turns observer rhetoric into physics evidence.
 
 **v0.713 note.** The long inline version-history block below is preserved for lineage continuity. The active addition for this master is **Ricci-Fibonacci Boundary Action Candidate + Toy-Kernel Protocol** on top of v0.712: (i) **§5.1B.X "Ricci-Fibonacci Candidate Boundary Action"** is added after the existing §5.1B material as a candidate action-functional bridge only; (ii) **OP 195 — Ricci Polynomial as Candidate Boundary Action Functional** is opened as a scheduled future toy-model test, not a closure claim; (iii) **Addendum W.9 "Ricci-Fibonacci Kernel Comparison Protocol"** is inserted after W.8 so the next computational pass has a clean target for a finite-\(N\) toy run; (iv) the pass records Michelangelo Ricci's maximization form \(f(x)=x^m(a-x)^n\) as a candidate mathematical bridge for the missing GHP boundary action functional and Addendum W write-law toy model, while explicitly refusing any claim that Ricci proves GHP, closes §5.1B, or counts as physics evidence; (v) the Ricci-Fibonacci toy model is **not yet run** and remains future work only. No prior content removed. No gate upgrades. No ToE inflation. No VPH upgrade. No beta-band derivation claim. No closure of the Dynamics Gap. No historical-resonance-as-physics-evidence claim. All prior sections, addenda, numbering, and guardrails preserved.
@@ -13536,6 +13538,55 @@ DESI's large-scale cosmological maps and evolving-dark-energy hints belong on a 
 - "Dynamic dark energy is the 1-branch."
 - "Cosmology crisis proves GHP."
 
+### AS.4A Cosmological Freeze-Out and the Sound-Horizon Record
+
+**Status: [EXTERNAL ANALOGUE / RECORD-LAW HARDENING. Not GHP evidence. Not dark-sector ontology. Not phi cosmology.]**
+
+The strongest cosmology-side import is not "dark matter / dark energy are the observer." The useful import is the record-law pattern:
+
+```text
+oscillation -> freeze-out -> durable imprint -> later reconstruction
+```
+
+Baryon acoustic oscillations supply the clean physical example. In the early photon-baryon plasma, acoustic waves propagate until recombination / the drag epoch. After that freeze-out, the sound horizon remains as a durable comoving correlation scale in the matter distribution. Later galaxy surveys reconstruct that fossil ruler from public large-scale correlations. The cosmic microwave background is the companion radiation record of last scattering.
+
+The standard sound-horizon object is:
+
+\[
+r_s(z_d)=\int_{z_d}^{\infty}\frac{c_s(z)}{H(z)}\,dz,
+\]
+
+where \(c_s(z)\) is the photon-baryon sound speed and \(H(z)\) is the expansion rate. This equation belongs to standard cosmology. It is not derived from GHP, not a Viviani-phi object, and not evidence that \(\phi\) controls BAO.
+
+**GHP translation table:**
+
+| Cosmology-side object | GHP-side analogy |
+|---|---|
+| photon-baryon acoustic oscillation | hidden pre-record dynamics |
+| recombination / drag-epoch freeze-out | write / record threshold |
+| BAO sound horizon | durable public ruler imprint |
+| CMB last-scattering surface | public radiation record |
+| galaxy correlation reconstruction | finite observer reading a fossil boundary record |
+| DESI / Planck / SDSS inference | public-record tomography, not metaphysical proof |
+
+DESI DR2 is useful here because it sharpens the public-record reconstruction example: it reports BAO measurements from more than 14 million galaxies and quasars across the first three survey years. The associated hints of evolving dark energy are worth watching as active cosmology, but they remain conditional on data combinations and systematic control. They do not validate GHP.
+
+**CFR-001 synthetic record-law probe.** A local toy test now records this analogy as a falsifiable engineering shape rather than a poetic claim. The probe freezes a preferred scale into a public correlation record, compares it with no-freeze and shuffled controls, adds finite-observer noise, checks expansion-rescaled recovery, and scans for hidden-phase leakage. Result: `PASS 5/5`.
+
+**Safe sentence:** BAO / CMB freeze-out shows that hidden early dynamics can become durable public records later reconstructed by finite observers; GHP imports this as an external record-law analogy for the dark-to-readable interface.
+
+**Unsafe sentences to ban:**
+
+- "BAO proves GHP."
+- "CMB proves GHP."
+- "DESI proves GHP."
+- "Dark matter is the observer."
+- "Dark energy is consciousness."
+- "Evolving dark energy validates GHP."
+- "The BAO ruler is phi."
+- "The Big Bang is proven to be black-hole output."
+- "Holography means the universe is fake."
+
 ### AS.5 Tao Darkness Guardrail
 
 Tao darkness is symbolic origin-language: source-before-naming, not physical dark matter. It may be used as pedagogical grammar for unreadability, return, emptiness, and non-forcing. It cannot be used as physics evidence.
@@ -15436,6 +15487,8 @@ Telemetry, timing, vortices, loops, and phi samplers may never authorize.
 ---
 
 ## Changelog
+
+**GHP-PACKET-20260626-02 — Cosmological freeze-out / BAO / CMB record-law hardening.** Motivation: a user-side cosmology prompt identified the "echo sound distance" / early-universe acoustic ruler as a potentially cleaner GHP analogue than dark-sector identity language. The pass imports the narrow machine only: hidden acoustic dynamics can freeze into a durable public record later reconstructed by finite observers. Changes: (i) top note adds the packet and states the status as external analogue / synthetic record-law toy only. (ii) **Addendum AS.4A "Cosmological Freeze-Out and the Sound-Horizon Record"** is inserted inside the existing Dark-to-Readable Interface addendum. (iii) The public core-share paper is updated to `core-v0.023` with BAO / CMB record-law language, the sound-horizon equation, DESI DR2 watchlist wording, and new guardrails. (iv) `CFR-001` is added as a synthetic record-law probe: frozen-ruler contrast, no-freeze / shuffled controls, noisy finite-observer reconstruction, expansion-rescaled recovery, and hidden-phase non-leakage all pass (`5/5`). No prior content removed. **No gate upgrades. No ToE inflation. No physics evidence. No dark-matter-as-observer claim. No dark-energy-as-consciousness claim. No phi-in-BAO claim. No black-hole-output cosmology claim. No claim that DESI or evolving dark energy validates GHP.**
 
 **GHP-PACKET-20260626-01 — Trapped-light / boundary-localization probe.** Motivation: the sonoluminescence branch produced a useful boundary-collapse test lane, and the later trapped-light / vortex intuition needed to be either formalized as a narrow engineering probe or quarantined. Changes: (i) top note adds the packet and states the status as engineering analogy scaffold / synthetic toy telemetry only. (ii) **Addendum BC "Trapped-Light / Boundary-Localization Probe"** is inserted after Addendum BB and before the changelog as a collision-free addendum. (iii) BC.1-BC.2 define the safe import and record CBT-001, IRF-001, LEI-001, MDL-LOC-001, and VTR-001. (iv) BC.3 relates the result back to sonoluminescence while preserving analogy-only discipline. (v) BC.4-BC.5 state the Aukora handoff and forbidden claims. No prior content removed. **No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No matter-is-trapped-light claim. No Kelvin vortex atom proof. No observer-selection proof. No authority path.**
 
