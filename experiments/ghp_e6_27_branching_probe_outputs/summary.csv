@@ -1,0 +1,7 @@
+probe,metric,value,control,verdict,safe_read
+MEB-009A,D5_candidate_count,2.0,2.0,PASS,"The E6 diagram has two determinant-4 node removals in this convention, giving conjugate D5-like complements."
+MEB-009B,algorithmic_16_10_1_split,1.0,0.0,PASS,Inverse-Cartan complement charge branches the 27 into 16 + 10 + 1 blocks.
+MEB-009C,naive_coordinate_control_failure,1.0,1.0,PASS,"A naive coordinate read does not produce the desired split; the branch uses the complement charge, not cherry-picked coordinates."
+MEB-009D,random_charge_hit_rate,0.0,0.0,PASS,Random integer charge maps rarely hit the 16 + 10 + 1 block pattern.
+MEB-009E,conjugate_charge_match,1.0,1.0,PASS,The conjugate 27-bar carries the opposite charge signature under the same complement.
+MEB-009F,conjugate_node_stability,1.0,1.0,PASS,Both conjugate D5-like complements produce the same block-size pattern.

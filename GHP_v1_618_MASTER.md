@@ -6522,6 +6522,8 @@ The Matter Embedding Gap remains open. The next viable route likely needs \(E_6\
 
 **2026-06-26 E6 threshold note.** MEB-007 and MEB-008 test that next route. \(E_6\) roots are a valid exceptional scaffold and contain the \(D_4\) / 24-cell corridor internally, but roots alone remain centrally symmetric and non-chiral. The first stronger signal appears at representation level: the \(E_6\) minuscule \(27\)-weight orbit is non-self-conjugate, has a conjugate \(27\)-bar partner, has zero total weight, and has a compact inner-product signature. This is a real matter-bookkeeping scaffold worth testing, not a particle derivation. The next hard test is explicit subgroup branching of the \(27\) without hand-labeling.
 
+**2026-06-26 E6 branching note.** MEB-009 supplies the first narrow positive branching result: using an explicit inverse-Cartan complement charge, the \(E_6\) \(27\)-weight orbit splits into \(16 + 10 + 1\) bookkeeping blocks across the two conjugate \(D_5\)-like complements. A naive coordinate control does not produce this split, random integer charge maps did not hit it in the tested sample, and the conjugate \(27\)-bar carries the opposite charge signature. This is a serious representation-bookkeeping result, not a derivation of \(SO(10)\) physics, a Standard Model generation, hypercharge, anomaly cancellation, or matter.
+
 #### 10A.2 Three generations — triadic closure rather than accident
 
 A second corridor that keeps recurring is the role of **three** as the first closure number of multiple independent structures already present in the framework:

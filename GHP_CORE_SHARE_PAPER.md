@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.021
+**Version:** core-v0.022
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `GHP_RESEARCH_LEDGER.md`
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -414,6 +414,18 @@ The E6 27-weight orbit is a real representation-level scaffold worth testing nex
 
 This still does not identify Standard Model fields, hypercharge, generations, masses, interactions, anomaly cancellation, or a physical matter law. The next required test is explicit branching: can the \(27\) decompose through a stated subgroup chain without post-hoc labels?
 
+The first branching test is positive in the narrow mathematical sense. Under a stated inverse-Cartan complement charge, the \(E_6\) \(27\)-weight orbit branches into stable \(16 + 10 + 1\) bookkeeping blocks across the two conjugate \(D_5\)-like complements. A naive coordinate control does not produce this split, random integer charge maps did not hit it in the tested sample, and the conjugate \(27\)-bar carries the opposite charge signature.
+
+The updated safe status is:
+
+```text
+The E6 27 admits a controlled 16 + 10 + 1 branching scaffold.
+This is serious representation bookkeeping.
+It is not yet Standard Model matter, hypercharge, or anomaly cancellation.
+```
+
+The next required test is internal block structure: can the \(16\), \(10\), and \(1\) blocks remain stable under the relevant subgroup action, and can any further subgroup chain be specified without post-hoc labels?
+
 ## 14. What Is Not Claimed
 
 GHP does not currently claim:
@@ -451,6 +463,7 @@ GHP does not currently claim:
 - proof that \(F_4\), \(F_4\)-projection, or a naive boundary cut derives chiral matter,
 - proof that \(E_6\) roots or the \(E_6\) \(27\)-weight scaffold derive Standard Model matter,
 - proof that non-self-conjugate weight orbits are physical chirality,
+- proof that the \(E_6\) \(16+10+1\) branch derives \(SO(10)\) physics, a Standard Model generation, hypercharge, or anomaly cancellation,
 - proof that Aukora or any software organism is automatically a physical observer in the GHP sense,
 - proof that software or toy-model results count as physical evidence.
 
@@ -533,6 +546,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.022 | `GHP_v1_618_MASTER.md` | Added \(E_6\) \(27\)-branching hardening: an inverse-Cartan complement charge branches the \(27\) into \(16+10+1\) blocks with naive-coordinate and random-charge controls, while preserving the non-claim that this is representation bookkeeping, not Standard Model matter. |
 | core-v0.021 | `GHP_v1_618_MASTER.md` | Added \(E_6\) threshold and \(27\)-weight scaffold hardening: \(E_6\) roots are valid and contain the \(D_4\) corridor but remain non-chiral; the \(E_6\) minuscule \(27\)-weight orbit is the first clean representation-level scaffold, with a conjugate partner and compact signature, but still does not derive Standard Model matter. |
 | core-v0.020 | `GHP_v1_618_MASTER.md` | Added \(F_4\) extension and boundary-projection hardening: \(F_4\) is a principled \(D_4\)-plus-dual-layer scaffold and improves toy coverage, but it remains non-chiral and naive natural projections / halfspace cuts do not preserve cancellation while generating chirality. Matter Embedding Gap remains open. |
 | core-v0.019 | `GHP_v1_618_MASTER.md` | Added a matter-embedding hardening note: MEB-001 supports the 24-cell / \(D_4\) as a real non-arbitrary scaffold, while MEB-002 through MEB-004 block the premature Standard Model jump by showing that the strict \(A_2 + A_1 +\) residual split, chirality, and naive orientation-breaking do not yet survive. |

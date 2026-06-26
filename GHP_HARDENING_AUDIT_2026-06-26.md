@@ -310,6 +310,37 @@ The E6 27 is the Standard Model, its weights are particles, or
 non-self-conjugacy is physical chirality.
 ```
 
+## Wave 11 — E6 27 Branching Probe
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_e6_27_branching_probe.py` | PASS 6/6 | The E6 27 branches into 16 + 10 + 1 under an explicit inverse-Cartan complement-charge rule, while naive-coordinate and random-charge controls block the easy overclaim. |
+
+Measured E6 27 branching results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-009A D5 candidate count | 2.000000 | 2.000000 |
+| MEB-009B algorithmic 16/10/1 split | 1.000000 | 0.000000 |
+| MEB-009C naive coordinate control failure | 1.000000 | 1.000000 |
+| MEB-009D random charge hit rate | 0.000000 | 0.000000 |
+| MEB-009E conjugate charge match | 1.000000 | 1.000000 |
+| MEB-009F conjugate node stability | 1.000000 | 1.000000 |
+
+Safe read:
+
+```text
+The E6 27 has a controlled 16 + 10 + 1 representation-bookkeeping
+branch. This is the strongest current matter-lane scaffold.
+```
+
+Unsafe read:
+
+```text
+The 16 block is a Standard Model generation, the complement charge is
+hypercharge, or this proves SO(10) / Standard Model physics.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -338,6 +369,7 @@ Port these into real HRT sandbox traces first:
 - naive D4 orientation-breaking as a weak-interaction or fermion mechanism.
 - F4 or F4 projection as a matter / chiral-fermion derivation.
 - E6 roots or E6 27 weights as a Standard Model derivation.
+- E6 16+10+1 branching as SO(10), hypercharge, anomaly cancellation, or particle derivation.
 
 ## Bottom Line
 
@@ -347,6 +379,6 @@ The public package is stronger after this pass because the survived claims remai
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
 
-The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough. MEB-005 and MEB-006 show F4 is a stronger scaffold but still does not close the matter/chirality gap. MEB-007 and MEB-008 move the lane to E6: roots alone still fail, but the E6 27-weight orbit becomes the first clean representation-level scaffold worth branching.
+The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough. MEB-005 and MEB-006 show F4 is a stronger scaffold but still does not close the matter/chirality gap. MEB-007 and MEB-008 move the lane to E6: roots alone still fail, but the E6 27-weight orbit becomes the first clean representation-level scaffold worth branching. MEB-009 shows that branch exists as 16+10+1 under an explicit complement-charge rule, while still stopping before physics claims.
 
 That is the current hard edge.

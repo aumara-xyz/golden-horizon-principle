@@ -82,6 +82,7 @@ Use:
 - `D4 chirality and orientation-breaking probes currently block bare-D4 matter recovery`
 - `F4 is a stronger D4-plus-dual-layer scaffold, but F4 projection currently blocks naive chiral-matter recovery`
 - `E6 roots remain too symmetric, while the E6 27-weight orbit is a representation-level scaffold, not a particle derivation`
+- `E6 27 branching gives a controlled 16+10+1 bookkeeping scaffold, not SO(10) or Standard Model physics`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -134,6 +135,9 @@ Avoid:
 - `the E6 27 is the Standard Model`
 - `E6 27 weights are particles`
 - `non-self-conjugacy is physical chirality`
+- `the E6 16+10+1 branch derives SO(10)`
+- `the 16 block is a Standard Model generation`
+- `the complement charge is hypercharge`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

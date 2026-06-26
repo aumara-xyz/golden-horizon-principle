@@ -69,4 +69,5 @@ Included:
 - F4 boundary projection probe
 - E6 representation threshold probe
 - E6 27-weight scaffold probe
+- E6 27 branching probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story
