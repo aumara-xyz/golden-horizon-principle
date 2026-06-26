@@ -1,0 +1,7 @@
+probe,metric,value,control,verdict,safe_read
+MEB-007A,E6_root_integrity,1.0,0.0,PASS,The generated object is the E6 root system in this Dynkin convention.
+MEB-007B,D4_subsystem_root_count,24.0,24.0,PASS,"E6 contains a D4 root subsystem, preserving the earlier 24-cell corridor as an internal scaffold."
+MEB-007C,reflection_closure_rate,1.0,0.0,PASS,E6 is reflection-closed as a root system; random point controls are not.
+MEB-007D,root_system_nonchirality,0.015,0.0,PASS,E6 roots alone remain centrally symmetric and non-chiral.
+MEB-007E,best_halfspace_chirality_minus_loss,-0.6696843277614437,-1.0,PASS,Naive E6 halfspace cuts do not provide clean chirality while preserving cancellation / central pairing.
+MEB-007F,representation_threshold_flag,1.0,0.0,PASS,"The next non-toy target is representation/weight data, not roots alone; E6's 27-type representation lane should be tested separately."

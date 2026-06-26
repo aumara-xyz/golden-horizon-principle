@@ -67,4 +67,6 @@ Included:
 - D4 orientation-breaking probe
 - F4 boundary extension probe
 - F4 boundary projection probe
+- E6 representation threshold probe
+- E6 27-weight scaffold probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

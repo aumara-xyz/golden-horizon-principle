@@ -1,0 +1,7 @@
+probe,metric,value,control,verdict,safe_read
+MEB-008A,minuscule_orbit_count,27.0,27.0,PASS,E6 has two 27-weight minuscule orbits in this convention.
+MEB-008B,non_self_conjugacy,1.0,1.0,PASS,The 27 orbit is not self-conjugate; its negatives are not inside the same orbit.
+MEB-008C,conjugate_partner_match,1.0,1.0,PASS,"The second 27-weight orbit supplies the conjugate partner, so the pair is balanced."
+MEB-008D,zero_sum_balance,1.0,1.0,PASS,"The 27 orbit has zero total weight, preserving a basic balance constraint."
+MEB-008E,uniform_norm_count,1.0,1.0,PASS,"The 27 orbit has uniform weight norm, consistent with a clean Weyl orbit."
+MEB-008F,signature_complexity_vs_nonminuscule,3.0,72.0,PASS,The 27 orbit has a compact inner-product signature compared with a larger non-minuscule orbit.

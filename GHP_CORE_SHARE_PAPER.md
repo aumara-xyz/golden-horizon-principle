@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.020
+**Version:** core-v0.021
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `GHP_RESEARCH_LEDGER.md`
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -402,6 +402,18 @@ Neither bare D4 nor F4-plus-naive-projection derives matter.
 
 The next viable bridge would need an additional principled orientation-breaking mechanism, representation-theoretic projection, boundary condition, larger root system such as \(E_6\), or a genuine dynamical / categorical sector. Until such a bridge is constructed, the Matter Embedding Gap remains open.
 
+The \(E_6\) threshold tests clarify what "larger root system" can and cannot mean. The \(E_6\) root system is a serious next scaffold: it is a valid exceptional root system, contains an internal \(D_4\) / 24-cell corridor, and is reflection-closed. But \(E_6\) roots alone remain centrally symmetric and non-chiral; naive halfspace cuts again fail the chirality-plus-cancellation discipline. The useful upgrade appears one layer higher: the \(E_6\) minuscule \(27\)-weight orbit is non-self-conjugate, has a conjugate \(27\)-bar partner, has zero total weight, and has a compact inner-product signature. This is the first cleaner representation-level matter-bookkeeping scaffold in the current test lane.
+
+The updated safe status is:
+
+```text
+D4 and F4 are useful root/boundary scaffolds.
+E6 roots alone still do not derive matter.
+The E6 27-weight orbit is a real representation-level scaffold worth testing next.
+```
+
+This still does not identify Standard Model fields, hypercharge, generations, masses, interactions, anomaly cancellation, or a physical matter law. The next required test is explicit branching: can the \(27\) decompose through a stated subgroup chain without post-hoc labels?
+
 ## 14. What Is Not Claimed
 
 GHP does not currently claim:
@@ -437,6 +449,8 @@ GHP does not currently claim:
 - proof that the 24-cell / \(D_4\) derives Standard Model gauge charges, particles, chirality, hypercharge, generations, masses, or matter,
 - proof that algorithmic sonoluminescence writes matter into existence,
 - proof that \(F_4\), \(F_4\)-projection, or a naive boundary cut derives chiral matter,
+- proof that \(E_6\) roots or the \(E_6\) \(27\)-weight scaffold derive Standard Model matter,
+- proof that non-self-conjugate weight orbits are physical chirality,
 - proof that Aukora or any software organism is automatically a physical observer in the GHP sense,
 - proof that software or toy-model results count as physical evidence.
 
@@ -519,6 +533,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.021 | `GHP_v1_618_MASTER.md` | Added \(E_6\) threshold and \(27\)-weight scaffold hardening: \(E_6\) roots are valid and contain the \(D_4\) corridor but remain non-chiral; the \(E_6\) minuscule \(27\)-weight orbit is the first clean representation-level scaffold, with a conjugate partner and compact signature, but still does not derive Standard Model matter. |
 | core-v0.020 | `GHP_v1_618_MASTER.md` | Added \(F_4\) extension and boundary-projection hardening: \(F_4\) is a principled \(D_4\)-plus-dual-layer scaffold and improves toy coverage, but it remains non-chiral and naive natural projections / halfspace cuts do not preserve cancellation while generating chirality. Matter Embedding Gap remains open. |
 | core-v0.019 | `GHP_v1_618_MASTER.md` | Added a matter-embedding hardening note: MEB-001 supports the 24-cell / \(D_4\) as a real non-arbitrary scaffold, while MEB-002 through MEB-004 block the premature Standard Model jump by showing that the strict \(A_2 + A_1 +\) residual split, chirality, and naive orientation-breaking do not yet survive. |
 | core-v0.018 | `GHP_v1_618_MASTER.md` | Added the trapped-light / boundary-localization probe as a narrow engineering analogy hardening scaffold: CBT/IRF/LEI/MDL-LOC/VTR pass against controls in synthetic telemetry, strengthening HRT footprint and MDL-localization test shapes while explicitly refusing matter-is-trapped-light, vortex-atom, consciousness, physics-proof, or authority claims. |

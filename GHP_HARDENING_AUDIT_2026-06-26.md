@@ -266,6 +266,50 @@ Unsafe read:
 F4 or F4 projection derives particles, chiral fermions, or the Standard Model.
 ```
 
+## Wave 10 — E6 Root Threshold And 27-Weight Scaffold
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_e6_representation_threshold_probe.py` | PASS 6/6 | E6 roots are a valid exceptional scaffold containing D4, but roots alone remain non-chiral. |
+| `ghp_e6_27_weight_scaffold_probe.py` | PASS 6/6 | The E6 27-weight orbit is a clean representation-level scaffold with a conjugate partner. |
+
+Measured E6 root-threshold results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-007A E6 root integrity | 1.000000 | 0.000000 |
+| MEB-007B D4 subsystem root count | 24.000000 | 24.000000 |
+| MEB-007C reflection closure rate | 1.000000 | 0.000000 |
+| MEB-007D root system nonchirality | 0.015000 | 0.000000 |
+| MEB-007E best halfspace chirality minus loss | -0.669684 | -1.000000 |
+| MEB-007F representation threshold flag | 1.000000 | 0.000000 |
+
+Measured E6 27-weight scaffold results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-008A minuscule orbit count | 27.000000 | 27.000000 |
+| MEB-008B non-self-conjugacy | 1.000000 | 1.000000 |
+| MEB-008C conjugate partner match | 1.000000 | 1.000000 |
+| MEB-008D zero-sum balance | 1.000000 | 1.000000 |
+| MEB-008E uniform norm count | 1.000000 | 1.000000 |
+| MEB-008F signature complexity vs nonminuscule | 3.000000 | 72.000000 |
+
+Safe read:
+
+```text
+E6 roots alone do not derive matter, but the E6 27-weight orbit is
+the first clean representation-level matter-bookkeeping scaffold in
+this lane.
+```
+
+Unsafe read:
+
+```text
+The E6 27 is the Standard Model, its weights are particles, or
+non-self-conjugacy is physical chirality.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -293,6 +337,7 @@ Port these into real HRT sandbox traces first:
 - D4 alone as a chirality mechanism.
 - naive D4 orientation-breaking as a weak-interaction or fermion mechanism.
 - F4 or F4 projection as a matter / chiral-fermion derivation.
+- E6 roots or E6 27 weights as a Standard Model derivation.
 
 ## Bottom Line
 
@@ -302,6 +347,6 @@ The public package is stronger after this pass because the survived claims remai
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
 
-The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough. MEB-005 and MEB-006 show F4 is a stronger scaffold but still does not close the matter/chirality gap.
+The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough. MEB-005 and MEB-006 show F4 is a stronger scaffold but still does not close the matter/chirality gap. MEB-007 and MEB-008 move the lane to E6: roots alone still fail, but the E6 27-weight orbit becomes the first clean representation-level scaffold worth branching.
 
 That is the current hard edge.

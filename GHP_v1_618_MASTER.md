@@ -6520,6 +6520,8 @@ Neither bare D4 nor F4-plus-naive-projection derives matter.
 
 The Matter Embedding Gap remains open. The next viable route likely needs \(E_6\), a representation-theoretic projection, a boundary condition, or a genuine dynamical / categorical sector rather than a simple geometric counting map.
 
+**2026-06-26 E6 threshold note.** MEB-007 and MEB-008 test that next route. \(E_6\) roots are a valid exceptional scaffold and contain the \(D_4\) / 24-cell corridor internally, but roots alone remain centrally symmetric and non-chiral. The first stronger signal appears at representation level: the \(E_6\) minuscule \(27\)-weight orbit is non-self-conjugate, has a conjugate \(27\)-bar partner, has zero total weight, and has a compact inner-product signature. This is a real matter-bookkeeping scaffold worth testing, not a particle derivation. The next hard test is explicit subgroup branching of the \(27\) without hand-labeling.
+
 #### 10A.2 Three generations — triadic closure rather than accident
 
 A second corridor that keeps recurring is the role of **three** as the first closure number of multiple independent structures already present in the framework:
