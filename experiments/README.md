@@ -13,6 +13,7 @@ They are used to clarify candidate mechanisms, engineering heuristics, and failu
 - `ghp_boundary_trace_adversarial_probe_outputs/report.md` — survived public-boundary trace under adversarial controls.
 - `ghp_accord_firewall_prompt_probe_outputs/report.md` — schema / prompt firewall for the Aukora handoff.
 - `ghp_mdl_process_memory_promotion_guard_outputs/report.md` — replayable MDL Process Memory promotion guard.
+- `ghp_trapped_light_boundary_localization_probe_outputs/report.md` — trapped-light / boundary-localization engineering analogy probe.
 
 Included:
 
@@ -59,4 +60,5 @@ Included:
 - MDL process memory probe
 - MDL process memory promotion guard
 - Crossing-complexity simplification probe
+- Trapped-light / boundary-localization probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

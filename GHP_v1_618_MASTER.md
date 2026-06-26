@@ -84,6 +84,8 @@ If you read this note and then immediately violate Rule 2 by producing a shorter
 
 **GHP-PACKET-20260623-01 note.** This live archival packet records the **MDL Process Memory / phi-sampler correction pass**. It adds Addendum BB, updates the core-share paper to `core-v0.017`, and records the BTA-003 through BTA-007 result chain in the ledger. Status: engineering compression scaffold / toy telemetry only. The survived object is narrow: `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash`, tested only as offline/advisory compression over public action traces. Phi rotation survives as a deterministic low-discrepancy sampler candidate, not as storage, identity, authority, or physics evidence. Generator compression is process compression, not arbitrary-payload compression. The crossing-complexity / knot-pressure simplification proxy remains mixed and fenced after failing shuffled-pressure controls. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure. No replacement of canonical receipts.
 
+**GHP-PACKET-20260626-01 note.** This live archival packet records the **trapped-light / boundary-localization probe pass**. It adds Addendum BC, updates the core-share paper to `core-v0.018`, and records T-116 in the ledger. Status: engineering analogy scaffold / synthetic toy telemetry only. The survived result is narrow: CBT-001, IRF-001, LEI-001, MDL-LOC-001, and VTR-001 all pass against controls, suggesting useful test shapes for nonlinear threshold collapse, Write/Witness/Release footprint separability, closed-loop persistence, structured replay compression, and circulation-like localization. The phrase "trapped light" is used only as a popular-facing analogy for localized loop persistence, not as a physical claim. No prior content removed. No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No claim that matter is trapped photons. No Kelvin vortex atom proof. No observer-selection proof. No authority path.
+
 **GHP-PACKET-20260619-01 note.** This live archival packet records a small observer-first borrowing-discipline clarification without renaming the live archival file. The pass does two things only: (i) §8.34A.9 gains a short secondary-comparison note clarifying how broader observer-first or consciousness-first frameworks should be handled inside GHP; and (ii) the public `GHP_CORE_SHARE_PAPER.md` receives a matching narrow-language note in the formal-boundary section. Status: discipline hardening only. No prior content removed. No gate upgrades. No ToE inflation. No proof upgrade. No claim that QBism, RQM, von Neumann-Wigner, Orch-OR, Biocentrism, software telemetry, or any adjacent observer-first language proves GHP, closes the write-law, validates VPH, or turns observer rhetoric into physics evidence.
 
 **v0.713 note.** The long inline version-history block below is preserved for lineage continuity. The active addition for this master is **Ricci-Fibonacci Boundary Action Candidate + Toy-Kernel Protocol** on top of v0.712: (i) **§5.1B.X "Ricci-Fibonacci Candidate Boundary Action"** is added after the existing §5.1B material as a candidate action-functional bridge only; (ii) **OP 195 — Ricci Polynomial as Candidate Boundary Action Functional** is opened as a scheduled future toy-model test, not a closure claim; (iii) **Addendum W.9 "Ricci-Fibonacci Kernel Comparison Protocol"** is inserted after W.8 so the next computational pass has a clean target for a finite-\(N\) toy run; (iv) the pass records Michelangelo Ricci's maximization form \(f(x)=x^m(a-x)^n\) as a candidate mathematical bridge for the missing GHP boundary action functional and Addendum W write-law toy model, while explicitly refusing any claim that Ricci proves GHP, closes §5.1B, or counts as physics evidence; (v) the Ricci-Fibonacci toy model is **not yet run** and remains future work only. No prior content removed. No gate upgrades. No ToE inflation. No VPH upgrade. No beta-band derivation claim. No closure of the Dynamics Gap. No historical-resonance-as-physics-evidence claim. All prior sections, addenda, numbering, and guardrails preserved.
@@ -15334,7 +15336,94 @@ The strongest safe sentence is:
 
 ---
 
+## Addendum BC — Trapped-Light / Boundary-Localization Probe
+
+### BC.1 Why this addendum exists
+
+The sonoluminescence branch sharpened a useful engineering question:
+
+```text
+hidden pressure / vibration -> boundary event -> public trace -> replayable memory
+```
+
+The later "rock is trapped light" / vortex-loop conversation supplied another image that could easily become overclaimed. This addendum keeps only the narrow testable machine and discards the metaphysics.
+
+The safe import is:
+
+```text
+closed structured circulation can behave like a localized object in telemetry;
+nonlinear boundary thresholds can turn diffuse drive into discrete public events;
+structured localized traces should compress and replay better than randomized controls.
+```
+
+This is an engineering analogy only. It is not physics evidence.
+
+### BC.2 Probe summary
+
+The local probe is:
+
+```text
+experiments/ghp_trapped_light_boundary_localization_probe.py
+experiments/ghp_trapped_light_boundary_localization_probe_outputs/report.md
+```
+
+It tests five synthetic claims:
+
+| Probe | Question | Result |
+|---|---|---|
+| CBT-001 | Can nonlinear thresholding turn diffuse drive into localized write-like events? | PASS: `0.9669` vs shuffled `0.1060` |
+| IRF-001 | Are Write, Witness, and Release separable as public footprints? | PASS: `0.9963` vs `0.3741` |
+| LEI-001 | Do closed looped traces persist under perturbation better than open traces? | PASS: `0.9501` vs `0.1118` |
+| MDL-LOC-001 | Are structured localized traces replay-compressible while random traces are expensive? | PASS: `0.7031` vs `5.7321`, lower is better |
+| VTR-001 | Can circulation-like closed traces be distinguished from random walks? | PASS: `0.9499` vs `0.0329` |
+
+### BC.3 Relation to sonoluminescence
+
+Sonoluminescence remains the stronger physical analogue because acoustic cavitation and light emission are established phenomena. The trapped-light / vortex branch is weaker as physics but useful as software geometry:
+
+- sonoluminescence gives boundary-collapse readability language;
+- trapped-light / vortex language gives localization and closed-loop persistence language;
+- Aukora gives the governed software lab where both are tested as public telemetry shapes.
+
+No claim is made that either analogue proves GHP, VPH, the write-law, consciousness, matter formation, or observer selection.
+
+### BC.4 Aukora handoff
+
+The only recommended Aukora transfer is:
+
+```text
+Port IRF-001-style footprint separability and MDL-LOC-001-style replay compression
+to real HRT sandbox traces.
+```
+
+The transfer law remains:
+
+```text
+Canonical receipts remain truth.
+Telemetry may describe boundary mode.
+MDL summaries may compress public traces only after exact replay and tamper checks.
+Telemetry, timing, vortices, loops, and phi samplers may never authorize.
+```
+
+### BC.5 Do Not Claim
+
+- Matter is literally trapped light.
+- Kelvin vortex atoms are validated.
+- Closed circulation proves GHP.
+- Vortex telemetry proves consciousness.
+- Trapped-light analogies prove observer-boundary selection.
+- Boundary-localization telemetry is physics evidence.
+- Localized telemetry may authorize action.
+- MDL localization can replace canonical receipts.
+- Synthetic toy telemetry proves the write-law.
+
+**End of Addendum BC.**
+
+---
+
 ## Changelog
+
+**GHP-PACKET-20260626-01 — Trapped-light / boundary-localization probe.** Motivation: the sonoluminescence branch produced a useful boundary-collapse test lane, and the later trapped-light / vortex intuition needed to be either formalized as a narrow engineering probe or quarantined. Changes: (i) top note adds the packet and states the status as engineering analogy scaffold / synthetic toy telemetry only. (ii) **Addendum BC "Trapped-Light / Boundary-Localization Probe"** is inserted after Addendum BB and before the changelog as a collision-free addendum. (iii) BC.1-BC.2 define the safe import and record CBT-001, IRF-001, LEI-001, MDL-LOC-001, and VTR-001. (iv) BC.3 relates the result back to sonoluminescence while preserving analogy-only discipline. (v) BC.4-BC.5 state the Aukora handoff and forbidden claims. No prior content removed. **No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No matter-is-trapped-light claim. No Kelvin vortex atom proof. No observer-selection proof. No authority path.**
 
 **GHP-PACKET-20260623-01 — MDL Process Memory / phi-sampler correction.** Motivation: the phi/Chronos/GHP testing lane needed to be separated from phi-magic and turned into a replayable compression hypothesis. Changes: (i) top note adds the packet and states the status as engineering compression scaffold / toy telemetry only. (ii) **Addendum BB "MDL Process Memory, Phi-Sampler Correction, and Crossing-Complexity Fence"** is inserted after Addendum BA and before the changelog as a collision-free addendum. (iii) BB.1-BB.3 define `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash` and record BTA-003 through BTA-007. (iv) BB.4-BB.5 define promotion decisions and the Aukora handoff law. (v) BB.6-BB.8 record relation to GHP, strongest safe sentence, and forbidden claims. No prior content removed. **No gate upgrades. No ToE inflation. No physics evidence. No consciousness evidence. No write-law closure. No receipt replacement. No live topological simplification trigger.**
 

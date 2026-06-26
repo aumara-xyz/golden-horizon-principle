@@ -51,6 +51,7 @@ GHP does not currently claim:
 - proof that a phi generator compresses arbitrary payloads rather than only processes with matching generated structure.
 - proof that MDL process memory can replace receipt history without explicit residuals and replay checks.
 - proof that crossing-complexity / knot-pressure telemetry justifies live sampler resets or topological simplification triggers.
+- proof that trapped-light / vortex-localization analogies validate matter models, consciousness, observer selection, GHP physics, or authority.
 
 ## Safe Language
 
@@ -74,6 +75,7 @@ Use:
 - `generator compression compresses generated process, not arbitrary data`
 - `MDL process memory means rule plus explicit residuals, compared against compressed action history and replay`
 - `crossing-complexity is an offline public telemetry proxy until it beats shuffled controls`
+- `trapped-light / boundary-localization is an engineering analogy probe for footprint separability, loop persistence, and MDL localization only`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -113,6 +115,9 @@ Avoid:
 - `phi generators give free compression`
 - `rule memory can replace receipts`
 - `knot pressure proves when to reset the sampler`
+- `matter is trapped light`
+- `vortex localization proves GHP`
+- `closed circulation proves consciousness or observer selection`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

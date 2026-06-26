@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.017
+**Version:** core-v0.018
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `GHP_RESEARCH_LEDGER.md`
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -26,7 +26,7 @@ The stronger physical claim remains open: nature may select observer-boundary ar
 
 GHP is therefore strongest not as a claim that \(\phi\) numerically governs everything, but as a claim that Fibonacci may define the minimal readable boundary architecture while ordinary dynamics live in residual sectors after architecture is factored out. The next serious task is formal construction: the observer-boundary must become a mathematical object with a write law, finite-access projection, recoverability structure, and falsifiable bridge to ordinary physics.
 
-A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. The current strongest survived result is a boundary-trace telemetry invariant with an Accord promotion law: a scrubbed public cross-section can predict boundary mode while private state and authority remain unrecoverable, and only typed, leak-free, falsifiable traces may become telemetry. A newer compression lane adds a narrow replayable candidate, `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash`, for advisory compression of public traces only. This is a computational falsifiability scaffold, not a physics result.
+A secondary engineering lane now matters as a disciplined proving ground rather than as evidence: Aukora-style receipt-boundary systems make it possible to test whether bounded observers with explicit authorization, durable receipts, finite-access memory, and paired-observer comparison actually produce cleaner reconstruction, lower surprise, and more stable public overlap than flat transcript or case-memory controls. The current strongest survived result is a boundary-trace telemetry invariant with an Accord promotion law: a scrubbed public cross-section can predict boundary mode while private state and authority remain unrecoverable, and only typed, leak-free, falsifiable traces may become telemetry. A newer compression lane adds a narrow replayable candidate, `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash`, for advisory compression of public traces only. The latest boundary-localization probe imports a "trapped light" / vortex intuition only as an engineering analogy: structured closed-loop traces localize, persist, and compress better than randomized controls in a synthetic sandbox, suggesting sharper Aukora HRT test shapes. This is a computational falsifiability scaffold, not a physics result.
 
 ## 1. One-Sentence Thesis
 
@@ -75,6 +75,7 @@ If correct, this would not necessarily replace other physics programs. It could 
 | E-002 | Aukora HRT boundary-trace telemetry | engineering handoff candidate | HRT/BTR/BTA/WPF/AIR/AAP/ASS/AFP local probes and controls | safe public telemetry only; evidence never authority |
 | E-003 | HRT Accord promotion law | engineering hygiene scaffold | promotion, survivor-stress, and prompt-firewall probes | typed telemetry may be logged; no telemetry may authorize |
 | E-004 | MDL Process Memory | engineering compression scaffold | BTA-003 through BTA-007 local probes | advisory replay-compression only; canonical receipts remain truth |
+| E-005 | Trapped-light / boundary-localization probe | engineering analogy hardening scaffold | CBT/IRF/LEI/MDL-LOC/VTR local controls | useful test shapes for localization, witness footprint, loop persistence, and MDL compression; not physics evidence |
 
 ## 5. Mathematical Spine
 
@@ -261,6 +262,8 @@ Prior art matters here. Cruz-Olivares-Villanueva study golden-ratio structure in
 
 Sonoluminescence belongs here only as analogy: nonlinear boundary collapse can convert hidden acoustic/interference structure into readable emission. It does not support the VPS identity, does not derive \(\phi\), and does not upgrade the VPS into a thermodynamic or causal horizon.
 
+The related "trapped light" / vortex-language branch is treated even more narrowly. GHP does not import claims that matter is literally trapped photons, that vortex atoms are proven, or that closed circulation proves observer selection. The useful imported machine is only this engineering shape: diffuse drive plus nonlinear boundary threshold can form a localized public event; closed structured loops can be compared against randomized controls for persistence, footprint separability, and replay-compression.
+
 ## 11. Evidence And Support
 
 | Support | Status | What it does | What it does not do |
@@ -270,6 +273,7 @@ Sonoluminescence belongs here only as analogy: nonlinear boundary collapse can c
 | Golden-chain computation | verified-computation | shows architecture / dynamics split | does not show phi governs all dynamics |
 | Dumitrescu et al. quasiperiodic-drive experiment | external analogue | shows Fibonacci / quasiperiodic temporal structure protecting edge information in a dynamical topological phase | does not prove GHP or literal two-time physics |
 | Sonoluminescence / acoustic cavitation | external analogue | shows continuous acoustic driving plus nonlinear bubble collapse producing localized light emission / hot-spot events | does not prove GHP, over-unity energy, consciousness, scalar waves, or time extrusion |
+| Trapped-light / vortex localization | engineering analogy only | supplies test shapes for localized loop persistence, boundary footprints, and MDL compression over public traces | does not prove matter is trapped light, Kelvin vortex atoms, GHP physics, or consciousness |
 | Hoffman trace logic / Markovized Fibonacci fusion | formal bridge candidate | gives stochastic-kernel representation of Fibonacci fusion architecture and a language for hidden-process access | does not prove trace logic selects Fibonacci, does not derive VPH, does not close write law |
 | Multi-scale FEP / Markov blankets | bridge-object candidate | gives a formal statistical language for nested observer-boundaries and private-to-public access structure | does not derive Fibonacci selection, does not close the write law, does not solve the dynamics gap |
 | Negative golden-ratio dynamics tests | rejected / corrective | prevents self-sealing numerology | does not supply a positive derivation |
@@ -321,6 +325,8 @@ That architecture gives GHP a local falsifiability sandbox. The current computat
 - and timing, interference, or hypothesis context can remain evidence without ever becoming authority.
 
 These experiments do not prove GHP, do not prove consciousness, and do not count as physics evidence. They matter because they force the framework to survive attack as an engineering architecture before it asks to be taken seriously as a deeper physical conjecture.
+
+The latest synthetic boundary-localization probe extends this discipline with five controlled tests: nonlinear threshold collapse, Write/Witness/Release footprint separability, closed-loop inertia, structured MDL localization, and circulation persistence. All five pass against randomized or open-trajectory controls in the sandbox. The safe reading is practical: port the footprint and MDL-localization shapes into real Aukora HRT traces. The unsafe reading is forbidden: do not infer that the toy proves trapped-light matter models, physical vortices, observer selection, consciousness, or GHP.
 
 #### Current Boundary-Trace Result
 
@@ -487,6 +493,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.018 | `GHP_v1_618_MASTER.md` | Added the trapped-light / boundary-localization probe as a narrow engineering analogy hardening scaffold: CBT/IRF/LEI/MDL-LOC/VTR pass against controls in synthetic telemetry, strengthening HRT footprint and MDL-localization test shapes while explicitly refusing matter-is-trapped-light, vortex-atom, consciousness, physics-proof, or authority claims. |
 | core-v0.017 | `GHP_v1_618_MASTER.md` | Added the MDL Process Memory / phi-sampler correction lane: phi rotation survives only as a low-discrepancy sampler candidate; phi-as-storage, ternary pointer control, base-N free compression, and crossing-complexity live reset are rejected or fenced; `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash` becomes an offline/advisory compression scaffold over public traces only. |
 | core-v0.016 | `GHP_v1_618_MASTER.md` | Added the HRT Accord promotion stack: AAP/ASS/AFP probe results harden the Aukora engineering lane with a promotion law, survivor stress tests, schema/prompt firewall, and explicit constraints that telemetry may be typed evidence only, never authority; canonicalization is leak-free but not automatically compression-safe on tiny payloads. |
 | core-v0.015 | `GHP_v1_618_MASTER.md` | Added VPH coordinate/extendability hardening: VPS is stated as the Schwarzschild scalar identity \(\sqrt{-g(\xi,\xi)}r=r_s\), bad-coordinate fixed points are rejected, sonoluminescence remains analogy only, and the Aukora lane records witness plateau/hysteresis while keeping snap/reconnection offline-only after fake-spike failure. |

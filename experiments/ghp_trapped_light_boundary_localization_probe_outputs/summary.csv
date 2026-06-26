@@ -1,0 +1,6 @@
+probe,metric,value,control,verdict,note
+CBT-001,threshold_event_f1,0.966887,0.105960,PASS,Nonlinear pressure threshold predicts discrete write-like events better than shuffled labels.
+IRF-001,mode_footprint_accuracy,0.996296,0.374074,PASS,"Write spike, Witness plateau, and Release scatter are separable from public trace shape."
+LEI-001,closed_loop_inertia_advantage,0.950129,0.111844,PASS,Closed self-referential trajectories persist and recover from perturbation better than open-wave paths.
+MDL-LOC-001,structured_mdl_ratio_lower_is_better,0.703125,5.732080,PASS,Generator + residuals compresses localized structured writes; random traces resist promotion.
+VTR-001,circulation_persistence_score,0.949916,0.032856,PASS,Closed circulation is detectable as persistent object-like structure versus random walk control.

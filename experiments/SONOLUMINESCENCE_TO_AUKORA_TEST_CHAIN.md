@@ -40,8 +40,9 @@ That question directly spawned the Aukora-facing HRT / witness / Accord / MDL pr
   - Addendum AZ records VPH / sonoluminescence / witness / hysteresis hardening.
   - Addendum BA records HRT Accord promotion and firewall hardening.
   - Addendum BB records MDL Process Memory and phi-sampler correction.
+  - Addendum BC records trapped-light / boundary-localization as engineering analogy only.
 - `GHP_RESEARCH_LEDGER.md`
-  - T-096 through T-115 record the relevant cascade, HRT, Accord, phi-sampler, MDL, and crossing-complexity probes.
+  - T-096 through T-116 record the relevant cascade, HRT, Accord, phi-sampler, MDL, crossing-complexity, and boundary-localization probes.
 
 ## Test Chain
 
@@ -147,6 +148,34 @@ Result:
 - MDL process memory may become offline/advisory only after exact replay, tamper detection, zero private leakage, and no authority path.
 - Crossing-complexity / knot-pressure remains mixed and fenced.
 
+### 7. Trapped-Light / Boundary-Localization
+
+- `ghp_trapped_light_boundary_localization_probe.py`
+- `ghp_trapped_light_boundary_localization_probe_outputs/report.md`
+- `ghp_trapped_light_boundary_localization_probe_outputs/summary.csv`
+- `ghp_trapped_light_boundary_localization_probe_outputs/probe_summary.png`
+
+Purpose:
+
+Import only the narrow engineering machine from the "trapped light" / vortex intuition:
+
+```text
+diffuse drive -> nonlinear boundary threshold -> localized public event
+closed structured loop -> persistence and replay-compressibility
+```
+
+Result:
+
+- CBT-001 threshold collapse: `0.9669` vs `0.1060`.
+- IRF-001 Write/Witness/Release footprints: `0.9963` vs `0.3741`.
+- LEI-001 looped-energy inertia: `0.9501` vs `0.1118`.
+- MDL-LOC-001 structured trace compression: `0.7031` vs `5.7321`, lower is better.
+- VTR-001 circulation persistence: `0.9499` vs `0.0329`.
+
+Handoff:
+
+Port only the footprint and MDL-localization tests to real Aukora HRT sandbox traces. Keep vortex, circulation, timing, and phi language offline/advisory only.
+
 ## Aukora Handoff Law
 
 Only this invariant should move toward the Aukora kernel:
@@ -158,6 +187,7 @@ Telemetry may guide offline analysis or advisory proposal context.
 Telemetry may never authorize action.
 MDL summaries may never replace receipts.
 Private state and authority must remain unrecoverable from public traces.
+Trapped-light / vortex language may inspire test shapes only; it may never become proof or control authority.
 ```
 
 ## One-Sentence Safe Summary

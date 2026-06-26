@@ -49,6 +49,8 @@ This file is intentionally large and historically layered. It is kept public by 
 
 The acoustic-cavitation / sonoluminescence breakthrough is preserved as a conservative boundary-collapse analogy, not as physics evidence. It spawned the HRT / witness / Accord / MDL Process Memory test lane now being used to shape Aukora kernel work.
 
+The newer trapped-light / boundary-localization branch is included only as an engineering extension of that same lane: localized loop persistence and boundary footprints can be tested in synthetic telemetry before any Aukora handoff. It does not claim matter is trapped light or that GHP physics is proven.
+
 Start here:
 
 - `experiments/SONOLUMINESCENCE_TO_AUKORA_TEST_CHAIN.md`
@@ -56,6 +58,7 @@ Start here:
 - `experiments/ghp_boundary_trace_adversarial_probe_outputs/report.md`
 - `experiments/ghp_accord_firewall_prompt_probe_outputs/report.md`
 - `experiments/ghp_mdl_process_memory_promotion_guard_outputs/report.md`
+- `experiments/ghp_trapped_light_boundary_localization_probe_outputs/report.md`
 
 Survived engineering object:
 
@@ -88,7 +91,8 @@ neither may authorize action.
 6. Witness as active held tension in toy/software telemetry, not a null trace and not authority.
 7. Boundary Access Channel as the current best bridge-object toy corridor.
 8. MDL Process Memory as replayable advisory compression over public traces only.
-9. Ricci-Fibonacci, dark-to-readable, ternary, snap/reconnection, crossing-complexity, and Shear branches as toy telemetry or demoted/mixed scaffolds only.
+9. Trapped-light / boundary-localization as an engineering analogy probe for HRT footprints, witness plateau, loop persistence, and MDL localization only.
+10. Ricci-Fibonacci, dark-to-readable, ternary, snap/reconnection, crossing-complexity, and Shear branches as toy telemetry or demoted/mixed scaffolds only.
 
 ## Symbolic / Spirituality Layer
 
