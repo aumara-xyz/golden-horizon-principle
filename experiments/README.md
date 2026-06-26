@@ -65,4 +65,6 @@ Included:
 - D4 representation audit probe
 - D4 chirality obstruction probe
 - D4 orientation-breaking probe
+- F4 boundary extension probe
+- F4 boundary projection probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

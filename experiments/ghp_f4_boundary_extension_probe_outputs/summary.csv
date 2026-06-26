@@ -1,0 +1,7 @@
+probe,metric,value,control,verdict,safe_read
+MEB-005A,F4_root_count_and_D4_embedding,1.0,0.0,PASS,F4 contains the D4 / 24-cell scaffold as an exact sublayer and adds another 24 roots.
+MEB-005B,dual_layer_balance,1.0,1.0,PASS,"F4 gives a balanced D4-plus-extra-root boundary alphabet, not merely an arbitrary enlargement."
+MEB-005C,reflection_closure_rate,1.0,0.0,PASS,F4 is a genuine root system closed under its root reflections; random controls are not.
+MEB-005D,chirality_obstruction,0.0,0.016,PASS,F4 is still non-chiral by itself; adding the F4 extension does not solve the chirality problem.
+MEB-005E,antipode_cancellation_preservation,0.0,1.0,PASS,F4 preserves antipodal cancellation structure; this is useful but not a matter derivation.
+MEB-005F,quantization_improvement_over_D4,0.09414334001016322,0.054875531349482976,PASS,The F4 extension improves nearest-root coverage of S3 samples over D4 in this toy metric.

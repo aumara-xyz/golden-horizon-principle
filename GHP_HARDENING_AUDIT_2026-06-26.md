@@ -224,6 +224,48 @@ Unsafe read:
 A Weyl chamber, spinor axis, or random search is a physical chirality law.
 ```
 
+## Wave 9 — F4 Extension And Boundary Projection Probes
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_f4_boundary_extension_probe.py` | PASS 6/6 | F4 is a principled D4-plus-dual-layer extension and a stronger boundary alphabet candidate, but it remains non-chiral. |
+| `ghp_f4_boundary_projection_probe.py` | PASS 6/6 | Natural F4 projections / halfspace cuts do not solve chirality while preserving cancellation. |
+
+Measured F4 extension results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-005A F4 root count and D4 embedding | 1.000000 | 0.000000 |
+| MEB-005B dual layer balance | 1.000000 | 1.000000 |
+| MEB-005C reflection closure rate | 1.000000 | 0.000000 |
+| MEB-005D chirality obstruction | 0.000000 | 0.016000 |
+| MEB-005E antipode cancellation preservation | 0.000000 | 1.000000 |
+| MEB-005F quantization improvement over D4 | 0.094143 | 0.054876 |
+
+Measured F4 projection results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-006A quotient projection nonchirality | 0.025783 | 0.032500 |
+| MEB-006B projection unique ratio | 0.687500 | 1.000000 |
+| MEB-006C natural halfspace admissibility | -2.521562 | -2.127411 |
+| MEB-006D natural best chirality | 0.042502 | 0.007786 |
+| MEB-006E antipode loss after boundary cut | 1.000000 | 1.000000 |
+| MEB-006F best cancellation loss | 0.778553 | 0.592130 |
+
+Safe read:
+
+```text
+F4 strengthens the matter-embedding scaffold but does not supply the
+missing chiral matter law. Natural projection alone is not enough.
+```
+
+Unsafe read:
+
+```text
+F4 or F4 projection derives particles, chiral fermions, or the Standard Model.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -250,6 +292,7 @@ Port these into real HRT sandbox traces first:
 - Algorithmic Sonoluminescence as a matter-creation law.
 - D4 alone as a chirality mechanism.
 - naive D4 orientation-breaking as a weak-interaction or fermion mechanism.
+- F4 or F4 projection as a matter / chiral-fermion derivation.
 
 ## Bottom Line
 
@@ -259,6 +302,6 @@ The public package is stronger after this pass because the survived claims remai
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
 
-The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough.
+The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough. MEB-005 and MEB-006 show F4 is a stronger scaffold but still does not close the matter/chirality gap.
 
 That is the current hard edge.

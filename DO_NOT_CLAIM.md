@@ -80,6 +80,7 @@ Use:
 - `trapped-light / boundary-localization is an engineering analogy probe for footprint separability, loop persistence, and MDL localization only`
 - `the 24-cell / D4 root system is a candidate discrete label scaffold for future matter-embedding tests, not a Standard Model derivation`
 - `D4 chirality and orientation-breaking probes currently block bare-D4 matter recovery`
+- `F4 is a stronger D4-plus-dual-layer scaffold, but F4 projection currently blocks naive chiral-matter recovery`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -125,6 +126,9 @@ Avoid:
 - `the 24-cell derives Standard Model charges`
 - `Algorithmic Sonoluminescence writes matter into existence`
 - `D4 orientation breaking derives chiral fermions`
+- `F4 derives matter`
+- `F4 projection derives chiral fermions`
+- `a boundary cut is anomaly cancellation`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 

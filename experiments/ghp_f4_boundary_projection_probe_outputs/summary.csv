@@ -1,0 +1,7 @@
+probe,metric,value,control,verdict,safe_read
+MEB-006A,quotient_projection_nonchirality,0.025782627951608766,0.0325,PASS,Natural F4-to-boundary quotient projections preserve symmetry; they do not generate chirality.
+MEB-006B,projection_unique_ratio,0.6875,1.0,PASS,Projection retains a substantial readable boundary alphabet rather than collapsing everything to one point.
+MEB-006C,natural_halfspace_admissibility,-2.5215617574898648,-2.1274106496323704,PASS,Natural F4-root halfspaces do not pass the joint chirality-plus-cancellation criterion.
+MEB-006D,natural_best_chirality,0.042502004811547714,0.007786203906307465,PASS,"Any apparent chirality from a halfspace remains tied to cancellation loss, not a clean physical split."
+MEB-006E,antipode_loss_after_boundary_cut,1.0,1.0,PASS,Boundary cuts destroy antipodal pairing; this blocks treating a naive cut as anomaly-safe matter.
+MEB-006F,best_cancellation_loss,0.7785533905932737,0.5921304660591232,PASS,The best natural halfspace still carries too much cancellation loss for a disciplined matter bridge.

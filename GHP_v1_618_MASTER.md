@@ -6510,6 +6510,16 @@ The safer formulation is therefore:
 - the Standard Model gauge group is a **candidate emergent large-scale symmetry**,
 - and the E8 / quasicrystal corridor is a **candidate bridge**, not a solved pipeline.
 
+**2026-06-26 hardening note.** The MEB-001 through MEB-006 probes sharpen this corridor without closing it. The \(D_4\) / 24-cell root system survives as a real non-arbitrary 24-label scaffold, and \(F_4\) survives as a principled \(D_4\)-plus-dual-layer extension with stronger toy boundary coverage. However, the stricter \(A_2 + A_1 +\) residual split, bare \(D_4\) chirality, naive \(D_4\) orientation-breaking, bare \(F_4\) chirality, and natural \(F_4\) boundary projections all fail to derive a disciplined chiral matter mechanism. The safe master status is therefore:
+
+```text
+24-cell / D4 is a promising matter-embedding scaffold.
+F4 is a stronger extension of that scaffold.
+Neither bare D4 nor F4-plus-naive-projection derives matter.
+```
+
+The Matter Embedding Gap remains open. The next viable route likely needs \(E_6\), a representation-theoretic projection, a boundary condition, or a genuine dynamical / categorical sector rather than a simple geometric counting map.
+
 #### 10A.2 Three generations — triadic closure rather than accident
 
 A second corridor that keeps recurring is the role of **three** as the first closure number of multiple independent structures already present in the framework:

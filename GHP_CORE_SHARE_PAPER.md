@@ -1,7 +1,7 @@
 # Golden Horizon Principle
 ## Core Share Paper
 
-**Version:** core-v0.019
+**Version:** core-v0.020
 **Source master:** `GHP_v1_618_MASTER.md`  
 **Companion ledger:** `GHP_RESEARCH_LEDGER.md`
 **Purpose:** This is the shareable argument. It is not the archival master.
@@ -388,14 +388,19 @@ The 24-cell / \(D_4\) root system is a real non-arbitrary four-dimensional scaff
 
 However, the next audits block the premature Standard Model jump. \(D_4\) contains algorithmically discoverable \(A_2\)-like sub-root structure, but the stricter \(A_2 + A_1 +\) rank-1 residual decomposition does not pass under exact root-subsystem rules. A separate chirality obstruction test shows that bare \(D_4\) is centrally symmetric, reflection-closed, and non-chiral. Naive orientation-breaking choices do not supply a disciplined chiral matter mechanism while preserving the cancellation structure that made the scaffold attractive.
 
+The \(F_4\) extension tests sharpen this further. \(F_4\) is a principled enlargement: it contains the \(D_4\) / 24-cell layer and adds a second balanced 24-root layer, remains reflection-closed, preserves antipodal cancellation, and improves a toy nearest-root coverage metric. That makes \(F_4\) a stronger boundary-alphabet candidate than bare \(D_4\).
+
+But \(F_4\) still does not close the gap. It remains non-chiral by itself, and natural \(F_4\)-root boundary projections or halfspace cuts either preserve non-chirality or destroy the antipodal / cancellation structure needed for a disciplined matter bridge.
+
 The safe conclusion is therefore:
 
 ```text
-24-cell / D4 is a promising matter-embedding scaffold,
-but bare D4 does not derive the Standard Model.
+24-cell / D4 is a promising matter-embedding scaffold.
+F4 is a stronger extension of that scaffold.
+Neither bare D4 nor F4-plus-naive-projection derives matter.
 ```
 
-The next viable bridge would need an additional principled orientation-breaking mechanism, projection, boundary condition, larger root system such as \(F_4\) or \(E_6\), or a genuine dynamical / categorical sector. Until such a bridge is constructed, the Matter Embedding Gap remains open.
+The next viable bridge would need an additional principled orientation-breaking mechanism, representation-theoretic projection, boundary condition, larger root system such as \(E_6\), or a genuine dynamical / categorical sector. Until such a bridge is constructed, the Matter Embedding Gap remains open.
 
 ## 14. What Is Not Claimed
 
@@ -431,6 +436,7 @@ GHP does not currently claim:
 - proof that crossing-complexity / knot-pressure justifies live sampler reset or topological simplification,
 - proof that the 24-cell / \(D_4\) derives Standard Model gauge charges, particles, chirality, hypercharge, generations, masses, or matter,
 - proof that algorithmic sonoluminescence writes matter into existence,
+- proof that \(F_4\), \(F_4\)-projection, or a naive boundary cut derives chiral matter,
 - proof that Aukora or any software organism is automatically a physical observer in the GHP sense,
 - proof that software or toy-model results count as physical evidence.
 
@@ -513,6 +519,7 @@ That lane is not part of the scientific proof structure of this paper. At most, 
 
 | Version | Source master | Summary |
 |---|---|---|
+| core-v0.020 | `GHP_v1_618_MASTER.md` | Added \(F_4\) extension and boundary-projection hardening: \(F_4\) is a principled \(D_4\)-plus-dual-layer scaffold and improves toy coverage, but it remains non-chiral and naive natural projections / halfspace cuts do not preserve cancellation while generating chirality. Matter Embedding Gap remains open. |
 | core-v0.019 | `GHP_v1_618_MASTER.md` | Added a matter-embedding hardening note: MEB-001 supports the 24-cell / \(D_4\) as a real non-arbitrary scaffold, while MEB-002 through MEB-004 block the premature Standard Model jump by showing that the strict \(A_2 + A_1 +\) residual split, chirality, and naive orientation-breaking do not yet survive. |
 | core-v0.018 | `GHP_v1_618_MASTER.md` | Added the trapped-light / boundary-localization probe as a narrow engineering analogy hardening scaffold: CBT/IRF/LEI/MDL-LOC/VTR pass against controls in synthetic telemetry, strengthening HRT footprint and MDL-localization test shapes while explicitly refusing matter-is-trapped-light, vortex-atom, consciousness, physics-proof, or authority claims. |
 | core-v0.017 | `GHP_v1_618_MASTER.md` | Added the MDL Process Memory / phi-sampler correction lane: phi rotation survives only as a low-discrepancy sampler candidate; phi-as-storage, ternary pointer control, base-N free compression, and crossing-complexity live reset are rejected or fenced; `MDLProcessMemory = generator + public seed/state + explicit residuals + replay hash` becomes an offline/advisory compression scaffold over public traces only. |
