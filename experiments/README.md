@@ -64,4 +64,5 @@ Included:
 - 24-cell / D4 matter-embedding scaffold probe
 - D4 representation audit probe
 - D4 chirality obstruction probe
+- D4 orientation-breaking probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

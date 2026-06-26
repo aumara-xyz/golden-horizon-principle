@@ -1,0 +1,6 @@
+probe,metric,value,control,verdict,safe_read
+MEB-004A,bare_D4_chirality,0.002514668901927913,0.0,PASS,Bare D4 remains non-chiral and cancellation-preserving.
+MEB-004B,weyl_chamber_chirality_minus_loss,-0.7400422877033339,-0.6079640555218494,PASS,A conventional Weyl-chamber halfspace is a choiceful orientation break and does not pass the chirality-plus-cancellation criterion.
+MEB-004C,spinor_axis_chirality_minus_loss,-0.8721773743661233,-0.6079640555218494,PASS,A symmetric spinor-like halfspace is still an extra choice and does not pass the chirality-plus-cancellation criterion.
+MEB-004D,oracle_axis_admissibility,-0.5494672319700652,-0.6079640555218494,PASS,Even a best-of-random-axis search does not establish an admissible non-hand-labeled orientation-breaking law.
+MEB-004E,antipode_loss_after_breaking,1.0,1.0,PASS,Naive orientation-breaking destroys the antipodal pairing that made the full D4 scaffold cancellation-clean.

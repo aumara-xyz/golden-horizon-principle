@@ -194,6 +194,36 @@ Unsafe read:
 D4 derives weak chirality or chiral fermions.
 ```
 
+## Wave 8 — D4 Orientation-Breaking Probe
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_d4_orientation_breaking_probe.py` | PASS 5/5 | Naive Weyl-chamber, spinor-axis, random-axis, and best-of-random orientation breaks do not supply a disciplined chirality-plus-cancellation mechanism. |
+
+Measured results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-004A bare D4 chirality | 0.002515 | 0.000000 |
+| MEB-004B Weyl chamber chirality minus loss | -0.740042 | -0.607964 |
+| MEB-004C spinor axis chirality minus loss | -0.872177 | -0.607964 |
+| MEB-004D oracle axis admissibility | -0.549467 | -0.607964 |
+| MEB-004E antipode loss after breaking | 1.000000 | 1.000000 |
+
+Safe read:
+
+```text
+Naive orientation-breaking does not rescue bare D4 as a chiral matter
+mechanism. The next bridge needs a principled boundary condition,
+larger root system, or dynamical/categorical sector.
+```
+
+Unsafe read:
+
+```text
+A Weyl chamber, spinor axis, or random search is a physical chirality law.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -219,6 +249,7 @@ Port these into real HRT sandbox traces first:
 - 24-cell labels as Standard Model charges.
 - Algorithmic Sonoluminescence as a matter-creation law.
 - D4 alone as a chirality mechanism.
+- naive D4 orientation-breaking as a weak-interaction or fermion mechanism.
 
 ## Bottom Line
 
@@ -228,6 +259,6 @@ The public package is stronger after this pass because the survived claims remai
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
 
-The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4.
+The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002. MEB-003 further shows that chirality requires extra orientation-breaking structure beyond bare D4. MEB-004 shows naive orientation-breaking is not enough.
 
 That is the current hard edge.

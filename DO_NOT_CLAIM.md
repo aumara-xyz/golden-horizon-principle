@@ -53,6 +53,7 @@ GHP does not currently claim:
 - proof that crossing-complexity / knot-pressure telemetry justifies live sampler resets or topological simplification triggers.
 - proof that trapped-light / vortex-localization analogies validate matter models, consciousness, observer selection, GHP physics, or authority.
 - proof that the 24-cell / D4 root system derives Standard Model gauge charges, particles, matter, chirality, hypercharge, generations, or masses.
+- proof that naive D4 orientation-breaking derives weak chirality, fermions, anomaly cancellation, or a physical matter mechanism.
 
 ## Safe Language
 
@@ -78,6 +79,7 @@ Use:
 - `crossing-complexity is an offline public telemetry proxy until it beats shuffled controls`
 - `trapped-light / boundary-localization is an engineering analogy probe for footprint separability, loop persistence, and MDL localization only`
 - `the 24-cell / D4 root system is a candidate discrete label scaffold for future matter-embedding tests, not a Standard Model derivation`
+- `D4 chirality and orientation-breaking probes currently block bare-D4 matter recovery`
 - `identifies a route`
 - `does not close the gap`
 - `Fibonacci/quasiperiodic temporal driving has been experimentally shown to protect edge qubits in a dynamical topological phase, making it a useful external analogue for GHP's information-architecture thesis`
@@ -122,6 +124,7 @@ Avoid:
 - `closed circulation proves consciousness or observer selection`
 - `the 24-cell derives Standard Model charges`
 - `Algorithmic Sonoluminescence writes matter into existence`
+- `D4 orientation breaking derives chiral fermions`
 
 unless the claim is theorem-grade or explicitly verified inside the stated domain.
 
