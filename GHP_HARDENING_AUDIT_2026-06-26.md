@@ -136,6 +136,35 @@ The 24-cell derives Standard Model gauge charges, particles, matter,
 chirality, hypercharge, generations, or a completed GHP matter embedding.
 ```
 
+## Wave 6 — D4 Representation Audit
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_d4_representation_audit_probe.py` | PASS 2/5 | D4 contains algorithmically discoverable A2-like sub-root scaffolds, but the stricter A2 + A1 + rank-1-residual decomposition does not pass under exact root-subsystem rules. |
+
+Measured results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-002A algorithmic A2 subsystem count | 16.000000 | 0.000000 |
+| MEB-002B A2 + A1 extension count | 0.000000 | 0.000000 |
+| MEB-002C residual U1-like bins | 999.000000 | 24.000000 |
+| MEB-002D rank coverage score | 0.000000 | 0.000000 |
+| MEB-002E support variety | 4.000000 | 0.000000 |
+
+Safe read:
+
+```text
+D4 gives a real A2-like scaffold, but this exact audit does not recover
+the full SU(3) x SU(2) x U(1)-like split without extra choices.
+```
+
+Unsafe read:
+
+```text
+D4 directly derives the Standard Model gauge group.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -169,6 +198,6 @@ The public package is stronger after this pass because the survived claims remai
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
 
-The 24-cell / D4 scaffold is now a promising next mathematical test lane, but it remains outside the proved core until a non-arbitrary representation map is built and survives controls.
+The 24-cell / D4 scaffold is now a promising next mathematical test lane for A2-like structure, but the stricter Standard-Model-like split remains unproven and currently blocked by MEB-002.
 
 That is the current hard edge.

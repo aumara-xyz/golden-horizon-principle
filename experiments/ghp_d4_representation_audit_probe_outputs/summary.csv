@@ -1,0 +1,6 @@
+probe,metric,value,control,verdict,safe_read
+MEB-002A,algorithmic_A2_subsystem_count,16.0,0.0,PASS,An algorithm finds A2-like hexagonal root subsystems inside D4 without hand-labeling.
+MEB-002B,algorithmic_A2_plus_A1_extension_count,0.0,0.0,MIXED,Strict orthogonal A2 + A1 extension is not established when the extension count is zero.
+MEB-002C,residual_U1_like_charge_bins_lower_than_24,999.0,24.0,MIXED,Residual U(1)-like bookkeeping is unavailable unless a strict A2 + A1 extension exists.
+MEB-002D,rank_coverage_score,0.0,0.0,FAIL,The strict rank-4 A2 + A1 + residual decomposition is not established by this probe.
+MEB-002E,support_variety,4.0,0.0,PASS,"Multiple coordinate supports appear, consistent with D4's high symmetry; this is not a Standard Model generation claim."
