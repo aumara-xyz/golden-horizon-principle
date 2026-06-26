@@ -15,6 +15,7 @@ They are used to clarify candidate mechanisms, engineering heuristics, and failu
 - `ghp_mdl_process_memory_promotion_guard_outputs/report.md` — replayable MDL Process Memory promotion guard.
 - `ghp_trapped_light_boundary_localization_probe_outputs/report.md` — trapped-light / boundary-localization engineering analogy probe.
 - `ghp_cosmological_freezeout_record_probe_outputs/report.md` — BAO / CMB-style freeze-out record-law analogy probe.
+- `ghp_holographic_scale_correspondence_probe_outputs/report.md` — micro/macro/Aukora normalized record-law correspondence probe.
 
 Included:
 
@@ -72,4 +73,5 @@ Included:
 - E6 27-weight scaffold probe
 - E6 27 branching probe
 - Cosmological freeze-out record probe
+- Holographic scale correspondence probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

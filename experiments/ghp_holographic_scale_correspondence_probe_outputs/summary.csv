@@ -1,0 +1,8 @@
+probe,metric,value,control,verdict,safe_read
+HSC-001A,mean_record_contrast,113.8271412390297,-8.730360406144355,PASS,All three scales form a strong public record near the normalized boundary.
+HSC-001B,cross_scale_shape_js_distance,0.16443689494639627,0.1951471884364604,MIXED,The normalized public-record shapes are closer to each other than controls.
+HSC-001C,mean_reconstruction_error,0.005208333333333333,0.1579861111111111,PASS,A finite observer reconstructs the shared boundary location after scale removal.
+HSC-001D,mean_compression_ratio,0.9215925925925926,0.9924444444444444,MIXED,Structured public records compress better than unitless control records.
+HSC-001E,mean_hidden_leak_score,0.01096296296296296,0.05,PASS,The public record recovers boundary shape without leaking arbitrary hidden phase labels.
+HSC-001F,coarse_grain_stability_js,0.055373230043431955,0.03768264244627944,MIXED,The record shape survives observer noise and coarse-graining better than controls.
+HSC-001G,abstract_law_vector_distance,0.09260202213338502,0.310121130802629,PASS,The worlds match at the abstract record-law level even when exact histograms differ.
