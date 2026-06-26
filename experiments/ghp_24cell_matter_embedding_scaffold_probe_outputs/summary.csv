@@ -1,0 +1,7 @@
+probe,metric,value,control,verdict,safe_read
+MEB-001A,D4 root integrity,1.0,0.0,PASS,"The 24-cell codebook is exactly the D4 root system, not an arbitrary list of 24 labels."
+MEB-001B,isotropy_error_lower_is_better,5.571685858412264e-17,0.1693601730081718,PASS,"The 24-cell is perfectly balanced in four dimensions, unlike generic random 24-point controls."
+MEB-001C,minimum_separation_higher_is_better,0.9999999999999999,0.21523209336470103,PASS,The 24-cell gives a cleaner separated label alphabet than typical random 24-point controls.
+MEB-001D,noisy_shear_label_stability,0.9869791666666666,0.6380208333333334,PASS,D4-root labels remain stable under local perturbation better than generic controls.
+MEB-001E,signed_permutation_equivariance,1.0,0.016666666666666666,PASS,The 24-cell has exact signed-coordinate symmetry closure; random controls do not.
+MEB-001F,quantization_error_lower_is_better,0.12492072676491962,0.30126212643202765,PASS,D4-near synthetic shear events quantize more cleanly to the 24-cell than to generic codebooks.

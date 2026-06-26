@@ -61,4 +61,5 @@ Included:
 - MDL process memory promotion guard
 - Crossing-complexity simplification probe
 - Trapped-light / boundary-localization probe
+- 24-cell / D4 matter-embedding scaffold probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story

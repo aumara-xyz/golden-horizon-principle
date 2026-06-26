@@ -1,0 +1,12 @@
+{
+  "seed": 24024,
+  "pass_count": 6,
+  "total": 6,
+  "forbidden_claims": [
+    "Standard Model derivation",
+    "gauge charge proof",
+    "matter proof",
+    "consciousness proof",
+    "GHP physics proof"
+  ]
+}

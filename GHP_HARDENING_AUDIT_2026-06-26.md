@@ -105,6 +105,37 @@ Matter is trapped light, vortex atoms are proven, consciousness is proven,
 or GHP physics has been validated by toy telemetry.
 ```
 
+## Wave 5 — 24-Cell / D4 Matter-Embedding Scaffold
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `ghp_24cell_matter_embedding_scaffold_probe.py` | PASS 6/6 | The 24-cell / D4 roots form a cleaner 24-label scaffold than generic random 24-point controls under symmetry, isotropy, separation, perturbation stability, equivariance, and quantization checks. |
+
+Measured results:
+
+| Test | Probe | Control |
+|---|---:|---:|
+| MEB-001A D4 root integrity | 1.000000 | 0.000000 |
+| MEB-001B isotropy error, lower is better | 0.000000 | 0.169360 |
+| MEB-001C minimum separation, higher is better | 1.000000 | 0.215232 |
+| MEB-001D noisy shear label stability | 0.986979 | 0.638021 |
+| MEB-001E signed-permutation equivariance | 1.000000 | 0.016667 |
+| MEB-001F quantization error, lower is better | 0.124921 | 0.301262 |
+
+Safe read:
+
+```text
+The 24-cell / D4 root system is a real, non-arbitrary four-dimensional
+candidate label alphabet for future matter-embedding toy models.
+```
+
+Unsafe read:
+
+```text
+The 24-cell derives Standard Model gauge charges, particles, matter,
+chirality, hypercharge, generations, or a completed GHP matter embedding.
+```
+
 ## Current Best Aukora Transfer
 
 Port these into real HRT sandbox traces first:
@@ -127,6 +158,8 @@ Port these into real HRT sandbox traces first:
 - Sequence-aftershock.
 - Crossing-complexity live resets.
 - MDL summaries replacing canonical receipts.
+- 24-cell labels as Standard Model charges.
+- Algorithmic Sonoluminescence as a matter-creation law.
 
 ## Bottom Line
 
@@ -135,5 +168,7 @@ The public package is stronger after this pass because the survived claims remai
 ```text
 boundary trace -> witness footprint -> Accord firewall -> replayable MDL memory -> boundary-localization stress tests
 ```
+
+The 24-cell / D4 scaffold is now a promising next mathematical test lane, but it remains outside the proved core until a non-arbitrary representation map is built and survives controls.
 
 That is the current hard edge.
