@@ -1,0 +1,7 @@
+probe,metric,value,control,verdict,safe_read
+TCD-001A,closed_loop_final_mse,0.0073599480384797245,0.012778813132819571,PASS,Closed compression/decompression preserves the original public structure better than controls.
+TCD-001B,receipt_contrast,0.7902742535215722,1.5001649846540657,MIXED,Durable sparse public records survive the torus loop.
+TCD-001C,compression_ratio,0.22157772621809746,0.2161849710982659,MIXED,Rule-plus-residual memory is more compact than control replay.
+TCD-001D,cycle_drift,0.00037677217022855536,0.0032207629459018667,PASS,The loop settles into a stable public cycle rather than wandering.
+TCD-001E,final_correlation,0.9836903298571091,0.9730493411857688,PASS,The decompressed public record remains highly correlated with the original experience.
+TCD-001F,hidden_leak_score,0.046875,0.05,PASS,The public receipt loop does not recover arbitrary hidden labels.

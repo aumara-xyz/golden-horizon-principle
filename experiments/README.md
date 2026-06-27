@@ -16,6 +16,7 @@ They are used to clarify candidate mechanisms, engineering heuristics, and failu
 - `ghp_trapped_light_boundary_localization_probe_outputs/report.md` — trapped-light / boundary-localization engineering analogy probe.
 - `ghp_cosmological_freezeout_record_probe_outputs/report.md` — BAO / CMB-style freeze-out record-law analogy probe.
 - `ghp_holographic_scale_correspondence_probe_outputs/report.md` — micro/macro/Aukora normalized record-law correspondence probe.
+- `ghp_torus_compression_decompression_probe_outputs/report.md` — compression/decompression receipt-loop probe.
 
 Included:
 
@@ -74,4 +75,5 @@ Included:
 - E6 27 branching probe
 - Cosmological freeze-out record probe
 - Holographic scale correspondence probe
+- Torus compression / decompression probe
 - `ghp_bridge_lab_notebook.md` for the live bridge-object story
