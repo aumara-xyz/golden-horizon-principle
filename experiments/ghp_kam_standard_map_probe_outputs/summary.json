@@ -1,0 +1,426 @@
+{
+  "test_id": "KAM-CALIBRATION-v1",
+  "map": "Chirikov standard map: p'=p+K sin(theta), theta'=theta+p' (mod 2pi); phi-free",
+  "estimator": "Greene residue criterion (Newton on periodic orbits at CF convergents) + bisection on K",
+  "arms_omega": {
+    "golden": 0.6180339887498948,
+    "silver": 0.4142135623730951,
+    "bronze": 0.3027756377319946,
+    "noble_silver": 0.38196601125010515,
+    "rational": 0.6666666666666666,
+    "generic_irr": 0.6931471805599453
+  },
+  "Kc_measured": {
+    "golden": 0.9723358154296875,
+    "silver": 0.9579620361328125,
+    "bronze": 0.9023895263671875,
+    "noble_silver": 0.9727020263671875,
+    "rational": 0.0,
+    "generic_irr": 0.8869171142578125
+  },
+  "Kc_ranking_desc": [
+    "noble_silver",
+    "golden",
+    "silver",
+    "bronze",
+    "generic_irr",
+    "rational"
+  ],
+  "golden_vs_silver": {
+    "Kc_golden": 0.9723358154296875,
+    "Kc_silver": 0.9579620361328125,
+    "margin_gs": 0.014373779296875,
+    "golden_wins_here": true
+  },
+  "validity_gate": {
+    "gate_golden_in_[0.95,1.00]": true,
+    "gate_rational_lt_0.05": true,
+    "gate_pass": true
+  },
+  "method_check_golden_near_0.97": true,
+  "classification": "FAIL_MECHANISM",
+  "interpretation": "FAIL-MECHANISM (per locked precedence: gate passed but margin_gs=0.0144 < 0.05). ESCALATE. Golden DOES edge silver (K_c golden=0.9723 vs silver=0.9580), but NOT by the preregistered clear margin of 0.05 \u2014 so the mechanism claim as stated ('phi is THE most robust torus, clearly beating silver') is NOT supported. The estimator is validated (gate passed; golden K_c=0.9723 recovers Greene's ~0.9716), so this is PHYSICS, not a bug. Structure observed: noble_silver K_c=0.9727 TIES/EXCEEDS golden=0.9723, and golden's cushion over silver is genuinely small (~0.014, consistent with the literature golden~0.9716 / silver~0.96). Reading: torus robustness is a NOBLE-TAIL property (golden and its noble cousin indistinguishable) rather than phi being uniquely and clearly dominant. This is the M-005 extremality-only picture, now visible even in the standard map. Action per prereg: re-audit estimator vs Greene 1979 (done \u2014 sound), then temper the master's KAM/Hurwitz-lane narrative: golden is top-tier but ties its noble cousin and only marginally exceeds silver; the '>= 0.05 clear win over silver' sub-claim is retracted. This is a NEGATIVE against the over-strong mechanism narrative, NEVER a positive GHP claim.",
+  "reconciliation_with_GHRECOV": "GH-RECOV (recovery PROXY): silver 0.570 > bronze 0.479 > golden 0.432 on critical-band recovery; golden lost the adversarial tear 0/16 seeds. HERE (KAM native, torus robustness): K_c(golden)=0.9723 vs K_c(silver)=0.9580; golden WINS here (margin_gs=0.0144). Golden edges silver here but only marginally (margin < 0.05, =0.0144) and TIES its noble cousin (noble_silver K_c=0.9727). So the direction still flips vs GH-RECOV (silver won recovery; golden nudges ahead on torus robustness), confirming recovery-quality and torus-robustness are DISTINCT properties -- but the standard map does NOT deliver a decisive golden-over-silver robustness win. The mechanism's strong form ('phi clearly the most robust') is not supported; robustness is a noble-TAIL property, golden not uniquely privileged. Reconciliation holds at the level of 'distinct properties'; the over-strong '>= 0.05 clear win' sub-claim is retracted (ESCALATE per prereg outcome C).",
+  "honesty_guard": "Golden is EXPECTED to win (textbook Greene 1979); a golden K_c-max is NOT GHP evidence. K_c MEASURED not seeded; 0.9716 forbidden in estimator. Content lives only in golden-vs-silver ordering and the GH-RECOV cross-check.",
+  "elapsed_seconds": 10.750166893005371,
+  "diagnostics": {
+    "golden": {
+      "omega": 0.6180339887498948,
+      "n_convergents": 14,
+      "convergents": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          13,
+          21
+        ],
+        [
+          21,
+          34
+        ],
+        [
+          34,
+          55
+        ],
+        [
+          55,
+          89
+        ],
+        [
+          89,
+          144
+        ],
+        [
+          144,
+          233
+        ],
+        [
+          233,
+          377
+        ]
+      ],
+      "residues_at_Klo": [
+        -2.500000000349445e-07,
+        -2.500000000349445e-07,
+        2.5002222514558525e-13,
+        0.0,
+        1.1102230246251565e-16,
+        -1.1102230246251565e-16,
+        0.0,
+        0.0,
+        0.0,
+        -2.220446049250313e-16,
+        -2.220446049250313e-16,
+        -4.440892098500626e-16,
+        -6.661338147750939e-16,
+        4.440892098500626e-16
+      ],
+      "residues_at_Khi": [
+        -0.75,
+        -0.75,
+        2.25,
+        -9.175715372856683,
+        -26.885408981945414,
+        621.6388505443786,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "is_rational": false,
+      "note": "bisection converged"
+    },
+    "silver": {
+      "omega": 0.4142135623730951,
+      "n_convergents": 7,
+      "convergents": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          12,
+          29
+        ],
+        [
+          29,
+          70
+        ],
+        [
+          70,
+          169
+        ]
+      ],
+      "residues_at_Klo": [
+        -2.500000000349445e-07,
+        2.5002222514558525e-13,
+        0.0,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        3.3306690738754696e-16,
+        1.6653345369377348e-16
+      ],
+      "residues_at_Khi": [
+        -0.75,
+        2.25,
+        -26.88540898194551,
+        null,
+        null,
+        null,
+        null
+      ],
+      "is_rational": false,
+      "note": "bisection converged"
+    },
+    "bronze": {
+      "omega": 0.3027756377319946,
+      "n_convergents": 6,
+      "convergents": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          10,
+          33
+        ],
+        [
+          33,
+          109
+        ],
+        [
+          109,
+          360
+        ]
+      ],
+      "residues_at_Klo": [
+        -2.500000000349445e-07,
+        0.0,
+        1.1102230246251565e-16,
+        0.0,
+        2.220446049250313e-16,
+        6.661338147750939e-16
+      ],
+      "residues_at_Khi": [
+        -0.75,
+        -9.175715372856668,
+        null,
+        null,
+        null,
+        null
+      ],
+      "is_rational": false,
+      "note": "bisection converged"
+    },
+    "noble_silver": {
+      "omega": 0.38196601125010515,
+      "n_convergents": 13,
+      "convergents": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          13,
+          34
+        ],
+        [
+          21,
+          55
+        ],
+        [
+          34,
+          89
+        ],
+        [
+          55,
+          144
+        ],
+        [
+          89,
+          233
+        ],
+        [
+          144,
+          377
+        ]
+      ],
+      "residues_at_Klo": [
+        -2.500000000349445e-07,
+        2.5002222514558525e-13,
+        0.0,
+        0.0,
+        -2.220446049250313e-16,
+        0.0,
+        2.220446049250313e-16,
+        1.1102230246251565e-16,
+        0.0,
+        0.0,
+        -2.220446049250313e-16,
+        -8.881784197001252e-16,
+        4.440892098500626e-16
+      ],
+      "residues_at_Khi": [
+        -0.75,
+        2.25,
+        -9.175715372856668,
+        -26.88540898194551,
+        524.612478495744,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "is_rational": false,
+      "note": "bisection converged"
+    },
+    "rational": {
+      "omega": 0.6666666666666666,
+      "n_convergents": 3,
+      "convergents": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "residues_at_Klo": [
+        -2.500000000349445e-07,
+        -2.500000000349445e-07,
+        0.0
+      ],
+      "residues_at_Khi": [
+        -0.75,
+        -0.75,
+        -9.175715372856683
+      ],
+      "is_rational": true,
+      "note": "rational resonance: K_c=0 (no invariant circle of this omega for K>0)"
+    },
+    "generic_irr": {
+      "omega": 0.6931471805599453,
+      "n_convergents": 8,
+      "convergents": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          61,
+          88
+        ],
+        [
+          192,
+          277
+        ],
+        [
+          253,
+          365
+        ]
+      ],
+      "residues_at_Klo": [
+        -2.500000000349445e-07,
+        -2.500000000349445e-07,
+        0.0,
+        -2.220446049250313e-16,
+        0.0,
+        -2.220446049250313e-16,
+        9.992007221626409e-16,
+        1.6653345369377348e-16
+      ],
+      "residues_at_Khi": [
+        -0.75,
+        -0.75,
+        -9.175715372856683,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "is_rational": false,
+      "note": "bisection converged"
+    }
+  }
+}

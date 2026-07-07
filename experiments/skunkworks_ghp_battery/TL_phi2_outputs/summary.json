@@ -1,0 +1,858 @@
+{
+  "test_id": "TL_phi2",
+  "ledger_anchor": "P-005",
+  "lane": "engineering/verified-computation \u2014 NOT physics evidence; no ledger upgrade (master hard rule 7).",
+  "N_MAX": 8,
+  "constants": {
+    "phi": 1.618033988749895,
+    "phi_squared_index": 2.618033988749895,
+    "one_over_phi2": 0.38196601125010515,
+    "sqrt2_index": 2.0,
+    "2cos_pi_7": 1.8019377358048383,
+    "2cos_pi_7_index": 3.246979603717467,
+    "delta2_index": 4.0
+  },
+  "thresholds": {
+    "PP_ERR_GATE": 1e-06,
+    "POS_GATE": -1e-09,
+    "MC_GATE": 1e-09,
+    "IDEM_GATE": 1e-09,
+    "ILL_COND": 1000000000000.0,
+    "CQ_MARGIN": 1.0,
+    "PPQ_DECADE": 10.0,
+    "SPEARMAN_KILL": 0.9,
+    "TOL": 1e-09
+  },
+  "records": {
+    "phi": {
+      "name": "phi",
+      "delta": 1.618033988749895,
+      "jones_index": 2.618033988749895,
+      "one_over_index": 0.38196601125010515,
+      "closing_l": 4,
+      "per_n": {
+        "2": {
+          "n": 2,
+          "gram_dim": 2,
+          "gram_cond": 4.236067977499787,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.61803398875
+          ],
+          "pp_numeric": 0.38196601125010515,
+          "pp_err": 0.0,
+          "pp_pos_min": -6.420171453659533e-17,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": 4
+        },
+        "3": {
+          "n": 3,
+          "gram_dim": 5,
+          "gram_cond": 65.81762223065633,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.61803398875,
+            1.61803398875
+          ],
+          "pp_numeric": 0.38196601125010515,
+          "pp_err": 0.0,
+          "pp_pos_min": -2.523918649037635e-16,
+          "mc": 1.1102230246251565e-16,
+          "idem": 4.440892098500626e-16,
+          "is_closing_level": false,
+          "expected_closing_l": 4
+        },
+        "4": {
+          "n": 4,
+          "gram_dim": 14,
+          "gram_cond": 2.9496393130374668e+16,
+          "gram_ill": true,
+          "gram_nullity": 1,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.61803398875,
+            1.61803398875,
+            1.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 3.499951264916453e-16,
+          "idem": 4.440892098500626e-16,
+          "is_closing_level": true,
+          "expected_closing_l": 4
+        },
+        "5": {
+          "n": 5,
+          "gram_dim": 42,
+          "gram_cond": 4.397790017257814e+17,
+          "gram_ill": true,
+          "gram_nullity": 8,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.61803398875,
+            1.61803398875,
+            1.0,
+            0.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 4.440892098500626e-16,
+          "is_closing_level": true,
+          "expected_closing_l": 4
+        },
+        "6": {
+          "n": 6,
+          "gram_dim": 132,
+          "gram_cond": 3.3607905737420334e+18,
+          "gram_ill": true,
+          "gram_nullity": 43,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.61803398875,
+            1.61803398875,
+            1.0,
+            0.0,
+            -1.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 4.440892098500626e-16,
+          "is_closing_level": true,
+          "expected_closing_l": 4
+        },
+        "7": {
+          "n": 7,
+          "gram_dim": 429,
+          "gram_cond": 1.383420098784807e+20,
+          "gram_ill": true,
+          "gram_nullity": 196,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.61803398875,
+            1.61803398875,
+            1.0,
+            0.0,
+            -1.0,
+            -1.61803398875
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 4.440892098500626e-16,
+          "is_closing_level": true,
+          "expected_closing_l": 4
+        },
+        "8": {
+          "n": 8,
+          "gram_dim": 1430,
+          "gram_cond": 2.3303652284197097e+20,
+          "gram_ill": true,
+          "gram_nullity": 820,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.61803398875,
+            1.61803398875,
+            1.0,
+            0.0,
+            -1.0,
+            -1.61803398875,
+            -1.61803398875
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 4.440892098500626e-16,
+          "is_closing_level": true,
+          "expected_closing_l": 4
+        }
+      },
+      "notes": [],
+      "PPQ": 0.0,
+      "closing_levels_n": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "CQ_score": 18.52644145043378,
+      "CQ_closing_logs": [
+        16.46976891294952,
+        17.643234489116782,
+        18.52644145043378,
+        20.140954080962388,
+        20.367423991522585
+      ]
+    },
+    "sqrt2": {
+      "name": "sqrt2",
+      "delta": 1.4142135623730951,
+      "jones_index": 2.0,
+      "one_over_index": 0.5,
+      "closing_l": 3,
+      "per_n": {
+        "2": {
+          "n": 2,
+          "gram_dim": 2,
+          "gram_cond": 5.828427124746189,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.414213562373
+          ],
+          "pp_numeric": 0.49999999999999983,
+          "pp_err": 1.6653345369377348e-16,
+          "pp_pos_min": -9.433697464600195e-17,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": 3
+        },
+        "3": {
+          "n": 3,
+          "gram_dim": 5,
+          "gram_cond": 4.391616759468216e+16,
+          "gram_ill": true,
+          "gram_nullity": 1,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.414213562373,
+            1.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 9.524207825395989e-18,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 3
+        },
+        "4": {
+          "n": 4,
+          "gram_dim": 14,
+          "gram_cond": 4.936366517486457e+18,
+          "gram_ill": true,
+          "gram_nullity": 6,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.414213562373,
+            1.0,
+            0.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 3
+        },
+        "5": {
+          "n": 5,
+          "gram_dim": 42,
+          "gram_cond": 1.7778320110073925e+18,
+          "gram_ill": true,
+          "gram_nullity": 26,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.414213562373,
+            1.0,
+            0.0,
+            -1.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 3
+        },
+        "6": {
+          "n": 6,
+          "gram_dim": 132,
+          "gram_cond": 6.199060016690511e+18,
+          "gram_ill": true,
+          "gram_nullity": 100,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.414213562373,
+            1.0,
+            0.0,
+            -1.0,
+            -1.414213562373
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 3
+        },
+        "7": {
+          "n": 7,
+          "gram_dim": 429,
+          "gram_cond": 5.489012880945738e+19,
+          "gram_ill": true,
+          "gram_nullity": 365,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.414213562373,
+            1.0,
+            0.0,
+            -1.0,
+            -1.414213562373,
+            -1.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 3
+        },
+        "8": {
+          "n": 8,
+          "gram_dim": 1430,
+          "gram_cond": 1.224440523411313e+20,
+          "gram_ill": true,
+          "gram_nullity": 1302,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.414213562373,
+            1.0,
+            0.0,
+            -1.0,
+            -1.414213562373,
+            -1.0,
+            -0.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 3
+        }
+      },
+      "notes": [],
+      "PPQ": 1.6653345369377348e-16,
+      "closing_levels_n": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "CQ_score": 18.74286661946806,
+      "CQ_closing_logs": [
+        16.64262443378487,
+        18.249890721685222,
+        18.69340739790777,
+        18.79232584102835,
+        19.739494249932115,
+        20.08793769433488
+      ]
+    },
+    "2cos_pi_7": {
+      "name": "2cos_pi_7",
+      "delta": 1.8019377358048383,
+      "jones_index": 3.246979603717467,
+      "one_over_index": 0.30797852836990414,
+      "closing_l": 6,
+      "per_n": {
+        "2": {
+          "n": 2,
+          "gram_dim": 2,
+          "gram_cond": 3.4939592074349344,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.801937735805
+          ],
+          "pp_numeric": 0.30797852836990414,
+          "pp_err": 0.0,
+          "pp_pos_min": 3.752655136803674e-18,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": 6
+        },
+        "3": {
+          "n": 3,
+          "gram_dim": 5,
+          "gram_cond": 30.135719143197885,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.801937735805,
+            2.246979603717
+          ],
+          "pp_numeric": 0.307978528369904,
+          "pp_err": 1.1102230246251565e-16,
+          "pp_pos_min": -1.5938901969313749e-16,
+          "mc": 1.1102230246251565e-16,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": 6
+        },
+        "4": {
+          "n": 4,
+          "gram_dim": 14,
+          "gram_cond": 618.4290506283548,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.801937735805,
+            2.246979603717,
+            2.246979603717
+          ],
+          "pp_numeric": 0.30797852836990397,
+          "pp_err": 1.6653345369377348e-16,
+          "pp_pos_min": -2.0468418609636548e-16,
+          "mc": 8.326672684688674e-17,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": 6
+        },
+        "5": {
+          "n": 5,
+          "gram_dim": 42,
+          "gram_cond": 36589.341700972145,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.801937735805,
+            2.246979603717,
+            2.246979603717,
+            1.801937735805
+          ],
+          "pp_numeric": 0.30797852836990386,
+          "pp_err": 2.7755575615628914e-16,
+          "pp_pos_min": -2.8073583006804985e-15,
+          "mc": 2.7755575615628914e-16,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": 6
+        },
+        "6": {
+          "n": 6,
+          "gram_dim": 132,
+          "gram_cond": 8.3263100888159e+17,
+          "gram_ill": true,
+          "gram_nullity": 1,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.801937735805,
+            2.246979603717,
+            2.246979603717,
+            1.801937735805,
+            1.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 1.3659831826166938e-15,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 6
+        },
+        "7": {
+          "n": 7,
+          "gram_dim": 429,
+          "gram_cond": 9.502428408649458e+17,
+          "gram_ill": true,
+          "gram_nullity": 12,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.801937735805,
+            2.246979603717,
+            2.246979603717,
+            1.801937735805,
+            1.0,
+            0.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 6
+        },
+        "8": {
+          "n": 8,
+          "gram_dim": 1430,
+          "gram_cond": 2.5304391039830696e+19,
+          "gram_ill": true,
+          "gram_nullity": 89,
+          "degenerate_jw": true,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            1.801937735805,
+            2.246979603717,
+            2.246979603717,
+            1.801937735805,
+            1.0,
+            0.0,
+            -1.0
+          ],
+          "pp_numeric": null,
+          "pp_err": NaN,
+          "pp_pos_min": NaN,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": true,
+          "expected_closing_l": 6
+        }
+      },
+      "notes": [],
+      "PPQ": 2.7755575615628914e-16,
+      "closing_levels_n": [
+        6,
+        7,
+        8
+      ],
+      "CQ_score": 17.97783460631033,
+      "CQ_closing_logs": [
+        17.920452580866627,
+        17.97783460631033,
+        19.403195890302246
+      ]
+    },
+    "delta2": {
+      "name": "delta2",
+      "delta": 2.0,
+      "jones_index": 4.0,
+      "one_over_index": 0.25,
+      "closing_l": null,
+      "per_n": {
+        "2": {
+          "n": 2,
+          "gram_dim": 2,
+          "gram_cond": 2.999999999999999,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            2.0
+          ],
+          "pp_numeric": 0.24999999999999997,
+          "pp_err": 2.7755575615628914e-17,
+          "pp_pos_min": -5.776097291979045e-19,
+          "mc": 0.0,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": null
+        },
+        "3": {
+          "n": 3,
+          "gram_dim": 5,
+          "gram_cond": 18.111452984979774,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            2.0,
+            3.0
+          ],
+          "pp_numeric": 0.25,
+          "pp_err": 0.0,
+          "pp_pos_min": -6.581867950943666e-17,
+          "mc": 1.1102230246251565e-16,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": null
+        },
+        "4": {
+          "n": 4,
+          "gram_dim": 14,
+          "gram_cond": 187.47712576517975,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ],
+          "pp_numeric": 0.2499999999999999,
+          "pp_err": 1.1102230246251565e-16,
+          "pp_pos_min": -1.6577007862239903e-16,
+          "mc": 5.551115123125783e-17,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": null
+        },
+        "5": {
+          "n": 5,
+          "gram_dim": 42,
+          "gram_cond": 3008.743130453034,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+          ],
+          "pp_numeric": 0.24999999999999953,
+          "pp_err": 4.718447854656915e-16,
+          "pp_pos_min": -6.07071122189385e-16,
+          "mc": 1.1102230246251565e-16,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": null
+        },
+        "6": {
+          "n": 6,
+          "gram_dim": 132,
+          "gram_cond": 69671.11722801757,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+          ],
+          "pp_numeric": 0.24999999999999925,
+          "pp_err": 7.494005416219807e-16,
+          "pp_pos_min": -9.612267037654722e-16,
+          "mc": 3.3306690738754696e-16,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": null
+        },
+        "7": {
+          "n": 7,
+          "gram_dim": 429,
+          "gram_cond": 2206750.1958621894,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0,
+            7.0
+          ],
+          "pp_numeric": 0.24999999999999895,
+          "pp_err": 1.0547118733938987e-15,
+          "pp_pos_min": -1.1471794622554774e-14,
+          "mc": 1.7763568394002505e-15,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": null
+        },
+        "8": {
+          "n": 8,
+          "gram_dim": 1430,
+          "gram_cond": 91795821.30061816,
+          "gram_ill": false,
+          "gram_nullity": 0,
+          "degenerate_jw": false,
+          "quantum_ints": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0
+          ],
+          "pp_numeric": 0.24999999999999772,
+          "pp_err": 2.275957200481571e-15,
+          "pp_pos_min": -9.21736363697742e-14,
+          "mc": 6.661338147750939e-16,
+          "idem": 0.0,
+          "is_closing_level": false,
+          "expected_closing_l": null
+        }
+      },
+      "notes": [
+        "no closing level observed (Gram never degenerates through N=8): CQ_score uses all n as the structural fallback for a non-closing control (prereg sec 5)."
+      ],
+      "PPQ": 2.275957200481571e-15,
+      "closing_levels_n": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "CQ_score": 3.478385111705273,
+      "CQ_closing_logs": [
+        0.4771212547196623,
+        1.2579532928345727,
+        2.272948286677217,
+        3.478385111705273,
+        4.843052774824403,
+        6.3437531738055934,
+        7.962822911839712
+      ]
+    }
+  },
+  "verdict": {
+    "gate_4a": {
+      "passed": true,
+      "detail": {
+        "phi": {
+          "failures": [],
+          "checked_n": [
+            2,
+            3
+          ],
+          "passed": true
+        },
+        "sqrt2": {
+          "failures": [],
+          "checked_n": [
+            2
+          ],
+          "passed": true
+        },
+        "2cos_pi_7": {
+          "failures": [],
+          "checked_n": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "passed": true
+        },
+        "delta2": {
+          "failures": [],
+          "checked_n": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "passed": true
+        }
+      }
+    },
+    "distinct_4b": {
+      "CQ_score": {
+        "phi": 18.52644145043378,
+        "sqrt2": 18.74286661946806,
+        "2cos_pi_7": 17.97783460631033,
+        "delta2": 3.478385111705273
+      },
+      "PPQ": {
+        "phi": 0.0,
+        "sqrt2": 1.6653345369377348e-16,
+        "2cos_pi_7": 2.7755575615628914e-16,
+        "delta2": 2.275957200481571e-15
+      },
+      "jones_index": {
+        "phi": 2.618033988749895,
+        "sqrt2": 2.0,
+        "2cos_pi_7": 3.246979603717467,
+        "delta2": 4.0
+      },
+      "cond_i_cq_margin_all_controls": false,
+      "cond_ii_beats_nearest_index_control": false,
+      "cond_iii_ppq_decade": true,
+      "pass_h1": false,
+      "kill_within_10x": true,
+      "kill_control_ties_or_beats_cq": true,
+      "kill_control_ties_or_beats_ppq": false,
+      "spearman_cq_vs_index": -1.0,
+      "kill_tracks_index": true,
+      "kill_h1": true
+    },
+    "classification": "KILL-H1 / CONFIRM-H0 (machinery validated; phi INDISTINGUISHABLE / not special \u2014 expected outcome)"
+  },
+  "headline": "CQ_score  phi=18.526  sqrt2=18.743  2cos(pi/7)=17.978  delta2=3.478  ||  PPQ  phi=0.00e+00  sqrt2=1.67e-16  2cos(pi/7)=2.78e-16  delta2=2.28e-15  ||  Spearman(CQ,index)=-1.000",
+  "no_upgrade": "Software/toy result; NEVER physics evidence for GHP or observer-boundary selection; no ledger status upgrade permitted."
+}

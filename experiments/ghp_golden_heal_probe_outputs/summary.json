@@ -1,0 +1,393 @@
+{
+  "test_id": "GOLDEN-HEAL-v1",
+  "lane": "engineering / verified-computation. NOT physics evidence.",
+  "forbidden_upgrade": "GOLDEN-HEAL is a toy least-squares recoverability probe; no outcome here is physics evidence, and Outcome B (the expected result) is a statement about low-discrepancy geometry, not about phi being physically privileged.",
+  "config": {
+    "N": 512,
+    "K": 16,
+    "sigma": 0.001,
+    "rcond": 1e-10,
+    "damage_grid": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "seeds": [
+      1618,
+      2718,
+      3141,
+      1414,
+      1732,
+      2236,
+      4142,
+      1123,
+      5813,
+      2971,
+      6180,
+      8090
+    ],
+    "modes": [
+      "contiguous",
+      "random"
+    ],
+    "arms": [
+      "golden",
+      "silver",
+      "bronze",
+      "rational_near",
+      "rational_resonant",
+      "random_irrational",
+      "random_positions"
+    ]
+  },
+  "alphas": {
+    "golden": 0.6180339887498949,
+    "silver": 0.41421356237309515,
+    "bronze": 0.3027756377319948,
+    "rational_near": 0.6153846153846154,
+    "rational_resonant": 0.5
+  },
+  "classification": "C_MECHANISM_NULL",
+  "pass_A": false,
+  "confirm_B": false,
+  "confirm_C": true,
+  "per_mode_stats": {
+    "contiguous": {
+      "gap_mean": 2.7687123320074836e-05,
+      "gap_sigma_between": 4.7248311192537985e-05,
+      "golden_wins_over_silver": 8,
+      "sign_test_positive": 8,
+      "sign_test_p": 0.3876953125,
+      "cond1_wins_ge_8of12": true,
+      "cond2_gap_gt_sigma": false,
+      "cond3_signtest_p_lt_05": false,
+      "cond4_ordering_intact": false,
+      "pass_A_mode": false,
+      "mean_aur": {
+        "golden": 0.6996446257755248,
+        "silver": 0.6996169386522046,
+        "bronze": 0.6996407903620963,
+        "rational_near": 0.16884389701539523,
+        "rational_resonant": 0.020508862814195873,
+        "random_irrational": 0.6996466874096492,
+        "random_positions": 0.6996029663647573
+      },
+      "B_floor_checks": {
+        "golden_vs_rational_resonant": {
+          "ok": true,
+          "mean_gap": 0.6791357629613288,
+          "wins": 12
+        },
+        "golden_vs_random_positions": {
+          "ok": false,
+          "mean_gap": 4.165941076729925e-05,
+          "wins": 9
+        },
+        "silver_vs_rational_resonant": {
+          "ok": true,
+          "mean_gap": 0.6791080758380087,
+          "wins": 12
+        },
+        "silver_vs_random_positions": {
+          "ok": false,
+          "mean_gap": 1.3972287447224415e-05,
+          "wins": 6
+        },
+        "bronze_vs_rational_resonant": {
+          "ok": true,
+          "mean_gap": 0.6791319275479003,
+          "wins": 12
+        },
+        "bronze_vs_random_positions": {
+          "ok": false,
+          "mean_gap": 3.7823997338842785e-05,
+          "wins": 9
+        }
+      },
+      "B_all_beat_floors": false,
+      "C_golden_minus_randompos": 4.165941076750279e-05,
+      "C_mode_null": true
+    },
+    "random": {
+      "gap_mean": 4.116937947088821e-06,
+      "gap_sigma_between": 2.4457795050424557e-05,
+      "golden_wins_over_silver": 8,
+      "sign_test_positive": 8,
+      "sign_test_p": 0.3876953125,
+      "cond1_wins_ge_8of12": true,
+      "cond2_gap_gt_sigma": false,
+      "cond3_signtest_p_lt_05": false,
+      "cond4_ordering_intact": false,
+      "pass_A_mode": false,
+      "mean_aur": {
+        "golden": 0.6996187563790729,
+        "silver": 0.6996146394411258,
+        "bronze": 0.6996109358271712,
+        "rational_near": 0.1688438933376868,
+        "rational_resonant": 0.020508862836330907,
+        "random_irrational": 0.6996267045528363,
+        "random_positions": 0.6995934147247165
+      },
+      "B_floor_checks": {
+        "golden_vs_rational_resonant": {
+          "ok": true,
+          "mean_gap": 0.6791098935427421,
+          "wins": 12
+        },
+        "golden_vs_random_positions": {
+          "ok": false,
+          "mean_gap": 2.5341654356423698e-05,
+          "wins": 10
+        },
+        "silver_vs_rational_resonant": {
+          "ok": true,
+          "mean_gap": 0.6791057766047949,
+          "wins": 12
+        },
+        "silver_vs_random_positions": {
+          "ok": false,
+          "mean_gap": 2.1224716409334876e-05,
+          "wins": 10
+        },
+        "bronze_vs_rational_resonant": {
+          "ok": true,
+          "mean_gap": 0.6791020729908404,
+          "wins": 12
+        },
+        "bronze_vs_random_positions": {
+          "ok": false,
+          "mean_gap": 1.7521102454666943e-05,
+          "wins": 7
+        }
+      },
+      "B_all_beat_floors": false,
+      "C_golden_minus_randompos": 2.5341654356414445e-05,
+      "C_mode_null": true
+    }
+  },
+  "ranking_by_AUR_pooled": [
+    "random_irrational",
+    "golden",
+    "bronze",
+    "silver",
+    "random_positions",
+    "rational_near",
+    "rational_resonant"
+  ],
+  "pooled_mean_AUR": {
+    "golden": 0.6996316910772988,
+    "silver": 0.6996157890466652,
+    "bronze": 0.6996258630946337,
+    "rational_near": 0.16884389517654103,
+    "rational_resonant": 0.020508862825263388,
+    "random_irrational": 0.6996366959812428,
+    "random_positions": 0.6995981905447368
+  },
+  "golden_vs_silver_gap": {
+    "contiguous": {
+      "mean_gap": 2.7687123320074836e-05,
+      "sigma_between": 4.7248311192537985e-05,
+      "golden_wins": 8,
+      "sign_test_p": 0.3876953125
+    },
+    "random": {
+      "mean_gap": 4.116937947088821e-06,
+      "sigma_between": 2.4457795050424557e-05,
+      "golden_wins": 8,
+      "sign_test_p": 0.3876953125
+    }
+  },
+  "GH_B_convergent_probe": {
+    "convergents": [
+      {
+        "n": 2,
+        "ratio": 1.5,
+        "alpha_frac": 0.5,
+        "side_of_phi": "below",
+        "AUR_contiguous": 0.020508862814195873,
+        "AUR_random": 0.020508862836330907
+      },
+      {
+        "n": 3,
+        "ratio": 1.6666666666666667,
+        "alpha_frac": 0.6666666666666667,
+        "side_of_phi": "above",
+        "AUR_contiguous": 0.030958265110088364,
+        "AUR_random": 0.03095826498622259
+      },
+      {
+        "n": 4,
+        "ratio": 1.6,
+        "alpha_frac": 0.6000000000000001,
+        "side_of_phi": "below",
+        "AUR_contiguous": 0.050725803990327396,
+        "AUR_random": 0.050725804167195195
+      },
+      {
+        "n": 5,
+        "ratio": 1.625,
+        "alpha_frac": 0.625,
+        "side_of_phi": "above",
+        "AUR_contiguous": 0.10127728049891589,
+        "AUR_random": 0.10127728001029906
+      },
+      {
+        "n": 6,
+        "ratio": 1.6153846153846154,
+        "alpha_frac": 0.6153846153846154,
+        "side_of_phi": "below",
+        "AUR_contiguous": 0.16884389701539523,
+        "AUR_random": 0.1688438933376868
+      },
+      {
+        "n": 7,
+        "ratio": 1.619047619047619,
+        "alpha_frac": 0.6190476190476191,
+        "side_of_phi": "above",
+        "AUR_contiguous": 0.2986784668682017,
+        "AUR_random": 0.29867846041986534
+      },
+      {
+        "n": 8,
+        "ratio": 1.6176470588235294,
+        "alpha_frac": 0.6176470588235294,
+        "side_of_phi": "below",
+        "AUR_contiguous": 0.699659371383845,
+        "AUR_random": 0.6984262831203226
+      },
+      {
+        "n": 9,
+        "ratio": 1.6181818181818182,
+        "alpha_frac": 0.6181818181818182,
+        "side_of_phi": "above",
+        "AUR_contiguous": 0.6996295102549451,
+        "AUR_random": 0.699619424297126
+      },
+      {
+        "n": 10,
+        "ratio": 1.6179775280898876,
+        "alpha_frac": 0.6179775280898876,
+        "side_of_phi": "below",
+        "AUR_contiguous": 0.6996465775638455,
+        "AUR_random": 0.69961714958524
+      },
+      {
+        "n": 11,
+        "ratio": 1.6180555555555556,
+        "alpha_frac": 0.6180555555555556,
+        "side_of_phi": "above",
+        "AUR_contiguous": 0.6996446465458629,
+        "AUR_random": 0.6996213581375871
+      },
+      {
+        "n": 12,
+        "ratio": 1.6180257510729614,
+        "alpha_frac": 0.6180257510729614,
+        "side_of_phi": "below",
+        "AUR_contiguous": 0.6996446608101977,
+        "AUR_random": 0.6996179606045582
+      },
+      {
+        "n": 13,
+        "ratio": 1.6180371352785146,
+        "alpha_frac": 0.6180371352785146,
+        "side_of_phi": "above",
+        "AUR_contiguous": 0.6996446272393029,
+        "AUR_random": 0.6996191142699687
+      }
+    ],
+    "golden_pooled_AUR": {
+      "contiguous": 0.6996446257755248,
+      "random": 0.6996187563790729
+    },
+    "oscillation_signs": [
+      {
+        "n": 2,
+        "side_of_phi": "below",
+        "AUR_side_contiguous": "below_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 3,
+        "side_of_phi": "above",
+        "AUR_side_contiguous": "below_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 4,
+        "side_of_phi": "below",
+        "AUR_side_contiguous": "below_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 5,
+        "side_of_phi": "above",
+        "AUR_side_contiguous": "below_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 6,
+        "side_of_phi": "below",
+        "AUR_side_contiguous": "below_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 7,
+        "side_of_phi": "above",
+        "AUR_side_contiguous": "below_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 8,
+        "side_of_phi": "below",
+        "AUR_side_contiguous": "above_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 9,
+        "side_of_phi": "above",
+        "AUR_side_contiguous": "below_golden",
+        "AUR_side_random": "above_golden"
+      },
+      {
+        "n": 10,
+        "side_of_phi": "below",
+        "AUR_side_contiguous": "above_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 11,
+        "side_of_phi": "above",
+        "AUR_side_contiguous": "above_golden",
+        "AUR_side_random": "above_golden"
+      },
+      {
+        "n": 12,
+        "side_of_phi": "below",
+        "AUR_side_contiguous": "above_golden",
+        "AUR_side_random": "below_golden"
+      },
+      {
+        "n": 13,
+        "side_of_phi": "above",
+        "AUR_side_contiguous": "above_golden",
+        "AUR_side_random": "above_golden"
+      }
+    ],
+    "alternation_score_contiguous": 0.2727272727272727,
+    "alternation_score_random": 0.45454545454545453,
+    "note": "DESCRIPTIVE ONLY. Cannot trigger pass or kill. High alternation score (~1.0) would suggest AUR(convergent) oscillates above/below AUR(golden) tracking the odd/even convergent bracket."
+  },
+  "regime_diagnostic": {
+    "twoK": 32,
+    "min_survivors_at_max_damage": 102,
+    "reached_underdetermined": false,
+    "note": "Locked N=512/K=16/damage<=0.8 keeps survivors (min ~102) far above 2K=32 at every grid point, so the coverage-stressed regime where three-distance geometry could separate the irrational arms is NEVER entered. Any irrational rotation (and even uniform-random positions) reconstructs the K=16 band near-perfectly; the rational arms fail only because a rational rotation visits a finite point set (rank-deficient design), independent of damage. The Outcome-C reading below is therefore faithful to the locked contract but UNDERPOWERED by construction for the golden-vs-silver question."
+  },
+  "numerology_guard": "PASSED (phi-free signal/metric audit ran; phi only a rotation angle)"
+}
