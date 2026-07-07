@@ -1,0 +1,1202 @@
+{
+  "test_id": "modular_www_v2",
+  "lane": "engineering/verified-computation telemetry only",
+  "fix_note": "v2 rebuild: (1) LIVE non-unitary CPTP substrate (was inert unitary-only in v1, D pinned ~1.97); (2) non-tautological contradiction stream with partial (non-antipodal) cosine separation (was perfectly antipodal in v1).",
+  "no_upgrade": "Software/toy success is NEVER physics evidence (master hard rule 7): no outcome proves GHP, observer-boundary selection, phi selection, or a write-law; even a clean PASS is a single-toy engineering result and 'ternary witness is a universal memory law' is the forbidden upgrade that voids interpretation.",
+  "system": {
+    "n_sites_primary": 3,
+    "hilbert_dim": 8,
+    "T_steps": 60,
+    "register_size": 6,
+    "dt_modular": 0.3,
+    "admiss_band": 0.5,
+    "J": 1.0,
+    "Delta_aniso": 0.7,
+    "h_field": 0.35,
+    "gamma_relax": 0.25,
+    "gamma_dephase": 0.15,
+    "gamma_drift": 0.2,
+    "kick_meas": 0.8,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "primary_operating_point": {
+    "theta": 0.1,
+    "w": 4
+  },
+  "numerology_guard": {
+    "phi": 1.618033988749895,
+    "violation": false
+  },
+  "substrate_liveness": {
+    "per_regime": {
+      "delayed-meaning": [
+        {
+          "seed": 0,
+          "D_min": 0.675558305017117,
+          "D_max": 1.6276269943907544,
+          "D_range": 0.9520686893736374,
+          "D_n_distinct": 60,
+          "final_dist_from_I_over_d": 0.3244327598718264
+        },
+        {
+          "seed": 1,
+          "D_min": 0.7277174580448895,
+          "D_max": 1.5914586343603823,
+          "D_range": 0.8637411763154927,
+          "D_n_distinct": 60,
+          "final_dist_from_I_over_d": 0.31630152217664154
+        },
+        {
+          "seed": 2,
+          "D_min": 0.7124057006335678,
+          "D_max": 1.68544428875312,
+          "D_range": 0.9730385881195522,
+          "D_n_distinct": 59,
+          "final_dist_from_I_over_d": 0.304823075028698
+        }
+      ],
+      "contradiction": [
+        {
+          "seed": 0,
+          "D_min": 1.0625577610720263,
+          "D_max": 1.579586947020422,
+          "D_range": 0.5170291859483958,
+          "D_n_distinct": 58,
+          "final_dist_from_I_over_d": 0.195424711156654
+        },
+        {
+          "seed": 1,
+          "D_min": 1.1343484208634316,
+          "D_max": 1.6528247654800516,
+          "D_range": 0.5184763446166201,
+          "D_n_distinct": 59,
+          "final_dist_from_I_over_d": 0.20987131352284646
+        },
+        {
+          "seed": 2,
+          "D_min": 1.0397402626717374,
+          "D_max": 1.554525553421292,
+          "D_range": 0.5147852907495547,
+          "D_n_distinct": 60,
+          "final_dist_from_I_over_d": 0.1935695135455995
+        }
+      ],
+      "overload": [
+        {
+          "seed": 0,
+          "D_min": 0.3000468610260535,
+          "D_max": 1.5288966184373445,
+          "D_range": 1.2288497574112909,
+          "D_n_distinct": 58,
+          "final_dist_from_I_over_d": 0.4238413519091147
+        },
+        {
+          "seed": 1,
+          "D_min": 0.4186246309699019,
+          "D_max": 1.6755809014857823,
+          "D_range": 1.2569562705158805,
+          "D_n_distinct": 59,
+          "final_dist_from_I_over_d": 0.41886611549190966
+        },
+        {
+          "seed": 2,
+          "D_min": 0.3188335840372314,
+          "D_max": 1.5550336336000274,
+          "D_range": 1.236200049562796,
+          "D_n_distinct": 59,
+          "final_dist_from_I_over_d": 0.4241086550518364
+        }
+      ],
+      "concept-drift": [
+        {
+          "seed": 0,
+          "D_min": 1.079388743464491,
+          "D_max": 1.5994325609983737,
+          "D_range": 0.5200438175338826,
+          "D_n_distinct": 58,
+          "final_dist_from_I_over_d": 0.20878117972157736
+        },
+        {
+          "seed": 1,
+          "D_min": 1.0298916243507625,
+          "D_max": 1.520438185882266,
+          "D_range": 0.49054656153150344,
+          "D_n_distinct": 59,
+          "final_dist_from_I_over_d": 0.22034414082586978
+        },
+        {
+          "seed": 2,
+          "D_min": 1.1478949171102828,
+          "D_max": 1.6908557564081337,
+          "D_range": 0.5429608392978509,
+          "D_n_distinct": 57,
+          "final_dist_from_I_over_d": 0.21180360489197939
+        }
+      ]
+    },
+    "min_final_dist_from_I_over_d": 0.1935695135455995,
+    "min_D_n_distinct": 57,
+    "min_D_range": 0.49054656153150344,
+    "substrate_is_live": true,
+    "note": "v1 was inert: rho pinned at I/dim, D constant ~1.97. v2 uses a non-unitary CPTP substrate; these numbers must be >> 0 / >> 1 distinct value or the fix failed."
+  },
+  "contradiction_separation_audit": {
+    "true_cos_mean": 0.7439219288691569,
+    "true_cos_min": 0.42146278829533174,
+    "false_cos_mean": -0.02485532936780939,
+    "false_cos_min": -0.8842052344672221,
+    "false_cos_max": 0.8889911528057328,
+    "frac_contradictions_with_negative_cosine": 0.5733333333333334,
+    "non_tautological": true,
+    "note": "v1 made contradictions antipodal (cosine ~ -1, frac_negative ~1) so cosine-sign release trivially won. v2: contradictions have partial separation; frac_negative should be well below 0.9 and min cosine well above -1, and the +1/-1 cosine ranges overlap."
+  },
+  "leak_scan": {
+    "invalid": false,
+    "reasons": []
+  },
+  "designated_primary": {
+    "delayed-meaning": {
+      "metric": "delayed_meaning_recovery",
+      "regime": "delayed-meaning",
+      "binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "h1_pass": false,
+        "ternary_mean": 1.0,
+        "comp_mean": 1.0
+      },
+      "random-third": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "h1_pass": false,
+        "ternary_mean": 1.0,
+        "comp_mean": 1.0
+      },
+      "rate-matched-binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "h1_pass": false,
+        "ternary_mean": 1.0,
+        "comp_mean": 1.0
+      },
+      "secondary_retention_vs_binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "ternary_loses_by_bar": false
+      },
+      "secondary_pollution_vs_binary": {
+        "mean_adv": 0.4,
+        "ci_lo": 0.33333333333333337,
+        "ci_hi": 0.4666666666666667,
+        "same_sign_k": 10,
+        "ternary_loses_by_bar": false
+      }
+    },
+    "contradiction": {
+      "metric": "pollution",
+      "regime": "contradiction",
+      "binary": {
+        "mean_adv": 0.35,
+        "ci_lo": 0.2833333333333333,
+        "ci_hi": 0.4166666666666667,
+        "same_sign_k": 10,
+        "h1_pass": true,
+        "ternary_mean": 0.15,
+        "comp_mean": 0.5
+      },
+      "random-third": {
+        "mean_adv": 0.3333333333333333,
+        "ci_lo": 0.25,
+        "ci_hi": 0.41666666666666663,
+        "same_sign_k": 10,
+        "h1_pass": true,
+        "ternary_mean": 0.15,
+        "comp_mean": 0.4833333333333333
+      },
+      "rate-matched-binary": {
+        "mean_adv": 0.35,
+        "ci_lo": 0.25,
+        "ci_hi": 0.45,
+        "same_sign_k": 10,
+        "h1_pass": true,
+        "ternary_mean": 0.15,
+        "comp_mean": 0.5
+      },
+      "secondary_retention_vs_binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "ternary_loses_by_bar": false
+      },
+      "secondary_pollution_vs_binary": {
+        "mean_adv": 0.35,
+        "ci_lo": 0.2833333333333333,
+        "ci_hi": 0.4166666666666667,
+        "same_sign_k": 10,
+        "ternary_loses_by_bar": false
+      }
+    },
+    "overload": {
+      "metric": "overload_recovery",
+      "regime": "overload",
+      "binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "h1_pass": false,
+        "ternary_mean": 1.0,
+        "comp_mean": 1.0
+      },
+      "random-third": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "h1_pass": false,
+        "ternary_mean": 1.0,
+        "comp_mean": 1.0
+      },
+      "rate-matched-binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "h1_pass": false,
+        "ternary_mean": 1.0,
+        "comp_mean": 1.0
+      },
+      "secondary_retention_vs_binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "ternary_loses_by_bar": false
+      },
+      "secondary_pollution_vs_binary": {
+        "mean_adv": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "same_sign_k": 0,
+        "ternary_loses_by_bar": false
+      }
+    },
+    "concept-drift": {
+      "metric": "retention",
+      "regime": "concept-drift",
+      "binary": {
+        "mean_adv": -0.05,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0,
+        "same_sign_k": 1,
+        "h1_pass": false,
+        "ternary_mean": 0.45,
+        "comp_mean": 0.5
+      },
+      "random-third": {
+        "mean_adv": -0.05,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0,
+        "same_sign_k": 1,
+        "h1_pass": false,
+        "ternary_mean": 0.45,
+        "comp_mean": 0.5
+      },
+      "rate-matched-binary": {
+        "mean_adv": -0.05,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0,
+        "same_sign_k": 1,
+        "h1_pass": false,
+        "ternary_mean": 0.45,
+        "comp_mean": 0.5
+      },
+      "secondary_retention_vs_binary": {
+        "mean_adv": -0.05,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0,
+        "same_sign_k": 1,
+        "ternary_loses_by_bar": false
+      },
+      "secondary_pollution_vs_binary": {
+        "mean_adv": -0.033333333333333326,
+        "ci_lo": -0.16666666666666663,
+        "ci_hi": 0.06666666666666668,
+        "same_sign_k": 2,
+        "ternary_loses_by_bar": false
+      }
+    }
+  },
+  "decision": {
+    "classification": "PASS-TERNARY",
+    "detail": {
+      "winning_pairs": [
+        [
+          "contradiction",
+          "pollution"
+        ]
+      ],
+      "symmetric_losses": []
+    }
+  },
+  "sweeps_robustness_only": {
+    "theta=0.05,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": -0.3,
+        "same_sign_k": 3,
+        "ci_lo": -0.6,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.4333333333333334,
+        "same_sign_k": 10,
+        "ci_lo": 0.38333333333333336,
+        "ci_hi": 0.4833333333333334
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.05,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.3666666666666667,
+        "same_sign_k": 10,
+        "ci_lo": 0.2833333333333333,
+        "ci_hi": 0.4333333333333334
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.05,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.2833333333333333,
+        "same_sign_k": 9,
+        "ci_lo": 0.2,
+        "ci_hi": 0.36666666666666664
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.1,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": -0.3,
+        "same_sign_k": 3,
+        "ci_lo": -0.6,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.4,
+        "same_sign_k": 10,
+        "ci_lo": 0.35000000000000003,
+        "ci_hi": 0.45
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.1,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.2833333333333333,
+        "same_sign_k": 9,
+        "ci_lo": 0.2,
+        "ci_hi": 0.36666666666666664
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.2,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": -0.2,
+        "same_sign_k": 2,
+        "ci_lo": -0.5,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.38333333333333336,
+        "same_sign_k": 10,
+        "ci_lo": 0.3166666666666667,
+        "ci_hi": 0.45
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.2,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.35,
+        "same_sign_k": 10,
+        "ci_lo": 0.2833333333333333,
+        "ci_hi": 0.4166666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.2,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.30000000000000004,
+        "same_sign_k": 9,
+        "ci_lo": 0.2166666666666667,
+        "ci_hi": 0.3666666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.4,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": -0.2,
+        "same_sign_k": 2,
+        "ci_lo": -0.5,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.38333333333333336,
+        "same_sign_k": 10,
+        "ci_lo": 0.3166666666666667,
+        "ci_hi": 0.45
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.4,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.35,
+        "same_sign_k": 10,
+        "ci_lo": 0.2833333333333333,
+        "ci_hi": 0.4166666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.4,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.30000000000000004,
+        "same_sign_k": 9,
+        "ci_lo": 0.2166666666666667,
+        "ci_hi": 0.3666666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.6,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": -0.2,
+        "same_sign_k": 2,
+        "ci_lo": -0.5,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.38333333333333336,
+        "same_sign_k": 10,
+        "ci_lo": 0.3166666666666667,
+        "ci_hi": 0.45
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.6,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.35,
+        "same_sign_k": 10,
+        "ci_lo": 0.2833333333333333,
+        "ci_hi": 0.4166666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.6,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.30000000000000004,
+        "same_sign_k": 9,
+        "ci_lo": 0.2166666666666667,
+        "ci_hi": 0.3666666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.8,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": -0.2,
+        "same_sign_k": 2,
+        "ci_lo": -0.5,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.38333333333333336,
+        "same_sign_k": 10,
+        "ci_lo": 0.3166666666666667,
+        "ci_hi": 0.45
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.8,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.35,
+        "same_sign_k": 10,
+        "ci_lo": 0.2833333333333333,
+        "ci_hi": 0.4166666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=0.8,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.30000000000000004,
+        "same_sign_k": 9,
+        "ci_lo": 0.2166666666666667,
+        "ci_hi": 0.3666666666666667
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.05,
+        "same_sign_k": 1,
+        "ci_lo": -0.15,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=1.2,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.4666666666666666,
+        "same_sign_k": 10,
+        "ci_lo": 0.33333333333333337,
+        "ci_hi": 0.5999999999999999
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": -0.1,
+        "same_sign_k": 1,
+        "ci_lo": -0.3,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=1.2,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.45,
+        "same_sign_k": 10,
+        "ci_lo": 0.3166666666666667,
+        "ci_hi": 0.5833333333333333
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": -0.1,
+        "same_sign_k": 1,
+        "ci_lo": -0.3,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=1.2,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.45,
+        "same_sign_k": 10,
+        "ci_lo": 0.3166666666666667,
+        "ci_hi": 0.5833333333333333
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": -0.1,
+        "same_sign_k": 1,
+        "ci_lo": -0.3,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=1.6,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": -0.5,
+        "same_sign_k": 5,
+        "ci_lo": -0.8,
+        "ci_hi": -0.2
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.2,
+        "same_sign_k": 4,
+        "ci_lo": -0.35,
+        "ci_hi": -0.05
+      }
+    },
+    "theta=1.6,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": -0.5,
+        "same_sign_k": 5,
+        "ci_lo": -0.8,
+        "ci_hi": -0.2
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.2,
+        "same_sign_k": 4,
+        "ci_lo": -0.35,
+        "ci_hi": -0.05
+      }
+    },
+    "theta=1.6,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": -0.5,
+        "same_sign_k": 5,
+        "ci_lo": -0.8,
+        "ci_hi": -0.2
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": -0.2,
+        "same_sign_k": 4,
+        "ci_lo": -0.35,
+        "ci_hi": -0.05
+      }
+    },
+    "theta=2.4,w=2": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=2.4,w=4": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      }
+    },
+    "theta=2.4,w=8": {
+      "delayed-meaning": {
+        "metric": "delayed_meaning_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "contradiction": {
+        "metric": "pollution",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "overload": {
+        "metric": "overload_recovery",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      },
+      "concept-drift": {
+        "metric": "retention",
+        "mean_adv_vs_binary": 0.0,
+        "same_sign_k": 0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0
+      }
+    }
+  },
+  "epsilon_sensitivity_brittleness": {
+    "delayed-meaning": {
+      "variant_means": {
+        "theta_lo": 0.0,
+        "theta_hi": 0.0,
+        "cut_lo": 0.0,
+        "cut_hi": 0.0,
+        "base": 0.0
+      },
+      "spread": 0.0
+    },
+    "contradiction": {
+      "variant_means": {
+        "theta_lo": 0.35,
+        "theta_hi": 0.3666666666666667,
+        "cut_lo": 0.23333333333333334,
+        "cut_hi": 0.4833333333333334,
+        "base": 0.35
+      },
+      "spread": 0.25000000000000006
+    },
+    "overload": {
+      "variant_means": {
+        "theta_lo": 0.0,
+        "theta_hi": 0.0,
+        "cut_lo": 0.0,
+        "cut_hi": 0.0,
+        "base": 0.0
+      },
+      "spread": 0.0
+    },
+    "concept-drift": {
+      "variant_means": {
+        "theta_lo": -0.05,
+        "theta_hi": -0.05,
+        "cut_lo": -0.1,
+        "cut_hi": 0.0,
+        "base": -0.05
+      },
+      "spread": 0.1
+    }
+  },
+  "size_smoke_check": {
+    "n=2": {
+      "dim": 4,
+      "binary_commits": 60,
+      "ternary_commits": 39,
+      "trace_ref": 1.0,
+      "min_eig_ref": 0.015876803526642357
+    },
+    "n=4": {
+      "dim": 16,
+      "binary_commits": 60,
+      "ternary_commits": 39,
+      "trace_ref": 0.9999999999999999,
+      "min_eig_ref": 6.299492198363443e-05
+    }
+  }
+}

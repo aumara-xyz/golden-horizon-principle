@@ -1,0 +1,4 @@
+CLASSIFICATION: PASS-TERNARY
+SUBSTRATE LIVE: True (min final ||rho-I/d||=0.1936, min distinct D=57, min D-range=0.4905)
+CONTRADICTION NON-TAUTOLOGICAL: True (false-cos mean=-0.025, min=-0.884, frac-neg=0.57)
+HEADLINE: delayed-meaning[delayed_meaning_recovery]: ternary-minus-binary=+0.000 (k=0/10, CI[+0.000,+0.000], H1=n) | contradiction[pollution]: ternary-minus-binary=+0.350 (k=10/10, CI[+0.283,+0.417], H1=Y) | overload[overload_recovery]: ternary-minus-binary=+0.000 (k=0/10, CI[+0.000,+0.000], H1=n) | concept-drift[retention]: ternary-minus-binary=-0.050 (k=1/10, CI[-0.150,+0.000], H1=n)
