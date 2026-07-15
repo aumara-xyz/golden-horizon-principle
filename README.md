@@ -30,19 +30,22 @@ GHP is strongest as an architectural principle: Fibonacci / phi structure may be
 
 ## Start Here
 
-For a first reader, use these files in this order:
+**Read the short share paper first, then dive deeper into the full program:**
 
-1. `GHP_CORE_SHARE_PAPER.md` — the concise public argument.
-2. `DO_NOT_CLAIM.md` — the safety rail against overclaiming.
-3. `GHP_HARDENING_AUDIT_2026-06-26.md` — latest math / telemetry sanity pass before external sharing.
-4. `GHP_RESEARCH_LEDGER.md` — claim status, evidence type, and current test results.
-5. `VIVIANI_PHI_HORIZON.md` — short VPH overview.
-6. `VPH_preprint_v8.md` — technical VPH preprint.
-7. `GHP_FEP_INTERFACE_PREPRINT.md` — FEP / observer-boundary interface preprint.
+1. `GHP_CORE_v2.md` — **the canonical short (share) paper. Start here.** The concise argument, the honest scoreboard, and the one experiment that would decide it.
+2. `GHP_BOUNDARY_PROGRAM.md` — **the full working paper (~70 pp).** The whole program, organized *claim → test → verdict → guardrail*: the mathematics, protocols, and every result. Dive deeper here once the short paper has framed it.
+3. `DO_NOT_CLAIM.md` — the safety rail against overclaiming.
+4. `GHP_RESEARCH_LEDGER.md` — the live claim-status board: every claim, its evidence type, and its current verdict.
+5. `GHP_HARDENING_AUDIT_2026-06-26.md` — math / telemetry sanity pass.
+6. `VIVIANI_PHI_HORIZON.md` — short VPH overview.
+7. `VPH_preprint_v8.md` — technical VPH preprint.
+8. `GHP_FEP_INTERFACE_PREPRINT.md` — FEP / observer-boundary interface preprint.
+
+`GHP_CORE_v2.md` supersedes the earlier `GHP_CORE_SHARE_PAPER.md`, which is kept only for the timestamped priority record.
 
 ## Full Archive
 
-- `GHP_v1_618_MASTER.md` — full archival master / living research organism.
+- `GHP_v1_618_MASTER.md` — the frozen, append-only **archive of record** (the original 15,635-line research master). Everything in `GHP_CORE_v2.md` and `GHP_BOUNDARY_PROGRAM.md` traces back to it by section number; nothing has been deleted from it.
 
 This file is intentionally large and historically layered. It is kept public by author request for timestamping and auditability, but it is not the recommended first read.
 
