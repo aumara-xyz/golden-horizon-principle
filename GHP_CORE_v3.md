@@ -12,7 +12,7 @@
 
 This is the **canonical short statement** of the Golden Horizon Principle (GHP). It supersedes `GHP_CORE_v2.md` (kept in place as the v2 of record) and the earlier `GHP_CORE_SHARE_PAPER.md` (kept as the original priority record). Two companions complete the canon:
 
-- **`GHP_BOUNDARY_PROGRAM.md`** — the full working paper, organized *claim → test → verdict → guardrail*, with a v2 hardening edition (`GHP_BOUNDARY_PROGRAM_v2.md`) that adds an editorial preface, an errata register, and the 2026-07-19 addendum.
+- **`GHP_BOUNDARY_PROGRAM_v2.md`** — the canonical full working paper, organized *claim → test → verdict → guardrail*: the v1 body of record plus an editorial status map, an errata register, and the 2026-07-19 addendum. (The v1 file, `GHP_BOUNDARY_PROGRAM.md`, is kept banner-marked for provenance.)
 - **`GHP_v1_618_MASTER.md`** — the original research master. **Frozen as the append-only archive of record.** Everything in the newer documents traces back to it by section number.
 
 The consolidated claim ledger (`RESEARCH_LEDGER.md`) remains the live status board for every individual claim. The method rule for this canon: *no result enters any of these documents without a status label, and no status label changes without evidence on the page.*
