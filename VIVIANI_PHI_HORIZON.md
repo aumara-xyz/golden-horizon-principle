@@ -1,6 +1,8 @@
-# Viviani Phi Horizon / Surface
+# Viviani Phi Surface (VPS)
 
-The Viviani Phi Horizon / Surface is a metric-level scalar identity in Schwarzschild geometry. It identifies the radius
+> **Naming note (2026-07-19).** This document was formerly titled "Viviani Phi Horizon / Surface." **"Horizon" is retired from this canon's public vocabulary for this object**: the surface at r = φ·r_s is not null, not Killing, not trapped, and not a horizon of any kind — see the guardrails below and `DO_NOT_CLAIM.md`. The filename `VIVIANI_PHI_HORIZON.md` is kept so older links keep resolving; the canonical name is **Viviani-φ Surface (VPS)** (row B-001/VPS in `RESEARCH_LEDGER.md`; technical preprint `VPH_preprint_v8.md`).
+
+The Viviani Phi Surface (formerly co-named "Horizon") is a metric-level scalar identity in Schwarzschild geometry. It identifies the radius
 
 `r = phi r_s`
 
