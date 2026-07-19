@@ -5,7 +5,10 @@ authors:
   - family-names: "Viviani"
     given-names: "Peter"
     email: "peter@aumara.xyz"
-version: "0.2-symbolic-bridge"
-date-released: "2026-05-01"
+version: "0.3-hardening"
+date-released: "2026-07-19"
 url: "https://github.com/aumara-xyz/golden-horizon-principle"
-type: "dataset"
+# Notes for maintainers:
+# - "type" omitted deliberately: cff offers only software|dataset; this is a research package (documents + probes), and "dataset" was misleading.
+# - "license" omitted deliberately: LICENSE is currently all-rights-reserved with a deferred decision (see LICENSE and docs/ERRATA_2026-07-19.md, item C2). Add the field once the owner picks the docs/code split.
+# - No DOI yet; if a Zenodo DOI is minted, add "doi:" and prefer the DOI-backed citation.

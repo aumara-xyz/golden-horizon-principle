@@ -1,5 +1,11 @@
+> **FROZEN HISTORICAL EDITION — banner added 2026-07-19.** This core share paper (core-v0.023) is kept as the timestamped **priority record**, body unaltered (including its 2026-07-03 superseded banner below). It predates and therefore does not reflect: P-005-TL null, M-005 null, P-007-2OBS kill, GH-RECOV silver-optimal/closed (2026-07-03), SEL-CLOSE-001 selection-lane closure (2026-07-04), K-RECOV-001 generic (2026-07-19), the HRR capacity qualification (2026-07-19), and the REINMANN refutation (2026-07-18). The canon is now `CANON.md` → `RESEARCH_LEDGER.md` → `GHP_BOUNDARY_PROGRAM_v2.md` → `GHP_CORE_v3.md`. **Cite only for provenance, never for current status.**
+
+---
+
 # Golden Horizon Principle
 ## Core Share Paper
+
+> **⚠️ SUPERSEDED — 2026-07-03.** This paper has been replaced as the canonical short statement by **`GHP_CORE_v2.md`**, with the full working paper in **`GHP_BOUNDARY_PROGRAM.md`**. See **`CANON.md`** for the current document map. This file is retained, unedited below this banner, as historical provenance — the argument as it stood at core-v0.023. Do not cite it as current.
 
 **Version:** core-v0.023
 **Source master:** `GHP_v1_618_MASTER.md`  
