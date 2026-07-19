@@ -2,9 +2,9 @@
 
 **Consolidated edition · 2026-07-19 · supersedes and preserves `GHP_RESEARCH_LEDGER.md` (frozen 2026-07-04)**
 
-> **Provenance law (binding).** New results land here first, then the working paper, then the short paper. Nothing is deleted: Part II of this file preserves the full prior claim archive verbatim, frozen headers and all. The master (`GHP_v1_618_MASTER.md`) is the append-only archive of record for *how* results were produced; this ledger is the live board for *where every claim stands*.
+> **Provenance law (binding).** New results land here first, then the working paper, then the short paper. Nothing is deleted: the full prior claim archive (111,151 bytes, 161 claim rows, frozen 2026-07-04) is preserved byte-for-byte at `archive/GHP_RESEARCH_LEDGER.2026-07-04.md` (sha256 `4b7ecf8e10ef4d81b5cf4cb455255ae78dbcc46ea07f653a3626064c879e5697`), frozen headers and all. The master (`GHP_v1_618_MASTER.md`) is the append-only archive of record for *how* results were produced; this ledger is the live board for *where every claim stands*.
 >
-> **Canon:** `CANON.md` → this ledger → `GHP_BOUNDARY_PROGRAM.md` (working paper) → `GHP_CORE_v3.md` (short paper) → `DO_NOT_CLAIM.md` (the single canonical non-claim source — the 26-rule subset previously duplicated here is retired in favor of that file).
+> **Canon:** `CANON.md` → this ledger → `GHP_BOUNDARY_PROGRAM_v2.md` (working paper) → `GHP_CORE_v3.md` (short paper) → `DO_NOT_CLAIM.md` (the single canonical non-claim source — the 26-rule subset previously duplicated here is retired in favor of that file).
 >
 > **Status vocabulary:** PROVEN (in stated domain) · VERIFIED COMPUTATION · SOUND PASS (engineering) · NULL (sound) · KILL (sound) · GENERIC · CLOSED (lane, with reopen bar) · OBSTRUCTED · PENDING / OPEN · CONJECTURE · BRIDGE-OBJECT CANDIDATE · TOY TELEMETRY · SYMBOLIC GRAMMAR · REFUTED · NEVER RUN.
 
@@ -64,7 +64,7 @@
 
 Evidence may guide; evidence may not authorize. Telemetry-only public traces; allowlist sanitizer + recursive forbidden-field scanner (load-bearing). No telemetry-to-gate read path. Toy telemetry is never physics. Software success is never GHP. Every engineering claim carries: multi-seed stability, sensible baselines, and an explicit non-authority statement.
 
-### §5. Toy arcs (condensed; full rows preserved in Part II)
+### §5. Toy arcs (condensed; full rows preserved in the archive of record)
 
 - **Golden Zipper / observer-memory (T-005…T-018):** exact golden uniqueness did not survive; strongest survivors = relational groove memory + context-tinted recall; plasticity/reconsolidation/frame layers are mixed-to-negative. Not a physics claim.
 - **Boundary Access Channel (T-019…T-080):** Fibonacci wins the core channel package under legal access; generic ternary takes the uniform-smear wrong-signal crossover (~0.20–0.40 fuzzy shoulder); groove-aware switcher ~0.928; rank-shape "miracle" demoted to rank-profile artifact; order+flow is the honest repair signal; "I should not decide yet" sentinel partially learnable (~0.080 open, 0.577 precision).
@@ -137,14 +137,11 @@ Single canonical source: **`DO_NOT_CLAIM.md`** (60 rules + safe/avoid phrase lis
 
 ### §11. Update packet log (append-only)
 
-- `GHP-PACKET-20260719-01` — Consolidated ledger edition. New rows: K-RECOV-001 (external recoverability replication, generic), HRR-001 (capacity-law qualification), AUK-ENG-001, REINMANN-2026-07-18 (refutation). Retired the duplicated 26-rule Do-Not-Claim subset in favor of `DO_NOT_CLAIM.md`. Added ID crosswalk (§10). Reworded GH-RECOV's "mechanism CONFIRMED" to "mechanism real in synthetic code family" per Do-Not-Claim phrasing. Frozen-May-2026 headers preserved in Part II for provenance.
-- *(prior packets preserved verbatim in Part II, incl. `GHP-PACKET-20260704-01` — the SEL-CLOSE-001 settlement packet.)*
+- `GHP-PACKET-20260719-01` — Consolidated ledger edition. New rows: K-RECOV-001 (external recoverability replication, generic), HRR-001 (capacity-law qualification), AUK-ENG-001, REINMANN-2026-07-18 (refutation). Retired the duplicated 26-rule Do-Not-Claim subset in favor of `DO_NOT_CLAIM.md`. Added ID crosswalk (§10). Reworded GH-RECOV's "mechanism CONFIRMED" to "mechanism real in synthetic code family" per Do-Not-Claim phrasing. Frozen-May-2026 headers preserved in the archive of record for provenance.
+- *(prior packets preserved verbatim in the archive of record, incl. `GHP-PACKET-20260704-01` — the SEL-CLOSE-001 settlement packet.)*
 
 ---
----
 
-# PART II — Full claim archive (preserved verbatim · frozen 2026-07-04)
+## Archive of record — the frozen 2026-07-04 ledger
 
-> Everything below this line is the prior ledger, unaltered (headers frozen "May 2026" retained for provenance). Where it disagrees with Part I, Part I is current (notably: SEL-CLOSE-001 and GH-RECOV are now settled results, and the Bridge Order's "P-002 as best falsification lane" is stale — the lane reports pipeline-validation at best).
-
-[FULL ARCHIVE: the complete prior `GHP_RESEARCH_LEDGER.md` (111,151 bytes, frozen 2026-07-04) is preserved byte-for-byte at `archive/GHP_RESEARCH_LEDGER.2026-07-04.md` in this repository. It was carried verbatim into this consolidated edition during assembly; nothing was deleted or edited.]
+> The complete prior `GHP_RESEARCH_LEDGER.md` (111,151 bytes, 161 claim rows, frozen 2026-07-04, headers frozen "May 2026" retained for provenance) is preserved **byte-for-byte** at **`archive/GHP_RESEARCH_LEDGER.2026-07-04.md`** — sha256 `4b7ecf8e10ef4d81b5cf4cb455255ae78dbcc46ea07f653a3626064c879e5697`, git blob `f7f5b73167678d035a6432d7f94e862aa512eec7`. Nothing was deleted or edited. Where the frozen archive disagrees with Part I of this ledger, **Part I is current** (notably: SEL-CLOSE-001 and GH-RECOV are now settled results, and the Bridge Order's "P-002 as best falsification lane" is stale — the lane reports pipeline-validation at best). The frozen archive also remains visible in git history on `main` at `GHP_RESEARCH_LEDGER.md` prior to this hardening branch.

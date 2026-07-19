@@ -1,3 +1,7 @@
+> **SUPERSEDED — 2026-07-19.** This edition (v2.0, 2026-07-03) is preserved for provenance with its body unaltered. The canonical short paper is now **`GHP_CORE_v3.md`**. What this edition does not reflect: the dynamical-selection lane is **CLOSED** (SEL-CLOSE-001, 2026-07-04 — identity proven, selection dead); the recoverability lane is **CLOSED against φ-specificity** (GH-RECOV, silver-optimal) with an independent external replication finding φ **GENERIC** (K-RECOV-001, 2026-07-19); the HRR memory claim is **capacity-qualified** (HRR-001, 2026-07-19); the REINMANN material is **REFUTED** (2026-07-18). Current standings: `RESEARCH_LEDGER.md`. **Do not cite this edition for current status.**
+
+---
+
 # The Golden Horizon Principle — Core
 
 **Version 2.0 · 2026-07-03 · Canonical short paper**
