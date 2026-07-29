@@ -1,10 +1,10 @@
 # The Golden Horizon Principle — Core
 
-**Version 3.0 · 2026-07-19 · Canonical short paper (supersedes v2)**
+**Version 3.1 · 2026-07-29 · Canonical short paper (supersedes v2)**
 
 > This program takes seriously the possibility that reality is informational all the way down — that "there" is a structure of records on boundaries, not a place. It does not claim to have shown this. It claims to have built the discipline that could.
 >
-> **v3 note:** this edition adds (i) the first external replication of the recoverability discriminator, (ii) a capacity-law qualification to the holographic-memory headline number, (iii) a record of the REINMANN refutation, and (iv) errata reconciling cross-document numbering. Nothing proven in v2 is weakened; one engineering claim is made more precise.
+> **v3 note:** this edition adds (i) the first external replication of the recoverability discriminator, (ii) a capacity-law qualification to the holographic-memory headline number, (iii) a record of the REINMANN refutation, and (iv) errata reconciling cross-document numbering. Nothing proven in v2 is weakened; one engineering claim is made more precise. **v3.1 (2026-07-29)** adds the two-families uniqueness fact (§2) and restores the silver-anomaly characterization (SILVER-OPT) to the live roadmap (working paper Addendum v2.1; ledger).
 
 ---
 
@@ -53,6 +53,7 @@ The mathematical spine is real, and small. Stated honestly:
 - **The fusion rule (M-002).** τ ⊗ τ = 1 ⊕ τ. From this single algebraic relation the golden ratio falls out directly: the quantum dimension satisfies d² = 1 + d, i.e. d = φ.
 - **The Jones index (part of B-020).** The associated subfactor has index 4cos²(π/5) = φ² = 1 + φ ≈ 2.618 (Jones 1983; Ocneanu). This is **established mathematics used as scaffold** — it is not, by itself, evidence that φ is physically selected.
 - **Hurwitz extremality.** φ is the irrational number *least* well approximated by rationals — the "most irrational" number (Hurwitz 1891). Independent computational check (2026-07-19): liminf of |α−p/q|·q² over q<150 is **larger for φ (0.382) than for √2 (0.343), √3 (0.268), e (0.141), or π (0.003)** — the expected ordering, in the direction of the 1891 theorem (the Markov constant 1/√5 ≈ 0.447 is the asymptotic value).
+- **Two families, one intersection (new in v3.1).** The metallic means (x² − nx − 1 = 0: φ, silver ≈ 2.414, bronze ≈ 3.303, …) and the admissible sub-2 quantum dimensions (2cos(π/m), Jones 1983: 1, √2, φ, √3, …) intersect in exactly one number: **φ = 2cos(π/5)**, the unique member of both series (both identities machine-verified). Silver, bronze, and copper exceed 2 and are excluded from the discrete index series by theorem; above index 4 lies a continuum with no rigid classification, so no canonical "silver category" or "bronze category" exists. Method consequence: metallic means are *constant*-controls; *structure*-controls come from the 2cos(π/m) ladder (1, √2, φ — the AH.4-P1 arms). This also explains the shape of both recoverability verdicts: silver can win in constant-space (GH-RECOV) because constant-space is where the metals live; in structure-space the metals above gold do not exist.
 - **The dimensional family (VPS algebra).** The Schwarzschild fixed-point identity r = φ·r_s generalizes to a master equation x^(n−1) − x^(n−3) − 1 = 0 (d = n+2 spacetime dimensions), producing φ (4D), √2 (5D), the plastic constant (6D), √φ (7D). Re-verified root-by-root 2026-07-19: the family and its table are internally consistent and numerically exact. **Caveat, carried from the preprint itself:** this is exact algebra with no established dynamical significance, and the defining condition has valid fixed points for other constants — it is not a selection principle.
 
 That is the honest extent of the proven core: **φ is forced by the simplest non-trivial fusion algebra, and φ is extremal among irrationals.** Everything else in GHP is conjecture, bridge, or engineering — and is labeled as such.
@@ -236,5 +237,11 @@ Do not claim: toy telemetry is physics evidence · software success validates GH
 - Recoverability discriminator status updated from UNBUILT to **proxy closed (GH-RECOV, silver-optimal) + external replication generic (K-RECOV-001); genuine anyon code unbuilt** (§8).
 - Dynamical-selection lane recorded **CLOSED** (SEL-CLOSE-001, 2026-07-04) with its four-part reopen bar.
 - REINMANN refutation recorded (§4.3).
+
+### Appendix B.1 — Added in v3.1 (2026-07-29)
+
+- Two-families uniqueness added to §2: metallic means ∩ admissible quantum dimensions = {φ} (Jones 1983 rigidity; φ = 2cos(π/5) and φ² = φ + 1 machine-verified). Control doctrine: metallic means are constant-controls only; structure-controls live on the 2cos(π/m) ladder. Ledger row M-006.
+- SILVER-OPT (characterize the silver anomaly — silver ≥ golden on four independent instruments) restored to the roadmap. Named in the v2.1 edition (2026-07-07); that edition reached the repository only on 2026-07-29, so the item had dropped from the v3 assembly by timing. Constant-axis anomaly; not GHP physics under any branch. Ledger row SILVER-OPT; working paper Addendum B.3.
+- The capability ladder (abelian inert · Ising finite/Clifford · Fibonacci unbounded/universal, Freedman–Larsen–Wang 2002) recorded in the working paper's Addendum B.2 as the principled reading of the AH.4-P1 structural arms; the lane's braid-computation receipt is pending filing.
 
 *The Golden Horizon Principle is a conjecture under test, an engineering practice under governance, and a methodology under no illusions. Held together, honestly, that is more than most frameworks ever earn.*

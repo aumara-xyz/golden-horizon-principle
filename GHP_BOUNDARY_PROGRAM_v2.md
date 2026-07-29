@@ -2,7 +2,7 @@
 
 ## The Boundary Program · **v2 Hardening Edition (2026-07-19)**
 
-> **What this edition is.** The full working paper, organized *claim → test → verdict → guardrail*, exactly as assembled for v1 — plus this editorial layer: a status map (§0.1), an errata register reconciling cross-document numbering and naming (§0.2), and the 2026-07-19 addendum at the back (first external recoverability replication · HRR capacity-law qualification · REINMANN refutation record). **Nothing in the original body has been silently altered.** Every v2 intervention is marked where it lands.
+> **What this edition is.** The full working paper, organized *claim → test → verdict → guardrail*, exactly as assembled for v1 — plus this editorial layer: a status map (§0.1), an errata register reconciling cross-document numbering and naming (§0.2), and the dated addenda at the back (2026-07-19: first external recoverability replication · HRR capacity-law qualification · REINMANN refutation record; 2026-07-29: two-families rigidity and the control doctrine · the capability ladder · SILVER-OPT restored). **Nothing in the original body has been silently altered.** Every v2 intervention is marked where it lands.
 >
 > **Canon order for a new reader:** read `GHP_CORE_v3.md` first (the short canonical paper), then this working paper, then `RESEARCH_LEDGER.md` for live claim status. The master (`GHP_v1_618_MASTER.md`) is frozen as the append-only archive of record — cite it for provenance, read the short paper for the current state.
 
@@ -691,4 +691,38 @@ On 2026-07-18 the program ingested an external synthesis text ("REINMANN") claim
 
 ---
 
-*End of the v2 hardening edition. The v1 body above is preserved for provenance; where the v1 body and this addendum disagree, the addendum is current.*
+## Addendum (v2.1) — 2026-07-29
+
+### B.1 Two families, one intersection: the metallic means are not quantum dimensions
+
+A theorem-check performed 2026-07-29 (Luminara lane, verified same day) settles a question the control-family language had left blurred, and it sharpens the method for every structural test to come.
+
+There are two distinct number families in play, and the program had been treating them as one:
+
+| | metallic means | admissible quantum dimensions (below index 4) |
+|---|---|---|
+| rule | x² − nx − 1 = 0 | 2cos(π/m), integer m ≥ 3 (Jones 1983) |
+| members | 1.618, 2.414 (silver), 3.303 (bronze), 4.236 (copper), … | 1, √2, **1.618**, √3, 1.802, … |
+| bounded? | grows without limit | converges toward 2, never reaches it |
+
+**The exclusion.** Below index 4, Jones' 1983 rigidity theorem allows only the discrete series 2cos(π/m) < 2. Silver (2.414), bronze (3.303), and copper (4.236) all exceed 2: they **cannot be quantum dimensions in the discrete series at all** — excluded by theorem, not by nobody having constructed them. Above index 4 the allowed values form a continuum with no rigid classification, so there is no canonical "silver category" or "bronze category" to find either.
+
+**The intersection.** The two families share exactly one element: **φ**, the unique number satisfying both φ² − φ − 1 = 0 and φ = 2cos(π/5). Both identities verify to machine precision. (Note the near-miss that had confused the session that found this: Ising's quantum dimension √2 ≈ 1.414 is *not* the silver mean 1+√2 ≈ 2.414 — they share a continued-fraction tail, which matters for approximability, but they are different numbers in different families.)
+
+**The doctrine that follows (binding on future preregistrations).** Metallic means are **constant-controls** — legitimate comparators in allocation-constant and dynamics experiments, where GH-RECOV and K-RECOV-001 already used them. Structure-controls must come from the 2cos(π/m) ladder — 1 (abelian), √2 (Ising), φ (Fibonacci) — because that ladder is the only place fusion structures exist. The two control axes must never be mixed, and no preregistration may promise a "metallic fusion category" control above gold, because none exists. This retroactively explains the shape of both recoverability verdicts: silver *can* win in constant-space (GH-RECOV) precisely because constant-space is where the metals all live; in structure-space, the metals above gold are not in the theory.
+
+*No-upgrade sentence: this is established rigidity mathematics plus two verified identities. It is not evidence that nature selects Fibonacci; it is a correction to the program's own control vocabulary.*
+
+### B.2 The capability ladder: inert, finite, unbounded
+
+The bottom of the structural ladder — d = 1 (abelian), d = √2 (Ising), d = φ (Fibonacci) — is separated by an established capability gradient, not by substance: abelian braiding is computationally **inert** (abelian representations, no growth); Ising braiding is **finite** — its braid-group image is the Clifford group (24 single-qubit elements modulo phase), rich but exhaustible, and not universal; Fibonacci braiding is **unbounded** — its braid representations are dense and universal for quantum computation (Freedman–Larsen–Wang 2002). These are precisely the three structural arms of the AH.4-P1 preregistration, and the ladder is the principled reason for that arm choice: the experiment spans inert / finite / unbounded rather than three arbitrary categories. A lane braid computation (2026-07-29) reproduced the ladder empirically; its receipt is pending filing and it is cited here as motivation only. The resemblance of this triad to symbolic triads elsewhere in the wider work is recorded as a **rhyme, not a derivation**, per the standing discipline.
+
+### B.3 SILVER-OPT restored to the roadmap (a timing gap, closed)
+
+The v2.1 short-paper edition and v1.1 working-paper edition (2026-07-07) named **SILVER-OPT — characterize the silver anomaly**: four independent instruments show silver ≥ golden (GH-RECOV critical band + adversarial tear, ~5σ; T-111 sampler friction; T-112 rotation ranking; the SEL-CLOSE-001 KAM thresholds). Those editions reached this repository only on 2026-07-29 (archived as editions of record), after the v2 assembly — so the item silently dropped off the v3-era roadmap by timing, not by decision. It is restored here as **roadmap item 1a**, unchanged in substance: preregister a sweep across code sizes, damage fractions, and at least four damage geometries, with three hypotheses and a kill for each — **H1** silver-optimal (a genuinely new, GHP-independent result about low-discrepancy allocation), **H0** noble-plateau (all noble arms tie; the 5σ line was regime-specific), **H2** damage-geometry artifact (demote the dramatic number before a referee does). Read through B.1, the anomaly is **constant-axis by construction** — there is no silver fusion category, so no structural interpretation is available, and no branch of SILVER-OPT is GHP physics evidence.
+
+*Reconciliation note for §12:* §12.3–12.5 describe the recoverability flagship as "unrun"; per the core paper's v3 reconciliation, the golden-spread **proxy** ran 2026-07-03 (GH-RECOV, closed against φ-specificity) and the **genuine anyon fusion-tree form** — now preregistered DRAFT/UNSIGNED as AH.4-P1 (2026-07-29) — is the form that remains unrun and discriminating.
+
+---
+
+*End of the v2 hardening edition. The v1 body above is preserved for provenance; where the v1 body and these addenda disagree, the most recent addendum is current.*
