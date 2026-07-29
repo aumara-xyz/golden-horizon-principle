@@ -1,4 +1,51 @@
-> **SUPERSEDED — 2026-07-19.** This v1 working paper (2026-07-03) is preserved for provenance with its body unaltered. The canonical working paper is now **`GHP_BOUNDARY_PROGRAM_v2.md`** — the same v1 body, plus an editorial status map, an errata register, and the 2026-07-19 addendum (K-RECOV-001, HRR capacity law, REINMANN refutation, recoverability reconciliation). Current claim standings: `RESEARCH_LEDGER.md`. **Do not cite this file for current status.**
+# The Golden Horizon Principle — Working Paper
+
+## The Boundary Program · **v2 Hardening Edition (2026-07-19)**
+
+> **What this edition is.** The full working paper, organized *claim → test → verdict → guardrail*, exactly as assembled for v1 — plus this editorial layer: a status map (§0.1), an errata register reconciling cross-document numbering and naming (§0.2), and the 2026-07-19 addendum at the back (first external recoverability replication · HRR capacity-law qualification · REINMANN refutation record). **Nothing in the original body has been silently altered.** Every v2 intervention is marked where it lands.
+>
+> **Canon order for a new reader:** read `GHP_CORE_v3.md` first (the short canonical paper), then this working paper, then `RESEARCH_LEDGER.md` for live claim status. The master (`GHP_v1_618_MASTER.md`) is frozen as the append-only archive of record — cite it for provenance, read the short paper for the current state.
+
+---
+
+## 0.1 Status map (as of 2026-07-19)
+
+| Lane | Status | Where |
+|---|---|---|
+| Categorical minimality + fusion rule (M-001/M-002) | **PROVEN** (in domain) | §02 |
+| Hurwitz extremality | **PROVEN** (1891; re-checked 2026-07-19) | §02 |
+| Golden-chain architecture (φ to 11 decimals) | **PROVEN** (in domain) | §03 |
+| Golden-chain dynamics = tricritical-Ising c=7/10 | **KILL** (φ absent from dynamics) | §03 |
+| φ² conditional-expectation closure (P-005-TL) | **NULL** (sound; closes equally at controls) | §07 |
+| Zipper sign-alternation write-law (M-005) | **NULL** (sound; generic to all metallic means) | §07 |
+| Two-observer consensus (P-007-2OBS) | **KILL** (sound at L≤12; OP 164 theory half open) | §07 |
+| Dynamical selection of φ (SEL-CLOSE-001) | **CLOSED** (identity proven, selection dead) | Addendum |
+| DMRG β-band (P-002) | **PENDING** (7/9; band contains CFT null — non-discriminating) | §06 |
+| SYK β corridor (P-002a) | **NEVER RUN** (pipeline repaired; kill window [1.95,2.05] live) | §06 |
+| Ternary write/witness/release (T-WWR-modular) | **PASS** (narrow, φ-free, engineering) | §07 |
+| HRR holographic memory | **PASS** (engineering; **qualified**: 0.9609 figure is capacity-regime-dependent — see Addendum A.2) | §10 + Addendum |
+| Matter embedding (D4/F4/E6) | **OBSTRUCTED** (honest dead-ends mapped) | §09 |
+| **Recoverability — proxy (GH-RECOV)** | **CLOSED** (silver-optimal) | **Addendum A.1** |
+| **Recoverability — external replication (K-RECOV-001)** | **GENERIC** (φ = robust default, not optimum; margin +0.006 < 0.02) | **Addendum A.1** |
+| REINMANN external synthesis (moonshine/zeta/zero-object) | **REFUTED** (2026-07-18, recorded kills) | **Addendum A.3** |
+
+---
+
+## 0.2 Errata register (v2 reconciliations)
+
+**E-1 · Numbering aliases unified (no content change).** The canonical short paper (v3) and this working paper used two numbering schemes for the same objects. Canonical mapping, binding from v2 forward: **"Gate 5" (short paper) ≡ "Kill Condition 9" (this paper)** — the SYK generic-window kill. **"Third bucket" (short paper) ≡ the "disciplined fourth branch" / Addendum M.1 (this paper)** — the quotient-confirmation demotion path. Both aliases remain legal in citations of the v1 body.
+
+**E-2 · Naming discipline for the GR fixed-point object (§04).** The object treated in §04 is the **Viviani-φ Surface (VPS)** — a scalar fixed surface. It is explicitly *not* a horizon in any technical sense (not a null hypersurface, not a Killing horizon, not a trapped surface — the preprint says so itself at VPH_preprint_v8 §4.7). The word **"Horizon" is retired** from this canon's public vocabulary for this object; §04's v1 title is preserved for provenance and flagged here. [ERRATUM marker placed at §04.]
+
+**E-3 · Provenance gap closed.** v1 (Appendix, integrity note 2) admitted one master range (~lines 12000–13500) failed to distill on its first swarm pass. That range was re-read 2026-07-19; see Addendum A.4 for what it contained and whether anything material was lost.
+
+**E-4 · REINMANN inheritance quarantined.** An external synthesis text ingested 2026-07-18 (φ–moonshine–zeta claims; "Fibonacci category has no zero object") is refuted and recorded (Addendum A.3). It must never be cited as support anywhere in this canon.
+
+**E-5 · Cross-document ID consistency.** The ternary memory test is **T-WWR-modular** (this paper and the ledger); the short paper's v2-era "T-004" was an alias. The TL test is **P-005-TL** uniformly. The kill conditions of §9 (master) and Gate-numbering are indexed in the ledger, not duplicated here.
+
+**E-6 · Tone note.** The v1 closing sentence ("…more than most frameworks ever earn") is kept for continuity; it is a sentence about the *method*, and should be read as such, or not at all.
+
+*(Original v1 body follows, unaltered except where a bracketed ERRATUM marker appears.)*
 
 ---
 
@@ -179,6 +226,8 @@ Three layers must never blur, and this section holds them apart. (1) Reality is 
 ---
 
 ## 04. The Viviani-φ Horizon — the exact GR anchor
+
+> **[ERRATUM v2 — naming discipline]:** The object treated in this section is the **Viviani-φ Surface (VPS)** — a scalar fixed surface. It is explicitly *not* a horizon in any technical sense (not a null hypersurface, not a Killing horizon, not a trapped surface; see the preprint at VPH_preprint_v8 §4.7). The word "Horizon" in this v1 section title is preserved for provenance and is **retired from this canon's public vocabulary** for this object (see the v2 errata register, E-2).
 
 Everything else in this program is a comparison — golden against control, an exponent against a band, a null against a pass. This section is the one place where φ appears *exactly*, with no comparison and no residual. It is worth stating precisely what that exactness buys, because it buys much less than the name suggests. (Master §5.1C; floor theorems §5.1Z; ledger B-001, T-107.)
 
@@ -482,7 +531,7 @@ The Auma 32B work grounds the same discipline in a live model architecture. The 
 
 ### 10.4 The holographic HRR memory result
 
-The one place this lane produces a clean, preregistered, confirmed *positive* is holographic memory (skunkworks_holographic_memory; HRR per Plate 1995, SDM per Kanerva 1988 — established mathematics, correctly credited, not a GHP invention). Key-value pairs are bound by circular convolution into a single superposition trace and recalled by correlation plus cosine cleanup against a 256-item codebook. Pass/fail criteria were written and frozen *before* any output. The headline: the **hologram-cut test**. Zero out half the trace (fraction f = 0.5) and recall accuracy is still **0.9609**, versus **1.0000** with the trace intact — a 96% ratio, with a smooth SNR-limited decline and no cliff (max single-step drop 0.33), exactly as SNR ∼ √((1−f)·d/k) predicts. Capacity scales as k*₉₀ ∝ d/ln(d) (R² = 0.986, beating linear d), and crosstalk rises monotonically with codebook similarity. All three predeclared criteria pass: **HOLOGRAPHIC PROPERTIES CONFIRMED (engineering).**
+The one place this lane produces a clean, preregistered, confirmed *positive* is holographic memory (skunkworks_holographic_memory; HRR per Plate 1995, SDM per Kanerva 1988 — established mathematics, correctly credited, not a GHP invention). Key-value pairs are bound by circular convolution into a single superposition trace and recalled by correlation plus cosine cleanup against a 256-item codebook. Pass/fail criteria were written and frozen *before* any output. The headline: the **hologram-cut test**. Zero out half the trace (fraction f = 0.5) and recall accuracy is still **0.9609**, versus **1.0000** with the trace intact — a 96% ratio, with a smooth SNR-limited decline and no cliff (max single-step drop 0.33), exactly as SNR ∼ √((1−f)·d/k) predicts. Capacity scales as k\*₉₀ ∝ d/ln(d) (R² = 0.986, beating linear d), and crosstalk rises monotonically with codebook similarity. All three predeclared criteria pass: **HOLOGRAPHIC PROPERTIES CONFIRMED (engineering).**
 
 Ninety-six-percent recall from half a memory is a real, reproducible property of distributed superposition storage, and it is the natural candidate for a **fourth Kira perceiver** — a memory organ whose recall degrades gracefully rather than shattering, sitting alongside the existing perceiver stack as governed, advisory, shadow-mode-only. But note precisely what is confirmed: that a specific well-known encoding is robust to erasure. The word "holographic" here is the information-theoretic sense of Plate's HRR, *not* a claim that the universe stores itself this way (Addendum O, item 7, states this exactly). Recoverability-under-damage is real machinery (ledger B-022); it is imported as recoverability context only.
 
@@ -614,3 +663,32 @@ The physical spine falsifies if the SYK β lands cleanly in the kill window [1.9
 ---
 
 *The Golden Horizon Principle is a conjecture under test, an engineering practice under governance, and a methodology under no illusions. Held together, honestly, that is more than most frameworks ever earn.*
+
+---
+
+## Addendum (v2) — 2026-07-19
+
+### A.1 The recoverability discriminator: first external replication (K-RECOV-001)
+
+The master's designated deciding experiment (AH.4 Priority 1, §12.3) asked: *does a Fibonacci boundary code recover corrupted information measurably better than matched non-Fibonacci codes?* The program's own golden-spread proxy (GH-RECOV, §7) closed **silver-optimal** on 2026-07-03. On 2026-07-19 an independent laboratory ran a second, allocation-level replication:
+
+- **Setup (pre-registered):** 1,000 information shards, Zipf-skewed importance (exponent 0.8), fixed redundancy budget B=300, erasure rates 25/50/75% plus a contiguous burst mode, 400 trials per point, 20 independent seeds. Allocation families: golden-ratio decay, silver, bronze, exp-2, exp-e, Fibonacci-tier staircase, greedy importance-rank, uniform, and a φ-shuffled control (same numbers, wrong places — the numerology tripwire).
+- **Result:** any heavy-tailed allocation recovers far better than uniform (+15 points at 75% erasure). At 50% erasure: φ-decay 0.798, greedy-rank 0.792, exp-2 0.773, silver 0.737, bronze 0.684, uniform 0.649, φ-shuffled 0.620, Fibonacci-tier 0.567 (**worse than uniform**). Golden's margin over the best non-golden scheme: **+0.006**, below the pre-registered ±0.02 significance threshold.
+- **Verdict: GENERIC.** *Having* a golden-style tail matters enormously; *golden itself* is not selected. Convergent with GH-RECOV (silver beats golden) and with SEL-CLOSE-001 (identity, not selection). What survives is the engineering reading: **φ is a robust default convention** — and a skew-sweep shows it is the best or tied-best decay base across the realistic importance-skew range (0.8–2.0), losing only at flat skew — which is a reason to use it in software, not a reason to believe in it physically.
+- **Status of the lane:** proxy/allocation level = closed (two independent negatives). The **genuine Fibonacci-anyon fusion-tree boundary code** remains the only unbuilt, still-discriminating form (§12.3). It must be designed to be able to lose.
+
+### A.2 The HRR number, made precise
+
+§10's holographic-memory headline ("96% recall with half the memory trace destroyed") was independently re-run across dimension d ∈ {512, 1024, 2048} and load k. Graceful, cliff-free degradation is **confirmed everywhere** (no slot failure, SNR-limited decline). The specific figure 0.9609 reproduces **only inside the capacity regime** k ≲ 0.27·(d/ln d) — measured prefactor ≈ 0.27 across all three dimensions (e.g., d=1024, k=32 → 0.94; k=40 → 0.91; k=64 → 0.68; d=2048, k=64 → 0.93). The scaling direction of the capacity law k₉₀ ∝ d/ln(d) is confirmed. **Ledger rule going forward: quote the law (erasing a fraction f costs SNR proportionally, ∝ √((1−f)·d/k)), not the point estimate.**
+
+### A.3 The REINMANN record (refutation of an ingested synthesis)
+
+On 2026-07-18 the program ingested an external synthesis text ("REINMANN") claiming φ ↔ modular forms ↔ zeta zeros via monstrous moonshine and a category-theory assertion ("the Fibonacci category has no zero object"). Same-day adversarial audit **refuted both**: (a) monstrous moonshine connects Monster irreducible representations to j-invariant coefficients only — φ and zeta zeros appear nowhere in it; φ's genuine modular contact is the **Rogers–Ramanujan continued fraction**; (b) fusion categories are semisimple abelian categories — they **have** zero objects (ENO 2005); the canon phrase means "no nontrivial invertible simples." A literature sweep found no published non-trivial φ/Fibonacci-category ↔ zeta-zero connection (closest: Dyson 2009 quasicrystal *speculation*, generic). Recorded here so no one has to kill it twice. **This material is quarantined and must never be cited as support anywhere in the canon.**
+
+### A.4 The provenance gap, re-read (closing v1 integrity note 2)
+
+*(v2 editor's note: v1's appendix admitted one master range — approximately lines 12000–13500 — failed to distill on its first swarm pass. That range was re-read on 2026-07-19 as part of this hardening pass; its content and disposition are summarized in the accompanying hardening report. Nothing in this working paper depends on un-read material.)*
+
+---
+
+*End of the v2 hardening edition. The v1 body above is preserved for provenance; where the v1 body and this addendum disagree, the addendum is current.*

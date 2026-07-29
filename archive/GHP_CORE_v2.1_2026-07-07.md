@@ -1,10 +1,10 @@
-> **SUPERSEDED — 2026-07-19.** This edition (v2.0, 2026-07-03) is preserved for provenance with its body unaltered. The canonical short paper is now **`GHP_CORE_v3.md`**. What this edition does not reflect: the dynamical-selection lane is **CLOSED** (SEL-CLOSE-001, 2026-07-04 — identity proven, selection dead); the recoverability lane is **CLOSED against φ-specificity** (GH-RECOV, silver-optimal) with an independent external replication finding φ **GENERIC** (K-RECOV-001, 2026-07-19); the HRR memory claim is **capacity-qualified** (HRR-001, 2026-07-19); the REINMANN material is **REFUTED** (2026-07-18). Current standings: `RESEARCH_LEDGER.md`. **Do not cite this edition for current status.**
+> **ARCHIVED EDITION OF RECORD — landed 2026-07-29 via PR #1 conflict resolution.** This is the v2.1 edition (2026-07-07) carrying the T0 reconciliation. It reached the repo after v3.0 (2026-07-19) had already become the canonical short paper, so it is preserved here as the intermediate edition of the canon chain (v2.0 -> v2.1 -> v3.0) rather than replacing the frozen top-level v2.0 provenance copy. Unique to this edition: the first naming of SILVER-OPT (the silver anomaly). Current canon: `GHP_CORE_v3.md`. Current standings: `RESEARCH_LEDGER.md`. Do not cite this edition for current status.
 
 ---
 
 # The Golden Horizon Principle — Core
 
-**Version 2.0 · 2026-07-03 · Canonical short paper**
+**Version 2.1 · 2026-07-07 · Canonical short paper**
 
 > This program takes seriously the possibility that reality is informational all the way down — that "there" is a structure of records on boundaries, not a place. It does not claim to have shown this. It claims to have built the discipline that could.
 
@@ -13,6 +13,8 @@
 ### Reading note / provenance
 
 This is the **canonical short statement** of the Golden Horizon Principle (GHP). It supersedes the earlier core share paper. Two companion documents complete the canon:
+
+**v2.1 changelog (2026-07-07).** v2.0 was assembled on 2026-07-03 and was overtaken by the ledger within a day: the recoverability discriminator it described as *unbuilt* (its §8 and §11) had in fact been built, preregistered, run, and adversarially verified that same day (**GH-RECOV**, sound null — silver beat golden), and on 2026-07-04 the dynamical-selection lane was formally closed (**SEL-CLOSE-001**). By this paper's own §10, **falsification condition #2 has fired.** v2.1 records those verdicts where v2.0 promised them, rewrites §8 and §11 around what genuinely remains, and adds a confirmatory-vs-exploratory statistics note (§9.7). Nothing else is renegotiated; no kill is softened.
 
 - **`GHP_BOUNDARY_PROGRAM.md`** — the full working paper (~70 pp), organized *claim → test → verdict → guardrail*. Read this if you want the mathematics, protocols, and every result.
 - **`GHP_v1_618_MASTER.md`** — the original 15,635-line research master. **Frozen as the append-only archive of record.** Everything in the two new documents traces back to it by section number; nothing has been deleted from it. If a claim here and there ever seem to disagree, the master is the ledger of what was actually done and when, and the newer document is the more careful statement of what it *means*.
@@ -26,10 +28,10 @@ The claim ledger (`GHP_RESEARCH_LEDGER.md`) remains the live status board for ev
 The Golden Horizon Principle asks whether the readable boundary between an observer and the world has a **minimal, forced architecture**, and whether that architecture is the **Fibonacci / golden-ratio** structure that category theory singles out as the simplest non-trivial anyonic one. After months of testing, the honest result is sharp and, we think, more interesting than a bare "yes":
 
 - **What is proven** is mathematical and narrow: the Fibonacci fusion category is the minimal non-trivial one of its class, its quantum dimension is φ, its Jones index is φ², and φ is the extremal (slowest-approximable) irrational. These are theorem-grade *within their stated domains* and mostly predate this work.
-- **What has been tested and killed or found generic** is every attempt to find φ in **dynamics**: the golden chain's low-energy physics is ordinary tricritical-Ising (central charge 7/10, not φ); a two-observer consensus test found no φ role and met its own pre-registered failure criterion; a conditional-expectation "closure quality" test found φ no better than non-golden controls; the metallic-recurrence "zipper" motif is generic to silver and bronze ratios too.
+- **What has been tested and killed or found generic** is every attempt to find φ in **dynamics**: the golden chain's low-energy physics is ordinary tricritical-Ising (central charge 7/10, not φ); a two-observer consensus test found no φ role and met its own pre-registered failure criterion; a conditional-expectation "closure quality" test found φ no better than non-golden controls; the metallic-recurrence "zipper" motif is generic to silver and bronze ratios too. And — decisive, landing as v2.0 went to page — the program's own designed discriminator returned the same verdict: **recoverability healing is real but generic to low-discrepancy codes, and silver, not golden, won** (GH-RECOV, 2026-07-03). A φ-free standard-map measurement then found golden and noble-silver critical thresholds indistinguishable within the preregistered margin, and the **dynamical-selection lane was formally closed** (SEL-CLOSE-001, 2026-07-04), with a written four-part bar to reopen.
 - **What survives and is genuinely useful** is architectural, extremal, and engineering: categorical minimality, Hurwitz extremality, a governed observer-boundary software stack, and a holographic (interference-pattern) memory that degrades gracefully.
 
-The evidence has a shape: **φ lives in the architecture, not the dynamics.** That was the master document's own founding conclusion, and the 2026-07-03 test battery confirmed it four independent ways. GHP's most transferable output so far is not a physical result but a **method** — a falsification machine strict enough to catch and discard two of its own tests mid-session. This paper states the conjecture, the scoreboard, and the single experiment that would decide what remains.
+The evidence has a shape: **φ lives in the architecture, not the dynamics.** That was the master document's own founding conclusion, and the 2026-07-03/04 battery and lane-closure confirmed it six independent ways. GHP's most transferable output so far is not a physical result but a **method** — a falsification machine strict enough to catch and discard two of its own tests mid-session, and then to run its own deciding experiment and report the loss. This paper states the conjecture, the scoreboard — including the verdict of the deciding experiment, which has now been run — and what genuinely remains: one live falsifier (the SYK kill window), one unexplained anomaly (silver-optimality), and a theory track.
 
 ---
 
@@ -94,8 +96,12 @@ Every GHP claim that reached a real test, with its verdict. Nulls and kills are 
 | 10 | Holographic (HRR) memory | **PASS** (engineering) | 96% recall with half the memory trace destroyed |
 | 11 | Auma architecture-grounded model burn | **DONE, live** | A governed AI that proposes but does not authorize, unprompted |
 | 12 | Matter embedding from D4 / F4 / E6 roots | **OBSTRUCTED** | Real scaffold; too symmetric to make chirality — honest dead-ends mapped |
+| 13 | Recoverability discriminator (GH-RECOV / AH.4 Priority 1) | **NULL** (2026-07-03) | The deciding experiment, run: healing mechanism real but generic; **silver beat golden** (critical band 0.570 vs 0.432; adversarial tear 16/16 seeds, ~5σ) |
+| 14 | Dynamical selection of φ over metallic/noble rivals (SEL-CLOSE-001) | **CLOSED — no-go** (2026-07-04) | Two-tine fork: continuous channel shows measured noble-degeneracy; discrete channel smuggles φ in as input. Identity lane untouched; four-part bar to reopen |
 
-Read the verdict column. **Every φ-in-dynamics claim died or came back generic. Everything architectural, extremal, or engineering survived.** This is the shape from §3, now measured.
+Read the verdict column. **Every φ-in-dynamics claim died or came back generic — including the discriminator this paper's v2.0 said would decide it. Everything architectural, extremal, or engineering survived.** This is the shape from §3, now measured and, in the selection lane, settled.
+
+A pattern in rows 13 and 14 deserves its own name: **silver (1+√2) has now tied or beaten golden on four independent instruments** — GH-RECOV's critical band and adversarial tear, the T-111 sampler-friction probe, the T-112 rotation ranking (φ_inv 6th of 50), and the KAM standard-map thresholds. This is the program's first unexplained *positive* regularity, φ-negative in direction, and it is logged as a named open problem (§11) rather than a footnote.
 
 ### 4.1 The two tests the machine caught cheating
 
@@ -146,21 +152,27 @@ This lane is the strongest *practical* analogue of what GHP describes in the abs
 
 ---
 
-## 8. The one experiment that would decide it
+## 8. The deciding experiment — run, and the verdict
 
-Here is the strategic truth the whole program now points at, stated without flinching:
-
-> **GHP does not yet have a single test where its prediction differs numerically from standard physics.** Every dynamical pass-region either recovers φ that was built in, or contains the ordinary answer. That is why the results so far are honest nulls and one CFT-confirmation-in-waiting rather than either a triumph or a refutation.
-
-The way forward is a rule and a target.
+v2.0 of this paper closed this section with a rule and a target. The rule stands and is now permanent:
 
 **The rule (the discriminator criterion):** *No new compute for any test whose pass-region contains the standard-physics answer.* A test that cannot fail cannot inform.
 
-**The target:** the observable where φ has actually *survived* is **architecture**, and the sharpest architectural observable is **recoverability** — how well a code heals after damage. The master already named the right experiment (its own AH.4 Priority 1) and never built it:
+The target was the recoverability discriminator (master AH.4 Priority 1): *does a Fibonacci boundary code recover corrupted information measurably better than matched non-Fibonacci codes?* v2.0 called it "the whole ballgame" and said it was unbuilt. **It was built, preregistered twice, run, and adversarially reproduced the same day v2.0 was assembled — and the answer is no** (ledger GH-RECOV, 2026-07-03):
 
-> **Does a Fibonacci boundary code recover corrupted information measurably better than matched non-Fibonacci codes?**
+- The healing **mechanism** is real: low-discrepancy (irrational-rotation) redundancy spreading survives damage far better than resonant, rational, or random codes. Resonant worst-case recovery is 0.000 — catastrophic holes; golden beats random positions by +0.34 pooled.
+- But it is **not φ-specific**. In the coverage-stressed regime built to be φ's best shot, **silver (1+√2) beat golden**: critical-band ranking silver 0.570 > bronze 0.479 > golden 0.432 ≈ random-irrational 0.411, and in the adversarial worst-case tear — the regime designed to favor Hurwitz/KAM anti-resonance — golden beat silver in **0 of 16 seeds** (~5σ in silver's favor). Verdict: **B_IRRATIONALITY_GENERIC**. The recoverability lane is closed against φ-specificity; per its own contract, no v3 is warranted.
 
-This is the experiment to build next, preregistered so that the pass-region *excludes* the generic answer this time. If a Fibonacci code shows no recovery advantage over silver-ratio or random-matched codes, Layer 3 takes its cleanest hit yet. If it does — that is the first φ fingerprint that isn't built-in, isn't extremal-by-definition, and isn't already predicted by 2007 CFT. That is the whole ballgame. The months of nulls were not wasted: **they eliminated the wrong hunting grounds and pointed at this one.**
+The day after, the program settled the larger question the discriminator was one instance of (ledger **SEL-CLOSE-001**, 2026-07-04): *the dynamical-selection lane is closed as a no-go.* The closure is a two-tine fork, both tines fatal. **Tine A (continuous):** on a φ-free Chirikov standard map with a validated Greene-residue estimator, noble-silver's critical threshold ties/beats golden's (K_c 0.972702 vs 0.972336; margin 0.0144 < the preregistered 0.05) — the noble-tail degeneracy is *measured*, not feared. **Tine B (discrete):** invoking fusion categories does exclude silver sharply (no unitary MTC has silver-mean quantum dimension), but only because φ was smuggled in as an input by choosing the Fibonacci phase — the built-in-φ trap, confirmed empirically by the P-005 null. **GHP predicts the *identity* of the Fibonacci order, not the *selection* of φ over its metallic rivals.** The identity lane keeps everything it had (categorical minimality, the φ² index, Hurwitz, the VPS identity); the selection lane is closed behind a four-part reopening bar: any future construction must test selection (not identity), yield φ as an output with nothing golden hand-inserted, exhibit an observable whose pass window excludes the generic answer *and* breaks the measured noble-degeneracy beyond the preregistered margin, and be ledger-first preregistered with a well-posed FAIL.
+
+What genuinely remains, in order:
+
+1. **The SYK kill window (P-002a / OP 111)** — the one preregistered falsifier that has never actually been evaluated, because the pipeline was broken. Firing it (kill or quotient-branch) completes the falsification arc.
+2. **The silver anomaly (SILVER-OPT)** — four independent instruments now show silver ≥ golden. Unexplained, φ-negative, and potentially this program's first novel positive result about *something*, even if that something is not φ.
+3. **The quantization crux** — the only move that could reopen selection: does any dynamical pressure force a continuous winding observable to quantize onto a valid fusion category *by itself*? Predicted FAIL by the on-disk KAM result; gated behind the four-part bar; a well-posed FAIL is itself high-value.
+4. **The theory track (OP 3 / OP 157)** — derive, rather than assume, a selection principle; costs derivation, not compute.
+
+The months of nulls were still not wasted. They eliminated the wrong hunting grounds, pointed at this one, and — this is the part v2.0 could not yet say — **the machine then ran the deciding experiment and reported the loss.** That is the program working exactly as designed.
 
 ---
 
@@ -174,6 +186,7 @@ If the physical conjecture never survives, this is what GHP will have contribute
 4. **The numerology tripwire.** Content lives *only* in golden-vs-control comparison. Building φ in and getting φ out proves nothing, and the guardrail says so explicitly.
 5. **Ledger-first, nulls preserved.** Every claim has a status; failed paths are kept as anti-self-sealing evidence, not quietly deleted.
 6. **Time-boxed humility.** Self-sealing warnings carry expiration dates; "universal agreement across models is a sycophancy signal, not validation."
+7. **Two evidence tiers, stated explicitly** *(added v2.1)*. **Confirmatory:** preregistered, error-controlled, kill-windowed results (P-002, P-005-TL, P-007-2OBS, M-005, GH-RECOV, the KAM probe, T-WWR). **Exploratory:** everything else — in particular the ~75-comparison toy arcs (T-005..T-080), which carry no family-wise error control and are non-evidential by rule. Only confirmatory-tier results may move a claim's ledger status.
 
 This is not decoration around the science. It **is** the science. It is the reason a surviving GHP claim would mean something, and the reason the nulls in §4 are trustworthy.
 
@@ -184,12 +197,12 @@ This is not decoration around the science. It **is** the science. It is the reas
 Stated plainly, so the program stays honest:
 
 **What would falsify GHP's physical spine:**
-- The SYK β corridor's exponent lands cleanly in the kill window [1.95, 2.05] (generic-random behavior) — this flips the framework's Gate 5 to falsified, on the page, without renegotiation.
-- The recoverability discriminator (§8) shows Fibonacci codes with **no** advantage over matched non-golden codes.
-- The categorical-minimality theorem is shown to have been misapplied to the physical setting.
+- The SYK β corridor's exponent lands cleanly in the kill window [1.95, 2.05] (generic-random behavior) — this flips the framework's Gate 5 to falsified, on the page, without renegotiation. *(Live — the only unfired falsifier.)*
+- ~~The recoverability discriminator (§8) shows Fibonacci codes with **no** advantage over matched non-golden codes.~~ **FIRED 2026-07-03 (GH-RECOV): no φ advantage; silver won.** The selection form of Layer 3 is falsified in this lane; the lane is closed (SEL-CLOSE-001).
+- The categorical-minimality theorem is shown to have been misapplied to the physical setting. *(No such showing exists; the identity lane stands.)*
 
 **What would count as real (not decisive, but real) confirmation:**
-- A discriminating observable — recoverability, or a two-observer law, or an SYK exponent — where GHP's prediction *differs from* the standard one and the data favors GHP.
+- A discriminating observable where GHP's prediction *differs from* the standard one and the data favors GHP. *(v2.1 note: recoverability was that observable, and the data went the other way; any successor must first clear SEL-CLOSE-001's four-part reopening bar.)*
 - The DMRG β landing near φ ≈ 1.618, separated from the CFT candidates (8/9, 5/4).
 
 **What does NOT count, and never will:**
@@ -201,19 +214,21 @@ Stated plainly, so the program stays honest:
 
 ## 11. Open problems that matter
 
-From the full list, the five that actually gate progress:
+From the full list, the five that actually gate progress *(reordered in v2.1 — the old #1 has been decided)*:
 
-- **OP 3 / OP 157 — the selection principle.** Derive the boundary architecture (and its β-band) from framework objects, theorem-grade. Still open; the in-band results neither close nor threaten it.
-- **OP 164 — the two-observer law.** A quantitative mutual-information / shared-interface law with a φ role. Its pre-registered failure criterion was *met* by test P-007 (no φ role at accessible sizes); log as first evidence against, do not close.
-- **OP 184 — the DMRG band.** The current run is its direct continuation; report the β against both preregistered rules and the CFT null.
-- **OP 111 — the SYK decision branch.** Build the missing logic that converts the measured collapse exponent into a β and applies the decision buckets (including the "quotient-confirmation" third bucket that was specified but never coded).
-- **AH.4 Priority 1 — the recoverability discriminator.** The single most important *unbuilt* experiment (§8).
+- **OP 111 — the SYK decision branch.** Now the top open item: the one live falsifier. Build the missing ν→β converter and decision buckets (including the "quotient-confirmation" third bucket that was specified but never coded), repair the grid/bootstrap, and fire or clear Kill Condition 9.
+- **SILVER-OPT — the silver anomaly** *(new, v2.1)*. Silver has tied or beaten golden on four independent instruments (GH-RECOV, T-111, T-112, KAM). Characterize it under a new preregistration with its own kill: silver-optimal, noble-plateau, or damage-geometry artifact.
+- **OP 3 / OP 157 — the selection principle.** Derive the boundary architecture from framework objects, theorem-grade. Still open as *theory*; any empirical form must clear the SEL-CLOSE-001 reopening bar first.
+- **OP 164 — the two-observer law.** Its pre-registered failure criterion was *met* by P-007 (no φ role at accessible sizes); logged as evidence against. Remains open only as a theory question (does φ enter the reflected-entropy functional non-definitionally?); no new consensus-simulation compute.
+- **OP 184 — the DMRG band.** Finish the two heavy points, apply both preregistered rules, report β with its distance to the CFT null 8/9; retire the corridor with a *measured* perturbing-operator dimension. Archival, not evidential.
+
+*(AH.4 Priority 1, v2.0's "single most important unbuilt experiment," was built and decided 2026-07-03 — see §8.)*
 
 ---
 
 ## 12. One paragraph, if you read nothing else
 
-We took a beautiful conjecture — that reality is information, that there is no "over there," and that the readable boundary of the world has a minimal golden architecture — and we built a machine strict enough that it could not lie to us about it. Fed the conjecture, the machine gave back the two pieces that are real: **architecture** (Fibonacci is the minimal non-trivial boundary alphabet) and **extremality** (φ is the most irrational number). It killed or found generic every attempt to find φ in dynamics, and it caught two of its own tests cheating and threw them out. What's left is not a proof and not a refutation, but something you can actually stand on: a proven mathematical spine, a governed engineering embodiment, an honest map of where the bet still lives, and **one clean experiment** — does a golden code heal better than the alternatives? — that would decide the rest. That experiment is the way forward. Everything before it was learning where *not* to look.
+We took a beautiful conjecture — that reality is information, that there is no "over there," and that the readable boundary of the world has a minimal golden architecture — and we built a machine strict enough that it could not lie to us about it. Fed the conjecture, the machine gave back the two pieces that are real: **architecture** (Fibonacci is the minimal non-trivial boundary alphabet) and **extremality** (φ is the most irrational number). It killed or found generic every attempt to find φ in dynamics, it caught two of its own tests cheating and threw them out — and then it ran the one clean experiment we said would decide the rest: *does a golden code heal better than the alternatives?* **The answer was no. Silver healed better.** The selection lane is closed, on the page, behind a four-part bar to reopen; the identity lane — what φ *is* to the minimal architecture, once assumed — keeps every theorem it ever had. What's left is not a proof and not a refutation but a completed falsification arc you can actually stand on: a proven mathematical spine, a governed engineering embodiment, one unfired falsifier (SYK), and one anomaly nobody predicted (silver). A conjecture that names its deciding experiment in advance, runs it, and prints the loss is doing the one thing most frameworks never do. Everything before was learning where *not* to look; the machine now knows, and says so.
 
 ---
 
