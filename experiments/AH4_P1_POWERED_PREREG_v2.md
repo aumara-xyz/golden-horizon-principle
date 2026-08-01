@@ -1,7 +1,7 @@
 # Preregistration — AH.4-P1-POWERED v2 (the powered structural sequel)
 
 - test_id: AH4-P1-POWERED-v2
-- date_locked: **PENDING OWNER SIGNATURE** (lock protocol as v1.1: signature line completed, sentinel dated, file hash to ledger, then and only then may the run execute).
+- date_locked: **2026-08-01 (SIGNED)** (lock protocol as v1.1; contract and pipeline hashes recorded in the ledger at signing).
 - anchor: AH.4-P1 v1.1 verdict **INTERACTION/MIXED** (2026-08-01). The signed v1.1 outcome table says interaction "gets its own preregistration rather than a post-hoc story here." This is that preregistration.
 - runtime: the EXISTING verifier-stamped pipeline (`experiments/ah4_p1_pipeline.py`), byte-identical — no physics code changes permitted. Same n = 12, same arms, same channel, same recovery, same scorer.
 
@@ -26,6 +26,6 @@ v1.1 observed Δ(f) = fib − ising at uniform of +0.011 / +0.065 / +0.101 at f 
 
 A pass is engineering evidence about an architecture in a simulated code; it is not evidence that nature selects φ. A kill closes this hypothesis, not GHP. Software echoes may inform the theory; they do not confirm the physics.
 
-**Signed:** ______________________ (owner) **Date (UTC):** ____________
+**Signed:** Peter Viviani (owner) — signature given by chat directive to the symbiote lane. **Date (UTC):** 2026-08-01
 
-*Until signed: no run. The pipeline file's SHA-256 at signing is recorded alongside this contract's, so "byte-identical pipeline" is checkable.*
+*Lock engaged. Pipeline pinned byte-identical: `experiments/ah4_p1_pipeline.py` SHA-256 `59fc150a67971c1a2af65915e2233b681c88f8e3ba4b9fb0147a40da17e2cbc2`. Any post-signing edit to this contract or that pipeline voids the run.*
