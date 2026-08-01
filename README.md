@@ -116,3 +116,8 @@ Use `CITATION.cff` in this repository. If a DOI is added later through Zenodo, p
 
 Peter Viviani
 Email: peter@aumara.xyz
+
+
+## The Riemann fence (standing)
+
+Nothing from the Riemann-adjacency lane (working paper Addendum B.4, ledger LIT-RH001–003, the zeta instruments, or any cube/digit test) may appear in receipts, laws, gates, or product copy as support for anything. Analogue and instrument only. The quarantine on φ–zeta claims (REINMANN-2026-07-18) stands with a theorem-grade reopen bar.
