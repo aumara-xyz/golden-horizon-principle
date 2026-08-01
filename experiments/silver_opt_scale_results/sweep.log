@@ -101,3 +101,96 @@
 [SILVER-OPT-SCALE] 525/800 tasks (  1050.6s elapsed, last n=640 seed=5024)
 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
   warnings.warn('resource_tracker: There appear to be %d '
+[SILVER-OPT-SCALE] audits + self-tests:
+{
+  "wrapper_audit": {
+    "status": "PASSED",
+    "numeric_literals_checked": 60
+  },
+  "geo_pipeline_audit": "PASSED",
+  "injected_config_check": {
+    "sizes_n_k": [
+      [
+        256,
+        32
+      ],
+      [
+        320,
+        40
+      ],
+      [
+        384,
+        48
+      ],
+      [
+        448,
+        56
+      ],
+      [
+        512,
+        64
+      ],
+      [
+        640,
+        80
+      ],
+      [
+        768,
+        96
+      ],
+      [
+        1024,
+        128
+      ]
+    ],
+    "n_over_2k_all_4": true,
+    "seeds": [
+      5000,
+      5099,
+      100
+    ],
+    "geometries": [
+      "adversarial_tear",
+      "periodic_stride"
+    ],
+    "arms": [
+      "golden",
+      "silver",
+      "bronze",
+      "golden_shuffled",
+      "silver_shuffled"
+    ]
+  },
+  "geo_self_test": {
+    "substrate_audit_baseline": "PASSED",
+    "new_module_audit": "PASSED (67 numeric literals checked)",
+    "zero_damage": {
+      "n=256": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999164 (disclosure)",
+      "n=320": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999187 (disclosure)",
+      "n=384": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999228 (disclosure)",
+      "n=448": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999212 (disclosure)",
+      "n=512": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999166 (disclosure)",
+      "n=640": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999189 (disclosure)",
+      "n=768": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999235 (disclosure)",
+      "n=1024": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999215 (disclosure)"
+    },
+    "tripwire_multisets": "PASS \u2014 golden_shuffled/silver_shuffled slot multisets identical to parents and genuinely permuted (3 seeds x both sizes); every arm occupies the full slot range after substrate snapping (disclosed)",
+    "erase_counts": "PASS \u2014 exact erased counts for uniform_random and periodic_stride at every damage point, both sizes (burst/tear windows slice-exact)",
+    "determinism": "PASS \u2014 bit-identical repeat of the full cell (all 4 geometries incl. exhaustive adversarial tear) for golden and silver_shuffled at both sizes",
+    "elapsed_seconds": 190.2
+  }
+}
+[SILVER-OPT-SCALE] resuming: 2635 cells already done
+[SILVER-OPT-SCALE] 273 (size,seed) tasks to run (2635/4000 cells done)
+[SILVER-OPT-SCALE] 25/273 tasks (   196.8s elapsed, last n=640 seed=5051)
+[SILVER-OPT-SCALE] 50/273 tasks (   342.1s elapsed, last n=640 seed=5076)
+[SILVER-OPT-SCALE] 75/273 tasks (   514.7s elapsed, last n=768 seed=5001)
+[SILVER-OPT-SCALE] 100/273 tasks (   764.7s elapsed, last n=768 seed=5026)
+[SILVER-OPT-SCALE] 125/273 tasks (  1024.5s elapsed, last n=768 seed=5051)
+[SILVER-OPT-SCALE] 150/273 tasks (  1272.6s elapsed, last n=768 seed=5077)
+[SILVER-OPT-SCALE] 175/273 tasks (  1624.9s elapsed, last n=1024 seed=5000)
+[SILVER-OPT-SCALE] 200/273 tasks (  2212.8s elapsed, last n=1024 seed=5026)
+[SILVER-OPT-SCALE] 225/273 tasks (  2841.6s elapsed, last n=1024 seed=5051)
+[SILVER-OPT-SCALE] 250/273 tasks (  3468.9s elapsed, last n=1024 seed=5076)
+[SILVER-OPT-SCALE] 273/273 tasks (  3993.8s elapsed, last n=1024 seed=5099)
+[SILVER-OPT-SCALE] verdict = S2_NON_MONOTONE  n* = None
