@@ -1,0 +1,368 @@
+{
+ "test_id": "SILVER-OPT-GEO-v1",
+ "prereg": "experiments/SILVER_OPT_GEO_PREREG_v1.md",
+ "substrate": {
+  "module": "experiments/ghp_golden_heal_v2_probe.py (GH-RECOV family, commit 8a3c6ead) \u2014 placement, signal, recovery score, burst/tear/random damage reused verbatim",
+  "stride_and_stats": "experiments/silver_opt_pipeline.py \u2014 periodic_stride rule and paired bootstrap CI reused verbatim",
+  "alphas_pinned_in_substrate": {
+   "golden": 0.6180339887498949,
+   "silver": 0.41421356237309515,
+   "bronze": 0.3027756377319948
+  },
+  "frozen": {
+   "sigma": 0.001,
+   "rcond": 1e-10,
+   "damage_grid": [
+    0.6,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9
+   ],
+   "critical_band": [
+    0.75,
+    0.8,
+    0.85
+   ]
+  }
+ },
+ "config": {
+  "sizes_n_k": [
+   [
+    256,
+    32
+   ],
+   [
+    512,
+    64
+   ]
+  ],
+  "seeds": [
+   4000,
+   4099
+  ],
+  "n_seeds": 100,
+  "geometries": [
+   "contiguous_burst",
+   "adversarial_tear",
+   "uniform_random",
+   "periodic_stride"
+  ],
+  "arms": [
+   "golden",
+   "silver",
+   "bronze",
+   "uniform_random_placement",
+   "golden_shuffled",
+   "silver_shuffled"
+  ],
+  "shuffle_parents": {
+   "golden_shuffled": "golden",
+   "silver_shuffled": "silver"
+  },
+  "margin": 0.02,
+  "n_boot": 10000,
+  "bootstrap_seed": 20260801,
+  "substream_tags_new": {
+   "shuffle": 707,
+   "stride_phase": 808
+  }
+ },
+ "self_test": {
+  "substrate_audit_baseline": "PASSED",
+  "new_module_audit": "PASSED (67 numeric literals checked)",
+  "zero_damage": {
+   "n=256": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999178 (disclosure)",
+   "n=512": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999242 (disclosure)"
+  },
+  "tripwire_multisets": "PASS \u2014 golden_shuffled/silver_shuffled slot multisets identical to parents and genuinely permuted (3 seeds x both sizes); every arm occupies the full slot range after substrate snapping (disclosed)",
+  "erase_counts": "PASS \u2014 exact erased counts for uniform_random and periodic_stride at every damage point, both sizes (burst/tear windows slice-exact)",
+  "determinism": "PASS \u2014 bit-identical repeat of the full cell (all 4 geometries incl. exhaustive adversarial tear) for golden and silver_shuffled at both sizes",
+  "elapsed_seconds": 15.7
+ },
+ "cells": [
+  {
+   "size": 256,
+   "geometry": "contiguous_burst",
+   "median_CB": {
+    "golden": 0.6336821296749433,
+    "silver": 0.6357593710484959,
+    "bronze": 0.6311355030380243,
+    "uniform_random_placement": 0.14233267092173352,
+    "golden_shuffled": 0.2849394257999808,
+    "silver_shuffled": 0.29150820419411
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.635415059662695,
+    "silver": 0.6367594603091914,
+    "bronze": 0.6315402609881314,
+    "uniform_random_placement": 0.17724551294867857,
+    "golden_shuffled": 0.2704453980474837,
+    "silver_shuffled": 0.2708371989741715
+   },
+   "delta_sg_median": 0.002077241373552585,
+   "ci_sg": [
+    -0.013783123873410852,
+    0.01634957651550506
+   ],
+   "delta_sg_mean_sensitivity": 0.0013444006464964353,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.0046238680104715435,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.34874270387496253,
+    "silver_shuffled": 0.3442511668543859
+   }
+  },
+  {
+   "size": 256,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.2141089947104349,
+    "silver": 0.49226053742179415,
+    "bronze": 0.38255224005602384,
+    "uniform_random_placement": 0.0,
+    "golden_shuffled": 0.057221740227702024,
+    "silver_shuffled": 0.06155696063939479
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.2369084562509948,
+    "silver": 0.48997835995729866,
+    "bronze": 0.3606544953798045,
+    "uniform_random_placement": 0.002203319633855222,
+    "golden_shuffled": 0.041453457775269646,
+    "silver_shuffled": 0.04896229577710099
+   },
+   "delta_sg_median": 0.2781515427113592,
+   "ci_sg": [
+    0.2694786230673716,
+    0.28807549775199653
+   ],
+   "delta_sg_mean_sensitivity": 0.2530699037063039,
+   "silver_advantage_G1": true,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.2781515427113592,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.15688725448273289,
+    "silver_shuffled": 0.43070357678239934
+   }
+  },
+  {
+   "size": 256,
+   "geometry": "uniform_random",
+   "median_CB": {
+    "golden": 0.2841230630743192,
+    "silver": 0.28181677029663504,
+    "bronze": 0.28389303941870836,
+    "uniform_random_placement": 0.2862110949087582,
+    "golden_shuffled": 0.2782012977062961,
+    "silver_shuffled": 0.29975873951532367
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.2624335268734135,
+    "silver": 0.24496896367544455,
+    "bronze": 0.2605298260638127,
+    "uniform_random_placement": 0.26212337889704296,
+    "golden_shuffled": 0.25828265331840417,
+    "silver_shuffled": 0.2703749409613971
+   },
+   "delta_sg_median": -0.0023062927776841824,
+   "ci_sg": [
+    -0.027342587804331853,
+    0.011704623235865573
+   ],
+   "delta_sg_mean_sensitivity": -0.017464563197968935,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.0023062927776841824,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.005921765368023135,
+    "silver_shuffled": -0.017941969218688625
+   }
+  },
+  {
+   "size": 256,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.6114169517874394,
+    "silver": 0.6381821253770171,
+    "bronze": 0.632237300265472,
+    "uniform_random_placement": 0.2882976170351309,
+    "golden_shuffled": 0.2723193857173376,
+    "silver_shuffled": 0.2673383591681256
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.6016512009598449,
+    "silver": 0.6391379598129675,
+    "bronze": 0.6326164448744666,
+    "uniform_random_placement": 0.2642250929740214,
+    "golden_shuffled": 0.25856002434729675,
+    "silver_shuffled": 0.2430927222169468
+   },
+   "delta_sg_median": 0.02676517358957775,
+   "ci_sg": [
+    0.016440397500648518,
+    0.04232681993156251
+   ],
+   "delta_sg_mean_sensitivity": 0.03748675885312258,
+   "silver_advantage_G1": true,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.02676517358957775,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.3390975660701018,
+    "silver_shuffled": 0.37084376620889153
+   }
+  },
+  {
+   "size": 512,
+   "geometry": "contiguous_burst",
+   "median_CB": {
+    "golden": 0.6355421673020325,
+    "silver": 0.6320949873094308,
+    "bronze": 0.6343406858140532,
+    "uniform_random_placement": 0.11886535072164153,
+    "golden_shuffled": 0.2014451479013778,
+    "silver_shuffled": 0.17779453909864745
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.6343426854877214,
+    "silver": 0.6334713627086966,
+    "bronze": 0.6361003446483242,
+    "uniform_random_placement": 0.11039096177023565,
+    "golden_shuffled": 0.20424865462219735,
+    "silver_shuffled": 0.19869904441878464
+   },
+   "delta_sg_median": -0.00344717999260169,
+   "ci_sg": [
+    -0.01285553856771037,
+    0.0041177431491778715
+   ],
+   "delta_sg_mean_sensitivity": -0.0008713227790247968,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.00344717999260169,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.4340970194006547,
+    "silver_shuffled": 0.45430044821078336
+   }
+  },
+  {
+   "size": 512,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.23737845441449554,
+    "silver": 0.22997909398407074,
+    "bronze": 0.2940000975759961,
+    "uniform_random_placement": 0.0,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.26024469910455744,
+    "silver": 0.237451406137566,
+    "bronze": 0.31237297093125077,
+    "uniform_random_placement": 0.0,
+    "golden_shuffled": 0.019990224205274913,
+    "silver_shuffled": 0.019387940526419685
+   },
+   "delta_sg_median": -0.007399360430424801,
+   "ci_sg": [
+    -0.011750256918833977,
+    -0.001400611713019958
+   ],
+   "delta_sg_mean_sensitivity": -0.022793292966991452,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.06402100359192536,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.23737845441449554,
+    "silver_shuffled": 0.22997909398407074
+   }
+  },
+  {
+   "size": 512,
+   "geometry": "uniform_random",
+   "median_CB": {
+    "golden": 0.22906900510034978,
+    "silver": 0.23285125833177073,
+    "bronze": 0.2444503543644025,
+    "uniform_random_placement": 0.15059509765209117,
+    "golden_shuffled": 0.260338542804606,
+    "silver_shuffled": 0.18809124097787122
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.2108366285083102,
+    "silver": 0.21812139051624427,
+    "bronze": 0.21250668450334445,
+    "uniform_random_placement": 0.1917119360618188,
+    "golden_shuffled": 0.22150595918879248,
+    "silver_shuffled": 0.20278369926944062
+   },
+   "delta_sg_median": 0.003782253231420951,
+   "ci_sg": [
+    -0.0804852086623496,
+    0.08797819379717314
+   ],
+   "delta_sg_mean_sensitivity": 0.00728476200793407,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.015381349264052713,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": -0.03126953770425622,
+    "silver_shuffled": 0.044760017353899506
+   }
+  },
+  {
+   "size": 512,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.6212399796981312,
+    "silver": 0.6160711999036148,
+    "bronze": 0.6191684548754937,
+    "uniform_random_placement": 0.17181863883921167,
+    "golden_shuffled": 0.25444967198617596,
+    "silver_shuffled": 0.1936617953351255
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.6202200269698832,
+    "silver": 0.6068762125850855,
+    "bronze": 0.5957500102809553,
+    "uniform_random_placement": 0.2051698811827323,
+    "golden_shuffled": 0.22151642791951404,
+    "silver_shuffled": 0.20777158943559726
+   },
+   "delta_sg_median": -0.005168779794516354,
+   "ci_sg": [
+    -0.017559969208043848,
+    0.005050148088930717
+   ],
+   "delta_sg_mean_sensitivity": -0.013343814384797703,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.005168779794516354,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.3667903077119552,
+    "silver_shuffled": 0.4224094045684893
+   }
+  }
+ ],
+ "branches": {
+  "verdict": "UNRESOLVED",
+  "g1_silver_geometry_real": false,
+  "g1_classes_qualifying": [],
+  "g0_dissolved_noble_plateau": false,
+  "g2_reversed_artifact": false,
+  "g2_classes_qualifying": [],
+  "class_rule": "class qualifies iff its cell criterion holds at BOTH sizes; G1 needs >=3/4 classes, G2 >=2/4; precedence G1 -> G0 -> G2 -> UNRESOLVED (declared pre-run in this pipeline)"
+ },
+ "no_claim_verbatim": "Constant/placement axis only (M-006 forbids any structural reading: no silver fusion category exists). Not GHP evidence under any branch. The four-instrument line's other three instruments (T-111, T-112, KAM) are separately governed and untouched by this result."
+}
