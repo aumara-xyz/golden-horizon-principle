@@ -1,0 +1,776 @@
+{
+ "test_id": "SILVER-OPT-SCALE-v1",
+ "prereg": "experiments/SILVER_OPT_SCALE_PREREG_v1.md",
+ "pipeline_reused_unmodified": "experiments/silver_opt_geo_pipeline.py",
+ "wrapper": "experiments/silver_opt_scale_results/run_scale.py",
+ "substrate": {
+  "module": "experiments/ghp_golden_heal_v2_probe.py (GH-RECOV family) \u2014 placement, signal, recovery score, tear damage verbatim via silver_opt_geo_pipeline",
+  "alphas_pinned_in_substrate": {
+   "golden": 0.6180339887498949,
+   "silver": 0.41421356237309515,
+   "bronze": 0.3027756377319948
+  },
+  "frozen": {
+   "sigma": 0.001,
+   "rcond": 1e-10,
+   "damage_grid": [
+    0.6,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9
+   ],
+   "critical_band": [
+    0.75,
+    0.8,
+    0.85
+   ]
+  }
+ },
+ "config": {
+  "sizes_n_k": [
+   [
+    256,
+    32
+   ],
+   [
+    320,
+    40
+   ],
+   [
+    384,
+    48
+   ],
+   [
+    448,
+    56
+   ],
+   [
+    512,
+    64
+   ],
+   [
+    640,
+    80
+   ],
+   [
+    768,
+    96
+   ],
+   [
+    1024,
+    128
+   ]
+  ],
+  "n_over_2k": 4,
+  "seeds": [
+   5000,
+   5099
+  ],
+  "n_seeds": 100,
+  "geometries": [
+   "adversarial_tear",
+   "periodic_stride"
+  ],
+  "arms": [
+   "golden",
+   "silver",
+   "bronze",
+   "golden_shuffled",
+   "silver_shuffled"
+  ],
+  "margin": 0.02,
+  "n_boot": 10000,
+  "bootstrap_seed": 20260801
+ },
+ "self_test": {
+  "wrapper_audit": {
+   "status": "PASSED",
+   "numeric_literals_checked": 60
+  },
+  "geo_pipeline_audit": "PASSED",
+  "injected_config_check": {
+   "sizes_n_k": [
+    [
+     256,
+     32
+    ],
+    [
+     320,
+     40
+    ],
+    [
+     384,
+     48
+    ],
+    [
+     448,
+     56
+    ],
+    [
+     512,
+     64
+    ],
+    [
+     640,
+     80
+    ],
+    [
+     768,
+     96
+    ],
+    [
+     1024,
+     128
+    ]
+   ],
+   "n_over_2k_all_4": true,
+   "seeds": [
+    5000,
+    5099,
+    100
+   ],
+   "geometries": [
+    "adversarial_tear",
+    "periodic_stride"
+   ],
+   "arms": [
+    "golden",
+    "silver",
+    "bronze",
+    "golden_shuffled",
+    "silver_shuffled"
+   ]
+  },
+  "geo_self_test": {
+   "substrate_audit_baseline": "PASSED",
+   "new_module_audit": "PASSED (67 numeric literals checked)",
+   "zero_damage": {
+    "n=256": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999164 (disclosure)",
+    "n=320": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999187 (disclosure)",
+    "n=384": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999228 (disclosure)",
+    "n=448": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999212 (disclosure)",
+    "n=512": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999166 (disclosure)",
+    "n=640": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999189 (disclosure)",
+    "n=768": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999235 (disclosure)",
+    "n=1024": "PASS \u2014 perfect noiseless score every arm (min 1.000000000000); with the substrate's frozen observation noise, min 0.999215 (disclosure)"
+   },
+   "tripwire_multisets": "PASS \u2014 golden_shuffled/silver_shuffled slot multisets identical to parents and genuinely permuted (3 seeds x both sizes); every arm occupies the full slot range after substrate snapping (disclosed)",
+   "erase_counts": "PASS \u2014 exact erased counts for uniform_random and periodic_stride at every damage point, both sizes (burst/tear windows slice-exact)",
+   "determinism": "PASS \u2014 bit-identical repeat of the full cell (all 4 geometries incl. exhaustive adversarial tear) for golden and silver_shuffled at both sizes",
+   "elapsed_seconds": 190.2
+  }
+ },
+ "cells": [
+  {
+   "size": 256,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.206966028860946,
+    "silver": 0.49357289042136276,
+    "bronze": 0.37884163788109804,
+    "golden_shuffled": 0.052151970475841025,
+    "silver_shuffled": 0.05367995677963759
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.2212310628616979,
+    "silver": 0.4905135148508657,
+    "bronze": 0.3594039580208782,
+    "golden_shuffled": 0.039661001942400485,
+    "silver_shuffled": 0.039721298821252235
+   },
+   "delta_sg_median": 0.28660686156041676,
+   "ci_sg": [
+    0.2777564446411151,
+    0.29520831517247176
+   ],
+   "delta_sg_mean_sensitivity": 0.2692824519891678,
+   "silver_advantage_G1": true,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.28660686156041676,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.15481405838510498,
+    "silver_shuffled": 0.43989293364172516
+   }
+  },
+  {
+   "size": 256,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.6063431360776037,
+    "silver": 0.6354453858873974,
+    "bronze": 0.6241500569032721,
+    "golden_shuffled": 0.28449134066482307,
+    "silver_shuffled": 0.2906763378423646
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.5992842231594256,
+    "silver": 0.6367040181381536,
+    "bronze": 0.6259098205287436,
+    "golden_shuffled": 0.2687831902342071,
+    "silver_shuffled": 0.26126622009393596
+   },
+   "delta_sg_median": 0.0291022498097937,
+   "ci_sg": [
+    0.015960337150871085,
+    0.039622256298751185
+   ],
+   "delta_sg_mean_sensitivity": 0.03741979497872794,
+   "silver_advantage_G1": true,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.0291022498097937,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.32185179541278064,
+    "silver_shuffled": 0.34476904804503283
+   }
+  },
+  {
+   "size": 320,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.21390662860454102,
+    "silver": 0.29778560374514806,
+    "bronze": 0.21402766827932085,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.21503489293936875,
+    "silver": 0.3051071516160946,
+    "bronze": 0.21342312236495353,
+    "golden_shuffled": 0.027741136126695293,
+    "silver_shuffled": 0.03187250954934367
+   },
+   "delta_sg_median": 0.08387897514060705,
+   "ci_sg": [
+    0.04892117589818348,
+    0.12355337627781168
+   ],
+   "delta_sg_mean_sensitivity": 0.09007225867672583,
+   "silver_advantage_G1": true,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.08387897514060705,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.21390662860454102,
+    "silver_shuffled": 0.29778560374514806
+   }
+  },
+  {
+   "size": 320,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.610427894157062,
+    "silver": 0.5217679409590328,
+    "bronze": 0.63707147856977,
+    "golden_shuffled": 0.2799336920845882,
+    "silver_shuffled": 0.27711408729909615
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.6097939807231166,
+    "silver": 0.5073698113563275,
+    "bronze": 0.6392017274834615,
+    "golden_shuffled": 0.2521860765676058,
+    "silver_shuffled": 0.24869471832987172
+   },
+   "delta_sg_median": -0.08865995319802922,
+   "ci_sg": [
+    -0.12116471153203606,
+    -0.07411472859746589
+   ],
+   "delta_sg_mean_sensitivity": -0.10242416936678911,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": true,
+   "noble_max_pairwise_gap": 0.1153035376107372,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.3304942020724738,
+    "silver_shuffled": 0.24465385365993664
+   }
+  },
+  {
+   "size": 384,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.36014571995906286,
+    "silver": 0.44252182874741613,
+    "bronze": 0.5063408599372903,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.35829328376101416,
+    "silver": 0.42905911044410827,
+    "bronze": 0.5048600970943733,
+    "golden_shuffled": 0.02650055806656269,
+    "silver_shuffled": 0.02255286245120238
+   },
+   "delta_sg_median": 0.08237610878835327,
+   "ci_sg": [
+    0.04193514196349378,
+    0.11624919693489379
+   ],
+   "delta_sg_mean_sensitivity": 0.07076582668309411,
+   "silver_advantage_G1": true,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.14619513997822742,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.36014571995906286,
+    "silver_shuffled": 0.44252182874741613
+   }
+  },
+  {
+   "size": 384,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.42520862883652405,
+    "silver": 0.46178395672554656,
+    "bronze": 0.5177068297355449,
+    "golden_shuffled": 0.26477039489175275,
+    "silver_shuffled": 0.27038939652311733
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.41847212724099037,
+    "silver": 0.44448095683562927,
+    "bronze": 0.5181117457666286,
+    "golden_shuffled": 0.2244774109461816,
+    "silver_shuffled": 0.2341724421568512
+   },
+   "delta_sg_median": 0.03657532788902251,
+   "ci_sg": [
+    -0.020709683284324695,
+    0.11952179040848708
+   ],
+   "delta_sg_mean_sensitivity": 0.026008829594638905,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.09249820089902089,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.1604382339447713,
+    "silver_shuffled": 0.19139456020242923
+   }
+  },
+  {
+   "size": 448,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.2620099788691284,
+    "silver": 0.22942986473353588,
+    "bronze": 0.22984369426688828,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.3197353353941102,
+    "silver": 0.23474009982818989,
+    "bronze": 0.24598358688766553,
+    "golden_shuffled": 0.01771130867224768,
+    "silver_shuffled": 0.01867711369970306
+   },
+   "delta_sg_median": -0.03258011413559253,
+   "ci_sg": [
+    -0.10044588453366081,
+    -0.011854857754829723
+   ],
+   "delta_sg_mean_sensitivity": -0.08499523556592031,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": true,
+   "noble_max_pairwise_gap": 0.03258011413559253,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.2620099788691284,
+    "silver_shuffled": 0.22942986473353588
+   }
+  },
+  {
+   "size": 448,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.44019041765898465,
+    "silver": 0.4239925217310019,
+    "bronze": 0.6348950985339468,
+    "golden_shuffled": 0.23079541935597606,
+    "silver_shuffled": 0.2368350864124696
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.4434892277639593,
+    "silver": 0.3935410291453586,
+    "bronze": 0.6284496518154254,
+    "golden_shuffled": 0.2121391119201798,
+    "silver_shuffled": 0.2122728634415152
+   },
+   "delta_sg_median": -0.016197895927982764,
+   "ci_sg": [
+    -0.024707912416348565,
+    -0.008684883656957243
+   ],
+   "delta_sg_mean_sensitivity": -0.049948198618600725,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.21090257680294489,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.2093949983030086,
+    "silver_shuffled": 0.1871574353185323
+   }
+  },
+  {
+   "size": 512,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.23628222978582686,
+    "silver": 0.23400506485438405,
+    "bronze": 0.31823473090704313,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.26298716441840736,
+    "silver": 0.24626702730718864,
+    "bronze": 0.3189583105670899,
+    "golden_shuffled": 0.01904051999665608,
+    "silver_shuffled": 0.016868302496536834
+   },
+   "delta_sg_median": -0.00227716493144281,
+   "ci_sg": [
+    -0.009234666367059568,
+    0.005712736097722382
+   ],
+   "delta_sg_mean_sensitivity": -0.016720137111218725,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.08422966605265908,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.23628222978582686,
+    "silver_shuffled": 0.23400506485438405
+   }
+  },
+  {
+   "size": 512,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.6249462577703596,
+    "silver": 0.6211857781027466,
+    "bronze": 0.6131527734136293,
+    "golden_shuffled": 0.1689121201438521,
+    "silver_shuffled": 0.2138544116480916
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.6212974886861745,
+    "silver": 0.6112627284187871,
+    "bronze": 0.5929309481425736,
+    "golden_shuffled": 0.20210072771675358,
+    "silver_shuffled": 0.20897334407983842
+   },
+   "delta_sg_median": -0.003760479667613059,
+   "ci_sg": [
+    -0.013409053743434433,
+    0.002878213183908801
+   ],
+   "delta_sg_mean_sensitivity": -0.010034760267387366,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.011793484356730333,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.4560341376265075,
+    "silver_shuffled": 0.40733136645465495
+   }
+  },
+  {
+   "size": 640,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.23879725007056724,
+    "silver": 0.2392927229074047,
+    "bronze": 0.4198287412996128,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.23704232397910857,
+    "silver": 0.24991945958487918,
+    "bronze": 0.4054639280370974,
+    "golden_shuffled": 0.010928320994284077,
+    "silver_shuffled": 0.007792367645574127
+   },
+   "delta_sg_median": 0.0004954728368374572,
+   "ci_sg": [
+    -0.00400091511901745,
+    0.00757222462601412
+   ],
+   "delta_sg_mean_sensitivity": 0.012877135605770612,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.18103149122904555,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.23879725007056724,
+    "silver_shuffled": 0.2392927229074047
+   }
+  },
+  {
+   "size": 640,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.6004585291127089,
+    "silver": 0.504187159042699,
+    "bronze": 0.6225965552788123,
+    "golden_shuffled": 0.19738372726363212,
+    "silver_shuffled": 0.2267364075308103
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.6012533546807408,
+    "silver": 0.47244252474773135,
+    "bronze": 0.6111375900323381,
+    "golden_shuffled": 0.2020465184738957,
+    "silver_shuffled": 0.20447158698715287
+   },
+   "delta_sg_median": -0.09627137007000997,
+   "ci_sg": [
+    -0.14457627128678102,
+    -0.07503468350693059
+   ],
+   "delta_sg_mean_sensitivity": -0.12881082993300946,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": true,
+   "noble_max_pairwise_gap": 0.11840939623611335,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.4030748018490768,
+    "silver_shuffled": 0.27745075151188864
+   }
+  },
+  {
+   "size": 768,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.2435519227606875,
+    "silver": 0.24225894840731116,
+    "bronze": 0.24388197696419092,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.2531401771131726,
+    "silver": 0.2415176040086318,
+    "bronze": 0.24239170769765764,
+    "golden_shuffled": 0.008064626863336604,
+    "silver_shuffled": 0.004567445192927402
+   },
+   "delta_sg_median": -0.0012929743533763305,
+   "ci_sg": [
+    -0.00535157357507535,
+    0.0037713966063645152
+   ],
+   "delta_sg_mean_sensitivity": -0.011622573104540818,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.001623028556879763,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.2435519227606875,
+    "silver_shuffled": 0.24225894840731116
+   }
+  },
+  {
+   "size": 768,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.32971826399781495,
+    "silver": 0.2647665599065652,
+    "bronze": 0.6343387381411577,
+    "golden_shuffled": 0.13422818738864284,
+    "silver_shuffled": 0.13021922471629338
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.3896197184776326,
+    "silver": 0.26033108161964474,
+    "bronze": 0.6341074962922919,
+    "golden_shuffled": 0.17104561489572256,
+    "silver_shuffled": 0.169388510612966
+   },
+   "delta_sg_median": -0.06495170409124973,
+   "ci_sg": [
+    -0.1188682171219585,
+    -0.0060450171785512135
+   ],
+   "delta_sg_mean_sensitivity": -0.12928863685798786,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": true,
+   "noble_max_pairwise_gap": 0.3695721782345925,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.19549007660917211,
+    "silver_shuffled": 0.13454733519027184
+   }
+  },
+  {
+   "size": 1024,
+   "geometry": "adversarial_tear",
+   "median_CB": {
+    "golden": 0.2509349150840818,
+    "silver": 0.25977076132443444,
+    "bronze": 0.2508977693807833,
+    "golden_shuffled": 0.0,
+    "silver_shuffled": 0.0
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.2499710503399859,
+    "silver": 0.28613665845272324,
+    "bronze": 0.24936633894211668,
+    "golden_shuffled": 0.0052703639313237795,
+    "silver_shuffled": 0.0020616534898479284
+   },
+   "delta_sg_median": 0.008835846240352663,
+   "ci_sg": [
+    0.00332922954120083,
+    0.014022781540503333
+   ],
+   "delta_sg_mean_sensitivity": 0.036165608112737335,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": false,
+   "noble_max_pairwise_gap": 0.008872991943651154,
+   "noble_within_margin": true,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.2509349150840818,
+    "silver_shuffled": 0.25977076132443444
+   }
+  },
+  {
+   "size": 1024,
+   "geometry": "periodic_stride",
+   "median_CB": {
+    "golden": 0.5592478089278974,
+    "silver": 0.3114885576621591,
+    "bronze": 0.6214674384060974,
+    "golden_shuffled": 0.1300027538206157,
+    "silver_shuffled": 0.12820250576174944
+   },
+   "mean_CB_sensitivity": {
+    "golden": 0.5274606257560683,
+    "silver": 0.32254487953606703,
+    "bronze": 0.6197672760897472,
+    "golden_shuffled": 0.16130705796962064,
+    "silver_shuffled": 0.15982342456872492
+   },
+   "delta_sg_median": -0.24775925126573828,
+   "ci_sg": [
+    -0.26679377135610716,
+    -0.22475968189544607
+   ],
+   "delta_sg_mean_sensitivity": -0.2049157462200013,
+   "silver_advantage_G1": false,
+   "golden_advantage_G2": true,
+   "noble_max_pairwise_gap": 0.3099788807439383,
+   "noble_within_margin": false,
+   "tripwire_parent_minus_shuffled_median_CB": {
+    "golden_shuffled": 0.42924505510728167,
+    "silver_shuffled": 0.18328605190040967
+   }
+  }
+ ],
+ "branches": {
+  "verdict": "S2_NON_MONOTONE",
+  "n_star": null,
+  "flags": {
+   "s0_no_reproduction": false,
+   "s1_crossover_located": false,
+   "s2_non_monotone": true,
+   "base_qual_256": true,
+   "prefix_pattern": false,
+   "monotone_within_cis": false,
+   "n_leading_excl_pos": 3
+  },
+  "tear_curve": [
+   {
+    "n": 256,
+    "delta_sg_median": 0.28660686156041676,
+    "ci95": [
+     0.2777564446411151,
+     0.29520831517247176
+    ],
+    "ci_excludes_0_pos": true,
+    "ci_includes_0": false
+   },
+   {
+    "n": 320,
+    "delta_sg_median": 0.08387897514060705,
+    "ci95": [
+     0.04892117589818348,
+     0.12355337627781168
+    ],
+    "ci_excludes_0_pos": true,
+    "ci_includes_0": false
+   },
+   {
+    "n": 384,
+    "delta_sg_median": 0.08237610878835327,
+    "ci95": [
+     0.04193514196349378,
+     0.11624919693489379
+    ],
+    "ci_excludes_0_pos": true,
+    "ci_includes_0": false
+   },
+   {
+    "n": 448,
+    "delta_sg_median": -0.03258011413559253,
+    "ci95": [
+     -0.10044588453366081,
+     -0.011854857754829723
+    ],
+    "ci_excludes_0_pos": false,
+    "ci_includes_0": false
+   },
+   {
+    "n": 512,
+    "delta_sg_median": -0.00227716493144281,
+    "ci95": [
+     -0.009234666367059568,
+     0.005712736097722382
+    ],
+    "ci_excludes_0_pos": false,
+    "ci_includes_0": true
+   },
+   {
+    "n": 640,
+    "delta_sg_median": 0.0004954728368374572,
+    "ci95": [
+     -0.00400091511901745,
+     0.00757222462601412
+    ],
+    "ci_excludes_0_pos": false,
+    "ci_includes_0": true
+   },
+   {
+    "n": 768,
+    "delta_sg_median": -0.0012929743533763305,
+    "ci95": [
+     -0.00535157357507535,
+     0.0037713966063645152
+    ],
+    "ci_excludes_0_pos": false,
+    "ci_includes_0": true
+   },
+   {
+    "n": 1024,
+    "delta_sg_median": 0.008835846240352663,
+    "ci95": [
+     0.00332922954120083,
+     0.014022781540503333
+    ],
+    "ci_excludes_0_pos": true,
+    "ci_includes_0": false
+   }
+  ],
+  "rule": "S0 iff CI(256) includes 0 (evaluated first). S1 iff Delta_sg(256)>MARGIN with CI(256) excluding 0 positively, the positive-exclusion pattern is a strict prefix of the size list (dies off within range, never returns), and Delta_sg decreases monotonically within CIs (consecutive decrease OR CI overlap); n* = last size whose CI excludes 0. S2 iff the advantage re-emerges (CI excluding 0 positively at a size strictly above one whose CI includes 0). Precedence S0 -> S1 -> S2 -> UNRESOLVED; declared and committed before the sweep ran."
+ },
+ "no_claim_verbatim": "Constant/placement axis; not GHP physics under any branch; no phi literal in code (derived only)."
+}
