@@ -1,0 +1,200 @@
+/* Zeta Harp v2 — observatory chrome. Museum-dark, hairline, no neon grid. */
+:root {
+  --bg: #04060b;
+  --ink: #c6d1e2;
+  --dim: #6b7890;
+  --faint: #3a4459;
+  --blue: #5b8ef2;    /* positive real contribution */
+  --purple: #a06bff;  /* negative real contribution */
+  --gold: #e2b45a;    /* resultant */
+  --hair: rgba(198, 214, 240, 0.13);
+  --panel: rgba(7, 10, 18, 0.82);
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+body { font-family: var(--sans); color: var(--ink); font-size: 13px; }
+canvas#gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+
+.hud { position: fixed; z-index: 5; pointer-events: none; }
+.hud * { pointer-events: auto; }
+
+/* ---- top bar ---------------------------------------------------------- */
+#topbar {
+  top: 0; left: 0; right: 0; display: flex; align-items: flex-start;
+  justify-content: space-between; padding: 14px 18px 0;
+}
+#masthead h1 {
+  font-family: var(--serif); font-weight: 400; letter-spacing: 0.34em;
+  font-size: 15px; color: var(--ink); text-transform: uppercase;
+}
+#masthead .sub {
+  font-family: var(--serif); letter-spacing: 0.22em; font-size: 10px;
+  color: var(--dim); text-transform: uppercase; margin-top: 4px;
+}
+#standing-label {
+  margin-top: 8px; font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.08em; color: var(--dim); max-width: 460px; line-height: 1.5;
+}
+#topright { text-align: right; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.badge {
+  display: inline-block; font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.12em; padding: 4px 10px; border: 1px solid var(--hair);
+  color: var(--dim); background: var(--panel); border-radius: 2px;
+}
+.badge.truth { color: #8fd0a8; border-color: rgba(143, 208, 168, 0.35); }
+.badge.artistic { color: #d9a6f2; border-color: rgba(217, 166, 242, 0.4); }
+button.ghost {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--hair);
+  padding: 5px 12px; cursor: pointer; border-radius: 2px;
+}
+button.ghost:hover { border-color: rgba(198, 214, 240, 0.4); }
+button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.45); }
+
+/* ---- bottom navigation ------------------------------------------------- */
+#nav {
+  left: 0; right: 0; bottom: 0; padding: 10px 18px 14px;
+  background: linear-gradient(to top, rgba(4, 6, 11, 0.92), rgba(4, 6, 11, 0));
+}
+#nav .row { display: flex; align-items: center; gap: 14px; }
+#tslider { flex: 1; -webkit-appearance: none; appearance: none; height: 2px;
+  background: var(--faint); outline: none; }
+#tslider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 11px; height: 11px;
+  border-radius: 50%; background: var(--gold); border: none; cursor: pointer;
+}
+#tslider::-moz-range-thumb { width: 11px; height: 11px; border-radius: 50%;
+  background: var(--gold); border: none; cursor: pointer; }
+.readout { font-family: var(--mono); font-size: 11px; color: var(--ink); white-space: nowrap; }
+.readout b { color: var(--gold); font-weight: 400; }
+.readout .lbl { color: var(--dim); }
+#presets { display: flex; gap: 6px; }
+#navmeta { display: flex; gap: 22px; margin-top: 7px; font-family: var(--mono);
+  font-size: 10.5px; color: var(--dim); flex-wrap: wrap; }
+#navmeta b { color: var(--ink); font-weight: 400; }
+
+/* ---- generic panel ----------------------------------------------------- */
+.panel {
+  position: fixed; z-index: 6; background: var(--panel);
+  border: 1px solid var(--hair); border-radius: 3px; padding: 12px 14px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.panel h2 {
+  font-family: var(--mono); font-size: 10px; font-weight: 400;
+  letter-spacing: 0.18em; color: var(--dim); text-transform: uppercase;
+  margin-bottom: 8px; display: flex; justify-content: space-between; gap: 12px;
+}
+.panel h2 .x { cursor: pointer; color: var(--faint); }
+.panel h2 .x:hover { color: var(--ink); }
+.hidden { display: none !important; }
+.mono { font-family: var(--mono); }
+.dim { color: var(--dim); }
+.caveat {
+  font-family: var(--mono); font-size: 9px; color: var(--dim);
+  line-height: 1.5; letter-spacing: 0.02em; margin-top: 8px; max-width: 340px;
+}
+.kv { font-family: var(--mono); font-size: 10.5px; line-height: 1.75; }
+.kv .k { color: var(--dim); }
+.kv .v { color: var(--ink); }
+.kv .g { color: var(--gold); }
+
+/* ---- ribbon ------------------------------------------------------------ */
+#ribbonPanel { left: 18px; right: 18px; bottom: 74px; padding: 8px 12px 6px; }
+#ribbon { width: 100%; height: 110px; display: block; }
+#ribbonKeys { display: flex; gap: 14px; margin-top: 4px; font-family: var(--mono);
+  font-size: 9.5px; color: var(--dim); flex-wrap: wrap; }
+.layerToggle { cursor: pointer; user-select: none; }
+.layerToggle .swatch { display: inline-block; width: 14px; height: 2px;
+  vertical-align: middle; margin-right: 5px; }
+.layerToggle.off { opacity: 0.32; }
+
+/* ---- flower ------------------------------------------------------------ */
+#flowerPanel { left: 18px; top: 118px; width: 384px; }
+#flower { width: 356px; height: 356px; display: block; }
+#flowerNums { margin-top: 6px; }
+
+/* ---- inspector --------------------------------------------------------- */
+#inspectorPanel { right: 18px; top: 118px; width: 300px; }
+
+/* ---- microscope -------------------------------------------------------- */
+#microPanel { right: 18px; top: 118px; width: 430px; max-height: calc(100vh - 300px); overflow-y: auto; }
+#microZeroSel { width: 100%; background: #0a0e18; color: var(--ink);
+  border: 1px solid var(--hair); font-family: var(--mono); font-size: 10.5px;
+  padding: 4px; margin-bottom: 8px; }
+#microCurve { width: 400px; height: 130px; display: block; }
+#microBars { width: 400px; height: 150px; display: block; margin-top: 8px; }
+
+/* ---- audio ------------------------------------------------------------- */
+#audioPanel { left: 18px; bottom: 208px; width: 384px; }
+#audioPanel .ctl { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+#audioPanel input[type="range"] { flex: 1; -webkit-appearance: none; appearance: none;
+  height: 2px; background: var(--faint); }
+#audioPanel input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--ink); cursor: pointer; }
+#audioPanel input[type="range"]::-moz-range-thumb { width: 9px; height: 9px;
+  border-radius: 50%; background: var(--ink); border: none; cursor: pointer; }
+#honesty { margin-top: 6px; font-family: var(--mono); font-size: 9.5px; color: var(--dim); }
+#artctl { border-top: 1px solid var(--hair); margin-top: 10px; padding-top: 8px; }
+#artctl label { font-family: var(--mono); font-size: 10px; color: var(--dim);
+  display: inline-flex; gap: 6px; align-items: center; margin-right: 14px; cursor: pointer; }
+
+/* ---- fence ------------------------------------------------------------- */
+#fencePanel {
+  inset: 0; z-index: 20; overflow-y: auto; border: none; border-radius: 0;
+  background: rgba(3, 5, 9, 0.96); padding: 48px 0;
+}
+#fenceInner { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+#fenceInner h2 { font-family: var(--serif); font-size: 13px; letter-spacing: 0.28em;
+  color: var(--ink); text-transform: uppercase; margin: 26px 0 10px; display: block; }
+#fenceInner p, #fenceInner li {
+  font-size: 12.5px; line-height: 1.75; color: var(--ink); margin-bottom: 8px;
+}
+#fenceInner .frm { font-family: var(--mono); font-size: 11.5px; color: var(--gold);
+  background: rgba(226, 180, 90, 0.05); border-left: 2px solid rgba(226, 180, 90, 0.3);
+  padding: 8px 12px; margin: 8px 0; white-space: pre-wrap; line-height: 1.7; }
+#fenceInner .lawline { font-family: var(--mono); font-size: 10.5px; color: var(--dim);
+  letter-spacing: 0.05em; line-height: 1.8; }
+#fenceInner table { border-collapse: collapse; font-family: var(--mono);
+  font-size: 10.5px; margin: 8px 0; }
+#fenceInner td, #fenceInner th { border: 1px solid var(--hair); padding: 4px 10px;
+  color: var(--ink); font-weight: 400; text-align: left; }
+#fenceInner th { color: var(--dim); }
+
+/* ---- keys help / footer chips ----------------------------------------- */
+#keysHint {
+  right: 18px; bottom: 74px; font-family: var(--mono); font-size: 9.5px;
+  color: var(--faint); text-align: right; line-height: 1.8; letter-spacing: 0.05em;
+}
+#keysHint b { color: var(--dim); font-weight: 400; }
+
+/* ---- event labels (ignition, crossing) --------------------------------- */
+#eventLabel {
+  left: 50%; top: 24%; transform: translateX(-50%); font-family: var(--mono);
+  font-size: 11px; letter-spacing: 0.14em; color: var(--gold);
+  text-align: center; opacity: 0; transition: opacity 0.5s; line-height: 1.9;
+  text-shadow: 0 0 18px rgba(4, 6, 11, 0.9); pointer-events: none;
+}
+#eventLabel .sub2 { font-size: 9.5px; color: var(--dim); letter-spacing: 0.1em; }
+
+/* ---- opening ----------------------------------------------------------- */
+#opening {
+  position: fixed; inset: 0; z-index: 30; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  background: transparent; pointer-events: none;
+}
+#opening .line {
+  font-family: var(--serif); letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ink); font-size: 14px; opacity: 0; transition: opacity 1.4s;
+  margin: 8px 0; max-width: 700px; line-height: 2;
+}
+#opening .line.mono { font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.12em; color: var(--dim); text-transform: none; }
+#opening .line.title { font-size: 24px; }
+#skipBtn { position: fixed; right: 18px; bottom: 18px; z-index: 31; opacity: 0.7; }
+#vignette { position: fixed; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 52%, rgba(2, 3, 6, 0.55) 100%); }
+#fade { position: fixed; inset: 0; z-index: 29; background: #000; pointer-events: none;
+  transition: opacity 2.2s; }

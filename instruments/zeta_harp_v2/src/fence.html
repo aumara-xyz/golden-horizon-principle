@@ -1,0 +1,66 @@
+<h2 style="margin-top:0">The fence</h2>
+<p class="lawline">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT /
+NOT EVIDENCE FOR RH OR GHP</p>
+<p>This page renders and sonifies one object: the Riemann-Siegel main sum for Hardy's
+Z-function on the critical line. All of the mathematics below is standard (DLMF 25.10)
+and none of it is claimed as new. Every number on screen is computed from these formulas
+— nothing here is measured from nature, and nothing here certifies anything.</p>
+
+<h2>The formulas</h2>
+<div class="frm">Z(t) = e<sup>i&theta;(t)</sup> &zeta;(&frac12; + it)&emsp;(real for real t)
+
+&theta;(t) &asymp; (t/2)&thinsp;ln(t/2&pi;) &minus; t/2 &minus; &pi;/8 + 1/(48t) + 7/(5760t&sup3;)&emsp;(working asymptotic)
+&theta;&prime;(t) &asymp; &frac12;&thinsp;ln(t/2&pi;) &minus; 1/(48t&sup2;) &minus; 7/(1920t&#8308;)
+
+N(t) = &lfloor;&radic;(t/2&pi;)&rfloor;
+a<sub>n</sub> = 2/&radic;n&emsp;(computed spectral amplitude)
+&phi;<sub>n</sub>(t) = &theta;(t) &minus; t&thinsp;ln n
+c<sub>n</sub>(t) = a<sub>n</sub> cos &phi;<sub>n</sub>(t)
+M(t) = &Sigma;<sub>n=1..N(t)</sub> c<sub>n</sub>(t)&emsp;(the main sum — everything drawn and heard)
+R_ref(t) = Z_ref(t) &minus; M(t)&emsp;(remainder, by subtraction from high-precision reference)
+
+t<sub>n</sub> = 2&pi;n&sup2;&emsp;(CUTOFF-ENTRY height of term n — a height, never a frequency)
+h<sub>n</sub>(u) = ( a<sub>n</sub> cos &phi;<sub>n</sub>(u), a<sub>n</sub> sin &phi;<sub>n</sub>(u), scale_t &middot; (u &minus; t&#8320;) )&emsp;(3D phase trajectory)
+f_audio_n = v_t &middot; (&theta;&prime;(t) &minus; ln n)/2&pi;&emsp;(Truth Audio law)</div>
+
+<h2>What is omitted</h2>
+<p>The geometry and the audio render the main sum M(t) only. The remainder
+R_ref(t) = Z_ref(t) &minus; M(t) is <em>not</em> drawn as geometry; it is shown as a
+separate labeled trace where fixture data exists, and disclosed here. Fixture-measured
+scale of the omitted remainder (max |R_ref| over each frozen Gate-2 reference window):</p>
+<table id="fenceRTable"><tr><th>window</th><th>height range</th><th>max |R_ref|</th><th>RMS R_ref</th><th>max |M|</th></tr></table>
+<p class="lawline" id="fenceRNote"></p>
+
+<h2>Disclosed rendering and audio constants</h2>
+<p class="lawline" id="fenceDisclosures">(live values fill in here)</p>
+<p>These are the only free constants in Truth Mode. There are no fitted parameters, no
+per-string tuning, no frequency remapping. The phasor pictures use the imaginary part of
+the phasor sum as an AUXILIARY visualization coordinate: only the real part equals M(t),
+and the magnitude of the phasor sum is never labeled |Z|.</p>
+
+<h2>Labeling laws in force</h2>
+<p class="lawline">
+&bull; amplitudes 2/&radic;n are "computed spectral", never "measured"<br>
+&bull; 2&pi;n&sup2; is a cutoff-entry height, never a frequency<br>
+&bull; sign changes of the main sum are "computed crossings (finite approximation)";
+sign changes of fixture Z_ref are "computed reference crossings"; neither is a certified zero<br>
+&bull; the refined zero list is Odlyzko-derived and mpmath-refined, NOT certified<br>
+&bull; heights near 10&#8312; sit at the float64 phase-accuracy frontier (~10&#8315;&#8311; rad);
+that is where this instrument's honest range ends</p>
+
+<h2>Validation</h2>
+<p>Before this page shipped, the inline &theta;, &theta;&prime; and M(t) were checked
+against frozen high-precision fixtures (mpmath, 80 significant digits) on four windows —
+W1 [100,160], W2 near 10&#8308;, W3 near 10&#8310;, W4 near 10&#8312; — plus a
+40-entry refined zero list. Compact excerpts of those fixtures are embedded in this page
+and drawn as the reference overlays; the full fixtures, their SHA-256 manifest, and the
+check harness live in the repository at instruments/zeta_harp_v2/reference/.</p>
+<table id="fenceVTable"><tr><th>window</th><th>points embedded</th><th>max |M_inline &minus; M_fixture|</th></tr></table>
+
+<h2>The Riemann fence</h2>
+<p><b>Nothing in this instrument is evidence for or against the Riemann Hypothesis.</b>
+It draws a finite, classical approximation to a function whose zeros are the subject of
+that conjecture, and it checks its own arithmetic against published references. That is
+all it does. If it is beautiful, the beauty belongs to the mathematics, not to any claim.</p>
+
+<p style="margin-top:24px"><button class="ghost" data-close="fencePanel">return to the instrument [i]</button></p>

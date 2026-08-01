@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeta Harp — Riemann-Siegel Phase Observatory</title>
+<!--
+  KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT /
+  NOT EVIDENCE FOR RH OR GHP
+  Built under instruments/zeta_harp_v2/ (Gates 3-6). Self-contained: no CDN,
+  no network. Math spec: instruments/zeta_harp_v2/MATH_SPEC.md.
+-->
+<style>
+%CSS%
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<div id="vignette"></div>
+
+<div id="topbar" class="hud">
+  <div id="masthead">
+    <h1 id="mastTitle">Riemann-Siegel Phase Observatory</h1>
+    <div class="sub" id="mastSub">the main sum of Hardy's Z, drawn as phase trajectories</div>
+    <div id="standing-label">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP</div>
+  </div>
+  <div id="topright">
+    <button class="ghost" id="modeBtn">installation mode</button>
+    <span class="badge truth" id="truthBadge">TRUTH MODE — no per-string tuning, no remapping</span>
+    <span class="badge" id="valBadge">validated: W1-W4 fixtures embedded</span>
+  </div>
+</div>
+
+<div id="eventLabel" class="hud"></div>
+
+<div id="keysHint" class="hud panel" style="background:transparent;border:none;">
+  <b>drag</b> orbit &nbsp; <b>scroll / W S</b> fly along t<br>
+  <b>space</b> freeze slice &nbsp; <b>F</b> phasor flower<br>
+  <b>R</b> ribbon &nbsp; <b>Z</b> zero microscope &nbsp; <b>U</b> audio<br>
+  <b>A</b> cruise &nbsp; <b>I</b> fence &nbsp; <b>esc</b> close panels
+</div>
+
+<div id="ribbonPanel" class="panel hidden">
+  <h2>Z ribbon — height window <span class="x" data-close="ribbonPanel">[close]</span></h2>
+  <canvas id="ribbon" width="1200" height="110"></canvas>
+  <div id="ribbonKeys">
+    <span class="layerToggle" id="lyrM"><span class="swatch" style="background:var(--gold)"></span>main sum M(t) — computed, N(t) terms</span>
+    <span class="layerToggle" id="lyrZ"><span class="swatch" style="background:var(--blue)"></span>Z_ref — high-precision reference (fixture)</span>
+    <span class="layerToggle" id="lyrR"><span class="swatch" style="background:var(--purple)"></span>R_ref = Z_ref &minus; M — remainder (fixture)</span>
+    <span class="dim" id="ribbonNote"></span>
+  </div>
+</div>
+
+<div id="flowerPanel" class="panel hidden">
+  <h2>Phasor flower — frozen slice <span class="x" data-close="flowerPanel">[close]</span></h2>
+  <canvas id="flower" width="712" height="712"></canvas>
+  <div class="kv" id="flowerNums"></div>
+  <div class="caveat">Polygon chained in n-order: the partial-sum path depends on that
+  ordering; only the endpoint (the resultant) is order-independent. The vertical axis is
+  an AUXILIARY visualization coordinate — the real part of the phasor sum equals M(t);
+  the resultant's length is not |Z| and is never labeled |Z|. Click a phasor to inspect
+  its term.</div>
+</div>
+
+<div id="inspectorPanel" class="panel hidden">
+  <h2>Term inspector <span class="x" data-close="inspectorPanel">[close]</span></h2>
+  <div class="kv" id="inspectorBody">click a helix or a phasor to select a term</div>
+  <div style="margin-top:8px"><button class="ghost" id="voiceBtn">voice this term</button></div>
+</div>
+
+<div id="microPanel" class="panel hidden">
+  <h2>Zero microscope — refined reference list <span class="x" data-close="microPanel">[close]</span></h2>
+  <select id="microZeroSel"></select>
+  <canvas id="microCurve" width="800" height="260"></canvas>
+  <canvas id="microBars" width="800" height="300"></canvas>
+  <div class="kv" id="microNums"></div>
+  <div class="caveat">Zeros above come only from the embedded refined reference list
+  (Odlyzko-derived table, refined with high-precision Z; NOT certified). Sign changes of
+  the main sum computed here are "computed crossings (finite approximation)" — the offset
+  between our crossing and the reference ordinate is the finite-sum error, shown above.
+  The reference table covers t &lt; ~75000; no reference zeros exist in this build above
+  that height.</div>
+</div>
+
+<div id="audioPanel" class="panel hidden">
+  <h2>Truth audio <span class="x" data-close="audioPanel">[close]</span></h2>
+  <div class="ctl"><button class="ghost" id="audioBtn">enable audio</button>
+    <span class="readout dim" id="audioState">off — audio starts only on your gesture</span></div>
+  <div class="ctl"><span class="readout"><span class="lbl">v_t</span></span>
+    <input type="range" id="vtSlider" min="0" max="1000" value="520">
+    <span class="readout" id="vtReadout"></span></div>
+  <div class="ctl"><span class="readout"><span class="lbl">gain</span></span>
+    <input type="range" id="gainSlider" min="0" max="100" value="35">
+    <span class="readout" id="gainReadout"></span></div>
+  <div class="mono" style="font-size:10px;color:var(--dim);line-height:1.7">
+    f_audio_n = v_t &middot; (&theta;&prime;(t) &minus; ln n) / 2&pi; &nbsp;&mdash;&nbsp; one global
+    time-dilation v_t, one global gain, disclosed above. What you hear is the phase law,
+    time-compressed. No per-string tuning in Truth Mode.</div>
+  <div id="honesty"></div>
+  <div id="artctl">
+    <label><input type="checkbox" id="reverbChk"> reverb</label>
+    <label><input type="checkbox" id="quantChk"> scale-quantize voiced terms</label>
+    <div class="caveat" style="margin-top:4px">These controls leave Truth Mode: enabling
+    either flips the badge to ARTISTIC SONIFICATION.</div>
+  </div>
+</div>
+
+<div id="fencePanel" class="panel hidden">
+  <div id="fenceInner">%FENCE%</div>
+</div>
+
+<div id="nav" class="hud">
+  <div class="row">
+    <span class="readout"><span class="lbl">t&nbsp;</span><b id="tReadout"></b></span>
+    <input type="range" id="tslider" min="0" max="10000" value="0">
+    <div id="presets">
+      <button class="ghost" data-t="130">130</button>
+      <button class="ghost" data-t="10000">10&#8308;</button>
+      <button class="ghost" data-t="1000000">10&#8310;</button>
+      <button class="ghost" data-t="100000000">10&#8312;</button>
+    </div>
+  </div>
+  <div id="navmeta">
+    <span>N(t) = <b id="nReadout"></b> terms</span>
+    <span>M(t) = <b id="mReadout"></b></span>
+    <span>next cutoff entry: term <b id="nextTermReadout"></b> at t = <b id="nextTReadout"></b> (&Delta;t <b id="countdownReadout"></b>)</span>
+    <span id="fixtureHere" class="dim"></span>
+  </div>
+</div>
+
+<div id="fade"></div>
+<div id="opening">
+  <div class="line mono" id="op1">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP</div>
+  <div class="line" id="op2">every curve is a formula &mdash; every number is checkable</div>
+  <div class="line mono" id="op3"></div>
+  <div class="line title" id="opTitle">ZETA HARP<br><span style="font-size:13px;letter-spacing:.4em">RIEMANN-SIEGEL PHASE OBSERVATORY</span></div>
+</div>
+<button class="ghost" id="skipBtn">skip opening</button>
+
+<script id="zh-fixtures" type="application/json">%FIXTURES%</script>
+
+<script id="zh-math">
+%MATH%
+</script>
+
+<script id="zh-app">
+%APP%
+</script>
+</body>
+</html>
