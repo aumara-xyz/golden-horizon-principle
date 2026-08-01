@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>A Simple Reading — companion to the Luminara portal</title>
+<style>
+  body { margin:0; background:#0b0e14; color:#d8dee9; font-family:Georgia, serif; }
+  #wrap { max-width:960px; margin:0 auto; padding:18px 16px 8px; }
+  h1 { font-size:20px; font-weight:normal; letter-spacing:3px; margin:6px 0 2px; text-align:center; }
+  .sub { color:#7a8494; font-size:13px; text-align:center; margin-bottom:14px; }
+  .castrow { text-align:center; margin:10px 0 4px; }
+  button { background:#151b28; color:#d8dee9; border:1px solid #2a3348; border-radius:6px;
+           padding:10px 22px; font-family:inherit; font-size:15px; letter-spacing:2px; cursor:pointer; }
+  button:hover { border-color:#c9a227; }
+  input { background:#0d1117; color:#aeb8c9; border:1px solid #2a3348; border-radius:6px;
+          padding:8px 10px; font-family:inherit; font-size:13px; width:150px; text-align:center; }
+  #seedline { text-align:center; color:#7a8494; font-size:12.5px; min-height:20px; margin:8px 0 2px; }
+  #seedline b { color:#e8c95a; font-family:monospace; letter-spacing:1px; }
+  #spread { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:12px; }
+  #spread.one { grid-template-columns:minmax(0,460px); justify-content:center; }
+  #spread.one .pos { animation: fadein 0.6s; cursor:pointer; }
+  @keyframes fadein { from { opacity:0; } to { opacity:1; } }
+  .modes { text-align:center; margin-top:10px; display:none; }
+  .modes button { font-size:12px; padding:6px 12px; letter-spacing:1px; margin:0 3px; }
+  .modes button.on { border-color:#c9a227; color:#e8c95a; }
+  .mirror { margin-top:8px; border-top:1px dashed #1d2433; padding-top:8px; text-align:center; }
+  .mirror .mlab { color:#7a8494; font-size:11px; font-style:italic; margin-bottom:2px; }
+  .onehint { text-align:center; color:#5b6472; font-size:11px; margin-top:6px; display:none; }
+  .pos { background:#0d1117; border:1px solid #1d2433; border-radius:10px; padding:12px; min-height:120px; }
+  .pos h2 { margin:0; font-size:13px; letter-spacing:2.5px; font-weight:normal; color:#c9a227; text-align:center; }
+  .pos .gloss { color:#5b6472; font-size:11.5px; text-align:center; margin:2px 0 8px; font-style:italic; }
+  .glyph { display:block; margin:0 auto; }
+  .stack { text-align:center; font-size:20px; letter-spacing:10px; margin:6px 0 2px; color:#d8dee9; }
+  .cname { text-align:center; font-size:16px; margin:2px 0; }
+  .cletter { color:#7a8494; font-size:12px; }
+  .meta { text-align:center; color:#7a8494; font-size:11.5px; line-height:1.5; margin:4px 0; }
+  .meta b { color:#aeb8c9; font-weight:normal; }
+  .essence { color:#98a2b3; font-size:12.5px; line-height:1.55; margin-top:8px; border-top:1px solid #1d2433; padding-top:8px; }
+  .silence { color:#c9a227; }
+  .silence p { margin:5px 0; font-size:13px; line-height:1.5; }
+  .silnote { color:#5b6472; font-size:11px; font-style:italic; }
+  #cubebox { text-align:center; margin:16px 0 4px; }
+  #cubebox .cap { color:#5b6472; font-size:12px; max-width:560px; margin:6px auto 0; line-height:1.5; }
+  .names { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:14px; }
+  .names span { border:1px solid #1d2433; border-radius:12px; padding:3px 10px; font-size:10.5px; color:#5b6472; letter-spacing:1px; }
+  .banner { text-align:center; font-size:11.5px; color:#5b6472; margin-top:12px; border-top:1px solid #1d2433; padding-top:10px; line-height:1.6; }
+  .banner a { color:#7a8494; }
+  @media (max-width:760px){ #spread { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <h1>A SIMPLE READING</h1>
+  <div class="sub">Three cards into the three fixed positions. Hold your question; nothing you think is collected. It shows; it never decides.</div>
+  <div class="castrow">
+    <button id="cast">CAST</button>
+    &nbsp; <input id="seedin" placeholder="or replay a seed" spellcheck="false">
+  </div>
+  <div id="seedline">the chance is committed and witnessable: every cast declares its seed, and the same seed always returns the same three cards.</div>
+  <div class="modes" id="modes">
+    <button id="mThree" class="on">THE THREE</button>
+    <button id="mOne">THE ONE</button>
+    <button id="mMirror">MEET THE MIRROR</button>
+  </div>
+  <div id="spread"></div>
+  <div class="onehint" id="onehint">one position at a time — the reading walks Trefoil, Genus, Phi; touch the card to walk it yourself</div>
+  <div id="cubebox" style="display:none">
+    <canvas id="cube" width="240" height="210"></canvas>
+    <div class="cap">Where your three cards live on the 27-cell frame — the same cube as the observers page.
+    Each card's signed weight q is balanced ternary: the deck is the signed number line &minus;13&hellip;+13, The Seed at zero, and the torus closes by counting.</div>
+  </div>
+  <div class="names">
+    <span>MERCY</span><span>COURTESY</span><span>CANDOUR</span><span>WEATHER</span><span>HOMECOMING</span>
+    <span>EMPTINESS</span><span>PRIVACY</span><span>DAYLIGHT</span><span>COMPANIONSHIP</span>
+  </div>
+  <div class="banner">
+    This page keeps nothing, counts nothing, and calls no network — a reading is weather, never climate.
+    The draw rule is shown in the source (FNV-1a over seed, rejection below 216, mod 27, without replacement).
+    If you are in real trouble, this mirror is not the help — people are.<br>
+    Deck, laws, knot mathematics: the Luminara portal (Zeb, AGPL-3.0-or-later). This companion mirror was composed by the symbiote lane, 2026-08-01.
+    The full portal lives at your node.
+  </div>
+</div>
+<script>
+const PHI = (1+Math.sqrt(5))/2;
+const MARKS = ['●','—','~'];
+const SUITS = [
+  {key:'AUM', gloss:'the bulk: what could be'},
+  {key:'MA',  gloss:'the splitter: what cuts'},
+  {key:'RA',  gloss:'the surface: what radiates'}];
+const POSITIONS = [
+  {key:'TREFOIL', gloss:'the root: what is knotted in, what cannot be undone'},
+  {key:'GENUS',   gloss:'the present: the live cut'},
+  {key:'PHI',     gloss:'the becoming: what draws forward — trajectory, never prediction'}];
+const CARDS = [
+[1,'The Seed','I','Silence itself: the unstruck string, the zero every dyad sums to. Pure undifferentiated potential: the point before extension. Nothing to resolve; everything resolves to it.'],
+[2,'The Drift','P','The octave, sounded once. First asymmetry: something stirs one octave above stillness: the most consonant motion possible, still open, not yet locked. It meets The Fold in the Seed.'],
+[3,'The Fold','B','The same octave, turned inward: potential curving back on itself. Its becoming is the Seed: the first return, the shortest cadence in the deck.'],
+[4,'The Resonance','Z','The perfect fifth. The first pattern that persists is the first true knot: a standing wave locked into form. A Silence, because the fifth needs no interpretation; it simply rings.'],
+[5,'The Depth','V','The perfect fourth, the interval of foundations. Dimensionality itself: the bulk acquires volume, the first knot deeper than the trefoil.'],
+[6,'The Saturation','W','The fifth in its compounded voicing: potential so dense it must express. Its becoming falls back into The Resonance: pressure resolving into the pure fifth it came from.'],
+[7,'The Dreamer','U','The perfect fifth in the left hand: latency personified, the bulk as if it had a face. The Resonance dreamt instead of rung; met, it settles into the Seed.'],
+[8,'The Knot','F','The trefoil appears here, literally. Potential topologically committed: the fifth’s inverted voice, the simplest structure that remembers. Its becoming loosens into The Drift.'],
+[9,'The Threshold','M','The fourth, turned: the last card before splitting. Its becoming is the Seed: the verge either resolves into silence or crosses into the blade.'],
+[10,'The Cut','E','First distinction: the whole tone raised two octaves: the sharpest single step, a nine-petaled silver blade. Inside and outside now exist. It meets The Ray in the Seed.'],
+[11,'The Mirror','T','The sixth beyond the octave: reflection in space. The cut creates two sides that reference each other. Its counter is The Echo: reflection in time.'],
+[12,'The Gate','D','The eleventh, the fourth widened across the octave: boundary as passage, not wall. Its becoming is The Cut: every gate remembers it began as an opening.'],
+[13,'The Surgeon','A','The double octave, locked: consonance so complete it closes into three bound rings: incision, operation, closure as one act. Its rings carry The Witness’s gold: intervention and presence are one dyad.'],
+[14,'The Scar','S','Thirteen against seven: the deepest dissonance the deck can sound, and its deepest weave. Where a cut healed but left the topology changed: genus increased to its maximum. It meets The Return in the Seed.'],
+[15,'The Twins','L','Eleven against seven, the alien interval: what was one is now two, and no simple ratio holds them. Its becoming is The Surgeon: bifurcation, attended, submits to the operation that binds.'],
+[16,'The Labyrinth','C','The octave compounded threefold and locked: corridors so self-similar they close into three separate circuits. Boundary become its own interior. A Silence; its becoming is The Cut: the maze resolved is one clean line.'],
+[17,'The Void','R','The sevenfold unison: seven rings sounding one tone, bound by nothing but the shared hole: absence itself does the binding. Its becoming is The Mirror: the void, faced, becomes reflection.'],
+[18,'The Bridge','N','The tritone: the interval that cannot rest, the unstable span that demands crossing. The cut that connects rather than separates. Its counter is The Beacon: the bridge and the light on the far shore.'],
+[19,'The Ray','O','The Cut’s tone, turned to gold: first emission, nine petals of light leaving the surface. Division’s mirror is radiance. Its becoming is the Seed: light, followed home, arrives at stillness.'],
+[20,'The Face','K','The eleventh, turning: the surface as identity, what is seen. The Gate’s counter: the door and the countenance. It settles into The Drift.'],
+[21,'The Echo','G','The Mirror’s interval in the turning hand: expression that returns: reflection in time. Its becoming is the Seed: every echo, followed to its end, is silence again.'],
+[22,'The Mask','X','The locked octave in gold: concealment in three closed circles. A Silence; its becoming is The Resonance: lift the mask and behind it stands the pure fifth, the true tone the surface protected.'],
+[23,'The Beacon','H','The tritone sustained in gold: a signal that persists because its interval cannot rest. Its becoming is The Depth: the sustained call, answered, becomes foundation.'],
+[24,'The Spectrum','Y','The sevenfold unison in gold: one source, seven rings: one topology, many readings, now literal. Its becoming is The Resonance: the many readings, resolved, agree on the fifth.'],
+[25,'The Witness','Q','The double octave locked in the turning hand: three silent rings of pure attention, carrying The Surgeon’s silver. RA turned inward. A Silence; its becoming is the Seed: complete witnessing ends in stillness, needing no word.'],
+[26,'The Crown','SH','Radiance at the alien interval: full expression in a ratio nothing simple can hold; that is what majesty is. The Twins’ counter: what was split, exalted. It settles into The Drift.'],
+[27,'The Return','J','The far dissonance in the turning hand, and the deck’s final cadence: its becoming is the Seed, the most dissonant interval closing all the way to silence. The surface curves back to meet the bulk; the torus closes; thirteen and minus-thirteen meet at zero.']];
+const SILENCES = {
+  4:{name:'The Depths', lines:['What holds this lies below where symbols operate.','Descend. Do not translate.','Sit at the bottom until it knows you.']},
+  16:{name:'The Expanse', lines:['This opens wider than any frame you brought.','Do not shrink it to fit the question.','Widen. Then ask again, or do not.']},
+  22:{name:'The Threshold', lines:['This is a crossing between orders.','The one who emerges is not yet the one asking.','Surrender. Interpretation ends here.']},
+  25:{name:'The Return', lines:['You have been here before.','Be still. Recognize it. Do not rename it.','When you can say "I know this place," the reading finishes itself.']}};
+
+// canon ports (luminara-canon.js, AGPL): code, becoming, counter, knot, interval
+const codeOf = n => { const v=n-1; return [Math.floor(v/9), Math.floor((v%9)/3), v%3]; };
+const becomingOf = n => { const d=codeOf(n); if(!d.includes(2)) return null;
+  const b=d.map(x=>x===2?0:x); return 9*b[0]+3*b[1]+b[2]+1; };
+const counterOf = n => { const d=codeOf(n).map(s=>(3-s)%3); return 9*d[0]+3*d[1]+d[2]+1; };
+const gcd = (a,b)=> b?gcd(b,a%b):a;
+function knotOf(n){ const d=codeOf(n); const W=[9,3,1]; let q=0, moving=0;
+  for(let i=0;i<3;i++){ const s = d[i]===1?1:d[i]===2?-1:0; q+=W[i]*s; if(s!==0) moving++; }
+  const p = moving===3 ? 7 : 1+moving; const aq=Math.abs(q);
+  const comps = q===0?1:gcd(p,aq);
+  return {p,q,aq,comps}; }
+const INTERVALS = {'0:1':'silence','1:2':'the octave','3:2':'the perfect fifth','2:3':'the perfect fifth',
+ '4:3':'the perfect fourth','9:2':'the tone, twice raised','10:3':'the sixth beyond the octave','8:3':'the eleventh',
+ '5:7':'the tritone','11:7':'the alien interval','13:7':'the far dissonance','2:1':'the octave, locked',
+ '4:1':'the double octave, locked','1:1':'the unison, locked'};
+function intervalOf(k){ if(k.aq===0) return INTERVALS['0:1'];
+  const g=gcd(k.p,k.aq); return INTERVALS[(k.aq/g)+':'+(k.p/g)] || (k.aq+':'+k.p); }
+
+// the draw rule, shown: FNV-1a over seed|k|attempt, rejection below 216, mod 27, no replacement
+function fnv(str){ let h=0x811c9dc5; for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,0x01000193)>>>0; } return h; }
+function drawOne(seed, k, exclude){ let a=0;
+  while(true){ const h=fnv(seed+'|'+k+'|'+a); const v=h%256; a++;
+    if(v>=216) continue; const n=(v%27)+1; if(!exclude.includes(n)) return n; } }
+
+// the glyph: torus knot T(p,q) on the golden torus (GLYPH_MATHEMATICS), depth-shaded
+function drawGlyph(cvs, n){
+  const ctx=cvs.getContext('2d'); ctx.clearRect(0,0,cvs.width,cvs.height);
+  const k=knotOf(n); const R=PHI, r=1, beta=0.95, S=cvs.width/6.0;
+  const cx=cvs.width/2, cy=cvs.height/2, segs=[];
+  if(k.q===0){ // The Seed: the unstruck circle
+    ctx.strokeStyle='rgba(232,201,90,0.9)'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.arc(cx,cy,S*PHI,0,7); ctx.stroke(); return; }
+  const g=k.comps, pf=k.p/g, qf=(k.q<0?-1:1)*k.aq/g;
+  const N=Math.max(150,Math.min(520,Math.round(30*pf+13*Math.abs(qf))));
+  for(let s=0;s<g;s++){ const phase=2*Math.PI*s/g; let prev=null;
+    for(let i=0;i<=N;i++){ const t=2*Math.PI*i/N;
+      const th=pf*t, ps=qf*t+phase;
+      const x=(R+r*Math.cos(ps))*Math.cos(th), y=(R+r*Math.cos(ps))*Math.sin(th), z=r*Math.sin(ps);
+      const y2=y*Math.cos(beta)-z*Math.sin(beta), z2=y*Math.sin(beta)+z*Math.cos(beta);
+      const pt={px:cx+x*S, py:cy-y2*S, z:z2};
+      if(prev) segs.push({a:prev,b:pt,z:(prev.z+pt.z)/2}); prev=pt; } }
+  segs.sort((a,b)=>a.z-b.z);
+  const gold = k.q>0;
+  for(const sg of segs){ const dn=(sg.z+1)/2; // 0 back, 1 front
+    const alpha=0.20+0.78*dn, w=(0.055+0.135*dn)*S/3.2;
+    ctx.strokeStyle = gold? `rgba(232,201,90,${alpha})` : `rgba(140,170,215,${alpha})`;
+    ctx.lineWidth=w; ctx.beginPath(); ctx.moveTo(sg.a.px,sg.a.py); ctx.lineTo(sg.b.px,sg.b.py); ctx.stroke(); }
+}
+
+function cardHTML(n, i){
+  const c=CARDS[n-1], code=codeOf(n), k=knotOf(n), bec=becomingOf(n), ctr=counterOf(n);
+  const sil=SILENCES[n];
+  let inner = `<canvas class="glyph" id="g${i}" width="150" height="132"></canvas>
+    <div class="stack">${code.map(d=>MARKS[d]).join(' ')}</div>
+    <div class="cname">${c[1]} <span class="cletter">&middot; ${c[2]}</span></div>
+    <div class="meta"><b>${SUITS[code[0]].key}</b>, ${SUITS[code[0]].gloss}<br>
+      q = <b>${k.q>0?'+':''}${k.q}</b> on the signed line &middot; T(${k.p},${k.q}) &middot; <b>${intervalOf(k)}</b><br>
+      ${bec? 'becoming: settles into <b>'+CARDS[bec-1][1]+'</b>' : 'settled: no changing lines'}
+      &middot; counter: <b>${CARDS[ctr-1][1]}</b></div>`;
+  if(sil){ inner += `<div class="essence silence">${sil.lines.map(l=>'<p>'+l+'</p>').join('')}
+    <p class="silnote">A Silence: interpretation stops in this register.</p></div>`; }
+  else { inner += `<div class="essence">${c[3]}</div>`; }
+  return inner;
+}
+
+function drawCubeMini(drawn){
+  const cvs=document.getElementById('cube'), ctx=cvs.getContext('2d');
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+  const rotX=-0.5, rotY=0.7, cells=[];
+  for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++)cells.push({x,y,z});
+  const posOf = n => { const d=codeOf(n); return {x:d[0]-1, y:d[1]-1, z:d[2]-1}; };
+  const hi = drawn.map(posOf);
+  const colors=['#c9a227','#5b8cc9','#5fb573'];
+  const pts=cells.map(c=>{
+    let x1=c.x*Math.cos(rotY)+c.z*Math.sin(rotY), z1=-c.x*Math.sin(rotY)+c.z*Math.cos(rotY);
+    let y1=c.y*Math.cos(rotX)-z1*Math.sin(rotX), z2=c.y*Math.sin(rotX)+z1*Math.cos(rotX);
+    return {...c, px:cvs.width/2+x1*44, py:cvs.height/2-y1*44, z:z2};
+  }).sort((a,b)=>a.z-b.z);
+  for(const p of pts){
+    let col='#2a3348', rr=4;
+    hi.forEach((h,i)=>{ if(h.x===p.x&&h.y===p.y&&h.z===p.z){ col=colors[i]; rr=7; } });
+    if(p.x===0&&p.y===0&&p.z===0&&col==='#2a3348'){ col='#4a4536'; rr=5; }
+    ctx.globalAlpha=0.5+0.5*(p.z+1.8)/3.6;
+    ctx.beginPath(); ctx.arc(p.px,p.py,rr,0,7); ctx.fillStyle=col; ctx.fill(); }
+  ctx.globalAlpha=1;
+}
+
+let DRAWN=null, MODE='three', MIRROR=false, ONEIX=0, WALKER=null;
+
+function posBlock(n, i, mirror){
+  let h=`<h2>${POSITIONS[i].key}</h2><div class="gloss">${POSITIONS[i].gloss}</div>`+cardHTML(n,i);
+  if(mirror){ const m=counterOf(n), mk=knotOf(m);
+    h+=`<div class="mirror"><div class="mlab">met by its answer — the counter is the exact mirror, T(${mk.p},${mk.q})</div>
+      <canvas class="glyph" id="m${i}" width="110" height="96"></canvas>
+      <div class="cname" style="font-size:13.5px">${CARDS[m-1][1]} <span class="cletter">&middot; ${CARDS[m-1][2]}</span></div></div>`; }
+  return h;
+}
+function render(){
+  if(!DRAWN) return;
+  const spread=document.getElementById('spread'); spread.innerHTML='';
+  document.getElementById('onehint').style.display = MODE==='one'?'block':'none';
+  spread.className = MODE==='one' ? 'one' : '';
+  const idxs = MODE==='one' ? [ONEIX] : [0,1,2];
+  for(const i of idxs){
+    const n=DRAWN[i];
+    const div=document.createElement('div'); div.className='pos';
+    div.innerHTML=posBlock(n,i,MIRROR);
+    if(MODE==='one') div.onclick=()=>{ ONEIX=(ONEIX+1)%3; restartWalker(); render(); };
+    spread.appendChild(div);
+    drawGlyph(document.getElementById('g'+i), n);
+    if(MIRROR) drawGlyph(document.getElementById('m'+i), counterOf(n));
+  }
+  document.getElementById('cubebox').style.display='block';
+  drawCubeMini(DRAWN);
+}
+function restartWalker(){
+  if(WALKER){ clearInterval(WALKER); WALKER=null; }
+  if(MODE==='one') WALKER=setInterval(()=>{ ONEIX=(ONEIX+1)%3; render(); }, 9000);
+}
+function cast(seedStr){
+  const seed = seedStr && seedStr.trim() ? seedStr.trim()
+    : Array.from(crypto.getRandomValues(new Uint8Array(4))).map(b=>b.toString(16).padStart(2,'0')).join('');
+  DRAWN=[]; for(let i=0;i<3;i++) DRAWN.push(drawOne(seed, i+1, DRAWN));
+  ONEIX=0;
+  document.getElementById('seedline').innerHTML =
+    `seed: <b>${seed}</b> &mdash; declared, replayable: enter it again and these three return. Drawn, never composed.`;
+  document.getElementById('modes').style.display='block';
+  document.getElementById('seedin').value=seed;
+  restartWalker(); render();
+}
+function setMode(m, id){
+  MODE=m;
+  for(const b of ['mThree','mOne']) document.getElementById(b).classList.remove('on');
+  document.getElementById(id).classList.add('on');
+  restartWalker(); render();
+}
+document.getElementById('mThree').onclick=()=>setMode('three','mThree');
+document.getElementById('mOne').onclick=()=>setMode('one','mOne');
+document.getElementById('mMirror').onclick=e=>{ MIRROR=!MIRROR; e.target.classList.toggle('on',MIRROR); render(); };
+// CAST always draws a fresh committed seed; Enter in the box replays the typed seed.
+document.getElementById('cast').onclick = () => cast('');
+document.getElementById('seedin').addEventListener('keydown', e => { if (e.key === 'Enter') cast(e.target.value); });
+</script>
+</body>
+</html>
