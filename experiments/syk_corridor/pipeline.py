@@ -1,39 +1,64 @@
 #!/usr/bin/env python3
 """
-SYK-CORRIDOR-v1 laptop pipeline — PRELIMINARY-LAPTOP / PIPELINE-VALIDATION run.
+SYK-CORRIDOR-v2 pipeline — the certified-candidate corridor pipeline.
 
 Governing contract (SIGNED, byte-frozen; this script must never modify it):
-  experiments/SYK_CORRIDOR_PREREG_v1.md
-  sha256 59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e5c2a94662e465820843f3d0
+  experiments/SYK_CORRIDOR_PREREG_v2.md
+  (the contract records THIS file's sha256 in its signature block and in the
+  ledger row; the contract's own sha256 is recorded in the ledger row — the
+  hash direction is one-way, contract -> pipeline, to avoid circularity)
 Sole verdict bookkeeper (byte-frozen; imported, never reimplemented):
   experiments/op179_nu_to_beta.py
   sha256 b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e
 
+V2 PROVENANCE NOTE. This file is the v2 revision of the laptop-run pipeline.
+The exact bytes that produced results_laptop.json (governed by the frozen
+SYK_CORRIDOR_PREREG_v1.md, sha256 59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e
+5c2a94662e465820843f3d0) had
+  sha256 873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7
+and are preserved in git history; results_laptop.json and LAPTOP_REPORT.md are
+frozen and are never rewritten by this revision (v2 writes results_v2.json).
+The v2 changes are exactly the three blocker resolutions of PREREG v2:
+  (1) d convention resolved to the actual Hilbert-space dimension of the
+      simulated system (master section 5.7 source definition; erratum in
+      PREREG v2 section 1) — the primary/diagnostic labels below are swapped
+      accordingly, both lanes still computed;
+  (2) kappa grid re-derived to bracket the measured crossovers (PREREG v2
+      section 3);
+  (3) IC-3/IC-4 promoted from disclosed choices to PINNED definitions
+      (PREREG v2 section 4) — the operational definitions themselves are
+      byte-identical to the laptop run's.
+
 WHAT THIS RUN IS AND IS NOT
 ---------------------------
-- The prereg pins the PRIMARY route as DIRECT-BETA (prereg section 3.1): measure the
-  revival degradation rate Gamma(d) per master section 5.7, fit log Gamma vs log d
-  (d ~ 2^N per the master 5.10A.1 glossary, as the prereg pins), extrapolate per
-  prereg section 2, and apply the beta buckets of op179_nu_to_beta.py DIRECTLY
-  (beta_bucket_point / beta_bucket_ci). The nu-route is CLOSED: the
-  ChannelExponentAssignment port stays UNFILLED, nu_to_beta_verdict is never called,
-  and m1_quotient_confirmation_flag is never called (prereg sections 3.2 and 4).
-- The prereg pins the compute venue as Nebius (prereg section 5). This run executes
-  the identical exact-diagonalization computation on a laptop. Exact diagonalization
-  is venue-independent arithmetic, but because the venue field is pinned, THIS RUN
-  IS NOT THE CERTIFIED CORRIDOR RUN. Everything it emits is labeled
-  PRELIMINARY-LAPTOP / PIPELINE-VALIDATION. No SYK number from this run may be
-  reported as GHP support in either direction (prereg section 6).
+- The prereg pins the PRIMARY route as DIRECT-BETA (PREREG v2 section 5, carrying
+  v1 section 3.1): measure the revival degradation rate Gamma(d) per master
+  section 5.7, fit log Gamma vs log d with d = the actual Hilbert-space dimension
+  of the simulated system (the even-parity sector, dim 2^(N/2 - 1); PREREG v2
+  section 1 erratum resolving master 5.7 vs the 5.10A.1 glossary shorthand),
+  extrapolate per prereg section 2, and apply the beta buckets of
+  op179_nu_to_beta.py DIRECTLY (beta_bucket_point / beta_bucket_ci). The nu-route
+  is CLOSED: the ChannelExponentAssignment port stays UNFILLED, nu_to_beta_verdict
+  is never called, and m1_quotient_confirmation_flag is never called (v1 sections
+  3.2 and 4, carried by PREREG v2 section 5).
+- The prereg pins the compute venue as Nebius (v1 section 5, carried). A laptop
+  execution of this file is PIPELINE-VALIDATION only; the certified corridor run
+  is the Nebius execution, asserted by the explicit --venue-nebius flag. No SYK
+  number from a non-certified execution may be reported as GHP support in either
+  direction (prereg section 6).
 - The "repaired SYK/C3 pipeline (twelve scripts)" named in the prereg runtime line is
   NOT present in this repository (master Addendum U.4 locates it under
   `.epsilon/reports/syk_mass_transition_*` / `scripts/syk_mass_transition.py`, an
   external tree). This file is a rebuild, not a modification of that pipeline.
 
-PINNED BY THE CONTRACT (verbatim sources quoted in the prereg; do not change):
+PINNED BY THE CONTRACT (PREREG v2; verbatim sources quoted there; do not change):
   P-1  Official sizes N in {14, 18, 22}; N = 10 telemetry only (fit ban CARRIED).
-  P-2  kappa grid [0, 15.8, 16.2, 16.4, 16.6, 16.7, 16.8, 16.85, 16.9, 16.95,
-       17.0, 17.1, 17.2, 17.5, 18.0]; fitted crossing must be strictly interior
-       with >= 2 grid points each side, else VOID.
+  P-2  kappa grid (PREREG v2 section 3, re-derived from the laptop-measured
+       crossovers): reference point 0, then 15 log-spaced deformed points
+       [1.00, 1.25, 1.57, 1.98, 2.48, 3.11, 3.90, 4.90, 6.15, 7.71, 9.68,
+       12.15, 15.24, 19.13, 24.00]; fitted crossing must be strictly interior
+       with >= 2 grid points each side, else VOID (bracketing rule verbatim
+       from v1).
   P-3  40 disorder seeds per size, explicit range 5000-5039 inclusive.
   P-4  Bootstrap: 2000 resamples everywhere; nu search interval [0.30, 1.50];
        fitted nu strictly interior; <= 5% bootstrap mass in the outermost grid
@@ -43,17 +68,29 @@ PINNED BY THE CONTRACT (verbatim sources quoted in the prereg; do not change):
   P-6  Finite-size acceptance: primary linear fit in 1/N over official sizes,
        bootstrap uncertainty on the extrapolated intercept, applied to the
        direct-beta fit slope and identically to the nu telemetry lane.
-  P-7  d ~ 2^N (master 5.10A.1 glossary) for the primary log Gamma vs log d fit.
+  P-7  d = actual Hilbert-space dimension of the simulated system (master
+       section 5.7 "d = Hilbert space dimension", resolved by the PREREG v2
+       section 1 erratum; for the simulated even-parity Majorana sector,
+       d = 2^(N/2 - 1)) for the primary log Gamma vs log d fit. The v1
+       "d ~ 2^N" glossary-shorthand lane is retained as a SUPERSEDED
+       diagnostic only.
   P-8  J_ijkl Gaussian with variance 6 J^2 / N^3, J = 1 (master 5.10 pseudocode
        "variance = 6 J^2 / N^3"; U.4 j4_scale = 1.0).
   P-9  Even-parity sector (boundary v2 section 6.3).
   P-10 Verdict bookkeeping only via op179_nu_to_beta.py bucket functions.
+  P-11 Mass-term normalization: the IC-2 operationalization below, promoted to
+       PINNED by PREREG v2 section 3 (the grid is derived under it).
+  P-12 Gamma operationalization and kappa placement: the IC-3/IC-4
+       operationalizations below, promoted to PINNED by PREREG v2 section 4.
 
-IMPLEMENTATION CHOICES (IC) — disclosed, NOT pinned by any repo source. The master
-explicitly delegates these ("It does not fix the low-level implementation (random
-couplings generator, 4-body-term construction, scaling-fit function); those are
-standard numerical-linear-algebra choices left to the implementer", section 5.10).
-Each is a certification caveat; a certified run must either ratify or re-pin them:
+IMPLEMENTATION CHOICES (IC) — originally disclosed, NOT pinned by any repo source.
+The master explicitly delegates these ("It does not fix the low-level implementation
+(random couplings generator, 4-body-term construction, scaling-fit function); those
+are standard numerical-linear-algebra choices left to the implementer", section
+5.10). STATUS UNDER PREREG v2: IC-2 is PINNED (P-11), IC-3 and IC-4 are PINNED
+(P-12), with the operational definitions below quoted into the contract; IC-1,
+IC-5, IC-6, IC-7 remain disclosed implementation choices, now frozen operationally
+by the contract's byte-pin of this file:
   IC-1 Majorana representation: Jordan-Wigner, {psi_a, psi_b} = delta_ab
        (psi^2 = 1/2), N/2 qubits, Hilbert dim 2^(N/2), even-parity sector
        dim 2^(N/2 - 1).
@@ -89,8 +126,8 @@ Each is a certification caveat; a certified run must either ratify or re-pin the
        sector spectrum), the standard unfolding-free spectral-transition
        statistic (GUE ~ 0.5996, Poisson ~ 0.3863); collapse ansatz
        r(N, kappa) = f((kappa - kappa_c) * N^(1/nu)) with a cubic master curve,
-       fitted over the 14 pinned grid points kappa >= 15.8 (kappa = 0 is the
-       pure-SYK4 reference point).
+       fitted over the 15 pinned deformed grid points kappa >= 1.00 (kappa = 0
+       is the pure-SYK4 reference point, excluded from the collapse).
   IC-7 Ramp-window detection constants and the SFF time grid (documented at the
        function definitions below); windows are frozen from the full-sample
        mean curve and reused unchanged for every bootstrap resample.
@@ -99,9 +136,13 @@ GOLDEN-RATIO DISCIPLINE: this file contains no golden-ratio numeric literals
 (neither the ratio nor its reciprocal); all band arithmetic is imported from
 op179_nu_to_beta.py, which derives its constants algebraically.
 
-Run:  python3 pipeline.py            (self-tests, full pinned sweep, analysis)
-      python3 pipeline.py --selftest (self-tests only)
-Outputs: results_laptop.json (this directory).
+Run:  python3 pipeline.py                (self-tests, full pinned sweep, analysis)
+      python3 pipeline.py --selftest     (self-tests only)
+      python3 pipeline.py --venue-nebius (asserts the pinned Nebius venue; only a
+                                          run with this flag, actually executed on
+                                          Nebius, is certified-candidate)
+Outputs: results_v2.json (this directory). results_laptop.json is frozen v1
+evidence and is never written by this revision.
 """
 
 from __future__ import annotations
@@ -123,8 +164,8 @@ import op179_nu_to_beta as op179  # noqa: E402  (P-10: sole verdict bookkeeper)
 # ----------------------------------------------------------------------------
 # Pinned constants (P-1 .. P-7). Do not edit without a new signed prereg.
 # ----------------------------------------------------------------------------
-KAPPA_GRID = [0.0, 15.8, 16.2, 16.4, 16.6, 16.7, 16.8, 16.85, 16.9, 16.95,
-              17.0, 17.1, 17.2, 17.5, 18.0]                      # P-2
+KAPPA_GRID = [0.0, 1.00, 1.25, 1.57, 1.98, 2.48, 3.11, 3.90, 4.90, 6.15,
+              7.71, 9.68, 12.15, 15.24, 19.13, 24.00]            # P-2 (v2)
 COLLAPSE_KAPPAS = KAPPA_GRID[1:]                                  # IC-6
 OFFICIAL_N = [14, 18, 22]                                         # P-1
 TELEMETRY_N = [10]                                                # P-1
@@ -565,9 +606,12 @@ def analyze(data):
                                           "nu_intercept_1_over_N": nu_inf},
     }
 
-    # ---------- direct-beta lane (PRIMARY per prereg section 3.1) ----------
-    log_d_pinned = {N: N * math.log(2.0) for N in Ns}        # P-7: d ~ 2^N
+    # ---- direct-beta lane (PRIMARY per PREREG v2 section 5, carrying v1 3.1) ----
+    # P-7 (v2): d = actual Hilbert-space dimension of the simulated system
+    # (even-parity sector, 2^(N/2 - 1)); the v1 "d ~ 2^N" glossary shorthand is
+    # retained as a SUPERSEDED diagnostic lane only (PREREG v2 section 1 erratum).
     log_d_sector = {N: math.log(data[N]["d_sector"]) for N in Ns}
+    log_d_2powN = {N: N * math.log(2.0) for N in Ns}         # superseded diagnostic
 
     # SFF and Gamma for every (N, kappa); windows frozen from full-sample means
     sff = {N: {} for N in Ns + TELEMETRY_N}
@@ -585,19 +629,19 @@ def analyze(data):
 
     def beta_lane(kappa_key):
         gammas = {N: sff[N][kappa_key]["gamma"] for N in Ns}
-        bp_pin, binf_pin = pairwise_beta(gammas, Ns, log_d_pinned)
         bp_sec, binf_sec = pairwise_beta(gammas, Ns, log_d_sector)
+        bp_2n, binf_2n = pairwise_beta(gammas, Ns, log_d_2powN)
         # pooled 3-size slope (cross-check)
         ln_g = [math.log(gammas[N]) if gammas[N] > 0 else float("nan") for N in Ns]
-        pooled_pin = pooled_sec = float("nan")
+        pooled_sec = pooled_2n = float("nan")
         if all(not math.isnan(v) for v in ln_g):
-            pooled_pin = abs(float(np.polyfit(
-                [log_d_pinned[N] for N in Ns], ln_g, 1)[0]))
             pooled_sec = abs(float(np.polyfit(
                 [log_d_sector[N] for N in Ns], ln_g, 1)[0]))
+            pooled_2n = abs(float(np.polyfit(
+                [log_d_2powN[N] for N in Ns], ln_g, 1)[0]))
         # bootstrap over seeds (P-4: 2000 resamples), windows frozen (IC-7)
-        boot_pin = np.empty(N_BOOT)
         boot_sec = np.empty(N_BOOT)
+        boot_2n = np.empty(N_BOOT)
         bad = 0
         for bi in range(N_BOOT):
             gb = {}
@@ -614,32 +658,32 @@ def analyze(data):
                 gb[N] = gam
             if not ok:
                 bad += 1
-                boot_pin[bi] = np.nan
                 boot_sec[bi] = np.nan
+                boot_2n[bi] = np.nan
                 continue
-            _, boot_pin[bi] = pairwise_beta(gb, Ns, log_d_pinned)
             _, boot_sec[bi] = pairwise_beta(gb, Ns, log_d_sector)
-        bp = boot_pin[~np.isnan(boot_pin)]
+            _, boot_2n[bi] = pairwise_beta(gb, Ns, log_d_2powN)
         bs = boot_sec[~np.isnan(boot_sec)]
-        ci_pin = ([float(np.percentile(bp, 2.5)), float(np.percentile(bp, 97.5))]
-                  if len(bp) > 100 else [float("nan")] * 2)
+        b2 = boot_2n[~np.isnan(boot_2n)]
         ci_sec = ([float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))]
                   if len(bs) > 100 else [float("nan")] * 2)
+        ci_2n = ([float(np.percentile(b2, 2.5)), float(np.percentile(b2, 97.5))]
+                 if len(b2) > 100 else [float("nan")] * 2)
         return {
             "gamma_per_size": {str(N): gammas[N] for N in Ns},
             "gamma_telemetry_N10": sff[10][kappa_key]["gamma"],
             "windows": {str(N): sff[N][kappa_key]["info"] for N in Ns},
-            "primary_d_2powN": {
-                "beta_pairs_midpoints": bp_pin,
-                "beta_intercept_1_over_N": binf_pin,
-                "beta_pooled_slope": pooled_pin,
-                "ci95_intercept": ci_pin,
-            },
-            "diagnostic_d_sector": {
+            "primary_d_hilbert_sector": {
                 "beta_pairs_midpoints": bp_sec,
                 "beta_intercept_1_over_N": binf_sec,
                 "beta_pooled_slope": pooled_sec,
                 "ci95_intercept": ci_sec,
+            },
+            "diagnostic_d_2powN_SUPERSEDED": {
+                "beta_pairs_midpoints": bp_2n,
+                "beta_intercept_1_over_N": binf_2n,
+                "beta_pooled_slope": pooled_2n,
+                "ci95_intercept": ci_2n,
             },
             "bootstrap_invalid_resamples": bad,
         }
@@ -650,12 +694,12 @@ def analyze(data):
     beta_by_kappa = {}
     for kap in KAPPA_GRID:
         gam = {N: sff[N][kap]["gamma"] for N in Ns}
-        bp_pin, binf_pin = pairwise_beta(gam, Ns, log_d_pinned)
         bp_sec, binf_sec = pairwise_beta(gam, Ns, log_d_sector)
+        bp_2n, binf_2n = pairwise_beta(gam, Ns, log_d_2powN)
         beta_by_kappa[str(kap)] = {
             "gamma": {str(N): gam[N] for N in Ns},
-            "beta_intercept_d_2powN": binf_pin,
-            "beta_intercept_d_sector": binf_sec,
+            "beta_intercept_d_sector_PRIMARY": binf_sec,
+            "beta_intercept_d_2powN_SUPERSEDED": binf_2n,
         }
 
     # beta at the grid point nearest the fitted crossing, if bracketing held
@@ -668,16 +712,18 @@ def analyze(data):
         beta_cross = None
 
     results["direct_beta_lane"] = {
-        "status": "PRIMARY ROUTE per prereg section 3.1 — PRELIMINARY-LAPTOP / "
-                  "PIPELINE-VALIDATION (venue pinned as Nebius in prereg "
-                  "section 5; this laptop execution is not the certified run)",
-        "gamma_operationalization": "IC-3 (see module docstring): ramp slope of "
-                                    "disorder-averaged g(t)=|Tr e^{-iHt}|^2/d_sector^2; "
-                                    "NOT pinned by any repo source — certification "
-                                    "caveat",
-        "d_convention_note": "prereg section 3.1 pins d ~ 2^N (glossary); the "
-                             "physical sector Hilbert dimension is 2^(N/2-1); both "
-                             "reported; the two differ by a factor ~2 in beta",
+        "status": "PRIMARY ROUTE per PREREG v2 section 5 (carrying v1 3.1); "
+                  "certified-candidate only when executed on the pinned Nebius "
+                  "venue with --venue-nebius, else PIPELINE-VALIDATION",
+        "gamma_operationalization": "IC-3/IC-4, PINNED by PREREG v2 section 4: "
+                                    "ramp slope of disorder-averaged "
+                                    "g(t)=|Tr e^{-iHt}|^2/d_sector^2; primary "
+                                    "column kappa=0",
+        "d_convention_note": "PREREG v2 section 1 erratum: d = actual "
+                            "Hilbert-space dimension of the simulated system "
+                            "(even-parity sector, 2^(N/2-1)); the v1 'd ~ 2^N' "
+                            "glossary shorthand is SUPERSEDED and reported as "
+                            "diagnostic only",
         "primary_kappa0": beta0,
         "crossing_adjacent": {"kappa": near, "result": beta_cross},
         "beta_by_kappa_telemetry": beta_by_kappa,
@@ -694,45 +740,50 @@ def analyze(data):
 
     bucket_block = {}
     bucket_block.update(buckets(
-        "kappa0_d_2powN_PINNED_CONVENTION",
-        beta0["primary_d_2powN"]["beta_intercept_1_over_N"],
-        beta0["primary_d_2powN"]["ci95_intercept"]))
+        "kappa0_d_sector_PINNED_CONVENTION_V2",
+        beta0["primary_d_hilbert_sector"]["beta_intercept_1_over_N"],
+        beta0["primary_d_hilbert_sector"]["ci95_intercept"]))
     bucket_block.update(buckets(
-        "kappa0_d_sector_DIAGNOSTIC",
-        beta0["diagnostic_d_sector"]["beta_intercept_1_over_N"],
-        beta0["diagnostic_d_sector"]["ci95_intercept"]))
+        "kappa0_d_2powN_SUPERSEDED_DIAGNOSTIC",
+        beta0["diagnostic_d_2powN_SUPERSEDED"]["beta_intercept_1_over_N"],
+        beta0["diagnostic_d_2powN_SUPERSEDED"]["ci95_intercept"]))
     if beta_cross is not None:
         bucket_block.update(buckets(
-            "crossing_d_2powN_PINNED_CONVENTION",
-            beta_cross["primary_d_2powN"]["beta_intercept_1_over_N"],
-            beta_cross["primary_d_2powN"]["ci95_intercept"]))
+            "crossing_d_sector_PINNED_CONVENTION_V2",
+            beta_cross["primary_d_hilbert_sector"]["beta_intercept_1_over_N"],
+            beta_cross["primary_d_hilbert_sector"]["ci95_intercept"]))
         bucket_block.update(buckets(
-            "crossing_d_sector_DIAGNOSTIC",
-            beta_cross["diagnostic_d_sector"]["beta_intercept_1_over_N"],
-            beta_cross["diagnostic_d_sector"]["ci95_intercept"]))
+            "crossing_d_2powN_SUPERSEDED_DIAGNOSTIC",
+            beta_cross["diagnostic_d_2powN_SUPERSEDED"]["beta_intercept_1_over_N"],
+            beta_cross["diagnostic_d_2powN_SUPERSEDED"]["ci95_intercept"]))
 
-    results["op179_buckets_PRELIMINARY_LAPTOP"] = {
-        "WARNING": "NOT A CERTIFIED VERDICT. Venue pinned as Nebius (prereg "
-                   "section 5) and the Gamma operationalization (IC-3) is not "
-                   "source-pinned. Bucket labels below are the mechanical output "
-                   "of the byte-frozen op179 functions applied to "
-                   "PRELIMINARY-LAPTOP numbers, for pipeline validation only. "
-                   "Per prereg section 6, no SYK number may be reported as GHP "
-                   "support in either direction.",
+    venue_nebius = "--venue-nebius" in sys.argv
+    results["op179_buckets"] = {
+        "WARNING": ("Buckets below are the mechanical output of the byte-frozen "
+                    "op179 functions. They are a certified-candidate verdict ONLY "
+                    "if this execution ran on the pinned Nebius venue "
+                    "(--venue-nebius asserted) AND every certification gate below "
+                    "holds; otherwise they are PIPELINE-VALIDATION output only. "
+                    "Per prereg section 6, no SYK number may be reported as GHP "
+                    "support in either direction outside a certified run."),
+        "venue_nebius_asserted": venue_nebius,
         "buckets": bucket_block,
     }
 
     # ---------- certifiability roll-up ----------
-    results["certification_gates"] = {
-        "venue_is_nebius": False,
+    gates = {
+        "venue_is_nebius": venue_nebius,
         "crossing_bracketing_ok": bool(bracket_ok),
         "nu_bootstrap_nondegenerate": (not degenerate),
         "collapse_R2_pass": results["nu_telemetry_lane"]["convergence"]["R2_pass"],
         "cross_size_corr_pass": results["nu_telemetry_lane"]["convergence"]["xcorr_pass"],
-        "gamma_operationalization_source_pinned": False,
-        "CERTIFIED_VERDICT": False,
-        "status": "PIPELINE-VALIDATION ONLY",
+        "gamma_operationalization_source_pinned": True,  # PREREG v2 section 4
     }
+    certified = all(bool(v) for v in gates.values())
+    gates["CERTIFIED_VERDICT"] = certified
+    gates["status"] = ("CERTIFIED-CANDIDATE" if certified
+                       else "PIPELINE-VALIDATION ONLY")
+    results["certification_gates"] = gates
     return results
 
 
@@ -745,24 +796,29 @@ def main():
     data = run_sweep(TELEMETRY_N + OFFICIAL_N)
     print("ANALYSIS")
     results = analyze(data)
+    venue_nebius = "--venue-nebius" in sys.argv
     meta = {
-        "test_id": "SYK-CORRIDOR-v1",
-        "label": "PRELIMINARY-LAPTOP / PIPELINE-VALIDATION",
+        "test_id": "SYK-CORRIDOR-v2",
+        "label": ("NEBIUS-VENUE-ASSERTED (certified-candidate if all gates hold)"
+                  if venue_nebius else "PRELIMINARY-LAPTOP / PIPELINE-VALIDATION"),
         "date_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "prereg_sha256": "59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e5c2a94662e465820843f3d0",
+        "prereg": "experiments/SYK_CORRIDOR_PREREG_v2.md (sha256 recorded in the "
+                  "ledger row per the lock protocol; the contract pins THIS "
+                  "file's sha256, one-way, to avoid hash circularity)",
+        "prereg_v1_sha256_frozen": "59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e5c2a94662e465820843f3d0",
         "op179_sha256": "b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e",
+        "laptop_run_pipeline_sha256_as_run": "873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7",
         "seeds": [SEEDS[0], SEEDS[-1]],
         "kappa_grid": KAPPA_GRID,
         "official_sizes": OFFICIAL_N,
         "telemetry_sizes": TELEMETRY_N,
-        "nu_route": "CLOSED (prereg section 3.2); ChannelExponentAssignment port "
-                    "UNFILLED; nu_to_beta_verdict and "
-                    "m1_quotient_confirmation_flag NEVER CALLED",
-        "spend_usd": 0.0,
+        "nu_route": "CLOSED (v1 section 3.2, carried by PREREG v2 section 5); "
+                    "ChannelExponentAssignment port UNFILLED; nu_to_beta_verdict "
+                    "and m1_quotient_confirmation_flag NEVER CALLED",
         "budget_cap_usd": 400.0,
     }
     out = {"meta": meta, "results": results}
-    out_path = HERE / "results_laptop.json"
+    out_path = HERE / "results_v2.json"
     with open(out_path, "w") as f:
         json.dump(out, f, indent=1, default=float)
     print(f"\nWROTE {out_path}")
