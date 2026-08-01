@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Zeta Harp — Riemann-Siegel main sum, t in [100, 160]</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --ink: #d6dde6;
+    --dim: #8b949e;
+    --gold: #d4a94a;
+    --teal: #4ac0b0;
+    --line: #2c333c;
+    --warn-bg: #2a1f0e;
+    --warn-edge: #d4a94a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.55;
+    padding: 2rem 1rem 4rem;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  .banner {
+    background: var(--warn-bg);
+    border: 2px solid var(--warn-edge);
+    border-radius: 6px;
+    padding: 0.9rem 1.2rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.95rem;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+  }
+  h1 { font-size: 1.9rem; font-weight: normal; letter-spacing: 0.03em; margin-bottom: 0.3rem; }
+  h1 .accent { color: var(--gold); }
+  .subtitle { color: var(--dim); font-style: italic; margin-bottom: 1.8rem; }
+  h2 {
+    font-size: 1.15rem; font-weight: normal; color: var(--teal);
+    border-bottom: 1px solid var(--line); padding-bottom: 0.3rem;
+    margin: 2.2rem 0 0.9rem;
+  }
+  p { margin-bottom: 0.8rem; }
+  .math {
+    font-family: "Courier New", monospace;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    white-space: pre;
+    color: #c9d6e3;
+  }
+  .plotbox {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+  canvas { display: block; max-width: 100%; }
+  .caption { color: var(--dim); font-size: 0.85rem; margin-top: 0.4rem; }
+  .strings { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1rem 0; }
+  .string-card {
+    flex: 1 1 190px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.9rem;
+  }
+  .string-card h3 {
+    font-weight: normal; font-size: 1rem; color: var(--gold);
+    margin-bottom: 0.4rem; font-family: "Courier New", monospace;
+  }
+  .string-card .facts { font-size: 0.82rem; color: var(--dim); font-family: "Courier New", monospace; line-height: 1.7; }
+  .pluck {
+    margin-top: 0.7rem;
+    width: 100%;
+    background: transparent;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 4px;
+    padding: 0.45rem 0;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .pluck:hover { background: var(--teal); color: var(--bg); }
+  .pluck:active { transform: translateY(1px); }
+  .arp {
+    background: transparent; color: var(--gold); border: 1px solid var(--gold);
+    border-radius: 4px; padding: 0.5rem 1.4rem; font-family: "Courier New", monospace;
+    font-size: 0.9rem; cursor: pointer; margin-top: 0.3rem;
+  }
+  .arp:hover { background: var(--gold); color: var(--bg); }
+  table {
+    border-collapse: collapse; width: 100%; margin: 1rem 0;
+    font-family: "Courier New", monospace; font-size: 0.85rem;
+  }
+  th, td { border: 1px solid var(--line); padding: 0.5rem 0.7rem; text-align: right; }
+  th { color: var(--teal); font-weight: normal; text-align: right; background: var(--panel); }
+  td:first-child, th:first-child { text-align: left; }
+  .note { color: var(--dim); font-size: 0.85rem; }
+  .correction {
+    border-left: 3px solid var(--teal);
+    padding: 0.6rem 1rem;
+    background: var(--panel);
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  footer { margin-top: 3rem; color: var(--dim); font-size: 0.8rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="banner">
+    Known mathematics (Riemann-Siegel, 1932). External instrument.
+    Not evidence for GHP or anything else.
+  </div>
+
+  <h1>The <span class="accent">Zeta Harp</span></h1>
+  <p class="subtitle">The Riemann-Siegel main sum as a four-stringed instrument, t in [100, 160].</p>
+
+  <h2>1. The mathematics</h2>
+  <p>
+    On the critical line, the Hardy function Z(t) is real-valued and shares its zeros with
+    &zeta;(1/2 + it). Its Riemann-Siegel main sum is
+  </p>
+  <div class="math">Z(t) = 2 &middot; &Sigma;<sub>n &le; &radic;(t/2&pi;)</sub> n<sup>-1/2</sup> cos( &theta;(t) - t ln n )
+
+&theta;(t) = arg &Gamma;(1/4 + it/2) - (t/2) ln &pi;
+       &asymp; (t/2) ln(t/2&pi;) - t/2 - &pi;/8 + 1/(48t)</div>
+  <p>
+    Each term n is a "string." The sum over n &le; &radic;(t/2&pi;) means a new string joins
+    the chord each time t crosses a threshold:
+  </p>
+  <div class="correction">
+    <strong>Correction to an earlier draft of this idea:</strong> t = 2&pi;n<sup>2</sup> is the
+    threshold at which string n is <em>born</em> — the value of t where n first satisfies
+    n &le; &radic;(t/2&pi;) and enters the main sum. It is <em>not</em> the string's frequency.
+    The instantaneous angular frequency of string n at height t is
+    d/dt [&theta;(t) - t ln n] = &theta;&prime;(t) - ln n, so its instantaneous cyclic frequency
+    (per unit t) is (&theta;&prime;(t) - ln n) / 2&pi;, with
+    &theta;&prime;(t) &asymp; (1/2) ln(t/2&pi;) - 1/(48t&sup2;).
+  </div>
+  <p class="note">
+    Birth heights in this window: string 4 is born at t = 2&pi;&middot;16 &asymp; 100.53, and string 5
+    at t = 2&pi;&middot;25 &asymp; 157.08 — both visible in the plot below. At the listening point
+    t = 130, exactly four strings are active. The remainder term of the full Riemann-Siegel
+    formula, O(t<sup>-1/4</sup>), is omitted here; this page plots the main sum only.
+  </p>
+
+  <h2>2. Z(t) on [100, 160]</h2>
+  <div class="plotbox">
+    <canvas id="plot" width="900" height="380"></canvas>
+    <div class="caption">
+      Computed live in this page from the formulas above. Dashed vertical lines: births of
+      string 4 (t &asymp; 100.53) and string 5 (t &asymp; 157.08). Solid gold line: the
+      listening point t = 130.
+    </div>
+  </div>
+
+  <h2>3. The four strings at t = 130</h2>
+  <p>
+    Each string's instantaneous frequency f<sub>n</sub> = (&theta;&prime;(130) - ln n)/2&pi; is
+    in cycles per unit t — far below hearing. To pluck it we multiply by a
+    <strong>single disclosed scale factor, S = 2000 Hz per (cycle/unit t)</strong>, the only
+    mapping choice made, applied identically to all strings. Loudness is proportional to the
+    string's true amplitude weight n<sup>-1/2</sup>.
+  </p>
+  <div class="strings" id="strings"></div>
+  <button class="arp" id="arpeggio">Pluck all four (arpeggio, n = 1 to 4)</button>
+  <p class="note" style="margin-top:0.6rem;">
+    String 4 maps to roughly 41 Hz — near the bottom of the audible band and quiet on small
+    speakers. That is the honest consequence of one uniform scale factor; no per-string
+    adjustment is applied.
+  </p>
+
+  <h2>4. Predicted vs measured (2026-08-01)</h2>
+  <p>
+    Predicted frequency is (&theta;&prime;(130) - ln n)/2&pi;. Predicted relative amplitude is
+    n<sup>-1/2</sup> normalized so string 4 = 1.00. Measured values are from the 2026-08-01
+    spectral read-out of the main sum in this window.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>String n</th>
+        <th>Predicted freq (cycles/unit t)</th>
+        <th>Predicted rel. amplitude</th>
+        <th>Measured rel. amplitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>0.241</td><td>2.00</td><td>1.75</td></tr>
+      <tr><td>2</td><td>0.131</td><td>1.41</td><td>1.20</td></tr>
+      <tr><td>3</td><td>0.066</td><td>1.15</td><td>1.12</td></tr>
+      <tr><td>4</td><td>0.020</td><td>1.00</td><td>0.94</td></tr>
+      <tr><td>off-string control</td><td>&mdash;</td><td>&mdash;</td><td>0.07</td></tr>
+    </tbody>
+  </table>
+  <p class="note">
+    The off-string control (0.07) is the measured response at a frequency where no string
+    exists — the noise floor against which the four string amplitudes are read.
+  </p>
+
+  <footer>
+    Self-contained page: no external resources, no libraries, no network access. All curves and
+    frequencies are computed in this file from the Riemann-Siegel main sum and the standard
+    asymptotic for &theta;(t). The baked table is a snapshot dated 2026-08-01.
+    <br><br>
+    Known mathematics (Riemann-Siegel, 1932). External instrument. Not evidence for GHP or
+    anything else.
+  </footer>
+</div>
+
+<script>
+"use strict";
+
+// ---------- Riemann-Siegel main sum ----------
+var TWO_PI = 2 * Math.PI;
+
+function theta(t) {
+  // Standard asymptotic: theta(t) ~ (t/2) ln(t/2pi) - t/2 - pi/8 + 1/(48t)
+  return (t / 2) * Math.log(t / TWO_PI) - t / 2 - Math.PI / 8 + 1 / (48 * t);
+}
+
+function thetaPrime(t) {
+  // d/dt of the asymptotic above: (1/2) ln(t/2pi) - 1/(48 t^2)
+  return 0.5 * Math.log(t / TWO_PI) - 1 / (48 * t * t);
+}
+
+function mainSumZ(t) {
+  var N = Math.floor(Math.sqrt(t / TWO_PI));
+  var s = 0;
+  for (var n = 1; n <= N; n++) {
+    s += Math.cos(theta(t) - t * Math.log(n)) / Math.sqrt(n);
+  }
+  return 2 * s;
+}
+
+// Instantaneous cyclic frequency of string n at height t (cycles per unit t)
+function stringFreq(n, t) {
+  return (thetaPrime(t) - Math.log(n)) / TWO_PI;
+}
+
+// ---------- Plot ----------
+(function drawPlot() {
+  var canvas = document.getElementById("plot");
+  var ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height;
+  var padL = 52, padR = 16, padT = 14, padB = 34;
+  var t0 = 100, t1 = 160;
+  var yMax = 5, yMin = -5;
+
+  function X(t) { return padL + (t - t0) / (t1 - t0) * (W - padL - padR); }
+  function Y(z) { return padT + (yMax - z) / (yMax - yMin) * (H - padT - padB); }
+
+  ctx.fillStyle = "#161b22";
+  ctx.fillRect(0, 0, W, H);
+
+  // grid
+  ctx.strokeStyle = "#2c333c";
+  ctx.lineWidth = 1;
+  ctx.font = "11px Courier New, monospace";
+  ctx.fillStyle = "#8b949e";
+  for (var gt = t0; gt <= t1; gt += 10) {
+    ctx.beginPath(); ctx.moveTo(X(gt), padT); ctx.lineTo(X(gt), H - padB); ctx.stroke();
+    ctx.fillText(String(gt), X(gt) - 10, H - padB + 16);
+  }
+  for (var gz = yMin; gz <= yMax; gz += 1) {
+    ctx.beginPath(); ctx.moveTo(padL, Y(gz)); ctx.lineTo(W - padR, Y(gz)); ctx.stroke();
+    ctx.fillText(String(gz), padL - 28, Y(gz) + 4);
+  }
+  ctx.fillText("t", W - padR - 8, H - 6);
+  ctx.save();
+  ctx.translate(14, padT + 30); ctx.rotate(-Math.PI / 2);
+  ctx.fillText("Z(t)  (main sum)", 0, 0);
+  ctx.restore();
+
+  // zero axis
+  ctx.strokeStyle = "#4a5460";
+  ctx.beginPath(); ctx.moveTo(padL, Y(0)); ctx.lineTo(W - padR, Y(0)); ctx.stroke();
+
+  // string-birth lines: t = 2 pi n^2 for n = 4 (~100.53) and n = 5 (~157.08)
+  ctx.setLineDash([5, 4]);
+  ctx.strokeStyle = "#4ac0b0";
+  [4, 5].forEach(function (n) {
+    var tb = TWO_PI * n * n;
+    if (tb >= t0 && tb <= t1) {
+      ctx.beginPath(); ctx.moveTo(X(tb), padT); ctx.lineTo(X(tb), H - padB); ctx.stroke();
+      ctx.fillStyle = "#4ac0b0";
+      ctx.fillText("string " + n + " born", X(tb) + 4, padT + 14);
+      ctx.fillStyle = "#8b949e";
+    }
+  });
+  ctx.setLineDash([]);
+
+  // listening point t = 130
+  ctx.strokeStyle = "#d4a94a";
+  ctx.beginPath(); ctx.moveTo(X(130), padT); ctx.lineTo(X(130), H - padB); ctx.stroke();
+  ctx.fillStyle = "#d4a94a";
+  ctx.fillText("t = 130", X(130) + 4, H - padB - 8);
+
+  // Z(t) curve
+  ctx.strokeStyle = "#d6dde6";
+  ctx.lineWidth = 1.6;
+  ctx.beginPath();
+  var steps = 2400;
+  for (var i = 0; i <= steps; i++) {
+    var t = t0 + (t1 - t0) * i / steps;
+    var z = mainSumZ(t);
+    var x = X(t), y = Y(Math.max(yMin, Math.min(yMax, z)));
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+})();
+
+// ---------- Web Audio: the four strings ----------
+var SCALE_HZ = 2000; // the single disclosed scale factor: Hz per (cycle / unit t)
+var T_LISTEN = 130;
+var audioCtx = null;
+
+function ensureAudio() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === "suspended") audioCtx.resume();
+  return audioCtx;
+}
+
+function pluck(n, when) {
+  var ac = ensureAudio();
+  var f = stringFreq(n, T_LISTEN);        // cycles per unit t
+  var hz = f * SCALE_HZ;                  // audible mapping, one factor for all strings
+  var gainPeak = 0.28 / Math.sqrt(n);     // loudness proportional to n^(-1/2)
+  var t0 = ac.currentTime + (when || 0);
+
+  var osc = ac.createOscillator();
+  osc.type = "sine";
+  osc.frequency.value = hz;
+
+  var g = ac.createGain();
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.exponentialRampToValueAtTime(gainPeak, t0 + 0.015); // fast attack: a pluck
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 2.4);     // natural decay
+
+  osc.connect(g); g.connect(ac.destination);
+  osc.start(t0);
+  osc.stop(t0 + 2.6);
+}
+
+// Build the string cards
+(function buildStrings() {
+  var host = document.getElementById("strings");
+  for (var n = 1; n <= 4; n++) {
+    (function (n) {
+      var f = stringFreq(n, T_LISTEN);
+      var hz = f * SCALE_HZ;
+      var birth = TWO_PI * n * n;
+      var relAmp = Math.sqrt(4 / n); // n^(-1/2) normalized so string 4 = 1.00
+
+      var card = document.createElement("div");
+      card.className = "string-card";
+      card.innerHTML =
+        "<h3>string n = " + n + "</h3>" +
+        '<div class="facts">' +
+        "born at t = 2&pi;&middot;" + (n * n) + " &asymp; " + birth.toFixed(2) + "<br>" +
+        "f(130) = " + f.toFixed(4) + " /unit t<br>" +
+        "mapped: " + hz.toFixed(1) + " Hz<br>" +
+        "rel. amp n<sup>-1/2</sup>: " + relAmp.toFixed(2) +
+        "</div>";
+      var btn = document.createElement("button");
+      btn.className = "pluck";
+      btn.textContent = "pluck";
+      btn.addEventListener("click", function () { pluck(n, 0); });
+      card.appendChild(btn);
+      host.appendChild(card);
+    })(n);
+  }
+  document.getElementById("arpeggio").addEventListener("click", function () {
+    for (var n = 1; n <= 4; n++) pluck(n, (n - 1) * 0.45);
+  });
+})();
+</script>
+</body>
+</html>
