@@ -1,0 +1,164 @@
+{
+  "experiment": "hadamard_overlap_sim",
+  "oracle_disclosure": "state preparation for |psi(t)>, |w_N> and the unitary V are ASSUMED ORACLES supplied as classical data; their cost is NOT claimed and no speedup is claimed",
+  "points": [
+    {
+      "t": 4300.0,
+      "N": 26,
+      "A_N": 8.835428326308623,
+      "overlap_re": -0.01879967027502693,
+      "overlap_im": -0.147441326065672,
+      "M_t": -0.3322062785464703,
+      "V_unitarity_err": 8.157543792352551e-16,
+      "V_maps_psi_to_w_err": 1.0285752811891807e-15,
+      "noiseless": {
+        "p0_real_variant": 0.49060016486248664,
+        "p0_imag_variant": 0.5737206630328361,
+        "re_recovery_err": 2.1510571102112408e-16,
+        "im_recovery_err": 1.6653345369377348e-16,
+        "imag_convention": "S^dagger on ancilla => p0 = (1 - Im<w|psi>)/2"
+      },
+      "shot_estimation_real_variant": [
+        {
+          "shots": 1000,
+          "p0_true": 0.49060016486248664,
+          "p0_hat": 0.503,
+          "overlap_re_true": -0.01879967027502693,
+          "overlap_re_est": 0.006000000000000005,
+          "abs_error": 0.024799670275026935,
+          "ci95_half_width_overlap": 0.061979526477700685
+        },
+        {
+          "shots": 10000,
+          "p0_true": 0.49060016486248664,
+          "p0_hat": 0.4911,
+          "overlap_re_true": -0.01879967027502693,
+          "overlap_re_est": -0.017800000000000038,
+          "abs_error": 0.0009996702750268913,
+          "ci95_half_width_overlap": 0.019596894722011444
+        },
+        {
+          "shots": 100000,
+          "p0_true": 0.49060016486248664,
+          "p0_hat": 0.49347,
+          "overlap_re_true": -0.01879967027502693,
+          "overlap_re_est": -0.01305999999999996,
+          "abs_error": 0.005739670275026969,
+          "ci95_half_width_overlap": 0.006197535609316206
+        }
+      ]
+    },
+    {
+      "t": 4400.0,
+      "N": 26,
+      "A_N": 8.835428326308623,
+      "overlap_re": -0.06191552044701138,
+      "overlap_im": -0.10447191423613066,
+      "M_t": -1.0941002863913303,
+      "V_unitarity_err": 8.881784197001252e-16,
+      "V_maps_psi_to_w_err": 1.69758469662851e-15,
+      "noiseless": {
+        "p0_real_variant": 0.4690422397764939,
+        "p0_imag_variant": 0.5522359571180654,
+        "re_recovery_err": 8.257283745649602e-16,
+        "im_recovery_err": 1.249000902703301e-16,
+        "imag_convention": "S^dagger on ancilla => p0 = (1 - Im<w|psi>)/2"
+      },
+      "shot_estimation_real_variant": [
+        {
+          "shots": 1000,
+          "p0_true": 0.4690422397764939,
+          "p0_hat": 0.47,
+          "overlap_re_true": -0.06191552044701138,
+          "overlap_re_est": -0.06000000000000005,
+          "abs_error": 0.0019155204470113277,
+          "ci95_half_width_overlap": 0.061868976393665995
+        },
+        {
+          "shots": 10000,
+          "p0_true": 0.4690422397764939,
+          "p0_hat": 0.4685,
+          "overlap_re_true": -0.06191552044701138,
+          "overlap_re_est": -0.06299999999999994,
+          "abs_error": 0.001084479552988564,
+          "ci95_half_width_overlap": 0.019561065128463735
+        },
+        {
+          "shots": 100000,
+          "p0_true": 0.4690422397764939,
+          "p0_hat": 0.472,
+          "overlap_re_true": -0.06191552044701138,
+          "overlap_re_est": -0.05600000000000005,
+          "abs_error": 0.005915520447011331,
+          "ci95_half_width_overlap": 0.00618833801791725
+        }
+      ]
+    },
+    {
+      "t": 4500.0,
+      "N": 26,
+      "A_N": 8.835428326308623,
+      "overlap_re": 0.032241727603789634,
+      "overlap_im": 0.0732792787609549,
+      "M_t": 0.5697389467192991,
+      "V_unitarity_err": 6.589483614246679e-16,
+      "V_maps_psi_to_w_err": 1.698378226284323e-15,
+      "noiseless": {
+        "p0_real_variant": 0.5161208638018945,
+        "p0_imag_variant": 0.46336036061952274,
+        "re_recovery_err": 6.730727086790012e-16,
+        "im_recovery_err": 3.7470027081099033e-16,
+        "imag_convention": "S^dagger on ancilla => p0 = (1 - Im<w|psi>)/2"
+      },
+      "shot_estimation_real_variant": [
+        {
+          "shots": 1000,
+          "p0_true": 0.5161208638018945,
+          "p0_hat": 0.529,
+          "overlap_re_true": 0.032241727603789634,
+          "overlap_re_est": 0.05800000000000005,
+          "abs_error": 0.025758272396210417,
+          "ci95_half_width_overlap": 0.0618763028759799
+        },
+        {
+          "shots": 10000,
+          "p0_true": 0.5161208638018945,
+          "p0_hat": 0.5213,
+          "overlap_re_true": 0.032241727603789634,
+          "overlap_re_est": 0.04259999999999997,
+          "abs_error": 0.010358272396210337,
+          "ci95_half_width_overlap": 0.019582207275953337
+        },
+        {
+          "shots": 100000,
+          "p0_true": 0.5161208638018945,
+          "p0_hat": 0.51737,
+          "overlap_re_true": 0.032241727603789634,
+          "overlap_re_est": 0.03473999999999999,
+          "abs_error": 0.002498272396210359,
+          "ci95_half_width_overlap": 0.006194322963349457
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": {
+      "base_commit": "d2f7dac3a8d634ec678bd32dff9acb92f0905b7d",
+      "branch": "quantum/portal-v1",
+      "note": "outputs generated from the working tree that became the 'Quantum Portal v1' commit; base_commit is its parent HEAD"
+    },
+    "generated_utc": "2026-08-01T14:49:49Z",
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "mpmath": "1.3.0",
+    "mp_dps": 50,
+    "seeds": {
+      "shot_rng": 20260801
+    },
+    "tolerances": {
+      "noiseless_recovery": 1e-12,
+      "unitarity": 1e-10
+    },
+    "claim_boundary": "exact finite-dimensional embedding of the Riemann-Siegel MAIN SUM; remainder term outside the register; no speedup claim; no RH claim; state preparation treated as an assumed oracle whose cost is NOT claimed"
+  }
+}
