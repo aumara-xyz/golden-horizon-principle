@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The 54 Observers — grounded</title>
+<style>
+  body { margin:0; background:#0b0e14; color:#d8dee9; font-family: Georgia, serif; }
+  #wrap { max-width:900px; margin:0 auto; padding:16px; }
+  h1 { font-size:20px; font-weight:normal; letter-spacing:2px; margin:8px 0 2px; }
+  .sub { color:#7a8494; font-size:13px; margin-bottom:10px; }
+  canvas { display:block; margin:0 auto; background:#0d1117; border:1px solid #1d2433; border-radius:8px; cursor:grab; }
+  .row { display:flex; gap:8px; justify-content:center; margin:12px 0; flex-wrap:wrap; }
+  button { background:#151b28; color:#d8dee9; border:1px solid #2a3348; border-radius:6px; padding:8px 14px; font-family:inherit; font-size:13px; cursor:pointer; }
+  button.active { border-color:#c9a227; color:#e8c95a; }
+  #readout { text-align:center; min-height:44px; font-size:14px; color:#aeb8c9; padding:0 12px; }
+  #readout b { color:#e8c95a; }
+  .truth { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:16px; font-size:12.5px; }
+  .truth div { background:#0d1117; border:1px solid #1d2433; border-radius:8px; padding:10px 12px; }
+  .truth h3 { margin:0 0 6px; font-size:12px; letter-spacing:1.5px; font-weight:normal; }
+  .real h3 { color:#5fb573; } .rhyme h3 { color:#c9a227; } .dead h3 { color:#c05b5b; }
+  .truth p { margin:4px 0; color:#98a2b3; line-height:1.45; }
+  .banner { text-align:center; font-size:11.5px; color:#5b6472; margin-top:14px; border-top:1px solid #1d2433; padding-top:8px; }
+  @media (max-width:700px){ .truth { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <h1>THE 54 OBSERVERS</h1>
+  <div class="sub">The recursive trinity cube, drawn exactly — every count proved, every fence marked. Drag to rotate.</div>
+  <canvas id="cv" width="560" height="480"></canvas>
+  <div class="row">
+    <button id="bAnat" class="active">Anatomy</button>
+    <button id="bViews">The 54 views</button>
+    <button id="bTern">Balanced ternary</button>
+    <button id="bDive">Dive (recurse)</button>
+    <button id="bUp" style="display:none">Surface</button>
+  </div>
+  <div id="readout"></div>
+  <div class="truth">
+    <div class="real"><h3>REAL — THEOREM-GRADE</h3>
+      <p>26 neighbors split 6 / 12 / 8 — exactly the cube's own faces, edges, vertices. The neighborhood mirrors the cube's anatomy.</p>
+      <p>Counted with multiplicity (planes each neighbor shares with you): 6·1 + 12·2 + 8·3 = <b style="color:#5fb573">54</b> = 6×9 = the Rubik's cube's sticker count = 2×27. Three constructions, one number, provably.</p>
+      <p>The dive is the 3-adic zoom: every cell contains 27 cells forever, and every point looks like every other point — self-similarity is a theorem there, not a metaphor. Its 1D shadow is the middle-thirds Cantor set, whose complex dimensions loop up the imaginary axis with period 2&pi;/log 3 (ledger LIT-RH001, machine-verified).</p></div>
+    <div class="rhyme"><h3>RHYME — NAMED, NOT BUILT ON</h3>
+      <p>Observer/observed duality &harr; the functional equation's single reflection s &harr; 1&minus;s. A resemblance, derived from neither side.</p>
+      <p>The hidden center as "the void" &harr; the balanced-ternary zero card &harr; the critical line as balance axis. Meaning-language; it may motivate, never claim.</p></div>
+    <div class="dead"><h3>FALSE — DO NOT CARRY</h3>
+      <p>"6 trivial zeros" — zeta has infinitely many trivial zeros (&minus;2, &minus;4, &minus;6, &hellip;).</p>
+      <p>No map from zeta zeros to this cube exists; digit-style maps are structure-blind (measured 2026-08-01).</p>
+      <p>"Reduce RH to a stable topology, therefore RH is true" — circular; no such reduction exists anywhere.</p></div>
+  </div>
+  <div class="banner">Known mathematics and honest fences only. External instrument. Not evidence for GHP or anything else.</div>
+</div>
+<script>
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let mode = 'anat', level = 0, rotX = -0.45, rotY = 0.65, drag = null, spin = true;
+const cells = [];
+for (let x=-1;x<=1;x++) for (let y=-1;y<=1;y++) for (let z=-1;z<=1;z++) cells.push({x,y,z, nz:(x!==0)+(y!==0)+(z!==0)});
+const val = c => 9*c.x + 3*c.y + c.z;
+const COL = { center:'#e8c95a', face:'#5b8cc9', edge:'#5fb573', corner:'#c05b5b' };
+function color(c){ if (c.nz===0) return COL.center; return c.nz===1?COL.face:(c.nz===2?COL.edge:COL.corner); }
+function project(c){
+  let {x,y,z} = c;
+  let x1 = x*Math.cos(rotY)+z*Math.sin(rotY), z1 = -x*Math.sin(rotY)+z*Math.cos(rotY);
+  let y1 = y*Math.cos(rotX)-z1*Math.sin(rotX), z2 = y*Math.sin(rotX)+z1*Math.cos(rotX);
+  const s = 96, persp = 3.2/(3.2+z2*0.5);
+  return { px: cv.width/2 + x1*s*persp, py: cv.height/2 - y1*s*persp, depth: z2, persp };
+}
+function draw(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  const pts = cells.map(c => ({...c, ...project(c)})).sort((a,b)=>a.depth-b.depth);
+  for (const p of pts){
+    const r = 13*p.persp * (p.nz===0?1.35:1);
+    const bright = 0.55 + 0.45*(p.depth+1.8)/3.6;
+    ctx.globalAlpha = Math.min(1, Math.max(0.35, bright));
+    ctx.beginPath(); ctx.arc(p.px, p.py, r, 0, 7); ctx.fillStyle = color(p); ctx.fill();
+    if (mode==='tern'){ ctx.fillStyle = '#0b0e14'; ctx.font = `${Math.round(9*p.persp)}px Georgia`; ctx.textAlign='center';
+      ctx.fillText(String(val(p)), p.px, p.py+3); }
+    if (mode==='views' && p.nz>0){ ctx.fillStyle='#0b0e14'; ctx.font = `bold ${Math.round(10*p.persp)}px Georgia`; ctx.textAlign='center';
+      ctx.fillText(String(p.nz), p.px, p.py+3.5); }
+  }
+  ctx.globalAlpha = 1;
+  if (level>0){ ctx.fillStyle='#7a8494'; ctx.font='12px Georgia'; ctx.textAlign='left';
+    ctx.fillText(`depth ${level} — ${'27'+ '×'.repeat(1)+'27'.repeat(0)}^${level+1} = ${Math.pow(27, level+1).toLocaleString()} cells contain this view`, 12, 20); }
+}
+const RD = {
+  anat: `26 distinct neighbors around you: <b>6</b> face-neighbors (blue) + <b>12</b> edge-neighbors (green) + <b>8</b> corner-neighbors (red) — the cube's own faces, edges and vertices, looking back at you. You are the gold center: the hidden 27th cubie, value <b>0</b>.`,
+  views: `Count each neighbor once per plane it shares with you (the number on each sphere): 6&middot;1 + 12&middot;2 + 8&middot;3 = <b>54</b>. Same 54 as the six 3&times;3 faces, same 54 as the Rubik's cube's stickers, same 54 as 2&times;27. Your three constructions were all correct — and all the same theorem.`,
+  tern: `Each cubie labeled with its balanced-ternary value 9x+3y+z: the cells enumerate <b>&minus;13 to +13</b> exactly, zero at the hidden center. The cube <i>is</i> the balanced base-3 numeral system, solid.`,
+  dive: `You dived into a cell — and found the whole structure again, exactly. This is the 3-adic zoom: <b>every cell contains 27 cells, forever, and every point sees the same thing</b>. "At any point it sees this, ya?" — yes. In the 3-adic world that is a theorem (homogeneity), and its 1D shadow is the Cantor string already fenced in your ledger as the one honest ternary&ndash;Riemann adjacency.`
+};
+function setMode(m, btn){
+  mode = m;
+  for (const b of document.querySelectorAll('button')) b.classList.remove('active');
+  btn.classList.add('active');
+  document.getElementById('readout').innerHTML = RD[m];
+  draw();
+}
+document.getElementById('bAnat').onclick = e => setMode('anat', e.target);
+document.getElementById('bViews').onclick = e => setMode('views', e.target);
+document.getElementById('bTern').onclick = e => setMode('tern', e.target);
+document.getElementById('bDive').onclick = e => { level++; document.getElementById('bUp').style.display='inline-block'; setMode('dive', e.target); pulse(); };
+document.getElementById('bUp').onclick = e => { level=Math.max(0,level-1); if(level===0) e.target.style.display='none'; draw(); };
+let pulseT = 0;
+function pulse(){ pulseT = 1; }
+cv.addEventListener('mousedown', e => { drag = {x:e.clientX, y:e.clientY}; spin=false; cv.style.cursor='grabbing'; });
+window.addEventListener('mousemove', e => { if(!drag) return; rotY += (e.clientX-drag.x)*0.008; rotX += (e.clientY-drag.y)*0.008; drag={x:e.clientX,y:e.clientY}; draw(); });
+window.addEventListener('mouseup', () => { drag=null; cv.style.cursor='grab'; });
+cv.addEventListener('touchstart', e => { const t=e.touches[0]; drag={x:t.clientX,y:t.clientY}; spin=false; }, {passive:true});
+cv.addEventListener('touchmove', e => { if(!drag) return; const t=e.touches[0]; rotY+=(t.clientX-drag.x)*0.008; rotX+=(t.clientY-drag.y)*0.008; drag={x:t.clientX,y:t.clientY}; draw(); }, {passive:true});
+(function loop(){ if (spin) { rotY += 0.004; draw(); } if (pulseT>0){ pulseT-=0.05; } requestAnimationFrame(loop); })();
+setMode('anat', document.getElementById('bAnat'));
+</script>
+</body>
+</html>
