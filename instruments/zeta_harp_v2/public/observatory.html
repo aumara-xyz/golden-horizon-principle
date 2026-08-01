@@ -9,209 +9,324 @@
   NOT EVIDENCE FOR RH OR GHP
   Built under instruments/zeta_harp_v2/ (Gates 3-6). Self-contained: no CDN,
   no network. Math spec: instruments/zeta_harp_v2/MATH_SPEC.md.
+  v2.1 (2026-08-02): UX overhaul per owner notes — presentation, guidance and
+  sound design only. The math core (zh-math), the embedded fixtures
+  (zh-fixtures) and the fence text are byte-identical to v2.
 -->
 <style>
-/* Zeta Harp v2 — observatory chrome. Museum-dark, hairline, no neon grid. */
+/* Zeta Harp v2.1 — observatory chrome.
+   House slate blue-grey (aukora spatial family), Georgia voice, soft contrast.
+   Monospace lives only in numeric readouts and the fence's formula blocks. */
 :root {
-  --bg: #04060b;
-  --ink: #c6d1e2;
-  --dim: #6b7890;
-  --faint: #3a4459;
+  --bg0: #10161f;
+  --bg1: #1a2230;
+  --ink: #c8d2de;
+  --dim: #8a96a8;
+  --faint: #5c6879;
   --blue: #5b8ef2;    /* positive real contribution */
   --purple: #a06bff;  /* negative real contribution */
   --gold: #e2b45a;    /* resultant */
-  --hair: rgba(198, 214, 240, 0.13);
-  --panel: rgba(7, 10, 18, 0.82);
+  --green: #8fd0a8;
+  --hair: rgba(200, 214, 235, 0.14);
+  --panel: rgba(23, 31, 46, 0.82);
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --serif: Georgia, "Times New Roman", serif;
-  --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
-body { font-family: var(--sans); color: var(--ink); font-size: 13px; }
+html, body { width: 100%; height: 100%; overflow: hidden;
+  background: linear-gradient(165deg, var(--bg0) 0%, #141b28 55%, var(--bg1) 100%); }
+body { font-family: var(--serif); color: var(--ink); font-size: 14px; line-height: 1.65; }
 canvas#gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+#vignette { position: fixed; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(10, 14, 21, 0.42) 100%); }
 
 .hud { position: fixed; z-index: 5; pointer-events: none; }
 .hud * { pointer-events: auto; }
+.hidden { display: none !important; }
+.dim { color: var(--dim); }
+.mono { font-family: var(--mono); }
 
-/* ---- top bar ---------------------------------------------------------- */
+/* ---- clickability grammar: everything interactive glows on hover -------- */
+button { font-family: var(--serif); cursor: pointer; }
+button.ghost {
+  font-size: 14px; letter-spacing: 0.06em;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--hair);
+  padding: 7px 14px; border-radius: 4px;
+  transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
+}
+button.ghost:hover, button.ghost:focus-visible {
+  border-color: rgba(226, 180, 90, 0.5);
+  box-shadow: 0 0 14px rgba(226, 180, 90, 0.16);
+  outline: none;
+}
+button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
+
+/* ---- top bar ------------------------------------------------------------ */
 #topbar {
   top: 0; left: 0; right: 0; display: flex; align-items: flex-start;
-  justify-content: space-between; padding: 14px 18px 0;
+  justify-content: space-between; padding: 16px 20px 0;
 }
 #masthead h1 {
-  font-family: var(--serif); font-weight: 400; letter-spacing: 0.34em;
-  font-size: 15px; color: var(--ink); text-transform: uppercase;
+  font-weight: 400; letter-spacing: 0.30em;
+  font-size: 17px; color: var(--ink); text-transform: uppercase;
 }
 #masthead .sub {
-  font-family: var(--serif); letter-spacing: 0.22em; font-size: 10px;
-  color: var(--dim); text-transform: uppercase; margin-top: 4px;
+  letter-spacing: 0.14em; font-size: 14px;
+  color: var(--dim); margin-top: 6px; font-style: italic;
 }
-#standing-label {
-  margin-top: 8px; font-family: var(--mono); font-size: 9.5px;
-  letter-spacing: 0.08em; color: var(--dim); max-width: 460px; line-height: 1.5;
-}
-#topright { text-align: right; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+#topright { text-align: right; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
 .badge {
-  display: inline-block; font-family: var(--mono); font-size: 9.5px;
-  letter-spacing: 0.12em; padding: 4px 10px; border: 1px solid var(--hair);
-  color: var(--dim); background: var(--panel); border-radius: 2px;
+  display: inline-block; font-size: 13px; letter-spacing: 0.08em;
+  padding: 5px 12px; border: 1px solid var(--hair);
+  color: var(--dim); background: var(--panel); border-radius: 3px;
 }
-.badge.truth { color: #8fd0a8; border-color: rgba(143, 208, 168, 0.35); }
+.badge.truth { color: var(--green); border-color: rgba(143, 208, 168, 0.35); }
 .badge.artistic { color: #d9a6f2; border-color: rgba(217, 166, 242, 0.4); }
-button.ghost {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
-  background: var(--panel); color: var(--ink); border: 1px solid var(--hair);
-  padding: 5px 12px; cursor: pointer; border-radius: 2px;
-}
-button.ghost:hover { border-color: rgba(198, 214, 240, 0.4); }
-button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.45); }
 
-/* ---- bottom navigation ------------------------------------------------- */
-#nav {
-  left: 0; right: 0; bottom: 0; padding: 10px 18px 14px;
-  background: linear-gradient(to top, rgba(4, 6, 11, 0.92), rgba(4, 6, 11, 0));
+/* ---- mode picker -------------------------------------------------------- */
+#modePicker { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
+.mode-item {
+  text-align: left; display: flex; flex-direction: column; gap: 1px;
+  background: var(--panel); border: 1px solid var(--hair); border-radius: 5px;
+  padding: 7px 14px; min-width: 240px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-#nav .row { display: flex; align-items: center; gap: 14px; }
-#tslider { flex: 1; -webkit-appearance: none; appearance: none; height: 2px;
-  background: var(--faint); outline: none; }
-#tslider::-webkit-slider-thumb {
-  -webkit-appearance: none; appearance: none; width: 11px; height: 11px;
-  border-radius: 50%; background: var(--gold); border: none; cursor: pointer;
+.mode-item:hover, .mode-item:focus-visible {
+  border-color: rgba(226, 180, 90, 0.5);
+  box-shadow: 0 0 14px rgba(226, 180, 90, 0.14); outline: none;
 }
-#tslider::-moz-range-thumb { width: 11px; height: 11px; border-radius: 50%;
-  background: var(--gold); border: none; cursor: pointer; }
-.readout { font-family: var(--mono); font-size: 11px; color: var(--ink); white-space: nowrap; }
-.readout b { color: var(--gold); font-weight: 400; }
-.readout .lbl { color: var(--dim); }
-#presets { display: flex; gap: 6px; }
-#navmeta { display: flex; gap: 22px; margin-top: 7px; font-family: var(--mono);
-  font-size: 10.5px; color: var(--dim); flex-wrap: wrap; }
-#navmeta b { color: var(--ink); font-weight: 400; }
+.mode-item .mname { font-size: 14px; letter-spacing: 0.22em; color: var(--ink); text-transform: uppercase; }
+.mode-item .mdesc { font-size: 13px; color: var(--dim); font-style: italic; }
+.mode-item.on { border-color: rgba(226, 180, 90, 0.55); }
+.mode-item.on .mname { color: var(--gold); }
+#toprightRow2 { display: flex; gap: 8px; }
+#infoBtn { width: 38px; text-align: center; font-size: 16px; }
 
-/* ---- generic panel ----------------------------------------------------- */
+/* ---- generic panel ------------------------------------------------------ */
 .panel {
   position: fixed; z-index: 6; background: var(--panel);
-  border: 1px solid var(--hair); border-radius: 3px; padding: 12px 14px;
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--hair); border-radius: 6px; padding: 14px 16px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
 .panel h2 {
-  font-family: var(--mono); font-size: 10px; font-weight: 400;
-  letter-spacing: 0.18em; color: var(--dim); text-transform: uppercase;
-  margin-bottom: 8px; display: flex; justify-content: space-between; gap: 12px;
+  font-family: var(--serif); font-size: 13px; font-weight: 400;
+  letter-spacing: 0.20em; color: var(--dim); text-transform: uppercase;
+  margin-bottom: 10px; display: flex; justify-content: space-between; gap: 12px;
 }
-.panel h2 .x { cursor: pointer; color: var(--faint); }
-.panel h2 .x:hover { color: var(--ink); }
-.hidden { display: none !important; }
-.mono { font-family: var(--mono); }
-.dim { color: var(--dim); }
+.panel h2 .x { cursor: pointer; color: var(--faint); letter-spacing: 0.04em; text-transform: none; }
+.panel h2 .x:hover { color: var(--gold); }
 .caveat {
-  font-family: var(--mono); font-size: 9px; color: var(--dim);
-  line-height: 1.5; letter-spacing: 0.02em; margin-top: 8px; max-width: 340px;
+  font-size: 13px; color: var(--dim);
+  line-height: 1.6; margin-top: 10px; max-width: 360px;
 }
-.kv { font-family: var(--mono); font-size: 10.5px; line-height: 1.75; }
-.kv .k { color: var(--dim); }
+.kv { font-family: var(--mono); font-size: 12px; line-height: 1.8; }
+.kv .k { color: var(--dim); font-family: var(--serif); font-size: 13px; }
 .kv .v { color: var(--ink); }
 .kv .g { color: var(--gold); }
 
-/* ---- ribbon ------------------------------------------------------------ */
-#ribbonPanel { left: 18px; right: 18px; bottom: 74px; padding: 8px 12px 6px; }
-#ribbon { width: 100%; height: 110px; display: block; }
-#ribbonKeys { display: flex; gap: 14px; margin-top: 4px; font-family: var(--mono);
-  font-size: 9.5px; color: var(--dim); flex-wrap: wrap; }
-.layerToggle { cursor: pointer; user-select: none; }
-.layerToggle .swatch { display: inline-block; width: 14px; height: 2px;
-  vertical-align: middle; margin-right: 5px; }
-.layerToggle.off { opacity: 0.32; }
+/* ---- ribbon (redesigned: half height, toggle buttons in a column) ------- */
+#ribbonPanel { left: 20px; right: 20px; bottom: 152px; padding: 12px 16px; }
+#ribbonRow { display: flex; gap: 16px; align-items: stretch; }
+#ribbonKeys { display: flex; flex-direction: column; gap: 6px; width: 252px; flex: none; }
+.layerBtn {
+  display: flex; align-items: flex-start; gap: 9px; text-align: left;
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--hair);
+  border-radius: 5px; padding: 5px 10px; color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+.layerBtn:hover, .layerBtn:focus-visible {
+  border-color: rgba(226, 180, 90, 0.5);
+  box-shadow: 0 0 12px rgba(226, 180, 90, 0.14); outline: none;
+}
+.layerBtn .sw { width: 16px; height: 3px; border-radius: 2px; margin-top: 8px; flex: none; }
+.layerBtn .lname { font-size: 14px; letter-spacing: 0.10em; }
+.layerBtn .lexp { font-size: 13px; color: var(--dim); font-style: italic; }
+.layerBtn.pressed { border-color: rgba(226, 180, 90, 0.45); background: rgba(226, 180, 90, 0.06); }
+.layerBtn.off { opacity: 0.38; }
+#ribbonMain { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+#ribbon { width: 100%; height: 58px; display: block; }
+#ribbonNote { font-size: 13px; color: var(--dim); font-style: italic; }
 
-/* ---- flower ------------------------------------------------------------ */
-#flowerPanel { left: 18px; top: 118px; width: 384px; }
-#flower { width: 356px; height: 356px; display: block; }
-#flowerNums { margin-top: 6px; }
+/* ---- flower ------------------------------------------------------------- */
+#flowerPanel { left: 20px; top: 128px; width: 396px; }
+#flower { width: 360px; height: 360px; display: block; }
+#flowerNums { margin-top: 8px; }
 
-/* ---- inspector --------------------------------------------------------- */
-#inspectorPanel { right: 18px; top: 118px; width: 300px; }
+/* ---- inspector ---------------------------------------------------------- */
+#inspectorPanel { right: 20px; top: 210px; width: 330px; }
+#inspStatus { font-family: var(--mono); font-size: 12px; line-height: 1.8;
+  border-top: 1px solid var(--hair); margin-top: 10px; padding-top: 8px; }
+#inspStatus .k { color: var(--dim); font-family: var(--serif); font-size: 13px; }
 
-/* ---- microscope -------------------------------------------------------- */
-#microPanel { right: 18px; top: 118px; width: 430px; max-height: calc(100vh - 300px); overflow-y: auto; }
-#microZeroSel { width: 100%; background: #0a0e18; color: var(--ink);
-  border: 1px solid var(--hair); font-family: var(--mono); font-size: 10.5px;
-  padding: 4px; margin-bottom: 8px; }
-#microCurve { width: 400px; height: 130px; display: block; }
-#microBars { width: 400px; height: 150px; display: block; margin-top: 8px; }
+/* ---- microscope --------------------------------------------------------- */
+#microPanel { right: 20px; top: 128px; width: 440px; max-height: calc(100vh - 300px); overflow-y: auto; }
+#microZeroSel { width: 100%; background: #141b28; color: var(--ink);
+  border: 1px solid var(--hair); font-family: var(--mono); font-size: 12px;
+  padding: 5px; margin-bottom: 8px; border-radius: 4px; }
+#microCurve { width: 404px; height: 130px; display: block; }
+#microBars { width: 404px; height: 150px; display: block; margin-top: 8px; }
 
-/* ---- audio ------------------------------------------------------------- */
-#audioPanel { left: 18px; bottom: 208px; width: 384px; }
-#audioPanel .ctl { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+/* ---- sound -------------------------------------------------------------- */
+#audioPanel { left: 20px; bottom: 224px; width: 404px; }
+#soundModes { display: flex; gap: 8px; margin-bottom: 8px; }
+#soundModes button { flex: 1; }
+#audioPanel .ctl { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+#audioPanel .ctl .lbl { font-size: 14px; color: var(--dim); white-space: nowrap; }
 #audioPanel input[type="range"] { flex: 1; -webkit-appearance: none; appearance: none;
-  height: 2px; background: var(--faint); }
+  height: 2px; background: var(--faint); cursor: pointer; }
 #audioPanel input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none;
-  width: 9px; height: 9px; border-radius: 50%; background: var(--ink); cursor: pointer; }
-#audioPanel input[type="range"]::-moz-range-thumb { width: 9px; height: 9px;
-  border-radius: 50%; background: var(--ink); border: none; cursor: pointer; }
-#honesty { margin-top: 6px; font-family: var(--mono); font-size: 9.5px; color: var(--dim); }
+  width: 11px; height: 11px; border-radius: 50%; background: var(--gold); cursor: pointer; }
+#audioPanel input[type="range"]::-moz-range-thumb { width: 11px; height: 11px;
+  border-radius: 50%; background: var(--gold); border: none; cursor: pointer; }
+#audioState { font-size: 13px; color: var(--dim); font-style: italic; }
+#honesty { margin-top: 6px; font-size: 13px; color: var(--dim); }
+#musNote, #truthNote { font-size: 13px; color: var(--dim); line-height: 1.6; margin-top: 6px; }
 #artctl { border-top: 1px solid var(--hair); margin-top: 10px; padding-top: 8px; }
-#artctl label { font-family: var(--mono); font-size: 10px; color: var(--dim);
+#artctl label { font-size: 14px; color: var(--dim);
   display: inline-flex; gap: 6px; align-items: center; margin-right: 14px; cursor: pointer; }
+.readout { font-family: var(--mono); font-size: 12px; color: var(--ink); white-space: nowrap; }
+.readout b { color: var(--gold); font-weight: 400; }
+.readout .lbl { color: var(--dim); font-family: var(--serif); font-size: 13px; }
 
-/* ---- fence ------------------------------------------------------------- */
+/* ---- torus window ------------------------------------------------------- */
+#torusPanel { right: 20px; bottom: 128px; width: 336px; }
+#torus { width: 300px; height: 300px; display: block; margin: 0 auto; }
+#torusLabel { font-size: 13.5px; line-height: 1.6; color: var(--ink); margin-top: 8px; }
+#torusSub { font-size: 13px; line-height: 1.6; color: var(--dim); font-style: italic; margin-top: 6px; }
+
+/* ---- info panel --------------------------------------------------------- */
+#infoPanel { right: 20px; top: 128px; width: 400px; max-height: calc(100vh - 260px); overflow-y: auto; }
+#infoPanel p { font-size: 14px; line-height: 1.7; margin-bottom: 10px; }
+#infoPanel .law { font-size: 13px; letter-spacing: 0.06em; color: var(--dim); }
+#infoPanel .keysRow { font-size: 14px; line-height: 2.0; color: var(--dim); }
+#infoPanel .keysRow b { color: var(--ink); font-weight: 400; font-family: var(--mono); font-size: 12.5px; }
+#infoPanel .btnrow { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+
+/* ---- fence (content untouched; restyled larger and calmer) -------------- */
 #fencePanel {
   inset: 0; z-index: 20; overflow-y: auto; border: none; border-radius: 0;
-  background: rgba(3, 5, 9, 0.96); padding: 48px 0;
+  background: rgba(14, 19, 28, 0.97); padding: 48px 0;
 }
-#fenceInner { max-width: 780px; margin: 0 auto; padding: 0 24px; }
-#fenceInner h2 { font-family: var(--serif); font-size: 13px; letter-spacing: 0.28em;
-  color: var(--ink); text-transform: uppercase; margin: 26px 0 10px; display: block; }
+#fenceInner { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+#fenceInner h2 { font-family: var(--serif); font-size: 15px; letter-spacing: 0.26em;
+  color: var(--ink); text-transform: uppercase; margin: 28px 0 12px; display: block; }
 #fenceInner p, #fenceInner li {
-  font-size: 12.5px; line-height: 1.75; color: var(--ink); margin-bottom: 8px;
+  font-size: 14px; line-height: 1.8; color: var(--ink); margin-bottom: 10px;
 }
-#fenceInner .frm { font-family: var(--mono); font-size: 11.5px; color: var(--gold);
+#fenceInner .frm { font-family: var(--mono); font-size: 13px; color: var(--gold);
   background: rgba(226, 180, 90, 0.05); border-left: 2px solid rgba(226, 180, 90, 0.3);
-  padding: 8px 12px; margin: 8px 0; white-space: pre-wrap; line-height: 1.7; }
-#fenceInner .lawline { font-family: var(--mono); font-size: 10.5px; color: var(--dim);
-  letter-spacing: 0.05em; line-height: 1.8; }
+  padding: 10px 14px; margin: 10px 0; white-space: pre-wrap; line-height: 1.8; }
+#fenceInner .lawline { font-family: var(--mono); font-size: 12.5px; color: var(--dim);
+  letter-spacing: 0.04em; line-height: 1.9; }
 #fenceInner table { border-collapse: collapse; font-family: var(--mono);
-  font-size: 10.5px; margin: 8px 0; }
-#fenceInner td, #fenceInner th { border: 1px solid var(--hair); padding: 4px 10px;
+  font-size: 12.5px; margin: 10px 0; }
+#fenceInner td, #fenceInner th { border: 1px solid var(--hair); padding: 5px 12px;
   color: var(--ink); font-weight: 400; text-align: left; }
 #fenceInner th { color: var(--dim); }
 
-/* ---- keys help / footer chips ----------------------------------------- */
-#keysHint {
-  right: 18px; bottom: 74px; font-family: var(--mono); font-size: 9.5px;
-  color: var(--faint); text-align: right; line-height: 1.8; letter-spacing: 0.05em;
-}
-#keysHint b { color: var(--dim); font-weight: 400; }
-
-/* ---- event labels (ignition, crossing) --------------------------------- */
+/* ---- event labels (crossing, cutoff entry) ------------------------------ */
 #eventLabel {
-  left: 50%; top: 24%; transform: translateX(-50%); font-family: var(--mono);
-  font-size: 11px; letter-spacing: 0.14em; color: var(--gold);
-  text-align: center; opacity: 0; transition: opacity 0.5s; line-height: 1.9;
-  text-shadow: 0 0 18px rgba(4, 6, 11, 0.9); pointer-events: none;
+  left: 50%; top: 22%; transform: translateX(-50%);
+  font-size: 15px; letter-spacing: 0.10em; color: var(--gold);
+  text-align: center; opacity: 0; transition: opacity 0.5s; line-height: 1.8;
+  text-shadow: 0 0 18px rgba(14, 19, 28, 0.9); pointer-events: none;
 }
-#eventLabel .sub2 { font-size: 9.5px; color: var(--dim); letter-spacing: 0.1em; }
+#eventLabel .sub2 { font-size: 13px; color: var(--dim); letter-spacing: 0.06em; }
 
-/* ---- opening ----------------------------------------------------------- */
-#opening {
-  position: fixed; inset: 0; z-index: 30; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; text-align: center;
-  background: transparent; pointer-events: none;
+/* ---- bottom navigation -------------------------------------------------- */
+#nav {
+  left: 0; right: 0; bottom: 30px; padding: 10px 20px 6px;
+  background: linear-gradient(to top, rgba(16, 22, 31, 0.90), rgba(16, 22, 31, 0));
 }
-#opening .line {
-  font-family: var(--serif); letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--ink); font-size: 14px; opacity: 0; transition: opacity 1.4s;
-  margin: 8px 0; max-width: 700px; line-height: 2;
+#nav .row { display: flex; align-items: center; gap: 16px; }
+#tslider { flex: 1; -webkit-appearance: none; appearance: none; height: 2px;
+  background: var(--faint); outline: none; cursor: pointer; }
+#tslider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 13px; height: 13px;
+  border-radius: 50%; background: var(--gold); border: none; cursor: pointer;
+  box-shadow: 0 0 8px rgba(226, 180, 90, 0.5);
 }
-#opening .line.mono { font-family: var(--mono); font-size: 10px;
-  letter-spacing: 0.12em; color: var(--dim); text-transform: none; }
-#opening .line.title { font-size: 24px; }
-#skipBtn { position: fixed; right: 18px; bottom: 18px; z-index: 31; opacity: 0.7; }
-#vignette { position: fixed; inset: 0; z-index: 2; pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 52%, rgba(2, 3, 6, 0.55) 100%); }
-#fade { position: fixed; inset: 0; z-index: 29; background: #000; pointer-events: none;
-  transition: opacity 2.2s; }
+#tslider::-moz-range-thumb { width: 13px; height: 13px; border-radius: 50%;
+  background: var(--gold); border: none; cursor: pointer; }
+#navReadout { font-size: 14px; color: var(--dim); white-space: nowrap; }
+#navReadout b { color: var(--gold); font-weight: 400; font-family: var(--mono); font-size: 13px; }
+#presets { display: flex; gap: 10px; margin-top: 10px; justify-content: center; flex-wrap: wrap; }
+.preset-card {
+  text-align: left; display: flex; flex-direction: column; gap: 2px;
+  background: var(--panel); border: 1px solid var(--hair); border-radius: 6px;
+  padding: 9px 16px; min-width: 172px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.preset-card:hover, .preset-card:focus-visible {
+  border-color: rgba(226, 180, 90, 0.5);
+  box-shadow: 0 0 16px rgba(226, 180, 90, 0.16);
+  transform: translateY(-1px); outline: none;
+}
+.preset-card .pname { font-size: 14px; letter-spacing: 0.18em; color: var(--gold); }
+.preset-card .psub { font-size: 13px; color: var(--dim); font-family: var(--mono); }
+.preset-card .psub sup { font-size: 10px; }
 
+/* ---- footer: the fence line, always present ----------------------------- */
+#footer {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 7; text-align: center;
+  padding: 6px 12px 7px; font-size: 13.5px; letter-spacing: 0.10em; color: var(--dim);
+  background: linear-gradient(to top, rgba(16, 22, 31, 0.95), rgba(16, 22, 31, 0.4));
+}
+#footer .fenceLink { color: var(--dim); cursor: pointer; border-bottom: 1px dotted var(--faint); }
+#footer .fenceLink:hover { color: var(--gold); }
+
+/* ---- one-time hint toast ------------------------------------------------ */
+#hintToast {
+  position: fixed; left: 50%; top: 15%; transform: translateX(-50%); z-index: 8;
+  font-size: 15px; font-style: italic; color: var(--ink);
+  background: var(--panel); border: 1px solid rgba(226, 180, 90, 0.35);
+  border-radius: 6px; padding: 10px 22px; pointer-events: none;
+  opacity: 0; transition: opacity 1.2s;
+}
+
+/* ---- welcome overlay ---------------------------------------------------- */
+#welcome {
+  position: fixed; inset: 0; z-index: 40; display: flex;
+  align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(16, 22, 31, 0.55), rgba(13, 18, 27, 0.86));
+}
+#welcomeCard { max-width: 660px; text-align: center; padding: 40px 44px; }
+#welcomeCard .wtitle { font-size: 30px; letter-spacing: 0.34em; color: var(--ink);
+  text-transform: uppercase; }
+#welcomeCard .wsub { font-size: 14px; letter-spacing: 0.20em; color: var(--dim);
+  text-transform: uppercase; margin-top: 8px; }
+#welcomeCard .wbody { font-size: 17.5px; line-height: 1.85; margin: 26px 0 30px; color: var(--ink); }
+#beginBtn {
+  font-size: 17px; letter-spacing: 0.30em; padding: 15px 54px 15px 62px;
+  background: rgba(226, 180, 90, 0.07); color: var(--gold);
+  border: 1px solid rgba(226, 180, 90, 0.55); border-radius: 6px;
+  transition: box-shadow 0.25s, background 0.25s;
+}
+#beginBtn:hover, #beginBtn:focus-visible {
+  box-shadow: 0 0 26px rgba(226, 180, 90, 0.30);
+  background: rgba(226, 180, 90, 0.13); outline: none;
+}
+#skipTourLink {
+  display: inline-block; margin-top: 18px; font-size: 14px; font-style: italic;
+  color: var(--dim); background: none; border: none;
+  border-bottom: 1px dotted var(--faint); padding: 0 1px 1px;
+}
+#skipTourLink:hover { color: var(--ink); }
+#welcomeLaw { margin-top: 30px; font-size: 12.5px; letter-spacing: 0.08em; color: var(--faint); }
+
+/* ---- guided journey caption --------------------------------------------- */
+#jrCap {
+  position: fixed; left: 50%; bottom: 64px; transform: translateX(-50%);
+  z-index: 12; width: min(780px, calc(100vw - 48px)); text-align: center;
+  background: var(--panel); border: 1px solid var(--hair); border-radius: 8px;
+  padding: 20px 30px 14px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+#jrText { font-size: 19px; line-height: 1.7; color: var(--ink); }
+#jrRow { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 12px; }
+#jrDots { display: flex; gap: 7px; }
+#jrDots span { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); }
+#jrDots span.on { background: var(--gold); }
 </style>
 </head>
 <body>
@@ -222,38 +337,63 @@ button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.45); }
   <div id="masthead">
     <h1 id="mastTitle">Riemann-Siegel Phase Observatory</h1>
     <div class="sub" id="mastSub">the main sum of Hardy's Z, drawn as phase trajectories</div>
-    <div id="standing-label">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP</div>
   </div>
   <div id="topright">
-    <button class="ghost" id="modeBtn">installation mode</button>
-    <span class="badge truth" id="truthBadge">TRUTH MODE — no per-string tuning, no remapping</span>
-    <span class="badge" id="valBadge">validated: W1-W4 fixtures embedded</span>
+    <div id="modePicker">
+      <button class="mode-item" data-mode="guided" id="modeGuided">
+        <span class="mname">Guided</span>
+        <span class="mdesc">a short flown tour of the instrument</span>
+      </button>
+      <button class="mode-item on" data-mode="explore" id="modeExplore">
+        <span class="mname">Explore</span>
+        <span class="mdesc">free flight — every control, every panel</span>
+      </button>
+      <button class="mode-item" data-mode="ambient" id="modeAmbient">
+        <span class="mname">Ambient</span>
+        <span class="mdesc">hands off — the instrument plays itself</span>
+      </button>
+    </div>
+    <div id="toprightRow2">
+      <button class="ghost" id="torusBtn">torus window</button>
+      <button class="ghost" id="infoBtn" title="about, shortcuts, replay the tour">?</button>
+    </div>
+    <span class="badge artistic" id="truthBadge">ARTISTIC SONIFICATION — NOT A PRIVILEGED MATHEMATICAL MAPPING</span>
   </div>
 </div>
 
 <div id="eventLabel" class="hud"></div>
+<div id="hintToast">Everything that glows is clickable — hover, then click.</div>
 
-<div id="keysHint" class="hud panel" style="background:transparent;border:none;">
-  <b>drag</b> orbit &nbsp; <b>scroll / W S</b> fly along t<br>
-  <b>space</b> freeze slice &nbsp; <b>F</b> phasor flower<br>
-  <b>R</b> ribbon &nbsp; <b>Z</b> zero microscope &nbsp; <b>U</b> audio<br>
-  <b>A</b> cruise &nbsp; <b>I</b> fence &nbsp; <b>esc</b> close panels
-</div>
-
-<div id="ribbonPanel" class="panel hidden">
-  <h2>Z ribbon — height window <span class="x" data-close="ribbonPanel">[close]</span></h2>
-  <canvas id="ribbon" width="1200" height="110"></canvas>
-  <div id="ribbonKeys">
-    <span class="layerToggle" id="lyrM"><span class="swatch" style="background:var(--gold)"></span>main sum M(t) — computed, N(t) terms</span>
-    <span class="layerToggle" id="lyrZ"><span class="swatch" style="background:var(--blue)"></span>Z_ref — high-precision reference (fixture)</span>
-    <span class="layerToggle" id="lyrR"><span class="swatch" style="background:var(--purple)"></span>R_ref = Z_ref &minus; M — remainder (fixture)</span>
-    <span class="dim" id="ribbonNote"></span>
+<div id="ribbonPanel" class="panel hud hidden">
+  <h2>Z ribbon — this height window <span class="x" data-close="ribbonPanel">[close]</span></h2>
+  <div id="ribbonRow">
+    <div id="ribbonKeys">
+      <button class="layerBtn pressed" id="lyrM">
+        <span class="sw" style="background:var(--gold)"></span>
+        <span><span class="lname">MAIN SUM</span><br>
+        <span class="lexp">the formula's waves, all added up</span></span>
+      </button>
+      <button class="layerBtn pressed" id="lyrZ">
+        <span class="sw" style="background:var(--blue)"></span>
+        <span><span class="lname">REFERENCE</span><br>
+        <span class="lexp">the exact function, from precise tables</span></span>
+      </button>
+      <button class="layerBtn pressed" id="lyrR">
+        <span class="sw" style="background:var(--purple)"></span>
+        <span><span class="lname">REMAINDER</span><br>
+        <span class="lexp">what the finite sum leaves out</span></span>
+      </button>
+    </div>
+    <div id="ribbonMain">
+      <canvas id="ribbon" width="1200" height="58"></canvas>
+      <span id="ribbonNote"></span>
+    </div>
   </div>
 </div>
 
-<div id="flowerPanel" class="panel hidden">
+<div id="flowerPanel" class="panel hud hidden">
   <h2>Phasor flower — frozen slice <span class="x" data-close="flowerPanel">[close]</span></h2>
-  <canvas id="flower" width="712" height="712"></canvas>
+  <canvas id="flower" width="720" height="720"></canvas>
   <div class="kv" id="flowerNums"></div>
   <div class="caveat">Polygon chained in n-order: the partial-sum path depends on that
   ordering; only the endpoint (the resultant) is order-independent. The vertical axis is
@@ -262,17 +402,18 @@ button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.45); }
   its term.</div>
 </div>
 
-<div id="inspectorPanel" class="panel hidden">
+<div id="inspectorPanel" class="panel hud hidden">
   <h2>Term inspector <span class="x" data-close="inspectorPanel">[close]</span></h2>
-  <div class="kv" id="inspectorBody">click a helix or a phasor to select a term</div>
+  <div class="kv" id="inspectorBody">click a thread or a phasor to select a term</div>
   <div style="margin-top:8px"><button class="ghost" id="voiceBtn">voice this term</button></div>
+  <div id="inspStatus"></div>
 </div>
 
-<div id="microPanel" class="panel hidden">
+<div id="microPanel" class="panel hud hidden">
   <h2>Zero microscope — refined reference list <span class="x" data-close="microPanel">[close]</span></h2>
   <select id="microZeroSel"></select>
-  <canvas id="microCurve" width="800" height="260"></canvas>
-  <canvas id="microBars" width="800" height="300"></canvas>
+  <canvas id="microCurve" width="808" height="260"></canvas>
+  <canvas id="microBars" width="808" height="300"></canvas>
   <div class="kv" id="microNums"></div>
   <div class="caveat">Zeros above come only from the embedded refined reference list
   (Odlyzko-derived table, refined with high-precision Z; NOT certified). Sign changes of
@@ -282,26 +423,83 @@ button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.45); }
   that height.</div>
 </div>
 
-<div id="audioPanel" class="panel hidden">
-  <h2>Truth audio <span class="x" data-close="audioPanel">[close]</span></h2>
-  <div class="ctl"><button class="ghost" id="audioBtn">enable audio</button>
-    <span class="readout dim" id="audioState">off — audio starts only on your gesture</span></div>
-  <div class="ctl"><span class="readout"><span class="lbl">v_t</span></span>
-    <input type="range" id="vtSlider" min="0" max="1000" value="520">
-    <span class="readout" id="vtReadout"></span></div>
-  <div class="ctl"><span class="readout"><span class="lbl">gain</span></span>
-    <input type="range" id="gainSlider" min="0" max="100" value="35">
+<div id="audioPanel" class="panel hud hidden">
+  <h2>Sound <span class="x" data-close="audioPanel">[close]</span></h2>
+  <div id="soundModes">
+    <button class="ghost on" id="soundModeMus">MUSICAL<br><span class="dim" style="font-size:13px;font-style:italic">artistic sonification</span></button>
+    <button class="ghost" id="soundModeTruth">TRUTH<br><span class="dim" style="font-size:13px;font-style:italic">the exact mapping</span></button>
+  </div>
+  <div class="ctl"><button class="ghost" id="audioBtn">sound off</button>
+    <span id="audioState">off — sound starts only on your gesture</span></div>
+  <div class="ctl"><span class="lbl">volume</span>
+    <input type="range" id="gainSlider" min="0" max="100" value="45">
     <span class="readout" id="gainReadout"></span></div>
-  <div class="mono" style="font-size:10px;color:var(--dim);line-height:1.7">
-    f_audio_n = v_t &middot; (&theta;&prime;(t) &minus; ln n) / 2&pi; &nbsp;&mdash;&nbsp; one global
-    time-dilation v_t, one global gain, disclosed above. What you hear is the phase law,
-    time-compressed. No per-string tuning in Truth Mode.</div>
-  <div id="honesty"></div>
-  <div id="artctl">
-    <label><input type="checkbox" id="reverbChk"> reverb</label>
-    <label><input type="checkbox" id="quantChk"> scale-quantize voiced terms</label>
-    <div class="caveat" style="margin-top:4px">These controls leave Truth Mode: enabling
-    either flips the badge to ARTISTIC SONIFICATION.</div>
+  <div id="musCtl">
+    <div class="ctl"><span class="lbl">musical density</span>
+      <input type="range" id="musDensity" min="3" max="12" value="7">
+      <span class="readout" id="musDensityReadout"></span></div>
+    <div id="musNote">Artistic sonification: a handful of threads are voiced on a
+    harmonic-series-derived scale (pitches drawn from harmonics 8&ndash;15 of 55 Hz &mdash;
+    honest kinship to overtone structure, not the mathematical mapping). Loudness follows
+    each thread's actual contribution a<sub>n</sub>|cos &phi;<sub>n</sub>(t)|; pitch order
+    follows its true phase rate &theta;&prime;(t) &minus; ln n. Dragging the height slider
+    bends the whole pattern; clicking a thread plucks it. When you rest, the instrument
+    drifts slowly upward so the chord keeps evolving &mdash; any input takes the wheel back.
+    For the undecorated law, switch to TRUTH.</div>
+  </div>
+  <div id="truthCtl" class="hidden">
+    <div class="ctl"><span class="lbl">v_t</span>
+      <input type="range" id="vtSlider" min="0" max="1000" value="520">
+      <span class="readout" id="vtReadout"></span></div>
+    <div id="truthNote">
+      f_audio_n = v_t &middot; (&theta;&prime;(t) &minus; ln n) / 2&pi; &nbsp;&mdash;&nbsp; one global
+      time-dilation v_t, one global gain, disclosed above. What you hear is the phase law,
+      time-compressed. No per-string tuning in Truth Mode.</div>
+    <div id="honesty"></div>
+    <div id="artctl">
+      <label><input type="checkbox" id="reverbChk"> reverb</label>
+      <label><input type="checkbox" id="quantChk"> scale-quantize voiced terms</label>
+      <div class="caveat" style="margin-top:4px">These controls leave Truth Mode: enabling
+      either flips the badge to ARTISTIC SONIFICATION.</div>
+    </div>
+  </div>
+</div>
+
+<div id="torusPanel" class="panel hud hidden">
+  <h2>The torus window <span class="x" data-close="torusPanel">[close]</span></h2>
+  <canvas id="torus" width="600" height="600"></canvas>
+  <div id="torusLabel"></div>
+  <div id="torusSub">Threads n = 1, 2 place the gold point; n = 3, 4 drive the double
+  rotation (plus a slow viewing spin, disclosed). Standard geometry only &mdash; a torus is a
+  product of circles, one circle per thread's phase. No claim rides on this picture; see
+  the fence.</div>
+</div>
+
+<div id="infoPanel" class="panel hud hidden">
+  <h2>About this instrument <span class="x" data-close="infoPanel">[close]</span></h2>
+  <p class="law">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT /
+  NOT EVIDENCE FOR RH OR GHP</p>
+  <p>Everything on screen is computed live from the Riemann-Siegel main sum for Hardy's
+  Z-function &mdash; standard mathematics, nothing measured, nothing certified. Each thread
+  is one cosine term; the golden line is their sum.</p>
+  <p class="law">validated: W1-W4 fixtures embedded &mdash; before this page shipped, its
+  inline math was checked against frozen high-precision fixtures (mpmath, 80 significant
+  digits) on four height windows plus a 40-entry refined zero list. The full tables and
+  the check harness live in the repository; compact excerpts are embedded in this page
+  and drawn as the reference overlays.</p>
+  <div class="keysRow">
+    <b>drag</b> orbit &nbsp;&middot;&nbsp; <b>scroll / W S</b> fly along t &nbsp;&middot;&nbsp;
+    <b>shift</b> faster<br>
+    <b>space</b> freeze the slice &nbsp;&middot;&nbsp; <b>F</b> phasor flower &nbsp;&middot;&nbsp;
+    <b>R</b> Z ribbon<br>
+    <b>Z</b> zero microscope &nbsp;&middot;&nbsp; <b>U</b> sound &nbsp;&middot;&nbsp;
+    <b>T</b> torus window<br>
+    <b>A</b> cruise &nbsp;&middot;&nbsp; <b>I</b> the fence &nbsp;&middot;&nbsp;
+    <b>?</b> this panel &nbsp;&middot;&nbsp; <b>esc</b> close panels
+  </div>
+  <div class="btnrow">
+    <button class="ghost" id="replayBtn">replay the guided tour</button>
+    <button class="ghost" id="fenceOpenBtn">read the fence — full disclosures</button>
   </div>
 </div>
 
@@ -377,31 +575,53 @@ all it does. If it is beautiful, the beauty belongs to the mathematics, not to a
 
 <div id="nav" class="hud">
   <div class="row">
-    <span class="readout"><span class="lbl">t&nbsp;</span><b id="tReadout"></b></span>
+    <span id="navReadout">t&nbsp; <b id="tReadout"></b> &nbsp;&middot;&nbsp; <span id="threadsReadout"></span></span>
     <input type="range" id="tslider" min="0" max="10000" value="0">
-    <div id="presets">
-      <button class="ghost" data-t="130">130</button>
-      <button class="ghost" data-t="10000">10&#8308;</button>
-      <button class="ghost" data-t="1000000">10&#8310;</button>
-      <button class="ghost" data-t="100000000">10&#8312;</button>
-    </div>
   </div>
-  <div id="navmeta">
-    <span>N(t) = <b id="nReadout"></b> terms</span>
-    <span>M(t) = <b id="mReadout"></b></span>
-    <span>next cutoff entry: term <b id="nextTermReadout"></b> at t = <b id="nextTReadout"></b> (&Delta;t <b id="countdownReadout"></b>)</span>
-    <span id="fixtureHere" class="dim"></span>
+  <div id="presets">
+    <button class="preset-card" data-t="130">
+      <span class="pname">THE FIRST FOUR</span>
+      <span class="psub">t = 130 &nbsp;&middot;&nbsp; 4 threads</span>
+    </button>
+    <button class="preset-card" data-t="10000">
+      <span class="pname">THE CHOIR</span>
+      <span class="psub">t = 10,000 &nbsp;&middot;&nbsp; 39 threads</span>
+    </button>
+    <button class="preset-card" data-t="1000000">
+      <span class="pname">THE CATHEDRAL</span>
+      <span class="psub">t = 1,000,000 &nbsp;&middot;&nbsp; 398 threads</span>
+    </button>
+    <button class="preset-card" data-t="100000000">
+      <span class="pname">THE WALL</span>
+      <span class="psub">t = 10<sup>8</sup> = 100,000,000 &nbsp;&middot;&nbsp; 3,989 threads</span>
+    </button>
   </div>
 </div>
 
-<div id="fade"></div>
-<div id="opening">
-  <div class="line mono" id="op1">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP</div>
-  <div class="line" id="op2">every curve is a formula &mdash; every number is checkable</div>
-  <div class="line mono" id="op3"></div>
-  <div class="line title" id="opTitle">ZETA HARP<br><span style="font-size:13px;letter-spacing:.4em">RIEMANN-SIEGEL PHASE OBSERVATORY</span></div>
+<div id="footer" class="hud">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP
+  &nbsp;&mdash;&nbsp; <span class="fenceLink" id="footerFence">read the fence [i]</span></div>
+
+<div id="jrCap" class="hidden">
+  <div id="jrText"></div>
+  <div id="jrRow">
+    <div id="jrDots"></div>
+    <button class="ghost" id="jrNext">next</button>
+    <button class="ghost" id="jrSkip">skip the tour</button>
+  </div>
 </div>
-<button class="ghost" id="skipBtn">skip opening</button>
+
+<div id="welcome">
+  <div id="welcomeCard">
+    <div class="wtitle">Zeta Harp</div>
+    <div class="wsub">Riemann-Siegel Phase Observatory</div>
+    <div class="wbody">This is a famous unsolved-math object, drawn as light.
+    Each thread is one wave in a 90-year-old formula; where they all cancel,
+    the golden line touches zero. Scroll to fly, click a thread to hear it.</div>
+    <button id="beginBtn">BEGIN</button><br>
+    <button id="skipTourLink">or skip the tour and fly free</button>
+    <div id="welcomeLaw">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP</div>
+  </div>
+</div>
 
 <script id="zh-fixtures" type="application/json">{"note":"Compact excerpts of the frozen Gate-2 fixtures (13 sig digits). Full-precision originals + SHA-256 manifest: instruments/zeta_harp_v2/reference/fixtures/. Zero list: Odlyzko-derived, mpmath-refined, NOT certified.","windows":{"W1":{"range":[100,160],"step":0.25,"M":[2.239451082121,2.152822635422,1.807035370387,2.166979392642,1.44882453733,0.6563128362351,-0.1242070619834,-0.8097815821095,-1.330394889704,-1.636953451982,-1.706750688742,-1.545745557569,-1.187368560223,-0.6879874185906,-0.1195721892851,0.4395539366481,0.9147496226635,1.244640661822,1.389063392906,1.334364622756,1.095372757696,0.7137598428048,0.252959152037,-0.209766571238,-0.5931486816326,-0.822422001449,-0.8392120600895,-0.6095517464946,-0.1289948046433,0.5758586791777,1.449671538001,2.414285185282,3.377560158074,4.244085873546,4.926456875796,5.355725751227,5.489728980388,5.318232872512,4.864233057123,4.181215867497,3.346694500428,2.452803581224,1.595112555572,0.8610520903748,0.3194068250106,0.01220263693537,-0.04997922889341,0.1113404906198,0.445999918847,0.8823362611311,1.337089464126,1.726789779861,1.979148045361,2.042955884994,1.89518536071,1.544332566017,1.029533241856,0.4155292493082,-0.2158884276944,-0.7768631676101,-1.185452686326,-1.377026328407,-1.31355724461,-0.9895450212042,-0.4337323489437,0.2936767211861,1.107999671521,1.910404072431,2.600273789439,3.088019309217,3.30666016211,3.220649104157,2.830753652217,2.174317418752,1.320826107174,0.3633219970643,-0.5932360264144,-1.445156981605,-2.103021240444,-2.502789955029,-2.613549317325,-2.440859576442,-2.025261882522,-1.436144174845,-0.761793646229,-0.09698281444444,0.4702226543536,0.870631734913,1.063398955468,1.041485624192,0.8323411461717,0.4936874687643,0.1049653170079,-0.244393650256,-0.4682534009317,-0.4967704156977,-0.2872724390424,0.168536141916,0.8421056448817,1.670727295712,2.565081263375,3.420674136362,4.131640493484,4.605035018401,4.773649101324,4.60556512638,4.109091105334,3.332341287716,2.357460426536,1.290229763015,0.2464383203383,-0.6631374536106,-1.347095567988,-1.745138751109,-1.835553199893,-1.637398703776,-1.207105731707,-0.6299560190741,-0.007642727329428,0.5563378543544,0.9713990464243,1.172595252271,1.129560928147,0.8503801196295,0.3798300374432,-0.207752513009,-0.8199572028769,-1.360479314624,-1.743931334013,-1.909118947225,-1.828818225678,-1.514581696886,-1.015810230341,-0.4131551103447,0.192858082458,0.6963849310223,1.001914850791,1.038752245627,0.7721981387096,0.2097557363533,-0.5986162902616,-1.566328696406,-2.581312202698,-3.520962128251,-4.268780453638,-4.730352135795,-4.846366651778,-4.600803333409,-4.023083963703,-3.18386098269,-2.185029675786,-1.145393621845,-0.1840503866303,0.5960965112717,1.122305403475,1.361414419246,1.323345648265,1.058202612597,0.6474170483418,0.1902874977348,-0.2120561118234,-0.4728356065933,-0.5334976702541,-0.3731562033807,-0.01214155476926,0.4909220107424,1.048110773632,1.555941267634,1.9117935042,2.030525590445,1.858730080831,1.384410447649,0.6405243330639,-0.2982485276447,-1.325136794455,-2.31595570516,-3.146701613952,-3.711464495808,-3.937980771305,-3.798473586547,-3.314111580609,-2.552360214919,-1.617561460277,-0.6360980054364,0.2616782578797,0.960073944855,1.374461519923,1.463013610162,1.232010470317,0.7339367263702,0.05867820256232,-0.6808178295332,-1.366207176288,-1.892013798677,-2.181676198499,-2.198895888066,-1.952534281238,-1.494305804563,-0.9096389340768,-0.3031493250323,0.2189772992367,0.5668952996356,0.6824406452606,0.549426687083,0.1971945162923,-0.3032295667896,-0.8498524629412,-1.325696534085,-1.617580927857,-1.634763308137,-1.324486915163,-0.681926429615,0.2471259065959,1.371374167568,2.566257339906,3.69151483562,4.61142921659,5.214651943464,5.430554821662,5.239566692851,4.67587463441,3.82204986661,2.796416441775,1.735117439699,0.7716681078478,0.0171838068816,-0.4556334051246,-0.6222589374084,-0.5083610534668,-1.010205446052,-0.5761185114384,-0.1468737747903,0.1696301379952,0.2904972323292,0.1720310305245,-0.1827272484841,-0.7243769709556,-1.365421463229,-1.995092377191,-2.498324312486,-2.775766688336],"Z":[2.692697056664,2.611949926377,2.272101529182,1.714035883689,1.00176633327,0.2150737173717,-0.5596946221621,-1.239586291566,-1.754586518183,-2.055602716882,-2.119929146355,-1.953525499533,-1.589822915028,-1.085189657967,-0.5115962393325,0.05263377975812,0.5328587725623,0.8677043175464,1.01700661038,0.9671123822923,0.7328500276742,0.3558916396472,-0.1003294033586,-0.5585502004895,-0.9375018991488,-1.162419067862,-1.17492693872,-0.941058062726,-0.4563658080835,0.2525501498564,1.130353087663,2.098884892477,3.066006602841,3.936308162971,4.622384667434,5.055289274467,5.19285905588,5.024860929717,4.5742911501,3.894636688993,3.063411394364,2.17275055365,1.318224284166,0.587263932565,0.04865482478353,-0.2555764695959,-0.3148480090998,-0.1506798308415,0.1867668905626,0.6258300636908,1.083250338715,1.475558670574,1.730466597763,1.796766443886,1.651430967158,1.302956953679,0.7904808326588,0.1787451485136,-0.4504584370052,-1.009272630582,-1.415754482881,-1.605272680257,-1.539799722711,-1.213834553609,-0.6561192290314,0.07314282613341,0.8892697114241,1.693429605222,2.385006971602,2.874412886078,3.094667457903,3.010224011882,2.621850623315,1.966891452606,1.114832740468,0.158717293001,-0.7964954890116,-1.647114119294,-2.303718476256,-2.70226922964,-2.811852100285,-2.638026877469,-2.221334262824,-1.63116175849,-0.9557961315214,-0.2900094853275,0.2781329168972,0.6794404414611,0.8730679967699,0.8519772597948,0.6436179930752,0.3057124900987,-0.08229818924743,-0.430982062516,-0.6542027852026,-0.6821165367246,-0.4720507714017,-0.01570959721878,0.6583575716892,1.487442218432,2.382224758392,3.238212015705,3.949538794132,4.423259991668,4.592167202317,4.424343003543,3.928095590072,3.151539384103,2.176819301117,1.109716734683,0.06602085031604,-0.84349177171,-1.527419018,-1.925463504067,-2.015911323677,-1.817822172674,-1.387626435867,-0.810605773867,-0.1884532826062,0.3753348051046,0.7901718570196,0.9911123148849,0.9477906644635,0.6682909721004,0.1973904606583,-0.3905740608471,-1.003192268366,-1.544159457462,-1.928088135189,-2.093784017093,-2.014023211907,-1.700358292307,-1.202190180657,-0.6001702217308,0.005175935886915,0.5080037998668,0.8128027031524,0.8488769600264,0.5815274971361,0.01825741745622,-0.7909747178456,-1.75957978058,-2.775488614289,-3.716096667236,-4.464906055227,-4.927501876351,-5.044573754575,-4.800101174229,-4.223506076257,-3.385441063873,-2.387801590745,-1.34939140887,-0.3893082618496,0.3895441493837,0.9144239697954,1.152169137904,1.112701548754,0.8461245261066,0.4338696043154,-0.02476487934634,-0.4286492054131,-0.6910054108098,-0.7532803923552,-0.5945882659792,-0.2352595977784,0.2660811284403,0.8215099728021,1.327543247602,1.681560742068,1.798420340617,1.624714374868,1.148446094452,0.4025729194019,-0.5382256362554,-1.567178452505,-2.560100985526,-3.392989805891,-3.95993510255,-4.188673507239,-4.051428373982,-3.5693685461,-2.809959685148,-1.877543957467,-0.8985042422976,-0.0031926163058,0.6926973567966,1.10453796911,1.190501682472,0.9568685940245,0.456123180349,-0.2218488749452,-0.9641004315479,-1.652287417123,-2.180933903341,-2.473478491467,-2.493622781384,-2.250228261966,-1.795009421522,-1.213394783895,-0.6100000374631,-0.0910109232674,0.2537269180696,0.3660494710693,0.229770119876,-0.1257699925893,-0.6295444948851,-1.179560196435,-1.658839346705,-1.95420095889,-1.974902539543,-1.668187147769,-1.029229258369,-0.1038208816765,1.016742314658,2.207899603157,3.329390710423,4.245498542631,4.844874935469,5.056892101204,4.861979321233,4.294324146645,3.436498306512,2.406826398169,1.341452083782,0.3738912316963,-0.3847401368639,-0.8617392623948,-1.032580810643,-0.9229322583414,-0.602654351601,-0.1728005978201,0.2522480199516,0.5645935276562,0.6813405354732,0.5587931250618,0.1999930308975,-0.3456586399642,-0.9906647812284,-1.624256651316,-2.131368494104,-2.412649409296],"R":[0.453245974543,0.4591272909551,0.4650661587951,-0.4529435089534,-0.4470582040602,-0.4412391188634,-0.4354875601787,-0.4298047094563,-0.4241916284794,-0.4186492649003,-0.4131784576132,-0.4077799419649,-0.402454354805,-0.3972022393762,-0.3920240500474,-0.38692015689,-0.3818908501012,-0.3769363442754,-0.3720567825264,-0.3672522404633,-0.3625227300221,-0.3578682031576,-0.3532885553956,-0.3487836292515,-0.3443532175162,-0.3399970664133,-0.335714878631,-0.3315063162314,-0.3273710034402,-0.3233085293213,-0.319318450338,-0.3154002928047,-0.3115535552331,-0.3077777105744,-0.3040722083624,-0.3004364767592,-0.296869924508,-0.293371942795,-0.2899419070235,-0.2865791785043,-0.283283106064,-0.2800530275741,-0.2768882714058,-0.2737881578098,-0.270752000227,-0.2677791065313,-0.2648687802064,-0.2620203214613,-0.2592330282843,-0.2565061974403,-0.2538391254117,-0.251231109287,-0.2486814475979,-0.2461894411075,-0.2437543935523,-0.2413756123386,-0.2390524091968,-0.2367841007946,-0.2345700093108,-0.2324094629722,-0.2303017965545,-0.2282463518498,-0.2262424781006,-0.2242895324044,-0.2223868800877,-0.2205338950527,-0.2187299600971,-0.2169744672089,-0.2152668178369,-0.2136064231387,-0.2119927042068,-0.2104250922746,-0.2089030289025,-0.2074259661459,-0.2059933667059,-0.2046047040633,-0.2032594625972,-0.2019571376889,-0.2006972358123,-0.1994792746103,-0.1983027829601,-0.1971673010261,-0.1960723803024,-0.1950175836446,-0.1940024852924,-0.1930266708831,-0.1920897374564,-0.1911912934519,-0.1903309586984,-0.1895083643968,-0.1887231530965,-0.1879749786655,-0.1872635062553,-0.18658841226,-0.185949384271,-0.1853461210269,-0.1847783323594,-0.1842457391348,-0.1837480731925,-0.1832850772798,-0.1828565049833,-0.1824621206576,-0.182101699352,-0.1817750267331,-0.1814818990069,-0.181222122837,-0.1809955152625,-0.1808019036124,-0.1806411254194,-0.1805130283315,-0.1804174700223,-0.1803543180994,-0.1803234500123,-0.1803247529576,-0.1803581237845,-0.1804234688978,-0.18052070416,-0.1806497547928,-0.1808105552768,-0.1810030492497,-0.1812271894047,-0.1814829373859,-0.1817702636838,-0.1820891475291,-0.1824395767849,-0.182821547838,-0.1832350654886,-0.1836801428382,-0.1841568011768,-0.1846650698674,-0.1852049862295,-0.1857765954208,-0.1863799503163,-0.1870151113861,-0.1876821465711,-0.1883811311555,-0.1891121476382,-0.1898752856009,-0.1906706415735,-0.1914983188971,-0.192358427584,-0.1932510841746,-0.1941764115904,-0.1951345389848,-0.1961256015892,-0.197149740556,-0.1982071027973,-0.1992978408196,-0.2004221125541,-0.2015800811828,-0.2027719149592,-0.2039977870246,-0.2052578752193,-0.206552361888,-0.2078814336798,-0.2092452813426,-0.2106440995115,-0.2120780864901,-0.2135474440263,-0.2150523770811,-0.2165930935897,-0.2181698042164,-0.2197827221011,-0.2214320625985,-0.2231180430091,-0.2248408823022,-0.2266008008296,-0.2283980200316,-0.2302327621326,-0.2321052498283,-0.2340157059631,-0.2359643531967,-0.2379514136619,-0.2399771086107,-0.2420416580499,-0.2441452803661,-0.2462881919389,-0.2484706067422,-0.2506927359343,-0.2529547874353,-0.2552569654916,-0.2575994702287,-0.2599824971897,-0.2624062368612,-0.2648708741855,-0.2673765880584,-0.2699235508133,-0.2725119276905,-0.275141876292,-0.2778135460213,-0.2805270775075,-0.2832826020147,-0.2860802408348,-0.2889201046648,-0.2918022929679,-0.294726893318,-0.2976939807277,-0.300703616959,-0.3037558498179,-0.3068507124308,-0.3099882225041,-0.3131683815661,-0.3163911741913,-0.319656567207,-0.3229645088817,-0.3263149280956,-0.3297077334936,-0.3331428126196,-0.3366200310328,-0.3401392314059,-0.3437002326054,-0.3473028287535,-0.3509467882724,-0.3546318529101,-0.358357736749,-0.3621241251966,-0.3659306739585,-0.3697770079948,-0.3736627204586,-0.3775873716186,-0.3815504877648,-0.3855515600984,-0.3895900436057,-0.3936653559172,-0.3977768761515,-0.4019239437455,-0.4061058572702,-0.4103218732343,-0.4145712048746,0.407551094451,0.4033179136183,0.3991217947418,0.3949633896611,0.390843303144,0.3867620945373,0.3827202793816,0.3787183309914,0.3747566820011,0.3708357258748,0.3669558183824,0.3631172790398]},"W2":{"range":[9990,10060],"step":0.5,"M":[3.308041587034,-4.192055535979,-4.99126276732,0.3688996321975,1.003704897715,-0.5878779717885,0.9186376478588,0.7154003568009,-1.467986993226,-0.5655140979871,0.3413893994108,-0.8542453092976,0.4522440123016,0.3820390881646,-6.446479218022,-9.381152132731,-1.732937269609,2.85332218369,-1.873391666606,-3.86569520065,-0.45225302508,0.1873972443179,0.1152833275149,2.724252766647,1.991135798228,-1.308012345538,0.01658359734597,2.174509418294,0.1220496219494,-0.6662790176744,0.60685140618,-0.9724859223949,-0.547428755706,4.691290288467,4.531138173956,-1.415912729841,-0.4946438530999,4.519212927178,1.311624054306,-4.506930014956,-2.901916476956,0.1823082182661,-0.4263278419066,-0.2318381701388,0.1290013889853,-1.447799257117,-0.3168970497888,1.719017581635,-1.752219824577,-4.519378990827,-0.6119936165079,0.6603239825999,-3.527719409564,-2.070979242246,3.719036812753,2.729054983617,-0.9099289161333,0.471061685433,0.6332612149546,-2.774062395859,-2.204215224932,0.4260368497751,-1.071417000778,-1.951598836766,0.4007620345062,0.2321181009801,-1.033963302311,0.5266010817945,0.1617299350213,-0.3962907014956,7.795585455083,16.56884363131,11.2713378809,0.3379624369507,-1.634599398728,0.1547140355337,-1.163747940878,-0.6704050576746,1.173875717164,-0.4810576815231,-1.47684253746,0.07055584579292,-1.357148594942,-3.068439788416,-0.2224384139835,0.1707094604935,-4.220364531365,-3.740976685163,0.4233595243695,-1.12237318335,-3.024886500717,1.464319612978,3.124299462136,-1.49808626759,-1.807324363465,2.104378481215,1.158392513413,-1.518323764032,-0.4319823138264,0.04796652597394,-0.785499523969,0.3647216618086,-0.5979161625116,-3.839376071306,-1.723935792858,1.4039484226,-3.73971313543,-8.064107556442,-1.91306205794,3.437546042514,0.1179930158395,-1.921565160523,0.5701758428479,0.5228629859207,-0.5881527773542,-0.01567099961949,-2.675123470223,-6.23458268039,-3.55760829885,0.3062115743196,-0.3580301323368,-0.0916249032689,1.375164347005,-1.218112686572,-1.702150650244,4.076162567362,4.581816460378,-2.437729982456,-3.753934018906,1.580127731529,1.658781610757,-1.501028638493,-0.4552863520485,0.453240840733,-1.096470297619,-0.2733736507876,0.8921931166401,-0.2381725853161,1.086000207343,2.651450478135,-1.573632215879],"Z":[3.413405126889,-4.086426163407,-4.885366627402,0.4750634746428,1.110137378397,-0.4811759166479,1.025610214168,0.8226443714579,-1.360470592593,-0.457724373323,0.449453386567,-0.7459061208044,0.5608593413392,0.4909314972937,-6.337308788937,-9.27170274353,-1.623207979863,2.963332314662,-1.763099753505,-3.755120564316,-0.3413947242312,0.298540151114,0.2267117818185,2.83596771012,2.103138172611,-1.195721598457,0.1291636589409,2.287379736217,0.2352111379866,-0.5528253617915,0.7205981435584,-0.8584451619808,-0.433093030853,4.805921918997,4.646066651207,-1.300686465049,-0.3791188601956,4.635037588483,1.427749323989,-4.390503197257,-2.785187171975,0.2993409493922,-0.3089907462043,-0.1141957718938,0.2469500272434,-1.329543441904,-0.1983331212388,1.83789055931,-1.633036862615,-4.399885110076,-0.4921878831602,0.7804425016252,-3.407287172543,-1.950232355708,3.840099279498,2.850433960389,-0.7882325004172,0.5930764680709,0.7555952915149,-2.651408099389,-2.081239783617,0.549334359782,-0.947796499359,-1.82765442238,0.5250312822095,0.3567131011075,-0.9090416319357,0.6518503389176,0.2873076940292,-0.2703835268705,7.921822957612,16.69541237255,11.3982387701,0.4651963818298,-1.507031492091,0.2826168083553,-1.035509399146,-0.5418298460493,1.302788497874,-0.3518064343705,-1.347251928386,0.2004867103421,-1.226876583334,-2.937825740185,-0.09148144162719,0.3020102423652,-4.088719056747,-3.608985636775,0.5556970252947,-0.9896883534237,-2.891853467682,1.597701720828,3.258031514052,-1.364003404864,-1.672889825738,2.239165555524,1.293532983226,-1.382829042504,-0.2961324871389,0.1841723084472,-0.6489369379559,0.5016418961891,-0.4606374379174,-3.701738017688,-1.585937574499,1.542307638271,-3.600992093084,-7.925023861317,-1.773614887253,3.577357508171,0.2581695924371,-1.781022660509,0.7110850752025,0.6641397559242,-0.4465076680669,0.1263432468519,-2.532739292464,-6.091827781096,-3.414481891696,0.449710271678,-0.2141583664773,0.0526207052794,1.519784568255,-1.073117086844,-1.556778910568,4.221911204089,4.727942746822,-2.583382399516,-3.899209261012,1.43522889901,1.514258418139,-1.645176965146,-0.5990605908582,0.3098399075262,-1.239498711517,-0.4160303356619,0.7499073665811,-0.3800881986304,0.9444539289046,2.510272728968,-1.714442245052],"R":[0.1053635398553,0.1056293725717,0.1058961399184,0.1061638424453,0.1064324806827,0.1067020551406,0.1069725663091,0.1072440146571,0.107516400633,0.1077897246641,0.1080639871562,0.1083391884933,0.1086153290376,0.1088924091291,0.1091704290851,0.1094493892005,0.1097292897467,0.110010130972,0.110291913101,0.1105746363344,0.1108583008488,0.1111429067961,0.1114284543036,0.1117149434733,0.1120023743821,0.1122907470809,0.1125800615949,0.1128703179229,0.1131615160372,0.1134536558829,0.1137467373784,0.1140407604142,0.114335724853,0.1146316305297,0.1149284772503,0.1152262647924,0.1155249929043,0.1158246613049,0.1161252696835,0.1164268176991,0.1167293049806,0.117032731126,0.1173370957023,0.117642398245,0.1179486382581,0.1182558152133,0.11856392855,0.118872977675,0.1191829619618,0.1194938807506,0.1198057333477,0.1201185190253,0.1204322370212,0.1207468865384,0.1210624667445,0.1213789767716,0.1216964157161,0.1220147826379,0.1223340765602,0.1226542964695,0.1229754413147,0.1232975100069,0.1236205014191,0.1239444143861,0.1242692477034,0.1245950001274,0.1249216703751,0.1252492571232,0.1255777590079,0.1259071746251,0.1262375025289,0.1265687412324,0.1269008892063,0.1272339448792,0.1275679066367,0.1279027728216,0.1282385417328,0.1285752116253,0.12891278071,0.1292512471526,0.129590609074,0.1299308645492,0.1302720116073,0.1306140482311,0.1309569723564,0.1313007818716,0.1316454746178,0.1319910483876,0.1323375009252,0.1326848299259,0.1330330330356,0.1333821078501,0.1337320519153,0.1340828627262,0.1344345377267,0.1347870743091,0.1351404698136,0.1354947215281,0.1358498266875,0.1362057824732,0.1365625860131,0.1369202343805,0.1372787245943,0.1376380536178,0.1379982183592,0.1383592156701,0.1387210423459,0.1390836951248,0.1394471706875,0.139811465657,0.1401765765976,0.1405425000147,0.1409092323546,0.1412767700035,0.1416451092874,0.1420142464714,0.1423841777596,0.142754899294,0.1431264071545,0.1434986973584,0.1438717658595,0.1442456085483,0.1446202212507,0.1449955997281,0.1453717396768,0.1457486367272,0.1461262864438,-0.1456524170595,-0.1452752421058,-0.1448988325193,-0.144523192618,-0.1441483266531,-0.1437742388096,-0.1434009332068,-0.1430284138986,-0.1426566848743,-0.142285750059,-0.1419156133143,-0.1415462784383,-0.1411777491666,-0.1408100291727]},"W3":{"range":[999990,1000060],"step":0.5,"M":[0.2573823471248,-0.8166955313377,2.733797698056,-0.3485778047804,-1.029638630828,8.513044424225,-5.657564973039,-0.02102268547482,-0.7357296093076,1.046928214129,-0.3172004748258,1.820477320538,-5.429168008497,0.1973521674642,-0.6209817006546,-0.06341264264794,-0.1342019782326,-0.0364815458631,-1.602379581903,1.037901697206,-2.766387671772,-0.8958240029296,-1.921169033414,1.328343567348,-3.557740408794,-13.73613472246,2.562905248066,-1.995331599076,1.718931494606,-0.317318387847,0.6675046286996,-0.6940043958391,0.7627409480893,-1.316835940746,0.509340771387,-0.7553731955178,5.287754286393,-2.401345082026,2.205243234135,1.769489575082,0.03204505652652,-2.470591533352,4.92918221733,6.801031352981,-1.148492130735,1.568307976123,-1.042162434856,3.813064832074,-0.6300126185106,0.972431168117,-1.006461548178,3.353750571073,-0.3409714697784,1.372597186155,-0.08368354652607,0.04991344329178,-0.09094098294633,0.9921602489162,-11.16968763732,9.716774659982,7.863776941559,-1.069818501914,0.5446106481063,-4.137582024905,0.1287309605956,0.1997893900937,0.9291292468786,-0.01899964533353,1.461611507046,-0.5258344567813,1.192065293096,-1.419669441118,2.819965573333,0.03438363430422,2.462223618931,-1.621122585668,2.278935999659,-2.674399969614,6.597369813716,1.799159833605,0.1844220854276,-4.424296313697,3.276884613815,7.529772138233,-1.645766197061,0.8179648571493,-0.04615295423491,-0.1013251473068,0.3637576545921,0.6809622714408,1.1606039605,1.03640213598,-1.966153596695,0.4665429988936,-3.345714972277,1.852725482042,-11.93527956269,-0.8189598595358,-0.537164346392,-0.2951723793632,0.04821161682624,0.6001495983213,-0.3236780942123,1.094091022499,-1.13599215583,1.951482307369,3.038303051748,-0.6612991407931,-0.08551339243666,-0.7132945465395,-0.3667162498836,-1.304312295035,-0.162925714095,3.346561300675,-0.540743493093,-21.63970683556,-3.050376313124,-2.178061217148,-0.435633267015,-0.08837913211541,0.5321991744683,-1.980882232072,0.6634942028265,0.9994248444748,-0.0207376175796,-0.803468364067,1.812761449938,-3.152240419744,0.05256137678865,-2.357318169048,-0.8304651736528,6.34847985393,-2.141811507576,-0.09922257236961,-2.472746185537,0.8399859621986,-5.814667485062,0.6315827411257,-1.212486734052,1.068768800474,-3.491520393368],"Z":[0.217844367606,-0.8562438944799,2.694238948369,-0.3881469439346,-1.06921816237,8.473454497374,-5.697165298118,-0.06063341170192,-0.7753507396023,1.007296676848,-0.3568424220122,1.780824960529,-5.468830784247,0.1576789730561,-0.6606653166373,-0.1031066831217,-0.1739064461133,-0.07619644406613,-1.642104913344,0.9981659296136,-2.806133878431,-0.9355806515679,-1.960936126946,1.288566026011,-3.597528400849,-13.77593316815,2.523096345839,-2.035150960756,1.679101670563,-0.3571586771636,0.6276538712,-0.7338656244309,0.7228692454966,-1.356718120248,0.4694481120678,-0.7952763375614,5.247840658718,-2.441269198239,2.165308626479,1.729544473076,-0.007910542733957,-2.510557632772,4.889205614847,6.761044244532,-1.188489748054,1.528299847031,-1.082181078622,3.773035670731,-0.6700523003319,0.9323809629171,-1.046522279657,3.313679310416,-0.3810532625143,1.332504858442,-0.1237864121143,0.00980003693023,-0.1310649329785,0.9520257523164,-11.20983268338,9.676619061558,7.82361078788,-1.109995213744,0.5044233752322,-4.177779861717,0.08852255695079,0.1595704167238,0.8888997008912,-0.05923976683032,1.421360807149,-0.5660957379707,1.151793427725,-1.459951893561,2.779672530928,-0.005920000951249,2.421909387937,-1.661447415289,2.238600568524,-2.71474600515,6.557013170894,1.75879258061,0.1440442193743,-4.464684795693,3.236485512991,7.4893624157,-1.686186544188,0.7775338825451,-0.08659455919764,-0.1417773855096,0.3232947802681,0.6404887581151,1.120119805293,0.9959073360119,-2.006659044304,0.4260269007669,-3.3862417238,1.812188074246,-11.97582762964,-0.8595185885083,-0.5777337402664,-0.3357524410145,0.007620884523411,0.559548192493,-0.3642901764395,1.053468261,-1.176625599473,1.91083817871,2.997648235202,-0.7019646480966,-0.1261895933679,-0.753981443968,-0.4074138466783,-1.345020594064,-0.2036447182266,3.305831588574,-0.5814839160306,-21.6804579722,-3.091138166332,-2.218833789789,-0.4764165619532,-0.1291731522148,0.4913944263446,-2.021697711082,0.6226679900668,0.9585878951046,-0.0615853064213,-0.8443267952405,1.771892273573,-3.193120344159,0.01167070146398,-2.39821959814,-0.8713773593691,6.307556908733,-2.182745215111,-0.1401670450975,-2.513701426312,0.7990199505205,-5.855644270496,0.5905951790823,-1.253485075558,1.027759676655,-3.532540302353],"R":[-0.03953797951884,-0.03954836314223,-0.03955874968749,-0.03956913915419,-0.03957953154193,-0.03958992685027,-0.0396003250788,-0.0396107262271,-0.03962113029474,-0.03963153728129,-0.03964194718632,-0.03965236000942,-0.03966277575014,-0.03967319440806,-0.03968361598274,-0.03969404047376,-0.03970446788066,-0.03971489820303,-0.03972533144042,-0.03973576759239,-0.0397462066585,-0.03975664863831,-0.03976709353138,-0.03977754133726,-0.03978799205551,-0.03979844568567,-0.03980890222731,-0.03981936167997,-0.0398298240432,-0.03984028931655,-0.03985075749956,-0.03986122859178,-0.03987170259276,-0.03988217950203,-0.03989265931914,-0.03990314204362,-0.03991362767502,-0.03992411621287,-0.03993460765671,-0.03994510200607,-0.03995559926048,-0.03996609941948,-0.0399766024826,-0.03998710844936,-0.03999761731929,-0.04000812909193,-0.04001864376679,-0.04002916134339,-0.04003968182127,-0.04005020519994,-0.04006073147892,-0.04007126065772,-0.04008179273587,-0.04009232771289,-0.04010286558827,-0.04011340636155,-0.04012395003222,-0.0401344965998,-0.0401450460638,-0.04015559842372,-0.04016615367907,-0.04017671182936,-0.04018727287409,-0.04019783681275,-0.04020840364486,-0.0402189733699,-0.04022954598738,-0.04024012149679,-0.04025069989763,-0.0402612811894,-0.04027186537157,-0.04028245244365,-0.04029304240512,-0.04030363525547,-0.04031423099419,-0.04032482962077,-0.04033543113468,-0.04034603553541,-0.04035664282244,-0.04036725299525,-0.04037786605331,-0.04038848199611,-0.04039910082313,-0.04040972253382,-0.04042034712767,-0.04043097460415,-0.04044160496273,-0.04045223820287,-0.04046287432405,-0.04047351332573,-0.04048415520737,-0.04049479996843,-0.04050544760838,-0.04051609812668,-0.04052675152279,-0.04053740779615,-0.04054806694624,-0.04055872897249,-0.04056939387438,-0.04058006165134,-0.04059073230283,-0.04060140582829,-0.04061208222718,-0.04062276149893,-0.040633443643,-0.04064412865882,-0.04065481654584,-0.0406655073035,-0.04067620093124,-0.04068689742849,-0.04069759679468,-0.04070829902926,-0.04071900413166,-0.04072971210131,-0.04074042293763,-0.04075113664006,-0.04076185320802,-0.04077257264094,-0.04078329493824,-0.04079402009935,-0.04080474812369,-0.04081547901068,-0.04082621275973,-0.04083694937026,-0.0408476888417,-0.04085843117344,-0.04086917636491,-0.04087992441552,-0.04089067532467,-0.04090142909177,-0.04091218571624,-0.04092294519748,-0.04093370753488,-0.04094447272786,-0.04095524077581,-0.04096601167813,-0.04097678543422,-0.04098756204348,-0.04099834150531,-0.04100912381909,-0.04101990898422]},"W4":{"range":[100000000,100000020],"step":0.5,"M":[3.639182880058,10.59795697437,-2.661633676176,-0.2520766087975,0.4478924577156,1.698681943451,-0.3048688079123,2.85220165112,0.8722028007177,-1.008913554496,1.082116293208,-0.105423284945,0.3968912205938,-1.00733699253,2.294723347577,-4.505976589433,4.7310294683,1.327248667525,-2.776734939245,8.580008016617,-1.972862499271,-0.5442359039936,1.059094149162,0.4390204771607,-0.3816796383178,0.5708762629876,3.049841776634,0.06557333242641,0.3491483468325,-0.4232367183902,-1.032836431067,1.396317657536,-1.285482733331,-0.505535527518,7.095342678945,1.111634136349,-2.890928165048,1.058618336054,5.326979234783,6.302319340196,-2.116910424302],"Z":[3.645407868094,10.60418191914,-2.655408774651,-0.2458517505192,0.4541172727528,1.704906715253,-0.2986440793401,2.858426336468,0.8784274428479,-1.002688955578,1.088340848919,-0.09919877243467,0.4031156899089,-1.001112566404,2.300947730519,-4.499752249669,4.737253764893,1.333472920951,-2.77051072898,8.586232183727,-1.96663837531,-0.5380118231763,1.065318186842,0.4452444717083,-0.3754556868963,0.5771001712886,3.05606564182,0.07179715450372,0.3553721258066,-0.4170129825136,-1.026612738283,1.402541307235,-1.279259126713,-0.4993119639739,7.10156619942,1.117857613762,-2.884704730693,1.064841727358,5.33320258304,6.308542645414,-2.110687162119],"R":[0.006224988036146,0.006224944777796,0.006224901525191,0.006224858278331,0.006224815037218,0.006224771801851,0.006224728572229,0.006224685348352,0.006224642130222,0.006224598917836,0.006224555711197,0.006224512510302,0.006224469315153,0.006224426125749,0.00622438294209,0.006224339764177,0.006224296592008,0.006224253425585,0.006224210264906,0.006224167109973,0.006224123960784,0.00622408081734,0.00622403767964,0.006223994547686,0.006223951421475,0.00622390830101,0.006223865186288,0.006223822077312,0.006223778974079,0.006223735876591,0.006223692784847,0.006223649698847,0.006223606618592,0.00622356354408,0.006223520475312,0.006223477412288,0.006223434355008,0.006223391303472,0.00622334825768,0.006223305217631,0.006223262183326]}},"zeros":[{"i":1,"g":14.134725141734695,"gs":"14.134725141734693790457251983","zp":0.7931604334,"az":"4.5847e-57","off":"-2.6530621e-10"},{"i":2565,"g":3097.3426065309914,"gs":"3097.3426065309914763897506348","zp":2.78101288,"az":"2.6164e-54","off":"-8.5236102e-12"},{"i":5129,"g":5567.644318652244,"gs":"5567.6443186522437644472277093","zp":5.418996299,"az":"2.7847e-53","off":"2.4376445e-10"},{"i":7693,"g":7878.910611220162,"gs":"7878.9106112201614734913818680","zp":7.729010649,"az":"2.2639e-53","off":"1.6147349e-10"},{"i":10257,"g":10096.593534430634,"gs":"10096.593534430633583198769611","zp":6.893842184,"az":"9.0207e-54","off":"-3.664168e-10"},{"i":12821,"g":12249.404345998146,"gs":"12249.404345998145059600469677","zp":2.039989683,"az":"5.4335e-54","off":"1.450596e-10"},{"i":15385,"g":14353.684133464854,"gs":"14353.684133464854989272488263","zp":2.676751326,"az":"2.5501e-53","off":"-1.4501073e-10"},{"i":17950,"g":16419.360752846933,"gs":"16419.360752846931416554672499","zp":-9.777098378,"az":"6.042e-53","off":"1.9314166e-9"},{"i":20514,"g":18451.458617736338,"gs":"18451.458617736337136943426253","zp":-1.103907161,"az":"3.8789e-54","off":"3.3713694e-10"},{"i":23078,"g":20455.57263336529,"gs":"20455.572633365289916042880294","zp":-4.048469113,"az":"1.2712e-54","off":"2.8991604e-10"},{"i":25642,"g":22436.622414756774,"gs":"22436.622414756774855965515076","zp":-13.89209952,"az":"5.4648e-53","off":"-2.2514403e-10"},{"i":28206,"g":24395.62593203283,"gs":"24395.625932032831095434872323","zp":-5.867719788,"az":"9.8474e-53","off":"-1.6890457e-10"},{"i":30770,"g":26335.61242052724,"gs":"26335.612420527239970230959727","zp":-7.800242575,"az":"1.3954e-52","off":"2.3997023e-10"},{"i":33334,"g":28258.804343926564,"gs":"28258.804343926562451767543974","zp":-5.994457395,"az":"4.2554e-53","off":"5.6245177e-10"},{"i":35898,"g":30166.293926548566,"gs":"30166.293926548566443876214148","zp":-5.506359289,"az":"1.7683e-53","off":"-4.3355612e-10"},{"i":38462,"g":32060.129674646876,"gs":"32060.129674646874880552747852","zp":-8.123362176,"az":"1.2859e-52","off":"-1.2511945e-10"},{"i":41026,"g":33941.074017936626,"gs":"33941.074017936623732415690896","zp":-4.453814587,"az":"1.6694e-52","off":"-3.7626758e-10"},{"i":43590,"g":35809.950690733545,"gs":"35809.950690733546658085305175","zp":-2.03076504,"az":"7.8732e-53","off":"-1.4533419e-9"},{"i":46154,"g":37667.190960693115,"gs":"37667.190960693115758203960370","zp":-5.353094309,"az":"8.8303e-53","off":"1.157582e-10"},{"i":48718,"g":39513.95640080282,"gs":"39513.956400802814751141217080","zp":-15.09646649,"az":"1.1582e-52","off":"-1.8524886e-10"},{"i":51283,"g":41351.782573159064,"gs":"41351.782573159066772207320844","zp":4.664258132,"az":"1.1782e-52","off":"6.6772207e-11"},{"i":53847,"g":43179.15589752058,"gs":"43179.155897520575134245634635","zp":4.074756776,"az":"4.4808e-54","off":"-4.2486575e-10"},{"i":56411,"g":44998.877695785435,"gs":"44998.877695785438506196269450","zp":12.66670162,"az":"3.0132e-52","off":"-5.614938e-10"},{"i":58975,"g":46809.39303501678,"gs":"46809.393035016780324657767516","zp":15.1060322,"az":"3.3803e-52","off":"-2.1967534e-10"},{"i":61539,"g":48612.444494031806,"gs":"48612.444494031803629620335243","zp":13.21350469,"az":"4.4687e-52","off":"-1.9637038e-10"},{"i":64103,"g":50407.683613758476,"gs":"50407.683613758474107201669215","zp":10.38804019,"az":"3.7419e-52","off":"4.741072e-10"},{"i":66667,"g":52196.729206489326,"gs":"52196.729206489323661879904498","zp":3.617748391,"az":"2.8814e-53","off":"3.2366188e-10"},{"i":69231,"g":53978.51578343281,"gs":"53978.515783432813064232503702","zp":10.27590569,"az":"1.6347e-52","off":"-1.8693577e-10"},{"i":71795,"g":55753.74734232749,"gs":"55753.747342327493880424763040","zp":2.876352919,"az":"8.2541e-53","off":"-5.0611958e-10"},{"i":74359,"g":57522.46886323768,"gs":"57522.468863237679368949478060","zp":7.746371473,"az":"1.5847e-52","off":"-3.2063105e-10"},{"i":76923,"g":59286.086103267,"gs":"59286.086103266999686075571207","zp":12.93747776,"az":"3.5831e-52","off":"-3.1392443e-13"},{"i":79487,"g":61043.565780499484,"gs":"61043.565780499482981236372372","zp":1.719798154,"az":"1.5727e-53","off":"-5.1701876e-10"},{"i":82051,"g":62795.00608510254,"gs":"62795.006085102537762372233168","zp":6.038646064,"az":"3.2275e-53","off":"5.3776237e-10"},{"i":84616,"g":64542.383427890854,"gs":"64542.383427890852773021739885","zp":-5.501928221,"az":"1.8215e-52","off":"8.5277302e-10"},{"i":87180,"g":66283.98266638609,"gs":"66283.982666386093969349635371","zp":-4.753090587,"az":"1.9926e-52","off":"-1.9060307e-9"},{"i":89744,"g":68020.41311594483,"gs":"68020.413115944836345380299217","zp":-9.207897096,"az":"7.245e-52","off":"-1.6365462e-10"},{"i":92308,"g":69752.4885856006,"gs":"69752.488585600593227130212611","zp":-20.97904726,"az":"6.1697e-52","off":"1.5932271e-9"},{"i":94872,"g":71479.67526583231,"gs":"71479.675265832312221308264443","zp":-2.264815991,"az":"8.8295e-53","off":"3.1222131e-10"},{"i":97436,"g":73202.24910115174,"gs":"73202.249101151738147020272867","zp":-5.080148068,"az":"1.1121e-52","off":"-2.6185298e-10"},{"i":100000,"g":74920.82749899419,"gs":"74920.827498994186793849200946","zp":-21.78489259,"az":"1.7105e-51","off":"1.8679385e-10"}]}</script>
 
@@ -519,6 +739,8 @@ all it does. If it is beautiful, the beauty belongs to the mathematics, not to a
 'use strict';
 /* ==========================================================================
    State + computation cache. Everything here calls the ZH math core only.
+   v2.1: presentation, guidance and sound design changed; every number still
+   comes from ZH.* and the embedded fixtures.
    ========================================================================== */
 
 /* Disclosed rendering constants (fence panel). */
@@ -534,18 +756,18 @@ var ST = {
   tTarget: null,           /* glide target (log-space approach) */
   frozen: false,
   sel: -1,                 /* selected term n, -1 none */
-  mode: 'obs',             /* 'obs' | 'temple' (presentation toggle ONLY) */
+  uiMode: 'welcome',       /* 'welcome' | 'guided' | 'explore' | 'ambient' */
+  audioMode: 'musical',    /* 'musical' (artistic sonification) | 'truth' */
   layers: { M: true, Z: true, R: true },
   cruise: false,
-  opening: true,
   vt: Math.pow(10, 2.4),   /* disclosed global time dilation, height units / s */
-  gain: 0.35,
+  gain: 0.45,
   audioOn: false,
-  playing: false,          /* direct main-sum flight */
+  playing: false,          /* Truth Audio: direct main-sum flight advances t */
   artistic: { reverb: false, quant: false },
   voiced: [],
-  lastMSign: 0,
-  lastN: 0
+  lastM: 0,
+  lastNavAt: 0             /* last user navigation, ms (musical idle drift) */
 };
 
 var TERMS = { N: 0, NR: 0, a: null, phi0: null, omega: null, c: null, born: null };
@@ -917,7 +1139,7 @@ var GLR = (function () {
     var w = Math.floor(canvas.clientWidth * dpr), h = Math.floor(canvas.clientHeight * dpr);
     if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
     gl.viewport(0, 0, w, h);
-    gl.clearColor(0.016, 0.023, 0.043, 1);
+    gl.clearColor(0.063, 0.086, 0.122, 1);   /* house slate blue-grey (#10161f family) */
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     /* camera inertia */
@@ -1041,8 +1263,8 @@ function panelVisible(id) {
   return !document.getElementById(id).classList.contains('hidden');
 }
 
-var COL = { gold: '#e2b45a', blue: '#5b8ef2', purple: '#a06bff', dim: '#6b7890',
-  faint: '#3a4459', ink: '#c6d1e2' };
+var COL = { gold: '#e2b45a', blue: '#5b8ef2', purple: '#a06bff', dim: '#8a96a8',
+  faint: '#5c6879', ink: '#c8d2de' };
 
 function fitCanvas(cv) {
   var dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -1075,9 +1297,9 @@ function drawRibbon() {
   }
   ymax *= 1.12;
   function X(t) { return (t - tLo) / (tHi - tLo) * W; }
-  function Y(v) { return H / 2 - v / ymax * (H / 2 - 6); }
+  function Y(v) { return H / 2 - v / ymax * (H / 2 - 4); }
 
-  ctx.strokeStyle = 'rgba(198,214,240,0.10)'; ctx.lineWidth = 1;
+  ctx.strokeStyle = 'rgba(200,214,235,0.10)'; ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(0, Y(0)); ctx.lineTo(W, Y(0)); ctx.stroke();
 
   /* fixture layers */
@@ -1118,7 +1340,7 @@ function drawRibbon() {
     var g = FX.zeros[k].g;
     if (g >= tLo && g <= tHi) {
       ctx.strokeStyle = 'rgba(143,208,168,0.8)';
-      ctx.beginPath(); ctx.moveTo(X(g), H - 12); ctx.lineTo(X(g), H); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(X(g), H - 9); ctx.lineTo(X(g), H); ctx.stroke();
     }
   }
 
@@ -1126,7 +1348,7 @@ function drawRibbon() {
   ctx.strokeStyle = 'rgba(226,180,90,0.5)';
   ctx.beginPath(); ctx.moveTo(X(t0), 0); ctx.lineTo(X(t0), H); ctx.stroke();
 
-  ctx.fillStyle = COL.dim; ctx.font = '9px ui-monospace, monospace';
+  ctx.fillStyle = COL.dim; ctx.font = '10px ui-monospace, monospace';
   ctx.fillText(fmtT(tLo), 4, H - 4);
   var lbl = fmtT(tHi);
   ctx.fillText(lbl, W - ctx.measureText(lbl).width - 4, H - 4);
@@ -1160,15 +1382,15 @@ function drawFlower() {
   function PY(y) { return cy - y * S; }
 
   /* axes */
-  ctx.strokeStyle = 'rgba(198,214,240,0.12)'; ctx.lineWidth = 1;
+  ctx.strokeStyle = 'rgba(200,214,235,0.12)'; ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(W, cy); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, H); ctx.stroke();
-  ctx.fillStyle = COL.dim; ctx.font = '9px ui-monospace, monospace';
-  ctx.fillText('Re — real part (sums to M(t))', W - 172, cy - 5);
+  ctx.fillStyle = COL.dim; ctx.font = '10px ui-monospace, monospace';
+  ctx.fillText('Re — real part (sums to M(t))', W - 182, cy - 5);
   ctx.save(); ctx.translate(cx + 5, 12); ctx.fillText('Im — auxiliary coordinate', 0, 0); ctx.restore();
 
   /* unit circles a_1, a_2 */
-  ctx.strokeStyle = 'rgba(198,214,240,0.05)';
+  ctx.strokeStyle = 'rgba(200,214,235,0.05)';
   ctx.beginPath(); ctx.arc(cx, cy, 2 * S, 0, Math.PI * 2); ctx.stroke();
 
   /* spokes + projection drops */
@@ -1244,11 +1466,12 @@ function selectTerm(n) {
   ST.sel = n;
   showPanel('inspectorPanel', true);
   updateInspector();
+  pluck(n);   /* musical mode only; no-op otherwise */
 }
 function updateInspector() {
   var el = document.getElementById('inspectorBody');
   var n = ST.sel;
-  if (!(n >= 1)) { el.textContent = 'click a helix or a phasor to select a term'; return; }
+  if (!(n >= 1)) { el.textContent = 'click a thread or a phasor to select a term'; return; }
   var t = ST.t;
   var inSum = n <= TERMS.N;
   var phi = ZH.mod2pi(ZH.phin(n, t));
@@ -1262,9 +1485,33 @@ function updateInspector() {
     '<span class="k">cutoff entry t_n = 2&pi;n&sup2;</span> <span class="v">' + fmtT(ZH.cutoffT(n)) + '</span> <span class="k">(a height, not a frequency)</span><br>' +
     '<span class="k">f_audio at v_t=' + fmtSig(ST.vt, 3) + '</span> <span class="v">' + fmtSig(ZH.fAudio(n, t, ST.vt), 5) + ' Hz</span>';
   var vb = document.getElementById('voiceBtn');
-  var voiced = ST.voiced.indexOf(n) >= 0;
-  vb.textContent = voiced ? 'unvoice term ' + n : 'voice term ' + n;
-  vb.classList.toggle('on', voiced);
+  if (ST.audioMode === 'musical') {
+    vb.textContent = 'pluck this thread';
+    vb.classList.remove('on');
+  } else {
+    var voiced = ST.voiced.indexOf(n) >= 0;
+    vb.textContent = voiced ? 'unvoice term ' + n : 'voice term ' + n;
+    vb.classList.toggle('on', voiced);
+  }
+}
+
+/* Ticker content (v2's bottom changing text) now lives here, in the inspector. */
+function updateInspStatus() {
+  var el = document.getElementById('inspStatus');
+  if (!panelVisible('inspectorPanel')) return;
+  var nNext = TERMS.N + 1, tNext = ZH.cutoffT(nNext);
+  var hw = halfWindow(ST.t);
+  var fk = fixtureOverlap(ST.t - hw, ST.t + hw);
+  el.innerHTML =
+    '<span class="k">M(t)</span> <span class="v">' + fmtSig(Mnow(), 5) + '</span> ' +
+    '<span class="k">· N(t)</span> <span class="v">' + TERMS.N + '</span><br>' +
+    '<span class="k">next cutoff entry: term</span> <span class="v">' + nNext + '</span> ' +
+    '<span class="k">at t =</span> <span class="v">' + fmtT(tNext) + '</span> ' +
+    '<span class="k">(&Delta;t</span> <span class="v">' + fmtSig(tNext - ST.t, 4) + '</span><span class="k">)</span><br>' +
+    '<span class="k">' + (fk
+      ? 'reference fixture ' + fk + ' overlaps this window — open the ribbon [R] for Z_ref / R_ref'
+      : 'no reference fixture at this height — main sum only (fixtures at 130 / 10&#8308; / 10&#8310; / 10&#8312;)') +
+    '</span>';
 }
 
 /* ---- zero microscope ---------------------------------------------------- */
@@ -1314,7 +1561,7 @@ function drawMicro() {
   ymax *= 1.15;
   function X(t) { return (t - tLo) / (tHi - tLo) * W; }
   function Y(v) { return H / 2 - v / ymax * (H / 2 - 8); }
-  ctx.strokeStyle = 'rgba(198,214,240,0.10)';
+  ctx.strokeStyle = 'rgba(200,214,235,0.10)';
   ctx.beginPath(); ctx.moveTo(0, Y(0)); ctx.lineTo(W, Y(0)); ctx.stroke();
   ctx.strokeStyle = COL.gold; ctx.lineWidth = 1.5; ctx.beginPath();
   for (k = 0; k < K; k++) {
@@ -1325,7 +1572,7 @@ function drawMicro() {
   /* reference gamma */
   ctx.strokeStyle = 'rgba(143,208,168,0.9)';
   ctx.beginPath(); ctx.moveTo(X(z.g), 6); ctx.lineTo(X(z.g), H - 6); ctx.stroke();
-  ctx.fillStyle = 'rgba(143,208,168,0.9)'; ctx.font = '9px ui-monospace, monospace';
+  ctx.fillStyle = 'rgba(143,208,168,0.9)'; ctx.font = '10px ui-monospace, monospace';
   ctx.fillText('γ (refined reference)', X(z.g) + 4, 14);
   /* our crossing */
   if (MICRO.tc !== null) {
@@ -1333,7 +1580,7 @@ function drawMicro() {
     ctx.beginPath(); ctx.moveTo(X(MICRO.tc), 6); ctx.lineTo(X(MICRO.tc), H - 6); ctx.stroke();
     ctx.setLineDash([]);
     ctx.fillStyle = 'rgba(226,180,90,0.8)';
-    ctx.fillText('computed crossing (finite approximation)', Math.min(X(MICRO.tc) + 4, W - 210), H - 10);
+    ctx.fillText('computed crossing (finite approximation)', Math.min(X(MICRO.tc) + 4, W - 220), H - 10);
   }
   ctx.fillStyle = COL.dim;
   ctx.fillText('M(t) over γ ± ' + hw, 6, H - 10);
@@ -1361,7 +1608,7 @@ function drawMicro() {
   /* waterfall: positives rightward from 0 (top row), negatives leftward (second row),
      then M and the closing remainder */
   var y0 = 26, bh = 26;
-  ctxB.font = '9px ui-monospace, monospace';
+  ctxB.font = '10px ui-monospace, monospace';
   ctxB.fillStyle = COL.dim;
   ctxB.fillText('positive terms  Σ = +' + fmtSig(sumPos, 4), 6, y0 - 8);
   var acc = 0;
@@ -1385,7 +1632,7 @@ function drawMicro() {
   ctxB.fillRect(Math.min(XB(0), XB(Mg)), y2, Math.max(1.5, Math.abs(XB(Mg) - XB(0))), 12);
   ctxB.fillStyle = 'rgba(143,208,168,0.8)';
   ctxB.fillRect(Math.min(XB(Mg), XB(Mg + Rg)), y2 + 14, Math.max(1.5, Math.abs(XB(Rg))), 12);
-  ctxB.strokeStyle = 'rgba(198,214,240,0.25)';
+  ctxB.strokeStyle = 'rgba(200,214,235,0.25)';
   ctxB.beginPath(); ctxB.moveTo(XB(0), y0 - 4); ctxB.lineTo(XB(0), y2 + 30); ctxB.stroke();
 
   document.getElementById('microNums').innerHTML =
@@ -1408,17 +1655,30 @@ function drawMicro() {
 }
 
 /* ==========================================================================
-   Truth Audio — MATH_SPEC section 9.
+   Sound. Two engines behind one gesture-unlocked AudioContext.
+
+   MUSICAL (default, badged ARTISTIC SONIFICATION): an evolving texture on a
+   harmonic-series-derived scale. Honest kinship, not the mathematical mapping.
+
+   TRUTH (one toggle away, badged TRUTH MODE): MATH_SPEC section 9.
    f_audio_n = v_t * (theta'(t) - ln n) / 2pi, one global v_t, one global gain.
    Direct main-sum render: up to AUD.DIRECT_MAX sample-exact term phasors in an
    AudioWorklet; terms beyond that are band-summed (disclosed). Voiced terms
    ride separate oscillators. Artistic controls (reverb / quantize) leave
    Truth Mode and flip the badge.
+
+   v2 audio-silence bug, fixed here: (1) the unlock button lived in a panel
+   hidden behind the U key, so most visitors never found it; (2) on the
+   worklet path ctx.resume() ran only inside audioWorklet.addModule().then(),
+   i.e. after the click's transient user activation had expired on WebKit —
+   a suspended context stayed suspended forever. v2.1 creates AND resumes the
+   context synchronously inside the BEGIN click (audioUnlock), before any
+   async work.
    ========================================================================== */
 
 var AUD = {
-  ctx: null, master: null, node: null, wet: null, conv: null,
-  started: false, usingWorklet: false,
+  ctx: null, master: null, comp: null, node: null, wet: null, conv: null,
+  started: false, usingWorklet: false, truthReady: false, truthLoading: false,
   DIRECT_MAX: 512, BANDS: 8, VOICE_MAX: 8, MASTER_SCALE: 0.045,
   voiced: {},           /* n -> {osc, g} */
   spFallback: null, spState: null,
@@ -1468,30 +1728,46 @@ var WORKLET_CODE =
   "}\n" +
   "registerProcessor('zh-sum', ZHSum);\n";
 
-function audioEnsure(cb) {
-  if (AUD.started) { cb && cb(); return; }
+/* Synchronous unlock: MUST run directly inside a click/tap handler. */
+function audioUnlock() {
   var Ctx = window.AudioContext || window.webkitAudioContext;
-  if (!Ctx) return;
-  AUD.ctx = new Ctx();
-  AUD.master = AUD.ctx.createGain();
-  AUD.master.gain.value = 1;
-  AUD.master.connect(AUD.ctx.destination);
-  /* reverb path (silent until artistic mode) */
-  AUD.conv = AUD.ctx.createConvolver();
-  AUD.conv.buffer = makeIR(AUD.ctx, 2.0);
-  AUD.wet = AUD.ctx.createGain(); AUD.wet.gain.value = 0;
-  AUD.master.connect(AUD.conv); AUD.conv.connect(AUD.wet); AUD.wet.connect(AUD.ctx.destination);
-  AUD.started = true;
+  if (!Ctx) return false;
+  if (!AUD.ctx) {
+    AUD.ctx = new Ctx();
+    AUD.comp = AUD.ctx.createDynamicsCompressor();
+    AUD.comp.threshold.value = -14; AUD.comp.ratio.value = 6;
+    AUD.comp.connect(AUD.ctx.destination);
+    AUD.master = AUD.ctx.createGain();
+    AUD.master.gain.value = 1;
+    AUD.master.connect(AUD.comp);
+    /* reverb path (musical texture; in Truth Mode silent unless the disclosed
+       artistic reverb control is on) */
+    AUD.conv = AUD.ctx.createConvolver();
+    AUD.conv.buffer = makeIR(AUD.ctx, 2.0);
+    AUD.wet = AUD.ctx.createGain(); AUD.wet.gain.value = 0;
+    AUD.master.connect(AUD.conv); AUD.conv.connect(AUD.wet); AUD.wet.connect(AUD.comp);
+    AUD.started = true;
+  }
+  if (AUD.ctx.state === 'suspended') AUD.ctx.resume();   /* synchronous, inside the gesture */
+  return true;
+}
+
+/* Truth engine: worklet (async load is fine — the context is already running). */
+function ensureTruth(cb) {
+  if (!AUD.started) { if (!audioUnlock()) return; }
+  if (AUD.truthReady || AUD.truthLoading) { cb && cb(); return; }
+  AUD.truthLoading = true;
   if (AUD.ctx.audioWorklet && typeof Blob !== 'undefined') {
     var url = URL.createObjectURL(new Blob([WORKLET_CODE], { type: 'application/javascript' }));
     AUD.ctx.audioWorklet.addModule(url).then(function () {
       AUD.node = new AudioWorkletNode(AUD.ctx, 'zh-sum', { outputChannelCount: [2] });
       AUD.node.connect(AUD.master);
       AUD.usingWorklet = true;
+      AUD.truthReady = true; AUD.truthLoading = false;
       audioPushTerms(true);
       cb && cb();
-    }).catch(function () { audioFallback(); cb && cb(); });
-  } else { audioFallback(); cb && cb(); }
+    }).catch(function () { audioFallback(); AUD.truthReady = true; AUD.truthLoading = false; cb && cb(); });
+  } else { audioFallback(); AUD.truthReady = true; AUD.truthLoading = false; cb && cb(); }
 }
 
 function audioFallback() {
@@ -1532,7 +1808,6 @@ function audioTermSet() {
   var t = ST.t, N = TERMS.N, sr = AUD.ctx ? AUD.ctx.sampleRate : 48000;
   var D = Math.min(N, AUD.DIRECT_MAX);
   var a = [], dph = [], ph = [];
-  var scale = ST.playingGain();
   for (var n = 1; n <= D; n++) {
     a.push(TERMS.a[n - 1]);
     dph.push(TERMS.omega[n - 1] * ST.vt / sr);
@@ -1563,11 +1838,12 @@ function audioTermSet() {
 }
 
 ST.playingGain = function () {
-  return (ST.audioOn && (ST.playing || ST.frozen)) ? ST.gain * AUD.MASTER_SCALE : 0;
+  return (ST.audioOn && ST.audioMode === 'truth' && (ST.playing || ST.frozen))
+    ? ST.gain * AUD.MASTER_SCALE : 0;
 };
 
 function audioPushTerms(withPhases) {
-  if (!AUD.started) return;
+  if (!AUD.started || !AUD.truthReady) return;
   var set = audioTermSet();
   var msg = { type: 'terms', a: set.a, dph: set.dph, ph: set.ph, gain: ST.playingGain() };
   if (AUD.usingWorklet && AUD.node) AUD.node.port.postMessage(msg);
@@ -1581,14 +1857,16 @@ function audioPushTerms(withPhases) {
 
 function audioUpdateRates() {
   if (!AUD.started) return;
-  var set = audioTermSet();
-  var sig = set.N + '/' + set.D + '/' + set.B;
-  if (sig !== AUD.lastTermSig) { AUD.lastTermSig = sig; audioPushTerms(true); }
-  else {
-    var msg = { type: 'u', dph: set.dph, gain: ST.playingGain() };
-    if (AUD.usingWorklet && AUD.node) AUD.node.port.postMessage(msg);
-    else if (AUD.spState) { AUD.spState.dph = set.dph; AUD.spState.target = msg.gain; }
-    setHonesty(set);
+  if (AUD.truthReady) {
+    var set = audioTermSet();
+    var sig = set.N + '/' + set.D + '/' + set.B;
+    if (sig !== AUD.lastTermSig) { AUD.lastTermSig = sig; audioPushTerms(true); }
+    else {
+      var msg = { type: 'u', dph: set.dph, gain: ST.playingGain() };
+      if (AUD.usingWorklet && AUD.node) AUD.node.port.postMessage(msg);
+      else if (AUD.spState) { AUD.spState.dph = set.dph; AUD.spState.target = msg.gain; }
+      setHonesty(set);
+    }
   }
   /* voiced oscillators follow the law live */
   for (var n in AUD.voiced) {
@@ -1666,7 +1944,7 @@ function setHonesty(set) {
 
 function setBadge() {
   var b = document.getElementById('truthBadge');
-  var art = ST.artistic.reverb || ST.artistic.quant;
+  var art = ST.audioMode === 'musical' || ST.artistic.reverb || ST.artistic.quant;
   if (art) {
     b.className = 'badge artistic';
     b.textContent = 'ARTISTIC SONIFICATION — NOT A PRIVILEGED MATHEMATICAL MAPPING';
@@ -1674,12 +1952,243 @@ function setBadge() {
     b.className = 'badge truth';
     b.textContent = 'TRUTH MODE — no per-string tuning, no remapping';
   }
-  if (AUD.started && AUD.wet)
-    AUD.wet.gain.setTargetAtTime(ST.artistic.reverb ? 0.4 : 0, AUD.ctx.currentTime, 0.2);
+  if (AUD.started && AUD.wet) {
+    var wet = ST.audioMode === 'musical' ? 0.30 : (ST.artistic.reverb ? 0.4 : 0);
+    AUD.wet.gain.setTargetAtTime(wet, AUD.ctx.currentTime, 0.2);
+  }
+}
+
+/* ---- MUSICAL engine ------------------------------------------------------
+   Voices = a subset of the active terms, spread geometrically through 1..N.
+   Pitch: each voice's true phase rate omega_n = theta'(t) - ln n is mapped
+   monotonically onto a harmonic-series-derived scale (pitch classes = the
+   ratios of harmonics 8..15, base 55 Hz). Loudness: the term's actual
+   contribution a_n |cos phi_n(t)| — the phases ARE the slow evolution as t
+   drifts. Dragging t re-maps every voice; the glide between targets is the
+   audible bend. Clicking a thread plucks its mapped note. All artistic,
+   badged as such. */
+var MUS = {
+  on: false, voices: [], density: 7,
+  RATIOS: [1, 9 / 8, 5 / 4, 11 / 8, 3 / 2, 13 / 8, 7 / 4, 15 / 8],
+  BASE: 55, OCTAVES: 3.6, bus: null, lastNoteUpd: 0
+};
+
+function musNote(n) {
+  var w1 = ZH.omegan(1, ST.t);
+  var x = w1 > 1e-9 ? 1 - ZH.omegan(n, ST.t) / w1 : 0;   /* = ln n / theta'(t) */
+  x = Math.max(0, Math.min(1, x));
+  var raw = MUS.BASE * Math.pow(2, x * MUS.OCTAVES);
+  var oct = Math.floor(Math.log(raw / MUS.BASE) / Math.LN2);
+  var rel = raw / (MUS.BASE * Math.pow(2, oct));
+  var best = MUS.RATIOS[0], bd = 1e9, i, d;
+  for (i = 0; i < MUS.RATIOS.length; i++) {
+    d = Math.abs(MUS.RATIOS[i] - rel);
+    if (d < bd) { bd = d; best = MUS.RATIOS[i]; }
+  }
+  if (Math.abs(2 - rel) < bd) { best = 1; oct += 1; }    /* octave wrap */
+  return MUS.BASE * Math.pow(2, oct) * best;
+}
+
+function musTermForVoice(i, D, N) {
+  var x = (i + 0.5) / D;
+  var n = Math.round(Math.exp(Math.pow(x, 1.25) * Math.log(Math.max(2, N))));
+  return Math.max(1, Math.min(N, n));
+}
+
+function startMusical() {
+  if (!AUD.started || MUS.on) return;
+  MUS.bus = AUD.ctx.createGain();
+  MUS.bus.gain.value = 1;
+  MUS.bus.connect(AUD.master);
+  MUS.on = true;
+  musBuildVoices();
+  setBadge();
+}
+
+function musBuildVoices() {
+  var i;
+  for (i = 0; i < MUS.voices.length; i++) {
+    var v = MUS.voices[i];
+    try { v.osc.stop(); v.osc2.stop(); } catch (e2) {}
+  }
+  MUS.voices = [];
+  if (!MUS.on) return;
+  var hasPan = typeof AUD.ctx.createStereoPanner === 'function';
+  for (i = 0; i < MUS.density; i++) {
+    var osc = AUD.ctx.createOscillator(); osc.type = 'sine';
+    var osc2 = AUD.ctx.createOscillator(); osc2.type = 'triangle';
+    var g2 = AUD.ctx.createGain(); g2.gain.value = 0.16;
+    var g = AUD.ctx.createGain(); g.gain.value = 0;
+    var pan = hasPan ? AUD.ctx.createStereoPanner() : null;
+    osc.connect(g); osc2.connect(g2); g2.connect(g);
+    if (pan) { g.connect(pan); pan.connect(MUS.bus); } else { g.connect(MUS.bus); }
+    osc.frequency.value = MUS.BASE; osc2.frequency.value = MUS.BASE * 2;
+    osc.start(); osc2.start();
+    MUS.voices.push({ osc: osc, osc2: osc2, g: g, pan: pan, n: 1 });
+  }
+}
+
+function musTick() {
+  if (!MUS.on || !AUD.ctx) return;
+  var now = AUD.ctx.currentTime, N = Math.max(1, TERMS.N);
+  var D = MUS.voices.length;
+  var live = ST.audioOn && ST.audioMode === 'musical';
+  for (var i = 0; i < D; i++) {
+    var v = MUS.voices[i];
+    v.n = musTermForVoice(i, D, N);
+    var f = musNote(v.n);
+    v.osc.frequency.setTargetAtTime(f, now, 0.09);        /* glide = the bend */
+    v.osc2.frequency.setTargetAtTime(f * 2, now, 0.09);
+    var ph = ZH.mod2pi(ZH.phin(v.n, ST.t));
+    var amp = Math.pow(Math.abs(Math.cos(ph)), 1.4);      /* the actual phase drives the swell */
+    var g = ST.gain * 0.62 * Math.pow(1 / Math.sqrt(v.n), 0.55) * (0.15 + 0.85 * amp) / Math.sqrt(D);
+    v.g.gain.setTargetAtTime(live ? g : 0, now, 0.35);
+    if (v.pan) v.pan.pan.setTargetAtTime(0.6 * Math.sin(ph), now, 0.6);
+  }
+  if (performance.now() - MUS.lastNoteUpd > 1200) {
+    MUS.lastNoteUpd = performance.now();
+    var st = document.getElementById('audioState');
+    if (ST.audioMode === 'musical' && ST.audioOn)
+      st.textContent = 'musical — ' + D + ' of ' + N + ' threads voiced on a harmonic-series scale';
+  }
+}
+
+function pluck(n) {
+  if (!AUD.started || !ST.audioOn || ST.audioMode !== 'musical') return;
+  var f = musNote(Math.max(1, Math.min(TERMS.N || 1, n)));
+  var t0 = AUD.ctx.currentTime;
+  var osc = AUD.ctx.createOscillator(), g = AUD.ctx.createGain();
+  osc.type = 'triangle'; osc.frequency.value = f;
+  g.gain.setValueAtTime(0, t0);
+  g.gain.linearRampToValueAtTime(ST.gain * 0.22 * Math.min(1, ZH.an(n)), t0 + 0.012);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.5);
+  osc.connect(g); g.connect(MUS.bus || AUD.master);
+  osc.start(t0); osc.stop(t0 + 1.6);
+}
+
+function setAudioMode(m) {
+  ST.audioMode = m;
+  document.getElementById('soundModeMus').classList.toggle('on', m === 'musical');
+  document.getElementById('soundModeTruth').classList.toggle('on', m === 'truth');
+  document.getElementById('musCtl').classList.toggle('hidden', m !== 'musical');
+  document.getElementById('truthCtl').classList.toggle('hidden', m !== 'truth');
+  var st = document.getElementById('audioState');
+  if (m === 'truth') {
+    ST.playing = true;
+    ensureTruth(function () { audioPushTerms(true); });
+    st.textContent = 'truth — playback advances t at v_t per second (freeze [space] to hold the chord)';
+  } else {
+    ST.playing = false;
+    if (AUD.started && !MUS.on) startMusical();
+    st.textContent = ST.audioOn
+      ? 'musical — an evolving artistic texture; drag the height slider to bend it'
+      : 'off — sound starts only on your gesture';
+    audioUpdateRates();     /* zeroes the truth gain */
+  }
+  setBadge();
+  updateInspector();
 }
 
 /* ==========================================================================
-   Orchestration: navigation, events, opening sequence, fence, main loop.
+   The torus window. Standard geometry: each thread's phase phi_n(t) lives on
+   a circle, so any four of them live on a 4-torus (product of four circles)
+   and all N(t) of them on an N(t)-torus. We draw the Clifford torus
+   (cos u, sin u, cos v, sin v)/sqrt2 in R^4 with (u, v) = (phi_1, phi_2),
+   tumbled by a double rotation in two orthogonal planes driven by
+   (phi_3, phi_4) plus a slow constant viewing spin, then projected
+   4D -> 3D -> 2D. Presentation only; no quantity is derived from it.
+   ========================================================================== */
+var TOR = { trail: [], spin: 0 };
+
+function torTick(dt, tChanged) {
+  TOR.spin += dt * 0.12;
+  if (tChanged && TERMS.N >= 4) {
+    TOR.trail.push([
+      ZH.mod2pi(ZH.phin(1, ST.t)), ZH.mod2pi(ZH.phin(2, ST.t))
+    ]);
+    if (TOR.trail.length > 140) TOR.trail.shift();
+  }
+}
+
+function drawTorus() {
+  if (!panelVisible('torusPanel')) return;
+  var cv = document.getElementById('torus');
+  var ctx = fitCanvas(cv);
+  var W = cv.clientWidth, H = cv.clientHeight;
+  ctx.clearRect(0, 0, W, H);
+  if (TERMS.N < 4) {
+    ctx.fillStyle = COL.dim; ctx.font = '13px Georgia, serif';
+    ctx.fillText('needs at least four threads (t too low)', 16, H / 2);
+    return;
+  }
+  var t = ST.t;
+  var p1 = ZH.mod2pi(ZH.phin(1, t)), p2 = ZH.mod2pi(ZH.phin(2, t));
+  var p3 = ZH.mod2pi(ZH.phin(3, t)), p4 = ZH.mod2pi(ZH.phin(4, t));
+  var A = p3 + TOR.spin, B = p4 + TOR.spin * 0.7;
+  var ca = Math.cos(A), sa = Math.sin(A), cb = Math.cos(B), sb = Math.sin(B);
+  var INV = Math.SQRT1_2;
+  function proj(u, v) {
+    var x = Math.cos(u) * INV, y = Math.sin(u) * INV;
+    var z = Math.cos(v) * INV, w = Math.sin(v) * INV;
+    /* double rotation: (x,z) by A, (y,w) by B — two orthogonal planes */
+    var x2 = x * ca - z * sa, z2 = x * sa + z * ca;
+    var y2 = y * cb - w * sb, w2 = y * sb + w * cb;
+    var s4 = 1.35 / (2.1 - w2);            /* 4D -> 3D perspective */
+    var X = x2 * s4, Y = y2 * s4, Z = z2 * s4;
+    var s3 = 1.9 / (2.9 - Z);              /* 3D -> 2D perspective */
+    return [W / 2 + X * s3 * W * 0.40, H / 2 - Y * s3 * H * 0.40, s4 * s3];
+  }
+  var GU = 12, GS = 46, i, j, p;
+  /* u-lines (phi_1 direction) */
+  for (i = 0; i < GU; i++) {
+    var u = i / GU * Math.PI * 2;
+    ctx.strokeStyle = 'rgba(91,142,242,0.14)'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (j = 0; j <= GS; j++) {
+      p = proj(u, j / GS * Math.PI * 2);
+      if (j === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
+    }
+    ctx.stroke();
+  }
+  /* v-lines (phi_2 direction) */
+  for (i = 0; i < GU; i++) {
+    var v = i / GU * Math.PI * 2;
+    ctx.strokeStyle = 'rgba(160,107,255,0.12)'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (j = 0; j <= GS; j++) {
+      p = proj(j / GS * Math.PI * 2, v);
+      if (j === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
+    }
+    ctx.stroke();
+  }
+  /* trail of the phase point */
+  for (i = 1; i < TOR.trail.length; i++) {
+    var q0 = proj(TOR.trail[i - 1][0], TOR.trail[i - 1][1]);
+    var q1 = proj(TOR.trail[i][0], TOR.trail[i][1]);
+    var al = 0.05 + 0.55 * (i / TOR.trail.length);
+    ctx.strokeStyle = 'rgba(226,180,90,' + al.toFixed(3) + ')';
+    ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.moveTo(q0[0], q0[1]); ctx.lineTo(q1[0], q1[1]); ctx.stroke();
+  }
+  /* current phase point */
+  var pc = proj(p1, p2);
+  ctx.fillStyle = COL.gold;
+  ctx.beginPath(); ctx.arc(pc[0], pc[1], 3.6, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = 'rgba(226,180,90,0.35)';
+  ctx.beginPath(); ctx.arc(pc[0], pc[1], 7.5, 0, Math.PI * 2); ctx.stroke();
+}
+
+function updateTorusLabel() {
+  var el = document.getElementById('torusLabel');
+  if (!el) return;
+  el.innerHTML = 'THE TORUS WINDOW &mdash; four of the threads’ phases, drawn as a ' +
+    'rotating 4-torus. The full state lives on ' +
+    (TERMS.N === 8 || TERMS.N === 11 || TERMS.N === 18 ? 'an ' : 'a ') + TERMS.N +
+    '-torus at this height; a tesseract is the 4-cube, this is its curvier cousin.';
+}
+
+/* ==========================================================================
+   Orchestration: navigation, modes, guided journey, events, fence, main loop.
    ========================================================================== */
 
 var T_MIN = 100, T_MAX = 1e8;
@@ -1688,12 +2197,18 @@ function sliderToT(v) { return Math.pow(10, 2 + 6 * v / 10000); }
 function tToSlider(t) { return Math.round((Math.log10(t) - 2) / 6 * 10000); }
 function clampT(t) { return Math.max(T_MIN, Math.min(T_MAX, t)); }
 function glideTo(t) { ST.tTarget = clampT(t); }
+function noteNav() { ST.lastNavAt = performance.now(); }
 
 function showPanel(id, on) {
   var el = document.getElementById(id);
   if (on === undefined) on = el.classList.contains('hidden');
   el.classList.toggle('hidden', !on);
   return on;
+}
+function closeAllPanels() {
+  ['flowerPanel', 'ribbonPanel', 'microPanel', 'audioPanel', 'fencePanel',
+   'inspectorPanel', 'torusPanel', 'infoPanel']
+    .forEach(function (id) { showPanel(id, false); });
 }
 
 /* ---------------- events: ignition + crossings --------------------------- */
@@ -1717,11 +2232,11 @@ function detectEvents(tPrev, tNow) {
     for (var n = Nprev + 1; n <= Nnow; n++) {
       var zPos = (ZH.cutoffT(n) - tNow) * zScale(tNow);
       GLR.spawnRing(ZH.an(n) * RSCALE, Math.max(-SCENE_HALF, Math.min(SCENE_HALF, zPos)), 'birth');
-      var head = ST.mode === 'temple' ? 'string birth — term ' : 'cutoff entry — term ';
+      var head = ST.uiMode === 'ambient' ? 'string birth — term ' : 'cutoff entry — term ';
       showEvent(head + n + ' enters the sum' +
         '<div class="sub2">computed spectral amplitude 2/&radic;' + n + ' = ' + fmtSig(ZH.an(n), 5) +
         ' · cutoff-entry height 2&pi;&middot;' + n + '&sup2; = ' + fmtT(ZH.cutoffT(n)) + '</div>', 2);
-      chime(n);
+      if (ST.audioMode === 'musical') pluck(n); else chime(n);
     }
   }
   /* main-sum sign change while moving slowly */
@@ -1756,18 +2271,10 @@ var sliderEl = document.getElementById('tslider');
 var draggingSlider = false;
 function updateHUD() {
   document.getElementById('tReadout').textContent = fmtT(ST.t);
-  document.getElementById('nReadout').textContent = TERMS.N;
-  document.getElementById('mReadout').textContent = fmtSig(Mnow(), 5);
-  var nNext = TERMS.N + 1, tNext = ZH.cutoffT(nNext);
-  document.getElementById('nextTermReadout').textContent = nNext;
-  document.getElementById('nextTReadout').textContent = fmtT(tNext);
-  document.getElementById('countdownReadout').textContent = fmtSig(tNext - ST.t, 4);
-  var hw = halfWindow(ST.t);
-  var fk = fixtureOverlap(ST.t - hw, ST.t + hw);
-  document.getElementById('fixtureHere').textContent = fk
-    ? 'reference fixture ' + fk + ' overlaps this window — open the ribbon [R] for Z_ref / R_ref'
-    : 'no reference fixture at this height — main sum only (fixtures at 130 / 10⁴ / 10⁶ / 10⁸)';
+  document.getElementById('threadsReadout').textContent = TERMS.N + ' threads';
   if (!draggingSlider) sliderEl.value = tToSlider(ST.t);
+  updateInspStatus();
+  updateTorusLabel();
 }
 
 /* ---------------- fence ---------------------------------------------------- */
@@ -1815,8 +2322,165 @@ function fillFenceLive() {
     ' (linear); voiced-term gain = a_n &times; slider &times; 0.12<br>' +
     'cutoff-entry chime: a UI event cue at the entering term’s f_audio, clamped up to 55 Hz ' +
     'for audibility — it is not part of the sonification law<br>' +
+    'MUSICAL sound (default) is an ARTISTIC SONIFICATION and is badged as such on screen: ' +
+    'voiced threads are snapped to a harmonic-series-derived scale (pitch classes = ratios ' +
+    'of harmonics 8..15 over base 55 Hz); loudness follows a_n |cos &phi;_n(t)|; pitch order follows ' +
+    '&theta;&prime;(t) &minus; ln n; when idle it drifts t slowly upward. It is not the Truth Audio law<br>' +
+    'the torus window is presentation-only standard geometry (phases live on circles; ' +
+    'four of them on a 4-torus, all N(t) on an N(t)-torus); its double rotation is driven by ' +
+    '&phi;&#8323;, &phi;&#8324; plus a slow constant viewing spin; no quantity is derived from it<br>' +
     'ribbon/helix phases beyond the exact-evaluation window use the local expansion ' +
     'φ₀ + ωu + ½θ″u² + ⅙θ‴u³ (error ≪ 10⁻³ rad at all displayed heights)';
+}
+
+/* ---------------- guided journey ------------------------------------------- */
+var JR = { on: false, step: -1, s: 0, camDist: null, camPitch: null, holdBtn: false };
+var JR_STEPS = [
+  {
+    dur: 11,
+    cap: 'Meet one thread. Each glowing helix is a single wave &mdash; a cosine, ' +
+         'spinning as the height <i>t</i> climbs. Down here, near t = 130, the formula ' +
+         'needs only four of them.',
+    enter: function () {
+      ST.frozen = false; glideTo(130);
+      JR.camDist = 10; JR.camPitch = 0.16;
+      selectTerm(2); showPanel('inspectorPanel', false);
+    }
+  },
+  {
+    dur: 11,
+    cap: 'Watch them add. Frozen at this instant, the four waves chain tip to tail ' +
+         'along the floor; where the golden walk lands is the main sum M(t) &mdash; the ' +
+         'one number everything here draws and plays.',
+    enter: function () {
+      /* snap: the user may have clicked next before the glide finished */
+      if (ST.tTarget !== null || Math.abs(ST.t - 130) > 1) ST.t = 130;
+      ST.tTarget = null; ST.frozen = true;
+      JR.camDist = 16; JR.camPitch = 0.55;
+    }
+  },
+  {
+    dur: 13,
+    cap: 'Arrive at a zero. Here the waves cancel almost perfectly &mdash; the golden ' +
+         'line touches zero. Where such zeros can live is the Riemann Hypothesis, ' +
+         'unsolved since 1859. This instrument draws the mathematics; it proves nothing.',
+    enter: function () {
+      ST.frozen = false;
+      var br = fixtureBestCrossingBracket('W1');
+      glideTo(br ? br.tAt : 143);
+      JR.camDist = 12; JR.camPitch = 0.35;
+      JR.freezeOnArrive = true;
+    }
+  },
+  {
+    dur: 11,
+    cap: 'Pull back &mdash; the cathedral. A million units up the critical line, the same ' +
+         'formula wants 398 threads. Nothing was added by hand: every curve on screen ' +
+         'is computed from one line of mathematics.',
+    enter: function () {
+      ST.frozen = false; JR.freezeOnArrive = false;
+      glideTo(1e6);
+      JR.camDist = 42; JR.camPitch = 0.18;
+    }
+  },
+  {
+    dur: 1e9,
+    cap: 'Now explore. Scroll to fly; drag to orbit; click a thread to pluck it. ' +
+         'The cards below jump to famous heights, and the ? button replays this tour ' +
+         'whenever you want it.',
+    enter: function () {
+      JR.camDist = 34; JR.camPitch = 0.12;
+      document.getElementById('jrNext').textContent = 'begin exploring';
+    }
+  }
+];
+
+function jrDotsRender() {
+  var d = document.getElementById('jrDots'), h = '';
+  for (var i = 0; i < JR_STEPS.length; i++)
+    h += '<span' + (i === JR.step ? ' class="on"' : '') + '></span>';
+  d.innerHTML = h;
+}
+function jrStart() {
+  JR.on = true; JR.step = -1;
+  document.getElementById('jrNext').textContent = 'next';
+  document.getElementById('jrCap').classList.remove('hidden');
+  jrAdvance();
+}
+function jrAdvance() {
+  JR.step++;
+  if (JR.step >= JR_STEPS.length) { endJourney(); return; }
+  JR.s = 0; JR.freezeOnArrive = false;
+  document.getElementById('jrText').innerHTML = JR_STEPS[JR.step].cap;
+  jrDotsRender();
+  JR_STEPS[JR.step].enter();
+}
+function jrTick(dt) {
+  if (!JR.on) return;
+  JR.s += dt;
+  var st = JR_STEPS[JR.step];
+  if (JR.camDist !== null) {
+    GLR.CAM.dist += (JR.camDist - GLR.CAM.dist) * Math.min(1, dt * 1.4);
+    GLR.CAM.pitch += (JR.camPitch - GLR.CAM.pitch) * Math.min(1, dt * 1.4);
+  }
+  GLR.CAM.yaw += dt * 0.05;
+  if (JR.freezeOnArrive && ST.tTarget === null && !ST.frozen) ST.frozen = true;
+  if (JR.s > st.dur) jrAdvance();
+}
+function endJourney() {
+  JR.on = false;
+  document.getElementById('jrCap').classList.add('hidden');
+  ST.frozen = false;
+  setMode('explore');
+}
+
+/* ---------------- modes ---------------------------------------------------- */
+var hintShown = false;
+function setMode(m) {
+  if (m === 'guided') { startFromWelcome('guided'); return; }
+  JR.on = false;                                    /* leaving the tour ends it */
+  document.getElementById('jrCap').classList.add('hidden');
+  if (ST.uiMode === 'guided') ST.frozen = false;    /* never leave a tour-freeze behind */
+  ST.uiMode = m;
+  document.querySelectorAll('#modePicker .mode-item').forEach(function (b) {
+    b.classList.toggle('on', b.dataset.mode === m);
+  });
+  document.getElementById('welcome').classList.add('hidden');
+  document.getElementById('nav').classList.toggle('hidden', m === 'ambient');
+  document.getElementById('torusBtn').classList.remove('hidden');
+  var temple = m === 'ambient';
+  document.getElementById('mastTitle').innerHTML = temple
+    ? 'Zeta Harp // Resonance Temple' : 'Riemann-Siegel Phase Observatory';
+  document.getElementById('mastSub').textContent = temple
+    ? 'a temple strung with one formula — each string a term of the main sum, each string birth a cutoff entry'
+    : "the main sum of Hardy's Z, drawn as phase trajectories";
+  if (temple) {
+    ST.cruise = true;
+    closeAllPanels();
+  } else {
+    ST.cruise = false;
+    showPanel('ribbonPanel', true);
+    if (!hintShown) {
+      hintShown = true;
+      var toast = document.getElementById('hintToast');
+      toast.style.opacity = 1;
+      setTimeout(function () { toast.style.opacity = 0; }, 6000);
+    }
+  }
+}
+
+/* Guided needs the welcome flow's camera baseline; callable from ? replay too. */
+function startFromWelcome(which) {
+  document.getElementById('welcome').classList.add('hidden');
+  ST.uiMode = 'guided';
+  document.querySelectorAll('#modePicker .mode-item').forEach(function (b) {
+    b.classList.toggle('on', b.dataset.mode === 'guided');
+  });
+  document.getElementById('nav').classList.add('hidden');
+  document.getElementById('torusBtn').classList.add('hidden');
+  closeAllPanels();
+  ST.cruise = false;
+  jrStart();
 }
 
 /* ---------------- input ---------------------------------------------------- */
@@ -1848,6 +2512,7 @@ function bindInput() {
   cv.addEventListener('contextmenu', function (e) { e.preventDefault(); });
   cv.addEventListener('wheel', function (e) {
     e.preventDefault();
+    noteNav();
     if (e.shiftKey) {
       var lt = Math.log10(ST.t) + e.deltaY * 0.0006;
       ST.t = clampT(Math.pow(10, lt)); ST.tTarget = null;
@@ -1860,6 +2525,7 @@ function bindInput() {
     if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT')) return;
     keys[e.key.toLowerCase()] = true;
     var k = e.key.toLowerCase();
+    if (k === 'w' || k === 's' || k === 'arrowup' || k === 'arrowdown') noteNav();
     if (k === ' ') {
       e.preventDefault();
       ST.frozen = !ST.frozen;
@@ -1869,22 +2535,21 @@ function bindInput() {
     else if (k === 'r') showPanel('ribbonPanel');
     else if (k === 'z') { if (showPanel('microPanel')) { if (MICRO.idx < 0) microSelect(0); else drawMicro(); } }
     else if (k === 'u') showPanel('audioPanel');
+    else if (k === 't') { if (ST.uiMode !== 'guided' && ST.uiMode !== 'welcome') showPanel('torusPanel'); }
     else if (k === 'i') { if (showPanel('fencePanel')) fillFenceLive(); }
+    else if (k === '?') showPanel('infoPanel');
     else if (k === 'a') ST.cruise = !ST.cruise;
-    else if (k === 'escape') {
-      ['flowerPanel', 'ribbonPanel', 'microPanel', 'audioPanel', 'fencePanel', 'inspectorPanel']
-        .forEach(function (id) { showPanel(id, false); });
-    }
+    else if (k === 'escape') closeAllPanels();
   });
   window.addEventListener('keyup', function (e) { keys[e.key.toLowerCase()] = false; });
 
   sliderEl.addEventListener('input', function () {
-    draggingSlider = true;
+    draggingSlider = true; noteNav();
     ST.t = sliderToT(+sliderEl.value); ST.tTarget = null;
   });
   sliderEl.addEventListener('change', function () { draggingSlider = false; });
   document.querySelectorAll('#presets button').forEach(function (b) {
-    b.addEventListener('click', function () { glideTo(+b.dataset.t); });
+    b.addEventListener('click', function () { noteNav(); glideTo(+b.dataset.t); });
   });
   document.querySelectorAll('[data-close]').forEach(function (b) {
     b.addEventListener('click', function () { showPanel(b.dataset.close, false); });
@@ -1894,37 +2559,93 @@ function bindInput() {
     el.addEventListener('click', function () {
       ST.layers[key] = !ST.layers[key];
       el.classList.toggle('off', !ST.layers[key]);
+      el.classList.toggle('pressed', ST.layers[key]);
     });
   });
   document.getElementById('flower').addEventListener('click', flowerPick);
-  document.getElementById('modeBtn').addEventListener('click', toggleMode);
-  document.getElementById('skipBtn').addEventListener('click', endOpening);
 
-  /* audio controls */
+  /* modes */
+  document.querySelectorAll('#modePicker .mode-item').forEach(function (b) {
+    b.addEventListener('click', function () {
+      audioUnlock();   /* every picker click is a gesture — keep the ctx warm */
+      if (AUD.started && !MUS.on) startMusical();
+      setMode(b.dataset.mode);
+    });
+  });
+  document.getElementById('torusBtn').addEventListener('click', function () { showPanel('torusPanel'); });
+  document.getElementById('infoBtn').addEventListener('click', function () { showPanel('infoPanel'); });
+  document.getElementById('replayBtn').addEventListener('click', function () {
+    showPanel('infoPanel', false);
+    audioUnlock();
+    if (AUD.started && !MUS.on) startMusical();
+    setMode('guided');
+  });
+  document.getElementById('fenceOpenBtn').addEventListener('click', function () {
+    showPanel('infoPanel', false);
+    if (showPanel('fencePanel', true)) fillFenceLive();
+  });
+  document.getElementById('footerFence').addEventListener('click', function () {
+    if (showPanel('fencePanel', true)) fillFenceLive();
+  });
+
+  /* welcome */
+  document.getElementById('beginBtn').addEventListener('click', function () {
+    var okA = audioUnlock();               /* synchronous unlock inside the gesture */
+    ST.audioOn = okA;
+    if (okA) startMusical();
+    setAudioMode(ST.audioMode);            /* refresh state line + badge */
+    document.getElementById('audioBtn').textContent = ST.audioOn ? 'sound off' : 'sound on';
+    startFromWelcome('guided');
+  });
+  document.getElementById('skipTourLink').addEventListener('click', function () {
+    var okA = audioUnlock();
+    ST.audioOn = okA;
+    if (okA) startMusical();
+    setAudioMode(ST.audioMode);
+    document.getElementById('audioBtn').textContent = ST.audioOn ? 'sound off' : 'sound on';
+    setMode('explore');
+  });
+
+  /* journey */
+  document.getElementById('jrNext').addEventListener('click', function () { jrAdvance(); });
+  document.getElementById('jrSkip').addEventListener('click', function () { endJourney(); });
+
+  /* sound controls */
+  document.getElementById('soundModeMus').addEventListener('click', function () {
+    audioUnlock(); if (AUD.started && !MUS.on) startMusical(); setAudioMode('musical');
+  });
+  document.getElementById('soundModeTruth').addEventListener('click', function () {
+    audioUnlock(); setAudioMode('truth');
+  });
   document.getElementById('audioBtn').addEventListener('click', function () {
     if (!ST.audioOn) {
-      audioEnsure(function () {
-        if (AUD.ctx && AUD.ctx.state === 'suspended') AUD.ctx.resume();
-        ST.audioOn = true; ST.playing = true;
-        document.getElementById('audioBtn').textContent = 'audio off';
-        document.getElementById('audioState').textContent =
-          'live — playback advances t at v_t per second (freeze [space] to hold the chord)';
-        audioPushTerms(true);
-      });
+      var okA = audioUnlock();
+      if (!okA) return;
+      ST.audioOn = true;
+      if (!MUS.on) startMusical();
+      if (ST.audioMode === 'truth') { ST.playing = true; ensureTruth(function () { audioPushTerms(true); }); }
+      document.getElementById('audioBtn').textContent = 'sound off';
+      setAudioMode(ST.audioMode);
     } else {
       ST.audioOn = false; ST.playing = false;
-      document.getElementById('audioBtn').textContent = 'enable audio';
-      document.getElementById('audioState').textContent = 'off — audio starts only on your gesture';
+      document.getElementById('audioBtn').textContent = 'sound on';
+      document.getElementById('audioState').textContent = 'off — sound starts only on your gesture';
       audioUpdateRates();
+      musTick();
     }
   });
   var vtS = document.getElementById('vtSlider'), gS = document.getElementById('gainSlider');
   function vtLabel() {
     document.getElementById('vtReadout').textContent = fmtSig(ST.vt, 4) + ' height/s';
-    document.getElementById('gainReadout').textContent = fmtSig(ST.gain * AUD.MASTER_SCALE, 3) + ' linear';
+    document.getElementById('gainReadout').textContent = fmtSig(ST.gain, 2);
+    document.getElementById('musDensityReadout').textContent = MUS.density + ' voices';
   }
   vtS.addEventListener('input', function () { ST.vt = Math.pow(10, 3 * vtS.value / 1000); vtLabel(); });
   gS.addEventListener('input', function () { ST.gain = gS.value / 100; vtLabel(); });
+  document.getElementById('musDensity').addEventListener('input', function (e2) {
+    MUS.density = +e2.target.value; vtLabel();
+    if (MUS.on) musBuildVoices();
+  });
   ST.vt = Math.pow(10, 3 * vtS.value / 1000); ST.gain = gS.value / 100; vtLabel();
   document.getElementById('reverbChk').addEventListener('change', function (e2) {
     ST.artistic.reverb = e2.target.checked; setBadge();
@@ -1934,91 +2655,10 @@ function bindInput() {
   });
   document.getElementById('voiceBtn').addEventListener('click', function () {
     if (!(ST.sel >= 1)) return;
-    if (!AUD.started) audioEnsure(function () { voiceTerm(ST.sel); });
+    if (ST.audioMode === 'musical') { audioUnlock(); pluck(ST.sel); return; }
+    if (!AUD.truthReady) ensureTruth(function () { voiceTerm(ST.sel); });
     else voiceTerm(ST.sel);
   });
-}
-
-function toggleMode() {
-  ST.mode = ST.mode === 'obs' ? 'temple' : 'obs';
-  var temple = ST.mode === 'temple';
-  document.getElementById('mastTitle').innerHTML = temple
-    ? 'Zeta Harp // Resonance Temple' : 'Riemann-Siegel Phase Observatory';
-  document.getElementById('mastSub').textContent = temple
-    ? 'a temple strung with one formula — each string a term of the main sum, each string birth a cutoff entry'
-    : "the main sum of Hardy's Z, drawn as phase trajectories";
-  document.getElementById('modeBtn').textContent = temple ? 'observatory mode' : 'installation mode';
-}
-
-/* ---------------- opening sequence ----------------------------------------- */
-var OP = { on: true, s: 0, cross: null, phase: -1 };
-function setupOpening() {
-  OP.br = fixtureBestCrossingBracket('W3');
-  OP.cross = OP.br ? OP.br.tAt : 1000010;
-  ST.t = 1000000.0;
-  GLR.CAM.dist = 6.5; GLR.CAM.pitch = 0.10; GLR.CAM.yaw = 0.4;
-  document.getElementById('fade').style.opacity = 1;
-  ['nav', 'keysHint', 'topbar'].forEach(function (id) {
-    var el = document.getElementById(id);
-    el.style.opacity = 0; el.style.transition = 'opacity 1.6s'; el.style.pointerEvents = 'none';
-  });
-}
-function openingTick(now, dt) {
-  OP.s += dt;              /* frame-accumulated: robust to rAF throttling */
-  var s = OP.s;
-  function line(id, on) { document.getElementById(id).style.opacity = on ? 1 : 0; }
-  if (s > 0.3) document.getElementById('fade').style.opacity = 0;
-  line('op1', s > 0.6 && s < 5.2);
-  line('op2', s > 5.6 && s < 9.0);
-  GLR.CAM.yaw += dt * 0.045;
-  if (s < 9.5) {
-    /* drift inside the field near t = 10^6 */
-  } else if (s < 15.0) {
-    /* travel to the reference crossing, decelerating */
-    var f = (s - 9.5) / 5.5, ease = 1 - Math.pow(1 - f, 3);
-    ST.t = 1000000.0 + (OP.cross - 1000000.0) * ease;
-    GLR.CAM.dist = 6.5 + 2.5 * ease;
-  } else if (s < 18.6) {
-    if (OP.phase < 1) {
-      OP.phase = 1;
-      ST.t = OP.cross; ST.frozen = true;
-      computeTerms(ST.t); computeRibbon(ST.t);
-      var M0 = Mnow();
-      var err = OP.br ? Math.abs(M0 - OP.br.zAt) : Math.abs(M0);
-      document.getElementById('op3').innerHTML = OP.br
-        ? ('Z_ref changes sign in [' + OP.br.tLo.toFixed(1) + ', ' + OP.br.tHi.toFixed(1) +
-           '] — a computed reference crossing (fixture W3)<br>frozen at the grid point t = ' +
-           OP.cross.toFixed(1) + ': the projections nearly cancel &nbsp;·&nbsp; Z_ref = ' +
-           fmtSig(OP.br.zAt, 3) + ' (high-precision) &nbsp;·&nbsp; M(t) = ' + fmtSig(M0, 3) +
-           ' &nbsp;·&nbsp; |M &minus; Z_ref| = ' + fmtSig(err, 3) + ' (the omitted remainder here)')
-        : ('frozen at t = ' + OP.cross.toFixed(1));
-      line('op3', true);
-    }
-  } else if (s < 22.5) {
-    if (OP.phase < 2) {
-      OP.phase = 2; line('op3', false); ST.frozen = false;
-      document.getElementById('opTitle').style.transition = 'opacity 2.4s';
-      line('opTitle', true);
-    }
-    GLR.CAM.dist = Math.min(34, GLR.CAM.dist * (1 + dt * 0.55));
-    GLR.CAM.pitch += dt * 0.02;
-  } else {
-    endOpening();
-  }
-}
-function endOpening() {
-  if (!OP.on) return;
-  OP.on = false; ST.opening = false;
-  document.getElementById('opening').remove();
-  document.getElementById('skipBtn').remove();
-  document.getElementById('fade').style.opacity = 0;
-  ST.frozen = false;
-  GLR.CAM.dist = Math.max(GLR.CAM.dist, 20);
-  ['nav', 'keysHint', 'topbar'].forEach(function (id) {
-    var el = document.getElementById(id);
-    el.style.opacity = 1; el.style.pointerEvents = '';
-  });
-  showPanel('ribbonPanel', true);
 }
 
 /* ---------------- main loop ------------------------------------------------ */
@@ -2029,41 +2669,54 @@ function frame(now) {
   frameCount++;
   var tPrev = lastComputedT !== null ? lastComputedT : ST.t;
 
-  if (OP.on) openingTick(now, dt);
-  else {
-    if (!ST.frozen) {
-      var hw = halfWindow(ST.t), spd = hw * 1.6 * (keys.shift ? 8 : 1);
-      if (keys.w || keys.arrowup) { ST.t = clampT(ST.t + spd * dt); ST.tTarget = null; }
-      if (keys.s || keys.arrowdown) { ST.t = clampT(ST.t - spd * dt); ST.tTarget = null; }
-      if (ST.cruise) { ST.t = clampT(ST.t + hw * 0.22 * dt); GLR.CAM.yaw += dt * 0.03; }
-      if (ST.audioOn && ST.playing && !keys.w && !keys.s && !ST.cruise && ST.tTarget === null) {
-        ST.t = clampT(ST.t + ST.vt * dt);   /* Truth Audio playback: t(tau) = t0 + v_t tau */
-      }
-      if (ST.tTarget !== null) {
-        var lt = Math.log10(ST.t), ltT = Math.log10(ST.tTarget);
-        lt += (ltT - lt) * Math.min(1, dt * 2.0);
-        ST.t = Math.pow(10, lt);
-        if (Math.abs(ltT - lt) < 1e-7) { ST.t = ST.tTarget; ST.tTarget = null; }
-      }
+  if (JR.on) jrTick(dt);
+  if (!ST.frozen) {
+    var hw = halfWindow(ST.t), spd = hw * 1.6 * (keys.shift ? 8 : 1);
+    if (keys.w || keys.arrowup) { ST.t = clampT(ST.t + spd * dt); ST.tTarget = null; }
+    if (keys.s || keys.arrowdown) { ST.t = clampT(ST.t - spd * dt); ST.tTarget = null; }
+    if (ST.cruise) { ST.t = clampT(ST.t + hw * 0.22 * dt); GLR.CAM.yaw += dt * 0.03; }
+    if (ST.audioOn && ST.audioMode === 'truth' && ST.playing &&
+        !keys.w && !keys.s && !ST.cruise && ST.tTarget === null) {
+      ST.t = clampT(ST.t + ST.vt * dt);   /* Truth Audio playback: t(tau) = t0 + v_t tau */
+    }
+    /* musical idle drift (disclosed in the sound panel + fence): the chord
+       keeps evolving; any navigation input takes the wheel back */
+    if (ST.audioOn && ST.audioMode === 'musical' && !JR.on && !ST.cruise &&
+        ST.uiMode === 'explore' && ST.tTarget === null &&
+        !keys.w && !keys.s && !draggingSlider &&
+        now - ST.lastNavAt > 5000) {
+      ST.t = clampT(ST.t + hw * 0.02 * dt);
+    }
+    if (ST.tTarget !== null) {
+      var lt = Math.log10(ST.t), ltT = Math.log10(ST.tTarget);
+      lt += (ltT - lt) * Math.min(1, dt * 2.0);
+      ST.t = Math.pow(10, lt);
+      if (Math.abs(ltT - lt) < 1e-7) { ST.t = ST.tTarget; ST.tTarget = null; }
     }
   }
 
-  if (ST.t !== lastComputedT || !RIB.valid) {
+  var tChanged = ST.t !== lastComputedT;
+  if (tChanged || !RIB.valid) {
     computeTerms(ST.t);
     computeRibbon(ST.t);
-    if (!OP.on && lastComputedT !== null) detectEvents(tPrev, ST.t);
+    if (lastComputedT !== null && ST.uiMode !== 'welcome') detectEvents(tPrev, ST.t);
     lastComputedT = ST.t;
   }
 
   GLR.draw(dt);
+  torTick(dt, tChanged);
   var flowerVisible = panelVisible('flowerPanel');
   if (flowerVisible && (ST.frozen || frameCount % 4 === 0)) drawFlower();
   if (panelVisible('ribbonPanel')) drawRibbon();
-  if (frameCount % 3 === 0 && !OP.on) updateHUD();
+  if (panelVisible('torusPanel') && frameCount % 2 === 0) drawTorus();
+  if (frameCount % 3 === 0 && ST.uiMode !== 'welcome') updateHUD();
   eventTick(now);
 
   audioAcc += dt;
-  if (audioAcc > 0.05) { audioAcc = 0; if (AUD.started) audioUpdateRates(); }
+  if (audioAcc > 0.05) {
+    audioAcc = 0;
+    if (AUD.started) { audioUpdateRates(); musTick(); }
+  }
 
   requestAnimationFrame(frame);
 }
@@ -2077,12 +2730,15 @@ function frame(now) {
   fillFenceStatic();
   fillFenceLive();
   bindInput();
-  setupOpening();
+  setBadge();
+  updateTorusLabel();
+  updateHUD();
+  GLR.CAM.dist = 30; GLR.CAM.pitch = 0.14; GLR.CAM.yaw = 0.45;
   /* read-only debug handle (used by the check harness notes; no behavior) */
-  window.ZH_DEBUG = { ST: ST, OP: OP, TERMS: TERMS, CAM: GLR.CAM, frame: frame,
-    endOpening: endOpening, microSelect: microSelect, glideTo: glideTo,
-    selectTerm: selectTerm, showPanel: showPanel, toggleMode: toggleMode,
-    fillFenceLive: fillFenceLive, drawMicro: drawMicro };
+  window.ZH_DEBUG = { ST: ST, JR: JR, TERMS: TERMS, CAM: GLR.CAM, frame: frame,
+    endJourney: endJourney, microSelect: microSelect, glideTo: glideTo,
+    selectTerm: selectTerm, showPanel: showPanel, setMode: setMode,
+    fillFenceLive: fillFenceLive, drawMicro: drawMicro, setAudioMode: setAudioMode };
   requestAnimationFrame(function (n) { lastFrame = n; requestAnimationFrame(frame); });
 })();
 
