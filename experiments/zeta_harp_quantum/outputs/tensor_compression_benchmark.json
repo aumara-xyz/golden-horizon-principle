@@ -1,0 +1,448 @@
+{
+  "experiment": "tensor_compression_benchmark",
+  "version": "ZETA-HARP-TENSOR-COMPRESS v0",
+  "t_main": 4400.0,
+  "N_main": 26,
+  "t_scale": 1000000.0,
+  "N_scale": 398,
+  "arms": {
+    "zeta_qutrit_lex": {
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "M_reference_for_arm": -1.0941002863913303,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.7696670986566764,
+          "M_reconstructed": -0.8128733810467831,
+          "abs_M_error": 0.2812269053445472,
+          "params": 9
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.38596454149067144,
+          "M_reconstructed": -0.4534990481151769,
+          "abs_M_error": 0.6406012382761535,
+          "params": 24
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 5.449696538383749e-16,
+          "M_reconstructed": -1.0941002863913296,
+          "abs_M_error": 6.661338147750939e-16,
+          "params": 45
+        }
+      ]
+    },
+    "zeta_qubit": {
+      "shape": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "M_reference_for_arm": -1.0941002863913303,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.8634330126594176,
+          "M_reconstructed": 0.3603643944001946,
+          "abs_M_error": 1.454464680791525,
+          "params": 10
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.5188268435326895,
+          "M_reconstructed": -1.2943002325724278,
+          "abs_M_error": 0.2001999461810975,
+          "params": 32
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 0.29873615756880917,
+          "M_reconstructed": -1.2897222040819627,
+          "abs_M_error": 0.19562191769063242,
+          "params": 50
+        },
+        {
+          "bond_cap": 4,
+          "rel_l2_error": 1.0947248734922638e-15,
+          "M_reconstructed": -1.0941002863913243,
+          "abs_M_error": 5.995204332975845e-15,
+          "params": 72
+        }
+      ]
+    },
+    "random_phase_qutrit": {
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "M_reference_for_arm": 1.7139001226126847,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.8031709594003532,
+          "M_reconstructed": -0.26741883279019124,
+          "abs_M_error": 1.9813189554028758,
+          "params": 9
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.510989532543425,
+          "M_reconstructed": 1.2966725841749849,
+          "abs_M_error": 0.4172275384376998,
+          "params": 24
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 8.25901465692612e-16,
+          "M_reconstructed": 1.7139001226126849,
+          "abs_M_error": 2.220446049250313e-16,
+          "params": 45
+        }
+      ]
+    },
+    "permuted_phase_qutrit": {
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "M_reference_for_arm": 1.494442823358289,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.6823682406151783,
+          "M_reconstructed": 1.4490158309266001,
+          "abs_M_error": 0.045426992431688795,
+          "params": 9
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.48373910171936735,
+          "M_reconstructed": 1.5783372601742183,
+          "abs_M_error": 0.08389443681592934,
+          "params": 24
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 7.530871180699204e-16,
+          "M_reconstructed": 1.4944428233582867,
+          "abs_M_error": 2.220446049250313e-15,
+          "params": 45
+        }
+      ]
+    },
+    "amplitude_sorted_qutrit": {
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "M_reference_for_arm": -1.0941002863913303,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.7696670986566764,
+          "M_reconstructed": -0.8128733810467831,
+          "abs_M_error": 0.2812269053445472,
+          "params": 9
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.38596454149067144,
+          "M_reconstructed": -0.4534990481151769,
+          "abs_M_error": 0.6406012382761535,
+          "params": 24
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 5.449696538383749e-16,
+          "M_reconstructed": -1.0941002863913296,
+          "abs_M_error": 6.661338147750939e-16,
+          "params": 45
+        }
+      ]
+    },
+    "phase_sorted_qutrit": {
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "M_reference_for_arm": -1.0941002863913303,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.3110360217416088,
+          "M_reconstructed": 0.8086261493832171,
+          "abs_M_error": 1.9027264357745475,
+          "params": 9
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.16277738125897148,
+          "M_reconstructed": -1.0194012302382143,
+          "abs_M_error": 0.074699056153116,
+          "params": 24
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 9.507594258034986e-16,
+          "M_reconstructed": -1.0941002863913278,
+          "abs_M_error": 2.4424906541753444e-15,
+          "params": 45
+        }
+      ]
+    },
+    "mismatched_reshape_qutrit": {
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "M_reference_for_arm": -1.0941002863913305,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.6784314780711995,
+          "M_reconstructed": 0.2570589629375729,
+          "abs_M_error": 1.3511592493289033,
+          "params": 9
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.395919649047777,
+          "M_reconstructed": -0.15186579602240766,
+          "abs_M_error": 0.9422344903689228,
+          "params": 24
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 9.58846448011215e-16,
+          "M_reconstructed": -1.0941002863913303,
+          "abs_M_error": 2.220446049250313e-16,
+          "params": 45
+        }
+      ]
+    },
+    "random_phase_qubit": {
+      "shape": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "M_reference_for_arm": 1.7139001226126849,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.8508273800543521,
+          "M_reconstructed": 3.028167537038657,
+          "abs_M_error": 1.314267414425972,
+          "params": 10
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.580192974647853,
+          "M_reconstructed": 1.1217152300074051,
+          "abs_M_error": 0.5921848926052797,
+          "params": 32
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 0.31084749407436696,
+          "M_reconstructed": 1.4993818365478926,
+          "abs_M_error": 0.21451828606479229,
+          "params": 50
+        },
+        {
+          "bond_cap": 4,
+          "rel_l2_error": 9.461077211688453e-16,
+          "M_reconstructed": 1.7139001226126873,
+          "abs_M_error": 2.4424906541753444e-15,
+          "params": 72
+        }
+      ]
+    },
+    "permuted_phase_qubit": {
+      "shape": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "M_reference_for_arm": 1.4944428233582887,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.8707192737203132,
+          "M_reconstructed": 0.1811328269267186,
+          "abs_M_error": 1.3133099964315702,
+          "params": 10
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.5093318715559972,
+          "M_reconstructed": 1.8594553930062296,
+          "abs_M_error": 0.36501256964794093,
+          "params": 32
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 0.310991458624143,
+          "M_reconstructed": 2.0940781940720194,
+          "abs_M_error": 0.5996353707137307,
+          "params": 50
+        },
+        {
+          "bond_cap": 4,
+          "rel_l2_error": 7.210073726450156e-16,
+          "M_reconstructed": 1.4944428233582887,
+          "abs_M_error": 0.0,
+          "params": 72
+        }
+      ]
+    },
+    "zeta_qutrit_balanced": {
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "M_reference_for_arm": -1.0941002863913305,
+      "curve": [
+        {
+          "bond_cap": 1,
+          "rel_l2_error": 0.7601863247343391,
+          "M_reconstructed": 0.44047192653058176,
+          "abs_M_error": 1.5345722129219124,
+          "params": 9
+        },
+        {
+          "bond_cap": 2,
+          "rel_l2_error": 0.4528792158772397,
+          "M_reconstructed": 0.6054202131320342,
+          "abs_M_error": 1.6995204995233646,
+          "params": 24
+        },
+        {
+          "bond_cap": 3,
+          "rel_l2_error": 7.102945940014077e-16,
+          "M_reconstructed": -1.0941002863913325,
+          "abs_M_error": 1.9984014443252818e-15,
+          "params": 45
+        }
+      ]
+    }
+  },
+  "scale_probe": {
+    "shape": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "padded_dim": 729,
+    "M_reference_for_arm": -2.7663876717721956,
+    "curve": [
+      {
+        "bond_cap": 1,
+        "rel_l2_error": 0.9522721229237779,
+        "M_reconstructed": -0.22206957870951177,
+        "abs_M_error": 2.544318093062684,
+        "params": 18
+      },
+      {
+        "bond_cap": 2,
+        "rel_l2_error": 0.8850627908069639,
+        "M_reconstructed": 0.1595024877660374,
+        "abs_M_error": 2.925890159538233,
+        "params": 60
+      },
+      {
+        "bond_cap": 3,
+        "rel_l2_error": 0.7765253915681593,
+        "M_reconstructed": 0.1554563788025595,
+        "abs_M_error": 2.921844050574755,
+        "params": 126
+      },
+      {
+        "bond_cap": 6,
+        "rel_l2_error": 0.5635803444521797,
+        "M_reconstructed": -2.5416669492076487,
+        "abs_M_error": 0.2247207225645469,
+        "params": 342
+      },
+      {
+        "bond_cap": 9,
+        "rel_l2_error": 0.32100533248550145,
+        "M_reconstructed": -3.4691527387669967,
+        "abs_M_error": 0.7027650669948011,
+        "params": 666
+      },
+      {
+        "bond_cap": 14,
+        "rel_l2_error": 0.07226653233009074,
+        "M_reconstructed": -2.771466033398835,
+        "abs_M_error": 0.005078361626639438,
+        "params": 936
+      },
+      {
+        "bond_cap": 20,
+        "rel_l2_error": 2.083267983333705e-15,
+        "M_reconstructed": -2.7663876717721956,
+        "abs_M_error": 0.0,
+        "params": 1260
+      },
+      {
+        "bond_cap": 27,
+        "rel_l2_error": 2.407611209069546e-15,
+        "M_reconstructed": -2.766387671772201,
+        "abs_M_error": 5.329070518200751e-15,
+        "params": 1638
+      }
+    ]
+  },
+  "confound_distinctions": {
+    "1_arithmetic_structure_vs_ordering": "any zeta-vs-random difference must be split between the arithmetic structure of the phases theta(t) - t ln n and the mere ORDERING of terms in the register; compare arm 1 against arms 4/5/6/10 (same multiset of amplitudes, different order) before attributing anything to arithmetic",
+    "2_ordering_vs_layout": "the term->state assignment is a chosen layout; arm 7 (mismatched reshape) and arm 10 (balanced-ternary order) measure how much the curve moves under layout changes alone, with the phase content untouched",
+    "3_low_N": "at N = 26 the full tensor is 3x3x3 with maximal bond dimension 3; every curve is dominated by the smallness of the register, and NO compressibility statement at N = 26 generalizes; the t = 1e6 (N = 398) probe exists to give the N-scaling axis, and even that is a single point on it",
+    "4_loose_tolerance": "a 'compresses well' statement is meaningless without a stated tolerance; full error-vs-bond curves are reported instead of any thresholded verdict, and all tolerances used anywhere in this experiment are recorded in meta"
+  },
+  "reading": "numbers only: at N = 26 all qutrit arms reach exact reconstruction at the maximal bond cap 3 and all qubit arms at cap 4, as dimension counting requires; differences between zeta and control arms at intermediate caps are reported above without interpretation",
+  "notes": [
+    "arm 5 (amplitude_sorted_qutrit) coincides with arm 1 because the magnitudes n^(-1/4) are already in descending order \u2014 the sort is the identity permutation; it is retained as the ordering-confound null it is"
+  ],
+  "meta": {
+    "source": {
+      "base_commit": "d2f7dac3a8d634ec678bd32dff9acb92f0905b7d",
+      "branch": "quantum/portal-v1",
+      "note": "outputs generated from the working tree that became the 'Quantum Portal v1' commit; base_commit is its parent HEAD"
+    },
+    "generated_utc": "2026-08-01T14:50:53Z",
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "mpmath": "1.3.0",
+    "mp_dps": 50,
+    "seeds": {
+      "random_phase": 771001,
+      "permuted_phase": 771002,
+      "mismatched_reshape": 771003
+    },
+    "tolerances": {
+      "tt_full_bond": 1e-10
+    },
+    "claim_boundary": "exact finite-dimensional embedding of the Riemann-Siegel MAIN SUM; remainder term outside the register; no speedup claim; no RH claim; state preparation treated as an assumed oracle whose cost is NOT claimed"
+  }
+}
