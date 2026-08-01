@@ -1,7 +1,7 @@
 # Preregistration — SILVER-OPT-GEO v1 (hunting the anomaly where it actually lived)
 
 - test_id: SILVER-OPT-GEO-v1
-- date_locked: **PENDING OWNER SIGNATURE** (standard lock protocol).
+- date_locked: **2026-08-01 (SIGNED)** (standard lock protocol; hash recorded in the ledger at signing).
 - anchor: SILVER-OPT v1 verdict **UNRESOLVED — anomaly anti-replicated** in the allocation-count family (2026-08-01); its recorded descriptive lead: if the four-instrument silver line is real, it lives in low-discrepancy **placement geometry** of the GH-RECOV type, not allocation counts. This test goes to that address.
 - runtime: Python 3 + numpy, laptop, deterministic. Substrate: the archived GH-RECOV probe's placement mechanism (`ghp_golden_heal_probe.py` family, commit 8a3c6ead) reused **verbatim** as the code substrate — the original home of the ~5σ silver line — wrapped, not rewritten.
 
@@ -25,4 +25,6 @@ Ambiguous → UNRESOLVED, no re-cutting, follow-ups need new contracts.
 
 Constant/placement axis only (M-006 forbids any structural reading: no silver fusion category exists). Not GHP evidence under any branch. The four-instrument line's other three instruments (T-111, T-112, KAM) are separately governed and untouched by this result.
 
-**Signed:** ______________________ (owner) **Date (UTC):** ____________
+**Signed:** Peter Viviani (owner) — signature given by chat directive to the symbiote lane. **Date (UTC):** 2026-08-01
+
+*Lock engaged. Any post-signing edit to this contract voids the run.*
