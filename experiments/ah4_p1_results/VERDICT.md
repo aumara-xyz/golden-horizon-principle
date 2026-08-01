@@ -5,7 +5,7 @@
 - run date: 2026-08-01
 - data: `experiments/ah4_p1_results/results.json` (96 cells x 20 seeds, seeds 1000-1019)
 - analysis: `experiments/ah4_p1_results/analyze.py` -> `analysis.json` (bootstrap: 10,000 paired resamples over seed indices, RNG seed 20260801, percentile 95% CI)
-- budget honesty: per-cell 120 s abort guard armed; **0 cells aborted** (slowest cell 0.9 s; full sweep well under budget). No value faked or extrapolated.
+- budget honesty: per-cell 120 s abort guard armed; **0 cells aborted** (slowest cell 0.063 s; whole sweep 1.4 s, far under budget). No value faked or extrapolated.
 
 ## Mechanical verdict
 
