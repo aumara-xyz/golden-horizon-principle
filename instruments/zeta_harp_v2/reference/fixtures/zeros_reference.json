@@ -1,0 +1,336 @@
+{
+ "fixture": "zeros_reference",
+ "kind": "reference zero list (Odlyzko table, refined)",
+ "status": "NOT certified; refined by mp.findroot on siegelz at dps=50 (30+ digit targets), no interval arithmetic",
+ "source_table": "experiments/zeta_cube_null/zeros1.txt",
+ "source_table_sha256": "3436c916a7878261ac183fd7b9448c9a4736b8bbccf1356874a6ce1788541632",
+ "source_table_lines": 100000,
+ "source_table_range": [
+  "14.134725142",
+  "74920.827498994"
+ ],
+ "selection": "40 ordinates spread across [14.0, 75000.0]",
+ "backend": "mpmath only (python-flint not importable)",
+ "rows": [
+  {
+   "table_index": 1,
+   "table_value": "14.134725142",
+   "gamma_refined": "14.134725141734693790457251983562470",
+   "Z_prime_at_gamma": "0.793160433356506116013897565274",
+   "abs_Z_at_gamma": "4.5847e-57",
+   "refine_offset": "-2.6530621e-10"
+  },
+  {
+   "table_index": 2565,
+   "table_value": "3097.342606531",
+   "gamma_refined": "3097.3426065309914763897506348114380",
+   "Z_prime_at_gamma": "2.78101288004028186991598987969",
+   "abs_Z_at_gamma": "2.6164e-54",
+   "refine_offset": "-8.5236102e-12"
+  },
+  {
+   "table_index": 5129,
+   "table_value": "5567.644318652",
+   "gamma_refined": "5567.6443186522437644472277093943215",
+   "Z_prime_at_gamma": "5.41899629908707756385538317962",
+   "abs_Z_at_gamma": "2.7847e-53",
+   "refine_offset": "2.4376445e-10"
+  },
+  {
+   "table_index": 7693,
+   "table_value": "7878.91061122",
+   "gamma_refined": "7878.9106112201614734913818680347401",
+   "Z_prime_at_gamma": "7.72901064907575018425522997821",
+   "abs_Z_at_gamma": "2.2639e-53",
+   "refine_offset": "1.6147349e-10"
+  },
+  {
+   "table_index": 10257,
+   "table_value": "10096.593534431",
+   "gamma_refined": "10096.593534430633583198769611972372",
+   "Z_prime_at_gamma": "6.89384218379531154082542313949",
+   "abs_Z_at_gamma": "9.0207e-54",
+   "refine_offset": "-3.664168e-10"
+  },
+  {
+   "table_index": 12821,
+   "table_value": "12249.404345998",
+   "gamma_refined": "12249.404345998145059600469677869661",
+   "Z_prime_at_gamma": "2.03998968295184296643714321800",
+   "abs_Z_at_gamma": "5.4335e-54",
+   "refine_offset": "1.450596e-10"
+  },
+  {
+   "table_index": 15385,
+   "table_value": "14353.684133465",
+   "gamma_refined": "14353.684133464854989272488263262629",
+   "Z_prime_at_gamma": "2.67675132580006049650717146162",
+   "abs_Z_at_gamma": "2.5501e-53",
+   "refine_offset": "-1.4501073e-10"
+  },
+  {
+   "table_index": 17950,
+   "table_value": "16419.360752845",
+   "gamma_refined": "16419.360752846931416554672499646374",
+   "Z_prime_at_gamma": "-9.77709837809154038179331755030",
+   "abs_Z_at_gamma": "6.042e-53",
+   "refine_offset": "1.9314166e-9"
+  },
+  {
+   "table_index": 20514,
+   "table_value": "18451.458617736",
+   "gamma_refined": "18451.458617736337136943426253374375",
+   "Z_prime_at_gamma": "-1.10390716083548388513150383586",
+   "abs_Z_at_gamma": "3.8789e-54",
+   "refine_offset": "3.3713694e-10"
+  },
+  {
+   "table_index": 23078,
+   "table_value": "20455.572633365",
+   "gamma_refined": "20455.572633365289916042880294206750",
+   "Z_prime_at_gamma": "-4.04846911309236516798675965375",
+   "abs_Z_at_gamma": "1.2712e-54",
+   "refine_offset": "2.8991604e-10"
+  },
+  {
+   "table_index": 25642,
+   "table_value": "22436.622414757",
+   "gamma_refined": "22436.622414756774855965515076211223",
+   "Z_prime_at_gamma": "-13.8920995152973530438403266630",
+   "abs_Z_at_gamma": "5.4648e-53",
+   "refine_offset": "-2.2514403e-10"
+  },
+  {
+   "table_index": 28206,
+   "table_value": "24395.625932033",
+   "gamma_refined": "24395.625932032831095434872323427667",
+   "Z_prime_at_gamma": "-5.86771978770963543588585511149",
+   "abs_Z_at_gamma": "9.8474e-53",
+   "refine_offset": "-1.6890457e-10"
+  },
+  {
+   "table_index": 30770,
+   "table_value": "26335.612420527",
+   "gamma_refined": "26335.612420527239970230959727190652",
+   "Z_prime_at_gamma": "-7.80024257471928031453463598374",
+   "abs_Z_at_gamma": "1.3954e-52",
+   "refine_offset": "2.3997023e-10"
+  },
+  {
+   "table_index": 33334,
+   "table_value": "28258.804343926",
+   "gamma_refined": "28258.804343926562451767543974555710",
+   "Z_prime_at_gamma": "-5.99445739510748250181259773487",
+   "abs_Z_at_gamma": "4.2554e-53",
+   "refine_offset": "5.6245177e-10"
+  },
+  {
+   "table_index": 35898,
+   "table_value": "30166.293926549",
+   "gamma_refined": "30166.293926548566443876214148578872",
+   "Z_prime_at_gamma": "-5.50635928899017050747001545806",
+   "abs_Z_at_gamma": "1.7683e-53",
+   "refine_offset": "-4.3355612e-10"
+  },
+  {
+   "table_index": 38462,
+   "table_value": "32060.129674647",
+   "gamma_refined": "32060.129674646874880552747852742836",
+   "Z_prime_at_gamma": "-8.12336217590673917061838277099",
+   "abs_Z_at_gamma": "1.2859e-52",
+   "refine_offset": "-1.2511945e-10"
+  },
+  {
+   "table_index": 41026,
+   "table_value": "33941.074017937",
+   "gamma_refined": "33941.074017936623732415690896972196",
+   "Z_prime_at_gamma": "-4.45381458730027777840746354092",
+   "abs_Z_at_gamma": "1.6694e-52",
+   "refine_offset": "-3.7626758e-10"
+  },
+  {
+   "table_index": 43590,
+   "table_value": "35809.950690735",
+   "gamma_refined": "35809.950690733546658085305175608007",
+   "Z_prime_at_gamma": "-2.03076503966195908128102452346",
+   "abs_Z_at_gamma": "7.8732e-53",
+   "refine_offset": "-1.4533419e-9"
+  },
+  {
+   "table_index": 46154,
+   "table_value": "37667.190960693",
+   "gamma_refined": "37667.190960693115758203960370867150",
+   "Z_prime_at_gamma": "-5.35309430918646750293918701273",
+   "abs_Z_at_gamma": "8.8303e-53",
+   "refine_offset": "1.157582e-10"
+  },
+  {
+   "table_index": 48718,
+   "table_value": "39513.956400803",
+   "gamma_refined": "39513.956400802814751141217080442523",
+   "Z_prime_at_gamma": "-15.0964664949278117110840106339",
+   "abs_Z_at_gamma": "1.1582e-52",
+   "refine_offset": "-1.8524886e-10"
+  },
+  {
+   "table_index": 51283,
+   "table_value": "41351.782573159",
+   "gamma_refined": "41351.782573159066772207320844249280",
+   "Z_prime_at_gamma": "4.66425813209754407471969969892",
+   "abs_Z_at_gamma": "1.1782e-52",
+   "refine_offset": "6.6772207e-11"
+  },
+  {
+   "table_index": 53847,
+   "table_value": "43179.155897521",
+   "gamma_refined": "43179.155897520575134245634635672967",
+   "Z_prime_at_gamma": "4.07475677643501389086481787881",
+   "abs_Z_at_gamma": "4.4808e-54",
+   "refine_offset": "-4.2486575e-10"
+  },
+  {
+   "table_index": 56411,
+   "table_value": "44998.877695786",
+   "gamma_refined": "44998.877695785438506196269450139037",
+   "Z_prime_at_gamma": "12.6667016210709619103512421689",
+   "abs_Z_at_gamma": "3.0132e-52",
+   "refine_offset": "-5.614938e-10"
+  },
+  {
+   "table_index": 58975,
+   "table_value": "46809.393035017",
+   "gamma_refined": "46809.393035016780324657767516398073",
+   "Z_prime_at_gamma": "15.1060321971270370583795956590",
+   "abs_Z_at_gamma": "3.3803e-52",
+   "refine_offset": "-2.1967534e-10"
+  },
+  {
+   "table_index": 61539,
+   "table_value": "48612.444494032",
+   "gamma_refined": "48612.444494031803629620335243685784",
+   "Z_prime_at_gamma": "13.2135046947496463104603727089",
+   "abs_Z_at_gamma": "4.4687e-52",
+   "refine_offset": "-1.9637038e-10"
+  },
+  {
+   "table_index": 64103,
+   "table_value": "50407.683613758",
+   "gamma_refined": "50407.683613758474107201669215291849",
+   "Z_prime_at_gamma": "10.3880401896604231527783574558",
+   "abs_Z_at_gamma": "3.7419e-52",
+   "refine_offset": "4.741072e-10"
+  },
+  {
+   "table_index": 66667,
+   "table_value": "52196.729206489",
+   "gamma_refined": "52196.729206489323661879904498308132",
+   "Z_prime_at_gamma": "3.61774839097940078330489279061",
+   "abs_Z_at_gamma": "2.8814e-53",
+   "refine_offset": "3.2366188e-10"
+  },
+  {
+   "table_index": 69231,
+   "table_value": "53978.515783433",
+   "gamma_refined": "53978.515783432813064232503702460756",
+   "Z_prime_at_gamma": "10.2759056922255909761340840044",
+   "abs_Z_at_gamma": "1.6347e-52",
+   "refine_offset": "-1.8693577e-10"
+  },
+  {
+   "table_index": 71795,
+   "table_value": "55753.747342328",
+   "gamma_refined": "55753.747342327493880424763040482705",
+   "Z_prime_at_gamma": "2.87635291939761903710128947851",
+   "abs_Z_at_gamma": "8.2541e-53",
+   "refine_offset": "-5.0611958e-10"
+  },
+  {
+   "table_index": 74359,
+   "table_value": "57522.468863238",
+   "gamma_refined": "57522.468863237679368949478060269616",
+   "Z_prime_at_gamma": "7.74637147347839444471456371129",
+   "abs_Z_at_gamma": "1.5847e-52",
+   "refine_offset": "-3.2063105e-10"
+  },
+  {
+   "table_index": 76923,
+   "table_value": "59286.086103267",
+   "gamma_refined": "59286.086103266999686075571207008952",
+   "Z_prime_at_gamma": "12.9374777630361749877256644053",
+   "abs_Z_at_gamma": "3.5831e-52",
+   "refine_offset": "-3.1392443e-13"
+  },
+  {
+   "table_index": 79487,
+   "table_value": "61043.5657805",
+   "gamma_refined": "61043.565780499482981236372372926568",
+   "Z_prime_at_gamma": "1.71979815401581111715447615061",
+   "abs_Z_at_gamma": "1.5727e-53",
+   "refine_offset": "-5.1701876e-10"
+  },
+  {
+   "table_index": 82051,
+   "table_value": "62795.006085102",
+   "gamma_refined": "62795.006085102537762372233168144381",
+   "Z_prime_at_gamma": "6.03864606447181690330475966535",
+   "abs_Z_at_gamma": "3.2275e-53",
+   "refine_offset": "5.3776237e-10"
+  },
+  {
+   "table_index": 84616,
+   "table_value": "64542.38342789",
+   "gamma_refined": "64542.383427890852773021739885567692",
+   "Z_prime_at_gamma": "-5.50192822091248539204911973764",
+   "abs_Z_at_gamma": "1.8215e-52",
+   "refine_offset": "8.5277302e-10"
+  },
+  {
+   "table_index": 87180,
+   "table_value": "66283.982666388",
+   "gamma_refined": "66283.982666386093969349635371181042",
+   "Z_prime_at_gamma": "-4.75309058719403107409670779673",
+   "abs_Z_at_gamma": "1.9926e-52",
+   "refine_offset": "-1.9060307e-9"
+  },
+  {
+   "table_index": 89744,
+   "table_value": "68020.413115945",
+   "gamma_refined": "68020.413115944836345380299217357215",
+   "Z_prime_at_gamma": "-9.20789709626841269062206078739",
+   "abs_Z_at_gamma": "7.245e-52",
+   "refine_offset": "-1.6365462e-10"
+  },
+  {
+   "table_index": 92308,
+   "table_value": "69752.488585599",
+   "gamma_refined": "69752.488585600593227130212611229235",
+   "Z_prime_at_gamma": "-20.9790472642330413007166064208",
+   "abs_Z_at_gamma": "6.1697e-52",
+   "refine_offset": "1.5932271e-9"
+  },
+  {
+   "table_index": 94872,
+   "table_value": "71479.675265832",
+   "gamma_refined": "71479.675265832312221308264443577034",
+   "Z_prime_at_gamma": "-2.26481599139987297488059388199",
+   "abs_Z_at_gamma": "8.8295e-53",
+   "refine_offset": "3.1222131e-10"
+  },
+  {
+   "table_index": 97436,
+   "table_value": "73202.249101152",
+   "gamma_refined": "73202.249101151738147020272867914004",
+   "Z_prime_at_gamma": "-5.08014806838868237872514697436",
+   "abs_Z_at_gamma": "1.1121e-52",
+   "refine_offset": "-2.6185298e-10"
+  },
+  {
+   "table_index": 100000,
+   "table_value": "74920.827498994",
+   "gamma_refined": "74920.827498994186793849200946918347",
+   "Z_prime_at_gamma": "-21.7848925909477308547265557419",
+   "abs_Z_at_gamma": "1.7105e-51",
+   "refine_offset": "1.8679385e-10"
+  }
+ ]
+}

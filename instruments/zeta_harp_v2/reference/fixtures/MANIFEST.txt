@@ -1,0 +1,7 @@
+# SHA-256 manifest, Zeta Harp v2 reference fixtures (Gate 2)
+# backend: mpmath only (python-flint not importable); mp.dps = 80
+216db9e0ca4b6093aace4cd400d8293f5a00f56343d2a773ace63567ac220dae  window_W1.json
+fd71b9efebaafd61fa8d2311c2e41c75151274346dfff3c217e39b7a9a60d344  window_W2.json
+0c24c6ad5fa0e058b87937f473c5c05f1093ce76bb4c8dd355a82a63f2ea8072  window_W3.json
+63f5cd214df138e7fc9fa0030b5ea38115203157fac372903d2279dc3cfd2979  window_W4.json
+15ec43ba036119004f87aefda90fe77ac4334eef7b25d279d28525e728eacfce  zeros_reference.json
