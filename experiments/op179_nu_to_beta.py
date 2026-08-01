@@ -162,6 +162,12 @@ provided.
 
 --------------------------------------------------------------------------
 Implementation notes (bookkeeping decisions, disclosed):
+- FLIP PRECEDENCE (added after adversarial review, 2026-08-01): when a CI is
+  supplied, the CI rule governs Kill Condition 9 (master 5.10A.3: boundary-
+  region CI "Does NOT count as pass or kill"; 5.10A.4: demotion requires
+  "within stable error bars"). Point-rule-only flips occur only when no CI
+  exists. The original draft fired on point-OR-CI; the verifier's probe
+  (beta=2.0, CI=(1.5,2.5)) exposed that as a spurious-falsification path.
 - The point-rule buckets are checked in the order written in §5.10A.6.3
   (strong pass, in-band, boundary, kill, else outside). Numerically the only
   interval contact is between the strong-pass neighborhoods and B1 (resolved
@@ -386,9 +392,18 @@ def nu_to_beta_verdict(
     beta = float(assignment.convert(nu))
     point_bucket = beta_bucket_point(beta)
     ci_bucket = beta_bucket_ci(ci[0], ci[1]) if ci is not None else None
-    fires = kill_condition_9_fires(point_bucket) or (
-        ci_bucket == "KILL" if ci_bucket is not None else False
-    )
+    # Precedence (disclosed bookkeeping decision, verifier-mandated 2026-08-01):
+    # when a CI is supplied, the CI rule GOVERNS the flip. Basis: master
+    # 5.10A.3 (a boundary-region CI "Does NOT count as pass or kill") and
+    # 5.10A.4 (demotion requires beta ~ 2 "within stable error bars" — a CI
+    # spanning the window without sitting inside it is precisely not stable
+    # error bars). Without a CI, the point rule is the only pinned rule and
+    # governs alone. This precedence is surfaced for owner sign-off in
+    # SYK_CORRIDOR_PREREG_v1.md section 4.
+    if ci_bucket is not None:
+        fires = ci_bucket == "KILL"
+    else:
+        fires = kill_condition_9_fires(point_bucket)
     return Verdict(
         nu=nu,
         beta=beta,

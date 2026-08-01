@@ -91,6 +91,13 @@ invented by an agent and remain open until the owner (or a cited source) supplie
 
 ## 4. Decision rule (signed before data; executed by op179_nu_to_beta.py verbatim)
 
+- **Rule precedence (owner signs this explicitly):** when a confidence interval is
+  reported, the CI rule governs Kill Condition 9; the point rule alone governs only
+  if no CI exists. Basis: master §5.10A.3 (boundary-region CI "Does NOT count as
+  pass or kill") and §5.10A.4 ("within stable error bars"). A run that cannot
+  produce a non-degenerate CI at the preregistered thresholds is reported as
+  capability-statement only — it can neither pass nor kill.
+
 - Bands: B1 = [1/φ, φ] = [0.618034, 1.618034]; B2 = [1/φ², φ]; **Kill window K =
   [1.95, 2.05]** (master §5.10A.2, quoted in full in the converter docstring).
 - Point rule: the §5.10A.6.3 four-bucket rule as written (Strong pass / In-band / Boundary /
