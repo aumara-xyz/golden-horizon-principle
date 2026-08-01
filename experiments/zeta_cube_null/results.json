@@ -1,0 +1,82 @@
+{
+  "test_id": "ZETA-CUBE-NULL-v1",
+  "contract": "experiments/ZETA_CUBE_NULL_PREREG_v1.md (SIGNED)",
+  "data_source": "Odlyzko zeros1 table (first 10,000 of 100,000)",
+  "n": 10000,
+  "integrity_check": {
+    "pass": true,
+    "mpmath_first_three": [
+      14.134725141734695,
+      21.022039638771556,
+      25.01085758014569
+    ],
+    "table_first_three": [
+      14.134725142,
+      21.022039639,
+      25.01085758
+    ]
+  },
+  "range": [
+    14.134725142,
+    9877.782654004
+  ],
+  "controls_run_first": true,
+  "n_replicates_per_family": 200,
+  "control_bands_2p5_97p5": {
+    "pooled": {
+      "S1": [
+        14.604695,
+        42.38837
+      ],
+      "S2": [
+        0.04487416776981469,
+        0.06589262267955737
+      ]
+    },
+    "uniform": {
+      "S1": [
+        13.843025,
+        42.509735
+      ],
+      "S2": [
+        0.04438200673899803,
+        0.054975255316306766
+      ]
+    },
+    "shuffled": {
+      "S1": [
+        14.877259999999998,
+        41.400845000000004
+      ],
+      "S2": [
+        0.05689353626520918,
+        0.06631747004555856
+      ]
+    }
+  },
+  "control_medians": {
+    "uniform": {
+      "S1": 26.282599999999995,
+      "S2": 0.04912228819684384
+    },
+    "shuffled": {
+      "S1": 24.395299999999995,
+      "S2": 0.061782738042594265
+    }
+  },
+  "primes_control": {
+    "S1": 13.76,
+    "S2": 0.5992607196980766
+  },
+  "real_zeros": {
+    "S1": 23.847199999999997,
+    "S2": 0.06354583180186948
+  },
+  "kill_condition": {
+    "S1_within_band": true,
+    "S2_within_band": true,
+    "rule": "NULL iff both S1 and S2 fall within the pooled 2.5-97.5 percentile band of the 400 stochastic control replicates"
+  },
+  "verdict": "NULL",
+  "s2_units": "bits (plug-in MI over 9,999 consecutive cell pairs)"
+}
