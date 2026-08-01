@@ -4,7 +4,7 @@
 
 - test_id: AH4-P1-ANYON-RECOV-v1
 - ledger_anchor: ledger row **AH.4-P1** ("the one unbuilt experiment that can still discriminate"); master AH.4 Priority 1; bridge object **B-022** (holographic recoverability / QEC), whose closure condition the ledger names as AH.4-P1. Supersedes nothing: the two prior recoverability runs (**GH-RECOV** 2026-07-03, proxy, silver-optimal; **K-RECOV-001** 2026-07-19, external allocation replication, generic) are both **negative and retained**. This is the third and structurally different form.
-- date_locked: **PENDING OWNER SIGNATURE** (the single canonical lock sentinel). Lock protocol: the owner signs by replacing this sentinel with the UTC date and completing the signature line in §6; the SHA-256 of the signed file is then recorded in the ledger row, and only after that may any AH.4-P1 experiment code be written or executed. **Gate-0 exemption (explicit):** the standalone pentagon-identity gate (`ah4_p1_pentagon_gate.py`, run 2026-07-29, PASS) is exempt from the pre-signing prohibition because it validates textbook F-symbol consistency only and produces no outcome-relevant data; this resolves the v1 lock-state inconsistency flagged in review.
+- date_locked: **2026-08-01 (SIGNED)** (the single canonical lock sentinel). Lock protocol: the owner signs by replacing this sentinel with the UTC date and completing the signature line in §6; the SHA-256 of the signed file is then recorded in the ledger row, and only after that may any AH.4-P1 experiment code be written or executed. **Gate-0 exemption (explicit):** the standalone pentagon-identity gate (`ah4_p1_pentagon_gate.py`, run 2026-07-29, PASS) is exempt from the pre-signing prohibition because it validates textbook F-symbol consistency only and produces no outcome-relevant data; this resolves the v1 lock-state inconsistency flagged in review.
 - lane: **GHP discriminator.** Unlike KAM-CALIBRATION (calibration lane, not GHP evidence under either outcome), this test is designed so that one outcome is genuine evidence for GHP's Layer-3 bet and another falsifies the recoverability lane outright.
 - runtime: Python 3 + numpy, deterministic, offline. Fusion-tree dimension kept small enough to be exact (no Monte-Carlo state approximation); target under 30 minutes single-core.
 
@@ -137,6 +137,6 @@ Drafted 2026-07-29 from the symbiote lane, as an external contribution to AH.4-P
 4. **Recovery routine — BUILDER NAMED:** the symbiote lane (Fable session) under owner direction. The refused shortcut stands: any approximation of the fusion tree by generic weighted allocation reproduces GH-RECOV and answers nothing.
 5. **Signing — RESERVED TO THE OWNER.** Signature line below; on signature, date_locked is set, the file hash goes to the ledger, and the build begins.
 
-**Signed:** ______________________ (owner) **Date (UTC):** ____________
+**Signed:** Peter Viviani (owner) — signature given by chat directive to the symbiote lane. **Date (UTC):** 2026-08-01
 
-*Until the line above is completed, no AH.4-P1 experiment code may be written or run.*
+*The lock is engaged: this file's SHA-256 at signing is recorded in the ledger; any post-signing edit to this document voids the run.*

@@ -2,7 +2,7 @@
 
 - test_id: SILVER-OPT-v1
 - ledger_anchor: ledger row **SILVER-OPT** (OPEN, restored 2026-07-29); named in the v2.1 edition; roadmap item 1a.
-- date_locked: **PENDING OWNER SIGNATURE** (same lock protocol as AH.4-P1 v1.1: owner signs, sentinel becomes the UTC date, file hash goes to the ledger, only then may experiment code run).
+- date_locked: **2026-08-01 (SIGNED)** (lock protocol as AH.4-P1 v1.1; hash recorded in the ledger at signing).
 - lane: **constant-axis anomaly characterization. Explicitly GHP-independent** (M-006: no silver fusion category exists, so no structural reading is available; no branch of this test is GHP physics evidence).
 - runtime: Python 3 + numpy, deterministic, offline, single-core.
 
@@ -35,6 +35,6 @@ Not GHP evidence; not φ physics; not a fusion-category statement (M-006 forbids
 
 Design drafted by the symbiote lane under owner direction; builder: same. Margins inherit the K-RECOV-001 bar (±0.02), recorded as not power-derived.
 
-**Signed:** ______________________ (owner) **Date (UTC):** ____________
+**Signed:** Peter Viviani (owner) — signature given by chat directive to the symbiote lane. **Date (UTC):** 2026-08-01
 
-*Until the line above is completed, no SILVER-OPT experiment code may be written or run.*
+*The lock is engaged: this file's SHA-256 at signing is recorded in the ledger; any post-signing edit to this document voids the run.*
