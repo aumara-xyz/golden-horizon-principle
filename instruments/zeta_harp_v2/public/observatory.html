@@ -328,6 +328,49 @@ button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
 #jrDots span { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); }
 #jrDots span.on { background: var(--gold); }
 </style>
+<style id="zh-guide-css">
+/* ---- TALK TO THE GUIDE (additive, v2.1-ux) ------------------------------
+   A popup that mounts the node's own Auma Live surface (spatial/app/
+   aumalive.js) when this page is served by the shell on 127.0.0.1:7090.
+   Nothing here touches the instrument's math, fixtures, or fence. */
+#guideBtn { display: inline-flex; align-items: center; gap: 8px;
+  letter-spacing: 0.14em; font-size: 13px; }
+#guideBtn .gb-dot { width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green); box-shadow: 0 0 8px rgba(143, 208, 168, 0.6);
+  transition: background 0.3s, box-shadow 0.3s; }
+#guideBtn.asleep { color: var(--dim); }
+#guideBtn.asleep .gb-dot { background: var(--faint); box-shadow: none; }
+#guideBtn.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
+#guidePop {
+  position: fixed; right: 18px; bottom: 64px; z-index: 30;
+  width: min(430px, calc(100vw - 36px));
+  height: min(560px, calc(100vh - 130px));
+  display: none; flex-direction: column; overflow: hidden;
+  background: var(--panel); border: 1px solid var(--hair); border-radius: 8px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+#guidePop.show { display: flex; }
+#guideHead { display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 14px; border-bottom: 1px solid var(--hair); }
+#guideHeadText { flex: 1; }
+#guideTitle { font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink); }
+#guideDisclosure { font-size: 12px; font-style: italic; color: var(--dim);
+  line-height: 1.5; margin-top: 2px; }
+#guideClose { flex: none; font-size: 13px; padding: 4px 10px; }
+/* the mount root supplies the shell CSS variables aumalive.js's own styles
+   expect (values copied from spatial/app/style.css :root — page-scoped here) */
+#guideMountRoot { position: relative; flex: 1; min-height: 0;
+  --hue-l: 129, 212, 180;
+  --hue-c: 150, 180, 255;
+  --hue-r: 196, 170, 255;
+  --text: rgba(244, 246, 255, 0.92);
+  --dim: rgba(228, 232, 248, 0.60);
+  --faint: rgba(220, 226, 245, 0.34);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+</style>
 </head>
 <body>
 <canvas id="gl"></canvas>
@@ -355,6 +398,7 @@ button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
     </div>
     <div id="toprightRow2">
       <button class="ghost" id="torusBtn">torus window</button>
+      <button class="ghost" id="guideBtn" title="open a live voice + chat channel to this node's guide"><span class="gb-dot"></span><span class="gb-label">TALK TO THE GUIDE</span></button>
       <button class="ghost" id="infoBtn" title="about, shortcuts, replay the tour">?</button>
     </div>
     <span class="badge artistic" id="truthBadge">ARTISTIC SONIFICATION — NOT A PRIVILEGED MATHEMATICAL MAPPING</span>
@@ -2744,6 +2788,108 @@ function frame(now) {
 
 })();
 
+</script>
+
+<!-- TALK TO THE GUIDE (additive, v2.1-ux): mounts the node's own Auma Live
+     surface — live duplex voice plus a typed transcript composer, both riding
+     the governed presence lane on 127.0.0.1:7091. Nothing below touches the
+     instrument's math, fixtures, or fence. Works ONLY when this page is served
+     by the spatial shell (127.0.0.1:7090 same-origin); anywhere else the
+     button honestly reports the guide asleep. -->
+<div id="guidePop">
+  <div id="guideHead">
+    <div id="guideHeadText">
+      <div id="guideTitle">The Guide &mdash; Auma &middot; Live</div>
+      <div id="guideDisclosure">This is the node's live voice &mdash; a real AI answering
+        aloud, not a recording. The microphone opens only when you press the orb;
+        the three-line icon opens a typed transcript.</div>
+    </div>
+    <button class="ghost" id="guideClose">close</button>
+  </div>
+  <div id="guideMountRoot"></div>
+</div>
+
+<script id="zh-guide">
+(function () {
+  'use strict';
+  var DOOR = 'http://127.0.0.1:7091';
+  var AWAKE_LABEL = 'TALK TO THE GUIDE';
+  var ASLEEP_LABEL = 'THE GUIDE IS ASLEEP';
+  var btn = document.getElementById('guideBtn');
+  var pop = document.getElementById('guidePop');
+  var mountRoot = document.getElementById('guideMountRoot');
+  var closeBtn = document.getElementById('guideClose');
+  var label = btn.querySelector('.gb-label');
+  var mounted = false, busy = false, wakeTimer = 0;
+
+  function setAsleep(reason) {
+    btn.classList.add('asleep');
+    label.textContent = ASLEEP_LABEL;
+    btn.title = reason;
+    clearTimeout(wakeTimer);
+    // stay honest but retryable: the label relaxes back after a while
+    wakeTimer = setTimeout(function () {
+      btn.classList.remove('asleep');
+      label.textContent = AWAKE_LABEL;
+      btn.title = 'open a live voice + chat channel to this node\'s guide';
+    }, 8000);
+  }
+
+  function probeDoor() {
+    return new Promise(function (resolve) {
+      var ctl = new AbortController();
+      var t = setTimeout(function () { ctl.abort(); }, 2500);
+      fetch(DOOR + '/api/models', { signal: ctl.signal })
+        .then(function (r) { clearTimeout(t); resolve(r.ok); })
+        .catch(function () { clearTimeout(t); resolve(false); });
+    });
+  }
+
+  function openGuide() {
+    if (busy) return;
+    busy = true;
+    probeDoor().then(function (ok) {
+      if (!ok) {
+        setAsleep('the node\'s voice service (127.0.0.1:7091) is not answering right now');
+        busy = false;
+        return;
+      }
+      var ready = mounted
+        ? Promise.resolve()
+        : import('/app/aumalive.js').then(function (mod) {
+            mod.mountAumaLive(mountRoot);
+            mounted = true;
+          });
+      ready.then(function () {
+        pop.classList.add('show');
+        btn.classList.add('on');
+        busy = false;
+      }).catch(function () {
+        // not served by the shell (no /app/ on this origin) — degrade honestly
+        setAsleep('this page is not being served by the node\'s shell (port 7090), so the live guide cannot mount here');
+        busy = false;
+      });
+    });
+  }
+
+  function closeGuide() {
+    // if the channel is open, close it through the surface's own control so
+    // the microphone actually stops before the popup hides
+    var liveOrb = mountRoot.querySelector('.alv-orb.live');
+    if (liveOrb) liveOrb.click();
+    pop.classList.remove('show');
+    btn.classList.remove('on');
+  }
+
+  btn.addEventListener('click', function () {
+    if (pop.classList.contains('show')) closeGuide();
+    else openGuide();
+  });
+  closeBtn.addEventListener('click', closeGuide);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && pop.classList.contains('show')) closeGuide();
+  });
+})();
 </script>
 </body>
 </html>
