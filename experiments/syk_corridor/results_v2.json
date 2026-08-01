@@ -1,0 +1,595 @@
+{
+ "meta": {
+  "test_id": "SYK-CORRIDOR-v2",
+  "label": "PRELIMINARY-LAPTOP / PIPELINE-VALIDATION",
+  "date_utc": "2026-08-01T22:33:22Z",
+  "prereg": "experiments/SYK_CORRIDOR_PREREG_v2.md (sha256 recorded in the ledger row per the lock protocol; the contract pins THIS file's sha256, one-way, to avoid hash circularity)",
+  "prereg_v1_sha256_frozen": "59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e5c2a94662e465820843f3d0",
+  "op179_sha256": "b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e",
+  "laptop_run_pipeline_sha256_as_run": "873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7",
+  "seeds": [
+   5000,
+   5039
+  ],
+  "kappa_grid": [
+   0.0,
+   1.0,
+   1.25,
+   1.57,
+   1.98,
+   2.48,
+   3.11,
+   3.9,
+   4.9,
+   6.15,
+   7.71,
+   9.68,
+   12.15,
+   15.24,
+   19.13,
+   24.0
+  ],
+  "official_sizes": [
+   14,
+   18,
+   22
+  ],
+  "telemetry_sizes": [
+   10
+  ],
+  "nu_route": "CLOSED (v1 section 3.2, carried by PREREG v2 section 5); ChannelExponentAssignment port UNFILLED; nu_to_beta_verdict and m1_quotient_confirmation_flag NEVER CALLED",
+  "budget_cap_usd": 400.0
+ },
+ "results": {
+  "r_statistic": {
+   "kappa_grid": [
+    0.0,
+    1.0,
+    1.25,
+    1.57,
+    1.98,
+    2.48,
+    3.11,
+    3.9,
+    4.9,
+    6.15,
+    7.71,
+    9.68,
+    12.15,
+    15.24,
+    19.13,
+    24.0
+   ],
+   "per_size": {
+    "10": {
+     "mean": [
+      0.5930938183137862,
+      0.5849922874182683,
+      0.577505247568644,
+      0.5525557699744303,
+      0.5293017880442349,
+      0.5079823515005931,
+      0.49059983544319874,
+      0.47722286323928886,
+      0.46501308136029235,
+      0.45553269266492036,
+      0.4487382811846069,
+      0.44424977706463487,
+      0.4413273764426098,
+      0.43946964658562726,
+      0.43829614728951755,
+      0.43757178078882986
+     ],
+     "sem": [
+      0.01945903745705004,
+      0.019314113722970233,
+      0.020265002242321133,
+      0.01852574045624493,
+      0.018135359317070648,
+      0.018712726035413872,
+      0.019700768824521486,
+      0.02036515488524735,
+      0.020899359013639977,
+      0.02138170328155567,
+      0.02170940546932872,
+      0.021975272716697622,
+      0.022182785183167165,
+      0.02234039549555915,
+      0.02245915612164483,
+      0.022547780720015363
+     ]
+    },
+    "14": {
+     "mean": [
+      0.5907878461959708,
+      0.6004671413367041,
+      0.587778177465722,
+      0.5731623170315229,
+      0.5515126449031376,
+      0.5279703877906249,
+      0.5081970377340184,
+      0.49118684167129406,
+      0.46774086740128257,
+      0.44673585854325965,
+      0.4316595978848019,
+      0.42081665425418197,
+      0.4132599645131668,
+      0.40790005113629074,
+      0.40401550497995853,
+      0.4011161146850511
+     ],
+     "sem": [
+      0.00739403308127777,
+      0.007489020224565618,
+      0.0070659314841058874,
+      0.009398823521259671,
+      0.010962015165018022,
+      0.01082433945964311,
+      0.010313224027187089,
+      0.01005437576057678,
+      0.009567621217192424,
+      0.009860766496178897,
+      0.010679166052989806,
+      0.01130675851111549,
+      0.01172892809617828,
+      0.012140618712180341,
+      0.012473458407288673,
+      0.01280083981563243
+     ]
+    },
+    "18": {
+     "mean": [
+      0.5980492501725441,
+      0.5945974963189311,
+      0.6059342136661583,
+      0.5936535862765068,
+      0.5868686396842512,
+      0.5713332632323483,
+      0.5558229095939153,
+      0.5360497897633911,
+      0.5179322333623342,
+      0.4975499522859258,
+      0.4780824968069268,
+      0.45892966349635705,
+      0.4438901840992092,
+      0.4326111785505815,
+      0.42279828214199383,
+      0.41322794731382323
+     ],
+     "sem": [
+      0.002793757118424234,
+      0.004494326051185707,
+      0.004636074556740039,
+      0.004515026947258458,
+      0.0038146527449648307,
+      0.003633303767518348,
+      0.004206830537579999,
+      0.0046919092354858515,
+      0.005248376872170165,
+      0.005235896336886546,
+      0.005335289142019539,
+      0.005303485172198987,
+      0.005204411956917476,
+      0.0052949904651748494,
+      0.005747817637673376,
+      0.006522250167135577
+     ]
+    },
+    "22": {
+     "mean": [
+      0.5957000944932184,
+      0.6006800769362505,
+      0.5997317449880815,
+      0.5994461362878896,
+      0.5971630210030298,
+      0.5955575433493989,
+      0.5950055625597087,
+      0.5798964196169143,
+      0.5577686437796977,
+      0.5360452031611322,
+      0.5101571174829806,
+      0.48644694529408455,
+      0.46736272088955433,
+      0.45071296409478184,
+      0.4377646381704118,
+      0.4290843933306678
+     ],
+     "sem": [
+      0.0018106651569557571,
+      0.0018082402148392363,
+      0.002188302352175842,
+      0.0018421401828611589,
+      0.0024007812259471853,
+      0.002026903741280981,
+      0.0021080853089650914,
+      0.0026003108241880323,
+      0.0027058043146628045,
+      0.003498089499760015,
+      0.004041894848769183,
+      0.0037964905695532527,
+      0.003507088269300736,
+      0.0037734916850537797,
+      0.0037638418573412587,
+      0.004090271161131774
+     ]
+    }
+   },
+   "gue_ref": 0.5996,
+   "poisson_ref": 0.3863
+  },
+  "nu_telemetry_lane": {
+   "status": "TELEMETRY ONLY \u2014 nu-route CLOSED by prereg section 3.2; no nu-derived number may enter any bucket, verdict, or gate",
+   "collapse_fit": {
+    "nu": 1.5,
+    "kappa_c": 16.460000000000015,
+    "sse": 0.018636561807299966
+   },
+   "bracketing": {
+    "kappa_c": 16.460000000000015,
+    "grid_points_below": 13,
+    "grid_points_above": 2,
+    "rule_satisfied": true,
+    "consequence_if_false": "run VOID per prereg section 1"
+   },
+   "bootstrap": {
+    "resamples": 2000,
+    "nu_ci95": [
+     1.5,
+     1.5
+    ],
+    "kappa_c_ci95": [
+     11.000000000000009,
+     23.15125000000001
+    ],
+    "edge_mass_low": 0.0,
+    "edge_mass_high": 0.998,
+    "fitted_nu_interior": false,
+    "DEGENERATE": true,
+    "consequence_if_degenerate": "run not certifiable per prereg section 2"
+   },
+   "convergence": {
+    "per_size_R2": {
+     "14": 0.8303417218249394,
+     "18": 0.9721195642159417,
+     "22": 0.925492241457752
+    },
+    "R2_threshold": 0.98,
+    "R2_pass": false,
+    "cross_size_correlation": {
+     "14x18": 0.9710564457470701,
+     "14x22": 0.9565177563972359,
+     "18x22": 0.9968021435684205
+    },
+    "xcorr_threshold": 0.99,
+    "xcorr_pass": false
+   },
+   "pairwise_nu_and_extrapolation": {
+    "pairs": {
+     "14-18": {
+      "nu": 1.5,
+      "kappa_c": 10.470000000000008,
+      "midpoint_N": 16.0
+     },
+     "18-22": {
+      "nu": 1.5,
+      "kappa_c": 14.370000000000012,
+      "midpoint_N": 20.0
+     }
+    },
+    "nu_intercept_1_over_N": 1.5000000000000007
+   }
+  },
+  "direct_beta_lane": {
+   "status": "PRIMARY ROUTE per PREREG v2 section 5 (carrying v1 3.1); certified-candidate only when executed on the pinned Nebius venue with --venue-nebius, else PIPELINE-VALIDATION",
+   "gamma_operationalization": "IC-3/IC-4, PINNED by PREREG v2 section 4: ramp slope of disorder-averaged g(t)=|Tr e^{-iHt}|^2/d_sector^2; primary column kappa=0",
+   "d_convention_note": "PREREG v2 section 1 erratum: d = actual Hilbert-space dimension of the simulated system (even-parity sector, 2^(N/2-1)); the v1 'd ~ 2^N' glossary shorthand is SUPERSEDED and reported as diagnostic only",
+   "primary_kappa0": {
+    "gamma_per_size": {
+     "14": 4.770307613388118e-05,
+     "18": 4.509036098508813e-06,
+     "22": 3.1637688799876605e-07
+    },
+    "gamma_telemetry_N10": 0.00043402304611522727,
+    "windows": {
+     "14": {
+      "t_dip": 20.282654876197476,
+      "t_end": 184.5006608354558,
+      "plateau": 0.015625,
+      "n_points": 45
+     },
+     "18": {
+      "t_dip": 33.7526557255788,
+      "t_end": 558.7161602678773,
+      "plateau": 0.00390625,
+      "n_points": 53
+     },
+     "22": {
+      "t_dip": 45.64213408030585,
+      "t_end": 2012.5368844869936,
+      "plateau": 0.0009765625,
+      "n_points": 66
+     }
+    },
+    "primary_d_hilbert_sector": {
+     "beta_pairs_midpoints": [
+      1.7015956681835358,
+      1.9165514715622718
+     ],
+     "beta_intercept_1_over_N": 2.7763746850772177,
+     "beta_pooled_slope": 1.8090735698729037,
+     "ci95_intercept": [
+      1.9019874257242522,
+      3.620419415804282
+     ]
+    },
+    "diagnostic_d_2powN_SUPERSEDED": {
+     "beta_pairs_midpoints": [
+      0.8507978340917679,
+      0.9582757357811359
+     ],
+     "beta_intercept_1_over_N": 1.3881873425386089,
+     "beta_pooled_slope": 0.9045367849364517,
+     "ci95_intercept": [
+      0.9509937128621261,
+      1.810209707902141
+     ]
+    },
+    "bootstrap_invalid_resamples": 0
+   },
+   "crossing_adjacent": {
+    "kappa": 15.24,
+    "result": {
+     "gamma_per_size": {
+      "14": 0.008663738052119365,
+      "18": 0.0013630877279618772,
+      "22": 0.00015020857222766446
+     },
+     "gamma_telemetry_N10": 0.10350904416074865,
+     "windows": {
+      "14": {
+       "t_dip": 0.14450926356327481,
+       "t_end": 1.1469603271966307,
+       "plateau": 0.015625,
+       "n_points": 41
+      },
+      "18": {
+       "t_dip": 0.1379378196678215,
+       "t_end": 1.6345406648150074,
+       "plateau": 0.00390625,
+       "n_points": 45
+      },
+      "22": {
+       "t_dip": 0.13834337074392863,
+       "t_end": 1.3414089464721022,
+       "plateau": 0.0009765625,
+       "n_points": 36
+      }
+     },
+     "primary_d_hilbert_sector": {
+      "beta_pairs_midpoints": [
+       1.3340556035812443,
+       1.590919681682178
+      ],
+      "beta_intercept_1_over_N": 2.618375994085915,
+      "beta_pooled_slope": 1.4624876426317113,
+      "ci95_intercept": [
+       -1.151744882711975,
+       6.471809127506714
+      ]
+     },
+     "diagnostic_d_2powN_SUPERSEDED": {
+      "beta_pairs_midpoints": [
+       0.6670278017906222,
+       0.795459840841089
+      ],
+      "beta_intercept_1_over_N": 1.3091879970429574,
+      "beta_pooled_slope": 0.7312438213158559,
+      "ci95_intercept": [
+       -0.5758724413559875,
+       3.235904563753357
+      ]
+     },
+     "bootstrap_invalid_resamples": 0
+    }
+   },
+   "beta_by_kappa_telemetry": {
+    "0.0": {
+     "gamma": {
+      "14": 4.770307613388118e-05,
+      "18": 4.509036098508813e-06,
+      "22": 3.1637688799876605e-07
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.7763746850772177,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.3881873425386089
+    },
+    "1.0": {
+     "gamma": {
+      "14": 0.0002144613780094522,
+      "18": 1.532570855285484e-05,
+      "22": 9.273159974697808e-07
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.5034879483436097,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.2517439741718048
+    },
+    "1.25": {
+     "gamma": {
+      "14": 0.00025635283305861076,
+      "18": 1.823990794432595e-05,
+      "22": 1.2371527823506272e-06
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.0790861888287675,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.0395430944143838
+    },
+    "1.57": {
+     "gamma": {
+      "14": 0.0003436281500037806,
+      "18": 2.207860476299118e-05,
+      "22": 1.4210656346781942e-06
+     },
+     "beta_intercept_d_sector_PRIMARY": 1.9737551427683397,
+     "beta_intercept_d_2powN_SUPERSEDED": 0.9868775713841699
+    },
+    "1.98": {
+     "gamma": {
+      "14": 0.0009793281340281829,
+      "18": 2.4960219967718124e-05,
+      "22": 1.7638425160915526e-06
+     },
+     "beta_intercept_d_sector_PRIMARY": -1.03108708711968,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.51554354355984
+    },
+    "2.48": {
+     "gamma": {
+      "14": 0.0011386980201440581,
+      "18": 2.9689245307004625e-05,
+      "22": 2.07096617209313e-06
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.9186906164527376,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.4593453082263688
+    },
+    "3.11": {
+     "gamma": {
+      "14": 0.0015270173586882413,
+      "18": 4.110265025931917e-05,
+      "22": 2.355497493936297e-06
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.11786316757184659,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.058931583785923294
+    },
+    "3.9": {
+     "gamma": {
+      "14": 0.002019079225124075,
+      "18": 0.00030500500624494126,
+      "22": 9.737527269734394e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -1.3355714998823462,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.6677857499411731
+    },
+    "4.9": {
+     "gamma": {
+      "14": 0.0026288987412287365,
+      "18": 0.00038036184187791684,
+      "22": 4.3130875338736806e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.2734207566391516,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.1367103783195758
+    },
+    "6.15": {
+     "gamma": {
+      "14": 0.0033769143382284534,
+      "18": 0.0005032916100075713,
+      "22": 5.668346054209226e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.38350875222355,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.191754376111775
+    },
+    "7.71": {
+     "gamma": {
+      "14": 0.004297127135311843,
+      "18": 0.0006526418645463362,
+      "22": 7.314886088982865e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.4554425316335458,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.2277212658167729
+    },
+    "9.68": {
+     "gamma": {
+      "14": 0.0054474906356989,
+      "18": 0.0008374252496432501,
+      "22": 9.355758341415165e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.5019658129420383,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.2509829064710192
+    },
+    "12.15": {
+     "gamma": {
+      "14": 0.006879924197466358,
+      "18": 0.0010782134071423792,
+      "22": 0.00011885893346946891
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.605801439979702,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.302900719989851
+    },
+    "15.24": {
+     "gamma": {
+      "14": 0.008663738052119365,
+      "18": 0.0013630877279618772,
+      "22": 0.00015020857222766446
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.618375994085915,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.3091879970429574
+    },
+    "19.13": {
+     "gamma": {
+      "14": 0.010902748834520271,
+      "18": 0.0017195586628398739,
+      "22": 0.00018942770812802176
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.62663428343589,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.313317141717945
+    },
+    "24.0": {
+     "gamma": {
+      "14": 0.01370050975086369,
+      "18": 0.002176057672064403,
+      "22": 0.00023830320757905866
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.668234544913932,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.334117272456966
+    }
+   }
+  },
+  "op179_buckets": {
+   "WARNING": "Buckets below are the mechanical output of the byte-frozen op179 functions. They are a certified-candidate verdict ONLY if this execution ran on the pinned Nebius venue (--venue-nebius asserted) AND every certification gate below holds; otherwise they are PIPELINE-VALIDATION output only. Per prereg section 6, no SYK number may be reported as GHP support in either direction outside a certified run.",
+   "venue_nebius_asserted": false,
+   "buckets": {
+    "kappa0_d_sector_PINNED_CONVENTION_V2": {
+     "beta": 2.7763746850772177,
+     "ci95": [
+      1.9019874257242522,
+      3.620419415804282
+     ],
+     "point_bucket": "OUTSIDE",
+     "ci_bucket": "UNCLASSIFIED_BY_RULE"
+    },
+    "kappa0_d_2powN_SUPERSEDED_DIAGNOSTIC": {
+     "beta": 1.3881873425386089,
+     "ci95": [
+      0.9509937128621261,
+      1.810209707902141
+     ],
+     "point_bucket": "IN_BAND",
+     "ci_bucket": "BOUNDARY_REGION"
+    },
+    "crossing_d_sector_PINNED_CONVENTION_V2": {
+     "beta": 2.618375994085915,
+     "ci95": [
+      -1.151744882711975,
+      6.471809127506714
+     ],
+     "point_bucket": "BOUNDARY",
+     "ci_bucket": "BOUNDARY_REGION"
+    },
+    "crossing_d_2powN_SUPERSEDED_DIAGNOSTIC": {
+     "beta": 1.3091879970429574,
+     "ci95": [
+      -0.5758724413559875,
+      3.235904563753357
+     ],
+     "point_bucket": "IN_BAND",
+     "ci_bucket": "BOUNDARY_REGION"
+    }
+   }
+  },
+  "certification_gates": {
+   "venue_is_nebius": false,
+   "crossing_bracketing_ok": true,
+   "nu_bootstrap_nondegenerate": false,
+   "collapse_R2_pass": false,
+   "cross_size_corr_pass": false,
+   "gamma_operationalization_source_pinned": true,
+   "CERTIFIED_VERDICT": false,
+   "status": "PIPELINE-VALIDATION ONLY"
+  }
+ }
+}
