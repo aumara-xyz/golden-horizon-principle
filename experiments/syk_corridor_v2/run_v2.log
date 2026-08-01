@@ -1,0 +1,41 @@
+contract SYK_CORRIDOR_PREREG_v2.md sha256 = 7cdd8cfe6e902b3b27199b40bc63546f94551cab1a52c339343d6059816c7a5c (measured)
+[pre-run] pipeline.py  sha256 = f5ad157c871a061a7244ed3767b9abe0affa034f1bdaac668343650a71c34511  (MATCHES contract pin)
+[pre-run] op179        sha256 = b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e  (MATCHES contract pin)
+
+Executing byte-pinned pipeline (laptop venue; no --venue-nebius; PIPELINE-VALIDATION labeling per the contract)...
+
+SELF-TESTS
+  hermiticity            : OK (max |H - H^dag| = 0.00e+00)
+  even-parity block      : OK (max cross-parity element = 0.00e+00)
+  determinism            : OK (H4 sha256[:16] = 37c11c35bc09a115)
+  level repulsion (SYK4) : OK (<r> at N=18, kappa=0: 0.5811; GUE ref 0.5996, Poisson ref 0.3863)
+  op179 bucket import    : OK (point(2.0)=KILL, ci(0.8,1.2)=STRONG_PASS)
+SELF-TESTS: ALL PASSED
+
+PINNED SWEEP: N in [14, 18, 22] official + [10] telemetry; seeds 5000-5039; 16 kappa points
+  N=10: d_sector=   16, 40 seeds x 16 kappas done in 0.0s
+  N=14: d_sector=   64, 40 seeds x 16 kappas done in 0.2s
+  N=18: d_sector=  256, 40 seeds x 16 kappas done in 2.8s
+  N=22: d_sector= 1024, 40 seeds x 16 kappas done in 75.0s
+ANALYSIS
+  bootstrapping nu collapse (2000 resamples)...
+    done in 2328s
+  direct-beta lane: primary column kappa=0 (IC-4) + bootstrap...
+  direct-beta lane: crossing-adjacent column kappa=15.24 + bootstrap...
+
+WROTE /private/tmp/claude-501/-Users-peterviviani-aukora-symbiote/821dedf9-9039-4442-a22f-8e3aabb0fe62/scratchpad/ghp-repo/experiments/syk_corridor/results_v2.json
+CERTIFICATION GATES: {
+ "venue_is_nebius": false,
+ "crossing_bracketing_ok": true,
+ "nu_bootstrap_nondegenerate": false,
+ "collapse_R2_pass": false,
+ "cross_size_corr_pass": false,
+ "gamma_operationalization_source_pinned": true,
+ "CERTIFIED_VERDICT": false,
+ "status": "PIPELINE-VALIDATION ONLY"
+}
+[post-run] pipeline.py  sha256 = f5ad157c871a061a7244ed3767b9abe0affa034f1bdaac668343650a71c34511  (MATCHES contract pin)
+[post-run] op179        sha256 = b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e  (MATCHES contract pin)
+
+WROTE /private/tmp/claude-501/-Users-peterviviani-aukora-symbiote/821dedf9-9039-4442-a22f-8e3aabb0fe62/scratchpad/ghp-repo/experiments/syk_corridor_v2/results.json
+wall time: 2420.9s
