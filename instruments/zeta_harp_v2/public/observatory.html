@@ -1693,11 +1693,11 @@ function drawRibbon() {
   ctx.strokeStyle = 'rgba(226,180,90,0.5)';
   ctx.beginPath(); ctx.moveTo(X(t0), 0); ctx.lineTo(X(t0), H); ctx.stroke();
 
-  ctx.fillStyle = COL.dim; ctx.font = '10px ui-monospace, monospace';
-  ctx.fillText(fmtT(tLo), 4, H - 4);
+  ctx.fillStyle = COL.dim; ctx.font = '14px ui-monospace, monospace';
+  ctx.fillText(fmtT(tLo), 4, H - 5);
   var lbl = fmtT(tHi);
-  ctx.fillText(lbl, W - ctx.measureText(lbl).width - 4, H - 4);
-  ctx.fillText('±' + fmtSig(ymax, 3), 4, 10);
+  ctx.fillText(lbl, W - ctx.measureText(lbl).width - 4, H - 5);
+  ctx.fillText('±' + fmtSig(ymax, 3), 4, 14);
 
   document.getElementById('ribbonNote').textContent = fw
     ? 'fixture ' + fk + ' overlays active (high-precision reference)'
@@ -1722,7 +1722,7 @@ function drawFlower() {
     partial.push([ix, iy]);
     maxR = Math.max(maxR, Math.hypot(ix, iy));
   }
-  var S = (Math.min(W, H) / 2 - 14) / (maxR * 1.05);
+  var S = Math.max(0, Math.min(W, H) / 2 - 14) / (maxR * 1.05);
   function PX(x) { return cx + x * S; }
   function PY(y) { return cy - y * S; }
 
@@ -1730,9 +1730,10 @@ function drawFlower() {
   ctx.strokeStyle = 'rgba(200,214,235,0.12)'; ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(W, cy); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, H); ctx.stroke();
-  ctx.fillStyle = COL.dim; ctx.font = '10px ui-monospace, monospace';
-  ctx.fillText('Re — real part (sums to M(t))', W - 182, cy - 5);
-  ctx.save(); ctx.translate(cx + 5, 12); ctx.fillText('Im — auxiliary coordinate', 0, 0); ctx.restore();
+  ctx.fillStyle = COL.dim; ctx.font = '14px ui-monospace, monospace';
+  var reLbl = 'Re — real part (sums to M(t))';
+  ctx.fillText(reLbl, Math.max(4, W - ctx.measureText(reLbl).width - 6), cy - 6);
+  ctx.save(); ctx.translate(cx + 6, 16); ctx.fillText('Im — auxiliary coordinate', 0, 0); ctx.restore();
 
   /* unit circles a_1, a_2 */
   ctx.strokeStyle = 'rgba(200,214,235,0.05)';
@@ -1795,7 +1796,7 @@ function flowerPick(evt) {
     iy += TERMS.a[k] * Math.sin(TERMS.phi0[k]);
     maxR = Math.max(maxR, Math.hypot(ix, iy));
   }
-  var S = (Math.min(W, H) / 2 - 14) / (maxR * 1.05);
+  var S = Math.max(0, Math.min(W, H) / 2 - 14) / (maxR * 1.05);
   var best = -1, bestD = 14;
   for (k = 0; k < TERMS.N; k++) {
     var px = cx + TERMS.a[k] * Math.cos(TERMS.phi0[k]) * S;
@@ -1917,8 +1918,8 @@ function drawMicro() {
   /* reference gamma */
   ctx.strokeStyle = 'rgba(143,208,168,0.9)';
   ctx.beginPath(); ctx.moveTo(X(z.g), 6); ctx.lineTo(X(z.g), H - 6); ctx.stroke();
-  ctx.fillStyle = 'rgba(143,208,168,0.9)'; ctx.font = '10px ui-monospace, monospace';
-  ctx.fillText('γ (refined reference)', X(z.g) + 4, 14);
+  ctx.fillStyle = 'rgba(143,208,168,0.9)'; ctx.font = '14px ui-monospace, monospace';
+  ctx.fillText('γ (refined reference)', X(z.g) + 4, 17);
   /* our crossing */
   if (MICRO.tc !== null) {
     ctx.strokeStyle = 'rgba(226,180,90,0.8)'; ctx.setLineDash([3, 3]);
@@ -1953,7 +1954,7 @@ function drawMicro() {
   /* waterfall: positives rightward from 0 (top row), negatives leftward (second row),
      then M and the closing remainder */
   var y0 = 26, bh = 26;
-  ctxB.font = '10px ui-monospace, monospace';
+  ctxB.font = '14px ui-monospace, monospace';
   ctxB.fillStyle = COL.dim;
   ctxB.fillText('positive terms  Σ = +' + fmtSig(sumPos, 4), 6, y0 - 8);
   var acc = 0;
@@ -3552,10 +3553,13 @@ function frame(now) {
 
   GLR.draw(dt);
   torTick(dt, tChanged);
-  var flowerVisible = sheetOpen('terms');
+  /* the torus room owns the whole stage, so the column sheets are display:none
+     while it is up — their canvases measure 0x0 and must not be drawn */
+  var roomUp = sheetOpen('torus');
+  var flowerVisible = !roomUp && sheetOpen('terms');
   if (flowerVisible && (ST.frozen || frameCount % 4 === 0)) drawFlower();
-  if (sheetOpen('ribbon')) drawRibbon();
-  if (sheetOpen('torus')) drawTorus();
+  if (!roomUp && sheetOpen('ribbon')) drawRibbon();
+  if (roomUp) drawTorus();
   if (frameCount % 3 === 0 && ST.uiMode !== 'welcome') updateHUD();
   eventTick(now);
   aumaBubbleTick();
