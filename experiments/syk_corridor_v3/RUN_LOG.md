@@ -84,3 +84,49 @@ under 50 USD" expectation → provisioning is permitted. The cap remains a kill 
 consumption approaches the cap the run stops void with no verdict.
 
 Deprovision is unconditional at run end (certified, non-certified, void, or crash), per §6.
+
+## Entry 6 — provisioning record — 2026-08-01T23:21Z (retro-logged at 00:40Z)
+
+Instance `computeinstance-e00bxfxapwqb0874ny` (`syk-corridor-v3`, cpu-d3 32vcpu-128gb,
+boot 64 GiB NETWORK_SSD, public IP 195.242.13.180) created 23:21Z, RUNNING ~23:23Z.
+Spec file: `experiments/syk_corridor_v3/nebius_instance.yaml`. Pinned files uploaded;
+remote sha256 of `pipeline.py` and `op179_nu_to_beta.py` verified byte-identical to the
+contract pins before any execution (recorded in `run_v3_stageA.log`).
+
+## Entry 7 — STAGE A: the §8(d) official-ladder run — completed 2026-08-02T00:35Z
+
+Executed on the Nebius instance per the Entry-2 owner venue note (contract venue word:
+"laptop"): `python3 pipeline.py` with NO ladder flags — official ladder {14, 18, 22},
+N = 10 telemetry, seeds 5000–5039, pinned κ grid. Wall ~72 min (N=22 sweep 515 s,
+ν-bootstrap 3643 s on this core class). Post-run remote hashes re-verified: MATCH pins.
+
+Result (`results_v3_stageA_official_ladder.json`, also committed at the pinned path
+`experiments/syk_corridor/results_v3.json` BEFORE the certified run executes, so the
+certified write to the same path destroys no evidence):
+
+- SELF-TESTS: ALL PASSED → not void.
+- G-β1: pooled log Γ vs log d R² = 0.99882 ≥ 0.98 → **PASS**.
+- G-β2: intercept 2.77637, strictly interior of [0.30, 4.00]; bootstrap edge mass
+  low 0.000 / high 0.005, both < 0.05 → **PASS** (not DEGENERATE).
+- G-β3: Γ > 0 at every size; IC-7 windows 45/53/66 points ≥ 5; invalid resamples
+  0/2000 ≤ 1% → **PASS**.
+- Venue gate alone unpassed (as §8(d) excepts): `venue_is_nebius=false` because the
+  `--venue-nebius` assertion belongs to the certified extended run only; roll-up
+  correctly labels stage A PIPELINE-VALIDATION ONLY.
+- Reproduction check: γ, intercept, CI, and every bucket agree with the frozen v2
+  official numbers to ≤ ~1e-12 relative (cross-BLAS floating-point rounding on the
+  cloud LAPACK vs the laptop's); all bucket labels identical
+  (point OUTSIDE / CI UNCLASSIFIED_BY_RULE at κ=0, sector-d lane).
+
+**§8(d) DISCHARGED (no void, all three direct-β gates pass). Spend gate for the
+certified extended run is open.**
+
+## Entry 8 — stage B LAPACK backend note — 2026-08-02T00:42Z
+
+The instance's stock `python3-numpy` links the single-threaded reference BLAS/LAPACK
+(measured: eigvalsh d=4096 ≈ 52.7 s → the N=26 column alone would be ~9.4 h). For the
+certified run the system LAPACK alternative is switched to the threaded OpenBLAS
+(`libopenblas0-pthread` via `update-alternatives`) — an environment-level change only;
+the byte-pinned pipeline and bookkeeper are untouched (hashes re-verified pre-run).
+Stage A above ran entirely on the reference backend; the ≤1e-12 stage-A-vs-v2 agreement
+already bounds the cross-LAPACK effect at far below every gate threshold.
