@@ -9,359 +9,434 @@
   NOT EVIDENCE FOR RH OR GHP
   Built under instruments/zeta_harp_v2/ (Gates 3-6). Self-contained: no CDN,
   no network. Math spec: instruments/zeta_harp_v2/MATH_SPEC.md.
-  v2.1 (2026-08-02): UX overhaul per owner notes — presentation, guidance and
-  sound design only. The math core (zh-math), the embedded fixtures
-  (zh-fixtures) and the fence text are byte-identical to v2.
+  v3 (2026-08-02): clean rebuild of the chrome per the owner's nine rules.
+  ONE grid layout system with reserved lanes (nothing overlaps anything); a
+  persistent tab bar so no panel can be lost; teaching presets; a paced
+  journey that pauses on a caption; the torus as a room, not a box; Auma as a
+  pinned presence bubble whose voice drives the field's pulse; container-driven
+  responsive rules; Georgia at 14px and up. Presentation, guidance and sound
+  design only. The math core (zh-math), the embedded fixtures (zh-fixtures)
+  and the fence text are byte-identical to v2.
 -->
 <style>
-/* Zeta Harp v2.1 — observatory chrome.
-   House slate blue-grey (aukora spatial family), Georgia voice, soft contrast.
-   Monospace lives only in numeric readouts and the fence's formula blocks. */
+/* ==========================================================================
+   Zeta Harp v3 — ONE layout system.
+
+   Owner law 1: NO SHIT OVER SHIT. Every piece of chrome is a child of the
+   #chrome grid and lives in a reserved lane. Nothing is absolutely positioned
+   into another element's space. The only full-bleed layers are, by design,
+   the WebGL canvas (behind everything), the vignette, the welcome overlay and
+   the fence — each of which is alone on its layer.
+
+   Owner law 9: Georgia everywhere except numeric readouts; nothing below 14px.
+   ========================================================================== */
 :root {
   --bg0: #10161f;
   --bg1: #1a2230;
   --ink: #c8d2de;
-  --dim: #8a96a8;
-  --faint: #5c6879;
-  --blue: #5b8ef2;    /* positive real contribution */
-  --purple: #a06bff;  /* negative real contribution */
-  --gold: #e2b45a;    /* resultant */
+  --dim: #97a3b5;      /* lifted from v2.1 #8a96a8 for 14px legibility */
+  --faint: #6a7688;
+  --blue: #5b8ef2;     /* positive real contribution */
+  --purple: #a06bff;   /* negative real contribution */
+  --gold: #e2b45a;     /* resultant */
   --green: #8fd0a8;
   --hair: rgba(200, 214, 235, 0.14);
-  --panel: rgba(23, 31, 46, 0.82);
+  --hair2: rgba(200, 214, 235, 0.30);
+  --panel: rgba(20, 27, 40, 0.90);
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --serif: Georgia, "Times New Roman", serif;
+
+  /* the ONE reserved-lane knob: the Auma rail is 0 wide until she is opened */
+  --railW: 0px;
+  --colW: 384px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 100%; height: 100%; overflow: hidden;
   background: linear-gradient(165deg, var(--bg0) 0%, #141b28 55%, var(--bg1) 100%); }
-body { font-family: var(--serif); color: var(--ink); font-size: 14px; line-height: 1.65; }
-canvas#gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
-#vignette { position: fixed; inset: 0; z-index: 2; pointer-events: none;
+body { font-family: var(--serif); color: var(--ink); font-size: 15px; line-height: 1.6; }
+
+canvas#gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+#vignette { position: fixed; inset: 0; z-index: 1; pointer-events: none;
   background: radial-gradient(ellipse at center, transparent 55%, rgba(10, 14, 21, 0.42) 100%); }
 
-.hud { position: fixed; z-index: 5; pointer-events: none; }
-.hud * { pointer-events: auto; }
 .hidden { display: none !important; }
 .dim { color: var(--dim); }
-.mono { font-family: var(--mono); }
+.mono { font-family: var(--mono); font-size: 14px; }
+/* owner rule 9: nothing below 14px — including math sub/superscripts, which the
+   browser default (font-size: smaller) would shrink to about 11px */
+sub, sup { font-size: 14px; line-height: 0; position: relative; vertical-align: baseline; }
+sub { top: 0.3em; }
+sup { top: -0.45em; }
 
-/* ---- clickability grammar: everything interactive glows on hover -------- */
-button { font-family: var(--serif); cursor: pointer; }
-button.ghost {
-  font-size: 14px; letter-spacing: 0.06em;
-  background: var(--panel); color: var(--ink); border: 1px solid var(--hair);
-  padding: 7px 14px; border-radius: 4px;
-  transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
+/* ---- the one grid -------------------------------------------------------- */
+#chrome {
+  position: fixed; inset: 0; z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--railW);
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  grid-template-areas:
+    "top    top"
+    "stage  rail"
+    "dock   dock"
+    "foot   foot";
+  pointer-events: none;
 }
-button.ghost:hover, button.ghost:focus-visible {
-  border-color: rgba(226, 180, 90, 0.5);
-  box-shadow: 0 0 14px rgba(226, 180, 90, 0.16);
-  outline: none;
-}
-button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
+#chrome button, #chrome input, #chrome select, #chrome label,
+#chrome .sheet, #chrome .clickable { pointer-events: auto; }
 
-/* ---- top bar ------------------------------------------------------------ */
-#topbar {
-  top: 0; left: 0; right: 0; display: flex; align-items: flex-start;
-  justify-content: space-between; padding: 16px 20px 0;
+/* ---- clickability grammar: everything interactive glows on hover --------- */
+button { font-family: var(--serif); cursor: pointer; font-size: 15px; }
+.btn {
+  font-size: 15px; letter-spacing: 0.05em;
+  background: rgba(23, 31, 46, 0.86); color: var(--ink);
+  border: 1px solid var(--hair); padding: 8px 14px; border-radius: 5px;
+  transition: border-color 0.18s, box-shadow 0.18s, color 0.18s, background 0.18s;
 }
-#masthead h1 {
-  font-weight: 400; letter-spacing: 0.30em;
-  font-size: 17px; color: var(--ink); text-transform: uppercase;
+.btn:hover, .btn:focus-visible {
+  border-color: rgba(226, 180, 90, 0.55);
+  box-shadow: 0 0 14px rgba(226, 180, 90, 0.16); outline: none;
 }
-#masthead .sub {
-  letter-spacing: 0.14em; font-size: 14px;
-  color: var(--dim); margin-top: 6px; font-style: italic;
+.btn.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.6);
+  background: rgba(226, 180, 90, 0.09); }
+.btn.small { font-size: 14px; padding: 6px 11px; }
+.btn.big {
+  font-size: 17px; letter-spacing: 0.18em; padding: 12px 30px;
+  color: var(--gold); border-color: rgba(226, 180, 90, 0.6);
+  background: rgba(226, 180, 90, 0.10);
 }
-#topright { text-align: right; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
-.badge {
-  display: inline-block; font-size: 13px; letter-spacing: 0.08em;
-  padding: 5px 12px; border: 1px solid var(--hair);
-  color: var(--dim); background: var(--panel); border-radius: 3px;
-}
-.badge.truth { color: var(--green); border-color: rgba(143, 208, 168, 0.35); }
-.badge.artistic { color: #d9a6f2; border-color: rgba(217, 166, 242, 0.4); }
+.btn.big:hover, .btn.big:focus-visible { box-shadow: 0 0 24px rgba(226, 180, 90, 0.28); }
+.linky { color: var(--dim); cursor: pointer; background: none; border: none;
+  border-bottom: 1px dotted var(--faint); padding: 0 1px 1px; font-size: 14px;
+  font-family: var(--serif); }
+.linky:hover { color: var(--gold); }
 
-/* ---- mode picker -------------------------------------------------------- */
-#modePicker { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
-.mode-item {
-  text-align: left; display: flex; flex-direction: column; gap: 1px;
-  background: var(--panel); border: 1px solid var(--hair); border-radius: 5px;
-  padding: 7px 14px; min-width: 240px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+/* ================= LANE 1 — top: title chip | toast | menu ================ */
+#topLane {
+  grid-area: top;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start; gap: 14px; padding: 12px 16px 0;
 }
-.mode-item:hover, .mode-item:focus-visible {
-  border-color: rgba(226, 180, 90, 0.5);
-  box-shadow: 0 0 14px rgba(226, 180, 90, 0.14); outline: none;
-}
-.mode-item .mname { font-size: 14px; letter-spacing: 0.22em; color: var(--ink); text-transform: uppercase; }
-.mode-item .mdesc { font-size: 13px; color: var(--dim); font-style: italic; }
-.mode-item.on { border-color: rgba(226, 180, 90, 0.55); }
-.mode-item.on .mname { color: var(--gold); }
-#toprightRow2 { display: flex; gap: 8px; }
-#infoBtn { width: 38px; text-align: center; font-size: 16px; }
 
-/* ---- generic panel ------------------------------------------------------ */
-.panel {
-  position: fixed; z-index: 6; background: var(--panel);
-  border: 1px solid var(--hair); border-radius: 6px; padding: 14px 16px;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+/* title chip: small by default, expands in place (its own grid cell grows) */
+#titleChip {
+  justify-self: start; max-width: min(430px, 46vw);
+  background: rgba(20, 27, 40, 0.80); border: 1px solid var(--hair);
+  border-radius: 6px; padding: 7px 13px; text-align: left;
+  transition: border-color 0.18s, background 0.18s;
 }
-.panel h2 {
-  font-family: var(--serif); font-size: 13px; font-weight: 400;
+#titleChip:hover, #titleChip:focus-visible, #titleChip.open {
+  border-color: var(--hair2); background: rgba(20, 27, 40, 0.94); outline: none;
+}
+#titleChip .tname {
+  display: block; font-size: 14px; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--ink); white-space: nowrap;
+}
+#titleChip .tmore { display: none; margin-top: 6px; }
+#titleChip:hover .tmore, #titleChip.open .tmore { display: block; }
+#titleChip .tsub { font-size: 14px; color: var(--dim); font-style: italic; line-height: 1.5; }
+#titleChip .tfence { display: inline-block; margin-top: 7px; font-size: 14px; color: var(--dim);
+  border-bottom: 1px dotted var(--faint); }
+#titleChip .tfence:hover { color: var(--gold); }
+
+/* THE toast lane — one lane, one message, never over a control */
+#toastLane { justify-self: stretch; min-width: 0; display: flex; justify-content: center; }
+#toast {
+  max-width: 100%; opacity: 0; transform: translateY(-4px);
+  transition: opacity 0.3s, transform 0.3s;
+  background: rgba(20, 27, 40, 0.94); border: 1px solid var(--hair);
+  border-radius: 6px; padding: 9px 18px; text-align: center;
+  font-size: 15px; line-height: 1.55; color: var(--ink);
+}
+#toast.show { opacity: 1; transform: translateY(0); }
+#toast.evt { border-color: rgba(226, 180, 90, 0.40); color: var(--gold); }
+#toast .sub2 { display: block; font-size: 14px; color: var(--dim); margin-top: 3px;
+  letter-spacing: 0.02em; }
+
+#menuWrap { justify-self: end; display: flex; gap: 8px; align-items: start; }
+
+/* ================= LANE 2 — stage: sheet columns + torus room ============ */
+#stageLane {
+  grid-area: stage; min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, var(--colW)) minmax(0, 1fr) minmax(0, var(--colW));
+  gap: 12px; padding: 12px 16px;
+  /* stretch, not start: each column must be bounded by the stage row so a
+     tall sheet scrolls inside its own lane instead of spilling over the dock */
+  align-items: stretch;
+}
+.stageCol {
+  display: flex; flex-direction: column; gap: 12px;
+  min-height: 0; max-height: 100%; overflow-y: auto; overflow-x: hidden;
+  pointer-events: none; scrollbar-width: thin;
+}
+.stageCol > * { pointer-events: auto; }
+#colC { justify-content: flex-start; }
+
+.sheet {
+  background: var(--panel); border: 1px solid var(--hair); border-radius: 8px;
+  padding: 13px 16px 15px; flex: none;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.sheet > header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 12px; margin-bottom: 10px;
+}
+.sheet h2 {
+  font-family: var(--serif); font-size: 14px; font-weight: 400;
   letter-spacing: 0.20em; color: var(--dim); text-transform: uppercase;
-  margin-bottom: 10px; display: flex; justify-content: space-between; gap: 12px;
 }
-.panel h2 .x { cursor: pointer; color: var(--faint); letter-spacing: 0.04em; text-transform: none; }
-.panel h2 .x:hover { color: var(--gold); }
-.caveat {
-  font-size: 13px; color: var(--dim);
-  line-height: 1.6; margin-top: 10px; max-width: 360px;
+.sheet .x {
+  font-size: 14px; color: var(--faint); background: none; border: none;
+  cursor: pointer; font-family: var(--serif); white-space: nowrap;
 }
-.kv { font-family: var(--mono); font-size: 12px; line-height: 1.8; }
-.kv .k { color: var(--dim); font-family: var(--serif); font-size: 13px; }
+.sheet .x:hover { color: var(--gold); }
+.sheet p { font-size: 15px; line-height: 1.65; margin-bottom: 9px; }
+.caveat { font-size: 14px; color: var(--dim); line-height: 1.6; margin-top: 10px; }
+.kv { font-family: var(--mono); font-size: 14px; line-height: 1.75; }
+.kv .k { color: var(--dim); font-family: var(--serif); }
 .kv .v { color: var(--ink); }
 .kv .g { color: var(--gold); }
+.readout { font-family: var(--mono); font-size: 14px; color: var(--ink); white-space: nowrap; }
+.readout b { color: var(--gold); font-weight: 400; }
+.readout .lbl { color: var(--dim); font-family: var(--serif); }
+.rowline { display: flex; align-items: center; gap: 10px; margin: 9px 0; flex-wrap: wrap; }
+.rowline .lbl { font-size: 14px; color: var(--dim); white-space: nowrap; }
+.btnrow { display: flex; gap: 8px; margin-top: 11px; flex-wrap: wrap; }
+input[type="range"] {
+  flex: 1; min-width: 90px; -webkit-appearance: none; appearance: none;
+  height: 2px; background: var(--faint); cursor: pointer; outline: none;
+}
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none;
+  width: 13px; height: 13px; border-radius: 50%; background: var(--gold);
+  border: none; cursor: pointer; box-shadow: 0 0 8px rgba(226, 180, 90, 0.45); }
+input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius: 50%;
+  background: var(--gold); border: none; cursor: pointer; }
 
-/* ---- ribbon (redesigned: half height, toggle buttons in a column) ------- */
-#ribbonPanel { left: 20px; right: 20px; bottom: 152px; padding: 12px 16px; }
-#ribbonRow { display: flex; gap: 16px; align-items: stretch; }
-#ribbonKeys { display: flex; flex-direction: column; gap: 6px; width: 252px; flex: none; }
+/* ---- ribbon sheet -------------------------------------------------------- */
+#ribbonSheet { }
+#ribbonRow { display: flex; gap: 14px; align-items: stretch; flex-wrap: wrap; }
+#ribbonKeys { display: flex; flex-direction: column; gap: 6px; width: 250px; flex: none; }
 .layerBtn {
   display: flex; align-items: flex-start; gap: 9px; text-align: left;
   background: rgba(255, 255, 255, 0.03); border: 1px solid var(--hair);
-  border-radius: 5px; padding: 5px 10px; color: var(--ink);
-  transition: border-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+  border-radius: 5px; padding: 6px 10px; color: var(--ink);
+  transition: border-color 0.18s, box-shadow 0.18s, opacity 0.18s;
 }
 .layerBtn:hover, .layerBtn:focus-visible {
   border-color: rgba(226, 180, 90, 0.5);
   box-shadow: 0 0 12px rgba(226, 180, 90, 0.14); outline: none;
 }
-.layerBtn .sw { width: 16px; height: 3px; border-radius: 2px; margin-top: 8px; flex: none; }
-.layerBtn .lname { font-size: 14px; letter-spacing: 0.10em; }
-.layerBtn .lexp { font-size: 13px; color: var(--dim); font-style: italic; }
+.layerBtn .sw { width: 16px; height: 3px; border-radius: 2px; margin-top: 9px; flex: none; }
+.layerBtn .lname { font-size: 14px; letter-spacing: 0.09em; }
+.layerBtn .lexp { font-size: 14px; color: var(--dim); font-style: italic; }
 .layerBtn.pressed { border-color: rgba(226, 180, 90, 0.45); background: rgba(226, 180, 90, 0.06); }
-.layerBtn.off { opacity: 0.38; }
-#ribbonMain { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
-#ribbon { width: 100%; height: 58px; display: block; }
-#ribbonNote { font-size: 13px; color: var(--dim); font-style: italic; }
+.layerBtn.off { opacity: 0.40; }
+#ribbonMain { flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 5px; }
+#ribbon { width: 100%; height: 62px; display: block; }
+#ribbonNote { font-size: 14px; color: var(--dim); font-style: italic; }
 
-/* ---- flower ------------------------------------------------------------- */
-#flowerPanel { left: 20px; top: 128px; width: 396px; }
-#flower { width: 360px; height: 360px; display: block; }
+/* ---- terms sheet (flower + inspector) ------------------------------------ */
+#flower { width: 100%; max-width: 350px; aspect-ratio: 1 / 1; height: auto; display: block; margin: 0 auto; }
 #flowerNums { margin-top: 8px; }
-
-/* ---- inspector ---------------------------------------------------------- */
-#inspectorPanel { right: 20px; top: 210px; width: 330px; }
-#inspStatus { font-family: var(--mono); font-size: 12px; line-height: 1.8;
+#inspStatus { font-family: var(--mono); font-size: 14px; line-height: 1.75;
   border-top: 1px solid var(--hair); margin-top: 10px; padding-top: 8px; }
-#inspStatus .k { color: var(--dim); font-family: var(--serif); font-size: 13px; }
+#inspStatus .k { color: var(--dim); font-family: var(--serif); }
+#inspectorBody { margin-top: 10px; border-top: 1px solid var(--hair); padding-top: 9px; }
 
-/* ---- microscope --------------------------------------------------------- */
-#microPanel { right: 20px; top: 128px; width: 440px; max-height: calc(100vh - 300px); overflow-y: auto; }
+/* ---- zeros sheet --------------------------------------------------------- */
 #microZeroSel { width: 100%; background: #141b28; color: var(--ink);
-  border: 1px solid var(--hair); font-family: var(--mono); font-size: 12px;
-  padding: 5px; margin-bottom: 8px; border-radius: 4px; }
-#microCurve { width: 404px; height: 130px; display: block; }
-#microBars { width: 404px; height: 150px; display: block; margin-top: 8px; }
+  border: 1px solid var(--hair); font-family: var(--mono); font-size: 14px;
+  padding: 6px; margin-bottom: 8px; border-radius: 4px; }
+#microCurve, #microBars { width: 100%; display: block; }
+#microCurve { aspect-ratio: 404 / 130; }
+#microBars { aspect-ratio: 404 / 150; margin-top: 8px; }
 
-/* ---- sound -------------------------------------------------------------- */
-#audioPanel { left: 20px; bottom: 224px; width: 404px; }
-#soundModes { display: flex; gap: 8px; margin-bottom: 8px; }
-#soundModes button { flex: 1; }
-#audioPanel .ctl { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
-#audioPanel .ctl .lbl { font-size: 14px; color: var(--dim); white-space: nowrap; }
-#audioPanel input[type="range"] { flex: 1; -webkit-appearance: none; appearance: none;
-  height: 2px; background: var(--faint); cursor: pointer; }
-#audioPanel input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none;
-  width: 11px; height: 11px; border-radius: 50%; background: var(--gold); cursor: pointer; }
-#audioPanel input[type="range"]::-moz-range-thumb { width: 11px; height: 11px;
-  border-radius: 50%; background: var(--gold); border: none; cursor: pointer; }
-#audioState { font-size: 13px; color: var(--dim); font-style: italic; }
-#honesty { margin-top: 6px; font-size: 13px; color: var(--dim); }
-#musNote, #truthNote { font-size: 13px; color: var(--dim); line-height: 1.6; margin-top: 6px; }
-#artctl { border-top: 1px solid var(--hair); margin-top: 10px; padding-top: 8px; }
+/* ---- sound sheet --------------------------------------------------------- */
+#soundModes { display: flex; gap: 8px; margin-bottom: 9px; }
+#soundModes button { flex: 1; line-height: 1.35; }
+#soundModes button .sm2 { display: block; font-size: 14px; color: var(--dim); font-style: italic; }
+#audioState { font-size: 14px; color: var(--dim); font-style: italic; }
+#musNote, #truthNote, #honesty { font-size: 14px; color: var(--dim); line-height: 1.6; margin-top: 7px; }
+#artctl { border-top: 1px solid var(--hair); margin-top: 10px; padding-top: 9px; }
 #artctl label { font-size: 14px; color: var(--dim);
   display: inline-flex; gap: 6px; align-items: center; margin-right: 14px; cursor: pointer; }
-.readout { font-family: var(--mono); font-size: 12px; color: var(--ink); white-space: nowrap; }
-.readout b { color: var(--gold); font-weight: 400; }
-.readout .lbl { color: var(--dim); font-family: var(--serif); font-size: 13px; }
 
-/* ---- torus window ------------------------------------------------------- */
-#torusPanel { right: 20px; bottom: 128px; width: 336px; }
-#torus { width: 300px; height: 300px; display: block; margin: 0 auto; }
-#torusLabel { font-size: 13.5px; line-height: 1.6; color: var(--ink); margin-top: 8px; }
-#torusSub { font-size: 13px; line-height: 1.6; color: var(--dim); font-style: italic; margin-top: 6px; }
+/* ---- menu sheet ---------------------------------------------------------- */
+.modeItem {
+  text-align: left; display: flex; flex-direction: column; gap: 1px; width: 100%;
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--hair);
+  border-radius: 5px; padding: 8px 13px; margin-bottom: 6px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.modeItem:hover, .modeItem:focus-visible {
+  border-color: rgba(226, 180, 90, 0.5);
+  box-shadow: 0 0 14px rgba(226, 180, 90, 0.14); outline: none;
+}
+.modeItem .mname { font-size: 14px; letter-spacing: 0.20em; color: var(--ink); text-transform: uppercase; }
+.modeItem .mdesc { font-size: 14px; color: var(--dim); font-style: italic; }
+.modeItem.on { border-color: rgba(226, 180, 90, 0.55); }
+.modeItem.on .mname { color: var(--gold); }
+.badge {
+  display: block; font-size: 14px; letter-spacing: 0.05em; line-height: 1.5;
+  padding: 6px 11px; border: 1px solid var(--hair); margin-top: 9px;
+  color: var(--dim); background: rgba(255, 255, 255, 0.02); border-radius: 4px;
+}
+.badge.truth { color: var(--green); border-color: rgba(143, 208, 168, 0.35); }
+.badge.artistic { color: #d9a6f2; border-color: rgba(217, 166, 242, 0.4); }
+.keysRow { font-size: 15px; line-height: 2.0; color: var(--dim); }
+.keysRow b { color: var(--ink); font-weight: 400; font-family: var(--mono); font-size: 14px; }
+.law { font-size: 14px; letter-spacing: 0.04em; color: var(--dim); line-height: 1.6; }
 
-/* ---- info panel --------------------------------------------------------- */
-#infoPanel { right: 20px; top: 128px; width: 400px; max-height: calc(100vh - 260px); overflow-y: auto; }
-#infoPanel p { font-size: 14px; line-height: 1.7; margin-bottom: 10px; }
-#infoPanel .law { font-size: 13px; letter-spacing: 0.06em; color: var(--dim); }
-#infoPanel .keysRow { font-size: 14px; line-height: 2.0; color: var(--dim); }
-#infoPanel .keysRow b { color: var(--ink); font-weight: 400; font-family: var(--mono); font-size: 12.5px; }
-#infoPanel .btnrow { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+/* ================= LANE 2b — the torus room (full stage) ================= */
+#torusRoom {
+  grid-column: 1 / -1; grid-row: 1; min-height: 0; overflow: hidden;
+  display: flex; flex-direction: column; gap: 8px;
+  pointer-events: auto;
+  /* it is a ROOM, not a transparent overlay: the field still glows faintly
+     behind it, but the four-torus is the thing you are looking at */
+  padding: 12px 16px 14px; border: 1px solid var(--hair); border-radius: 10px;
+  background: radial-gradient(ellipse at 50% 44%,
+    rgba(12, 17, 26, 0.60) 0%, rgba(12, 17, 26, 0.90) 72%);
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+}
+#stageLane[data-room="torus"] .stageCol { display: none; }
+#torusRoomHead { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+#torusRoomHead h2 { font-size: 14px; font-weight: 400; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--dim); }
+#torusTools { display: flex; gap: 7px; flex-wrap: wrap; }
+#torusStage { flex: 1 1 auto; min-height: 120px;
+  display: flex; align-items: center; justify-content: center; }
+/* the room's own text scrolls inside the room — it can never be clipped away
+   and it can never push the picture out */
+#torusText { flex: 0 1 auto; min-height: 0; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 6px; }
+#torus { display: block; max-width: 100%; max-height: 100%; }
+#torusCaption { font-size: 15px; line-height: 1.6; color: var(--ink); text-align: center;
+  max-width: 780px; margin: 0 auto; }
+#torusHonest { font-size: 14px; line-height: 1.6; color: var(--dim); font-style: italic;
+  text-align: center; max-width: 780px; margin: 0 auto; }
 
-/* ---- fence (content untouched; restyled larger and calmer) -------------- */
-#fencePanel {
-  inset: 0; z-index: 20; overflow-y: auto; border: none; border-radius: 0;
-  background: rgba(14, 19, 28, 0.97); padding: 48px 0;
+/* the dimensional ladder intro — a sheet inside the room, never over it */
+#ladder {
+  align-self: center; max-width: 620px; width: 100%;
+  flex: 0 1 auto; min-height: 0; overflow-y: auto;   /* scroll inside the room */
+  background: var(--panel); border: 1px solid var(--hair2); border-radius: 8px;
+  padding: 18px 22px 16px; text-align: center;
 }
-#fenceInner { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-#fenceInner h2 { font-family: var(--serif); font-size: 15px; letter-spacing: 0.26em;
-  color: var(--ink); text-transform: uppercase; margin: 28px 0 12px; display: block; }
-#fenceInner p, #fenceInner li {
-  font-size: 14px; line-height: 1.8; color: var(--ink); margin-bottom: 10px;
-}
-#fenceInner .frm { font-family: var(--mono); font-size: 13px; color: var(--gold);
-  background: rgba(226, 180, 90, 0.05); border-left: 2px solid rgba(226, 180, 90, 0.3);
-  padding: 10px 14px; margin: 10px 0; white-space: pre-wrap; line-height: 1.8; }
-#fenceInner .lawline { font-family: var(--mono); font-size: 12.5px; color: var(--dim);
-  letter-spacing: 0.04em; line-height: 1.9; }
-#fenceInner table { border-collapse: collapse; font-family: var(--mono);
-  font-size: 12.5px; margin: 10px 0; }
-#fenceInner td, #fenceInner th { border: 1px solid var(--hair); padding: 5px 12px;
-  color: var(--ink); font-weight: 400; text-align: left; }
-#fenceInner th { color: var(--dim); }
+#ladderRungs { display: flex; align-items: center; justify-content: center;
+  gap: 6px; flex-wrap: wrap; margin: 12px 0 6px; }
+.rung { font-size: 14px; letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--faint); border: 1px solid var(--hair); border-radius: 4px; padding: 5px 9px; }
+.rung.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
+.rung.done { color: var(--dim); }
+#ladderText { font-size: 16px; line-height: 1.7; min-height: 3.4em; }
+#ladderCanvas { width: 100%; max-width: 260px; height: 130px; display: block; margin: 4px auto 8px; }
 
-/* ---- event labels (crossing, cutoff entry) ------------------------------ */
-#eventLabel {
-  left: 50%; top: 22%; transform: translateX(-50%);
-  font-size: 15px; letter-spacing: 0.10em; color: var(--gold);
-  text-align: center; opacity: 0; transition: opacity 0.5s; line-height: 1.8;
-  text-shadow: 0 0 18px rgba(14, 19, 28, 0.9); pointer-events: none;
+/* ================= LANE 3 — dock: caption / orient / nav / presets / tabs = */
+#dockLane {
+  grid-area: dock; display: flex; flex-direction: column; gap: 8px;
+  padding: 8px 16px 8px;
+  background: linear-gradient(to top, rgba(16, 22, 31, 0.94) 55%, rgba(16, 22, 31, 0));
 }
-#eventLabel .sub2 { font-size: 13px; color: var(--dim); letter-spacing: 0.06em; }
 
-/* ---- bottom navigation -------------------------------------------------- */
-#nav {
-  left: 0; right: 0; bottom: 30px; padding: 10px 20px 6px;
-  background: linear-gradient(to top, rgba(16, 22, 31, 0.90), rgba(16, 22, 31, 0));
+/* the guided journey caption — its own reserved row, above everything else */
+#jrCap {
+  align-self: center; width: min(820px, 100%); text-align: center;
+  background: var(--panel); border: 1px solid rgba(226, 180, 90, 0.30);
+  border-radius: 8px; padding: 15px 24px 13px;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
-#nav .row { display: flex; align-items: center; gap: 16px; }
-#tslider { flex: 1; -webkit-appearance: none; appearance: none; height: 2px;
-  background: var(--faint); outline: none; cursor: pointer; }
-#tslider::-webkit-slider-thumb {
-  -webkit-appearance: none; appearance: none; width: 13px; height: 13px;
-  border-radius: 50%; background: var(--gold); border: none; cursor: pointer;
-  box-shadow: 0 0 8px rgba(226, 180, 90, 0.5);
+#jrText { font-size: 17px; line-height: 1.65; color: var(--ink); }
+#jrRow { display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-top: 11px; flex-wrap: wrap; }
+#jrDots { display: flex; gap: 7px; }
+#jrDots span { width: 8px; height: 8px; border-radius: 50%; background: var(--faint); }
+#jrDots span.on { background: var(--gold); }
+#jrHint { font-size: 14px; color: var(--dim); font-style: italic; }
+
+/* orientation strip — where you are, how many threads, what is next */
+#orient {
+  display: flex; align-items: center; gap: 8px 18px; flex-wrap: wrap;
+  font-size: 14px; color: var(--dim); line-height: 1.5;
 }
-#tslider::-moz-range-thumb { width: 13px; height: 13px; border-radius: 50%;
-  background: var(--gold); border: none; cursor: pointer; }
-#navReadout { font-size: 14px; color: var(--dim); white-space: nowrap; }
-#navReadout b { color: var(--gold); font-weight: 400; font-family: var(--mono); font-size: 13px; }
-#presets { display: flex; gap: 10px; margin-top: 10px; justify-content: center; flex-wrap: wrap; }
+#orient .o { display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+#orient .ov { font-family: var(--mono); font-size: 14px; color: var(--ink); }
+#orient .ov.g { color: var(--gold); }
+#orient .onext { font-style: italic; }
+
+#navRow { display: flex; align-items: center; gap: 12px; }
+#navRow #tslider { flex: 1; }
+
+#presets { display: flex; gap: 9px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
 .preset-card {
-  text-align: left; display: flex; flex-direction: column; gap: 2px;
-  background: var(--panel); border: 1px solid var(--hair); border-radius: 6px;
-  padding: 9px 16px; min-width: 172px;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  text-align: left; display: flex; flex-direction: column; gap: 2px; flex: 1 1 0;
+  min-width: 208px; background: rgba(23, 31, 46, 0.86);
+  border: 1px solid var(--hair); border-radius: 6px; padding: 8px 14px;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
 }
 .preset-card:hover, .preset-card:focus-visible {
-  border-color: rgba(226, 180, 90, 0.5);
+  border-color: rgba(226, 180, 90, 0.55);
   box-shadow: 0 0 16px rgba(226, 180, 90, 0.16);
   transform: translateY(-1px); outline: none;
 }
-.preset-card .pname { font-size: 14px; letter-spacing: 0.18em; color: var(--gold); }
-.preset-card .psub { font-size: 13px; color: var(--dim); font-family: var(--mono); }
-.preset-card .psub sup { font-size: 10px; }
+.preset-card.on { border-color: rgba(226, 180, 90, 0.6); background: rgba(226, 180, 90, 0.08); }
+.preset-card .pname { font-size: 14px; letter-spacing: 0.16em; color: var(--gold); }
+.preset-card .pteach { font-size: 14px; color: var(--ink); line-height: 1.45; }
+.preset-card .psub { font-size: 14px; color: var(--dim); font-family: var(--mono); }
 
-/* ---- footer: the fence line, always present ----------------------------- */
-#footer {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 7; text-align: center;
-  padding: 6px 12px 7px; font-size: 13.5px; letter-spacing: 0.10em; color: var(--dim);
-  background: linear-gradient(to top, rgba(16, 22, 31, 0.95), rgba(16, 22, 31, 0.4));
+/* the tab bar — NOTHING CAN BE LOST: every panel is one click from here */
+#tabBar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+#tabBar .spacer { flex: 1; min-width: 0; }
+.tab {
+  font-size: 14px; letter-spacing: 0.13em; text-transform: uppercase;
+  padding: 7px 12px; border-radius: 5px; border: 1px solid var(--hair);
+  background: rgba(23, 31, 46, 0.86); color: var(--dim); font-family: var(--serif);
+  transition: border-color 0.18s, box-shadow 0.18s, color 0.18s, background 0.18s;
 }
-#footer .fenceLink { color: var(--dim); cursor: pointer; border-bottom: 1px dotted var(--faint); }
-#footer .fenceLink:hover { color: var(--gold); }
+.tab:hover, .tab:focus-visible {
+  color: var(--ink); border-color: rgba(226, 180, 90, 0.5);
+  box-shadow: 0 0 12px rgba(226, 180, 90, 0.14); outline: none;
+}
+.tab.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.6);
+  background: rgba(226, 180, 90, 0.09); }
 
-/* ---- one-time hint toast ------------------------------------------------ */
-#hintToast {
-  position: fixed; left: 50%; top: 15%; transform: translateX(-50%); z-index: 8;
-  font-size: 15px; font-style: italic; color: var(--ink);
-  background: var(--panel); border: 1px solid rgba(226, 180, 90, 0.35);
-  border-radius: 6px; padding: 10px 22px; pointer-events: none;
-  opacity: 0; transition: opacity 1.2s;
+/* Auma: a pinned presence bubble that lives in the field, not a box */
+#aumaBubble {
+  flex: none; width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid rgba(143, 208, 168, 0.45); background: rgba(20, 30, 30, 0.86);
+  display: flex; align-items: center; justify-content: center; padding: 0;
+  transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
 }
+#aumaBubble:hover, #aumaBubble:focus-visible {
+  border-color: rgba(143, 208, 168, 0.85); box-shadow: 0 0 20px rgba(143, 208, 168, 0.30);
+  outline: none;
+}
+#aumaBubble.on { border-color: rgba(226, 180, 90, 0.7); box-shadow: 0 0 18px rgba(226, 180, 90, 0.28); }
+#aumaBubble.asleep { border-color: var(--hair); }
+#aumaBubble svg { display: block; }
+#aumaCore { transition: r 0.08s linear, opacity 0.08s linear; }
 
-/* ---- welcome overlay ---------------------------------------------------- */
-#welcome {
-  position: fixed; inset: 0; z-index: 40; display: flex;
-  align-items: center; justify-content: center;
-  background: radial-gradient(ellipse at center, rgba(16, 22, 31, 0.55), rgba(13, 18, 27, 0.86));
+/* ================= LANE 4 — the rail: Auma's chat, reserved width ======== */
+#railLane {
+  grid-area: rail; min-width: 0; min-height: 0;
+  padding: 12px 16px 12px 0; display: flex;
 }
-#welcomeCard { max-width: 660px; text-align: center; padding: 40px 44px; }
-#welcomeCard .wtitle { font-size: 30px; letter-spacing: 0.34em; color: var(--ink);
-  text-transform: uppercase; }
-#welcomeCard .wsub { font-size: 14px; letter-spacing: 0.20em; color: var(--dim);
-  text-transform: uppercase; margin-top: 8px; }
-#welcomeCard .wbody { font-size: 17.5px; line-height: 1.85; margin: 26px 0 30px; color: var(--ink); }
-#beginBtn {
-  font-size: 17px; letter-spacing: 0.30em; padding: 15px 54px 15px 62px;
-  background: rgba(226, 180, 90, 0.07); color: var(--gold);
-  border: 1px solid rgba(226, 180, 90, 0.55); border-radius: 6px;
-  transition: box-shadow 0.25s, background 0.25s;
-}
-#beginBtn:hover, #beginBtn:focus-visible {
-  box-shadow: 0 0 26px rgba(226, 180, 90, 0.30);
-  background: rgba(226, 180, 90, 0.13); outline: none;
-}
-#skipTourLink {
-  display: inline-block; margin-top: 18px; font-size: 14px; font-style: italic;
-  color: var(--dim); background: none; border: none;
-  border-bottom: 1px dotted var(--faint); padding: 0 1px 1px;
-}
-#skipTourLink:hover { color: var(--ink); }
-#welcomeLaw { margin-top: 30px; font-size: 12.5px; letter-spacing: 0.08em; color: var(--faint); }
-
-/* ---- guided journey caption --------------------------------------------- */
-#jrCap {
-  position: fixed; left: 50%; bottom: 64px; transform: translateX(-50%);
-  z-index: 12; width: min(780px, calc(100vw - 48px)); text-align: center;
+#railLane[hidden] { display: none; }
+#aumaSheet {
+  flex: 1; min-width: 0; display: flex; flex-direction: column;
   background: var(--panel); border: 1px solid var(--hair); border-radius: 8px;
-  padding: 20px 30px 14px;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  overflow: hidden; pointer-events: auto;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
-#jrText { font-size: 19px; line-height: 1.7; color: var(--ink); }
-#jrRow { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 12px; }
-#jrDots { display: flex; gap: 7px; }
-#jrDots span { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); }
-#jrDots span.on { background: var(--gold); }
-</style>
-<style id="zh-guide-css">
-/* ---- TALK TO THE GUIDE (additive, v2.1-ux) ------------------------------
-   A popup that mounts the node's own Auma Live surface (spatial/app/
-   aumalive.js) when this page is served by the shell on 127.0.0.1:7090.
-   Nothing here touches the instrument's math, fixtures, or fence. */
-#guideBtn { display: inline-flex; align-items: center; gap: 8px;
-  letter-spacing: 0.14em; font-size: 13px; }
-#guideBtn .gb-dot { width: 8px; height: 8px; border-radius: 50%;
-  background: var(--green); box-shadow: 0 0 8px rgba(143, 208, 168, 0.6);
-  transition: background 0.3s, box-shadow 0.3s; }
-#guideBtn.asleep { color: var(--dim); }
-#guideBtn.asleep .gb-dot { background: var(--faint); box-shadow: none; }
-#guideBtn.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
-#guidePop {
-  position: fixed; right: 18px; bottom: 64px; z-index: 30;
-  width: min(430px, calc(100vw - 36px));
-  height: min(560px, calc(100vh - 130px));
-  display: none; flex-direction: column; overflow: hidden;
-  background: var(--panel); border: 1px solid var(--hair); border-radius: 8px;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-}
-#guidePop.show { display: flex; }
-#guideHead { display: flex; align-items: flex-start; gap: 10px;
-  padding: 10px 14px; border-bottom: 1px solid var(--hair); }
-#guideHeadText { flex: 1; }
-#guideTitle { font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink); }
-#guideDisclosure { font-size: 12px; font-style: italic; color: var(--dim);
-  line-height: 1.5; margin-top: 2px; }
-#guideClose { flex: none; font-size: 13px; padding: 4px 10px; }
-/* the mount root supplies the shell CSS variables aumalive.js's own styles
-   expect (values copied from spatial/app/style.css :root — page-scoped here) */
-#guideMountRoot { position: relative; flex: 1; min-height: 0;
+#aumaHead { display: flex; align-items: flex-start; gap: 10px; padding: 10px 13px;
+  border-bottom: 1px solid var(--hair); }
+#aumaHeadText { flex: 1; min-width: 0; }
+#aumaTitle { font-size: 14px; letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink); }
+#aumaDisclosure { font-size: 14px; font-style: italic; color: var(--dim); line-height: 1.5; margin-top: 3px; }
+#aumaMountRoot {
+  position: relative; flex: 1; min-height: 0; overflow: auto;
+  /* the shell CSS variables aumalive.js's own styles expect (values copied
+     from spatial/app/style.css :root — page-scoped here) */
   --hue-l: 129, 212, 180;
   --hue-c: 150, 180, 255;
   --hue-r: 196, 170, 255;
@@ -370,185 +445,427 @@ button.ghost.on { color: var(--gold); border-color: rgba(226, 180, 90, 0.55); }
   --faint: rgba(220, 226, 245, 0.34);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
+#aumaFallback { padding: 14px 15px; font-size: 15px; line-height: 1.65; }
+#aumaFallback .why { font-size: 14px; color: var(--dim); font-style: italic; margin-top: 8px; }
+
+/* ================= LANE 5 — footer: the fence line, always present ======= */
+#footLane {
+  grid-area: foot; text-align: center; padding: 6px 14px 8px;
+  font-size: 14px; letter-spacing: 0.07em; color: var(--dim);
+  background: rgba(16, 22, 31, 0.96); border-top: 1px solid var(--hair);
+  pointer-events: auto;
+}
+#footLane .fenceLink { color: var(--dim); cursor: pointer;
+  border-bottom: 1px dotted var(--faint); background: none; border-width: 0 0 1px 0;
+  font-family: var(--serif); font-size: 14px; }
+#footLane .fenceLink:hover { color: var(--gold); }
+
+/* ================= own-layer overlays (alone on their layer) ============= */
+/* ---- fence (content untouched from v2; restyled larger and calmer) ------ */
+#fencePanel {
+  position: fixed; inset: 0; z-index: 50; overflow-y: auto;
+  background: rgba(14, 19, 28, 0.975); padding: 44px 0;
+}
+#fenceInner { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+#fenceInner h2 { font-family: var(--serif); font-size: 15px; letter-spacing: 0.24em;
+  color: var(--ink); text-transform: uppercase; margin: 28px 0 12px; display: block; }
+#fenceInner p, #fenceInner li { font-size: 15px; line-height: 1.8; color: var(--ink); margin-bottom: 10px; }
+#fenceInner .frm { font-family: var(--mono); font-size: 14px; color: var(--gold);
+  background: rgba(226, 180, 90, 0.05); border-left: 2px solid rgba(226, 180, 90, 0.3);
+  padding: 10px 14px; margin: 10px 0; white-space: pre-wrap; line-height: 1.8; overflow-x: auto; }
+#fenceInner .lawline { font-family: var(--mono); font-size: 14px; color: var(--dim);
+  letter-spacing: 0.03em; line-height: 1.85; }
+#fenceInner table { border-collapse: collapse; font-family: var(--mono); font-size: 14px; margin: 10px 0; }
+#fenceInner td, #fenceInner th { border: 1px solid var(--hair); padding: 5px 12px;
+  color: var(--ink); font-weight: 400; text-align: left; }
+#fenceInner th { color: var(--dim); }
+.tableWrap { overflow-x: auto; }
+
+/* ---- welcome ------------------------------------------------------------ */
+#welcome {
+  position: fixed; inset: 0; z-index: 60; display: flex;
+  align-items: center; justify-content: center; padding: 20px; overflow-y: auto;
+  background: radial-gradient(ellipse at center, rgba(16, 22, 31, 0.55), rgba(13, 18, 27, 0.88));
+}
+#welcomeCard { max-width: 660px; text-align: center; padding: 24px; }
+#welcomeCard .wtitle { font-size: 30px; letter-spacing: 0.32em; color: var(--ink); text-transform: uppercase; }
+#welcomeCard .wsub { font-size: 14px; letter-spacing: 0.18em; color: var(--dim);
+  text-transform: uppercase; margin-top: 8px; }
+#welcomeCard .wbody { font-size: 17px; line-height: 1.8; margin: 24px 0 26px; color: var(--ink); }
+#beginBtn { font-size: 17px; letter-spacing: 0.28em; padding: 14px 46px;
+  background: rgba(226, 180, 90, 0.08); color: var(--gold);
+  border: 1px solid rgba(226, 180, 90, 0.55); border-radius: 6px;
+  transition: box-shadow 0.22s, background 0.22s; font-family: var(--serif); }
+#beginBtn:hover, #beginBtn:focus-visible {
+  box-shadow: 0 0 26px rgba(226, 180, 90, 0.30); background: rgba(226, 180, 90, 0.14); outline: none; }
+#skipTourLink { display: inline-block; margin-top: 16px; font-style: italic; }
+#welcomeLaw { margin-top: 26px; font-size: 14px; letter-spacing: 0.06em; color: var(--faint); line-height: 1.6; }
+
+/* ==========================================================================
+   Owner law 8 — CONTAINER-DRIVEN responsive rules.
+   A ResizeObserver measures the page's own box (not the viewport) and stamps
+   data-w on <html>, so a 1/3-width spatial column behaves like a phone even
+   inside a 5K display. Text never drops below 14px in any band.
+   ========================================================================== */
+:root[data-w="mid"] { --colW: 320px; }
+
+:root[data-w="narrow"] #chrome {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "top" "stage" "rail" "dock" "foot";
+}
+:root[data-w="narrow"] #stageLane {
+  /* one column that scrolls as a single list of sheets, rather than three
+     independently-scrolling thirds that each chop their sheet in half */
+  grid-template-columns: minmax(0, 1fr); grid-auto-rows: min-content;
+  padding: 10px 12px; overflow-y: auto;
+}
+:root[data-w="narrow"] .stageCol { max-height: none; overflow: visible; }
+:root[data-w="narrow"] .stageCol:empty { display: none; }
+/* below ~700px the chrome collapses to the tab bar + the menu button */
+:root[data-w="narrow"] #titleChip { max-width: 62vw; }
+:root[data-w="narrow"] #titleChip .tname { font-size: 14px; letter-spacing: 0.14em;
+  overflow: hidden; text-overflow: ellipsis; }
+:root[data-w="narrow"] #topLane { grid-template-columns: minmax(0, 1fr) auto; padding: 10px 12px 0; }
+:root[data-w="narrow"] #toastLane { grid-column: 1 / -1; grid-row: 2; margin-top: 8px; }
+/* narrow: the orientation strip and the preset cards MOVE (they are not
+   duplicated, so their listeners survive) into the GUIDE sheet */
+#guideNarrow:empty { display: none; }
+#guideNarrow { margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+#guideNarrow #orient { flex-direction: column; align-items: flex-start; gap: 5px; }
+#guideNarrow #presets { flex-direction: column; overflow-x: visible; }
+#guideNarrow #presets .preset-card { min-width: 0; }
+:root[data-w="narrow"] #dockLane { padding: 8px 12px; gap: 7px; }
+:root[data-w="narrow"] #railLane { padding: 0 12px 10px; max-height: 54vh; min-height: 320px; }
+:root[data-w="narrow"] #torusText { max-height: 36%; }
+:root[data-w="narrow"] #torusRoomHead h2 { font-size: 14px; letter-spacing: 0.14em; }
+:root[data-w="narrow"] #ribbonKeys { width: 100%; }
+:root[data-w="narrow"] #ribbonRow { flex-direction: column; }
+:root[data-w="narrow"] #jrText { font-size: 16px; }
+:root[data-w="narrow"] #jrCap { padding: 13px 16px 12px; }
+:root[data-w="narrow"] .sheet { padding: 12px 13px 13px; }
+:root[data-w="narrow"] #welcomeCard .wtitle { font-size: 24px; letter-spacing: 0.22em; }
+:root[data-w="narrow"] #welcomeCard .wbody { font-size: 16px; }
+:root[data-w="narrow"] #fenceInner { padding: 0 16px; }
+/* narrow: the orientation summary rides in the tab bar as one compact line */
+#orientMini { display: none; font-size: 14px; color: var(--dim); }
+#orientMini .ov { font-family: var(--mono); color: var(--gold); }
+:root[data-w="narrow"] #orientMini { display: block; width: 100%; }
 </style>
 </head>
 <body>
 <canvas id="gl"></canvas>
 <div id="vignette"></div>
 
-<div id="topbar" class="hud">
-  <div id="masthead">
-    <h1 id="mastTitle">Riemann-Siegel Phase Observatory</h1>
-    <div class="sub" id="mastSub">the main sum of Hardy's Z, drawn as phase trajectories</div>
-  </div>
-  <div id="topright">
-    <div id="modePicker">
-      <button class="mode-item" data-mode="guided" id="modeGuided">
-        <span class="mname">Guided</span>
-        <span class="mdesc">a short flown tour of the instrument</span>
-      </button>
-      <button class="mode-item on" data-mode="explore" id="modeExplore">
-        <span class="mname">Explore</span>
-        <span class="mdesc">free flight — every control, every panel</span>
-      </button>
-      <button class="mode-item" data-mode="ambient" id="modeAmbient">
-        <span class="mname">Ambient</span>
-        <span class="mdesc">hands off — the instrument plays itself</span>
-      </button>
-    </div>
-    <div id="toprightRow2">
-      <button class="ghost" id="torusBtn">torus window</button>
-      <button class="ghost" id="guideBtn" title="open a live voice + chat channel to this node's guide"><span class="gb-dot"></span><span class="gb-label">TALK TO THE GUIDE</span></button>
-      <button class="ghost" id="infoBtn" title="about, shortcuts, replay the tour">?</button>
-    </div>
-    <span class="badge artistic" id="truthBadge">ARTISTIC SONIFICATION — NOT A PRIVILEGED MATHEMATICAL MAPPING</span>
-  </div>
-</div>
+<!-- ==========================================================================
+     THE ONE CHROME GRID. Five lanes, each reserved, none overlapping:
+       top   — title chip | toast lane | MENU
+       stage — sheet columns (or the torus room)
+       rail  — Auma's chat, zero-width until opened
+       dock  — journey caption / orientation / nav / presets / tab bar
+       foot  — the fence line
+     ========================================================================== -->
+<div id="chrome">
 
-<div id="eventLabel" class="hud"></div>
-<div id="hintToast">Everything that glows is clickable — hover, then click.</div>
+  <div id="topLane">
+    <button id="titleChip" aria-expanded="false">
+      <span class="tname">Zeta Harp</span>
+      <span class="tmore">
+        <span class="tsub">Riemann-Siegel Phase Observatory &mdash; the main sum of
+        Hardy's Z, drawn as phase trajectories.</span><br>
+        <span class="tfence" id="chipFence">read the fence &mdash; full disclosures</span>
+      </span>
+    </button>
 
-<div id="ribbonPanel" class="panel hud hidden">
-  <h2>Z ribbon — this height window <span class="x" data-close="ribbonPanel">[close]</span></h2>
-  <div id="ribbonRow">
-    <div id="ribbonKeys">
-      <button class="layerBtn pressed" id="lyrM">
-        <span class="sw" style="background:var(--gold)"></span>
-        <span><span class="lname">MAIN SUM</span><br>
-        <span class="lexp">the formula's waves, all added up</span></span>
-      </button>
-      <button class="layerBtn pressed" id="lyrZ">
-        <span class="sw" style="background:var(--blue)"></span>
-        <span><span class="lname">REFERENCE</span><br>
-        <span class="lexp">the exact function, from precise tables</span></span>
-      </button>
-      <button class="layerBtn pressed" id="lyrR">
-        <span class="sw" style="background:var(--purple)"></span>
-        <span><span class="lname">REMAINDER</span><br>
-        <span class="lexp">what the finite sum leaves out</span></span>
-      </button>
-    </div>
-    <div id="ribbonMain">
-      <canvas id="ribbon" width="1200" height="58"></canvas>
-      <span id="ribbonNote"></span>
+    <div id="toastLane"><div id="toast"></div></div>
+
+    <div id="menuWrap">
+      <button class="btn small" id="menuBtn">MENU</button>
     </div>
   </div>
-</div>
 
-<div id="flowerPanel" class="panel hud hidden">
-  <h2>Phasor flower — frozen slice <span class="x" data-close="flowerPanel">[close]</span></h2>
-  <canvas id="flower" width="720" height="720"></canvas>
-  <div class="kv" id="flowerNums"></div>
-  <div class="caveat">Polygon chained in n-order: the partial-sum path depends on that
-  ordering; only the endpoint (the resultant) is order-independent. The vertical axis is
-  an AUXILIARY visualization coordinate — the real part of the phasor sum equals M(t);
-  the resultant's length is not |Z| and is never labeled |Z|. Click a phasor to inspect
-  its term.</div>
-</div>
+  <div id="stageLane">
+    <div class="stageCol" id="colL"></div>
+    <div class="stageCol" id="colC"></div>
+    <div class="stageCol" id="colR"></div>
 
-<div id="inspectorPanel" class="panel hud hidden">
-  <h2>Term inspector <span class="x" data-close="inspectorPanel">[close]</span></h2>
-  <div class="kv" id="inspectorBody">click a thread or a phasor to select a term</div>
-  <div style="margin-top:8px"><button class="ghost" id="voiceBtn">voice this term</button></div>
-  <div id="inspStatus"></div>
-</div>
+    <!-- the torus room: takes the whole stage when its tab is on -->
+    <div id="torusRoom" class="hidden">
+      <div id="torusRoomHead">
+        <h2>The torus room &mdash; four phases, rotating</h2>
+        <div id="torusTools">
+          <button class="btn small on" id="torusShadow">SHADOW</button>
+          <button class="btn small" id="torusSlice">SLICE</button>
+          <button class="btn small" id="torusUnfold">UNFOLD</button>
+          <button class="btn small" id="torusLadderBtn">the ladder</button>
+        </div>
+      </div>
+      <div id="torusStage"><canvas id="torus" width="900" height="900"></canvas></div>
+      <div id="torusText">
+        <div id="torusCaption"></div>
+        <div id="torusHonest"></div>
+      </div>
 
-<div id="microPanel" class="panel hud hidden">
-  <h2>Zero microscope — refined reference list <span class="x" data-close="microPanel">[close]</span></h2>
-  <select id="microZeroSel"></select>
-  <canvas id="microCurve" width="808" height="260"></canvas>
-  <canvas id="microBars" width="808" height="300"></canvas>
-  <div class="kv" id="microNums"></div>
-  <div class="caveat">Zeros above come only from the embedded refined reference list
-  (Odlyzko-derived table, refined with high-precision Z; NOT certified). Sign changes of
-  the main sum computed here are "computed crossings (finite approximation)" — the offset
-  between our crossing and the reference ordinate is the finite-sum error, shown above.
-  The reference table covers t &lt; ~75000; no reference zeros exist in this build above
-  that height.</div>
-</div>
-
-<div id="audioPanel" class="panel hud hidden">
-  <h2>Sound <span class="x" data-close="audioPanel">[close]</span></h2>
-  <div id="soundModes">
-    <button class="ghost on" id="soundModeMus">MUSICAL<br><span class="dim" style="font-size:13px;font-style:italic">artistic sonification</span></button>
-    <button class="ghost" id="soundModeTruth">TRUTH<br><span class="dim" style="font-size:13px;font-style:italic">the exact mapping</span></button>
-  </div>
-  <div class="ctl"><button class="ghost" id="audioBtn">sound off</button>
-    <span id="audioState">off — sound starts only on your gesture</span></div>
-  <div class="ctl"><span class="lbl">volume</span>
-    <input type="range" id="gainSlider" min="0" max="100" value="45">
-    <span class="readout" id="gainReadout"></span></div>
-  <div id="musCtl">
-    <div class="ctl"><span class="lbl">musical density</span>
-      <input type="range" id="musDensity" min="3" max="12" value="7">
-      <span class="readout" id="musDensityReadout"></span></div>
-    <div id="musNote">Artistic sonification: a handful of threads are voiced on a
-    harmonic-series-derived scale (pitches drawn from harmonics 8&ndash;15 of 55 Hz &mdash;
-    honest kinship to overtone structure, not the mathematical mapping). Loudness follows
-    each thread's actual contribution a<sub>n</sub>|cos &phi;<sub>n</sub>(t)|; pitch order
-    follows its true phase rate &theta;&prime;(t) &minus; ln n. Dragging the height slider
-    bends the whole pattern; clicking a thread plucks it. When you rest, the instrument
-    drifts slowly upward so the chord keeps evolving &mdash; any input takes the wheel back.
-    For the undecorated law, switch to TRUTH.</div>
-  </div>
-  <div id="truthCtl" class="hidden">
-    <div class="ctl"><span class="lbl">v_t</span>
-      <input type="range" id="vtSlider" min="0" max="1000" value="520">
-      <span class="readout" id="vtReadout"></span></div>
-    <div id="truthNote">
-      f_audio_n = v_t &middot; (&theta;&prime;(t) &minus; ln n) / 2&pi; &nbsp;&mdash;&nbsp; one global
-      time-dilation v_t, one global gain, disclosed above. What you hear is the phase law,
-      time-compressed. No per-string tuning in Truth Mode.</div>
-    <div id="honesty"></div>
-    <div id="artctl">
-      <label><input type="checkbox" id="reverbChk"> reverb</label>
-      <label><input type="checkbox" id="quantChk"> scale-quantize voiced terms</label>
-      <div class="caveat" style="margin-top:4px">These controls leave Truth Mode: enabling
-      either flips the badge to ARTISTIC SONIFICATION.</div>
+      <!-- dimensional ladder intro (first open) -->
+      <div id="ladder" class="hidden">
+        <canvas id="ladderCanvas" width="520" height="260"></canvas>
+        <div id="ladderText"></div>
+        <div id="ladderRungs"></div>
+        <div class="btnrow" style="justify-content:center">
+          <button class="btn" id="ladderNext">next</button>
+          <button class="linky" id="ladderSkip">skip the ladder</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="torusPanel" class="panel hud hidden">
-  <h2>The torus window <span class="x" data-close="torusPanel">[close]</span></h2>
-  <canvas id="torus" width="600" height="600"></canvas>
-  <div id="torusLabel"></div>
-  <div id="torusSub">Threads n = 1, 2 place the gold point; n = 3, 4 drive the double
-  rotation (plus a slow viewing spin, disclosed). Standard geometry only &mdash; a torus is a
-  product of circles, one circle per thread's phase. No claim rides on this picture; see
-  the fence.</div>
-</div>
-
-<div id="infoPanel" class="panel hud hidden">
-  <h2>About this instrument <span class="x" data-close="infoPanel">[close]</span></h2>
-  <p class="law">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT /
-  NOT EVIDENCE FOR RH OR GHP</p>
-  <p>Everything on screen is computed live from the Riemann-Siegel main sum for Hardy's
-  Z-function &mdash; standard mathematics, nothing measured, nothing certified. Each thread
-  is one cosine term; the golden line is their sum.</p>
-  <p class="law">validated: W1-W4 fixtures embedded &mdash; before this page shipped, its
-  inline math was checked against frozen high-precision fixtures (mpmath, 80 significant
-  digits) on four height windows plus a 40-entry refined zero list. The full tables and
-  the check harness live in the repository; compact excerpts are embedded in this page
-  and drawn as the reference overlays.</p>
-  <div class="keysRow">
-    <b>drag</b> orbit &nbsp;&middot;&nbsp; <b>scroll / W S</b> fly along t &nbsp;&middot;&nbsp;
-    <b>shift</b> faster<br>
-    <b>space</b> freeze the slice &nbsp;&middot;&nbsp; <b>F</b> phasor flower &nbsp;&middot;&nbsp;
-    <b>R</b> Z ribbon<br>
-    <b>Z</b> zero microscope &nbsp;&middot;&nbsp; <b>U</b> sound &nbsp;&middot;&nbsp;
-    <b>T</b> torus window<br>
-    <b>A</b> cruise &nbsp;&middot;&nbsp; <b>I</b> the fence &nbsp;&middot;&nbsp;
-    <b>?</b> this panel &nbsp;&middot;&nbsp; <b>esc</b> close panels
+  <div id="railLane" hidden>
+    <div id="aumaSheet">
+      <div id="aumaHead">
+        <div id="aumaHeadText">
+          <div id="aumaTitle">Auma &mdash; the guide</div>
+          <div id="aumaDisclosure">Her live voice &mdash; a real AI answering aloud, not a
+            recording. The microphone opens only when you press her orb.</div>
+        </div>
+        <button class="btn small x" id="aumaClose">close</button>
+      </div>
+      <div id="aumaMountRoot"></div>
+      <div id="aumaFallback" class="hidden"></div>
+    </div>
   </div>
-  <div class="btnrow">
-    <button class="ghost" id="replayBtn">replay the guided tour</button>
-    <button class="ghost" id="fenceOpenBtn">read the fence — full disclosures</button>
+
+  <div id="dockLane">
+
+    <!-- guided journey caption: its own reserved row -->
+    <div id="jrCap" class="hidden">
+      <div id="jrText"></div>
+      <div id="jrRow">
+        <div id="jrDots"></div>
+        <button class="btn big" id="jrNext">NEXT</button>
+        <span id="jrHint"></span>
+        <button class="linky" id="jrSkip">leave the journey</button>
+      </div>
+    </div>
+
+    <!-- orientation strip: where you are, how many threads, what is next -->
+    <div id="orient">
+      <span class="o"><span>height</span><span class="ov g" id="oT"></span></span>
+      <span class="o"><span>threads in the sum</span><span class="ov" id="oN"></span></span>
+      <span class="o"><span>along the critical line</span><span class="ov" id="oPct"></span></span>
+      <span class="o onext" id="oNext"></span>
+    </div>
+
+    <div id="navRow">
+      <input type="range" id="tslider" min="0" max="10000" value="0"
+             aria-label="height t along the critical line">
+      <button class="btn small" id="recenterBtn">RECENTER</button>
+    </div>
+
+    <div id="presets">
+      <button class="preset-card" data-t="130">
+        <span class="pname">THE FIRST FOUR</span>
+        <span class="pteach">the formula starts with just 4 waves &mdash; watch them beat against each other</span>
+        <span class="psub">t = 130 &nbsp;&middot;&nbsp; 4 threads</span>
+      </button>
+      <button class="preset-card" data-t="10000">
+        <span class="pname">THE CHOIR</span>
+        <span class="pteach">ten thousand up, 39 waves are singing together</span>
+        <span class="psub">t = 10,000 &nbsp;&middot;&nbsp; 39 threads</span>
+      </button>
+      <button class="preset-card" data-t="1000000">
+        <span class="pname">THE CATHEDRAL</span>
+        <span class="pteach">climb to a million and 398 waves are singing at once</span>
+        <span class="psub">t = 1,000,000 &nbsp;&middot;&nbsp; 398 threads</span>
+      </button>
+      <button class="preset-card" data-t="100000000">
+        <span class="pname">THE WALL</span>
+        <span class="pteach">3,989 waves &mdash; and the edge where float64 phase accuracy runs out</span>
+        <span class="psub">t = 10⁸ = 100,000,000 &nbsp;&middot;&nbsp; 3,989 threads</span>
+      </button>
+    </div>
+
+    <!-- NOTHING CAN BE LOST: every panel is one obvious click from this bar -->
+    <div id="tabBar">
+      <button class="tab" data-tab="ribbon">Ribbon</button>
+      <button class="tab" data-tab="terms">Terms</button>
+      <button class="tab" data-tab="zeros">Zeros</button>
+      <button class="tab" data-tab="sound">Sound</button>
+      <button class="tab" data-tab="torus">Torus</button>
+      <button class="tab" data-tab="guide">Guide</button>
+      <span class="spacer"></span>
+      <button class="btn small" id="muteBtn">SOUND ON</button>
+      <button id="aumaBubble" class="asleep" title="Auma — the guide. Click to talk.">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+          <circle cx="13" cy="13" r="11" fill="none" stroke="rgba(143,208,168,0.45)" stroke-width="1"/>
+          <circle id="aumaCore" cx="13" cy="13" r="4.4" fill="rgba(143,208,168,0.8)"/>
+        </svg>
+      </button>
+      <span id="orientMini"></span>
+    </div>
   </div>
+
+  <div id="footLane">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP
+    &nbsp;&mdash;&nbsp; <button class="fenceLink" id="footerFence">read the fence [i]</button></div>
 </div>
 
-<div id="fencePanel" class="panel hidden">
-  <div id="fenceInner"><h2 style="margin-top:0">The fence</h2>
+<!-- ==========================================================================
+     Sheet templates. Each one is moved into a stage column when its tab is on
+     and taken out when the tab is off — so a closed panel is exactly its tab,
+     and no sheet can ever land on top of another.
+     ========================================================================== -->
+<div id="sheetStore" class="hidden">
+
+  <section class="sheet" id="ribbonSheet" data-col="colC">
+    <header><h2>Z ribbon</h2>
+      <button class="x" data-closetab="ribbon">close &rarr; tab</button></header>
+    <div id="ribbonRow">
+      <div id="ribbonKeys">
+        <button class="layerBtn pressed" id="lyrM">
+          <span class="sw" style="background:var(--gold)"></span>
+          <span><span class="lname">MAIN SUM</span><br>
+          <span class="lexp">the formula's waves, all added up</span></span>
+        </button>
+        <button class="layerBtn pressed" id="lyrZ">
+          <span class="sw" style="background:var(--blue)"></span>
+          <span><span class="lname">REFERENCE</span><br>
+          <span class="lexp">the exact function, from precise tables</span></span>
+        </button>
+        <button class="layerBtn pressed" id="lyrR">
+          <span class="sw" style="background:var(--purple)"></span>
+          <span><span class="lname">REMAINDER</span><br>
+          <span class="lexp">what the finite sum leaves out</span></span>
+        </button>
+      </div>
+      <div id="ribbonMain">
+        <canvas id="ribbon" width="1400" height="124"></canvas>
+        <span id="ribbonNote"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" id="termsSheet" data-col="colL">
+    <header><h2>Terms</h2>
+      <button class="x" data-closetab="terms">close &rarr; tab</button></header>
+    <canvas id="flower" width="720" height="720"></canvas>
+    <div class="kv" id="flowerNums"></div>
+    <div id="inspectorBody">click a thread or a phasor to select a term</div>
+    <div class="btnrow"><button class="btn small" id="voiceBtn">voice this term</button></div>
+    <div id="inspStatus"></div>
+    <div class="caveat">Polygon chained in n-order: the partial-sum path depends on that
+    ordering; only the endpoint (the resultant) is order-independent. The vertical axis is
+    an AUXILIARY visualization coordinate &mdash; the real part of the phasor sum equals M(t);
+    the resultant's length is not |Z| and is never labeled |Z|.</div>
+  </section>
+
+  <section class="sheet" id="zerosSheet" data-col="colC">
+    <header><h2>Zero microscope</h2>
+      <button class="x" data-closetab="zeros">close &rarr; tab</button></header>
+    <select id="microZeroSel"></select>
+    <canvas id="microCurve" width="808" height="260"></canvas>
+    <canvas id="microBars" width="808" height="300"></canvas>
+    <div class="kv" id="microNums"></div>
+    <div class="caveat">Zeros above come only from the embedded refined reference list
+    (Odlyzko-derived table, refined with high-precision Z; NOT certified). Sign changes of
+    the main sum computed here are "computed crossings (finite approximation)" &mdash; the offset
+    between our crossing and the reference ordinate is the finite-sum error, shown above.
+    The reference table covers t &lt; ~75000; no reference zeros exist in this build above
+    that height.</div>
+  </section>
+
+  <section class="sheet" id="soundSheet" data-col="colL">
+    <header><h2>Sound</h2>
+      <button class="x" data-closetab="sound">close &rarr; tab</button></header>
+    <div id="soundModes">
+      <button class="btn small on" id="soundModeMus">MUSICAL<span class="sm2">artistic sonification</span></button>
+      <button class="btn small" id="soundModeTruth">TRUTH<span class="sm2">the exact mapping</span></button>
+    </div>
+    <div class="rowline"><button class="btn small" id="audioBtn">sound off</button>
+      <span id="audioState">off &mdash; sound starts only on your gesture</span></div>
+    <div class="rowline"><span class="lbl">volume</span>
+      <input type="range" id="gainSlider" min="0" max="100" value="45">
+      <span class="readout" id="gainReadout"></span></div>
+    <div id="musCtl">
+      <div class="rowline"><span class="lbl">musical density</span>
+        <input type="range" id="musDensity" min="3" max="12" value="7">
+        <span class="readout" id="musDensityReadout"></span></div>
+      <div id="musNote">Artistic sonification: a handful of threads are voiced on a
+      harmonic-series-derived scale (pitches drawn from harmonics 8&ndash;15 of 55 Hz &mdash;
+      honest kinship to overtone structure, not the mathematical mapping). Loudness follows
+      each thread's actual contribution a<sub>n</sub>|cos &phi;<sub>n</sub>(t)|; pitch order
+      follows its true phase rate &theta;&prime;(t) &minus; ln n. For the undecorated law,
+      switch to TRUTH.</div>
+    </div>
+    <div id="truthCtl" class="hidden">
+      <div class="rowline"><span class="lbl">v_t</span>
+        <input type="range" id="vtSlider" min="0" max="1000" value="520">
+        <span class="readout" id="vtReadout"></span></div>
+      <div id="truthNote">
+        f_audio_n = v_t &middot; (&theta;&prime;(t) &minus; ln n) / 2&pi; &nbsp;&mdash;&nbsp; one global
+        time-dilation v_t, one global gain, disclosed above. What you hear is the phase law,
+        time-compressed. No per-string tuning in Truth Mode.</div>
+      <div id="honesty"></div>
+      <div id="artctl">
+        <label><input type="checkbox" id="reverbChk"> reverb</label>
+        <label><input type="checkbox" id="quantChk"> scale-quantize voiced terms</label>
+        <div class="caveat" style="margin-top:4px">These controls leave Truth Mode: enabling
+        either flips the badge to ARTISTIC SONIFICATION.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" id="guideSheet" data-col="colR">
+    <header><h2>Guide</h2>
+      <button class="x" data-closetab="guide">close &rarr; tab</button></header>
+    <div class="btnrow" style="margin-top:0">
+      <button class="btn" id="replayBtn">take the guided journey</button>
+      <button class="btn small" id="askAumaBtn">ask Auma</button>
+    </div>
+    <p style="margin-top:11px">Each glowing helix is one cosine wave of a 90-year-old
+    formula. The golden line is all of them added up. Where they cancel, it touches zero.</p>
+    <div class="keysRow">
+      <b>drag</b> orbit &nbsp;&middot;&nbsp; <b>scroll / W S</b> fly along t &nbsp;&middot;&nbsp;
+      <b>shift</b> faster<br>
+      <b>space</b> freeze the slice &nbsp;&middot;&nbsp; <b>R</b> ribbon &nbsp;&middot;&nbsp;
+      <b>F</b> terms &nbsp;&middot;&nbsp; <b>Z</b> zeros<br>
+      <b>U</b> sound &nbsp;&middot;&nbsp; <b>T</b> torus room &nbsp;&middot;&nbsp;
+      <b>G</b> this guide &nbsp;&middot;&nbsp; <b>C</b> recenter<br>
+      <b>A</b> cruise &nbsp;&middot;&nbsp; <b>I</b> the fence &nbsp;&middot;&nbsp;
+      <b>esc</b> close the top layer
+    </div>
+    <div id="guideNarrow"></div>
+    <p class="law" style="margin-top:12px">Validated: before this page shipped its inline
+    math was checked against frozen high-precision fixtures (mpmath, 80 significant digits)
+    on four height windows plus a 40-entry refined zero list.</p>
+    <div class="btnrow"><button class="btn small" id="fenceOpenBtn">read the fence</button></div>
+  </section>
+
+  <section class="sheet" id="menuSheet" data-col="colR">
+    <header><h2>Menu</h2>
+      <button class="x" data-closetab="menu">close</button></header>
+    <button class="modeItem" data-mode="guided">
+      <span class="mname">Guided</span>
+      <span class="mdesc">a paced journey &mdash; each stop freezes with a caption</span>
+    </button>
+    <button class="modeItem on" data-mode="explore">
+      <span class="mname">Explore</span>
+      <span class="mdesc">free flight &mdash; every control, every panel</span>
+    </button>
+    <button class="modeItem" data-mode="ambient">
+      <span class="mname">Ambient</span>
+      <span class="mdesc">hands off &mdash; the instrument plays itself</span>
+    </button>
+    <div class="btnrow">
+      <button class="btn small" id="menuRecenter">RECENTER the view</button>
+      <button class="btn small" id="menuFence">the fence</button>
+    </div>
+    <span class="badge artistic" id="truthBadge">ARTISTIC SONIFICATION &mdash; NOT A PRIVILEGED MATHEMATICAL MAPPING</span>
+    <p class="law" style="margin-top:10px">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND
+    ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP</p>
+  </section>
+
+</div>
+
+<div id="fencePanel" class="hidden">
+<div id="fenceInner"><h2 style="margin-top:0">The fence</h2>
 <p class="lawline">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT /
 NOT EVIDENCE FOR RH OR GHP</p>
 <p>This page renders and sonifies one object: the Riemann-Siegel main sum for Hardy's
@@ -616,42 +933,6 @@ all it does. If it is beautiful, the beauty belongs to the mathematics, not to a
 <p style="margin-top:24px"><button class="ghost" data-close="fencePanel">return to the instrument [i]</button></p>
 </div>
 </div>
-
-<div id="nav" class="hud">
-  <div class="row">
-    <span id="navReadout">t&nbsp; <b id="tReadout"></b> &nbsp;&middot;&nbsp; <span id="threadsReadout"></span></span>
-    <input type="range" id="tslider" min="0" max="10000" value="0">
-  </div>
-  <div id="presets">
-    <button class="preset-card" data-t="130">
-      <span class="pname">THE FIRST FOUR</span>
-      <span class="psub">t = 130 &nbsp;&middot;&nbsp; 4 threads</span>
-    </button>
-    <button class="preset-card" data-t="10000">
-      <span class="pname">THE CHOIR</span>
-      <span class="psub">t = 10,000 &nbsp;&middot;&nbsp; 39 threads</span>
-    </button>
-    <button class="preset-card" data-t="1000000">
-      <span class="pname">THE CATHEDRAL</span>
-      <span class="psub">t = 1,000,000 &nbsp;&middot;&nbsp; 398 threads</span>
-    </button>
-    <button class="preset-card" data-t="100000000">
-      <span class="pname">THE WALL</span>
-      <span class="psub">t = 10<sup>8</sup> = 100,000,000 &nbsp;&middot;&nbsp; 3,989 threads</span>
-    </button>
-  </div>
-</div>
-
-<div id="footer" class="hud">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP
-  &nbsp;&mdash;&nbsp; <span class="fenceLink" id="footerFence">read the fence [i]</span></div>
-
-<div id="jrCap" class="hidden">
-  <div id="jrText"></div>
-  <div id="jrRow">
-    <div id="jrDots"></div>
-    <button class="ghost" id="jrNext">next</button>
-    <button class="ghost" id="jrSkip">skip the tour</button>
-  </div>
 </div>
 
 <div id="welcome">
@@ -660,9 +941,9 @@ all it does. If it is beautiful, the beauty belongs to the mathematics, not to a
     <div class="wsub">Riemann-Siegel Phase Observatory</div>
     <div class="wbody">This is a famous unsolved-math object, drawn as light.
     Each thread is one wave in a 90-year-old formula; where they all cancel,
-    the golden line touches zero. Scroll to fly, click a thread to hear it.</div>
+    the golden line touches zero.</div>
     <button id="beginBtn">BEGIN</button><br>
-    <button id="skipTourLink">or skip the tour and fly free</button>
+    <button class="linky" id="skipTourLink">or skip the journey and fly free</button>
     <div id="welcomeLaw">KNOWN MATHEMATICS / INTERACTIVE SCIENTIFIC AND ARTISTIC INSTRUMENT / NOT EVIDENCE FOR RH OR GHP</div>
   </div>
 </div>
@@ -981,6 +1262,12 @@ var GLR = (function () {
 
   var SEG = 176;
   var CAM = { yaw: 0.6, pitch: 0.12, dist: 34, vyaw: 0, vpitch: 0, fov: 62 * Math.PI / 180 };
+  /* Owner rule 7: when the guide speaks, the whole field responds. FIELD.amp is
+     a 0..1 amplitude signal published by the presence bubble — an AnalyserNode
+     on her voice when the live surface mounts one, otherwise a synthetic
+     envelope from message timing. Presentation only; disclosed in the fence. */
+  var FIELD = { amp: 0, smooth: 0 };
+  var camBreath = 1;
   var rings = [];           /* {r, z, age, life, col} ignition / shockwave events */
   var timeSec = 0;
 
@@ -1014,7 +1301,7 @@ var GLR = (function () {
       'layout(location=0) in float aU;\n' +
       'layout(location=1) in vec4 iA;\n' +   /* a, phi0, omega, uBirth */
       'layout(location=2) in float iIdx;\n' +
-      'uniform mat4 uVP; uniform float uHalfW,uThpp,uThppp,uZScale,uRScale,uSel,uNlive;\n' +
+      'uniform mat4 uVP; uniform float uHalfW,uThpp,uThppp,uZScale,uRScale,uSel,uNlive,uPulse;\n' +
       'out vec4 vColor;\n' +
       'void main(){\n' +
       '  float u=(aU*2.0-1.0)*uHalfW;\n' +
@@ -1025,8 +1312,9 @@ var GLR = (function () {
       '  gl_Position=uVP*vec4(p,1.0);\n' +
       '  float pos=smoothstep(-0.18,0.18,c);\n' +
       '  vec3 tint=mix(vec3(0.52,0.34,0.92),vec3(0.30,0.50,0.94),pos);\n' +
+      '  tint=mix(tint,vec3(0.34,0.74,0.58),0.34*uPulse);\n' +
       '  float amp=clamp(iA.x*0.5,0.0,1.0);\n' +
-      '  float bright=0.055+0.50*pow(amp,0.72);\n' +
+      '  float bright=(0.055+0.50*pow(amp,0.72))*(1.0+0.62*uPulse);\n' +
       '  float endFade=1.0-smoothstep(0.72,1.0,abs(aU*2.0-1.0));\n' +
       '  float live=(iIdx<uNlive)?1.0:0.45;\n' +   /* terms not yet in the sum at t0: dimmed */
       '  float selB=(abs(iIdx-uSel)<0.5)?2.6:1.0;\n' +
@@ -1129,7 +1417,8 @@ var GLR = (function () {
     var proj = [f / aspect, 0, 0, 0, 0, f, 0, 0, 0, 0, (far + near) / (near - far), -1, 0, 0, 2 * far * near / (near - far), 0];
     var cy = Math.cos(CAM.yaw), sy = Math.sin(CAM.yaw);
     var cp = Math.cos(CAM.pitch), sp = Math.sin(CAM.pitch);
-    var ex = CAM.dist * cp * sy, ey = CAM.dist * sp, ez = CAM.dist * cp * cy;
+    var dCam = CAM.dist * camBreath;
+    var ex = dCam * cp * sy, ey = dCam * sp, ez = dCam * cp * cy;
     var zx = ex, zy = ey, zz = ez;
     var zl = Math.hypot(zx, zy, zz); zx /= zl; zy /= zl; zz /= zl;
     var xx = zy * 0 - zz * 1 * 0, xy2, xz;
@@ -1186,6 +1475,10 @@ var GLR = (function () {
     gl.clearColor(0.063, 0.086, 0.122, 1);   /* house slate blue-grey (#10161f family) */
     gl.clear(gl.COLOR_BUFFER_BIT);
 
+    /* the guide's voice, smoothed, breathing the camera and lifting the threads */
+    FIELD.smooth += (FIELD.amp - FIELD.smooth) * Math.min(1, dt * 9);
+    camBreath = 1 - 0.030 * FIELD.smooth + 0.010 * Math.sin(timeSec * 1.7) * FIELD.smooth;
+
     /* camera inertia */
     CAM.yaw += CAM.vyaw; CAM.pitch += CAM.vpitch;
     CAM.vyaw *= 0.92; CAM.vpitch *= 0.92;
@@ -1223,6 +1516,7 @@ var GLR = (function () {
       gl.uniform1f(gl.getUniformLocation(helixProg, 'uRScale'), RSCALE);
       gl.uniform1f(gl.getUniformLocation(helixProg, 'uSel'), ST.sel >= 1 ? ST.sel - 1 : -9);
       gl.uniform1f(gl.getUniformLocation(helixProg, 'uNlive'), TERMS.N - 0.5);
+      gl.uniform1f(gl.getUniformLocation(helixProg, 'uPulse'), FIELD.smooth);
       gl.bindVertexArray(helixVAO);
       gl.drawArraysInstanced(gl.LINE_STRIP, 0, SEG + 1, NR);
     }
@@ -1296,16 +1590,23 @@ var GLR = (function () {
     return best;
   }
 
-  return { ok: ok, CAM: CAM, draw: draw, spawnRing: spawnRing, pickTerm: pickTerm, canvas: canvas };
+  return { ok: ok, CAM: CAM, draw: draw, spawnRing: spawnRing, pickTerm: pickTerm,
+    canvas: canvas, FIELD: FIELD };
 })();
 
 /* ==========================================================================
    2D panels: Z ribbon, phasor flower, term inspector, zero microscope.
    ========================================================================== */
 
-function panelVisible(id) {
-  return !document.getElementById(id).classList.contains('hidden');
-}
+/* v3: the old fixed panels are now tabbed sheets that live in reserved stage
+   columns. These two shims keep every drawing call site unchanged: they answer
+   "is this surface on screen right now?" and "put it on / take it off". */
+var LEGACY_SHEET = {
+  ribbonPanel: 'ribbon', flowerPanel: 'terms', inspectorPanel: 'terms',
+  microPanel: 'zeros', audioPanel: 'sound', infoPanel: 'guide',
+  torusPanel: 'torus', menuPanel: 'menu'
+};
+function panelVisible(id) { return sheetOpen(LEGACY_SHEET[id] || id); }
 
 var COL = { gold: '#e2b45a', blue: '#5b8ef2', purple: '#a06bff', dim: '#8a96a8',
   faint: '#5c6879', ink: '#c8d2de' };
@@ -1392,11 +1693,11 @@ function drawRibbon() {
   ctx.strokeStyle = 'rgba(226,180,90,0.5)';
   ctx.beginPath(); ctx.moveTo(X(t0), 0); ctx.lineTo(X(t0), H); ctx.stroke();
 
-  ctx.fillStyle = COL.dim; ctx.font = '10px ui-monospace, monospace';
-  ctx.fillText(fmtT(tLo), 4, H - 4);
+  ctx.fillStyle = COL.dim; ctx.font = '14px ui-monospace, monospace';
+  ctx.fillText(fmtT(tLo), 4, H - 5);
   var lbl = fmtT(tHi);
-  ctx.fillText(lbl, W - ctx.measureText(lbl).width - 4, H - 4);
-  ctx.fillText('±' + fmtSig(ymax, 3), 4, 10);
+  ctx.fillText(lbl, W - ctx.measureText(lbl).width - 4, H - 5);
+  ctx.fillText('±' + fmtSig(ymax, 3), 4, 14);
 
   document.getElementById('ribbonNote').textContent = fw
     ? 'fixture ' + fk + ' overlays active (high-precision reference)'
@@ -1421,7 +1722,7 @@ function drawFlower() {
     partial.push([ix, iy]);
     maxR = Math.max(maxR, Math.hypot(ix, iy));
   }
-  var S = (Math.min(W, H) / 2 - 14) / (maxR * 1.05);
+  var S = Math.max(0, Math.min(W, H) / 2 - 14) / (maxR * 1.05);
   function PX(x) { return cx + x * S; }
   function PY(y) { return cy - y * S; }
 
@@ -1429,9 +1730,10 @@ function drawFlower() {
   ctx.strokeStyle = 'rgba(200,214,235,0.12)'; ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(W, cy); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, H); ctx.stroke();
-  ctx.fillStyle = COL.dim; ctx.font = '10px ui-monospace, monospace';
-  ctx.fillText('Re — real part (sums to M(t))', W - 182, cy - 5);
-  ctx.save(); ctx.translate(cx + 5, 12); ctx.fillText('Im — auxiliary coordinate', 0, 0); ctx.restore();
+  ctx.fillStyle = COL.dim; ctx.font = '14px ui-monospace, monospace';
+  var reLbl = 'Re — real part (sums to M(t))';
+  ctx.fillText(reLbl, Math.max(4, W - ctx.measureText(reLbl).width - 6), cy - 6);
+  ctx.save(); ctx.translate(cx + 6, 16); ctx.fillText('Im — auxiliary coordinate', 0, 0); ctx.restore();
 
   /* unit circles a_1, a_2 */
   ctx.strokeStyle = 'rgba(200,214,235,0.05)';
@@ -1494,7 +1796,7 @@ function flowerPick(evt) {
     iy += TERMS.a[k] * Math.sin(TERMS.phi0[k]);
     maxR = Math.max(maxR, Math.hypot(ix, iy));
   }
-  var S = (Math.min(W, H) / 2 - 14) / (maxR * 1.05);
+  var S = Math.max(0, Math.min(W, H) / 2 - 14) / (maxR * 1.05);
   var best = -1, bestD = 14;
   for (k = 0; k < TERMS.N; k++) {
     var px = cx + TERMS.a[k] * Math.cos(TERMS.phi0[k]) * S;
@@ -1616,8 +1918,8 @@ function drawMicro() {
   /* reference gamma */
   ctx.strokeStyle = 'rgba(143,208,168,0.9)';
   ctx.beginPath(); ctx.moveTo(X(z.g), 6); ctx.lineTo(X(z.g), H - 6); ctx.stroke();
-  ctx.fillStyle = 'rgba(143,208,168,0.9)'; ctx.font = '10px ui-monospace, monospace';
-  ctx.fillText('γ (refined reference)', X(z.g) + 4, 14);
+  ctx.fillStyle = 'rgba(143,208,168,0.9)'; ctx.font = '14px ui-monospace, monospace';
+  ctx.fillText('γ (refined reference)', X(z.g) + 4, 17);
   /* our crossing */
   if (MICRO.tc !== null) {
     ctx.strokeStyle = 'rgba(226,180,90,0.8)'; ctx.setLineDash([3, 3]);
@@ -1652,7 +1954,7 @@ function drawMicro() {
   /* waterfall: positives rightward from 0 (top row), negatives leftward (second row),
      then M and the closing remainder */
   var y0 = 26, bh = 26;
-  ctxB.font = '10px ui-monospace, monospace';
+  ctxB.font = '14px ui-monospace, monospace';
   ctxB.fillStyle = COL.dim;
   ctxB.fillText('positive terms  Σ = +' + fmtSig(sumPos, 4), 6, y0 - 8);
   var acc = 0;
@@ -1796,27 +2098,30 @@ function audioUnlock() {
   return true;
 }
 
-/* ============ OWNER FIX 2026-08-02: obvious mute + never buzz invisibly ============ */
+/* ============ OWNER FIX 2026-08-02, kept — rehoused for owner rule 1 ============
+   The mute control keeps every behaviour of the 08-02 fix (always visible,
+   suspends the context, never buzzes invisibly) but it is no longer injected
+   as a fixed-position button at top:14px/right:14px, where it landed on top of
+   the mode picker. It is now a permanent member of the dock's tab bar — its
+   own reserved slot, on screen from first paint, before any audio exists. */
 var ZH_MUTED = false;
-function zhEnsureMuteBtn() {
-  if (document.getElementById('zhMuteBtn')) return;
-  var b = document.createElement('button');
-  b.id = 'zhMuteBtn';
-  b.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;font-family:Georgia,serif;' +
-    'font-size:16px;padding:12px 20px;background:rgba(20,26,36,0.94);color:#e8c95a;' +
-    'border:1px solid #4a5570;border-radius:10px;cursor:pointer;letter-spacing:1px;';
-  b.textContent = 'SOUND ON — click to mute';
-  b.onclick = function () {
-    ZH_MUTED = !ZH_MUTED;
-    if (AUD.ctx) {
-      if (ZH_MUTED) { AUD.master.gain.value = 0; AUD.ctx.suspend(); }
-      else { AUD.ctx.resume(); AUD.master.gain.value = 1; }
-    }
-    b.textContent = ZH_MUTED ? 'MUTED — click for sound' : 'SOUND ON — click to mute';
-    b.style.color = ZH_MUTED ? '#8a94a8' : '#e8c95a';
-  };
-  document.body.appendChild(b);
+function zhSyncMuteBtn() {
+  var b = document.getElementById('muteBtn');
+  if (!b) return;
+  b.textContent = ZH_MUTED ? 'MUTED' : 'SOUND ON';
+  b.title = ZH_MUTED ? 'sound is muted — click to unmute' : 'sound is on — click to mute';
+  b.classList.toggle('on', !ZH_MUTED);
 }
+function zhToggleMute() {
+  ZH_MUTED = !ZH_MUTED;
+  if (AUD.ctx) {
+    if (ZH_MUTED) { AUD.master.gain.value = 0; AUD.ctx.suspend(); }
+    else { AUD.ctx.resume(); AUD.master.gain.value = 1; }
+  }
+  zhSyncMuteBtn();
+  toast(ZH_MUTED ? 'Sound muted.' : 'Sound on.', 1.6);
+}
+function zhEnsureMuteBtn() { zhSyncMuteBtn(); }
 var zhOrigUnlock = audioUnlock;
 audioUnlock = function () {
   var ok = zhOrigUnlock();
@@ -2192,21 +2497,71 @@ function torTick(dt, tChanged) {
   }
 }
 
-function drawTorus() {
-  if (!panelVisible('torusPanel')) return;
+/* ---- the torus ROOM (owner rule 6) --------------------------------------
+   Standard geometry, three honest readings of the same object:
+
+     SHADOW  the 4D -> 3D -> 2D projection of the Clifford torus, tumbled by a
+             double rotation driven by phi_3, phi_4 plus a slow viewing spin
+     SLICE   the same object with the driving phases held still and one circle
+             of the pair cut across — what a fixed-phase cross-section looks like
+     UNFOLD  the flat fundamental domain: cut both circles, lay them out as a
+             square with opposite edges glued
+
+   Presentation only. No quantity is derived from any of the three. The honest
+   label stands: the full state lives on an N(t)-torus; this is a 4-torus window.
+   ------------------------------------------------------------------------- */
+var TOR_VIEW = 'shadow';
+var TOR_VIEW_TEXT = {
+  shadow: 'SHADOW &mdash; the flat picture a four-dimensional object throws when you ' +
+    'light it from one side. Four of the formula’s phases drive it: two place the ' +
+    'gold point, two turn the whole shape.',
+  slice: 'SLICE &mdash; hold the two turning phases still and cut. What is left is a ' +
+    'single pair of circles seen edge on: the same object, one fixed cross-section ' +
+    'of it at a time.',
+  unfold: 'UNFOLD &mdash; cut both circles and lay them flat. The square is the ' +
+    '(φ₁, φ₂) fundamental domain; opposite edges are glued, so the ' +
+    'gold point leaving the right edge re-enters on the left.'
+};
+
+function setTorusView(v) {
+  TOR_VIEW = v;
+  ['shadow', 'slice', 'unfold'].forEach(function (k) {
+    var b = document.getElementById('torus' + k.charAt(0).toUpperCase() + k.slice(1));
+    if (b) b.classList.toggle('on', k === v);
+  });
+  updateTorusLabel();
+}
+
+function torusFit() {
+  var stage = document.getElementById('torusStage');
   var cv = document.getElementById('torus');
+  var s = Math.max(120, Math.min(stage.clientWidth, stage.clientHeight));
+  if (cv.style.width !== s + 'px') { cv.style.width = s + 'px'; cv.style.height = s + 'px'; }
+  return cv;
+}
+
+function drawTorus() {
+  if (!sheetOpen('torus')) return;
+  if (!document.getElementById('ladder').classList.contains('hidden')) { drawLadder(); return; }
+  var cv = torusFit();
   var ctx = fitCanvas(cv);
   var W = cv.clientWidth, H = cv.clientHeight;
   ctx.clearRect(0, 0, W, H);
   if (TERMS.N < 4) {
-    ctx.fillStyle = COL.dim; ctx.font = '13px Georgia, serif';
-    ctx.fillText('needs at least four threads (t too low)', 16, H / 2);
+    ctx.fillStyle = COL.dim; ctx.font = '15px Georgia, serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('needs at least four threads — fly higher', W / 2, H / 2);
+    ctx.textAlign = 'left';
     return;
   }
   var t = ST.t;
   var p1 = ZH.mod2pi(ZH.phin(1, t)), p2 = ZH.mod2pi(ZH.phin(2, t));
   var p3 = ZH.mod2pi(ZH.phin(3, t)), p4 = ZH.mod2pi(ZH.phin(4, t));
-  var A = p3 + TOR.spin, B = p4 + TOR.spin * 0.7;
+  if (TOR_VIEW === 'unfold') { drawTorusUnfold(ctx, W, H, p1, p2); return; }
+
+  /* SLICE holds the two driving phases still (no spin, no phi_3/phi_4 tumble). */
+  var A = TOR_VIEW === 'slice' ? 0 : p3 + TOR.spin;
+  var B = TOR_VIEW === 'slice' ? Math.PI / 2 : p4 + TOR.spin * 0.7;
   var ca = Math.cos(A), sa = Math.sin(A), cb = Math.cos(B), sb = Math.sin(B);
   var INV = Math.SQRT1_2;
   function proj(u, v) {
@@ -2218,13 +2573,15 @@ function drawTorus() {
     var s4 = 1.35 / (2.1 - w2);            /* 4D -> 3D perspective */
     var X = x2 * s4, Y = y2 * s4, Z = z2 * s4;
     var s3 = 1.9 / (2.9 - Z);              /* 3D -> 2D perspective */
-    return [W / 2 + X * s3 * W * 0.40, H / 2 - Y * s3 * H * 0.40, s4 * s3];
+    return [W / 2 + X * s3 * W * 0.52, H / 2 - Y * s3 * H * 0.52, s4 * s3];
   }
-  var GU = 12, GS = 46, i, j, p;
+  var GU = TOR_VIEW === 'slice' ? 4 : 14, GS = 64, i, j, p;
+  var lw = Math.max(1.1, W / 380);
   /* u-lines (phi_1 direction) */
   for (i = 0; i < GU; i++) {
     var u = i / GU * Math.PI * 2;
-    ctx.strokeStyle = 'rgba(91,142,242,0.14)'; ctx.lineWidth = 1;
+    ctx.strokeStyle = TOR_VIEW === 'slice' ? 'rgba(91,142,242,0.50)' : 'rgba(91,142,242,0.26)';
+    ctx.lineWidth = lw;
     ctx.beginPath();
     for (j = 0; j <= GS; j++) {
       p = proj(u, j / GS * Math.PI * 2);
@@ -2235,10 +2592,21 @@ function drawTorus() {
   /* v-lines (phi_2 direction) */
   for (i = 0; i < GU; i++) {
     var v = i / GU * Math.PI * 2;
-    ctx.strokeStyle = 'rgba(160,107,255,0.12)'; ctx.lineWidth = 1;
+    ctx.strokeStyle = TOR_VIEW === 'slice' ? 'rgba(160,107,255,0.46)' : 'rgba(160,107,255,0.24)';
+    ctx.lineWidth = lw;
     ctx.beginPath();
     for (j = 0; j <= GS; j++) {
       p = proj(j / GS * Math.PI * 2, v);
+      if (j === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
+    }
+    ctx.stroke();
+  }
+  /* the cut, drawn only in SLICE: the single circle at the current phi_2 */
+  if (TOR_VIEW === 'slice') {
+    ctx.strokeStyle = 'rgba(226,180,90,0.55)'; ctx.lineWidth = lw * 1.8;
+    ctx.beginPath();
+    for (j = 0; j <= GS * 2; j++) {
+      p = proj(j / (GS * 2) * Math.PI * 2, p2);
       if (j === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
     }
     ctx.stroke();
@@ -2249,24 +2617,172 @@ function drawTorus() {
     var q1 = proj(TOR.trail[i][0], TOR.trail[i][1]);
     var al = 0.05 + 0.55 * (i / TOR.trail.length);
     ctx.strokeStyle = 'rgba(226,180,90,' + al.toFixed(3) + ')';
-    ctx.lineWidth = 1.4;
+    ctx.lineWidth = lw * 1.4;
     ctx.beginPath(); ctx.moveTo(q0[0], q0[1]); ctx.lineTo(q1[0], q1[1]); ctx.stroke();
   }
   /* current phase point */
   var pc = proj(p1, p2);
+  var rr = Math.max(3.6, W / 150);
   ctx.fillStyle = COL.gold;
-  ctx.beginPath(); ctx.arc(pc[0], pc[1], 3.6, 0, Math.PI * 2); ctx.fill();
-  ctx.strokeStyle = 'rgba(226,180,90,0.35)';
-  ctx.beginPath(); ctx.arc(pc[0], pc[1], 7.5, 0, Math.PI * 2); ctx.stroke();
+  ctx.beginPath(); ctx.arc(pc[0], pc[1], rr, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = 'rgba(226,180,90,0.35)'; ctx.lineWidth = lw;
+  ctx.beginPath(); ctx.arc(pc[0], pc[1], rr * 2.1, 0, Math.PI * 2); ctx.stroke();
+}
+
+/* UNFOLD: the flat (phi_1, phi_2) fundamental domain, opposite edges glued. */
+function drawTorusUnfold(ctx, W, H, p1, p2) {
+  var pad = Math.max(22, W * 0.09), S = Math.min(W, H) - pad * 2;
+  var ox = (W - S) / 2, oy = (H - S) / 2;
+  var TP = Math.PI * 2, i;
+  function px(a) { return ox + ((a + Math.PI) / TP) * S; }
+  function py(a) { return oy + S - ((a + Math.PI) / TP) * S; }
+  var lw = Math.max(1, W / 500);
+  ctx.lineWidth = lw;
+  for (i = 0; i <= 12; i++) {
+    var g = -Math.PI + i / 12 * TP;
+    ctx.strokeStyle = 'rgba(91,142,242,0.16)';
+    ctx.beginPath(); ctx.moveTo(px(g), oy); ctx.lineTo(px(g), oy + S); ctx.stroke();
+    ctx.strokeStyle = 'rgba(160,107,255,0.14)';
+    ctx.beginPath(); ctx.moveTo(ox, py(g)); ctx.lineTo(ox + S, py(g)); ctx.stroke();
+  }
+  /* the glued edges, drawn as the seam */
+  ctx.strokeStyle = 'rgba(200,214,235,0.34)'; ctx.lineWidth = lw * 1.4;
+  ctx.strokeRect(ox, oy, S, S);
+  ctx.font = Math.max(14, Math.round(S / 30)) + 'px Georgia, serif';
+  ctx.fillStyle = COL.dim; ctx.textAlign = 'center';
+  ctx.fillText('φ₁  →   (left edge glued to right)', ox + S / 2, oy + S + pad * 0.62);
+  ctx.save();
+  ctx.translate(ox - pad * 0.5, oy + S / 2); ctx.rotate(-Math.PI / 2);
+  ctx.fillText('φ₂  →   (top edge glued to bottom)', 0, 0);
+  ctx.restore();
+  ctx.textAlign = 'left';
+  /* trail, broken wherever it wraps across a glued edge */
+  ctx.lineWidth = lw * 1.6;
+  for (i = 1; i < TOR.trail.length; i++) {
+    var a0 = TOR.trail[i - 1], a1 = TOR.trail[i];
+    if (Math.abs(a1[0] - a0[0]) > Math.PI || Math.abs(a1[1] - a0[1]) > Math.PI) continue;
+    var al = 0.06 + 0.6 * (i / TOR.trail.length);
+    ctx.strokeStyle = 'rgba(226,180,90,' + al.toFixed(3) + ')';
+    ctx.beginPath(); ctx.moveTo(px(a0[0]), py(a0[1])); ctx.lineTo(px(a1[0]), py(a1[1])); ctx.stroke();
+  }
+  var rr = Math.max(3.6, W / 150);
+  ctx.fillStyle = COL.gold;
+  ctx.beginPath(); ctx.arc(px(p1), py(p2), rr, 0, Math.PI * 2); ctx.fill();
+}
+
+/* ---- the dimensional ladder (first open of the room) --------------------- */
+var LADDER = { step: 0, seen: false, spin: 0 };
+var LADDER_RUNGS = [
+  { name: 'point', text: 'A point. No directions to move in — zero dimensions.' },
+  { name: 'line', text: 'Drag the point and you sweep a line. One direction: one dimension.' },
+  { name: 'square', text: 'Drag the line sideways and you sweep a square. Two directions.' },
+  { name: 'cube', text: 'Drag the square through a third direction and you sweep a cube. ' +
+      'Three — as far as a room goes.' },
+  { name: 'tesseract', text: 'Drag the cube through a fourth direction. You cannot build it ' +
+      'in a room, but you can draw its shadow: eight cubes sharing faces. This is a tesseract.' },
+  { name: 'the real thing', text: 'And now the real thing: four of the formula’s phases, ' +
+      'rotating. Each phase lives on its own circle, so four of them live on a four-torus — ' +
+      'the tesseract’s curvier cousin. Nothing here is claimed; it is standard geometry.' }
+];
+
+function ladderRender() {
+  var r = document.getElementById('ladderRungs'), h = '';
+  for (var i = 0; i < LADDER_RUNGS.length; i++) {
+    h += '<span class="rung' + (i === LADDER.step ? ' on' : (i < LADDER.step ? ' done' : '')) +
+      '">' + LADDER_RUNGS[i].name + '</span>';
+  }
+  r.innerHTML = h;
+  document.getElementById('ladderText').innerHTML = LADDER_RUNGS[LADDER.step].text;
+  document.getElementById('ladderNext').textContent =
+    LADDER.step >= LADDER_RUNGS.length - 1 ? 'enter the room' : 'next';
+}
+function ladderOpen() {
+  LADDER.step = 0; LADDER.seen = true;
+  document.getElementById('ladder').classList.remove('hidden');
+  document.getElementById('torusStage').classList.add('hidden');
+  ladderRender();
+}
+function ladderClose() {
+  document.getElementById('ladder').classList.add('hidden');
+  document.getElementById('torusStage').classList.remove('hidden');
+}
+function ladderNext() {
+  if (LADDER.step >= LADDER_RUNGS.length - 1) { ladderClose(); return; }
+  LADDER.step++; ladderRender();
+}
+
+/* Each rung drawn as a wireframe swept from the one below it. */
+function drawLadder() {
+  var cv = document.getElementById('ladderCanvas');
+  var ctx = fitCanvas(cv);
+  var W = cv.clientWidth, H = cv.clientHeight;
+  ctx.clearRect(0, 0, W, H);
+  LADDER.spin += 0.011;
+  var cx = W / 2, cy = H / 2, R = Math.min(W, H) * 0.30;
+  ctx.lineWidth = 1.3; ctx.strokeStyle = 'rgba(91,142,242,0.65)'; ctx.fillStyle = COL.gold;
+  var s = LADDER.step, i, j;
+  function dot(x, y, r) { ctx.beginPath(); ctx.arc(x, y, r || 3.4, 0, Math.PI * 2); ctx.fill(); }
+  function seg(a, b) { ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); }
+  if (s === 0) { dot(cx, cy, 4.2); return; }
+  if (s === 1) { seg([cx - R, cy], [cx + R, cy]); dot(cx - R, cy); dot(cx + R, cy); return; }
+  if (s === 2) {
+    ctx.strokeRect(cx - R, cy - R, R * 2, R * 2);
+    dot(cx - R, cy - R); dot(cx + R, cy - R); dot(cx - R, cy + R); dot(cx + R, cy + R);
+    return;
+  }
+  /* n-cube wireframe, projected. s === 3 -> 3-cube, s >= 4 -> 4-cube (tesseract) */
+  var D = s === 3 ? 3 : 4;
+  var ang = LADDER.spin;
+  var pts = [], N = 1 << D;
+  for (i = 0; i < N; i++) {
+    var c = [];
+    for (j = 0; j < D; j++) c.push((i >> j & 1) ? 1 : -1);
+    var x = c[0], y = c[1], z = c[2], w = D > 3 ? c[3] : 0;
+    if (D > 3) {                      /* 4D -> 3D */
+      var xw = x * Math.cos(ang) - w * Math.sin(ang);
+      w = x * Math.sin(ang) + w * Math.cos(ang); x = xw;
+      var k4 = 2.4 / (3.0 - w); x *= k4; y *= k4; z *= k4;
+    }
+    var xz = x * Math.cos(ang * 0.8) - z * Math.sin(ang * 0.8);   /* 3D spin */
+    z = x * Math.sin(ang * 0.8) + z * Math.cos(ang * 0.8); x = xz;
+    var yz = y * Math.cos(0.42) - z * Math.sin(0.42);
+    z = y * Math.sin(0.42) + z * Math.cos(0.42); y = yz;
+    var k3 = 2.6 / (3.4 - z);
+    pts.push([cx + x * k3 * R, cy - y * k3 * R]);
+  }
+  for (i = 0; i < N; i++) for (j = 0; j < D; j++) {
+    var m = i ^ (1 << j);
+    if (m > i) {
+      ctx.strokeStyle = (D > 3 && j === 3) ? 'rgba(160,107,255,0.55)' : 'rgba(91,142,242,0.55)';
+      seg(pts[i], pts[m]);
+    }
+  }
+  if (s >= 5) {
+    /* the real thing: a Clifford torus outline over the tesseract shadow */
+    ctx.strokeStyle = 'rgba(226,180,90,0.65)'; ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for (i = 0; i <= 120; i++) {
+      var u = i / 120 * Math.PI * 2;
+      var X = Math.cos(u) * Math.cos(ang * 1.3), Y = Math.sin(u);
+      var kk = 2.6 / (3.4 - Math.sin(u) * Math.sin(ang * 1.3));
+      var xx = cx + X * kk * R * 1.05, yy = cy - Y * kk * R * 0.55;
+      if (i === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy);
+    }
+    ctx.stroke();
+  }
 }
 
 function updateTorusLabel() {
-  var el = document.getElementById('torusLabel');
-  if (!el) return;
-  el.innerHTML = 'THE TORUS WINDOW &mdash; four of the threads’ phases, drawn as a ' +
-    'rotating 4-torus. The full state lives on ' +
+  var cap = document.getElementById('torusCaption');
+  var hon = document.getElementById('torusHonest');
+  if (!cap || !hon) return;
+  cap.innerHTML = TOR_VIEW_TEXT[TOR_VIEW];
+  hon.innerHTML = 'Honest label: the full state at this height lives on ' +
     (TERMS.N === 8 || TERMS.N === 11 || TERMS.N === 18 ? 'an ' : 'a ') + TERMS.N +
-    '-torus at this height; a tesseract is the 4-cube, this is its curvier cousin.';
+    '-torus — one circle for every thread in the sum. This is a four-torus ' +
+    'window onto it: threads n = 1, 2 place the gold point, n = 3, 4 turn the shape, ' +
+    'plus a slow viewing spin. Standard geometry, presentation only. No claim rides ' +
+    'on this picture; see the fence.';
 }
 
 /* ==========================================================================
@@ -2281,32 +2797,153 @@ function clampT(t) { return Math.max(T_MIN, Math.min(T_MAX, t)); }
 function glideTo(t) { ST.tTarget = clampT(t); }
 function noteNav() { ST.lastNavAt = performance.now(); }
 
-function showPanel(id, on) {
-  var el = document.getElementById(id);
-  if (on === undefined) on = el.classList.contains('hidden');
-  el.classList.toggle('hidden', !on);
-  return on;
-}
-function closeAllPanels() {
-  ['flowerPanel', 'ribbonPanel', 'microPanel', 'audioPanel', 'fencePanel',
-   'inspectorPanel', 'torusPanel', 'infoPanel']
-    .forEach(function (id) { showPanel(id, false); });
+/* ==========================================================================
+   Owner rule 3 — NOTHING CAN BE LOST.
+
+   Every panel is a sheet that lives in the hidden store when its tab is off
+   and in a reserved stage column when its tab is on. Closing a panel collapses
+   it to its tab in the always-visible dock bar; the tab is the only way in and
+   the only way out, so after closing everything each panel is exactly one
+   obvious click away. Because a sheet is a flex child of its column, two
+   sheets can never land on top of each other.
+   ========================================================================== */
+var SHEET_OF = {
+  ribbon: 'ribbonSheet', terms: 'termsSheet', zeros: 'zerosSheet',
+  sound: 'soundSheet', guide: 'guideSheet', menu: 'menuSheet'
+};
+var TABS_OPEN = {
+  ribbon: false, terms: false, zeros: false, sound: false,
+  guide: false, menu: false, torus: false
+};
+
+function sheetOpen(key) { return !!TABS_OPEN[key]; }
+
+function syncTabs() {
+  var bs = document.querySelectorAll('#tabBar .tab');
+  for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('on', !!TABS_OPEN[bs[i].dataset.tab]);
+  document.getElementById('menuBtn').classList.toggle('on', !!TABS_OPEN.menu);
 }
 
-/* ---------------- events: ignition + crossings --------------------------- */
-var EV = { labelUntil: 0 };
-function showEvent(html, seconds) {
-  var el = document.getElementById('eventLabel');
-  el.innerHTML = html;
-  el.style.opacity = 1;
-  EV.labelUntil = performance.now() + (seconds || 2) * 1000;
+function setSheet(key, on) {
+  if (!(key in TABS_OPEN)) return false;
+  if (on === undefined) on = !TABS_OPEN[key];
+  on = !!on;
+  TABS_OPEN[key] = on;
+  if (key === 'torus') {
+    document.getElementById('torusRoom').classList.toggle('hidden', !on);
+    document.getElementById('stageLane').setAttribute('data-room', on ? 'torus' : '');
+    if (on) {
+      if (!LADDER.seen) ladderOpen(); else ladderClose();
+      updateTorusLabel();
+    }
+  } else {
+    var el = document.getElementById(SHEET_OF[key]);
+    document.getElementById(on ? el.dataset.col : 'sheetStore').appendChild(el);
+  }
+  syncTabs();
+  return on;
 }
-function eventTick(now) {
-  if (EV.labelUntil && now > EV.labelUntil) {
-    document.getElementById('eventLabel').style.opacity = 0;
-    EV.labelUntil = 0;
+
+/* the fence is its own full layer — alone on it, never over a control */
+function setFence(on) {
+  var el = document.getElementById('fencePanel');
+  if (on === undefined) on = el.classList.contains('hidden');
+  el.classList.toggle('hidden', !on);
+  if (on) fillFenceLive();
+  return on;
+}
+
+/* v2 call-site compatibility: showPanel(oldPanelId, on) */
+function showPanel(id, on) {
+  if (id === 'fencePanel') return setFence(on);
+  return setSheet(LEGACY_SHEET[id] || id, on);
+}
+function closeAllPanels() {
+  Object.keys(TABS_OPEN).forEach(function (k) { setSheet(k, false); });
+  setFence(false);
+}
+
+/* ==========================================================================
+   Owner rule 1 — ONE toast lane. One message at a time, in the reserved top
+   centre slot, never over a control and never over another message. Event
+   cues (cutoff entries, computed crossings) share this single lane and can
+   never stomp a message the instrument deliberately spoke to you.
+   ========================================================================== */
+var TOAST = { until: 0, lock: 0 };
+function toast(html, seconds, kind) {
+  var now = performance.now();
+  if (kind === 'evt' && now < TOAST.lock) return;
+  var el = document.getElementById('toast');
+  el.innerHTML = html;
+  el.className = 'show' + (kind === 'evt' ? ' evt' : '');
+  TOAST.until = now + (seconds || 2.4) * 1000;
+  if (kind !== 'evt') TOAST.lock = TOAST.until;
+}
+function toastTick(now) {
+  if (TOAST.until && now > TOAST.until) {
+    document.getElementById('toast').className = '';
+    TOAST.until = 0;
   }
 }
+/* v2 call-site compatibility */
+function showEvent(html, seconds) { toast(html, seconds, 'evt'); }
+function eventTick(now) { toastTick(now); }
+
+/* ==========================================================================
+   Owner rule 5c — RECENTER always restores a known good view.
+   ========================================================================== */
+function recenter(quiet) {
+  GLR.CAM.dist = 30; GLR.CAM.pitch = 0.14; GLR.CAM.yaw = 0.45;
+  GLR.CAM.vyaw = 0; GLR.CAM.vpitch = 0;
+  if (typeof JR !== 'undefined' && JR) JR.camDist = null;   /* release a journey hold */
+  ST.frozen = false;
+  if (!quiet) toast('View recentred — the whole height window, seen from the side again.', 2.2);
+}
+
+/* ==========================================================================
+   Owner rule 8 — container-driven, not viewport-driven.
+   A ResizeObserver measures this page's own box, so a 1/3-width spatial
+   column collapses to the phone layout even on a 5K display. Below ~700px the
+   chrome is the tab bar plus the MENU button; the orientation strip and the
+   preset cards move bodily into the GUIDE sheet (they are not duplicated, so
+   their listeners survive) and the tab bar carries a one-line orientation.
+   ========================================================================== */
+function syncNarrowGuide() {
+  var narrow = document.documentElement.getAttribute('data-w') === 'narrow';
+  var orient = document.getElementById('orient');
+  var presets = document.getElementById('presets');
+  if (narrow) {
+    var host = document.getElementById('guideNarrow');
+    host.appendChild(orient); host.appendChild(presets);
+  } else {
+    var dock = document.getElementById('dockLane');
+    dock.insertBefore(orient, document.getElementById('navRow'));
+    dock.insertBefore(presets, document.getElementById('tabBar'));
+  }
+}
+function bindResponsive() {
+  var root = document.documentElement;
+  function apply(w) {
+    var band = w < 700 ? 'narrow' : (w < 1080 ? 'mid' : 'wide');
+    if (root.getAttribute('data-w') === band) return;
+    root.setAttribute('data-w', band);
+    syncNarrowGuide();
+  }
+  apply(document.body.clientWidth || window.innerWidth || 1280);
+  if (window.ResizeObserver) {
+    new ResizeObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        var w = entries[i].contentRect.width;
+        if (w > 0) apply(w);
+      }
+    }).observe(document.body);
+  } else {
+    window.addEventListener('resize', function () {
+      apply(document.body.clientWidth || window.innerWidth);
+    });
+  }
+}
+
 function detectEvents(tPrev, tNow) {
   var Nprev = ZH.Nt(tPrev), Nnow = TERMS.N;
   var dT = Math.abs(tNow - tPrev), hw = halfWindow(tNow);
@@ -2352,11 +2989,26 @@ function detectEvents(tPrev, tNow) {
 var sliderEl = document.getElementById('tslider');
 var draggingSlider = false;
 function updateHUD() {
-  document.getElementById('tReadout').textContent = fmtT(ST.t);
-  document.getElementById('threadsReadout').textContent = TERMS.N + ' threads';
   if (!draggingSlider) sliderEl.value = tToSlider(ST.t);
+  updateOrient();
   updateInspStatus();
   updateTorusLabel();
+}
+
+/* Owner rule 5a: a persistent orientation strip — where you are on the
+   critical line, how many threads, and what happens next. */
+function updateOrient() {
+  var frac = (Math.log10(ST.t) - 2) / 6;
+  var pct = Math.max(0, Math.min(100, frac * 100));
+  var nNext = TERMS.N + 1, tNext = ZH.cutoffT(nNext);
+  document.getElementById('oT').textContent = 't = ' + fmtT(ST.t);
+  document.getElementById('oN').textContent = TERMS.N;
+  document.getElementById('oPct').textContent = pct.toFixed(0) + '%';
+  document.getElementById('oNext').textContent =
+    'next: wave ' + nNext + ' joins the sum at t = ' + fmtT(tNext);
+  document.getElementById('orientMini').innerHTML =
+    '<span class="ov">t = ' + fmtT(ST.t) + '</span> &middot; ' + TERMS.N +
+    ' threads &middot; ' + pct.toFixed(0) + '% along the line';
 }
 
 /* ---------------- fence ---------------------------------------------------- */
@@ -2412,38 +3064,51 @@ function fillFenceLive() {
     'four of them on a 4-torus, all N(t) on an N(t)-torus); its double rotation is driven by ' +
     '&phi;&#8323;, &phi;&#8324; plus a slow constant viewing spin; no quantity is derived from it<br>' +
     'ribbon/helix phases beyond the exact-evaluation window use the local expansion ' +
-    'φ₀ + ωu + ½θ″u² + ⅙θ‴u³ (error ≪ 10⁻³ rad at all displayed heights)';
+    'φ₀ + ωu + ½θ″u² + ⅙θ‴u³ (error ≪ 10⁻³ rad at all displayed heights)<br>' +
+    'the torus room offers three presentation-only readings of the same standard ' +
+    'geometry — SHADOW (the 4D→3D→2D projection), SLICE (the driving phases held ' +
+    'still) and UNFOLD (the flat (φ₁, φ₂) fundamental domain, opposite edges glued); ' +
+    'no quantity is derived from any of them<br>' +
+    'the field\'s pulse and the camera\'s slight breathing while the guide speaks are ' +
+    'driven by an amplitude signal — an AnalyserNode on her voice output when one is ' +
+    'available, otherwise a synthetic envelope from message timing. It is a ' +
+    'presentation cue only: it changes brightness, tint and camera distance, and ' +
+    'never any computed quantity';
 }
 
-/* ---------------- guided journey ------------------------------------------- */
-var JR = { on: false, step: -1, s: 0, camDist: null, camPitch: null, holdBtn: false };
+/* ==========================================================================
+   Owner rule 5 — the guided journey.
+   Each step glides somewhere, then STOPS on a freeze-frame with its caption
+   and waits. Nothing auto-flies past. NEXT is the big obvious affordance, and
+   the journey is re-enterable at any time from the GUIDE tab.
+   ========================================================================== */
+var JR = { on: false, step: -1, s: 0, camDist: null, camPitch: null,
+  settled: false, freezeOnArrive: false };
 var JR_STEPS = [
   {
-    dur: 11,
+    dur: 6, hold: true,
     cap: 'Meet one thread. Each glowing helix is a single wave &mdash; a cosine, ' +
-         'spinning as the height <i>t</i> climbs. Down here, near t = 130, the formula ' +
-         'needs only four of them.',
+         'spinning as the height <i>t</i> climbs. Down here the formula needs only four.',
     enter: function () {
       ST.frozen = false; glideTo(130);
       JR.camDist = 10; JR.camPitch = 0.16;
-      selectTerm(2); showPanel('inspectorPanel', false);
+      selectTerm(2); setSheet('terms', false);
     }
   },
   {
-    dur: 11,
+    dur: 5, hold: true,
     cap: 'Watch them add. Frozen at this instant, the four waves chain tip to tail ' +
-         'along the floor; where the golden walk lands is the main sum M(t) &mdash; the ' +
-         'one number everything here draws and plays.',
+         'along the floor. Where the golden walk lands is the main sum &mdash; the one ' +
+         'number everything here draws and plays.',
     enter: function () {
-      /* snap: the user may have clicked next before the glide finished */
       if (ST.tTarget !== null || Math.abs(ST.t - 130) > 1) ST.t = 130;
       ST.tTarget = null; ST.frozen = true;
       JR.camDist = 16; JR.camPitch = 0.55;
     }
   },
   {
-    dur: 13,
-    cap: 'Arrive at a zero. Here the waves cancel almost perfectly &mdash; the golden ' +
+    dur: 7, hold: true,
+    cap: 'Arrive at a zero. Here the waves cancel almost perfectly and the golden ' +
          'line touches zero. Where such zeros can live is the Riemann Hypothesis, ' +
          'unsolved since 1859. This instrument draws the mathematics; it proves nothing.',
     enter: function () {
@@ -2455,10 +3120,10 @@ var JR_STEPS = [
     }
   },
   {
-    dur: 11,
-    cap: 'Pull back &mdash; the cathedral. A million units up the critical line, the same ' +
-         'formula wants 398 threads. Nothing was added by hand: every curve on screen ' +
-         'is computed from one line of mathematics.',
+    dur: 7, hold: true,
+    cap: 'Pull back &mdash; the cathedral. A million units up, the same formula wants ' +
+         '398 threads. Nothing was added by hand: every curve is computed from one ' +
+         'line of mathematics.',
     enter: function () {
       ST.frozen = false; JR.freezeOnArrive = false;
       glideTo(1e6);
@@ -2466,13 +3131,14 @@ var JR_STEPS = [
     }
   },
   {
-    dur: 1e9,
-    cap: 'Now explore. Scroll to fly; drag to orbit; click a thread to pluck it. ' +
-         'The cards below jump to famous heights, and the ? button replays this tour ' +
-         'whenever you want it.',
+    dur: 3, hold: false,
+    cap: 'Now explore. Scroll to fly, drag to orbit, click a thread to pluck it. The ' +
+         'cards jump to famous heights, the tabs below open every panel, and RECENTER ' +
+         'always brings this view back.',
     enter: function () {
-      JR.camDist = 34; JR.camPitch = 0.12;
-      document.getElementById('jrNext').textContent = 'begin exploring';
+      ST.frozen = false;
+      JR.camDist = 30; JR.camPitch = 0.14;
+      document.getElementById('jrNext').textContent = 'BEGIN EXPLORING';
     }
   }
 ];
@@ -2485,29 +3151,42 @@ function jrDotsRender() {
 }
 function jrStart() {
   JR.on = true; JR.step = -1;
-  document.getElementById('jrNext').textContent = 'next';
+  document.getElementById('jrNext').textContent = 'NEXT';
   document.getElementById('jrCap').classList.remove('hidden');
+  /* the caption is the dock's business while the journey runs; the preset row
+     stands down so the picture keeps most of the screen (setMode restores it) */
+  document.getElementById('presets').classList.add('hidden');
   jrAdvance();
 }
 function jrAdvance() {
   JR.step++;
   if (JR.step >= JR_STEPS.length) { endJourney(); return; }
-  JR.s = 0; JR.freezeOnArrive = false;
+  JR.s = 0; JR.settled = false; JR.freezeOnArrive = false;
   document.getElementById('jrText').innerHTML = JR_STEPS[JR.step].cap;
+  document.getElementById('jrHint').textContent = '';
   jrDotsRender();
   JR_STEPS[JR.step].enter();
 }
+function jrSettle() {
+  JR.settled = true;
+  var st = JR_STEPS[JR.step];
+  if (st.hold) { ST.tTarget = null; ST.frozen = true; }
+  document.getElementById('jrHint').textContent = st.hold
+    ? 'held here — press NEXT when you have looked your fill'
+    : 'press NEXT when you are ready';
+}
 function jrTick(dt) {
   if (!JR.on) return;
-  JR.s += dt;
   var st = JR_STEPS[JR.step];
+  if (JR.settled) return;             /* a settled step never moves on its own */
+  JR.s += dt;
   if (JR.camDist !== null) {
     GLR.CAM.dist += (JR.camDist - GLR.CAM.dist) * Math.min(1, dt * 1.4);
     GLR.CAM.pitch += (JR.camPitch - GLR.CAM.pitch) * Math.min(1, dt * 1.4);
   }
   GLR.CAM.yaw += dt * 0.05;
   if (JR.freezeOnArrive && ST.tTarget === null && !ST.frozen) ST.frozen = true;
-  if (JR.s > st.dur) jrAdvance();
+  if (JR.s > st.dur && ST.tTarget === null) jrSettle();
 }
 function endJourney() {
   JR.on = false;
@@ -2516,56 +3195,67 @@ function endJourney() {
   setMode('explore');
 }
 
-/* ---------------- modes ---------------------------------------------------- */
+/* ==========================================================================
+   Modes. The mode picker is no longer pinned to the screen — it lives in the
+   MENU sheet (owner rule 2), reachable from the one small MENU button.
+   ========================================================================== */
 var hintShown = false;
 function setMode(m) {
-  if (m === 'guided') { startFromWelcome('guided'); return; }
-  JR.on = false;                                    /* leaving the tour ends it */
+  if (m === 'guided') { startFromWelcome(); return; }
+  JR.on = false;
   document.getElementById('jrCap').classList.add('hidden');
-  if (ST.uiMode === 'guided') ST.frozen = false;    /* never leave a tour-freeze behind */
+  if (ST.uiMode === 'guided') ST.frozen = false;
   ST.uiMode = m;
-  document.querySelectorAll('#modePicker .mode-item').forEach(function (b) {
-    b.classList.toggle('on', b.dataset.mode === m);
-  });
+  var items = document.querySelectorAll('#menuSheet .modeItem');
+  for (var i = 0; i < items.length; i++) items[i].classList.toggle('on', items[i].dataset.mode === m);
   document.getElementById('welcome').classList.add('hidden');
-  document.getElementById('nav').classList.toggle('hidden', m === 'ambient');
-  document.getElementById('torusBtn').classList.remove('hidden');
-  var temple = m === 'ambient';
-  document.getElementById('mastTitle').innerHTML = temple
-    ? 'Zeta Harp // Resonance Temple' : 'Riemann-Siegel Phase Observatory';
-  document.getElementById('mastSub').textContent = temple
-    ? 'a temple strung with one formula — each string a term of the main sum, each string birth a cutoff entry'
-    : "the main sum of Hardy's Z, drawn as phase trajectories";
-  if (temple) {
+  var ambient = m === 'ambient';
+  document.getElementById('navRow').classList.toggle('hidden', ambient);
+  document.getElementById('presets').classList.toggle('hidden', ambient);
+  document.querySelector('#titleChip .tsub').innerHTML = ambient
+    ? 'Resonance Temple &mdash; a temple strung with one formula; each string a term of ' +
+      'the main sum, each string birth a cutoff entry.'
+    : 'Riemann-Siegel Phase Observatory &mdash; the main sum of Hardy\'s Z, drawn as ' +
+      'phase trajectories.';
+  if (ambient) {
     ST.cruise = true;
     closeAllPanels();
   } else {
     ST.cruise = false;
-    showPanel('ribbonPanel', true);
+    setSheet('ribbon', true);
     if (!hintShown) {
       hintShown = true;
-      var toast = document.getElementById('hintToast');
-      toast.style.opacity = 1;
-      setTimeout(function () { toast.style.opacity = 0; }, 6000);
+      toast('Everything that glows is clickable. The tabs at the bottom open every ' +
+            'panel &mdash; and bring it back.', 5.5);
     }
   }
 }
 
-/* Guided needs the welcome flow's camera baseline; callable from ? replay too. */
-function startFromWelcome(which) {
+function startFromWelcome() {
   document.getElementById('welcome').classList.add('hidden');
   ST.uiMode = 'guided';
-  document.querySelectorAll('#modePicker .mode-item').forEach(function (b) {
-    b.classList.toggle('on', b.dataset.mode === 'guided');
-  });
-  document.getElementById('nav').classList.add('hidden');
-  document.getElementById('torusBtn').classList.add('hidden');
+  var items = document.querySelectorAll('#menuSheet .modeItem');
+  for (var i = 0; i < items.length; i++) items[i].classList.toggle('on', items[i].dataset.mode === 'guided');
   closeAllPanels();
   ST.cruise = false;
   jrStart();
 }
 
-/* ---------------- input ---------------------------------------------------- */
+/* Owner rule 4 — a preset is a lesson, so arriving is narrated in one sentence. */
+var PRESET_SAY = {
+  '130': 'The first four. Only four waves exist down here &mdash; you can watch each one ' +
+         'beat against the others, and the golden line is simply their sum.',
+  '10000': 'The choir. Ten thousand up the line there are 39 waves, and the golden line ' +
+           'has become a much busier shape.',
+  '1000000': 'The cathedral. A million up, 398 waves are singing at once &mdash; the count ' +
+             'comes straight from the formula, not from a choice.',
+  '100000000': 'The wall. 3,989 waves, and the honest edge of this instrument: near 10⁸ ' +
+               'float64 phase accuracy runs out, so this is where it stops.'
+};
+
+/* ==========================================================================
+   Input.
+   ========================================================================== */
 var keys = {};
 function bindInput() {
   var cv = GLR.canvas;
@@ -2604,24 +3294,32 @@ function bindInput() {
   }, { passive: false });
 
   window.addEventListener('keydown', function (e) {
-    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT')) return;
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' ||
+        e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) return;
     keys[e.key.toLowerCase()] = true;
     var k = e.key.toLowerCase();
     if (k === 'w' || k === 's' || k === 'arrowup' || k === 'arrowdown') noteNav();
     if (k === ' ') {
       e.preventDefault();
       ST.frozen = !ST.frozen;
-      if (ST.frozen) showPanel('flowerPanel', true);
+      if (ST.frozen) setSheet('terms', true);
     }
-    else if (k === 'f') showPanel('flowerPanel');
-    else if (k === 'r') showPanel('ribbonPanel');
-    else if (k === 'z') { if (showPanel('microPanel')) { if (MICRO.idx < 0) microSelect(0); else drawMicro(); } }
-    else if (k === 'u') showPanel('audioPanel');
-    else if (k === 't') { if (ST.uiMode !== 'guided' && ST.uiMode !== 'welcome') showPanel('torusPanel'); }
-    else if (k === 'i') { if (showPanel('fencePanel')) fillFenceLive(); }
-    else if (k === '?') showPanel('infoPanel');
+    else if (k === 'f') setSheet('terms');
+    else if (k === 'r') setSheet('ribbon');
+    else if (k === 'z') { if (setSheet('zeros')) { if (MICRO.idx < 0) microSelect(0); else drawMicro(); } }
+    else if (k === 'u') setSheet('sound');
+    else if (k === 't') setSheet('torus');
+    else if (k === 'g') setSheet('guide');
+    else if (k === 'c') recenter();
+    else if (k === 'i') setFence();
     else if (k === 'a') ST.cruise = !ST.cruise;
-    else if (k === 'escape') closeAllPanels();
+    else if (k === 'escape') {
+      /* close exactly the top layer, so nothing is ever lost by accident */
+      if (!document.getElementById('fencePanel').classList.contains('hidden')) setFence(false);
+      else if (TABS_OPEN.torus) setSheet('torus', false);
+      else if (TABS_OPEN.menu) setSheet('menu', false);
+      else closeAllPanels();
+    }
   });
   window.addEventListener('keyup', function (e) { keys[e.key.toLowerCase()] = false; });
 
@@ -2630,12 +3328,45 @@ function bindInput() {
     ST.t = sliderToT(+sliderEl.value); ST.tTarget = null;
   });
   sliderEl.addEventListener('change', function () { draggingSlider = false; });
-  document.querySelectorAll('#presets button').forEach(function (b) {
-    b.addEventListener('click', function () { noteNav(); glideTo(+b.dataset.t); });
-  });
-  document.querySelectorAll('[data-close]').forEach(function (b) {
-    b.addEventListener('click', function () { showPanel(b.dataset.close, false); });
-  });
+
+  /* presets: jump, mark, and narrate the arrival */
+  var pcs = document.querySelectorAll('#presets .preset-card');
+  for (var pi = 0; pi < pcs.length; pi++) {
+    (function (b) {
+      b.addEventListener('click', function () {
+        noteNav(); glideTo(+b.dataset.t);
+        for (var q = 0; q < pcs.length; q++) pcs[q].classList.toggle('on', pcs[q] === b);
+        var say = PRESET_SAY[b.dataset.t];
+        if (say) toast(say, 6);
+      });
+    })(pcs[pi]);
+  }
+
+  /* tabs — the always-visible way back to every panel */
+  var tbs = document.querySelectorAll('#tabBar .tab');
+  for (var ti = 0; ti < tbs.length; ti++) {
+    (function (b) {
+      b.addEventListener('click', function () {
+        var key = b.dataset.tab;
+        var on = setSheet(key);
+        if (on && key === 'zeros') { if (MICRO.idx < 0) microSelect(0); else drawMicro(); }
+        if (on && key === 'sound') { audioUnlock(); if (AUD.started && !MUS.on) startMusical(); }
+      });
+    })(tbs[ti]);
+  }
+  var xs = document.querySelectorAll('[data-closetab]');
+  for (var xi = 0; xi < xs.length; xi++) {
+    (function (b) {
+      b.addEventListener('click', function () { setSheet(b.dataset.closetab, false); });
+    })(xs[xi]);
+  }
+  var dcs = document.querySelectorAll('[data-close]');
+  for (var di = 0; di < dcs.length; di++) {
+    (function (b) {
+      b.addEventListener('click', function () { showPanel(b.dataset.close, false); });
+    })(dcs[di]);
+  }
+
   ['lyrM', 'lyrZ', 'lyrR'].forEach(function (id) {
     var el = document.getElementById(id), key = id.slice(3);
     el.addEventListener('click', function () {
@@ -2646,38 +3377,63 @@ function bindInput() {
   });
   document.getElementById('flower').addEventListener('click', flowerPick);
 
-  /* modes */
-  document.querySelectorAll('#modePicker .mode-item').forEach(function (b) {
-    b.addEventListener('click', function () {
-      audioUnlock();   /* every picker click is a gesture — keep the ctx warm */
-      if (AUD.started && !MUS.on) startMusical();
-      setMode(b.dataset.mode);
-    });
+  /* top lane: the title chip and the one MENU button */
+  var chip = document.getElementById('titleChip');
+  chip.addEventListener('click', function () {
+    var open = chip.classList.toggle('open');
+    chip.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-  document.getElementById('torusBtn').addEventListener('click', function () { showPanel('torusPanel'); });
-  document.getElementById('infoBtn').addEventListener('click', function () { showPanel('infoPanel'); });
+  document.getElementById('chipFence').addEventListener('click', function (e) {
+    e.stopPropagation(); setFence(true);
+  });
+  document.getElementById('menuBtn').addEventListener('click', function () { setSheet('menu'); });
+  var mis = document.querySelectorAll('#menuSheet .modeItem');
+  for (var mi = 0; mi < mis.length; mi++) {
+    (function (b) {
+      b.addEventListener('click', function () {
+        audioUnlock();
+        if (AUD.started && !MUS.on) startMusical();
+        setSheet('menu', false);
+        setMode(b.dataset.mode);
+      });
+    })(mis[mi]);
+  }
+  document.getElementById('menuRecenter').addEventListener('click', function () { recenter(); });
+  document.getElementById('menuFence').addEventListener('click', function () { setFence(true); });
+
+  /* dock */
+  document.getElementById('recenterBtn').addEventListener('click', function () { recenter(); });
+  document.getElementById('muteBtn').addEventListener('click', function () { zhToggleMute(); });
+  document.getElementById('footerFence').addEventListener('click', function () { setFence(true); });
+
+  /* guide sheet */
   document.getElementById('replayBtn').addEventListener('click', function () {
-    showPanel('infoPanel', false);
+    setSheet('guide', false);
     audioUnlock();
     if (AUD.started && !MUS.on) startMusical();
     setMode('guided');
   });
-  document.getElementById('fenceOpenBtn').addEventListener('click', function () {
-    showPanel('infoPanel', false);
-    if (showPanel('fencePanel', true)) fillFenceLive();
+  document.getElementById('fenceOpenBtn').addEventListener('click', function () { setFence(true); });
+  document.getElementById('askAumaBtn').addEventListener('click', function () {
+    if (window.ZH_AUMA) window.ZH_AUMA.open();
   });
-  document.getElementById('footerFence').addEventListener('click', function () {
-    if (showPanel('fencePanel', true)) fillFenceLive();
-  });
+
+  /* the torus room */
+  document.getElementById('torusShadow').addEventListener('click', function () { setTorusView('shadow'); });
+  document.getElementById('torusSlice').addEventListener('click', function () { setTorusView('slice'); });
+  document.getElementById('torusUnfold').addEventListener('click', function () { setTorusView('unfold'); });
+  document.getElementById('torusLadderBtn').addEventListener('click', function () { ladderOpen(); });
+  document.getElementById('ladderNext').addEventListener('click', function () { ladderNext(); });
+  document.getElementById('ladderSkip').addEventListener('click', function () { ladderClose(); });
 
   /* welcome */
   document.getElementById('beginBtn').addEventListener('click', function () {
-    var okA = audioUnlock();               /* synchronous unlock inside the gesture */
+    var okA = audioUnlock();
     ST.audioOn = okA;
     if (okA) startMusical();
-    setAudioMode(ST.audioMode);            /* refresh state line + badge */
+    setAudioMode(ST.audioMode);
     document.getElementById('audioBtn').textContent = ST.audioOn ? 'sound off' : 'sound on';
-    startFromWelcome('guided');
+    startFromWelcome();
   });
   document.getElementById('skipTourLink').addEventListener('click', function () {
     var okA = audioUnlock();
@@ -2743,6 +3499,16 @@ function bindInput() {
   });
 }
 
+/* Owner rule 7: the bubble itself breathes with her, so the presence is
+   visible even when her chat is closed. */
+function aumaBubbleTick() {
+  var core = document.getElementById('aumaCore');
+  if (!core) return;
+  var a = GLR.FIELD.smooth;
+  core.setAttribute('r', (4.4 + 4.6 * a).toFixed(2));
+  core.setAttribute('opacity', (0.60 + 0.40 * a).toFixed(3));
+}
+
 /* ---------------- main loop ------------------------------------------------ */
 var lastFrame = performance.now(), frameCount = 0, audioAcc = 0, lastComputedT = null;
 function frame(now) {
@@ -2787,12 +3553,16 @@ function frame(now) {
 
   GLR.draw(dt);
   torTick(dt, tChanged);
-  var flowerVisible = panelVisible('flowerPanel');
+  /* the torus room owns the whole stage, so the column sheets are display:none
+     while it is up — their canvases measure 0x0 and must not be drawn */
+  var roomUp = sheetOpen('torus');
+  var flowerVisible = !roomUp && sheetOpen('terms');
   if (flowerVisible && (ST.frozen || frameCount % 4 === 0)) drawFlower();
-  if (panelVisible('ribbonPanel')) drawRibbon();
-  if (panelVisible('torusPanel') && frameCount % 2 === 0) drawTorus();
+  if (!roomUp && sheetOpen('ribbon')) drawRibbon();
+  if (roomUp) drawTorus();
   if (frameCount % 3 === 0 && ST.uiMode !== 'welcome') updateHUD();
   eventTick(now);
+  aumaBubbleTick();
 
   audioAcc += dt;
   if (audioAcc > 0.05) {
@@ -2812,15 +3582,24 @@ function frame(now) {
   fillFenceStatic();
   fillFenceLive();
   bindInput();
+  bindResponsive();
   setBadge();
+  zhSyncMuteBtn();
   updateTorusLabel();
   updateHUD();
-  GLR.CAM.dist = 30; GLR.CAM.pitch = 0.14; GLR.CAM.yaw = 0.45;
+  recenter(true);
   /* read-only debug handle (used by the check harness notes; no behavior) */
   window.ZH_DEBUG = { ST: ST, JR: JR, TERMS: TERMS, CAM: GLR.CAM, frame: frame,
     endJourney: endJourney, microSelect: microSelect, glideTo: glideTo,
-    selectTerm: selectTerm, showPanel: showPanel, setMode: setMode,
+    selectTerm: selectTerm, showPanel: showPanel, setSheet: setSheet,
+    sheetOpen: sheetOpen, setMode: setMode, toast: toast, recenter: recenter,
+    setTorusView: setTorusView, TABS: TABS_OPEN, jrAdvance: jrAdvance,
     fillFenceLive: fillFenceLive, drawMicro: drawMicro, setAudioMode: setAudioMode };
+  /* Owner rule 7: the presence bubble publishes the guide's amplitude here. */
+  window.ZH_FIELD = {
+    setAmp: function (v) { GLR.FIELD.amp = Math.max(0, Math.min(1, v || 0)); },
+    getAmp: function () { return GLR.FIELD.smooth; }
+  };
   requestAnimationFrame(function (n) { lastFrame = n; requestAnimationFrame(frame); });
 })();
 
@@ -2828,49 +3607,71 @@ function frame(now) {
 
 </script>
 
-<!-- TALK TO THE GUIDE (additive, v2.1-ux): mounts the node's own Auma Live
-     surface — live duplex voice plus a typed transcript composer, both riding
-     the governed presence lane on 127.0.0.1:7091. Nothing below touches the
-     instrument's math, fixtures, or fence. Works ONLY when this page is served
-     by the spatial shell (127.0.0.1:7090 same-origin); anywhere else the
-     button honestly reports the guide asleep. -->
-<div id="guidePop">
-  <div id="guideHead">
-    <div id="guideHeadText">
-      <div id="guideTitle">The Guide &mdash; Auma &middot; Live</div>
-      <div id="guideDisclosure">This is the node's live voice &mdash; a real AI answering
-        aloud, not a recording. The microphone opens only when you press the orb;
-        the three-line icon opens a typed transcript.</div>
-    </div>
-    <button class="ghost" id="guideClose">close</button>
-  </div>
-  <div id="guideMountRoot"></div>
-</div>
+<!-- ==========================================================================
+     Owner rule 7 — AUMA IS A PINNED BUBBLE THAT LIVES IN THE FIELD.
 
-<script id="zh-guide">
+     The old side box is gone. What remains is a small circular presence bubble
+     at the end of the dock bar, always there, and a compact chat that opens
+     into the grid's reserved right rail (never on top of anything). When she
+     speaks the whole visualizer answers: an amplitude signal drives the helix
+     shader's uPulse and a slight camera breath, so she comes alive in the
+     field rather than in a panel.
+
+     The amplitude is real when it can be: an AnalyserNode tapped onto the live
+     voice output if the mounted surface exposes a media element, otherwise a
+     synthetic envelope derived from message timing. Which one is in use is
+     disclosed in the fence and reported on the bubble's tooltip. Nothing here
+     touches the instrument's math, fixtures, or fence text.
+
+     The live surface is the node's own: /app/aumalive.js, same origin, served
+     by the spatial shell on 127.0.0.1:7090 with the presence lane on :7091.
+     Anywhere else the bubble degrades honestly to text only.
+     ========================================================================== -->
+<script id="zh-auma">
 (function () {
   'use strict';
   var DOOR = 'http://127.0.0.1:7091';
-  var AWAKE_LABEL = 'TALK TO THE GUIDE';
-  var ASLEEP_LABEL = 'THE GUIDE IS ASLEEP';
-  var btn = document.getElementById('guideBtn');
-  var pop = document.getElementById('guidePop');
-  var mountRoot = document.getElementById('guideMountRoot');
-  var closeBtn = document.getElementById('guideClose');
-  var label = btn.querySelector('.gb-label');
-  var mounted = false, busy = false, wakeTimer = 0;
+  /* 420, not 372: measured against the real mounted surface — below about
+     400px aumalive's own voice row collides with its own transcript input */
+  var RAIL_W = '420px';
 
-  function setAsleep(reason) {
-    btn.classList.add('asleep');
-    label.textContent = ASLEEP_LABEL;
-    btn.title = reason;
-    clearTimeout(wakeTimer);
-    // stay honest but retryable: the label relaxes back after a while
-    wakeTimer = setTimeout(function () {
-      btn.classList.remove('asleep');
-      label.textContent = AWAKE_LABEL;
-      btn.title = 'open a live voice + chat channel to this node\'s guide';
-    }, 8000);
+  var bubble = document.getElementById('aumaBubble');
+  var rail = document.getElementById('railLane');
+  var mountRoot = document.getElementById('aumaMountRoot');
+  var fallback = document.getElementById('aumaFallback');
+  var closeBtn = document.getElementById('aumaClose');
+  var mounted = false, busy = false, isOpen = false;
+
+  /* ---- the reserved rail ------------------------------------------------ */
+  function showRail() {
+    document.documentElement.style.setProperty('--railW', RAIL_W);
+    rail.hidden = false; isOpen = true;
+    bubble.classList.add('on');
+  }
+  function hideRail() {
+    document.documentElement.style.setProperty('--railW', '0px');
+    rail.hidden = true; isOpen = false;
+    bubble.classList.remove('on');
+  }
+
+  function degrade(reason) {
+    bubble.classList.add('asleep');
+    bubble.title = 'Auma — ' + reason;
+    mountRoot.classList.add('hidden');
+    fallback.classList.remove('hidden');
+    fallback.innerHTML =
+      '<b>Auma is not reachable from here.</b>' +
+      '<div class="why">' + reason + '</div>' +
+      '<p style="margin-top:10px">Nothing is lost: everything she would say aloud is ' +
+      'written down. The GUIDE tab holds the journey and the controls; the fence holds ' +
+      'every disclosure.</p>';
+    var b = document.createElement('button');
+    b.className = 'btn small';
+    b.textContent = 'open the written guide';
+    b.addEventListener('click', function () {
+      if (window.ZH_DEBUG && window.ZH_DEBUG.setSheet) window.ZH_DEBUG.setSheet('guide', true);
+    });
+    fallback.appendChild(b);
   }
 
   function probeDoor() {
@@ -2883,12 +3684,16 @@ function frame(now) {
     });
   }
 
-  function openGuide() {
-    if (busy) return;
+  function openAuma() {
+    if (busy || isOpen) return;
     busy = true;
+    showRail();
+    startAmp();
+    fallback.classList.add('hidden');
+    mountRoot.classList.remove('hidden');
     probeDoor().then(function (ok) {
       if (!ok) {
-        setAsleep('the node\'s voice service (127.0.0.1:7091) is not answering right now');
+        degrade('the node\'s voice service (127.0.0.1:7091) is not answering right now');
         busy = false;
         return;
       }
@@ -2897,36 +3702,156 @@ function frame(now) {
         : import('/app/aumalive.js').then(function (mod) {
             mod.mountAumaLive(mountRoot);
             mounted = true;
+            watchForVoice();
           });
       ready.then(function () {
-        pop.classList.add('show');
-        btn.classList.add('on');
+        bubble.classList.remove('asleep');
+        bubble.title = 'Auma — the guide. Click to close.';
         busy = false;
       }).catch(function () {
-        // not served by the shell (no /app/ on this origin) — degrade honestly
-        setAsleep('this page is not being served by the node\'s shell (port 7090), so the live guide cannot mount here');
+        degrade('this page is not being served by the node\'s shell (port 7090), so the ' +
+                'live guide cannot mount here');
         busy = false;
       });
     });
   }
 
-  function closeGuide() {
-    // if the channel is open, close it through the surface's own control so
-    // the microphone actually stops before the popup hides
+  function closeAuma() {
+    /* if the channel is live, stop it through the surface's own control so the
+       microphone actually closes before the rail collapses */
     var liveOrb = mountRoot.querySelector('.alv-orb.live');
     if (liveOrb) liveOrb.click();
-    pop.classList.remove('show');
-    btn.classList.remove('on');
+    hideRail();
+    if (window.ZH_FIELD) window.ZH_FIELD.setAmp(0);
   }
 
-  btn.addEventListener('click', function () {
-    if (pop.classList.contains('show')) closeGuide();
-    else openGuide();
+  /* ======================================================================
+     The amplitude signal that makes the field answer her.
+     ====================================================================== */
+  var AMP = {
+    mode: 'envelope',      /* 'analyser' once a real voice tap succeeds */
+    ctx: null, analyser: null, data: null,
+    env: 0, raf: 0, running: false, tapped: null
+  };
+
+  function publish(v) {
+    if (window.ZH_FIELD) window.ZH_FIELD.setAmp(v);
+  }
+
+  /* Real tap: route her media element through an AnalyserNode and straight on
+     to the destination, so she stays audible and we learn her loudness. Any
+     failure (already-tapped element, cross-origin media, no AudioContext)
+     leaves her audio completely untouched and we stay on the envelope. */
+  function attachAnalyser(el) {
+    if (AMP.analyser || AMP.tapped === el) return false;
+    try {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return false;
+      if (!AMP.ctx) AMP.ctx = new Ctx();
+      var src = AMP.ctx.createMediaElementSource(el);
+      var an = AMP.ctx.createAnalyser();
+      an.fftSize = 512;
+      an.smoothingTimeConstant = 0.72;
+      src.connect(an);
+      an.connect(AMP.ctx.destination);
+      AMP.analyser = an;
+      AMP.data = new Uint8Array(an.fftSize);
+      AMP.tapped = el;
+      AMP.mode = 'analyser';
+      bubble.title = 'Auma — the guide. The field is following her voice directly.';
+      return true;
+    } catch (err) {
+      return false;                 /* her audio is untouched; stay synthetic */
+    }
+  }
+
+  function scanForMedia(root) {
+    var els = root.querySelectorAll('audio, video');
+    for (var i = 0; i < els.length; i++) if (attachAnalyser(els[i])) return true;
+    return false;
+  }
+
+  function watchForVoice() {
+    scanForMedia(mountRoot);
+    /* media elements and transcript lines both arrive asynchronously: one
+       observer feeds the real tap, the other feeds the synthetic envelope */
+    var obs = new MutationObserver(function (muts) {
+      var weight = 0;
+      for (var i = 0; i < muts.length; i++) {
+        var m = muts[i];
+        if (m.type === 'characterData') { weight += 3; continue; }
+        for (var j = 0; j < m.addedNodes.length; j++) {
+          var n = m.addedNodes[j];
+          if (n.nodeType === 1) {
+            if (n.tagName === 'AUDIO' || n.tagName === 'VIDEO') attachAnalyser(n);
+            else if (n.querySelectorAll) scanForMedia(n);
+            weight += 4;
+          } else if (n.nodeType === 3) {
+            weight += Math.min(8, (n.nodeValue || '').length * 0.4);
+          }
+        }
+      }
+      if (weight > 0 && AMP.mode !== 'analyser') {
+        AMP.env = Math.min(1, AMP.env + Math.min(0.8, 0.16 + weight * 0.035));
+      }
+    });
+    obs.observe(mountRoot, { subtree: true, childList: true, characterData: true });
+  }
+
+  function tick() {
+    var v = 0;
+    if (AMP.mode === 'analyser' && AMP.analyser) {
+      AMP.analyser.getByteTimeDomainData(AMP.data);
+      var sum = 0;
+      for (var i = 0; i < AMP.data.length; i++) {
+        var d = (AMP.data[i] - 128) / 128;
+        sum += d * d;
+      }
+      v = Math.min(1, Math.sqrt(sum / AMP.data.length) * 3.6);
+    } else {
+      AMP.env *= 0.945;
+      if (AMP.env > 0.025) {
+        /* a cadence, so the field breathes on her syllables rather than a step */
+        var now = performance.now();
+        v = AMP.env * (0.68 + 0.32 * Math.abs(Math.sin(now * 0.0105)));
+      } else {
+        AMP.env = 0;
+      }
+    }
+    publish(v);
+    AMP.raf = requestAnimationFrame(tick);
+  }
+  function startAmp() {
+    if (AMP.running) return;
+    AMP.running = true;
+    AMP.raf = requestAnimationFrame(tick);
+  }
+
+  /* The hard law, extended to her audio too: this page never makes sound while
+     hidden or closing. */
+  document.addEventListener('visibilitychange', function () {
+    if (!AMP.ctx) return;
+    if (document.hidden) { AMP.ctx.suspend(); }
+    else if (isOpen) { AMP.ctx.resume(); }
   });
-  closeBtn.addEventListener('click', closeGuide);
+  window.addEventListener('pagehide', function () {
+    try {
+      var liveOrb = mountRoot.querySelector('.alv-orb.live');
+      if (liveOrb) liveOrb.click();
+      if (AMP.ctx) AMP.ctx.close();
+    } catch (e) {}
+  });
+
+  bubble.addEventListener('click', function () {
+    if (isOpen) closeAuma(); else openAuma();
+  });
+  closeBtn.addEventListener('click', closeAuma);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && pop.classList.contains('show')) closeGuide();
+    if (e.key === 'Escape' && isOpen &&
+        document.getElementById('fencePanel').classList.contains('hidden')) closeAuma();
   });
+
+  window.ZH_AUMA = { open: openAuma, close: closeAuma, isOpen: function () { return isOpen; } };
 })();
 </script>
 </body>
