@@ -1,73 +1,103 @@
 #!/usr/bin/env python3
 """
-SYK-CORRIDOR-v2 pipeline — the certified-candidate corridor pipeline.
+SYK-CORRIDOR-v3 pipeline — the certified-candidate corridor pipeline.
 
 Governing contract (SIGNED, byte-frozen; this script must never modify it):
-  experiments/SYK_CORRIDOR_PREREG_v2.md
-  (the contract records THIS file's sha256 in its signature block and in the
+  experiments/SYK_CORRIDOR_PREREG_v3.md
+  (the contract records THIS file's sha256 in its runtime line and in the
   ledger row; the contract's own sha256 is recorded in the ledger row — the
   hash direction is one-way, contract -> pipeline, to avoid circularity)
 Sole verdict bookkeeper (byte-frozen; imported, never reimplemented):
   experiments/op179_nu_to_beta.py
   sha256 b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e
 
-V2 PROVENANCE NOTE. This file is the v2 revision of the laptop-run pipeline.
-The exact bytes that produced results_laptop.json (governed by the frozen
-SYK_CORRIDOR_PREREG_v1.md, sha256 59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e
-5c2a94662e465820843f3d0) had
-  sha256 873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7
-and are preserved in git history; results_laptop.json and LAPTOP_REPORT.md are
-frozen and are never rewritten by this revision (v2 writes results_v2.json).
-The v2 changes are exactly the three blocker resolutions of PREREG v2:
-  (1) d convention resolved to the actual Hilbert-space dimension of the
-      simulated system (master section 5.7 source definition; erratum in
-      PREREG v2 section 1) — the primary/diagnostic labels below are swapped
-      accordingly, both lanes still computed;
-  (2) kappa grid re-derived to bracket the measured crossovers (PREREG v2
-      section 3);
-  (3) IC-3/IC-4 promoted from disclosed choices to PINNED definitions
-      (PREREG v2 section 4) — the operational definitions themselves are
-      byte-identical to the laptop run's.
+V3 PROVENANCE NOTE. This file is the v3 revision of the corridor pipeline.
+The exact bytes that produced results_v2.json (governed by the frozen
+SYK_CORRIDOR_PREREG_v2.md, sha256 7cdd8cfe6e902b3b27199b40bc63546f94551cab
+1a52c339343d6059816c7a5c) had
+  sha256 f5ad157c871a061a7244ed3767b9abe0affa034f1bdaac668343650a71c34511
+and are preserved in git history; the v1 laptop-run bytes (sha256
+873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7) likewise.
+results_laptop.json, LAPTOP_REPORT.md, results_v2.json, and
+syk_corridor_v2/VERDICT.md are frozen and are never rewritten by this
+revision (v3 writes results_v3.json).
+The v3 changes are exactly the VERDICT.md section 6 recorded path, contracted
+in PREREG v3:
+  (1) CARRIED UNCHANGED: the PREREG v2 section 1 d-convention erratum and the
+      section 4 Gamma pinning (IC-3/IC-4). All physics arithmetic (Hamiltonian
+      build, spectra, r-statistic, SFF, ramp windows, collapse machinery,
+      pairwise-beta extrapolation) is byte-identical to the v2 revision, and
+      the bootstrap RNG call order is preserved, so a laptop official run over
+      the laptop ladder reproduces the v2 official numbers exactly.
+  (2) CERTIFICATION RE-SCOPED (PREREG v3 section 5): the inherited nu-collapse
+      certification gates (nu search-interval interiority, nu bootstrap
+      edge-mass, per-size collapse R^2, cross-size correlation) are RETIRED
+      for the direct-beta route — still computed and reported, telemetry only.
+      New direct-beta certification gates: (i) log Gamma vs log d fit
+      R^2 >= 0.98 across the official ladder; (ii) bootstrap non-degeneracy of
+      the extrapolated beta intercept on the declared beta search interval
+      [0.30, 4.00] (point strictly interior; < 5% bootstrap edge mass at
+      either edge); (iii) per-size Gamma measurement convergence per the
+      pinned IC definitions (Gamma > 0 with a frozen IC-7 ramp window of >= 5
+      points at every official-ladder size; <= 1% invalid bootstrap resamples).
+  (3) N-EXTENDED LADDER (PREREG v3 section 6): laptop official ladder
+      N in {14, 18, 22}; extension sizes N in {24, 26} authorized for the
+      pinned cloud venue only; certified ladder {14, 18, 22, 24, 26}; same
+      seeds 5000-5039.
 
 WHAT THIS RUN IS AND IS NOT
 ---------------------------
-- The prereg pins the PRIMARY route as DIRECT-BETA (PREREG v2 section 5, carrying
-  v1 section 3.1): measure the revival degradation rate Gamma(d) per master
-  section 5.7, fit log Gamma vs log d with d = the actual Hilbert-space dimension
-  of the simulated system (the even-parity sector, dim 2^(N/2 - 1); PREREG v2
-  section 1 erratum resolving master 5.7 vs the 5.10A.1 glossary shorthand),
-  extrapolate per prereg section 2, and apply the beta buckets of
-  op179_nu_to_beta.py DIRECTLY (beta_bucket_point / beta_bucket_ci). The nu-route
-  is CLOSED: the ChannelExponentAssignment port stays UNFILLED, nu_to_beta_verdict
-  is never called, and m1_quotient_confirmation_flag is never called (v1 sections
-  3.2 and 4, carried by PREREG v2 section 5).
+- The prereg pins the PRIMARY route as DIRECT-BETA (PREREG v3 section 7, carrying
+  v2 section 5 / v1 section 3.1): measure the revival degradation rate Gamma(d)
+  per master section 5.7, fit log Gamma vs log d with d = the actual
+  Hilbert-space dimension of the simulated system (the even-parity sector,
+  dim 2^(N/2 - 1); PREREG v2 section 1 erratum, carried by PREREG v3 section 1),
+  extrapolate per the pinned finite-size acceptance, and apply the beta buckets
+  of op179_nu_to_beta.py DIRECTLY (beta_bucket_point / beta_bucket_ci). The
+  nu-route is CLOSED: the ChannelExponentAssignment port stays UNFILLED,
+  nu_to_beta_verdict is never called, and m1_quotient_confirmation_flag is
+  never called (v1 sections 3.2 and 4, carried).
 - The prereg pins the compute venue as Nebius (v1 section 5, carried). A laptop
   execution of this file is PIPELINE-VALIDATION only; the certified corridor run
-  is the Nebius execution, asserted by the explicit --venue-nebius flag. No SYK
-  number from a non-certified execution may be reported as GHP support in either
-  direction (prereg section 6).
-- The "repaired SYK/C3 pipeline (twelve scripts)" named in the prereg runtime line is
-  NOT present in this repository (master Addendum U.4 locates it under
+  is the Nebius execution, asserted by the explicit --venue-nebius flag, which
+  also selects the extended ladder. --extended runs the extended ladder without
+  the venue assertion (diagnostic only, never certifiable). No SYK number from a
+  non-certified execution may be reported as GHP support in either direction
+  (prereg section 9).
+- The "repaired SYK/C3 pipeline (twelve scripts)" named in the v1 prereg runtime
+  line is NOT present in this repository (master Addendum U.4 locates it under
   `.epsilon/reports/syk_mass_transition_*` / `scripts/syk_mass_transition.py`, an
   external tree). This file is a rebuild, not a modification of that pipeline.
 
-PINNED BY THE CONTRACT (PREREG v2; verbatim sources quoted there; do not change):
-  P-1  Official sizes N in {14, 18, 22}; N = 10 telemetry only (fit ban CARRIED).
-  P-2  kappa grid (PREREG v2 section 3, re-derived from the laptop-measured
-       crossovers): reference point 0, then 15 log-spaced deformed points
+PINNED BY THE CONTRACT (PREREG v3; verbatim sources quoted there; do not change):
+  P-1  Laptop official ladder N in {14, 18, 22}; certified-run ladder
+       N in {14, 18, 22, 24, 26} (extension sizes cloud-venue only, PREREG v3
+       section 6); N = 10 telemetry only (fit ban CARRIED — no N = 10 number
+       enters any fit or bucket).
+  P-2  kappa grid (PREREG v2 section 3, carried verbatim): reference point 0,
+       then 15 log-spaced deformed points
        [1.00, 1.25, 1.57, 1.98, 2.48, 3.11, 3.90, 4.90, 6.15, 7.71, 9.68,
-       12.15, 15.24, 19.13, 24.00]; fitted crossing must be strictly interior
-       with >= 2 grid points each side, else VOID (bracketing rule verbatim
-       from v1).
+       12.15, 15.24, 19.13, 24.00]; the bracketing rule (fitted crossing
+       strictly interior with >= 2 grid points each side) is carried, SCOPED by
+       PREREG v3 section 3: failing it voids the nu telemetry lane and the
+       crossing-adjacent column, not the direct-beta run.
   P-3  40 disorder seeds per size, explicit range 5000-5039 inclusive.
-  P-4  Bootstrap: 2000 resamples everywhere; nu search interval [0.30, 1.50];
-       fitted nu strictly interior; <= 5% bootstrap mass in the outermost grid
-       cell at either edge, else DEGENERATE -> not certifiable.
-  P-5  Convergence: per-size collapse R^2 >= 0.98; cross-size collapse
-       correlation >= 0.99.
-  P-6  Finite-size acceptance: primary linear fit in 1/N over official sizes,
-       bootstrap uncertainty on the extrapolated intercept, applied to the
-       direct-beta fit slope and identically to the nu telemetry lane.
+  P-4  Bootstrap: 2000 resamples everywhere. Direct-beta non-degeneracy
+       (CERTIFICATION, PREREG v3 section 5): beta search interval
+       [0.30, 4.00]; extrapolated intercept strictly interior; < 5% bootstrap
+       mass at or beyond either edge, else DEGENERATE -> not certifiable.
+       The nu search interval [0.30, 1.50] and its interiority/edge-mass rules
+       are RETIRED to the telemetry lane (still computed, decide nothing).
+  P-5  Convergence (CERTIFICATION, PREREG v3 section 5): log Gamma vs log d
+       fit R^2 >= 0.98 across the official ladder at the primary column;
+       per-size Gamma convergence per the pinned IC definitions (Gamma > 0,
+       frozen IC-7 ramp window >= 5 points, <= 1% invalid bootstrap
+       resamples). Per-size collapse R^2 >= 0.98 and cross-size correlation
+       >= 0.99 are RETIRED to the telemetry lane (still computed, decide
+       nothing).
+  P-6  Finite-size acceptance: primary linear fit in 1/N over the official
+       ladder, bootstrap uncertainty on the extrapolated intercept, applied to
+       the direct-beta fit slope and identically to the nu telemetry lane.
   P-7  d = actual Hilbert-space dimension of the simulated system (master
        section 5.7 "d = Hilbert space dimension", resolved by the PREREG v2
        section 1 erratum; for the simulated even-parity Majorana sector,
@@ -87,10 +117,10 @@ IMPLEMENTATION CHOICES (IC) — originally disclosed, NOT pinned by any repo sou
 The master explicitly delegates these ("It does not fix the low-level implementation
 (random couplings generator, 4-body-term construction, scaling-fit function); those
 are standard numerical-linear-algebra choices left to the implementer", section
-5.10). STATUS UNDER PREREG v2: IC-2 is PINNED (P-11), IC-3 and IC-4 are PINNED
-(P-12), with the operational definitions below quoted into the contract; IC-1,
-IC-5, IC-6, IC-7 remain disclosed implementation choices, now frozen operationally
-by the contract's byte-pin of this file:
+5.10). STATUS UNDER PREREG v3 (carrying v2): IC-2 is PINNED (P-11), IC-3 and
+IC-4 are PINNED (P-12), with the operational definitions quoted into the
+contract; IC-1, IC-5, IC-6, IC-7 remain disclosed implementation choices, now
+frozen operationally by the contract's byte-pin of this file:
   IC-1 Majorana representation: Jordan-Wigner, {psi_a, psi_b} = delta_ab
        (psi^2 = 1/2), N/2 qubits, Hilbert dim 2^(N/2), even-parity sector
        dim 2^(N/2 - 1).
@@ -136,13 +166,19 @@ GOLDEN-RATIO DISCIPLINE: this file contains no golden-ratio numeric literals
 (neither the ratio nor its reciprocal); all band arithmetic is imported from
 op179_nu_to_beta.py, which derives its constants algebraically.
 
-Run:  python3 pipeline.py                (self-tests, full pinned sweep, analysis)
+Run:  python3 pipeline.py                (self-tests, laptop official ladder
+                                          {14, 18, 22} sweep, analysis)
       python3 pipeline.py --selftest     (self-tests only)
-      python3 pipeline.py --venue-nebius (asserts the pinned Nebius venue; only a
-                                          run with this flag, actually executed on
-                                          Nebius, is certified-candidate)
-Outputs: results_v2.json (this directory). results_laptop.json is frozen v1
-evidence and is never written by this revision.
+      python3 pipeline.py --extended     (extended ladder {14, 18, 22, 24, 26}
+                                          without the venue assertion;
+                                          diagnostic only, never certifiable)
+      python3 pipeline.py --venue-nebius (asserts the pinned Nebius venue AND
+                                          selects the extended ladder; only a
+                                          run with this flag, actually executed
+                                          on Nebius, is certified-candidate)
+Outputs: results_v3.json (this directory). results_laptop.json and
+results_v2.json are frozen v1/v2 evidence and are never written by this
+revision.
 """
 
 from __future__ import annotations
@@ -165,16 +201,23 @@ import op179_nu_to_beta as op179  # noqa: E402  (P-10: sole verdict bookkeeper)
 # Pinned constants (P-1 .. P-7). Do not edit without a new signed prereg.
 # ----------------------------------------------------------------------------
 KAPPA_GRID = [0.0, 1.00, 1.25, 1.57, 1.98, 2.48, 3.11, 3.90, 4.90, 6.15,
-              7.71, 9.68, 12.15, 15.24, 19.13, 24.00]            # P-2 (v2)
+              7.71, 9.68, 12.15, 15.24, 19.13, 24.00]            # P-2 (v2, carried)
 COLLAPSE_KAPPAS = KAPPA_GRID[1:]                                  # IC-6
-OFFICIAL_N = [14, 18, 22]                                         # P-1
+OFFICIAL_N = [14, 18, 22]                                         # P-1 laptop ladder
+EXTENSION_N = [24, 26]                                            # P-1 cloud-venue extension (v3)
 TELEMETRY_N = [10]                                                # P-1
 SEEDS = list(range(5000, 5040))                                   # P-3
 N_BOOT = 2000                                                     # P-4
-NU_LO, NU_HI, NU_STEP = 0.30, 1.50, 0.01                          # P-4
-EDGE_MASS_MAX = 0.05                                              # P-4
-R2_MIN = 0.98                                                     # P-5
-XCORR_MIN = 0.99                                                  # P-5
+# --- direct-beta certification constants (P-4/P-5, PREREG v3 section 5) ---
+BETA_LO, BETA_HI = 0.30, 4.00        # declared beta search interval (P-4, v3)
+BETA_EDGE_MASS_MAX = 0.05            # strict: edge mass must be < this (P-4, v3)
+R2_MIN = 0.98                        # P-5 (v3): log Gamma vs log d fit R^2
+RAMP_MIN_POINTS = 5                  # P-5 (v3): frozen IC-7 window size floor
+BOOT_INVALID_FRAC_MAX = 0.01         # P-5 (v3): invalid bootstrap resample cap
+# --- retired-to-telemetry nu-lane constants (P-4/P-5 legacy, still computed) ---
+NU_LO, NU_HI, NU_STEP = 0.30, 1.50, 0.01                          # telemetry only
+EDGE_MASS_MAX = 0.05                                              # telemetry only
+XCORR_MIN = 0.99                                                  # telemetry only
 GUE_R = 0.5996          # reference value, diagnostics only
 POISSON_R = 0.3863      # reference value, diagnostics only
 
@@ -513,7 +556,7 @@ def run_sweep(sizes):
     return out
 
 
-def analyze(data):
+def analyze(data, ladder):
     kappas = np.array(KAPPA_GRID)
     ck = np.array(COLLAPSE_KAPPAS)
     ck_cols = [KAPPA_GRID.index(k) for k in COLLAPSE_KAPPAS]
@@ -530,8 +573,8 @@ def analyze(data):
     results["r_statistic"] = {"kappa_grid": KAPPA_GRID, "per_size": rtab,
                               "gue_ref": GUE_R, "poisson_ref": POISSON_R}
 
-    # ---------- nu telemetry lane: collapse over official sizes ----------
-    Ns = OFFICIAL_N
+    # ---------- nu telemetry lane: collapse over the official ladder ----------
+    Ns = ladder
     rbar = {N: data[N]["r"][:, ck_cols].mean(axis=0) for N in Ns}
     nu_hat, kc_hat, cost = fit_collapse(rbar, Ns, ck)
     r2, xcorr = collapse_quality(rbar, Ns, ck, nu_hat, kc_hat)
@@ -576,12 +619,17 @@ def analyze(data):
         nu_inf = float("nan")
 
     results["nu_telemetry_lane"] = {
-        "status": "TELEMETRY ONLY — nu-route CLOSED by prereg section 3.2; no "
-                  "nu-derived number may enter any bucket, verdict, or gate",
+        "status": "TELEMETRY ONLY — nu-route CLOSED by v1 section 3.2 (carried); "
+                  "no nu-derived number may enter any bucket, verdict, or gate. "
+                  "The nu-collapse certification gates are RETIRED by PREREG v3 "
+                  "section 5: computed and reported here for continuity, they "
+                  "decide nothing.",
         "collapse_fit": {"nu": nu_hat, "kappa_c": kc_hat, "sse": cost},
         "bracketing": {"kappa_c": kc_hat, "grid_points_below": below,
                        "grid_points_above": above, "rule_satisfied": bracket_ok,
-                       "consequence_if_false": "run VOID per prereg section 1"},
+                       "consequence_if_false": "nu telemetry lane and "
+                       "crossing-adjacent column VOID (PREREG v3 section 3 "
+                       "scoping); not a direct-beta certification gate"},
         "bootstrap": {
             "resamples": N_BOOT,
             "nu_ci95": [float(np.percentile(nu_boot, 2.5)),
@@ -591,7 +639,9 @@ def analyze(data):
             "edge_mass_low": lo_mass, "edge_mass_high": hi_mass,
             "fitted_nu_interior": interior,
             "DEGENERATE": degenerate,
-            "consequence_if_degenerate": "run not certifiable per prereg section 2",
+            "consequence_if_degenerate": "nu telemetry lane not usable "
+                                         "(RETIRED gate, PREREG v3 section 5; "
+                                         "does not block certification)",
         },
         "convergence": {
             "per_size_R2": {str(k): v for k, v in r2.items()},
@@ -631,14 +681,22 @@ def analyze(data):
         gammas = {N: sff[N][kappa_key]["gamma"] for N in Ns}
         bp_sec, binf_sec = pairwise_beta(gammas, Ns, log_d_sector)
         bp_2n, binf_2n = pairwise_beta(gammas, Ns, log_d_2powN)
-        # pooled 3-size slope (cross-check)
+        # pooled ladder slope (cross-check) + pooled log-log fit R^2
+        # (P-5 v3 certification gate; R^2 is invariant under the affine map
+        # between the two log-d conventions, so one value serves both lanes)
         ln_g = [math.log(gammas[N]) if gammas[N] > 0 else float("nan") for N in Ns]
-        pooled_sec = pooled_2n = float("nan")
+        pooled_sec = pooled_2n = loglog_r2 = float("nan")
         if all(not math.isnan(v) for v in ln_g):
-            pooled_sec = abs(float(np.polyfit(
-                [log_d_sector[N] for N in Ns], ln_g, 1)[0]))
+            xs_fit = np.array([log_d_sector[N] for N in Ns])
+            ys_fit = np.array(ln_g)
+            coef_fit = np.polyfit(xs_fit, ys_fit, 1)
+            pooled_sec = abs(float(coef_fit[0]))
             pooled_2n = abs(float(np.polyfit(
                 [log_d_2powN[N] for N in Ns], ln_g, 1)[0]))
+            pred_fit = np.polyval(coef_fit, xs_fit)
+            ss_res = float(np.sum((ys_fit - pred_fit) ** 2))
+            ss_tot = float(np.sum((ys_fit - np.mean(ys_fit)) ** 2))
+            loglog_r2 = 1.0 - ss_res / ss_tot if ss_tot > 0 else float("nan")
         # bootstrap over seeds (P-4: 2000 resamples), windows frozen (IC-7)
         boot_sec = np.empty(N_BOOT)
         boot_2n = np.empty(N_BOOT)
@@ -669,6 +727,30 @@ def analyze(data):
                   if len(bs) > 100 else [float("nan")] * 2)
         ci_2n = ([float(np.percentile(b2, 2.5)), float(np.percentile(b2, 97.5))]
                  if len(b2) > 100 else [float("nan")] * 2)
+        # P-4 (v3) certification gate: bootstrap non-degeneracy of the
+        # extrapolated intercept on the declared beta search interval
+        edge_lo = float(np.mean(bs <= BETA_LO)) if len(bs) else float("nan")
+        edge_hi = float(np.mean(bs >= BETA_HI)) if len(bs) else float("nan")
+        pt_interior = (not math.isnan(binf_sec)) and BETA_LO < binf_sec < BETA_HI
+        beta_degenerate = ((not pt_interior)
+                           or math.isnan(edge_lo) or math.isnan(edge_hi)
+                           or edge_lo >= BETA_EDGE_MASS_MAX
+                           or edge_hi >= BETA_EDGE_MASS_MAX)
+        # P-5 (v3) certification gate: per-size Gamma measurement convergence
+        # per the pinned IC definitions (IC-3 slope > 0 on a frozen IC-7
+        # window of >= RAMP_MIN_POINTS points, at every official-ladder size)
+        per_size_conv = {}
+        for N in Ns:
+            info = sff[N][kappa_key]["info"]
+            per_size_conv[str(N)] = {
+                "gamma_positive": bool(gammas[N] > 0),
+                "window_points": int(info["n_points"]),
+                "window_points_ok": bool(info["n_points"] >= RAMP_MIN_POINTS),
+            }
+        invalid_frac = bad / float(N_BOOT)
+        gamma_converged = (all(v["gamma_positive"] and v["window_points_ok"]
+                               for v in per_size_conv.values())
+                           and invalid_frac <= BOOT_INVALID_FRAC_MAX)
         return {
             "gamma_per_size": {str(N): gammas[N] for N in Ns},
             "gamma_telemetry_N10": sff[10][kappa_key]["gamma"],
@@ -678,6 +760,15 @@ def analyze(data):
                 "beta_intercept_1_over_N": binf_sec,
                 "beta_pooled_slope": pooled_sec,
                 "ci95_intercept": ci_sec,
+                "loglog_fit_R2": loglog_r2,
+                "bootstrap_nondegeneracy": {
+                    "beta_search_interval": [BETA_LO, BETA_HI],
+                    "edge_mass_low": edge_lo,
+                    "edge_mass_high": edge_hi,
+                    "edge_mass_max_strict": BETA_EDGE_MASS_MAX,
+                    "intercept_interior": bool(pt_interior),
+                    "DEGENERATE": bool(beta_degenerate),
+                },
             },
             "diagnostic_d_2powN_SUPERSEDED": {
                 "beta_pairs_midpoints": bp_2n,
@@ -686,6 +777,9 @@ def analyze(data):
                 "ci95_intercept": ci_2n,
             },
             "bootstrap_invalid_resamples": bad,
+            "bootstrap_invalid_fraction": invalid_frac,
+            "per_size_gamma_convergence": per_size_conv,
+            "gamma_convergence_ok": bool(gamma_converged),
         }
 
     print("  direct-beta lane: primary column kappa=0 (IC-4) + bootstrap...")
@@ -712,18 +806,21 @@ def analyze(data):
         beta_cross = None
 
     results["direct_beta_lane"] = {
-        "status": "PRIMARY ROUTE per PREREG v2 section 5 (carrying v1 3.1); "
-                  "certified-candidate only when executed on the pinned Nebius "
-                  "venue with --venue-nebius, else PIPELINE-VALIDATION",
-        "gamma_operationalization": "IC-3/IC-4, PINNED by PREREG v2 section 4: "
-                                    "ramp slope of disorder-averaged "
+        "status": "PRIMARY ROUTE per PREREG v3 section 7 (carrying v2 section 5 "
+                  "/ v1 3.1); certified-candidate only when executed on the "
+                  "pinned Nebius venue with --venue-nebius over the extended "
+                  "ladder, else PIPELINE-VALIDATION",
+        "official_ladder": [int(N) for N in Ns],
+        "gamma_operationalization": "IC-3/IC-4, PINNED by PREREG v2 section 4 "
+                                    "(carried by PREREG v3 section 4): ramp "
+                                    "slope of disorder-averaged "
                                     "g(t)=|Tr e^{-iHt}|^2/d_sector^2; primary "
                                     "column kappa=0",
-        "d_convention_note": "PREREG v2 section 1 erratum: d = actual "
-                            "Hilbert-space dimension of the simulated system "
-                            "(even-parity sector, 2^(N/2-1)); the v1 'd ~ 2^N' "
-                            "glossary shorthand is SUPERSEDED and reported as "
-                            "diagnostic only",
+        "d_convention_note": "PREREG v2 section 1 erratum (carried by PREREG v3 "
+                            "section 1): d = actual Hilbert-space dimension of "
+                            "the simulated system (even-parity sector, "
+                            "2^(N/2-1)); the v1 'd ~ 2^N' glossary shorthand is "
+                            "SUPERSEDED and reported as diagnostic only",
         "primary_kappa0": beta0,
         "crossing_adjacent": {"kappa": near, "result": beta_cross},
         "beta_by_kappa_telemetry": beta_by_kappa,
@@ -762,27 +859,37 @@ def analyze(data):
         "WARNING": ("Buckets below are the mechanical output of the byte-frozen "
                     "op179 functions. They are a certified-candidate verdict ONLY "
                     "if this execution ran on the pinned Nebius venue "
-                    "(--venue-nebius asserted) AND every certification gate below "
-                    "holds; otherwise they are PIPELINE-VALIDATION output only. "
-                    "Per prereg section 6, no SYK number may be reported as GHP "
-                    "support in either direction outside a certified run."),
+                    "(--venue-nebius asserted, extended ladder) AND every "
+                    "certification gate below holds; otherwise they are "
+                    "PIPELINE-VALIDATION output only. Per PREREG v3 section 9, "
+                    "no SYK number may be reported as GHP support in either "
+                    "direction outside a certified run."),
         "venue_nebius_asserted": venue_nebius,
         "buckets": bucket_block,
     }
 
-    # ---------- certifiability roll-up ----------
+    # ---------- certifiability roll-up (PREREG v3 section 5 gates) ----------
+    prim = beta0["primary_d_hilbert_sector"]
+    loglog_r2_val = prim["loglog_fit_R2"]
     gates = {
         "venue_is_nebius": venue_nebius,
-        "crossing_bracketing_ok": bool(bracket_ok),
-        "nu_bootstrap_nondegenerate": (not degenerate),
-        "collapse_R2_pass": results["nu_telemetry_lane"]["convergence"]["R2_pass"],
-        "cross_size_corr_pass": results["nu_telemetry_lane"]["convergence"]["xcorr_pass"],
-        "gamma_operationalization_source_pinned": True,  # PREREG v2 section 4
+        "ladder_is_extended": bool(all(N in Ns for N in EXTENSION_N)),
+        "direct_beta_loglog_R2_pass": bool((not math.isnan(loglog_r2_val))
+                                           and loglog_r2_val >= R2_MIN),
+        "beta_intercept_bootstrap_nondegenerate":
+            (not prim["bootstrap_nondegeneracy"]["DEGENERATE"]),
+        "gamma_convergence_pass": bool(beta0["gamma_convergence_ok"]),
+        "gamma_operationalization_source_pinned": True,  # PREREG v2 s4, carried
     }
     certified = all(bool(v) for v in gates.values())
     gates["CERTIFIED_VERDICT"] = certified
     gates["status"] = ("CERTIFIED-CANDIDATE" if certified
                        else "PIPELINE-VALIDATION ONLY")
+    gates["retired_nu_gates_note"] = (
+        "The v1/v2 nu-collapse certification gates (nu search-interval "
+        "interiority, nu bootstrap edge-mass, per-size collapse R^2, "
+        "cross-size correlation) are RETIRED by PREREG v3 section 5; their "
+        "values are reported in nu_telemetry_lane and decide nothing.")
     results["certification_gates"] = gates
     return results
 
@@ -791,34 +898,43 @@ def main():
     selftest()
     if "--selftest" in sys.argv:
         return
-    print(f"PINNED SWEEP: N in {OFFICIAL_N} official + {TELEMETRY_N} telemetry; "
-          f"seeds {SEEDS[0]}-{SEEDS[-1]}; {len(KAPPA_GRID)} kappa points")
-    data = run_sweep(TELEMETRY_N + OFFICIAL_N)
-    print("ANALYSIS")
-    results = analyze(data)
     venue_nebius = "--venue-nebius" in sys.argv
+    extended = venue_nebius or ("--extended" in sys.argv)
+    ladder = OFFICIAL_N + (EXTENSION_N if extended else [])
+    print(f"PINNED SWEEP: N in {ladder} official "
+          f"({'EXTENDED ladder' if extended else 'laptop ladder'}) + "
+          f"{TELEMETRY_N} telemetry; "
+          f"seeds {SEEDS[0]}-{SEEDS[-1]}; {len(KAPPA_GRID)} kappa points")
+    data = run_sweep(TELEMETRY_N + ladder)
+    print("ANALYSIS")
+    results = analyze(data, ladder)
     meta = {
-        "test_id": "SYK-CORRIDOR-v2",
+        "test_id": "SYK-CORRIDOR-v3",
         "label": ("NEBIUS-VENUE-ASSERTED (certified-candidate if all gates hold)"
-                  if venue_nebius else "PRELIMINARY-LAPTOP / PIPELINE-VALIDATION"),
+                  if venue_nebius else
+                  ("EXTENDED-LADDER DIAGNOSTIC (non-certifiable)" if extended
+                   else "PRELIMINARY-LAPTOP / PIPELINE-VALIDATION")),
         "date_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "prereg": "experiments/SYK_CORRIDOR_PREREG_v2.md (sha256 recorded in the "
+        "prereg": "experiments/SYK_CORRIDOR_PREREG_v3.md (sha256 recorded in the "
                   "ledger row per the lock protocol; the contract pins THIS "
                   "file's sha256, one-way, to avoid hash circularity)",
         "prereg_v1_sha256_frozen": "59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e5c2a94662e465820843f3d0",
+        "prereg_v2_sha256_frozen": "7cdd8cfe6e902b3b27199b40bc63546f94551cab1a52c339343d6059816c7a5c",
         "op179_sha256": "b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e",
-        "laptop_run_pipeline_sha256_as_run": "873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7",
+        "v1_laptop_pipeline_sha256_as_run": "873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7",
+        "v2_pipeline_sha256_as_run": "f5ad157c871a061a7244ed3767b9abe0affa034f1bdaac668343650a71c34511",
         "seeds": [SEEDS[0], SEEDS[-1]],
         "kappa_grid": KAPPA_GRID,
-        "official_sizes": OFFICIAL_N,
+        "official_ladder": ladder,
+        "extension_sizes_cloud_only": EXTENSION_N,
         "telemetry_sizes": TELEMETRY_N,
-        "nu_route": "CLOSED (v1 section 3.2, carried by PREREG v2 section 5); "
+        "nu_route": "CLOSED (v1 section 3.2, carried by PREREG v3 section 7); "
                     "ChannelExponentAssignment port UNFILLED; nu_to_beta_verdict "
                     "and m1_quotient_confirmation_flag NEVER CALLED",
         "budget_cap_usd": 400.0,
     }
     out = {"meta": meta, "results": results}
-    out_path = HERE / "results_v2.json"
+    out_path = HERE / "results_v3.json"
     with open(out_path, "w") as f:
         json.dump(out, f, indent=1, default=float)
     print(f"\nWROTE {out_path}")

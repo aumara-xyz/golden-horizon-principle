@@ -1,0 +1,727 @@
+{
+ "meta": {
+  "test_id": "SYK-CORRIDOR-v3",
+  "label": "NEBIUS-VENUE-ASSERTED (certified-candidate if all gates hold)",
+  "date_utc": "2026-08-02T02:29:23Z",
+  "prereg": "experiments/SYK_CORRIDOR_PREREG_v3.md (sha256 recorded in the ledger row per the lock protocol; the contract pins THIS file's sha256, one-way, to avoid hash circularity)",
+  "prereg_v1_sha256_frozen": "59a46ff9b19b05b6c99dd0a58fb14629aecb11e0e5c2a94662e465820843f3d0",
+  "prereg_v2_sha256_frozen": "7cdd8cfe6e902b3b27199b40bc63546f94551cab1a52c339343d6059816c7a5c",
+  "op179_sha256": "b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e",
+  "v1_laptop_pipeline_sha256_as_run": "873ae281dd563b607e550a2cba593471e40c7879dceb65731610158d269aaca7",
+  "v2_pipeline_sha256_as_run": "f5ad157c871a061a7244ed3767b9abe0affa034f1bdaac668343650a71c34511",
+  "seeds": [
+   5000,
+   5039
+  ],
+  "kappa_grid": [
+   0.0,
+   1.0,
+   1.25,
+   1.57,
+   1.98,
+   2.48,
+   3.11,
+   3.9,
+   4.9,
+   6.15,
+   7.71,
+   9.68,
+   12.15,
+   15.24,
+   19.13,
+   24.0
+  ],
+  "official_ladder": [
+   14,
+   18,
+   22,
+   24,
+   26
+  ],
+  "extension_sizes_cloud_only": [
+   24,
+   26
+  ],
+  "telemetry_sizes": [
+   10
+  ],
+  "nu_route": "CLOSED (v1 section 3.2, carried by PREREG v3 section 7); ChannelExponentAssignment port UNFILLED; nu_to_beta_verdict and m1_quotient_confirmation_flag NEVER CALLED",
+  "budget_cap_usd": 400.0
+ },
+ "results": {
+  "r_statistic": {
+   "kappa_grid": [
+    0.0,
+    1.0,
+    1.25,
+    1.57,
+    1.98,
+    2.48,
+    3.11,
+    3.9,
+    4.9,
+    6.15,
+    7.71,
+    9.68,
+    12.15,
+    15.24,
+    19.13,
+    24.0
+   ],
+   "per_size": {
+    "10": {
+     "mean": [
+      0.5930938183137858,
+      0.5849922874182679,
+      0.577505247568644,
+      0.55255576997443,
+      0.5293017880442352,
+      0.5079823515005932,
+      0.49059983544319863,
+      0.47722286323928903,
+      0.46501308136029207,
+      0.4555326926649202,
+      0.4487382811846067,
+      0.44424977706463553,
+      0.4413273764426098,
+      0.439469646585627,
+      0.43829614728951755,
+      0.43757178078883
+     ],
+     "sem": [
+      0.019459037457050025,
+      0.01931411372297025,
+      0.02026500224232115,
+      0.018525740456244843,
+      0.018135359317070613,
+      0.018712726035413903,
+      0.019700768824521528,
+      0.020365154885247358,
+      0.020899359013639967,
+      0.02138170328155565,
+      0.021709405469328803,
+      0.021975272716697712,
+      0.022182785183167193,
+      0.022340395495559145,
+      0.0224591561216448,
+      0.02254778072001539
+     ]
+    },
+    "14": {
+     "mean": [
+      0.5907878461959696,
+      0.6004671413367035,
+      0.587778177465721,
+      0.5731623170315235,
+      0.5515126449031376,
+      0.527970387790625,
+      0.5081970377340184,
+      0.4911868416712942,
+      0.46774086740128196,
+      0.4467358585432595,
+      0.4316595978848026,
+      0.42081665425418163,
+      0.4132599645131666,
+      0.4079000511362902,
+      0.40401550497995925,
+      0.40111611468505187
+     ],
+     "sem": [
+      0.0073940330812778616,
+      0.00748902022456544,
+      0.007065931484105862,
+      0.009398823521259616,
+      0.010962015165018086,
+      0.010824339459643086,
+      0.010313224027186998,
+      0.010054375760576717,
+      0.009567621217192433,
+      0.009860766496178775,
+      0.010679166052989842,
+      0.01130675851111548,
+      0.011728928096178245,
+      0.01214061871218038,
+      0.012473458407288703,
+      0.012800839815632523
+     ]
+    },
+    "18": {
+     "mean": [
+      0.5980492501725446,
+      0.5945974963189287,
+      0.6059342136661583,
+      0.5936535862765071,
+      0.5868686396842506,
+      0.5713332632323483,
+      0.5558229095939136,
+      0.5360497897633915,
+      0.517932233362336,
+      0.49754995228592447,
+      0.47808249680692905,
+      0.45892966349635617,
+      0.4438901840992118,
+      0.43261117855058384,
+      0.4227982821419937,
+      0.4132279473138226
+     ],
+     "sem": [
+      0.0027937571184242856,
+      0.004494326051185855,
+      0.004636074556740105,
+      0.00451502694725862,
+      0.003814652744964884,
+      0.0036333037675183436,
+      0.004206830537579882,
+      0.004691909235485759,
+      0.005248376872169969,
+      0.00523589633688657,
+      0.00533528914201984,
+      0.005303485172198888,
+      0.005204411956917099,
+      0.005294990465174502,
+      0.005747817637673121,
+      0.006522250167135636
+     ]
+    },
+    "22": {
+     "mean": [
+      0.5957000944932154,
+      0.6006800769362423,
+      0.5997317449880776,
+      0.5994461362878912,
+      0.597163021003038,
+      0.5955575433493971,
+      0.5950055625597118,
+      0.5798964196169137,
+      0.5577686437796942,
+      0.5360452031611376,
+      0.51015711748298,
+      0.4864469452940797,
+      0.46736272088955816,
+      0.45071296409478334,
+      0.43776463817041045,
+      0.42908439333067144
+     ],
+     "sem": [
+      0.0018106651569551116,
+      0.0018082402148383294,
+      0.0021883023521762873,
+      0.001842140182861055,
+      0.0024007812259461457,
+      0.002026903741281414,
+      0.0021080853089649127,
+      0.0026003108241878276,
+      0.0027058043146639277,
+      0.0034980894997595994,
+      0.004041894848768999,
+      0.0037964905695538854,
+      0.003507088269300945,
+      0.003773491685054431,
+      0.003763841857340988,
+      0.004090271161132663
+     ]
+    },
+    "24": {
+     "mean": [
+      0.5290388014886868,
+      0.5988435967347175,
+      0.5997757515983402,
+      0.6002839155254239,
+      0.5984237355341611,
+      0.5998706072576472,
+      0.599992166766419,
+      0.5953270782199258,
+      0.5809385398095067,
+      0.5553460519310782,
+      0.5245949270386522,
+      0.49783092286398845,
+      0.47534710735219016,
+      0.45623971030892696,
+      0.4434010054794341,
+      0.4334122528655934
+     ],
+     "sem": [
+      0.001538981197535888,
+      0.0008901801623310531,
+      0.001174335268225353,
+      0.0012931288664273608,
+      0.0014505899790663488,
+      0.0014535853315094367,
+      0.0013396175856561468,
+      0.0014641230395637127,
+      0.0021165609877652875,
+      0.0019554512384472684,
+      0.002769021505699266,
+      0.002915913963574406,
+      0.002832314975660047,
+      0.002988756832111256,
+      0.002752922616440268,
+      0.002202278128224173
+     ]
+    },
+    "26": {
+     "mean": [
+      0.599141672593922,
+      0.5998957834629788,
+      0.6006198016568444,
+      0.6002172494637155,
+      0.5987148678935209,
+      0.6003800694815472,
+      0.6004908549869709,
+      0.5995879069505085,
+      0.5956456585073042,
+      0.5824968645986702,
+      0.5590602347413386,
+      0.5287737188108564,
+      0.4985018585608759,
+      0.47298318859293875,
+      0.4532915551173902,
+      0.43935674036498557
+     ],
+     "sem": [
+      0.0009707785592631403,
+      0.0009606939794775724,
+      0.0009756748897345373,
+      0.000797499998954491,
+      0.001073707735556716,
+      0.0010724655123213471,
+      0.0010423171769977195,
+      0.0009051641913507042,
+      0.001055312375825254,
+      0.0011844000565180593,
+      0.002116284646600068,
+      0.002907970277041204,
+      0.003329642190723994,
+      0.0033083666540958865,
+      0.003009859183764924,
+      0.0030286996460471005
+     ]
+    }
+   },
+   "gue_ref": 0.5996,
+   "poisson_ref": 0.3863
+  },
+  "nu_telemetry_lane": {
+   "status": "TELEMETRY ONLY \u2014 nu-route CLOSED by v1 section 3.2 (carried); no nu-derived number may enter any bucket, verdict, or gate. The nu-collapse certification gates are RETIRED by PREREG v3 section 5: computed and reported here for continuity, they decide nothing.",
+   "collapse_fit": {
+    "nu": 1.5,
+    "kappa_c": 23.95000000000002,
+    "sse": 0.027930985314738966
+   },
+   "bracketing": {
+    "kappa_c": 23.95000000000002,
+    "grid_points_below": 14,
+    "grid_points_above": 1,
+    "rule_satisfied": false,
+    "consequence_if_false": "nu telemetry lane and crossing-adjacent column VOID (PREREG v3 section 3 scoping); not a direct-beta certification gate"
+   },
+   "bootstrap": {
+    "resamples": 2000,
+    "nu_ci95": [
+     1.31,
+     1.5
+    ],
+    "kappa_c_ci95": [
+     21.69875000000002,
+     23.95000000000002
+    ],
+    "edge_mass_low": 0.0,
+    "edge_mass_high": 0.7,
+    "fitted_nu_interior": false,
+    "DEGENERATE": true,
+    "consequence_if_degenerate": "nu telemetry lane not usable (RETIRED gate, PREREG v3 section 5; does not block certification)"
+   },
+   "convergence": {
+    "per_size_R2": {
+     "14": 0.7850346672002653,
+     "18": 0.9288708887010163,
+     "22": 0.9636822665710151,
+     "24": 0.9607536296151102,
+     "26": 0.9380035997525561
+    },
+    "R2_threshold": 0.98,
+    "R2_pass": false,
+    "cross_size_correlation": {
+     "14x18": 0.9697907105713903,
+     "14x22": 0.9574365103126339,
+     "14x24": 0.9530101218517781,
+     "14x26": 0.9386951096158495,
+     "18x22": 0.9969680668953199,
+     "18x24": 0.9974292364174021,
+     "18x26": 0.9873176743865153,
+     "22x24": 0.9996311857193874,
+     "22x26": 0.9944160540488667,
+     "24x26": 0.9945557574984129
+    },
+    "xcorr_threshold": 0.99,
+    "xcorr_pass": false
+   },
+   "pairwise_nu_and_extrapolation": {
+    "pairs": {
+     "14-18": {
+      "nu": 1.5,
+      "kappa_c": 10.47000000000001,
+      "midpoint_N": 16.0
+     },
+     "18-22": {
+      "nu": 1.5,
+      "kappa_c": 14.370000000000012,
+      "midpoint_N": 20.0
+     },
+     "22-24": {
+      "nu": 1.5,
+      "kappa_c": 17.890000000000015,
+      "midpoint_N": 23.0
+     },
+     "24-26": {
+      "nu": 0.75,
+      "kappa_c": 23.95000000000002,
+      "midpoint_N": 25.0
+     }
+    },
+    "nu_intercept_1_over_N": 0.19112459538817747
+   }
+  },
+  "direct_beta_lane": {
+   "status": "PRIMARY ROUTE per PREREG v3 section 7 (carrying v2 section 5 / v1 3.1); certified-candidate only when executed on the pinned Nebius venue with --venue-nebius over the extended ladder, else PIPELINE-VALIDATION",
+   "official_ladder": [
+    14,
+    18,
+    22,
+    24,
+    26
+   ],
+   "gamma_operationalization": "IC-3/IC-4, PINNED by PREREG v2 section 4 (carried by PREREG v3 section 4): ramp slope of disorder-averaged g(t)=|Tr e^{-iHt}|^2/d_sector^2; primary column kappa=0",
+   "d_convention_note": "PREREG v2 section 1 erratum (carried by PREREG v3 section 1): d = actual Hilbert-space dimension of the simulated system (even-parity sector, 2^(N/2-1)); the v1 'd ~ 2^N' glossary shorthand is SUPERSEDED and reported as diagnostic only",
+   "primary_kappa0": {
+    "gamma_per_size": {
+     "14": 4.7703076133881535e-05,
+     "18": 4.509036098508917e-06,
+     "22": 3.1637688799867187e-07,
+     "24": 1.108939201276315e-07,
+     "26": 2.1148769561995196e-08
+    },
+    "gamma_telemetry_N10": 0.00043402304611522597,
+    "windows": {
+     "14": {
+      "t_dip": 20.282654876197476,
+      "t_end": 184.5006608354558,
+      "plateau": 0.015625,
+      "n_points": 45
+     },
+     "18": {
+      "t_dip": 33.75265572557879,
+      "t_end": 558.7161602678773,
+      "plateau": 0.00390625,
+      "n_points": 53
+     },
+     "22": {
+      "t_dip": 45.64213408030588,
+      "t_end": 2012.5368844869959,
+      "plateau": 0.0009765625,
+      "n_points": 66
+     },
+     "24": {
+      "t_dip": 49.560274521107374,
+      "t_end": 2869.01835828717,
+      "plateau": 0.00048828125,
+      "n_points": 67
+     },
+     "26": {
+      "t_dip": 66.38729043672684,
+      "t_end": 6376.754398887018,
+      "plateau": 0.000244140625,
+      "n_points": 72
+     }
+    },
+    "primary_d_hilbert_sector": {
+     "beta_pairs_midpoints": [
+      1.7015956681835243,
+      1.9165514715625023,
+      1.5124639412940948,
+      2.390534635714354
+     ],
+     "beta_intercept_1_over_N": 2.701009876189077,
+     "beta_pooled_slope": 1.8335122102129533,
+     "ci95_intercept": [
+      2.2794017148367423,
+      3.107493191679938
+     ],
+     "loglog_fit_R2": 0.9975546507831119,
+     "bootstrap_nondegeneracy": {
+      "beta_search_interval": [
+       0.3,
+       4.0
+      ],
+      "edge_mass_low": 0.0,
+      "edge_mass_high": 0.0,
+      "edge_mass_max_strict": 0.05,
+      "intercept_interior": true,
+      "DEGENERATE": false
+     }
+    },
+    "diagnostic_d_2powN_SUPERSEDED": {
+     "beta_pairs_midpoints": [
+      0.8507978340917621,
+      0.9582757357812511,
+      0.7562319706470484,
+      1.1952673178571755
+     ],
+     "beta_intercept_1_over_N": 1.3505049380945369,
+     "beta_pooled_slope": 0.9167561051064765,
+     "ci95_intercept": [
+      1.1397008574183691,
+      1.5537465958399677
+     ]
+    },
+    "bootstrap_invalid_resamples": 0,
+    "bootstrap_invalid_fraction": 0.0,
+    "per_size_gamma_convergence": {
+     "14": {
+      "gamma_positive": true,
+      "window_points": 45,
+      "window_points_ok": true
+     },
+     "18": {
+      "gamma_positive": true,
+      "window_points": 53,
+      "window_points_ok": true
+     },
+     "22": {
+      "gamma_positive": true,
+      "window_points": 66,
+      "window_points_ok": true
+     },
+     "24": {
+      "gamma_positive": true,
+      "window_points": 67,
+      "window_points_ok": true
+     },
+     "26": {
+      "gamma_positive": true,
+      "window_points": 72,
+      "window_points_ok": true
+     }
+    },
+    "gamma_convergence_ok": true
+   },
+   "crossing_adjacent": {
+    "kappa": null,
+    "result": null
+   },
+   "beta_by_kappa_telemetry": {
+    "0.0": {
+     "gamma": {
+      "14": 4.7703076133881535e-05,
+      "18": 4.509036098508917e-06,
+      "22": 3.1637688799867187e-07,
+      "24": 1.108939201276315e-07,
+      "26": 2.1148769561995196e-08
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.701009876189077,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.3505049380945369
+    },
+    "1.0": {
+     "gamma": {
+      "14": 0.0002144613780094525,
+      "18": 1.5325708552855243e-05,
+      "22": 9.273159974697331e-07,
+      "24": 2.989149255104477e-07,
+      "26": 7.00003671368051e-08
+     },
+     "beta_intercept_d_sector_PRIMARY": 1.9314331248007175,
+     "beta_intercept_d_2powN_SUPERSEDED": 0.9657165624003567
+    },
+    "1.25": {
+     "gamma": {
+      "14": 0.0002563528330586091,
+      "18": 1.8239907944325795e-05,
+      "22": 1.2371527823503087e-06,
+      "24": 3.7273914169208166e-07,
+      "26": 8.700209236144842e-08
+     },
+     "beta_intercept_d_sector_PRIMARY": 2.040365857845723,
+     "beta_intercept_d_2powN_SUPERSEDED": 1.0201829289228606
+    },
+    "1.57": {
+     "gamma": {
+      "14": 0.00034362815000377986,
+      "18": 2.2078604762992053e-05,
+      "22": 1.4210656346788487e-06,
+      "24": 4.0175977780228754e-07,
+      "26": 1.1153733404514146e-07
+     },
+     "beta_intercept_d_sector_PRIMARY": 1.5670998910604446,
+     "beta_intercept_d_2powN_SUPERSEDED": 0.7835499455302214
+    },
+    "1.98": {
+     "gamma": {
+      "14": 0.000979328134028187,
+      "18": 2.496021996771555e-05,
+      "22": 1.7638425160923042e-06,
+      "24": 5.295461037696691e-07,
+      "26": 1.3718990570905422e-07
+     },
+     "beta_intercept_d_sector_PRIMARY": 0.3038600787406407,
+     "beta_intercept_d_2powN_SUPERSEDED": 0.15193003937031924
+    },
+    "2.48": {
+     "gamma": {
+      "14": 0.0011386980201440534,
+      "18": 2.968924530700649e-05,
+      "22": 2.0709661720921316e-06,
+      "24": 5.603595984397646e-07,
+      "26": 1.5867843663265625e-07
+     },
+     "beta_intercept_d_sector_PRIMARY": 0.2884063176934329,
+     "beta_intercept_d_2powN_SUPERSEDED": 0.14420315884671606
+    },
+    "3.11": {
+     "gamma": {
+      "14": 0.0015270173586882524,
+      "18": 4.110265025931469e-05,
+      "22": 2.3554974939365184e-06,
+      "24": 6.484506956773189e-07,
+      "26": 3.778236390251272e-06
+     },
+     "beta_intercept_d_sector_PRIMARY": 1.5776279153065875,
+     "beta_intercept_d_2powN_SUPERSEDED": 0.7888139576532918
+    },
+    "3.9": {
+     "gamma": {
+      "14": 0.002019079225124082,
+      "18": 0.00030500500624493687,
+      "22": 9.737527269734282e-05,
+      "24": 7.846270897891594e-07,
+      "26": 6.7957523247556005e-06
+     },
+     "beta_intercept_d_sector_PRIMARY": 10.900466240665509,
+     "beta_intercept_d_2powN_SUPERSEDED": 5.450233120332757
+    },
+    "4.9": {
+     "gamma": {
+      "14": 0.0026288987412287175,
+      "18": 0.000380361841877915,
+      "22": 4.313087533873686e-05,
+      "24": 2.3792059656042427e-05,
+      "26": 1.1698333122615723e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": 0.13697635383560539,
+     "beta_intercept_d_2powN_SUPERSEDED": 0.06848817691780215
+    },
+    "6.15": {
+     "gamma": {
+      "14": 0.003376914338228459,
+      "18": 0.0005032916100075786,
+      "22": 5.668346054209383e-05,
+      "24": 3.404699590328189e-05,
+      "26": 1.7171100304768152e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.027229826580238037,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.013614913290119462
+    },
+    "7.71": {
+     "gamma": {
+      "14": 0.00429712713531186,
+      "18": 0.000652641864546352,
+      "22": 7.314886088982773e-05,
+      "24": 4.5952925259874465e-05,
+      "26": 2.3794263048540743e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.1416266440229094,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.07081332201145525
+    },
+    "9.68": {
+     "gamma": {
+      "14": 0.005447490635698885,
+      "18": 0.0008374252496432474,
+      "22": 9.355758341414859e-05,
+      "24": 3.876613068241805e-05,
+      "26": 3.1893580289198123e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.5891932025888034,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.29459660129440146
+    },
+    "12.15": {
+     "gamma": {
+      "14": 0.006879924197466394,
+      "18": 0.0010782134071423847,
+      "22": 0.00011885893346946728,
+      "24": 4.975116516816964e-05,
+      "26": 4.171075212360166e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.625206041852092,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.31260302092604547
+    },
+    "15.24": {
+     "gamma": {
+      "14": 0.008663738052119374,
+      "18": 0.001363087727961852,
+      "22": 0.0001502085722276628,
+      "24": 6.330236606764962e-05,
+      "26": 5.370854594119516e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.6610331311410362,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.3305165655705177
+    },
+    "19.13": {
+     "gamma": {
+      "14": 0.01090274883452032,
+      "18": 0.0017195586628399122,
+      "22": 0.00018942770812801222,
+      "24": 8.017584438386061e-05,
+      "26": 6.862537194365495e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.6868929776742448,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.3434464888371212
+    },
+    "24.0": {
+     "gamma": {
+      "14": 0.013700509750863721,
+      "18": 0.002176057672064415,
+      "22": 0.00023830320757904413,
+      "24": 0.00010114403426675483,
+      "26": 8.714857976141215e-05
+     },
+     "beta_intercept_d_sector_PRIMARY": -0.6978059456708433,
+     "beta_intercept_d_2powN_SUPERSEDED": -0.3489029728354212
+    }
+   }
+  },
+  "op179_buckets": {
+   "WARNING": "Buckets below are the mechanical output of the byte-frozen op179 functions. They are a certified-candidate verdict ONLY if this execution ran on the pinned Nebius venue (--venue-nebius asserted, extended ladder) AND every certification gate below holds; otherwise they are PIPELINE-VALIDATION output only. Per PREREG v3 section 9, no SYK number may be reported as GHP support in either direction outside a certified run.",
+   "venue_nebius_asserted": true,
+   "buckets": {
+    "kappa0_d_sector_PINNED_CONVENTION_V2": {
+     "beta": 2.701009876189077,
+     "ci95": [
+      2.2794017148367423,
+      3.107493191679938
+     ],
+     "point_bucket": "BOUNDARY",
+     "ci_bucket": "OUTSIDE_BAND"
+    },
+    "kappa0_d_2powN_SUPERSEDED_DIAGNOSTIC": {
+     "beta": 1.3505049380945369,
+     "ci95": [
+      1.1397008574183691,
+      1.5537465958399677
+     ],
+     "point_bucket": "IN_BAND",
+     "ci_bucket": "STRONG_PASS"
+    }
+   }
+  },
+  "certification_gates": {
+   "venue_is_nebius": true,
+   "ladder_is_extended": true,
+   "direct_beta_loglog_R2_pass": true,
+   "beta_intercept_bootstrap_nondegenerate": true,
+   "gamma_convergence_pass": true,
+   "gamma_operationalization_source_pinned": true,
+   "CERTIFIED_VERDICT": true,
+   "status": "CERTIFIED-CANDIDATE",
+   "retired_nu_gates_note": "The v1/v2 nu-collapse certification gates (nu search-interval interiority, nu bootstrap edge-mass, per-size collapse R^2, cross-size correlation) are RETIRED by PREREG v3 section 5; their values are reported in nu_telemetry_lane and decide nothing."
+  }
+ }
+}
