@@ -535,7 +535,7 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
 #guideNarrow #presets { flex-direction: column; overflow-x: visible; }
 #guideNarrow #presets .preset-card { min-width: 0; }
 :root[data-w="narrow"] #dockLane { padding: 8px 12px; gap: 7px; }
-:root[data-w="narrow"] #railLane { padding: 0 12px 10px; max-height: 46vh; }
+:root[data-w="narrow"] #railLane { padding: 0 12px 10px; max-height: 54vh; min-height: 320px; }
 :root[data-w="narrow"] #torusText { max-height: 36%; }
 :root[data-w="narrow"] #torusRoomHead h2 { font-size: 14px; letter-spacing: 0.14em; }
 :root[data-w="narrow"] #ribbonKeys { width: 100%; }
@@ -623,7 +623,7 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
       <div id="aumaHead">
         <div id="aumaHeadText">
           <div id="aumaTitle">Auma &mdash; the guide</div>
-          <div id="aumaDisclosure">The node's live voice: a real AI answering aloud, not a
+          <div id="aumaDisclosure">Her live voice &mdash; a real AI answering aloud, not a
             recording. The microphone opens only when you press her orb.</div>
         </div>
         <button class="btn small x" id="aumaClose">close</button>
@@ -3631,7 +3631,9 @@ function frame(now) {
 (function () {
   'use strict';
   var DOOR = 'http://127.0.0.1:7091';
-  var RAIL_W = '372px';
+  /* 420, not 372: measured against the real mounted surface — below about
+     400px aumalive's own voice row collides with its own transcript input */
+  var RAIL_W = '420px';
 
   var bubble = document.getElementById('aumaBubble');
   var rail = document.getElementById('railLane');
