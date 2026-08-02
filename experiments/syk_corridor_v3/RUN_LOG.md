@@ -130,3 +130,47 @@ certified run the system LAPACK alternative is switched to the threaded OpenBLAS
 the byte-pinned pipeline and bookkeeper are untouched (hashes re-verified pre-run).
 Stage A above ran entirely on the reference backend; the ≤1e-12 stage-A-vs-v2 agreement
 already bounds the cross-LAPACK effect at far below every gate threshold.
+
+## Entry 9 — recovery note — 2026-08-02T01:00Z
+
+The orchestrating host process died after stage B was launched under nohup (2026-08-02T00:36:31Z).
+Recovery per owner directive: SSH re-attach to the SAME instance (no second instance provisioned);
+job PID 9856 (`python3 -u pipeline.py --venue-nebius`) found alive mid-sweep (N=24 column done,
+N=26 in progress); polled bounded until completion. No relaunch was needed.
+
+## Entry 10 — STAGE B: the certified §8(f) extended run — completed 2026-08-02T02:29:23Z
+
+Executed on the pinned Nebius venue with `--venue-nebius` (extended ladder {14,18,22,24,26},
+N=10 telemetry, seeds 5000–5039, pinned κ grid, OpenBLAS backend per Entry 8; pipeline and
+bookkeeper hashes verified byte-identical to the contract pins pre- AND post-run, logged in
+`run_v3_stageB.log`). Wall times: sweep N=22 82.0 s / N=24 323.3 s / N=26 1963.0 s;
+ν-bootstrap (telemetry lane) 4338 s. SELF-TESTS: ALL PASSED. Job ran to normal exit.
+
+- G-β1: pooled log Γ vs log d R² = 0.99755 ≥ 0.98 → **PASS**.
+- G-β2: intercept 2.70101 strictly interior of [0.30, 4.00]; bootstrap edge mass 0.000 / 0.000 → **PASS**.
+- G-β3: Γ > 0 at every official size; IC-7 windows 45/53/66/67/72 points ≥ 5; invalid resamples 0/2000 → **PASS**.
+- Venue gate: `venue_is_nebius=true`, `ladder_is_extended=true` → **CERTIFIED_VERDICT=true**, status CERTIFIED-CANDIDATE.
+- ν telemetry lane: collapse crossing κ_c = 23.95 with only 1 grid point above → bracketing rule
+  NOT satisfied → ν lane and crossing-adjacent column **VOID**, exactly as PREREG v3 §3 disclosed
+  for large N; the certified direct-β verdict is unaffected (contract text).
+
+## Entry 11 — retrieval + evidence chain — 2026-08-02T02:30Z
+
+`results_v3.json` retrieved; sha256
+`f5909585a6cbed8a026e146d1edcd0e1ce2924950f516fa9475ed6f2fa1adfc8` identical remote and local.
+Copies: `experiments/syk_corridor/results_v3.json` (the pinned output path — overwriting the
+stage-A file, which was committed to git at 5420479 before provisioning per §8(d), so no
+evidence destroyed), `experiments/syk_corridor_v3/results_nebius/results_v3_stageB_certified.json`
+(raw), `experiments/syk_corridor_v3/results.json` (provenance-wrapped), plus `run_v3_stageB.log`.
+
+## Entry 12 — DEPROVISION (unconditional) + cost actual — 2026-08-02T02:31Z
+
+Instance `computeinstance-e00bxfxapwqb0874ny` deleted 02:30:21Z→02:31:02Z; verified absent from
+the instance list; its boot disk `syk-corridor-v3-boot` verified absent from the disk list
+(auto-deleted with the instance). No standing infrastructure survives this contract.
+Pre-existing instances of other lanes (aukora-crucible-h100, aukora-g0-41707f91, both STOPPED
+since before this corridor) were not touched.
+
+Cost actual (computed from the recorded rate × instance lifetime; lifetime 2026-08-01T23:18:47Z
+→ 2026-08-02T02:31:02Z = 3.204 h; rate 0.7936 + 0.0062 USD/hr): **≈ 2.56 USD** of the 400 USD
+hard cap (estimate was ≈ 6.40; both stages ran on the one instance). Cap never approached.

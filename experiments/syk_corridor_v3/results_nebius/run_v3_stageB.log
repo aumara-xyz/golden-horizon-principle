@@ -1,0 +1,35 @@
+[pre-run stageB certified --venue-nebius] 2026-08-02T00:36:31Z
+5f079d8976f1e1bd05672169151dd2d73e953adc2a3f7a87961fc174f768d226  pipeline.py
+b1fbb56f480a938523fcd5a3ff1dfd8d34ae4597e96ca49f280d6bbbefa1694e  ../op179_nu_to_beta.py
+SELF-TESTS
+  hermiticity            : OK (max |H - H^dag| = 0.00e+00)
+  even-parity block      : OK (max cross-parity element = 0.00e+00)
+  determinism            : OK (H4 sha256[:16] = 37c11c35bc09a115)
+  level repulsion (SYK4) : OK (<r> at N=18, kappa=0: 0.5811; GUE ref 0.5996, Poisson ref 0.3863)
+  op179 bucket import    : OK (point(2.0)=KILL, ci(0.8,1.2)=STRONG_PASS)
+SELF-TESTS: ALL PASSED
+
+PINNED SWEEP: N in [14, 18, 22, 24, 26] official (EXTENDED ladder) + [10] telemetry; seeds 5000-5039; 16 kappa points
+  N=10: d_sector=   16, 40 seeds x 16 kappas done in 0.0s
+  N=14: d_sector=   64, 40 seeds x 16 kappas done in 0.2s
+  N=18: d_sector=  256, 40 seeds x 16 kappas done in 6.9s
+  N=22: d_sector= 1024, 40 seeds x 16 kappas done in 82.0s
+  N=24: d_sector= 2048, 40 seeds x 16 kappas done in 323.3s
+  N=26: d_sector= 4096, 40 seeds x 16 kappas done in 1963.0s
+ANALYSIS
+  bootstrapping nu collapse (2000 resamples)...
+    done in 4338s
+  direct-beta lane: primary column kappa=0 (IC-4) + bootstrap...
+
+WROTE /home/aukora/syk/experiments/syk_corridor/results_v3.json
+CERTIFICATION GATES: {
+ "venue_is_nebius": true,
+ "ladder_is_extended": true,
+ "direct_beta_loglog_R2_pass": true,
+ "beta_intercept_bootstrap_nondegenerate": true,
+ "gamma_convergence_pass": true,
+ "gamma_operationalization_source_pinned": true,
+ "CERTIFIED_VERDICT": true,
+ "status": "CERTIFIED-CANDIDATE",
+ "retired_nu_gates_note": "The v1/v2 nu-collapse certification gates (nu search-interval interiority, nu bootstrap edge-mass, per-size collapse R^2, cross-size correlation) are RETIRED by PREREG v3 section 5; their values are reported in nu_telemetry_lane and decide nothing."
+}
