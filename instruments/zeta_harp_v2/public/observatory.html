@@ -62,6 +62,11 @@ canvas#gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block
 .hidden { display: none !important; }
 .dim { color: var(--dim); }
 .mono { font-family: var(--mono); font-size: 14px; }
+/* owner rule 9: nothing below 14px — including math sub/superscripts, which the
+   browser default (font-size: smaller) would shrink to about 11px */
+sub, sup { font-size: 14px; line-height: 0; position: relative; vertical-align: baseline; }
+sub { top: 0.3em; }
+sup { top: -0.45em; }
 
 /* ---- the one grid -------------------------------------------------------- */
 #chrome {
@@ -154,7 +159,10 @@ button { font-family: var(--serif); cursor: pointer; font-size: 15px; }
   grid-area: stage; min-height: 0;
   display: grid;
   grid-template-columns: minmax(0, var(--colW)) minmax(0, 1fr) minmax(0, var(--colW));
-  gap: 12px; padding: 12px 16px; align-items: start;
+  gap: 12px; padding: 12px 16px;
+  /* stretch, not start: each column must be bounded by the stage row so a
+     tall sheet scrolls inside its own lane instead of spilling over the dock */
+  align-items: stretch;
 }
 .stageCol {
   display: flex; flex-direction: column; gap: 12px;
@@ -281,16 +289,27 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
 
 /* ================= LANE 2b — the torus room (full stage) ================= */
 #torusRoom {
-  grid-column: 1 / -1; grid-row: 1; min-height: 0;
+  grid-column: 1 / -1; grid-row: 1; min-height: 0; overflow: hidden;
   display: flex; flex-direction: column; gap: 8px;
   pointer-events: auto;
+  /* it is a ROOM, not a transparent overlay: the field still glows faintly
+     behind it, but the four-torus is the thing you are looking at */
+  padding: 12px 16px 14px; border: 1px solid var(--hair); border-radius: 10px;
+  background: radial-gradient(ellipse at 50% 44%,
+    rgba(12, 17, 26, 0.60) 0%, rgba(12, 17, 26, 0.90) 72%);
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
 }
 #stageLane[data-room="torus"] .stageCol { display: none; }
 #torusRoomHead { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 #torusRoomHead h2 { font-size: 14px; font-weight: 400; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--dim); }
 #torusTools { display: flex; gap: 7px; flex-wrap: wrap; }
-#torusStage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+#torusStage { flex: 1 1 auto; min-height: 120px;
+  display: flex; align-items: center; justify-content: center; }
+/* the room's own text scrolls inside the room — it can never be clipped away
+   and it can never push the picture out */
+#torusText { flex: 0 1 auto; min-height: 0; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 6px; }
 #torus { display: block; max-width: 100%; max-height: 100%; }
 #torusCaption { font-size: 15px; line-height: 1.6; color: var(--ink); text-align: center;
   max-width: 780px; margin: 0 auto; }
@@ -300,6 +319,7 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
 /* the dimensional ladder intro — a sheet inside the room, never over it */
 #ladder {
   align-self: center; max-width: 620px; width: 100%;
+  flex: 0 1 auto; min-height: 0; overflow-y: auto;   /* scroll inside the room */
   background: var(--panel); border: 1px solid var(--hair2); border-radius: 8px;
   padding: 18px 22px 16px; text-align: center;
 }
@@ -494,8 +514,13 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
   grid-template-areas: "top" "stage" "rail" "dock" "foot";
 }
 :root[data-w="narrow"] #stageLane {
-  grid-template-columns: minmax(0, 1fr); padding: 10px 12px;
+  /* one column that scrolls as a single list of sheets, rather than three
+     independently-scrolling thirds that each chop their sheet in half */
+  grid-template-columns: minmax(0, 1fr); grid-auto-rows: min-content;
+  padding: 10px 12px; overflow-y: auto;
 }
+:root[data-w="narrow"] .stageCol { max-height: none; overflow: visible; }
+:root[data-w="narrow"] .stageCol:empty { display: none; }
 /* below ~700px the chrome collapses to the tab bar + the menu button */
 :root[data-w="narrow"] #titleChip { max-width: 62vw; }
 :root[data-w="narrow"] #titleChip .tname { font-size: 14px; letter-spacing: 0.14em;
@@ -511,6 +536,8 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
 #guideNarrow #presets .preset-card { min-width: 0; }
 :root[data-w="narrow"] #dockLane { padding: 8px 12px; gap: 7px; }
 :root[data-w="narrow"] #railLane { padding: 0 12px 10px; max-height: 46vh; }
+:root[data-w="narrow"] #torusText { max-height: 36%; }
+:root[data-w="narrow"] #torusRoomHead h2 { font-size: 14px; letter-spacing: 0.14em; }
 :root[data-w="narrow"] #ribbonKeys { width: 100%; }
 :root[data-w="narrow"] #ribbonRow { flex-direction: column; }
 :root[data-w="narrow"] #jrText { font-size: 16px; }
@@ -573,8 +600,10 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
         </div>
       </div>
       <div id="torusStage"><canvas id="torus" width="900" height="900"></canvas></div>
-      <div id="torusCaption"></div>
-      <div id="torusHonest"></div>
+      <div id="torusText">
+        <div id="torusCaption"></div>
+        <div id="torusHonest"></div>
+      </div>
 
       <!-- dimensional ladder intro (first open) -->
       <div id="ladder" class="hidden">
@@ -686,7 +715,7 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
 <div id="sheetStore" class="hidden">
 
   <section class="sheet" id="ribbonSheet" data-col="colC">
-    <header><h2>Z ribbon &mdash; this height window</h2>
+    <header><h2>Z ribbon</h2>
       <button class="x" data-closetab="ribbon">close &rarr; tab</button></header>
     <div id="ribbonRow">
       <div id="ribbonKeys">
@@ -714,7 +743,7 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
   </section>
 
   <section class="sheet" id="termsSheet" data-col="colL">
-    <header><h2>Terms &mdash; the frozen slice</h2>
+    <header><h2>Terms</h2>
       <button class="x" data-closetab="terms">close &rarr; tab</button></header>
     <canvas id="flower" width="720" height="720"></canvas>
     <div class="kv" id="flowerNums"></div>
@@ -727,7 +756,7 @@ input[type="range"]::-moz-range-thumb { width: 13px; height: 13px; border-radius
     the resultant's length is not |Z| and is never labeled |Z|.</div>
   </section>
 
-  <section class="sheet" id="zerosSheet" data-col="colR">
+  <section class="sheet" id="zerosSheet" data-col="colC">
     <header><h2>Zero microscope</h2>
       <button class="x" data-closetab="zeros">close &rarr; tab</button></header>
     <select id="microZeroSel"></select>
@@ -2543,14 +2572,14 @@ function drawTorus() {
     var s4 = 1.35 / (2.1 - w2);            /* 4D -> 3D perspective */
     var X = x2 * s4, Y = y2 * s4, Z = z2 * s4;
     var s3 = 1.9 / (2.9 - Z);              /* 3D -> 2D perspective */
-    return [W / 2 + X * s3 * W * 0.40, H / 2 - Y * s3 * H * 0.40, s4 * s3];
+    return [W / 2 + X * s3 * W * 0.52, H / 2 - Y * s3 * H * 0.52, s4 * s3];
   }
   var GU = TOR_VIEW === 'slice' ? 4 : 14, GS = 64, i, j, p;
-  var lw = Math.max(1, W / 460);
+  var lw = Math.max(1.1, W / 380);
   /* u-lines (phi_1 direction) */
   for (i = 0; i < GU; i++) {
     var u = i / GU * Math.PI * 2;
-    ctx.strokeStyle = TOR_VIEW === 'slice' ? 'rgba(91,142,242,0.42)' : 'rgba(91,142,242,0.16)';
+    ctx.strokeStyle = TOR_VIEW === 'slice' ? 'rgba(91,142,242,0.50)' : 'rgba(91,142,242,0.26)';
     ctx.lineWidth = lw;
     ctx.beginPath();
     for (j = 0; j <= GS; j++) {
@@ -2562,7 +2591,7 @@ function drawTorus() {
   /* v-lines (phi_2 direction) */
   for (i = 0; i < GU; i++) {
     var v = i / GU * Math.PI * 2;
-    ctx.strokeStyle = TOR_VIEW === 'slice' ? 'rgba(160,107,255,0.38)' : 'rgba(160,107,255,0.14)';
+    ctx.strokeStyle = TOR_VIEW === 'slice' ? 'rgba(160,107,255,0.46)' : 'rgba(160,107,255,0.24)';
     ctx.lineWidth = lw;
     ctx.beginPath();
     for (j = 0; j <= GS; j++) {
@@ -3123,6 +3152,9 @@ function jrStart() {
   JR.on = true; JR.step = -1;
   document.getElementById('jrNext').textContent = 'NEXT';
   document.getElementById('jrCap').classList.remove('hidden');
+  /* the caption is the dock's business while the journey runs; the preset row
+     stands down so the picture keeps most of the screen (setMode restores it) */
+  document.getElementById('presets').classList.add('hidden');
   jrAdvance();
 }
 function jrAdvance() {
