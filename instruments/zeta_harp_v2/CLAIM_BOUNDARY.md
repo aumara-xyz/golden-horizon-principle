@@ -22,6 +22,36 @@ CLAIM BOUNDARY is absolute:
 - no "proves/supports RH"
 - no "first ever"
 
+## Amendment 1 — the presentation exemption (2026-08-02, owner-resolved)
+
+The not-list above bans these terms **as claims and as evidence**. It does not, and was never
+intended to, ban the words when they name a disclosed presentation object whose honest label is
+attached at the point of use.
+
+The contradiction it resolved: the same owner directive that binds this boundary also commissions
+a full-screen **Torus Room** (rule 6, 2026-08-02) and its dimensional ladder (point → line →
+square → **cube** → tesseract → the real thing). The adversarial verifier correctly BLOCKED on the
+conflict rather than choosing silently. Resolution:
+
+**PERMITTED (presentation, always with its label):**
+- "torus" / "4-torus" naming the projection actually being drawn, alongside the standing caption:
+  *"the full state lives on a 26-torus; this is a 4-torus window."*
+- "cube" / "tesseract" naming the dimensional ladder's rungs and the viewing cage, alongside:
+  *"the tesseract is a four-dimensional viewing frame, not a claim about the mathematics inside it."*
+
+**STILL ABSOLUTELY BANNED (claims, unchanged):**
+- any sentence in which a torus, cube, tesseract, Trinity, 54-observers, holography, φ, or GHP is
+  offered as evidence, structure, or explanation for the zeta function, the zeros, RH, the being,
+  or physics;
+- the ZETA-CUBE digit mapping as anything but the recorded **NULL** it returned;
+- "proves", "supports RH", "first ever" in any form.
+
+The test of the line: *does the word name a picture the visitor is looking at, or does it name a
+reason to believe something?* Pictures are permitted with their labels. Reasons are not.
+
+Enforcement: `tools/v3_selfcheck.sh` lints `\btorus\b` and `\bcube` against a recorded baseline
+count, so growth in these terms must be deliberate and reviewed, never accidental drift.
+
 anywhere in this build.
 
 ## Binding terminology laws

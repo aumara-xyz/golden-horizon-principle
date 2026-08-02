@@ -80,6 +80,19 @@ for pat in BANNED:
             print('      ...', new[s:m.end()+70].replace('\n', ' '))
     else:
         print(f"  {pat:34s} base {b}  new {n}  {flag}")
+
+# WATCHED presentation terms (CLAIM_BOUNDARY Amendment 1, 2026-08-02): permitted as
+# labelled pictures, never as claims. Baselines recorded at the v3 Torus Room ship.
+# Growth beyond baseline must be deliberate and reviewed — the amendment's whole point.
+WATCHED = {r'\btorus\b': 42, r'\bcube': 7, r'\btesseract\b': 5}
+print("--- watched presentation terms (labelled pictures only) ---")
+for pat, cap in WATCHED.items():
+    n = len(re.findall(pat, new, re.I))
+    if n > cap:
+        fail = 1
+        print(f"  {pat:34s} baseline {cap}  new {n}  GREW — review against Amendment 1")
+    else:
+        print(f"  {pat:34s} baseline {cap}  new {n}  OK")
 sys.exit(fail)
 PY
 
