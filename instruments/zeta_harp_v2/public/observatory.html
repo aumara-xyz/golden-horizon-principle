@@ -1796,6 +1796,44 @@ function audioUnlock() {
   return true;
 }
 
+/* ============ OWNER FIX 2026-08-02: obvious mute + never buzz invisibly ============ */
+var ZH_MUTED = false;
+function zhEnsureMuteBtn() {
+  if (document.getElementById('zhMuteBtn')) return;
+  var b = document.createElement('button');
+  b.id = 'zhMuteBtn';
+  b.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;font-family:Georgia,serif;' +
+    'font-size:16px;padding:12px 20px;background:rgba(20,26,36,0.94);color:#e8c95a;' +
+    'border:1px solid #4a5570;border-radius:10px;cursor:pointer;letter-spacing:1px;';
+  b.textContent = 'SOUND ON — click to mute';
+  b.onclick = function () {
+    ZH_MUTED = !ZH_MUTED;
+    if (AUD.ctx) {
+      if (ZH_MUTED) { AUD.master.gain.value = 0; AUD.ctx.suspend(); }
+      else { AUD.ctx.resume(); AUD.master.gain.value = 1; }
+    }
+    b.textContent = ZH_MUTED ? 'MUTED — click for sound' : 'SOUND ON — click to mute';
+    b.style.color = ZH_MUTED ? '#8a94a8' : '#e8c95a';
+  };
+  document.body.appendChild(b);
+}
+var zhOrigUnlock = audioUnlock;
+audioUnlock = function () {
+  var ok = zhOrigUnlock();
+  if (ok) zhEnsureMuteBtn();
+  return ok;
+};
+/* The hard law: this page NEVER makes sound while hidden or closing. */
+document.addEventListener('visibilitychange', function () {
+  if (!AUD.ctx) return;
+  if (document.hidden) { AUD.ctx.suspend(); }
+  else if (!ZH_MUTED && AUD.started) { AUD.ctx.resume(); }
+});
+window.addEventListener('pagehide', function () {
+  if (AUD.ctx) { try { AUD.master.gain.value = 0; AUD.ctx.close(); } catch (e) {} }
+});
+/* ============ end owner fix ============ */
+
 /* Truth engine: worklet (async load is fine — the context is already running). */
 function ensureTruth(cb) {
   if (!AUD.started) { if (!audioUnlock()) return; }
