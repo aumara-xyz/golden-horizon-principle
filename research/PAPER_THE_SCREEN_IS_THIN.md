@@ -79,12 +79,20 @@ interface is written by P, by F, or by itself.
 The free-energy-principle literature carries the missing structure in its notation: the blanket is
 partitioned
 
-> **b = (r, a)** — **sensory** states r, influenced by external but not internal states, and
+> **b = (s, a)** — **sensory** states s, influenced by external but not internal states, and
 > **active** states a, influenced by internal but not external states.
+
+Source, verbatim: the blanket "can itself be partitioned into two sets that are, and are not,
+children of external states. We will refer to these as a surface or sensory states and active
+states" (Friston, "Life as we know it," *J. R. Soc. Interface* 10:20130475, 2013). One caveat that
+matters for §3.1: Friston 2013 defines the partition **causally** ("children of external states"),
+while the 2019/2021 formulations define it **statistically**, via conditional independence in the
+steady-state density plus sparsity conditions — and those two definitions have been shown
+**non-equivalent** (Biehl, Pollock & Kanai, *Entropy* 23:293, 2021). We use the causal reading.
 
 Three consequences, stated in order of confidence:
 
-**(i) This is a decomposition of the object, not a new axis (EM).** B = (r, a) refines *what the
+**(i) This is a decomposition of the object, not a new axis (EM).** B = (s, a) refines *what the
 interface is*, orthogonally to any property of the flow across it.
 
 **(ii) It induces a sixth axis: does the screen act? (EH)** Is a ≠ ∅? This is **not** a refinement
@@ -157,19 +165,39 @@ primitive and S1 the idealisation** — every real screen has a leak rate, and a
 
 ### 3.1 The blanket fails too, and that is support rather than an omission
 
-The instance classed **exact-by-definition** also fails in practice, and the failure is the second
-independent line of evidence for treating S4 as primitive. Real out-of-equilibrium systems
-generically violate the blanket condition: solenoidal (divergence-free, probability-current) flows
-break the required conditional independence unless parameters are fine-tuned. See the critique
-literature on the free energy principle's particular-physics claims. **EM/contested — see §9 on
-citation status.**
+The instance classed **exact-by-definition** also fails in practice, and the failure is a second
+independent line of evidence for treating S4 as primitive.
+
+**What is actually established, at its actual scope.** For **weakly-coupled linear
+(Ornstein–Uhlenbeck, Gaussian steady-state)** systems, the blanket condition holds iff the
+off-diagonal internal–external blocks of the steady-state precision vanish. Under sparse canonical
+coupling this holds only to *first order* in the coupling; at second order the block is nonzero.
+The required block-diagonal solenoidal coupling additionally demands a highly symmetric structure —
+i.e. the absence of perception–action asymmetry. The authors' own words: these conditions "are only
+valid for a very narrow space of parameters," and qualifying systems are "extremely specialized."
+(Aguilera, Millidge, Tschantz & Buckley, *Physics of Life Reviews* **40**:24–50, 2022.) A separate
+and independently stronger objection in the same paper: the derivation conflates the dynamics of
+average states with the average of the dynamics, which fails even for linear systems.
+
+**This is a contested exchange, not a settled result**, and citing one side would be the error this
+paper keeps warning about. Aguilera et al. is a target article; Friston replied ("Very particular,"
+*Phys. Life Rev.* **41**:58–60, 2022) and at least four commentaries followed. A second critique —
+Biehl, Pollock & Kanai, *Entropy* **23**(3):293, 2021 — disputes four steps, including that
+competing definitions of "Markov blanket" across the FEP corpus are **provably non-equivalent** and
+that the original free energy lemma is false as stated (by explicit counterexample); those authors
+also state plainly that their objections "do not rule out conclusively that the general ideas
+behind the free energy principle are worth pursuing." **EM for the linear-Gaussian results;
+CONTESTED for what they imply about the FEP generally.**
 
 Two corrections to how this is usually framed:
 
 - **FEP is not restricted to biology.** Its non-equilibrium-steady-state formulation claims any
-  system that resists dissipation, which is a claim about physics generally. **That universality
-  claim is itself live and contested** — which is precisely what the critiques dispute. State both
-  halves or neither.
+  system distinguishable from its surroundings — "a theory of every 'thing'" — recovering a
+  Bayesian mechanics claimed compatible with quantum, statistical and classical mechanics (Friston,
+  *A free energy principle for a particular physics*, arXiv:1906.10184, 2019 — **an unpublished
+  monograph, never peer-reviewed**; the rigorous peer-reviewed version is Da Costa, Friston, Heins
+  & Pavliotis, *Proc. R. Soc. A* **477**:20210518, 2021). **That universality claim is live and
+  contested.** State both halves or neither.
 - **FEP is not a special case of the screen, and the screen does not generalise FEP.** The blanket
   is S1+S3 — a *strengthening* — and FEP carries dynamics, a variational objective, and an
   interpretation of internal states as parameterising beliefs, none of which the screen has. We
@@ -319,17 +347,40 @@ of the first hallucination*, complete with LaTeX and section numbering. Apparent
 while evidence went to zero. We record it because the lesson generalises past this paper:
 **detail is not evidence.**
 
+**And the authors did it too, in this section's own revision.** The v2 draft of §1.4 wrote the
+blanket partition as `b = (r, a)`, inherited verbatim from the briefing that proposed the addition.
+It is wrong: the canonical partition is **b = (s, a)** for *sensory* and active, and in this
+literature `r` denotes *internal* states — so the notation we published briefly asserted that the
+blanket consists of internal and active states, which is the opposite of the claim it was making.
+It survived because it arrived with correct surrounding argument, and correct surrounding argument
+is exactly what makes a notational error invisible. It was caught by a citation-verification pass
+run *because the section was going to a public repository*, not by review of the argument. The
+generalisation we would defend: **verification has to target the parts nobody is arguing about.**
+
 ---
 
 ## 9. Citation status
 
-Anchors for §3.1 (the FEP particular-physics critiques and the NESS universality formulation) were
-being verified against primary sources at the time of this revision and are marked
-**UNDETERMINED** rather than stated with false precision. The Pearl/Friston blanket distinction
-(Bruineberg et al., *BBS* 45:e183, 2022, DOI 10.1017/S0140525X21002351) is verified. Readers should
-treat any §3.1 citation not carrying a DOI here as pending. A widely recommended FEP bibliography
-repository was last updated in mid-2021 and predates the entire critique literature above; it is
-useful for classical orientation and not for this argument.
+All §1.4 and §3.1 anchors were verified against primary sources (Crossref, arXiv, publisher full
+text) after the first v2 draft, and three errors in that draft were corrected as a result: the
+blanket notation (§8b), the scope of the Aguilera result, and the publication status of the
+universality anchor.
+
+| anchor | status |
+|---|---|
+| Aguilera, Millidge, Tschantz & Buckley, *Phys. Life Rev.* **40**:24–50 (2022), DOI 10.1016/j.plrev.2021.11.001 | verified — **target article**, scope is weakly-coupled linear Gaussian-NESS systems only |
+| Friston, "Very particular," *Phys. Life Rev.* **41**:58–60 (2022), DOI 10.1016/j.plrev.2022.05.002 | verified — the reply; cite alongside, not after |
+| Biehl, Pollock & Kanai, *Entropy* **23**(3):293 (2021), DOI 10.3390/e23030293 | verified — article number 293, no page range |
+| Friston, arXiv:1906.10184 (2019) | verified as an **unpublished monograph**; never peer-reviewed |
+| Da Costa, Friston, Heins & Pavliotis, *Proc. R. Soc. A* **477**:20210518 (2021), DOI 10.1098/rspa.2021.0518 | verified — the peer-reviewed NESS anchor |
+| Friston, "Life as we know it," *J. R. Soc. Interface* **10**:20130475 (2013), DOI 10.1098/rsif.2013.0475 | verified — source of the sensory/active partition |
+| Bruineberg, Dołęga, Dewhurst & Baltieri, *BBS* **45**:e183 (2022), DOI 10.1017/S0140525X21002351 | verified — Pearl vs Friston blanket |
+
+**A caution about the field's most-recommended reading list.** The widely cited FEP bibliography
+repository (`BerenMillidge/FEP_Active_Inference_Papers`, 242 stars as of 2026-08-09) has a **last
+commit of 2021-06-28** — its GitHub `updated_at` field is five years newer, but that reflects star
+activity, not content. It predates every critique cited above. Useful for classical orientation;
+not a current bibliography, and not a source for this argument.
 
 ---
 
