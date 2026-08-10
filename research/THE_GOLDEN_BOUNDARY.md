@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 2**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 3 (final audit)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -217,6 +217,88 @@ its own preregistration before it counts as anything.
 **Class discipline, applied here and throughout:** the cost floor is a **THEOREM**; the overhead
 table and the correlated-path law are **MEASURED**; mechanism-incompleteness is an **OPEN
 PROPOSITION** with one artifact already removed from its evidence.
+
+
+## 4c. The final audit — what the cost quantity actually is
+
+An external hardening pass asked the one question that decides whether any of this is new:
+**what is `min_B H(B)` subject to `X ⊥ Y | B` in existing mathematics?** We ran it to the end.
+
+**It is common entropy — known since 2014.** Minimising `H(W)` over stochastic kernels subject to
+the Markov chain `X – W – Y` is *exact common information* / *common entropy* (Kumar, Li &
+El Gamal, ISIT 2014; further developed by Yu & Tan). It sits above Wyner common information, which
+minimises `I(XY;W)` over the same constraint, and the minimum alphabet size of `W` is the
+**nonnegative rank** of the joint distribution matrix. The ordering `I(X;Y) ≤ C_Wyner ≤ G` is
+established. Our "cost floor" is the leftmost inequality and it is elementary.
+
+**And our search solved a different problem than the one we named.** The exhaustive partition
+search minimised over *deterministic* `B = g(X,Y)` — a partition of the joint support into
+independent blocks. That is a strictly more constrained object than common entropy, and it lives
+naturally in rectangle-partition / communication-complexity territory rather than in nonnegative
+rank. We measured the gap:
+
+| joint | I(X;Y) | C_det (partitions) | C_stoch (kernels) | deterministic overhead | stochastic overhead |
+|---|---:|---:|---:|---:|---:|
+| independent | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| perfectly correlated | 1.0000 | 1.0000 | 1.0000 | 0.0000 | 0.0000 |
+| noisy pair | 0.2781 | 1.0000 | **0.9544** | 0.7219 | **0.6763** |
+| skewed | 0.2564 | 0.9710 | **0.8554** | 0.7145 | **0.5989** |
+
+**A stochastic boundary is strictly cheaper than any deterministic one**, on both noisy joints.
+So the overhead table in §4b reports *upper bounds*, not the quantity it named — and our own
+`C_stoch` is itself an upper bound, since it comes from numerical optimisation with no guarantee of
+the global minimum. Both are corrected here rather than quietly restated.
+
+**The "Δ = 0 precisely when a clean bottleneck exists" sentence is withdrawn.** It was inferred from
+six examples and never proved. The correct statement is the equality condition of the chain
+`I(X;Y) ≤ I(X;B) ≤ H(B)`: equality throughout requires `H(B|X) = 0` **and** `I(X;B) = I(X;Y)`, and
+we have not derived the full equivalence class. It is an open question, stated as one.
+
+### Two more demotions, both correct
+
+**The correlated-path law is a proposition, not a measurement.** If uncovered paths publish `X_U`
+verbatim then `X_U` is a deterministic function of the observable, so `I(X_P ; O) = H(X_U)`
+immediately; independence merely turns the joint entropy into a sum. It follows algebraically from
+the setup. The simulation verified an identity rather than discovering a phenomenon, and numerical
+confirmation of a theorem is not independent evidence.
+
+**The disclosure closed form is elementary pair-coverage.** `1 − (n−k)(n−k−1)/(n(n−1))` is exactly
+the probability that at least one member of a random adjacent pair has been sampled — verified
+identical to 1e-12. The formula is not new. What may be new is only its *application*: that an
+RFC 6962 inclusion proof discloses an adjacent leaf for free, so proof issuance is pair-sampling.
+Novelty is claimed for the application and for nothing else.
+
+## 4d. The verdict, chosen last and not for excitement
+
+Four endings were available. This is the one the mathematics supports.
+
+> **RESULT 1 — the core quantity reduces to known common-information theory.** `min H(B)` under
+> conditional independence is common entropy; the floor `H(B) ≥ I(X;Y)` is elementary; the
+> disclosure curve is elementary combinatorics; the enforcement law is algebraic; the execution
+> boundary is a two-line consequence of conditional independence whose prior art in verifiable
+> computation and noninterference we have **not** yet searched and therefore may not claim.
+
+What remains, honestly labelled:
+
+**A synthesis, not a theorem.** The general object may be the constrained separation problem
+
+> **min over B ∈ 𝓑 of 𝓒(B), subject to I(X;Y | B) ≤ ε**
+
+where a domain supplies the admissible interface class 𝓑, the cost functional 𝓒, and the tolerance ε.
+Sufficient statistics, the information bottleneck, causal states, access control, and experimental
+design would then be *different ingredient choices in one optimisation problem* rather than the same
+object. That is a far weaker and far more defensible claim than "all boundaries are the same thing,"
+and it is the only unification the mathematics licenses. **Status: SYNTHESIS. Unproven as a theorem,
+and it may be that no theorem is available beyond the mappings themselves.**
+
+**One methodological result that is genuinely ours**, because it was paid for: *a perturbation
+signature is a property of mechanism **and** intervention protocol, never of mechanism alone.* We
+learned it by producing a 1.98-bit mechanism signature and then destroying it with a control that
+changed only which positions were erased.
+
+**And the corpus.** Thirteen failures with one shape, seven instrument self-catches, five
+independent kills of the program's founding conjecture, and every number reproducible from a
+preregistration committed before the code ran. That is not a theorem. It may outlast the theorems.
 
 
 ## 5. What fell out, with a closed form
