@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 4 (the sham certificate)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 5 (sham challenge; a certificate retracted)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -301,57 +301,82 @@ independent kills of the program's founding conjecture, and every number reprodu
 preregistration committed before the code ran. That is not a theorem. It may outlast the theorems.
 
 
-## 4e. The sham certificate — turning the dead control into a number
+## 4e. The sham challenge — a certificate retracted, and what is actually available
 
-RESULT 1 says the mathematics is known. That leaves one thing worth building, and an external
-reading named it exactly: *how do you determine whether an observation contains evidence of
-something that actually happened, rather than information already baked into the system producing
-the observation?* In an era where AI systems generate their own evidence, that is not a philosophy
-question.
+Rev 4 claimed: *a discriminator achieving accuracy α certifies the artifact carries at most
+2α − 1 bits.* **That is wrong, the inequality points the other way, and the error is worse than a
+sign slip.**
 
-This corpus reinvented the answer four times as a bespoke fix — dead memory, rank-matched control,
-self-generated data, dead enforcement. Every time the move was identical: **generate the artifact
-with the claimed mechanism disabled, and see if anyone can tell.** Here it becomes a procedure with
-a number.
+**The chain.** `TV = 2α* − 1` holds for the **Bayes-optimal** accuracy α*. Any trained classifier
+gives `α_obs ≤ α*`, so `2α_obs − 1 ≤ TV`. Combined with `Y ≤ TV`, that yields **no upper bound on
+Y at all**. A classifier scoring 51% is entirely consistent with a better classifier scoring 95%.
 
-**Setup.** `E ∈ {0,1}` is whether the claimed process ran, equal priors. `O` is the artifact.
-The evidence carried is `Y = I(E ; O | S)`. A **sham run** produces artifacts with the mechanism
-disabled under otherwise identical conditions. A discriminator separates real from sham at
-accuracy α.
+**And the experiment never contained a discriminator.** The rev-4 script computed
+`alpha = 0.5 + 0.5*TV` — α was *derived from* TV analytically. So the twenty-two cases verified the
+known inequality `JSD ≤ TV` between two quantities taken from the same source, and the result was
+reported as a certificate about trained classifiers, which were never present.
 
-**Measured across 22 constructed cases** — symmetric bias shifts, sparse tell-tale symbols, and
-random dense alphabets:
+That is the precomputability failure — **the fourteenth instance in this corpus, committed inside
+the section written to detect it.** It is recorded here rather than repaired quietly, because a
+document arguing that evidence must survive its own controls has no standing if it exempts itself.
 
-| property | result |
-|---|---|
-| α = 0.5 ⟺ Y = 0, **exactly** | holds |
-| Fano lower bound `Y ≥ 1 − H_b(α)` | holds, and is **tight** on the symmetric family |
-| upper bound `Y ≤ TV = 2α − 1` | holds on all 22, **tight** on the entire sparse-tell family |
+### What survives, with the directions correct
 
-> **The certificate.** A discriminator achieving accuracy α on balanced real-vs-sham classes
-> certifies that the artifact carries at most **2α − 1 bits** about whether the mechanism ran.
-> α = 0.51 → at most 0.02 bits. α = 0.55 → at most 0.10 bits. α = 0.50 → **exactly zero.**
+**A successful discriminator is a falsifier, and this direction is sound.** If an attack separates
+real from sham at α_obs, then `TV ≥ 2α_obs − 1` and, via Fano, the artifact carries a
+**demonstrated lower bound** of information about whether the mechanism ran. Something
+mechanism-dependent is encoded — or a confound in the sham design is, which is itself worth finding.
 
-The soundness at the null is what makes it usable: a discriminator at chance means *zero* evidence,
-not *small* evidence. Class: the inequality `JSD ≤ TV` is standard; the contribution is the framing
-and the operational procedure, nothing more.
+**A failed discriminator establishes only:** *no mechanism-dependent signal was detected by this
+attack class at this sample size.* Never "at most 0.02 bits." Never "proof of zero."
 
-### The limitation, and it is the whole caveat
+**Rename accordingly: sham CHALLENGE, not sham certificate.**
 
-**A failed discriminator certifies nothing unless it was a good discriminator.** Any classifier's
-accuracy only *lower-bounds* the Bayes accuracy, so a weak adversary that fails may simply be weak.
-The bound is valid only against the adversary you actually ran.
+### The certificate is the package, not the number
 
-That makes the sham certificate **computational, not information-theoretic — exactly like
-cryptography.** You do not prove absence of evidence; you certify it against the strongest attack
-attempted, and you publish the attack. "Secure against the best known adversary" is the honest
-form, and it is a familiar, tractable engineering standard rather than an impossible one.
+As in cryptography, the meaningful object is the claim plus the adversary class plus the resources
+under which it survived:
 
-Which is where this program's own discipline finally has somewhere to go: **every claim that an
-AI-produced artifact constitutes evidence should ship with its sham run, its discriminator, and
-2α − 1.** Not because the mathematics is new. Because almost nobody does it, and the thirteen
-failures in this corpus are what it costs not to.
+> **Audit(M) = { matched active and sham artifacts · hidden labels · preregistered discriminator
+> families · held-out evaluation · confidence intervals · the strongest attack found · feature
+> attribution for whatever carried the distinction · attack budget }**
 
+No single number is the certificate. `2α_obs − 1` is one line inside it, and it reads upward.
+
+### The one place a genuine upper bound is available
+
+Skip the classifier. If the artifact alphabet is small enough, estimate the divergence **directly**
+and bound it with a confidence interval. We measured the resolution floor — two *identical*
+distributions, k symbols, n samples each, 200 replicates, 95th percentile of plug-in TV:
+
+| k | n = 10³ | n = 10⁴ | n = 10⁵ |
+|---:|---:|---:|---:|
+| 4 | 0.055 | 0.018 | 0.004 |
+| 16 | 0.082 | 0.026 | 0.008 |
+| 64 | 0.143 | 0.047 | 0.015 |
+| 256 | 0.268 | 0.086 | 0.028 |
+
+> **Null floor ≈ 0.63 · √(k/n)** — the constant held to cv 0.19 across all sixteen cells.
+
+So TV cannot be certified below roughly `0.63·√(k/n)`, and above it you can state
+`TV ≤ ε with confidence 1−δ` honestly. At k=16, n=10⁴ the floor is 0.025; at k=256 you need 10⁶
+samples to reach 0.010.
+
+**And this is exactly inverted from where it is needed.** Direct estimation works when artifacts are
+low-dimensional — and degrades as √k. High-dimensional artifacts, which is what AI systems actually
+produce, force you onto the classifier route, where **only lower bounds exist.** *Precisely where an
+upper bound would matter most, it is unavailable.* That limitation is the honest result of this
+round, and it should be stated wherever the protocol is.
+
+### The standard that survives all of it
+
+> **No machine-generated artifact should be accepted as evidence that a mechanism ran until it has
+> survived a matched sham challenge designed to determine whether the mechanism had to occur for
+> the artifact to exist.**
+
+Crisp, testable, and directly aimed at AI-generated evidence. It claims detection, never absence.
+This corpus supplies fourteen worked examples of what skipping it costs — the most recent of them
+one section up.
 
 ## 5. What fell out, with a closed form
 
