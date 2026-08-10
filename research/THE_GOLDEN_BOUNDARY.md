@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 5 (sham challenge; a certificate retracted)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 6 (protocol frozen)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -356,7 +356,13 @@ distributions, k symbols, n samples each, 200 replicates, 95th percentile of plu
 | 64 | 0.143 | 0.047 | 0.015 |
 | 256 | 0.268 | 0.086 | 0.028 |
 
-> **Null floor ≈ 0.63 · √(k/n)** — the constant held to cv 0.19 across all sixteen cells.
+> **Measured null floor ≈ 0.63 · √(k/n)** — the constant held to cv 0.19 across all sixteen cells.
+>
+> **This is measured finite-sample behaviour of the plug-in estimator on Dirichlet-drawn
+> distributions. It is estimator-dependent and model-dependent, and it is NOT a law.** No
+> estimator-specific bound has been derived. Anyone using this must re-measure the floor for their
+> own estimator and artifact family, or derive it. The constant is reported so the shape is
+> visible, not so it can be cited.
 
 So TV cannot be certified below roughly `0.63·√(k/n)`, and above it you can state
 `TV ≤ ε with confidence 1−δ` honestly. At k=16, n=10⁴ the floor is 0.025; at k=256 you need 10⁶
@@ -377,6 +383,63 @@ round, and it should be stated wherever the protocol is.
 Crisp, testable, and directly aimed at AI-generated evidence. It claims detection, never absence.
 This corpus supplies fourteen worked examples of what skipping it costs — the most recent of them
 one section up.
+
+## 4f. The protocol, frozen
+
+The framework is finished. What follows is the procedure, stated so it can be run and audited by
+someone who does not trust us.
+
+> **Claim → Active generator → Matched sham generator → Blinded artifacts → Preregistered attack
+> suite → Held-out evaluation → Uncertainty → Confound analysis → Verdict**
+
+**1. Claim.** State the mechanism and what its running is supposed to make true. One sentence.
+
+**2. Active generator.** The full pipeline, mechanism enabled, producing artifacts as it normally
+would.
+
+**3. Matched sham generator — the hardest part, and where the protocol is usually broken.**
+The sham must disable *the claimed mechanism and nothing else*. Everything downstream of it must
+remain: same code path, same seeds where seeds are not the mechanism, same formatting, same
+timestamps-shape, same sizes, same field ordering, same serialisation, same error handling.
+**Matching is a design obligation and it must be enumerated, not asserted.** Publish the list of
+what was held fixed and what was disabled. If sham artifacts are distinguishable because they are
+shorter, differently formatted, or written by a different code path, the challenge measures
+carpentry rather than mechanism, and every downstream number is void.
+
+**4. Blinded artifacts.** Labels hidden from whoever builds and runs the attack. A discriminator
+tuned by someone who can see the labels is not an adversary; it is an oracle wearing a costume.
+
+**5. Preregistered attack suite.** Adversary families and **attack budget** — compute, sample
+count, number of attempts, hyperparameter search extent — fixed in writing before any attack runs.
+Attack budget is part of the claim, because the result is only ever "survived *this much* attack."
+
+**6. Held-out evaluation.** Accuracy reported on data no attack touched during fitting. In-sample
+discrimination is not discrimination.
+
+**7. Uncertainty.** Confidence intervals on α. A point estimate of 0.53 on 200 samples is noise.
+
+**8. Confound analysis — mandatory when a discriminator succeeds.** Feature attribution or ablation
+identifying *what carried the distinction*, and whether it is the intended mechanism or an artifact
+of the sham design. A successful attack is the beginning of the investigation, not its conclusion.
+
+**9. Verdict. Exactly three are permitted:**
+
+| verdict | meaning |
+|---|---|
+| **DISTINGUISHABLE** | An attack separated active from sham on held-out data, with the carrying feature identified. |
+| **NOT DETECTED UNDER STATED ATTACK BUDGET** | No preregistered attack beat chance. Never "no evidence exists." |
+| **INCONCLUSIVE** | Matching failed, blinding broke, budget was exhausted, or the sample was too small to resolve. |
+
+There is no fourth verdict, and in particular there is no "clean."
+
+### The permanent guardrail
+
+> **A sham challenge tests whether the claimed mechanism leaves detectable evidence. It does not by
+> itself prove that any detected difference was caused by the intended mechanism.**
+
+That sentence closes the last loophole in the framework. Detection is not causation. A discriminator
+that succeeds has found *something*; step 8 exists to find out what.
+
 
 ## 5. What fell out, with a closed form
 
