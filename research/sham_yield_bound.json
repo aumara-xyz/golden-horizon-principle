@@ -1,0 +1,229 @@
+{
+  "rows": [
+    {
+      "case": "bias shift 0.00",
+      "Y": 0.0,
+      "TV": 0.0,
+      "alpha": 0.5,
+      "fano_lower": 0.0,
+      "upper_2TV": 0.0,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.05",
+      "Y": 0.007226,
+      "TV": 0.1,
+      "alpha": 0.55,
+      "fano_lower": 0.007226,
+      "upper_2TV": 0.2,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.10",
+      "Y": 0.029049,
+      "TV": 0.2,
+      "alpha": 0.6,
+      "fano_lower": 0.029049,
+      "upper_2TV": 0.4,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.15",
+      "Y": 0.065932,
+      "TV": 0.3,
+      "alpha": 0.65,
+      "fano_lower": 0.065932,
+      "upper_2TV": 0.6,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.20",
+      "Y": 0.118709,
+      "TV": 0.4,
+      "alpha": 0.7,
+      "fano_lower": 0.118709,
+      "upper_2TV": 0.8,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.25",
+      "Y": 0.188722,
+      "TV": 0.5,
+      "alpha": 0.75,
+      "fano_lower": 0.188722,
+      "upper_2TV": 1.0,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.30",
+      "Y": 0.278072,
+      "TV": 0.6,
+      "alpha": 0.8,
+      "fano_lower": 0.278072,
+      "upper_2TV": 1.2,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.35",
+      "Y": 0.39016,
+      "TV": 0.7,
+      "alpha": 0.85,
+      "fano_lower": 0.39016,
+      "upper_2TV": 1.4,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.40",
+      "Y": 0.531004,
+      "TV": 0.8,
+      "alpha": 0.9,
+      "fano_lower": 0.531004,
+      "upper_2TV": 1.6,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.45",
+      "Y": 0.713603,
+      "TV": 0.9,
+      "alpha": 0.95,
+      "fano_lower": 0.713603,
+      "upper_2TV": 1.8,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "bias shift 0.50",
+      "Y": 1.0,
+      "TV": 1.0,
+      "alpha": 1.0,
+      "fano_lower": 1.0,
+      "upper_2TV": 2.0,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "rare tell 0.00",
+      "Y": 0.0,
+      "TV": 0.0,
+      "alpha": 0.5,
+      "fano_lower": 0.0,
+      "upper_2TV": 0.0,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "rare tell 0.01",
+      "Y": 0.01,
+      "TV": 0.01,
+      "alpha": 0.505,
+      "fano_lower": 7.2e-05,
+      "upper_2TV": 0.02,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "rare tell 0.05",
+      "Y": 0.05,
+      "TV": 0.05,
+      "alpha": 0.525,
+      "fano_lower": 0.001804,
+      "upper_2TV": 0.1,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "rare tell 0.20",
+      "Y": 0.2,
+      "TV": 0.2,
+      "alpha": 0.6,
+      "fano_lower": 0.029049,
+      "upper_2TV": 0.4,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "rare tell 0.50",
+      "Y": 0.5,
+      "TV": 0.5,
+      "alpha": 0.75,
+      "fano_lower": 0.188722,
+      "upper_2TV": 1.0,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "random-0",
+      "Y": 0.037669,
+      "TV": 0.1631,
+      "alpha": 0.58155,
+      "fano_lower": 0.019275,
+      "upper_2TV": 0.326199,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "random-1",
+      "Y": 0.009342,
+      "TV": 0.069776,
+      "alpha": 0.534888,
+      "fano_lower": 0.003515,
+      "upper_2TV": 0.139553,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "random-2",
+      "Y": 0.121792,
+      "TV": 0.324698,
+      "alpha": 0.662349,
+      "fano_lower": 0.077447,
+      "upper_2TV": 0.649396,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "random-3",
+      "Y": 0.062134,
+      "TV": 0.245658,
+      "alpha": 0.622829,
+      "fano_lower": 0.04398,
+      "upper_2TV": 0.491315,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "random-4",
+      "Y": 0.228782,
+      "TV": 0.474919,
+      "alpha": 0.73746,
+      "fano_lower": 0.169444,
+      "upper_2TV": 0.949839,
+      "B2": true,
+      "B3": true
+    },
+    {
+      "case": "random-5",
+      "Y": 0.212526,
+      "TV": 0.432011,
+      "alpha": 0.716006,
+      "fano_lower": 0.139164,
+      "upper_2TV": 0.864023,
+      "B2": true,
+      "B3": true
+    }
+  ],
+  "B1_sound_at_null": true,
+  "B2_fano_lower": true,
+  "B3_upper_bound_holds": true,
+  "B4_max_slack_near_null": 0.37095100000000003,
+  "verdict": "SHAM TEST CERTIFIES ABSENCE \u2014 a failed discriminator upper-bounds evidence"
+}

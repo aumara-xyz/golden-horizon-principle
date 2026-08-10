@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 3 (final audit)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 4 (the sham certificate)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -299,6 +299,58 @@ changed only which positions were erased.
 **And the corpus.** Thirteen failures with one shape, seven instrument self-catches, five
 independent kills of the program's founding conjecture, and every number reproducible from a
 preregistration committed before the code ran. That is not a theorem. It may outlast the theorems.
+
+
+## 4e. The sham certificate — turning the dead control into a number
+
+RESULT 1 says the mathematics is known. That leaves one thing worth building, and an external
+reading named it exactly: *how do you determine whether an observation contains evidence of
+something that actually happened, rather than information already baked into the system producing
+the observation?* In an era where AI systems generate their own evidence, that is not a philosophy
+question.
+
+This corpus reinvented the answer four times as a bespoke fix — dead memory, rank-matched control,
+self-generated data, dead enforcement. Every time the move was identical: **generate the artifact
+with the claimed mechanism disabled, and see if anyone can tell.** Here it becomes a procedure with
+a number.
+
+**Setup.** `E ∈ {0,1}` is whether the claimed process ran, equal priors. `O` is the artifact.
+The evidence carried is `Y = I(E ; O | S)`. A **sham run** produces artifacts with the mechanism
+disabled under otherwise identical conditions. A discriminator separates real from sham at
+accuracy α.
+
+**Measured across 22 constructed cases** — symmetric bias shifts, sparse tell-tale symbols, and
+random dense alphabets:
+
+| property | result |
+|---|---|
+| α = 0.5 ⟺ Y = 0, **exactly** | holds |
+| Fano lower bound `Y ≥ 1 − H_b(α)` | holds, and is **tight** on the symmetric family |
+| upper bound `Y ≤ TV = 2α − 1` | holds on all 22, **tight** on the entire sparse-tell family |
+
+> **The certificate.** A discriminator achieving accuracy α on balanced real-vs-sham classes
+> certifies that the artifact carries at most **2α − 1 bits** about whether the mechanism ran.
+> α = 0.51 → at most 0.02 bits. α = 0.55 → at most 0.10 bits. α = 0.50 → **exactly zero.**
+
+The soundness at the null is what makes it usable: a discriminator at chance means *zero* evidence,
+not *small* evidence. Class: the inequality `JSD ≤ TV` is standard; the contribution is the framing
+and the operational procedure, nothing more.
+
+### The limitation, and it is the whole caveat
+
+**A failed discriminator certifies nothing unless it was a good discriminator.** Any classifier's
+accuracy only *lower-bounds* the Bayes accuracy, so a weak adversary that fails may simply be weak.
+The bound is valid only against the adversary you actually ran.
+
+That makes the sham certificate **computational, not information-theoretic — exactly like
+cryptography.** You do not prove absence of evidence; you certify it against the strongest attack
+attempted, and you publish the attack. "Secure against the best known adversary" is the honest
+form, and it is a familiar, tractable engineering standard rather than an impossible one.
+
+Which is where this program's own discipline finally has somewhere to go: **every claim that an
+AI-produced artifact constitutes evidence should ship with its sham run, its discriminator, and
+2α − 1.** Not because the mathematics is new. Because almost nobody does it, and the thirteen
+failures in this corpus are what it costs not to.
 
 
 ## 5. What fell out, with a closed form
