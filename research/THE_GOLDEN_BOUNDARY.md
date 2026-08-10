@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-10**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 2**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -136,6 +136,88 @@ Different lanes, different years, different authors, one failure.
 analysis in statistics — each is this principle inside one field. The claim is narrower: that they
 are *one* principle, that its content is a conditional independence, and that it therefore inherits
 the leak correction — yield is a rate and every experiment has one.
+
+## 4b. The cost of a boundary — and the answer to the triviality objection
+
+The obvious objection to any theory of screens is that the definition is vacuous. Take **B = X**
+and `I(X;Y|B) = 0` holds trivially. Every system "has a screen." Without an admissibility
+constraint the whole construction is a tautology, and this is the strongest attack on it.
+
+The answer is a cost floor, and it is two lines.
+
+> **Proposition (screen cost floor).** If `I(X ; Y | B) = 0` then **H(B) ≥ I(X ; Y)**.
+>
+> *Proof.* `I(X ; Y,B) = I(X;B) + I(X;Y|B) = I(X;B)`. Also `I(X ; Y,B) ≥ I(X;Y)`. Hence
+> `I(X;Y) ≤ I(X;B) ≤ H(B)`. ∎
+>
+> **A boundary costs at least the correlation it carries.** Class: THEOREM (elementary; almost
+> certainly a restatement of a known data-processing consequence — cited as such if a source is found).
+
+So the question stops being *does a screen exist* — always yes — and becomes **what does the cheapest
+admissible one cost, and how much more than the floor.** Define the **screen overhead**
+
+> **Δ(X,Y) = min_B H(B) − I(X;Y)  ≥ 0**
+
+We computed the minimum exhaustively over all deterministic `B = g(X,Y)` for small joints —
+every partition of the joint support, screening condition checked block by block:
+
+| joint | I(X;Y) | min H(B) | overhead Δ |
+|---|---:|---:|---:|
+| independent | 0.0000 | 0.0000 | **0.0000** |
+| perfectly correlated | 1.0000 | 1.0000 | **0.0000** |
+| 3-way bottleneck | 1.5850 | 1.5850 | **0.0000** |
+| noisy pair | 0.2781 | 1.0000 | 0.7219 |
+| skewed | 0.2564 | 0.9709 | 0.7145 |
+| 3×3 mixed | 0.3955 | 1.5710 | 1.1755 |
+
+The floor held in every case, and **the overhead is exactly zero precisely when a clean bottleneck
+exists** — when the dependence factors through a deterministic common structure. It is large when
+the dependence is noisy: there, the cheapest boundary must carry far more than the correlation it
+mediates, because it has to resolve cases that share no clean separator.
+
+**Δ is therefore a measure of how far a system is from having an honest interface.** That is the
+non-triviality condition the theory needed, and it is measurable.
+
+### The correlated-path generalisation
+
+The enforcement additivity proposition assumed independent paths. It does not survive correlation,
+and the replacement is the obvious one — which is the point of stating it:
+
+| path correlation ρ | measured leak | additive prediction | ratio |
+|---:|---:|---:|---:|
+| 0.0 | 3.9999 | 4.0000 | **1.0000** |
+| 0.3 | 3.9684 | 4.0000 | 0.9921 |
+| 0.6 | 3.5767 | 4.0000 | 0.8942 |
+| 0.9 | 2.1291 | 4.0000 | **0.5323** |
+
+> **leak = H(X_U)** for the uncovered set U — the *joint* entropy, which equals `Σ H(X_p)` **iff the
+> paths are independent.** Additivity is the special case, not the law.
+
+### A corollary withdrawn, and a control that caught us
+
+An earlier draft claimed *no single scalar can represent enforcement and statistical leak without
+equivocation.* **That was too strong and is withdrawn.** Mutual information plainly assigns a value
+to both. The defensible claim is weaker:
+
+> **Static leak is mechanism-incomplete.** Two screens with equal baseline `I(X;Y|B)` may be
+> maintained by different mechanisms, and the baseline scalar alone does not identify which.
+
+Even that needed a control. A first run appeared to show a dramatic signature — enforcement flat
+then stepping in whole bits, statistics declining smoothly, diverging by **1.98 bits**. Re-run with
+the perturbation applied to *random* positions instead of from the end, the divergence collapsed to
+**0.30 bits** and the flat-then-step shape vanished. **The signature was substantially our choice of
+perturbation.**
+
+What survives is narrower and lives in the second moment: enforcement responds *raggedly*, losing
+discrete whole paths (coefficient of variation of increments **0.625**), while statistics responds
+almost perfectly uniformly (**0.021**) — a thirty-fold difference in raggedness with the levels
+tracking within 0.3 bits. That is a real signature and it is not the one we first reported. It gets
+its own preregistration before it counts as anything.
+
+**Class discipline, applied here and throughout:** the cost floor is a **THEOREM**; the overhead
+table and the correlated-path law are **MEASURED**; mechanism-incompleteness is an **OPEN
+PROPOSITION** with one artifact already removed from its evidence.
+
 
 ## 5. What fell out, with a closed form
 

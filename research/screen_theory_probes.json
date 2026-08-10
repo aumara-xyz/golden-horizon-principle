@@ -1,0 +1,104 @@
+{
+  "probe1": {
+    "independent": {
+      "I_XY": 0.0,
+      "min_H_B": -0.0,
+      "slack": -0.0,
+      "blocks": 1
+    },
+    "perfectly_corr": {
+      "I_XY": 1.0,
+      "min_H_B": 1.0,
+      "slack": 0.0,
+      "blocks": 2
+    },
+    "bottleneck_3": {
+      "I_XY": 1.58496,
+      "min_H_B": 1.58496,
+      "slack": 0.0,
+      "blocks": 3
+    },
+    "noisy_pair": {
+      "I_XY": 0.27807,
+      "min_H_B": 1.0,
+      "slack": 0.72193,
+      "blocks": 2
+    },
+    "skewed": {
+      "I_XY": 0.25643,
+      "min_H_B": 0.97095,
+      "slack": 0.71452,
+      "blocks": 2
+    },
+    "three_by_three": {
+      "I_XY": 0.39546,
+      "min_H_B": 1.57095,
+      "slack": 1.17549,
+      "blocks": 3
+    }
+  },
+  "floor_holds": true,
+  "slack_varies": true,
+  "probe2": {
+    "eps_star": 0.10980451127819549,
+    "base_enf": 3.999976427560611,
+    "base_sts": 4.097942532006519,
+    "ds": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75
+    ],
+    "resp_enf": [
+      3.999964421693453,
+      3.9999464403304668,
+      3.999952788702572,
+      3.9999475059864045,
+      3.9999711274434837,
+      2.9999640847482665,
+      1.9999912743947004
+    ],
+    "resp_sts": [
+      4.094104182897823,
+      3.559511248911779,
+      3.036355222222804,
+      2.524201771516166,
+      2.019276560695692,
+      1.5115462964784712,
+      1.0033802454954248
+    ],
+    "max_divergence": 1.9806945667477915,
+    "baselines_matched": false,
+    "responses_diverge": true
+  },
+  "probe3": [
+    {
+      "rho": 0.0,
+      "measured": 3.9999,
+      "additive_prediction": 4.0,
+      "ratio": 1.0
+    },
+    {
+      "rho": 0.3,
+      "measured": 3.9684,
+      "additive_prediction": 4.0,
+      "ratio": 0.9921
+    },
+    {
+      "rho": 0.6,
+      "measured": 3.5767,
+      "additive_prediction": 4.0,
+      "ratio": 0.8942
+    },
+    {
+      "rho": 0.9,
+      "measured": 2.1291,
+      "additive_prediction": 4.0,
+      "ratio": 0.5323
+    }
+  ],
+  "additivity_breaks_under_correlation": true
+}
