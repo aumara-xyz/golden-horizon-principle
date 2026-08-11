@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-11 · rev 8 (relational non-closure)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-11 · rev 9 (the identifiability ceiling)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -593,16 +593,45 @@ same modeled path pair and therefore repeated rather than independently resolved
 path-asymmetry ambiguity. It proves no real-network behavior, independent custody, identity,
 authority, physics, or world-truth. **Class: MEASURED PROTOCOL SHAPE.**
 
+### The identifiability ceiling, now exact
+
+Before spending hosts, an exact court asked what a host experiment could possibly distinguish.
+K4 has six oriented edge-asymmetry variables. Its triangle operator has rank three, so it supplies
+three independent cycle constraints and has a three-dimensional kernel. That kernel is **exactly**
+the gradient space:
+
+> `aᵢⱼ = qⱼ − qᵢ` is invisible to every cycle, for every choice of node potentials `q`.
+
+This is not only a dimension count. The court constructed two different worlds: one where node
+clocks differ and every path is symmetric, and one where node clocks agree but path asymmetries
+form the matching gradient. All six measured edge values were identical. Their cycle observations
+were identical. No estimator receiving only those measurements can decide which world occurred.
+
+Per-edge RTT bounds can shrink the feasible set, but they do not select a unique decomposition
+whenever more than one gradient-shifted point remains inside the bounds. **Three asymmetry
+combinations are observable; three are structurally confounded with node-clock changes. Class:
+THEOREM for this linear oriented K4 model.**
+
+Two escape controls were then exercised. Sampling drifting node clocks at different edge times
+created non-closure, because a node no longer supplied one scalar for the epoch. Edge-specific
+equivocation also created non-closure. But an ordinary path-asymmetry vector could reproduce the
+equivocation vector exactly. The loop therefore detects failed composability and still cannot name
+drift, dishonesty or path behavior as the cause.
+
 The next falsifier is concrete: run the same nonce-bound exchanges across separately administered
-hosts, retain the raw timestamp envelopes, and ask whether replay refusal, direction reversal and
-cycle results reproduce without a shared clock substrate. Until that run exists, “independent
-observers” is an architectural target, not a measured property of this court.
+hosts, retain the raw timestamp envelopes, preserve drift and edge-specific-equivocation controls,
+and ask whether replay refusal, direction reversal and cycle results reproduce without a shared
+clock substrate. The result may report only the observable quotient class, never a unique cause.
+Until that run exists, “independent observers” is an architectural target, not a measured property
+of this court.
 
 Reproduction records:
 
 - [observer-interference court](https://github.com/aumara-xyz/aukora-membrane/tree/ca9d25bb116a4b513ca0f5f771792f30e23daa09/research/observer-interference)
 - [pairwise generated ruling](https://github.com/aumara-xyz/aukora-membrane/blob/ca9d25bb116a4b513ca0f5f771792f30e23daa09/research/observer-interference/PAIRWISE_REPORT.md)
 - [pairwise tests](https://github.com/aumara-xyz/aukora-membrane/blob/ca9d25bb116a4b513ca0f5f771792f30e23daa09/research/observer-interference/test_pairwise.py)
+- [exact identifiability court](https://github.com/aumara-xyz/aukora-membrane/blob/3c96406/research/observer-interference/IDENTIFIABILITY_REPORT.md)
+- [identifiability tests](https://github.com/aumara-xyz/aukora-membrane/blob/3c96406/research/observer-interference/test_identifiability.py)
 
 ## 5. What fell out, with a closed form
 
