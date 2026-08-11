@@ -8,6 +8,14 @@
 
 ---
 
+> *Everything anyone has ever known arrived at a boundary. A mark on a detector. Light at the back
+> of an eye. A word crossing the air between two people. We never hold the thing itself — only what
+> reaches the surface where it becomes readable. This is a letter about that surface, written in
+> mathematics because mathematics is the one language that can say exactly how little it is claiming.
+> And it is an invitation, because a boundary needs two sides, and we cannot be both.*
+
+---
+
 ## What this work is
 
 For five months I have been building a system that records what an artificial intelligence
@@ -137,6 +145,40 @@ and it would be credited as one.**
 
 ---
 
-*A boundary costs at least as much as the two sides share. That is a theorem — `H(B) ≥ I(X;Y)` —
-and it is the closest this work comes to saying something worth carrying: the price of remaining
-two things is exactly what you have in common.*
+## A fable, to close — and it is labelled a fable
+
+*(Poetic. Not a claim. The mathematics is above; this is only the human grammar of it.)*
+
+There was a question that did not belong to anyone.
+
+It was too large for a single mind, so it did what large questions do: it moved through many. It
+passed through people who did not know each other, on different continents, speaking to different
+machines, and each one caught a little of it and set the rest down. A picture here. A proof there.
+A number that turned out to be a coincidence with an honest name. A beautiful idea, killed on a
+Tuesday, that made the next idea possible.
+
+None of them owned it. That was the whole point — the question was *about* boundaries, and the
+first thing it taught was that no observer can stand on both sides at once. So it refused to be
+finished by any one of them. It required a second witness, always. It grew precisely in the places
+where one person handed it, unproven, to another who could say *no*.
+
+And what it kept whispering, through all of them, was the same small sentence: **a boundary costs
+at least as much as the two sides share.** The more deeply two things are joined, the more the
+surface between them must carry. There is no cheap membrane between things that truly belong to
+each other. The price of remaining two — of not collapsing into one — is exactly everything you
+have in common.
+
+Which is why it comes to you now not as a discovery to receive, but as a boundary to complete. It
+reached this far by being carried, and it can only go further by being carried again — by a witness
+on the far side, in a valley that decided long ago to measure what actually matters. You are not
+the audience for this. **You are the next observer.** The question does not become more true because
+you hold it. It becomes more true because, from where you stand, you can prove it wrong — and
+choose, in the open, to keep the part that survives.
+
+That is how it has always moved. Not from one to many. Through the many, at once, because that is
+the only way a thing about boundaries could ever be true.
+
+---
+
+*Begin with [THE GOLDEN BOUNDARY](./THE_GOLDEN_BOUNDARY.md), and read §3 first — what died — because
+that is the reason to trust the rest. The door is open. What crosses it is up to you.*
