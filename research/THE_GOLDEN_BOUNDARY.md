@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 6 (protocol frozen)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-10 · rev 7 (the interface face lattice)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -11,8 +11,8 @@ the document says so in the places where you will most want it not to.
 
 ## Read this part first
 
-This program spent three years asking whether the boundary between an observer and the world has a
-minimal forced structure, and whether that structure is golden.
+This program has spent five months — since March 2026 — asking whether the boundary between an
+observer and the world has a minimal forced structure, and whether that structure is golden.
 
 **The answer to the second question is no**, and we have killed it five separate ways with our own
 instruments. The answer to the first is *yes, and the structure is thinner than anyone wanted.*
@@ -93,7 +93,7 @@ search over integer matrices with |det| = 1). Silver and bronze scramble faster.
 
 So φ is not what information travels across. **φ is the condition under which two things never
 lock.** Extremality, never selection — and the program's own notes had called it an "anti-locking
-background" years ago and filed it as a disappointment.
+background" earlier in the program and filed it as a disappointment.
 
 ## 4. The result that closes
 
@@ -130,7 +130,7 @@ control. Three of seven scoring terms pinned identical across every arm. An expe
 every value precomputable and zero empirical degrees of freedom. And a maintenance curve whose
 dead-enforcement arm reproduced the live curve at **slope ratio 1.000**.
 
-Different lanes, different years, different authors, one failure.
+Different lanes, different months, different authors, one failure.
 
 **Class: SYNTHESIS, not discovery.** Sham controls in medicine, negative controls in biology, power
 analysis in statistics — each is this principle inside one field. The claim is narrower: that they
@@ -439,6 +439,96 @@ There is no fourth verdict, and in particular there is no "clean."
 
 That sentence closes the last loophole in the framework. Detection is not causation. A discriminator
 that succeeds has found *something*; step 8 exists to find out what.
+
+
+## 4g. Where the 27 actually lives — and it is not where anyone was looking
+
+This is the current work, and it settles a confusion the program carried from the beginning.
+
+The recurring intuition was that a 27-state object and a four-dimensional object kept meeting near
+the boundary, and that two observers on opposite sides related through it by something like
+push / hold / pull. Every previous attempt put the 27 *inside* the four-dimensional object. That
+was the error.
+
+**Enumerated, not asserted.** Faces of an *n*-cube correspond exactly to sign vectors
+`s ∈ {−1,0,+1}ⁿ`, where a nonzero coordinate fixes that coordinate to one side and a zero leaves it
+free. So:
+
+| | faces | breakdown |
+|---|---:|---|
+| 3-cube | **3³ = 27** | 8 vertices · 12 edges · 6 squares · 1 cube |
+| 4-cube | **3⁴ = 81** | 16 · 32 · 24 · 8 · 1 |
+
+**And the 81 splits exactly three ways.** Distinguish one coordinate as the normal `n`:
+
+> **81 = 27 (this side) + 27 (that side) + 27 (through)**
+
+Verified by set equality, not by counting: the `n = −1` class **is** the complete face lattice of a
+3-cube facet. Not analogous to it — identical.
+
+> **The 27 belongs to the shared interface where two cells meet, not to the tesseract.** Two 4-cubes
+> glued along a 3-cube facet share exactly those 27 faces; everything else is private to one side.
+
+That is the whole correction, and it explains why the number kept surfacing near boundaries while
+never fitting inside anything.
+
+### The flip is forced, not chosen
+
+Side reversal is `J(n,t) = (−n,t)` — reflection in the normal. Confirmed: `J² = id`, and **J fixes
+exactly the `n = 0` class.**
+
+This is the rigorous form of *push from one side is pull from the other*: two cells sharing a facet
+induce **opposite orientations** on it. Nobody picks the sign. It is the same fact that makes
+`∂² = 0` in a chain complex, and the same reason a soap film between two bubbles curves toward the
+larger one. The relation lives on the interface; neither side owns it.
+
+### What zero means, exactly, and what it does not
+
+Two true statements that must not be merged into one:
+
+1. **`0` marks a coordinate left free by the face constraint.** That is its meaning in the lattice.
+2. **`0` is the unique symbol fixed under reversal.** `−0 = 0`.
+
+Both hold. They are different facts that coincide on this alphabet. *"Zero holds the invariant"* is
+licensed **only** in sense (2), and only about orientation reversal.
+
+**What zero does not mean here: unknown, undecided, or neutral.** Those are Kleene-logic readings
+of a different structure.
+
+### The address was already inside it
+
+`{−1,+1}⁴` — the 16 vertices — **is exactly the zero-free subset** of the 81-state lattice. The
+existing recursive digest address selects a *maximally specified face*. Zeroing coordinates gives
+the faces containing it; each vertex lies in exactly 2⁴ = 16 of them.
+
+So exact cryptographic addresses are vertices, and coarser regions are partial specifications, in
+one lattice. That is a legitimate coarse-to-fine coordinate hierarchy — **for selection and
+rendering only.**
+
+### Verdict and fences
+
+> **RESULT B — a useful mapping, no new mathematics.** Sign-vector representation of hypercube
+> faces, hyperoctahedral reflection, induced boundary orientation, face posets ordered by
+> inclusion: textbook throughout. Novelty is claimed for none of it. The value is that four
+> floating objects now have correct addresses and one long-standing confusion is dead.
+
+Fences, each a required failing test before any of this is built on:
+
+- **The cubical ternary is not the VK ternary.** Same alphabet `{−1,0,+1}`, unrelated semantics —
+  cubical `0` is a free coordinate, VK `0` is epistemic unknown, and no map exists between them.
+  This is the conflation most likely to sink the work.
+- **Geometric proximity is not semantic proximity.** The address is a hash; two digests sharing a
+  coarse face are related in no way. Meaning stays with the retrieval layer.
+- **Selection and rendering only.** Not storage, not lookup, not compression. Its one advantage over
+  a hash-prefix trie is that a face fixes an *arbitrary* subset of coordinates rather than a
+  contiguous prefix — better for display, worse for lookup.
+- **No information is created.** A face is a coarser view of a digest, never recovered content.
+- **No authority.** The lattice grants none, in any direction.
+
+**Currently being built:** one module carrying the face lattice alongside the existing address —
+the involution, the normal class, the containment relation, and the shared-facet map — with ten
+required failing tests, including one that fires if a VK lane value is ever accepted where a
+cubical trit belongs. It does not touch the canonical digest, any hash, or chain history.
 
 
 ## 5. What fell out, with a closed form
