@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-13 · rev 10 (screen and reconstruction)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-13 · rev 11 (continuity across generations)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -710,6 +710,85 @@ abstract language for constrained information access while retaining different m
 different evidence standards. That is a research program, not a result. Its promotion rule is the
 same one used throughout this page: **result plus ceiling, generator separate from validator, and
 no claim stronger than the court that could have killed it.**
+
+## 4j. Mathematics across generations — records, reconstruction and correction
+
+Mathematics is also a continuity system. A generation rarely receives the whole object its
+predecessors saw. It inherits propositions, diagrams, measurements, correspondence, failed
+conjectures and unresolved constraints. From those records it may reconstruct a candidate whole.
+The reconstruction earns standing only to the extent that its assumptions are exposed and an
+independent comparison could prove it wrong.
+
+Vincenzo Viviani's seventeenth-century [reconstruction of the lost fifth book of Apollonius's
+*Conics*](https://books.openedition.org/psorbonne/140329) is a documented historical instance. He
+did not possess the missing source. He worked from the surviving mathematical boundary around it:
+the known books, inherited propositions, geometric constraints and the surrounding tradition. This
+was not the recovery of identical bytes, and it was not licensed by lineage. It was a new
+mathematical construction constrained by an earlier one, later available for comparison with
+independently transmitted material.
+
+Viviani also belonged to a documented correspondence and experimental network around
+[Galileo and Evangelista Torricelli](https://catalogue.museogalileo.it/biography/VincenzoViviani.html),
+Benedetto Castelli and [Michelangelo Ricci](https://www.treccani.it/enciclopedia/michelangelo-ricci_%28Dizionario-Biografico%29/).
+The relevant continuity was not one mind or one bloodline carrying a hidden result. It was a
+distributed record: letters, demonstrations, instruments, criticisms and experiments crossing
+between people and institutions. That network preserved enough structure for claims to be
+repeated, challenged and revised.
+
+The methodological pattern is:
+
+> **unseen or missing object → surviving traces → explicit constraints → reconstruction →
+> independent comparison → correction**
+
+This resembles the screen-to-reconstruction pipeline in §4i, but resemblance is not derivation.
+Historical actors did not anticipate this framework, and their work is not evidence for its
+physical or engineering claims. The history supplies a worked example of a narrower principle:
+**a reconstruction can exceed the surviving fragments without becoming identical to the source.**
+
+That principle gives the program four separations worth preserving:
+
+> **record ≠ source · reconstruction ≠ occurrence · agreement ≠ truth · evidence ≠ authority**
+
+It also sharpens what a durable technical record must carry. A result intended to cross a
+generation should include the source evidence available to its author, the transformation from
+evidence to result, assumptions, uncertainty, controls, tested and untested regions, and the
+strongest ceiling known at publication. Otherwise the next observer inherits a conclusion without
+the constraints needed to reconstruct or challenge it.
+
+### A technical formulation
+
+Let `R` be the retained record, `M` a reconstruction procedure, `T` the task under which the
+reconstruction is judged, and `L_T` its loss. The historical and engineering question is not
+whether `M(R)` *is* the unavailable source `X`. It is whether the record is sufficient for a named
+task, under stated assumptions:
+
+> **How small can R be while E[L_T(M(R), X)] remains below a preregistered tolerance?**
+
+When `X` later becomes independently available, the reconstruction can be tested directly. When it
+does not, only consequences accessible outside the reconstruction may test it. Agreement among
+reconstructions trained on the same retained record is not independent confirmation; common input
+can create common error.
+
+This is established sufficient-statistic and rate-distortion territory at the abstract level. The
+possible contribution is again the composition: join task-relative sufficiency to provenance,
+sham challenges, explicit ceilings and a separate authority boundary. **Class: HISTORICAL
+INTERPRETATION + OPEN ENGINEERING SYNTHESIS. No mathematical inheritance, scientific destiny or
+new theorem is claimed.**
+
+### What the engineering inherits
+
+One Piece can retain continuity of records; KIRA can build disposable derived candidates; Aura can
+locate or display them; Auma can reconstruct and explain. None is the missing world-state, and none
+may promote its reconstruction into authority. The record should allow a future observer to replay
+the transformation and disagree. If the result can live only inside its original author—or inside
+one generation of models—it has not crossed the boundary.
+
+The practical standard is therefore:
+
+> **Preserve enough structure for the next observer to reproduce the reasoning, expose its
+> assumptions, locate its ceiling and continue the court.**
+
+This is how a mathematical tradition grows without asking the next generation to trust the last.
 
 ## 5. What fell out, with a closed form
 
