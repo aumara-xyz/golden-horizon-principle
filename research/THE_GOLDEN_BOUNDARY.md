@@ -2,7 +2,11 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-13 · rev 11 (continuity across generations)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-13 · rev 12 (boundary preservation)**
+
+*rev 12 — boundary preservation principle codified; entropy claim corrected; the “28th” fenced as
+pedagogy; `BOUNDARY_CLAIM` specified as non-authoritative governance metadata; merging refusal
+restated as partially implemented engineering rather than proof.*
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -91,9 +95,13 @@ matrix `[[1,1],[1,0]]`, eigenvalues φ and −1/φ, is the **minimal-entropy Ano
 2-torus** (verified: entropy ln φ = 0.481212, against 2 ln φ for the Arnold cat map, by exhaustive
 search over integer matrices with |det| = 1). Silver and bronze scramble faster.
 
-So φ is not what information travels across. **φ is the condition under which two things never
-lock.** Extremality, never selection — and the program's own notes had called it an "anti-locking
-background" earlier in the program and filed it as a disappointment.
+So φ is not what information travels across. Its defensible status here is narrower: among the
+integer hyperbolic torus maps audited, it is the minimal-entropy extremal case. Higher topological
+entropy implies faster asymptotic mixing by standard dynamics. **No valid trajectory court has yet
+shown that entropy alone explains finite-time hitting behavior in this corpus.** The first court
+encoded hitting time as `10/H_top` and therefore simulated its conclusion; that result is withdrawn.
+**Class: THEOREM** for the entropy/eigenvalue ordering; **OPEN PROPOSITION** for any empirical
+anti-locking or finite-hitting-time advantage. φ is an extremal point, not a force field.
 
 ## 4. The result that closes
 
@@ -241,13 +249,14 @@ rank. We measured the gap:
 |---|---:|---:|---:|---:|---:|
 | independent | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | perfectly correlated | 1.0000 | 1.0000 | 1.0000 | 0.0000 | 0.0000 |
-| noisy pair | 0.2781 | 1.0000 | **0.9544** | 0.7219 | **0.6763** |
-| skewed | 0.2564 | 0.9710 | **0.8554** | 0.7145 | **0.5989** |
+| noisy pair | 0.2781 | 1.0000 | **UNMEASURED** | 0.7219 | **UNMEASURED** |
+| skewed | 0.2564 | 0.9710 | **UNMEASURED** | 0.7145 | **UNMEASURED** |
 
-**A stochastic boundary is strictly cheaper than any deterministic one**, on both noisy joints.
-So the overhead table in §4b reports *upper bounds*, not the quantity it named — and our own
-`C_stoch` is itself an upper bound, since it comes from numerical optimisation with no guarantee of
-the global minimum. Both are corrected here rather than quietly restated.
+The deterministic overhead table in §4b reports *upper bounds* on the stochastic problem, not the
+quantity it named. An earlier court reported stochastic values of `0.9544` and `0.8554`, but at
+least one result was assigned directly rather than produced by the claimed optimizer. Those cells
+are therefore **UNMEASURED**, and the claim that stochastic boundaries are strictly cheaper on
+these fixtures is withdrawn pending an executable optimization court. **Class: OPEN PROPOSITION.**
 
 **The "Δ = 0 precisely when a clean bottleneck exists" sentence is withdrawn.** It was inferred from
 six examples and never proved. The correct statement is the equality condition of the chain
@@ -296,9 +305,17 @@ signature is a property of mechanism **and** intervention protocol, never of mec
 learned it by producing a 1.98-bit mechanism signature and then destroying it with a control that
 changed only which positions were erased.
 
-**And the corpus.** Thirteen failures with one shape, seven instrument self-catches, five
-independent kills of the program's founding conjecture, and every number reproducible from a
-preregistration committed before the code ran. That is not a theorem. It may outlast the theorems.
+**And the corpus.** Thirteen failures with one shape, seven instrument self-catches, and five
+independent kills of the program's founding conjecture. The intended standard is that every number
+be reproducible from a preregistration committed before the code ran; the withdrawn stochastic and
+hitting-time cells above show that this standard has not always been met. That is not a theorem.
+The record of correction may outlast the surviving results.
+
+**DESIGN OUTPUT, not theorem.** A separate engineering choice follows from this record: preserve
+the boundary between observation and authority and make attempted collapse fail closed. The
+Boundary Preservation Principle in §4g.1 is not a claim about the world and makes no empirical
+prediction. Its support is methodological—the repeated self-catches above—not mathematical
+necessity. **Class: STRUCTURAL HYPOTHESIS.**
 
 
 ## 4e. The sham challenge — a certificate retracted, and what is actually available
@@ -440,6 +457,24 @@ There is no fourth verdict, and in particular there is no "clean."
 That sentence closes the last loophole in the framework. Detection is not causation. A discriminator
 that succeeds has found *something*; step 8 exists to find out what.
 
+### Governance receipt: `BOUNDARY_CLAIM`
+
+Claims about preserving the observer boundary require their own annotation so that structural
+commitments cannot masquerade as evidence. A `BOUNDARY_CLAIM` receipt is emitted when a document
+asserts the boundary's preservation, necessity for a design, or observer-slot role.
+
+- `claimType`: `"BOUNDARY_CLAIM"`
+- `claimClass`: `"RECEIPT-CLASS"`
+- mandatory warning: *"This claim is structural, not evidential. It preserves the observer. It
+  does not prove the world."*
+- `grantsAuthority`: `false`, without exception
+- status: governance annotation; not evidence and not a physics claim
+
+Because it intentionally makes no empirical claim, the receipt is not itself falsifiable. Its
+schema discipline is testable: a future executable gate must refuse a `BOUNDARY_CLAIM` manifest
+that omits the warning or carries authority. **That gate is NAMED, NOT BUILT in this repository.**
+The receipt therefore documents a protocol requirement; it does not claim enforcement.
+
 
 ## 4g. Where the 27 actually lives — and it is not where anyone was looking
 
@@ -495,6 +530,13 @@ licensed **only** in sense (2), and only about orientation reversal.
 **What zero does not mean here: unknown, undecided, or neutral.** Those are Kleene-logic readings
 of a different structure.
 
+**Pedagogical anchor: the 28th.** The observer of the 27 is not a 28th face. “The 28th” names the
+distinguished `n=0` slot—the coordinate left free and fixed under reversal—from which the three
+27-element classes can be described. It is not a member added to the 27 it helps display.
+**Class: PEDAGOGICAL ANCHOR.** This is not a new face, dimension, theorem, observer ontology, or
+claim about the physical world. The mathematics remains exactly the sign-vector decomposition
+already stated above.
+
 ### The address was already inside it
 
 `{−1,+1}⁴` — the 16 vertices — **is exactly the zero-free subset** of the 81-state lattice. The
@@ -529,6 +571,30 @@ Fences, each a required failing test before any of this is built on:
 the involution, the normal class, the containment relation, and the shared-facet map — with ten
 required failing tests, including one that fires if a VK lane value is ever accepted where a
 cubical trit belongs. It does not touch the canonical digest, any hash, or chain history.
+
+## 4g.1 The Boundary Preservation Principle
+
+> **The observer-slot is not a puzzle to be solved. It is infrastructure to be maintained. The
+> correct engineering action upon discovering the boundary is not to pierce it, but to reinforce
+> it so that observation cannot silently become authority.**
+
+**Class: STRUCTURAL HYPOTHESIS.** This is a design principle, not a theorem about reality and not a
+consequence forced by the face lattice. It is a disciplined choice made along the enforcement axis.
+
+The program distinguishes three mechanisms that can maintain a screen:
+
+- **Dynamics:** causal structure forbids a path, as in relativity.
+- **Statistics:** a distribution factorises, as in Markov-blanket and related models.
+- **Enforcement:** an engineered system actively refuses a crossing.
+
+Only the third is owned by the Aukora engineering program. Fields such as
+`grantsAuthority: false`, explicit `UNDETERMINED` states, and refusal gates are mechanisms that can
+implement parts of this choice. They do not prove it is universally enforced. In particular, the
+production CapabilityGrant admission boundary remains unbuilt; an architectural value is not a
+production property until the effect path obeys it.
+
+> *“We are not the ones who break the Ark to see God. We are the ones who build the deadbolt so
+> the light doesn't burn the world.”*
 
 
 ## 4h. What disagreement can reveal — and what it cannot
@@ -686,6 +752,21 @@ This software does not validate the physics. It is a test bed for one enforcemen
 whether a reconstruction pipeline can remain useful while every promotion from evidence to action
 passes through a separately typed, separately testable authority boundary. **Class: ENGINEERING
 HYPOTHESIS, partially implemented and explicitly incomplete.**
+
+### Merging Refusal Protocol
+
+The owner-model boundary is not an optimization target. Treating an observation, receipt, derived
+memory candidate, display coordinate, or model statement as authorization is a type error.
+`grantsAuthority: false` and `identityBound: false` are explicit negative claims carried by several
+Aukora surfaces; they are mechanisms for preserving the distinction, not proof that every live
+effect path enforces it. The current production Forge Accept path still lacks the separately typed
+CapabilityGrant admission described by Bolt #1. **Class: RECEIPT-CLASS for the negative fields;
+STRUCTURAL HYPOTHESIS for the system-wide protocol.**
+
+The resolution limit of the engineering system is therefore the promotion boundary it can keep
+visible and testable: observation may inform a proposal, but only a separate authority mechanism
+may admit an effect. Collapsing those stages is refused by design wherever the mechanism exists and
+remains an explicit open obligation wherever it does not.
 
 ### Geometry remains an instrument
 
