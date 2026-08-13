@@ -2,7 +2,7 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-11 · rev 9 (the identifiability ceiling)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-13 · rev 10 (screen and reconstruction)**
 
 **Status:** consolidation page. Every claim carries a class. Nothing here is physics evidence, and
 the document says so in the places where you will most want it not to.
@@ -632,6 +632,84 @@ Reproduction records:
 - [pairwise tests](https://github.com/aumara-xyz/aukora-membrane/blob/ca9d25bb116a4b513ca0f5f771792f30e23daa09/research/observer-interference/test_pairwise.py)
 - [exact identifiability court](https://github.com/aumara-xyz/aukora-membrane/blob/3c96406/research/observer-interference/IDENTIFIABILITY_REPORT.md)
 - [identifiability tests](https://github.com/aumara-xyz/aukora-membrane/blob/3c96406/research/observer-interference/test_identifiability.py)
+
+## 4i. From screen to reconstruction — the open bridge
+
+The screen formalism says what remains accessible after a boundary has hidden, aggregated or
+refused paths. It does **not** yet say how an observer reconstructs a useful world-model from that
+accessible record. That missing step is where several intuitions in this program belong, provided
+they are stated without promotion.
+
+The smallest honest pipeline is:
+
+> **world → interaction → screen → accessible record → reconstruction → prediction or proposal**
+
+The arrows are not interchangeable. The screen constrains acquisition. The accessible record is
+what survived the constraint. Reconstruction is an inference made from that record. A prediction
+or proposal is an output of the inference. None of those stages establishes occurrence, identity,
+permission or execution.
+
+This corrects a tempting slogan. **Observation is not decompression.** Observation produces a
+boundary-limited record. Reconstruction may behave *like* decompression when the record is a
+task-sufficient representation and the observer supplies a model, priors and a loss function. In
+the general case information discarded at the screen is not recoverable; a plausible completion is
+not recovered information. The relevant question is therefore not whether a boundary compresses,
+but:
+
+> **For which task, under which distribution and loss, is the accessible record sufficient?**
+
+That question is already standard in sufficient-statistic, rate-distortion and information-
+bottleneck language. The possible contribution here is a constrained synthesis: carry the same
+explicit screen, leak, cost and refusal accounting through acquisition, reconstruction and action.
+**Status: OPEN SYNTHESIS.** No theorem of intelligence, perception or physics is claimed.
+
+### The software instance
+
+The Aukora engineering path gives the bridge an executable, deliberately narrower instance:
+
+> **external state → boundary admission → receipts → derived retrieval/display → model speech →
+> recommendation → separate capability admission → effect**
+
+Its central rule is stronger than the analogy and smaller than a theory of mind:
+
+> **Reconstruction cannot mint authority. Evidence never authorizes.**
+
+One Piece retains continuity claims about records; Aura supplies a `WHERE` surface; KIRA supplies
+derived recall candidates; Auma may render or discuss them; AUMLOK is a proposed identity door.
+Those roles do not collapse. A derived index may be deleted and rebuilt. A display coordinate may
+not become identity. Model speech may not become a grant. An observation may be refused or remain
+`UNDETERMINED`, and neither state may be rounded into a verdict. Production capability admission
+and real identity binding remain separate engineering obligations; research REDs and
+`grantsAuthority: false` fields do not prove those obligations are enforced everywhere.
+
+This software does not validate the physics. It is a test bed for one enforcement question:
+whether a reconstruction pipeline can remain useful while every promotion from evidence to action
+passes through a separately typed, separately testable authority boundary. **Class: ENGINEERING
+HYPOTHESIS, partially implemented and explicitly incomplete.**
+
+### Geometry remains an instrument
+
+The cubical construction in §4g can index which coordinates are fixed, free or reversed and can
+make coarse-to-fine relationships visible. That makes it a candidate **addressing and diagnostic
+instrument** for the pipeline above. It does not compress semantic content, reconstruct missing
+content, establish observer identity, or prove that nature uses a tesseract. Any geometry that
+cannot outperform a simpler trie, graph or table under a preregistered task and control remains a
+visualisation choice.
+
+### The next falsifier
+
+Choose one reconstruction task before choosing a representation. Freeze the screen, leak budget,
+task distribution, loss, simpler baselines and authority boundary. Then ask whether the proposed
+record preserves task performance at lower cost **without** increasing false promotion into
+authorization or execution. Run an ablation that removes the proposed structure while preserving
+the same information budget. If the structured representation does not beat that control, the
+bridge has supplied vocabulary, not mechanism.
+
+The broader possibility remains open: causal, statistical and enforced screens may admit one
+abstract language for constrained information access while retaining different mechanisms and
+different evidence standards. That is a research program, not a result. Its promotion rule is the
+same one used throughout this page: **result plus ceiling, generator separate from validator, and
+no claim stronger than the court that could have killed it.**
 
 ## 5. What fell out, with a closed form
 
