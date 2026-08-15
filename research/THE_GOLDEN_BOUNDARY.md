@@ -198,6 +198,48 @@ and the replacement is the obvious one — which is the point of stating it:
 | 0.6 | 3.5767 | 4.0000 | 0.8942 |
 | 0.9 | 2.1291 | 4.0000 | **0.5323** |
 
+## 4c. The dual triviality: a boundary can fail by overconstraint
+
+Section 4b treats excessive leakage and trivial screens ($B = X$) as failures. A boundary can also fail via the dual failure mode: **it can become vacuous by excluding the entire admissible state space, or reducing it to a trivial object.**
+
+> **Principle (Non-Vacuity / State Space Preservation).** A zero-leak boundary is not automatically a successful boundary. A boundary that achieves perfect exclusion only by destroying nontrivial admissible states is a vacuous closure, not evidence of successful separation.
+
+### Mathematical example / Methodological specimen
+*(Fenced as a methodological specimen; not evidence for the Riemann Hypothesis or physical phenomena.)*
+
+On the Hilbert space $H = L^2(\mathbb{R}_+, \frac{dx}{x})$, consider a proposed prime-scaling boundary condition:
+$$f(px) = p^{-1/2} f(x) \quad \text{for fixed prime } p > 1.$$
+
+Because $\frac{dx}{x}$ is scale-invariant under substitution $u = px$:
+$$\|f(px)\|^2 = \int_0^\infty |f(px)|^2 \frac{dx}{x} = \int_0^\infty |f(u)|^2 \frac{du}{u} = \|f\|^2.$$
+
+On the other hand, the boundary condition implies:
+$$\|f(px)\|^2 = \int_0^\infty p^{-1} |f(x)|^2 \frac{dx}{x} = p^{-1} \|f\|^2.$$
+
+Equating the two yields:
+$$(1 - p^{-1}) \|f\|^2 = 0.$$
+
+Since $p > 1$, $1 - p^{-1} > 0$, forcing $\|f\|^2 = 0$, so $f = 0$ almost everywhere.
+
+- **Norm-collapse calculation**: THEOREM / elementary calculation for the stated assumptions.
+- **General boundary design lesson**: STRUCTURAL HYPOTHESIS / methodological rule.
+
+### General boundary rule
+
+A serious boundary claim should report not only leakage and cost, but also non-vacuity / surviving admissible degrees of freedom:
+
+> **A trustworthy boundary must neither leak distinctions it is meant to preserve nor manufacture success by erasing the state space.**
+
+### Representation-preservation rule
+
+A boundary is defined relative to a specific state space, measure, and representation. Moving an invariant across representations requires an explicit, proved transformation, not a shared label.
+
+```
+REPRESENTATION_A VALIDITY != REPRESENTATION_B VALIDITY
+```
+unless an explicit equivalence preserves the property under test.
+
+
 > **leak = H(X_U)** for the uncovered set U — the *joint* entropy, which equals `Σ H(X_p)` **iff the
 > paths are independent.** Additivity is the special case, not the law.
 
