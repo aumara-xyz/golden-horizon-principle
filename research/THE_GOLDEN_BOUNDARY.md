@@ -221,7 +221,7 @@ $$(1 - p^{-1}) \|f\|^2 = 0.$$
 
 Since $p > 1$, $1 - p^{-1} > 0$, forcing $\|f\|^2 = 0$, so $f = 0$ almost everywhere.
 
-- **Norm-collapse calculation**: THEOREM / elementary calculation for the stated assumptions.
+- **Norm-collapse calculation**: THEOREM / elementary calculation for the stated assumptions (verified in `rh-boundary-hardening/symbolic/prime_scaling_collapse.py`).
 - **General boundary design lesson**: STRUCTURAL HYPOTHESIS / methodological rule.
 
 ### General boundary rule
@@ -269,7 +269,7 @@ table and the correlated-path law are **MEASURED**; mechanism-incompleteness is 
 PROPOSITION** with one artifact already removed from its evidence.
 
 
-## 4c. The final audit — what the cost quantity actually is
+## 4d. The final audit — what the cost quantity actually is
 
 An external hardening pass asked the one question that decides whether any of this is new:
 **what is `min_B H(B)` subject to `X ⊥ Y | B` in existing mathematics?** We ran it to the end.
