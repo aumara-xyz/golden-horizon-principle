@@ -2,9 +2,14 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-13 · rev 12 (boundary preservation)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-17 · rev 13 (capacity is not discrimination)**
 
-*rev 12 — boundary preservation principle codified; entropy claim corrected; the “28th” fenced as
+*rev 13 — structural repair: the §4c inserted in rev 12 had split the correlated-path table from
+its own conclusion and stranded §4b's withdrawn corollary under it. That block is now §4b.1 and sits
+after §4b closes; the final audit is §4c again, matching the pointer in AN_INVITATION. Two additions
+to §4b.1: the mirror objection (capacity is not discrimination) and the swap-invariance
+identification of the cost floor with the §4g fixed set — both class-labelled below their weight.
+rev 12 — boundary preservation principle codified; entropy claim corrected; the “28th” fenced as
 pedagogy; `BOUNDARY_CLAIM` specified as non-authoritative governance metadata; merging refusal
 restated as partially implemented engineering rather than proof.*
 
@@ -198,7 +203,36 @@ and the replacement is the obvious one — which is the point of stating it:
 | 0.6 | 3.5767 | 4.0000 | 0.8942 |
 | 0.9 | 2.1291 | 4.0000 | **0.5323** |
 
-## 4c. The dual triviality: a boundary can fail by overconstraint
+> **leak = H(X_U)** for the uncovered set U — the *joint* entropy, which equals `Σ H(X_p)` **iff the
+> paths are independent.** Additivity is the special case, not the law.
+
+### A corollary withdrawn, and a control that caught us
+
+An earlier draft claimed *no single scalar can represent enforcement and statistical leak without
+equivocation.* **That was too strong and is withdrawn.** Mutual information plainly assigns a value
+to both. The defensible claim is weaker:
+
+> **Static leak is mechanism-incomplete.** Two screens with equal baseline `I(X;Y|B)` may be
+> maintained by different mechanisms, and the baseline scalar alone does not identify which.
+
+Even that needed a control. A first run appeared to show a dramatic signature — enforcement flat
+then stepping in whole bits, statistics declining smoothly, diverging by **1.98 bits**. Re-run with
+the perturbation applied to *random* positions instead of from the end, the divergence collapsed to
+**0.30 bits** and the flat-then-step shape vanished. **The signature was substantially our choice of
+perturbation.**
+
+What survives is narrower and lives in the second moment: enforcement responds *raggedly*, losing
+discrete whole paths (coefficient of variation of increments **0.625**), while statistics responds
+almost perfectly uniformly (**0.021**) — a thirty-fold difference in raggedness with the levels
+tracking within 0.3 bits. That is a real signature and it is not the one we first reported. It gets
+its own preregistration before it counts as anything.
+
+**Class discipline, applied here and throughout:** the cost floor is a **THEOREM**; the overhead
+table and the correlated-path law are **MEASURED**; mechanism-incompleteness is an **OPEN
+PROPOSITION** with one artifact already removed from its evidence.
+
+
+## 4b.1 The dual triviality: a boundary can fail by overconstraint
 
 Section 4b treats excessive leakage and trivial screens ($B = X$) as failures. A boundary can also fail via the dual failure mode: **it can become vacuous by excluding the entire admissible state space, or reducing it to a trivial object.**
 
@@ -230,6 +264,41 @@ A serious boundary claim should report not only leakage and cost, but also non-v
 
 > **A trustworthy boundary must neither leak distinctions it is meant to preserve nor manufacture success by erasing the state space.**
 
+### The mirror objection: capacity is not discrimination
+
+Non-vacuity guards against a boundary that "succeeds" by leaving nothing behind it. There is a
+second way to clear the cost floor and still fail, and it is the one that bites in practice: a
+boundary can carry ample entropy and none of it about the question being asked.
+
+Let `Q` be a partition of the states of `X` — a question some observer needs the boundary to
+answer. By data processing,
+
+> `I(Q;B) ≤ I(X;B) ≤ H(B)`
+
+so `H(B) ≥ I(X;Y)` can hold with room to spare while `I(Q;B) = 0`. **The floor is on size, not on
+usefulness. Entropy in a boundary is permission to carry, never evidence of carrying.**
+
+Note also what `Δ` does and does not measure. `Δ(X,Y) = min_B H(B) − I(X;Y)` is a property of the
+*joint distribution* — the cheapest honest interface that **could** exist. It says nothing about the
+interface actually installed. The operationally dangerous case is Δ small and the installed boundary
+useless: an honest interface was available, and a different one was built.
+
+The failure is not hypothetical in this program. Its verification registry exists because two gates
+were green and blind while printing confident prose — boundaries with entropy and no
+discrimination. The same shape appears in the repository's own history, where merge commits exist
+in quantity and record nothing about what authorised them.
+
+Together with the two rules above this gives the boundary rule its full form:
+
+> **A trustworthy boundary must neither leak the distinctions it is meant to preserve, nor
+> manufacture success by erasing the state space, nor carry entropy without carrying the
+> distinction.**
+
+- **Data-processing bound**: THEOREM / elementary; almost certainly a restatement of known material.
+- **Reading and rule**: METHODOLOGICAL RULE. Recorded because the cost floor invites exactly one
+  misreading — that a large boundary is a good one — and instruments in this program have been
+  caught by it.
+
 ### Representation-preservation rule
 
 A boundary is defined relative to a specific state space, measure, and representation. Moving an invariant across representations requires an explicit, proved transformation, not a shared label.
@@ -239,37 +308,32 @@ REPRESENTATION_A VALIDITY != REPRESENTATION_B VALIDITY
 ```
 unless an explicit equivalence preserves the property under test.
 
+### Why the cost floor and the 27 are the same statement
 
-> **leak = H(X_U)** for the uncovered set U — the *joint* entropy, which equals `Σ H(X_p)` **iff the
-> paths are independent.** Additivity is the special case, not the law.
+`H(X,Y) = H(X|Y) + I(X;Y) + H(Y|X)`. Under the observer swap `σ: X ↔ Y` the two private terms
+exchange and `I(X;Y)` is fixed. **Mutual information is the fixed-point set of the swap** — the one
+component of the joint that neither observer can hold as private.
 
-### A corollary withdrawn, and a control that caught us
+§4g establishes the same shape geometrically: `J(n,t) = (−n,t)` satisfies `J² = id` and fixes exactly
+the `n = 0` class, the shared facet. The two results are one statement in two categories:
 
-An earlier draft claimed *no single scalar can represent enforcement and statistical leak without
-equivocation.* **That was too strong and is withdrawn.** Mutual information plainly assigns a value
-to both. The defensible claim is weaker:
+| | involution | fixed set | reading |
+|---|---|---|---|
+| geometric (§4g) | `J(n,t) = (−n,t)` | `n = 0` | the shared facet, owned by neither cell |
+| informational (§4b) | `σ: X ↔ Y` | `I(X;Y)` | the cost floor |
 
-> **Static leak is mechanism-incomplete.** Two screens with equal baseline `I(X;Y|B)` may be
-> maintained by different mechanisms, and the baseline scalar alone does not identify which.
+**A boundary cannot be charged less than the part that survives exchanging the two sides.** The
+floor is not an assumption bolted onto the screen definition; it is what the symmetry already
+forced.
 
-Even that needed a control. A first run appeared to show a dramatic signature — enforcement flat
-then stepping in whole bits, statistics declining smoothly, diverging by **1.98 bits**. Re-run with
-the perturbation applied to *random* positions instead of from the end, the divergence collapsed to
-**0.30 bits** and the flat-then-step shape vanished. **The signature was substantially our choice of
-perturbation.**
-
-What survives is narrower and lives in the second moment: enforcement responds *raggedly*, losing
-discrete whole paths (coefficient of variation of increments **0.625**), while statistics responds
-almost perfectly uniformly (**0.021**) — a thirty-fold difference in raggedness with the levels
-tracking within 0.3 bits. That is a real signature and it is not the one we first reported. It gets
-its own preregistration before it counts as anything.
-
-**Class discipline, applied here and throughout:** the cost floor is a **THEOREM**; the overhead
-table and the correlated-path law are **MEASURED**; mechanism-incompleteness is an **OPEN
-PROPOSITION** with one artifact already removed from its evidence.
+- **The symmetry**: THEOREM / trivial (`I(X;Y) = I(Y;X)`).
+- **The identification with §4g**: consolidation, not a result. It predicts nothing §4b and §4g did
+  not already predict separately, and is recorded only because it removes the appearance that the
+  cost floor is independent of the face-lattice result. If ever promoted, it must reproduce §4g's
+  `n = 0` class as a special case, not merely resemble it.
 
 
-## 4d. The final audit — what the cost quantity actually is
+## 4c. The final audit — what the cost quantity actually is
 
 An external hardening pass asked the one question that decides whether any of this is new:
 **what is `min_B H(B)` subject to `X ⊥ Y | B` in existing mathematics?** We ran it to the end.
