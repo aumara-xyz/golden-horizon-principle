@@ -2,9 +2,10 @@
 
 ### What survived a program built to destroy its own best results
 
-**Peter Viviani (AUMARA) with an AI crew · 2026-08-17 · rev 13 (capacity is not discrimination)**
+**Peter Viviani (AUMARA) with an AI crew · 2026-08-17 · rev 14 (enforcement is the field, not the gap)**
 
-*rev 13 — structural repair: the §4c inserted in rev 12 had split the correlated-path table from
+*rev 14 — §2 corrected in place: enforcement is not "unrepresented in the literature" — it is the subject of computer security (reference monitors, complete mediation, noninterference, object capabilities); the claim survives only as a bridge between the physics screen literature and security. §4g.1 gains the Cordis placement constraint (Cor. 62 / Thm 63): enforcement cannot persist inside a temporally-composable runtime and its removal must fail closed. Both class-labelled.
+rev 13 — structural repair: the §4c inserted in rev 12 had split the correlated-path table from
 its own conclusion and stranded §4b's withdrawn corollary under it. That block is now §4b.1 and sits
 after §4b closes; the final audit is §4c again, matching the pointer in AN_INVITATION. Two additions
 to §4b.1: the mirror objection (capacity is not discrimination) and the swap-invariance
@@ -62,18 +63,35 @@ island formula makes a black hole's interior *encoded in its exterior radiation*
 screen leaks. We take that as evidence that **leaky should be the primitive and exact the
 idealisation** — every real screen has a leak rate, and a screen claim without one is unfinished.
 
-## 2. The one axis nobody has
+## 2. The third axis — and the correction that rev 14 makes to this section
 
 Screens are held in place three ways. By **dynamics** — causal structure forbids the path; that is
 relativity, and it is mature. By **statistics** — the distribution factorises; that is the free
 energy principle, mature and genuinely contested. And by **enforcement** — *an agent actively
 refuses the crossing.*
 
-The third is, as far as we can find, unrepresented in the literature. It is also the only one with
-a falsifier available at engineering timescales, because you can build it and try to break it.
+**Through rev 13 this section said the third was "unrepresented in the literature" and called it
+"the program's one piece of unclaimed ground." That was wrong, and it was killed by a security
+reviewer's question — *is this a reference monitor?* — on 2026-08-17.** Enforcement is not
+unrepresented. It is the entire subject of computer security: the reference monitor (Anderson
+1972 — *tamperproof, always invoked, small enough to verify*), complete mediation and fail-safe
+defaults (Saltzer & Schroeder 1975), noninterference (Goguen & Meseguer 1982; machine-checked
+for seL4, Murray et al. 2013), lattice information-flow control (Denning 1976; Myers & Liskov 1997),
+and object capabilities (Dennis & Van Horn 1966; Miller 2006). Noninterference is, in particular,
+*literally* the conditional-independence condition of §1 with an enforcement mechanism attached.
 
-That is the program's one piece of unclaimed ground, and everything below is what we found
-standing on it.
+What the earlier sentence had actually found is narrower and still worth stating: **the physics
+and complex-systems literature on screens — horizons, blankets, causal states — has no member
+maintained by enforcement, and computer security is that member.** The claim survives as a
+*bridge*, not as unclaimed ground: the object a reference monitor enforces is a screen in the sense
+of §1, and the screen literature does not know it has one.
+
+Two things about the third axis remain true and unchanged: it is the only one of the three with a
+falsifier available at engineering timescales, because you can build it and try to break it; and
+its mechanisms are old in every part. Everything below is what we found standing on it — with the
+mechanism credited to the field that owns it.
+
+> Class: **CORRECTION**, recorded in place rather than silently rewritten. The kill counts toward §8.
 
 ## 3. What died, and this is the credibility engine
 
@@ -693,11 +711,39 @@ The program distinguishes three mechanisms that can maintain a screen:
 - **Statistics:** a distribution factorises, as in Markov-blanket and related models.
 - **Enforcement:** an engineered system actively refuses a crossing.
 
-Only the third is owned by the Aukora engineering program. Fields such as
-`grantsAuthority: false`, explicit `UNDETERMINED` states, and refusal gates are mechanisms that can
-implement parts of this choice. They do not prove it is universally enforced. In particular, the
-production CapabilityGrant admission boundary remains unbuilt; an architectural value is not a
-production property until the effect path obeys it.
+Only the third is *worked on* by the Aukora engineering program — not owned; see the §2 correction.
+Fields such as `grantsAuthority: false`, explicit `UNDETERMINED` states, and refusal gates are
+mechanisms that can implement parts of this choice. They do not prove it is universally enforced.
+In particular, the production CapabilityGrant admission boundary remains unbuilt; an architectural
+value is not a production property until the effect path obeys it.
+
+### Where enforcement can live — a constraint borrowed from the host's own metatheory
+
+The runtime the engineering program now builds on (Cordis — Shi, Zhang, Cui, *A Programming
+Paradigm for Spatiotemporal Composability*) proves two results that decide *where* an enforcing
+mechanism may sit, and they are stronger than any placement argument this program made on its own.
+
+- **Corollary 62 (terminal recovery):** a component removed from the composition *"leaves nothing
+  behind"*; §5.2.1 — a `disabled` entry unloads its fiber. So an enforcement installed *as a
+  component* is proven to vanish when the entry is disabled. Persistence-through-removal is not
+  merely unlikely for a plugin; it contradicts the runtime's central guarantee.
+- **Theorem 63 (ordering):** a fiber begins only where its dependencies are provided, and a
+  provider withdraws only after every dependent has deactivated. So if a consequential effect is
+  reached *only* through an injected dependency whose sole provider is the mediator, then removing
+  the mediator **deactivates the dependent** rather than opening the path.
+
+Together with §6.1 of the same paper — emission *"acts as `id_Γ`"* and lies outside the revertible
+boundary, and §6.3 defers confinement of untrusted code to an external sandbox — the placement
+follows: **enforcement cannot persist inside a temporally-composable runtime, cannot be installed by
+that runtime outside its own boundary, and therefore sits at the boundary itself; and its removal
+must fail closed by spatial composability, never fail open by persistence.** The demo target this
+implies is not *"disable the guard and the refusal survives"* — impossible by Corollary 62 — but
+*"disable the guard and the emitter stops."*
+
+> Class: **THEOREM (theirs), applied.** The theorems are Cordis's and assume pairwise independence
+> of components (their §4.4); whether the shipped host preserves that assumption is a court, not a
+> given. Recorded because it converts this program's placement finding from a measured breach into
+> a consequence of the host's own proofs.
 
 > *“We are not the ones who break the Ark to see God. We are the ones who build the deadbolt so
 > the light doesn't burn the world.”*
@@ -1025,7 +1071,7 @@ test that cannot lose cannot inform. The physics lane is on hold until one does.
 
 Every number above comes from a preregistered run with predictions and kill conditions committed
 before the code executed, and each re-runs deterministically on any engine. The instrument was
-caught by its own controls **seven times** — including twice while writing this page. Those catches
+caught by its own controls **eight times** — including twice while writing this page, and once more in rev 14 when §2's own headline claim was killed by an outside question. Those catches
 are in the record, at the front, because a program that shows you only its clean runs is
 indistinguishable from one that discards its dirty ones.
 
