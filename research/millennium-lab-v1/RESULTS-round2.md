@@ -25,7 +25,7 @@ The original round-1 file keeps the wrong numbers with strikethrough and a point
 | same phenomenon, done properly | 100k zeros, Hann window, fine grid ±0.003 around each ln p^k; shuffled-spacing control keeps density, kills arithmetic | peak depth at ln2 / ln3 / ln4: 2823 / 3653 / 1996; control in the same windows 136–206 (its noise floor); zeros **off-target** depth 0.001–0.006. Peaks sit at ln p^k to < 1e-5. Ratio ln3/ln2 = **1.294** (predicted 1.294), ln4/ln2 = **0.707** (predicted 0.707): the von Mangoldt weights ln p / p^{k/2}, measured to 3 digits. | MEASURED (this is the explicit formula, a theorem; "proves Gutzwiller duality" is VOID vocabulary) |
 | "musical chord" γ2/γ1≈3:2, γ3/γ1≈7:4 | base rate: uniform ratio in [1.1,2] within 0.02 of a just interval (num, den ≤ 9) | p = **0.54** per ratio, 0.30 for two | VOID |
 | Selberg geodesic lengths ≈ ln 7, ln 23 | random-length control, then identity check | my control said the match is real (0.05 percentile) — **my prediction was wrong, and the reason is an identity**: 2 ln ε_t = ln(t²−2−ε'²), so the length for trace t is within 1/t⁴ of ln(t²−2). 13 of 38 traces have t²−2 a prime power (t=3→7, 5→23, 7→47, 13→167, 37→1367…). The "match" is "t²−2 is often prime". Nothing spectral. | VOID as evidence; wrong prediction kept |
-| Li coefficients λ10 = 1.968, λ100 = 87.63 | recompute from 100k zeros + tail; anchor λ1 = 1 + γ/2 − ln(4π)/2 | λ1 = 0.0230957091 (exact 0.0230957090); **λ10 = 2.277, λ100 = 118.39** (Coffey asymptotic 117.7); Antigravity's numbers reproduce exactly when I truncate to 100 zeros, i.e. they are 26 % low from truncation | numbers VOID; positivity to n=200 MEASURED |
+| Li coefficients λ10 = 1.968, λ100 = 87.63 | recompute from 100k zeros + tail; anchor λ1 = 1 + γ/2 − ln(4π)/2 | λ1 = 0.0230957091 (exact 0.0230957090); ~~**λ10 = 2.277, λ100 = 118.39**~~ STRUCK after Codex round 3: my omitted-zero tail used the linear term n/|ρ|²; each omitted pair actually contributes 2(1−cos(n/γ)) ≈ n²/γ², so the tail is n²(ln(T/2π)+1)/(2πT) = 0.2207 at n=100, not 0.0022. Corrected: λ10 = 2.2793, **λ100 = 118.6038**, matching Codex's zero-free Arb value 118.60377537679 (Coffey asymptotic 117.7); Antigravity's numbers reproduce exactly when I truncate to 100 zeros, i.e. they are 26 % low from truncation | numbers VOID; positivity to n=200 MEASURED |
 | "off-line zero instability", "Re(s)=½ enforced by conservation of energy" | none possible | the first is the identity |x^ρ| = x^β; the second has no derivation anywhere | VOID |
 | Gram's law "locks a zero in each interval" | 100k Gram points by Newton on θ(t), residual 1e-10 | first violation at Gram index **126** (predicted 126); **20.6 %** of the first 100k Gram intervals violate | VOID |
 
@@ -48,8 +48,8 @@ For a finite-area hyperbolic surface the Selberg zeta function's zeros lie on Re
 
 | class | n | KS to exponential | KS to GUE surmise | frac s<0.2 (Poisson 0.18, GUE 0.009) | frac s<0.1 (GUE 0.001) |
 |---|---|---|---|---|---|
-| even | 280 | 0.151 | 0.172 | 0.122 | 0.061 |
-| odd | 220 | 0.118 | 0.189 | 0.123 | 0.073 |
+| ~~even~~ **odd** (LMFDB flag 1; I had the parity names reversed, struck after Codex round 3) | 280 | 0.151 | 0.172 | 0.122 | 0.061 |
+| ~~odd~~ **even** (flag 0) | 220 | 0.118 | 0.189 | 0.123 | 0.073 |
 | mixed (control) | 500 | 0.087 | 0.217 | 0.146 | 0.062 |
 
 MEASURED: no level repulsion in either class (60–70× more small spacings than GUE); closer to Poisson than GUE; mixing the classes moves it further toward Poisson as a superposition should. Caveat: n=280 with KS 0.15 is not a clean Poisson sample either; BGGS used thousands of levels. Prediction held.
@@ -89,3 +89,9 @@ The real object is Lax–Phillips / Faddeev–Pavlov scattering on the modular s
 
 ## What a number theorist would say now
 Learned on this machine, as measured facts: the explicit formula works to three digits with the primes falling out of the zeros exactly at ln p^k with von Mangoldt weights and near-zero background, which is the single most striking picture in the set; the GUE agreement at 100k zeros is as good as random matrices themselves at this height; the one rigorous "bounded, loops" system (the modular surface) has a proven critical line and Poisson statistics, which pins the open problem as "chaotic orbits of length ln p without arithmetic degeneracy"; and Li's criterion is a working contradiction machine whose horizon grows like γ², which is the exact reason enumeration cannot become proof. Not learned: anything about why Re(s)=½. Every "CONFIRMED" and "proves" in the Antigravity dossier is either a theorem re-evaluated numerically, a truncation artefact, an identity, or numerology; the two ideas in it that survive with controls are the explicit-formula peaks and the Lehmer pair, both known since the 1950s.
+
+## Reconciliation after Codex round 3 (added later)
+- λ100: Codex right, Fable VOID (tail had the wrong leading power). Third computation: my zero-sum + corrected n² tail = 118.6038; Codex 118.60378. Agreed.
+- Maass parity labels reversed by me; conclusion (no repulsion, Poisson-like, not an exact exponential law) survives; Codex's 2,202-form LMFDB rerun strengthens it.
+- Rogue-Li horizon 7638 confirmed exactly by Codex's zero-free 12,000-bit run; Codex's own prediction that it would move was VOID.
+- My blanket "every criterion has a γ² horizon" is VOID as stated: Li's ratio n_crit/γ² drifts 38 → 57 → 78 (a log envelope), and the other criteria do not accept a bare rogue quartet at all. The answer to the open question is in the direction I guessed but sharper: an oracle-targeted Weil test function sees the rogue at prime-power cutoff x ≈ 10 for γ=14, while a blind Li sequence needs n ≈ 7,600. Cheap detection requires already knowing γ. Not new; a numerical instance of Weil equivalence.
