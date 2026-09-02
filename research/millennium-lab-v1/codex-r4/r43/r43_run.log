@@ -1,0 +1,7 @@
+primary quadrature nodes=2383 dps=70 degree=8
+primary count=22 winding=20
+mutation count=22 winding=20
+control count=21 winding=19 maxerr=4.652890945996719354990463e-25
+convergence count=22 winding=22 maxshift=3.026625609404453193e-24
+continuation samples=[22, 22, 22, 22, 22] minsep=2.0289875489190716268 maxstep=0.0043404235314715713129 continuous=UNVERIFIED
+total elapsed=777.988 seconds

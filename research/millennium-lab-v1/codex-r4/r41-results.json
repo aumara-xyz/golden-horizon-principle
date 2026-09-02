@@ -1,0 +1,2712 @@
+{
+  "status": "MEASURED",
+  "scope": "Finite 10,000-zero truncated-block active-window flow-time approximations only; not a measurement, estimate, upper bound, or lower bound for Lambda.",
+  "equation": "dx_j/dt = sum_{k != j} 2/(x_j-x_k) + sum_k 2/(x_j+x_k)",
+  "event_policy": "Stop at min gap = 1e-3 times the initial min gap; add the two-body tail epsilon^2/8 to report a zero-gap time estimate.",
+  "input_hashes": {
+    "zeros1.txt": {
+      "sha256": "3436c916a7878261ac183fd7b9448c9a4736b8bbccf1356874a6ce1788541632",
+      "expected_sha256": "3436c916a7878261ac183fd7b9448c9a4736b8bbccf1356874a6ce1788541632",
+      "matches_expected": true,
+      "bytes": 1800000
+    },
+    "zeros3.txt": {
+      "sha256": "75a1f1a978d5e3eddd16518f661d41a95a40b33782389ba02ec4ed0ce0764807",
+      "expected_sha256": "75a1f1a978d5e3eddd16518f661d41a95a40b33782389ba02ec4ed0ce0764807",
+      "matches_expected": true,
+      "bytes": 180287
+    },
+    "zeros4.txt": {
+      "sha256": "10d9f7dab2bbfff6b8befbe6f765969b0b3f38f6110ed1df423931addd52da8f",
+      "expected_sha256": "10d9f7dab2bbfff6b8befbe6f765969b0b3f38f6110ed1df423931addd52da8f",
+      "matches_expected": true,
+      "bytes": 160319
+    },
+    "zeros5.txt": {
+      "sha256": "250ac4ba722c6face4d07c05777376fc2b9bc021b05232e8f53c91b1eb2b7e0d",
+      "expected_sha256": "250ac4ba722c6face4d07c05777376fc2b9bc021b05232e8f53c91b1eb2b7e0d",
+      "matches_expected": true,
+      "bytes": 170318
+    }
+  },
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "chunk": 256
+  },
+  "toy_t4_validation": {
+    "status": "MEASURED",
+    "input_sha256": "065880c5b31c34747cf5e1134da912c1b8afc2c0c73e18afb2b843094870770f",
+    "N": 1000,
+    "closest_pair_index_1based": [
+      922,
+      923
+    ],
+    "event_threshold": 0.001,
+    "published_toy_t4_abs_event_t": 0.003317670111905755,
+    "reproduced_abs_event_t": 0.003317670111905755,
+    "absolute_difference": 0.0,
+    "relative_difference": 0.0,
+    "same_event_pair": true,
+    "run": {
+      "event_found": true,
+      "solver_success": true,
+      "solver_message": "A termination event occurred.",
+      "event_t": -0.003317670111905755,
+      "event_abs_t": 0.003317670111905755,
+      "zero_time_estimate": 0.003317795111905755,
+      "tail_correction": 1.25e-07,
+      "event_pair_index_0based": 921,
+      "event_gap": 0.0009999999999763531,
+      "minimum_gap_at_event": 0.0009999999999763531,
+      "nfev": 197,
+      "wall_seconds": 0.24763941699999997,
+      "force_calls": 197,
+      "mirror_mode": "direct-all-pairs",
+      "mirror_remainder_bound": 0.0
+    },
+    "centered_high_accuracy_full_reference": {
+      "event_found": true,
+      "solver_success": true,
+      "solver_message": "A termination event occurred.",
+      "event_t": -0.0032978659414580305,
+      "event_abs_t": 0.0032978659414580305,
+      "zero_time_estimate": 0.0032979909414580307,
+      "tail_correction": 1.25e-07,
+      "event_pair_index_0based": 921,
+      "event_gap": 0.0010000000000021242,
+      "minimum_gap_at_event": 0.0010000000000021242,
+      "nfev": 701,
+      "wall_seconds": 0.994702875,
+      "force_calls": 701,
+      "mirror_mode": "direct-all-pairs",
+      "mirror_remainder_bound": 0.0
+    },
+    "active_window_validation": [
+      {
+        "window": 128,
+        "window_indices_1based": [
+          859,
+          986
+        ],
+        "background": "exact all-N force at t=0 plus diagonal linear response",
+        "event_found": true,
+        "solver_success": true,
+        "solver_message": "A termination event occurred.",
+        "nfev": 773,
+        "wall_seconds": 0.05424104200000013,
+        "force_calls": 773,
+        "event_t": -0.00329786594806077,
+        "event_abs_t": 0.00329786594806077,
+        "zero_time_estimate": 0.0032979909480607703,
+        "tail_correction": 1.25e-07,
+        "event_pair_index_0based": 921,
+        "event_pair_local_index_0based": 63,
+        "event_gap": 0.000999999999999699,
+        "minimum_gap_at_event": 0.000999999999999699,
+        "maximum_window_displacement": 0.09614312463488821,
+        "maximum_linearized_background_change": 0.09893170767459762,
+        "relative_to_centered_full": 2.0021249315835297e-09,
+        "relative_to_published_t4": 0.0059692986876289725
+      },
+      {
+        "window": 256,
+        "window_indices_1based": [
+          745,
+          1000
+        ],
+        "background": "exact all-N force at t=0 plus diagonal linear response",
+        "event_found": true,
+        "solver_success": true,
+        "solver_message": "A termination event occurred.",
+        "nfev": 749,
+        "wall_seconds": 0.2770691249999999,
+        "force_calls": 749,
+        "event_t": -0.003297865943626368,
+        "event_abs_t": 0.003297865943626368,
+        "zero_time_estimate": 0.0032979909436263682,
+        "tail_correction": 1.25e-07,
+        "event_pair_index_0based": 921,
+        "event_pair_local_index_0based": 177,
+        "event_gap": 0.001000000000000334,
+        "minimum_gap_at_event": 0.001000000000000334,
+        "maximum_window_displacement": 0.09614264769067385,
+        "maximum_linearized_background_change": 0.012048347422499996,
+        "relative_to_centered_full": 6.574971804822766e-10,
+        "relative_to_published_t4": 0.005969300024230236
+      },
+      {
+        "window": 512,
+        "window_indices_1based": [
+          489,
+          1000
+        ],
+        "background": "exact all-N force at t=0 plus diagonal linear response",
+        "event_found": true,
+        "solver_success": true,
+        "solver_message": "A termination event occurred.",
+        "nfev": 725,
+        "wall_seconds": 0.745482875,
+        "force_calls": 725,
+        "event_t": -0.0032978659417406526,
+        "event_abs_t": 0.0032978659417406526,
+        "zero_time_estimate": 0.0032979909417406527,
+        "tail_correction": 1.25e-07,
+        "event_pair_index_0based": 921,
+        "event_pair_local_index_0based": 433,
+        "event_gap": 0.0010000000000083518,
+        "minimum_gap_at_event": 0.0010000000000083518,
+        "maximum_window_displacement": 0.09614259894777072,
+        "maximum_linearized_background_change": 0.0034523745241686176,
+        "relative_to_centered_full": 8.569845502662501e-11,
+        "relative_to_published_t4": 0.005969300592615723
+      },
+      {
+        "window": 1000,
+        "window_indices_1based": [
+          1,
+          1000
+        ],
+        "background": "exact all-N force at t=0 plus diagonal linear response",
+        "event_found": true,
+        "solver_success": true,
+        "solver_message": "A termination event occurred.",
+        "nfev": 701,
+        "wall_seconds": 2.682743208,
+        "force_calls": 701,
+        "event_t": -0.0032978659414698735,
+        "event_abs_t": 0.0032978659414698735,
+        "zero_time_estimate": 0.0032979909414698736,
+        "tail_correction": 1.25e-07,
+        "event_pair_index_0based": 921,
+        "event_pair_local_index_0based": 921,
+        "event_gap": 0.0010000000000099443,
+        "minimum_gap_at_event": 0.0010000000000099443,
+        "maximum_window_displacement": 0.09614259716412904,
+        "maximum_linearized_background_change": 0.0,
+        "relative_to_centered_full": 3.5910972067159686e-12,
+        "relative_to_published_t4": 0.005969300674232958
+      }
+    ],
+    "validation_note": "The legacy coordinates/tolerances reproduce the published T4 value exactly.  Recentring the close pair changes the adaptive error scale; active windows are therefore compared to the recentered high-accuracy full-N reference."
+  },
+  "blocks": {
+    "A": {
+      "primary": {
+        "status": "MEASURED",
+        "block": "A",
+        "kind": "odlyzko-primary",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros 1--10,000",
+        "N": 10000,
+        "density": 1.0767299035914693,
+        "physical_center_decimal": "7005.0817154245",
+        "g_min": 0.037698499,
+        "g_min_unfolded": 0.0405911011938131,
+        "initial_pair_index_1based": [
+          6709,
+          6710
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6709,
+          6710
+        ],
+        "event_pair_index_1based": [
+          6709,
+          6710
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6709,
+          6710
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 3.7698499e-05,
+        "t_collision_predicted": 0.00017764710335662517,
+        "t_collision_actual_zero_estimate": 0.0001778011627647529,
+        "actual_to_predicted_ratio": 1.0008672216164338,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            6198,
+            7221
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 917,
+          "wall_seconds": 2.822738040999999,
+          "force_calls": 917,
+          "event_t": -0.00017780098511764955,
+          "event_abs_t": 0.00017780098511764955,
+          "zero_time_estimate": 0.0001778011627647529,
+          "tail_correction": 1.7764710335662513e-10,
+          "event_pair_index_0based": 6708,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 3.769849899875851e-05,
+          "minimum_gap_at_event": 3.769849899875851e-05,
+          "maximum_window_displacement": 0.019654699835230872,
+          "maximum_linearized_background_change": 0.0028920253356156593
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              6646,
+              6773
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 1013,
+            "wall_seconds": 0.26227849999999986,
+            "force_calls": 1013,
+            "event_t": -0.0001778009851327277,
+            "event_abs_t": 0.0001778009851327277,
+            "zero_time_estimate": 0.00017780116277983106,
+            "tail_correction": 1.7764710335662513e-10,
+            "event_pair_index_0based": 6708,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 3.7698499000902736e-05,
+            "minimum_gap_at_event": 3.7698499000902736e-05,
+            "maximum_window_displacement": 0.01965470310844246,
+            "maximum_linearized_background_change": 0.00720073801161961
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              6582,
+              6837
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 989,
+            "wall_seconds": 0.2525991249999997,
+            "force_calls": 989,
+            "event_t": -0.00017780098512895761,
+            "event_abs_t": 0.00017780098512895761,
+            "zero_time_estimate": 0.00017780116277606097,
+            "tail_correction": 1.7764710335662513e-10,
+            "event_pair_index_0based": 6708,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 3.769849900362148e-05,
+            "minimum_gap_at_event": 3.769849900362148e-05,
+            "maximum_window_displacement": 0.01965470125799126,
+            "maximum_linearized_background_change": 0.002912342382411216
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              6454,
+              6965
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 941,
+            "wall_seconds": 0.5854395000000006,
+            "force_calls": 941,
+            "event_t": -0.0001778009851240478,
+            "event_abs_t": 0.0001778009851240478,
+            "zero_time_estimate": 0.00017780116277115116,
+            "tail_correction": 1.7764710335662513e-10,
+            "event_pair_index_0based": 6708,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 3.7698498999471806e-05,
+            "minimum_gap_at_event": 3.7698498999471806e-05,
+            "maximum_window_displacement": 0.01965470030619253,
+            "maximum_linearized_background_change": 0.006207331553642875
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              6198,
+              7221
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 917,
+            "wall_seconds": 2.822738040999999,
+            "force_calls": 917,
+            "event_t": -0.00017780098511764955,
+            "event_abs_t": 0.00017780098511764955,
+            "zero_time_estimate": 0.0001778011627647529,
+            "tail_correction": 1.7764710335662513e-10,
+            "event_pair_index_0based": 6708,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 3.769849899875851e-05,
+            "minimum_gap_at_event": 3.769849899875851e-05,
+            "maximum_window_displacement": 0.019654699835230872,
+            "maximum_linearized_background_change": 0.0028920253356156593
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 3.7700962143838446e-15,
+              "relative_time_change": 2.1204002018435887e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 4.909809538100607e-15,
+              "relative_time_change": 2.761404628393825e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 6.3982564905973316e-15,
+              "relative_time_change": 3.598545921245074e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 3.598545921245074e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 0.00017780115894018323,
+            "relative_difference": 2.1510374939313923e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.25875045799999974,
+          "mirror_mode": "direct-all-pairs",
+          "mirror_remainder_bound": 0.0
+        },
+        "initial_pair_global_ordinals": [
+          "6709",
+          "6710"
+        ],
+        "event_pair_global_ordinals": [
+          "6709",
+          "6710"
+        ],
+        "offset_left_decimal": "7005.062866175",
+        "offset_right_decimal": "7005.100564674",
+        "g_min_decimal": "0.037698499",
+        "T_mid_decimal": "5448.908413286"
+      },
+      "poisson_control": {
+        "status": "MEASURED",
+        "block": "A",
+        "kind": "poisson-control",
+        "measurement_kind": "finite active-window approximation",
+        "label": "Poisson seed 20260902, density matched to A",
+        "N": 10000,
+        "density": 1.0767299035914693,
+        "physical_center_decimal": "6565.510076135877",
+        "g_min": 4.547532462037769e-06,
+        "g_min_unfolded": 4.896464189429004e-06,
+        "initial_pair_index_1based": [
+          6184,
+          6185
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6184,
+          6185
+        ],
+        "event_pair_index_1based": [
+          6184,
+          6185
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6184,
+          6185
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 4.547532462037769e-09,
+        "t_collision_predicted": 2.5850064366609114e-12,
+        "t_collision_actual_zero_estimate": 2.585007320417228e-12,
+        "actual_to_predicted_ratio": 1.0000003418778012,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            5673,
+            6696
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 521,
+          "wall_seconds": 1.2002915000000005,
+          "force_calls": 521,
+          "event_t": -2.5850047354107913e-12,
+          "event_abs_t": 2.5850047354107913e-12,
+          "zero_time_estimate": 2.585007320417228e-12,
+          "tail_correction": 2.585006436660911e-18,
+          "event_pair_index_0based": 6183,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 3.8281568334432595e-09,
+          "minimum_gap_at_event": 3.8281568334432595e-09,
+          "maximum_window_displacement": 2.271855765399924e-06,
+          "maximum_linearized_background_change": 1.913550388337338e-08
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              6121,
+              6248
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 533,
+            "wall_seconds": 0.03698124999999841,
+            "force_calls": 533,
+            "event_t": -2.5850040841941112e-12,
+            "event_abs_t": 2.5850040841941112e-12,
+            "zero_time_estimate": 2.585006669200548e-12,
+            "tail_correction": 2.585006436660911e-18,
+            "event_pair_index_0based": 6183,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 4.478699192893734e-09,
+            "minimum_gap_at_event": 4.478699192893734e-09,
+            "maximum_window_displacement": 2.2715304942193087e-06,
+            "maximum_linearized_background_change": 9.766986864057368e-07
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              6057,
+              6312
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 533,
+            "wall_seconds": 0.0899367919999996,
+            "force_calls": 533,
+            "event_t": -2.5850047410486124e-12,
+            "event_abs_t": 2.5850047410486124e-12,
+            "zero_time_estimate": 2.5850073260550493e-12,
+            "tail_correction": 2.585006436660911e-18,
+            "event_pair_index_0based": 6183,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 3.8151256023557625e-09,
+            "minimum_gap_at_event": 3.8151256023557625e-09,
+            "maximum_window_displacement": 2.271862281015475e-06,
+            "maximum_linearized_background_change": 8.309382569744286e-08
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              5929,
+              6440
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 497,
+            "wall_seconds": 0.2721044999999993,
+            "force_calls": 497,
+            "event_t": -2.585004794085121e-12,
+            "event_abs_t": 2.585004794085121e-12,
+            "zero_time_estimate": 2.585007379091558e-12,
+            "tail_correction": 2.585006436660911e-18,
+            "event_pair_index_0based": 6183,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 3.6721949446935667e-09,
+            "minimum_gap_at_event": 3.6721949446935667e-09,
+            "maximum_window_displacement": 2.2719337463443786e-06,
+            "maximum_linearized_background_change": 4.1357680654736996e-08
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              5673,
+              6696
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 521,
+            "wall_seconds": 1.2002915000000005,
+            "force_calls": 521,
+            "event_t": -2.5850047354107913e-12,
+            "event_abs_t": 2.5850047354107913e-12,
+            "zero_time_estimate": 2.585007320417228e-12,
+            "tail_correction": 2.585006436660911e-18,
+            "event_pair_index_0based": 6183,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 3.8281568334432595e-09,
+            "minimum_gap_at_event": 3.8281568334432595e-09,
+            "maximum_window_displacement": 2.271855765399924e-06,
+            "maximum_linearized_background_change": 1.913550388337338e-08
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 6.568545011835962e-19,
+              "relative_time_change": 2.541016014008806e-07,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 5.303650856781475e-20,
+              "relative_time_change": 2.0516966023692058e-08,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 5.867432968880289e-20,
+              "relative_time_change": 2.2697935601719174e-08,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 2.2697935601719174e-08,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 2.5850070971780887e-12,
+            "relative_difference": 8.635919041222713e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.21577254199999985,
+          "mirror_mode": "direct-all-pairs",
+          "mirror_remainder_bound": 0.0
+        },
+        "seed": 20260902,
+        "actual_time_to_odlyzko_ratio": 1.453875374165819e-08
+      },
+      "delete_pair_mutation": {
+        "status": "MEASURED",
+        "block": "A",
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros 1--10,000; primary event pair deleted",
+        "N": 9998,
+        "density": 1.0767299035914693,
+        "physical_center_decimal": "5229.220184229",
+        "g_min": 0.04325406,
+        "g_min_unfolded": 0.04657293985373962,
+        "initial_pair_index_1based": [
+          4765,
+          4766
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          4765,
+          4766
+        ],
+        "event_pair_index_1based": [
+          4765,
+          4766
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          4765,
+          4766
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 4.325406e-05,
+        "t_collision_predicted": 0.00023386421331044997,
+        "t_collision_actual_zero_estimate": 0.00023411773985782263,
+        "actual_to_predicted_ratio": 1.0010840758566002,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            4254,
+            5277
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 917,
+          "wall_seconds": 2.1563712079999995,
+          "force_calls": 917,
+          "event_t": -0.0002341175059936093,
+          "event_abs_t": 0.0002341175059936093,
+          "zero_time_estimate": 0.00023411773985782263,
+          "tail_correction": 2.3386421331045e-10,
+          "event_pair_index_0based": 4764,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 4.325406000067072e-05,
+          "minimum_gap_at_event": 4.325406000067072e-05,
+          "maximum_window_displacement": 0.02220095025346148,
+          "maximum_linearized_background_change": 0.0019421499686891033
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              4702,
+              4829
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 1037,
+            "wall_seconds": 0.07502083299999995,
+            "force_calls": 1037,
+            "event_t": -0.00023411750601322809,
+            "event_abs_t": 0.00023411750601322809,
+            "zero_time_estimate": 0.0002341177398774414,
+            "tail_correction": 2.3386421331045e-10,
+            "event_pair_index_0based": 4764,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 4.3254060012062326e-05,
+            "minimum_gap_at_event": 4.3254060012062326e-05,
+            "maximum_window_displacement": 0.022200952928972343,
+            "maximum_linearized_background_change": 0.0025451147930364184
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              4638,
+              4893
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 989,
+            "wall_seconds": 0.187303,
+            "force_calls": 989,
+            "event_t": -0.0002341175060084309,
+            "event_abs_t": 0.0002341175060084309,
+            "zero_time_estimate": 0.0002341177398726442,
+            "tail_correction": 2.3386421331045e-10,
+            "event_pair_index_0based": 4764,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 4.3254059998911495e-05,
+            "minimum_gap_at_event": 4.3254059998911495e-05,
+            "maximum_window_displacement": 0.022200951383798594,
+            "maximum_linearized_background_change": 0.0025956114941367513
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              4510,
+              5021
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 965,
+            "wall_seconds": 0.545883667,
+            "force_calls": 965,
+            "event_t": -0.00023411750600201069,
+            "event_abs_t": 0.00023411750600201069,
+            "zero_time_estimate": 0.000234117739866224,
+            "tail_correction": 2.3386421331045e-10,
+            "event_pair_index_0based": 4764,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 4.3254060025025806e-05,
+            "minimum_gap_at_event": 4.3254060025025806e-05,
+            "maximum_window_displacement": 0.0222009506340392,
+            "maximum_linearized_background_change": 0.009931903256579328
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              4254,
+              5277
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 917,
+            "wall_seconds": 2.1563712079999995,
+            "force_calls": 917,
+            "event_t": -0.0002341175059936093,
+            "event_abs_t": 0.0002341175059936093,
+            "zero_time_estimate": 0.00023411773985782263,
+            "tail_correction": 2.3386421331045e-10,
+            "event_pair_index_0based": 4764,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 4.325406000067072e-05,
+            "minimum_gap_at_event": 4.325406000067072e-05,
+            "maximum_window_displacement": 0.02220095025346148,
+            "maximum_linearized_background_change": 0.0019421499686891033
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 4.797188037433675e-15,
+              "relative_time_change": 2.0490493544159695e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 6.420211584590163e-15,
+              "relative_time_change": 2.7423003435189077e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 8.401374214372925e-15,
+              "relative_time_change": 3.5885252520697475e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 3.5885252520697475e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 0.00023411773483162623,
+            "relative_difference": 2.146866954486139e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 9998,
+          "wall_seconds": 0.21000716700000055,
+          "mirror_mode": "direct-all-pairs",
+          "mirror_remainder_bound": 0.0
+        },
+        "initial_pair_global_ordinals": [
+          "4765",
+          "4766"
+        ],
+        "event_pair_global_ordinals": [
+          "4765",
+          "4766"
+        ],
+        "deleted_original_block_ordinals_1based": [
+          6709,
+          6710
+        ],
+        "g_min_decimal": "0.043254060"
+      }
+    },
+    "B": {
+      "primary": {
+        "status": "MEASURED",
+        "block": "B",
+        "kind": "odlyzko-primary",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros #10^12+1--#10^12+10,000",
+        "N": 10000,
+        "density": 3.895330222240132,
+        "physical_center_decimal": "267653397863.13724357165",
+        "g_min": 0.0055569683,
+        "g_min_unfolded": 0.02164622656302037,
+        "initial_pair_index_1based": [
+          8625,
+          8626
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          8625,
+          8626
+        ],
+        "event_pair_index_1based": [
+          8625,
+          8626
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          8625,
+          8626
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 5.5569683e-06,
+        "t_collision_predicted": 3.859987085900612e-06,
+        "t_collision_actual_zero_estimate": 3.8606746987502125e-06,
+        "actual_to_predicted_ratio": 1.0001781386399224,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            8114,
+            9137
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 845,
+          "wall_seconds": 2.7329387920000023,
+          "force_calls": 845,
+          "event_t": -3.860670838763126e-06,
+          "event_abs_t": 3.860670838763126e-06,
+          "zero_time_estimate": 3.8606746987502125e-06,
+          "tail_correction": 3.859987085900611e-12,
+          "event_pair_index_0based": 8624,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 5.556968299845069e-06,
+          "minimum_gap_at_event": 5.556968299845069e-06,
+          "maximum_window_displacement": 0.00283023770361962,
+          "maximum_linearized_background_change": 0.0028369181951324787
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              8562,
+              8689
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 941,
+            "wall_seconds": 0.09439812499999789,
+            "force_calls": 941,
+            "event_t": -3.86067083918179e-06,
+            "event_abs_t": 3.86067083918179e-06,
+            "zero_time_estimate": 3.860674699168876e-06,
+            "tail_correction": 3.859987085900611e-12,
+            "event_pair_index_0based": 8624,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 5.556968300717195e-06,
+            "minimum_gap_at_event": 5.556968300717195e-06,
+            "maximum_window_displacement": 0.002830237791559067,
+            "maximum_linearized_background_change": 0.002722296032057755
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              8498,
+              8753
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 893,
+            "wall_seconds": 0.1866741249999997,
+            "force_calls": 893,
+            "event_t": -3.860670839135431e-06,
+            "event_abs_t": 3.860670839135431e-06,
+            "zero_time_estimate": 3.860674699122517e-06,
+            "tail_correction": 3.859987085900611e-12,
+            "event_pair_index_0based": 8624,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 5.556925964091751e-06,
+            "minimum_gap_at_event": 5.556925964091751e-06,
+            "maximum_window_displacement": 0.0028302377630505,
+            "maximum_linearized_background_change": 0.001852654260772332
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              8370,
+              8881
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 869,
+            "wall_seconds": 0.500872459,
+            "force_calls": 869,
+            "event_t": -3.86067083893965e-06,
+            "event_abs_t": 3.86067083893965e-06,
+            "zero_time_estimate": 3.860674698926736e-06,
+            "tail_correction": 3.859987085900611e-12,
+            "event_pair_index_0based": 8624,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 5.556968300116391e-06,
+            "minimum_gap_at_event": 5.556968300116391e-06,
+            "maximum_window_displacement": 0.002830237716593148,
+            "maximum_linearized_background_change": 0.014724203601941663
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              8114,
+              9137
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 845,
+            "wall_seconds": 2.7329387920000023,
+            "force_calls": 845,
+            "event_t": -3.860670838763126e-06,
+            "event_abs_t": 3.860670838763126e-06,
+            "zero_time_estimate": 3.8606746987502125e-06,
+            "tail_correction": 3.859987085900611e-12,
+            "event_pair_index_0based": 8624,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 5.556968299845069e-06,
+            "minimum_gap_at_event": 5.556968299845069e-06,
+            "maximum_window_displacement": 0.00283023770361962,
+            "maximum_linearized_background_change": 0.0028369181951324787
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 4.635896023617511e-17,
+              "relative_time_change": 1.2007994417844093e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 1.9578150136246447e-16,
+              "relative_time_change": 5.071173217906486e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 1.765233602736907e-16,
+              "relative_time_change": 4.572344837311346e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 4.572344837311346e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 3.860674585602193e-06,
+            "relative_difference": 2.9307835692995685e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.351608916,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.750144766014185e-40
+        },
+        "initial_pair_global_ordinals": [
+          "1000000008625",
+          "1000000008626"
+        ],
+        "event_pair_global_ordinals": [
+          "1000000008625",
+          "1000000008626"
+        ],
+        "offset_left_decimal": "2216.1344650875",
+        "offset_right_decimal": "2216.1400220558",
+        "g_min_decimal": "0.0055569683",
+        "T_mid_decimal": "267653396932.4000896404"
+      },
+      "poisson_control": {
+        "status": "MEASURED",
+        "block": "B",
+        "kind": "poisson-control",
+        "measurement_kind": "finite active-window approximation",
+        "label": "Poisson seed 20260903, density matched to B",
+        "N": 10000,
+        "density": 3.895330222240132,
+        "physical_center_decimal": "267653398006.996942784211",
+        "g_min": 6.624813629192204e-05,
+        "g_min_unfolded": 0.00025805836746500724,
+        "initial_pair_index_1based": [
+          9099,
+          9100
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          9099,
+          9100
+        ],
+        "event_pair_index_1based": [
+          9099,
+          9100
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          9099,
+          9100
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 6.624813629192203e-08,
+        "t_collision_predicted": 5.486019452691347e-10,
+        "t_collision_actual_zero_estimate": 5.486021585371888e-10,
+        "actual_to_predicted_ratio": 1.0000003887482645,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            8588,
+            9611
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 605,
+          "wall_seconds": 1.465142083,
+          "force_calls": 605,
+          "event_t": -5.486016099352435e-10,
+          "event_abs_t": 5.486016099352435e-10,
+          "zero_time_estimate": 5.486021585371888e-10,
+          "tail_correction": 5.486019452691346e-16,
+          "event_pair_index_0based": 9098,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 6.413454456422462e-08,
+          "minimum_gap_at_event": 6.413454456422462e-08,
+          "maximum_window_displacement": 3.3121345510635595e-05,
+          "maximum_linearized_background_change": 0.0007237127572333393
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              9036,
+              9163
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 665,
+            "wall_seconds": 0.04586454200000034,
+            "force_calls": 665,
+            "event_t": -5.486015968919388e-10,
+            "event_abs_t": 5.486015968919388e-10,
+            "zero_time_estimate": 5.486021454938841e-10,
+            "tail_correction": 5.486019452691346e-16,
+            "event_pair_index_0based": 9098,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 6.499976390468053e-08,
+            "minimum_gap_at_event": 6.499976390468053e-08,
+            "maximum_window_displacement": 3.312091290027002e-05,
+            "maximum_linearized_background_change": 3.0404918507479807e-05
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              8972,
+              9227
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 641,
+            "wall_seconds": 0.10831833299999971,
+            "force_calls": 641,
+            "event_t": -5.486015882506008e-10,
+            "event_abs_t": 5.486015882506008e-10,
+            "zero_time_estimate": 5.486021368525461e-10,
+            "tail_correction": 5.486019452691346e-16,
+            "event_pair_index_0based": 9098,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 6.551786712471091e-08,
+            "minimum_gap_at_event": 6.551786712471091e-08,
+            "maximum_window_displacement": 3.312065384819643e-05,
+            "maximum_linearized_background_change": 1.4436466922847953e-05
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              8844,
+              9355
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 629,
+            "wall_seconds": 0.34833866700000016,
+            "force_calls": 629,
+            "event_t": -5.486016198569044e-10,
+            "event_abs_t": 5.486016198569044e-10,
+            "zero_time_estimate": 5.486021684588497e-10,
+            "tail_correction": 5.486019452691346e-16,
+            "event_pair_index_0based": 9098,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 6.354537637875935e-08,
+            "minimum_gap_at_event": 6.354537637875935e-08,
+            "maximum_window_displacement": 3.3121640095259325e-05,
+            "maximum_linearized_background_change": 5.6162154190972905e-05
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              8588,
+              9611
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 605,
+            "wall_seconds": 1.465142083,
+            "force_calls": 605,
+            "event_t": -5.486016099352435e-10,
+            "event_abs_t": 5.486016099352435e-10,
+            "zero_time_estimate": 5.486021585371888e-10,
+            "tail_correction": 5.486019452691346e-16,
+            "event_pair_index_0based": 9098,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 6.413454456422462e-08,
+            "minimum_gap_at_event": 6.413454456422462e-08,
+            "maximum_window_displacement": 3.3121345510635595e-05,
+            "maximum_linearized_background_change": 0.0007237127572333393
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 8.641338000647649e-18,
+              "relative_time_change": 1.5751557312964455e-08,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 3.1606303612723027e-17,
+              "relative_time_change": 5.761242924269228e-08,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 9.921660870659143e-18,
+              "relative_time_change": 1.8085347854107232e-08,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 1.8085347854107232e-08,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 5.48602029535626e-10,
+            "relative_difference": 2.351459265392794e-07,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.12011362499999834,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 2.2763469540434692e-40
+        },
+        "seed": 20260903,
+        "actual_time_to_odlyzko_ratio": 0.00014210007352206695
+      },
+      "delete_pair_mutation": {
+        "status": "MEASURED",
+        "block": "B",
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros #10^12+1--#10^12+10,000; primary event pair deleted",
+        "N": 9998,
+        "density": 3.895330222240132,
+        "physical_center_decimal": "267653396737.4722921524",
+        "g_min": 0.0113810798,
+        "g_min_unfolded": 0.04433306410666668,
+        "initial_pair_index_1based": [
+          4240,
+          4241
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          4240,
+          4241
+        ],
+        "event_pair_index_1based": [
+          4240,
+          4241
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          4240,
+          4241
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 1.13810798e-05,
+        "t_collision_predicted": 1.6191122176746006e-05,
+        "t_collision_actual_zero_estimate": 1.62042894523816e-05,
+        "actual_to_predicted_ratio": 1.0008132404592998,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            3729,
+            4752
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 869,
+          "wall_seconds": 2.139151667,
+          "force_calls": 869,
+          "event_t": -1.6204273261259424e-05,
+          "event_abs_t": 1.6204273261259424e-05,
+          "zero_time_estimate": 1.62042894523816e-05,
+          "tail_correction": 1.6191122176746007e-11,
+          "event_pair_index_0based": 4239,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 1.1381079799460813e-05,
+          "minimum_gap_at_event": 1.1381079799460813e-05,
+          "maximum_window_displacement": 0.0057769938368225785,
+          "maximum_linearized_background_change": 0.015290573470382568
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              4177,
+              4304
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 965,
+            "wall_seconds": 0.06488974999999897,
+            "force_calls": 965,
+            "event_t": -1.6204273262799703e-05,
+            "event_abs_t": 1.6204273262799703e-05,
+            "zero_time_estimate": 1.620428945392188e-05,
+            "tail_correction": 1.6191122176746007e-11,
+            "event_pair_index_0based": 4239,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 1.1381079800496267e-05,
+            "minimum_gap_at_event": 1.1381079800496267e-05,
+            "maximum_window_displacement": 0.005776994102291567,
+            "maximum_linearized_background_change": 0.00572444710746289
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              4113,
+              4368
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 941,
+            "wall_seconds": 0.15436625000000248,
+            "force_calls": 941,
+            "event_t": -1.6204273262404034e-05,
+            "event_abs_t": 1.6204273262404034e-05,
+            "zero_time_estimate": 1.620428945352621e-05,
+            "tail_correction": 1.6191122176746007e-11,
+            "event_pair_index_0based": 4239,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 1.1381079799545801e-05,
+            "minimum_gap_at_event": 1.1381079799545801e-05,
+            "maximum_window_displacement": 0.0057769939495650345,
+            "maximum_linearized_background_change": 0.013876889344144532
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              3985,
+              4496
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 917,
+            "wall_seconds": 0.5009864589999999,
+            "force_calls": 917,
+            "event_t": -1.6204273261908855e-05,
+            "event_abs_t": 1.6204273261908855e-05,
+            "zero_time_estimate": 1.620428945303103e-05,
+            "tail_correction": 1.6191122176746007e-11,
+            "event_pair_index_0based": 4239,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 1.1381079801153172e-05,
+            "minimum_gap_at_event": 1.1381079801153172e-05,
+            "maximum_window_displacement": 0.005776993871830694,
+            "maximum_linearized_background_change": 0.2443533447312201
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              3729,
+              4752
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 869,
+            "wall_seconds": 2.139151667,
+            "force_calls": 869,
+            "event_t": -1.6204273261259424e-05,
+            "event_abs_t": 1.6204273261259424e-05,
+            "zero_time_estimate": 1.62042894523816e-05,
+            "tail_correction": 1.6191122176746007e-11,
+            "event_pair_index_0based": 4239,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 1.1381079799460813e-05,
+            "minimum_gap_at_event": 1.1381079799460813e-05,
+            "maximum_window_displacement": 0.0057769938368225785,
+            "maximum_linearized_background_change": 0.015290573470382568
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 3.956694184532178e-16,
+              "relative_time_change": 2.441757286476491e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 4.95178849096653e-16,
+              "relative_time_change": 3.055850431035279e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 6.494303250552391e-16,
+              "relative_time_change": 4.007767986147582e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 4.007767986147582e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 1.6204289055958595e-05,
+            "relative_difference": 2.446407834732101e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 9998,
+          "wall_seconds": 0.09555529200000024,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 3.478736817664393e-41
+        },
+        "initial_pair_global_ordinals": [
+          "1000000004240",
+          "1000000004241"
+        ],
+        "event_pair_global_ordinals": [
+          "1000000004240",
+          "1000000004241"
+        ],
+        "deleted_original_block_ordinals_1based": [
+          8625,
+          8626
+        ],
+        "g_min_decimal": "0.0113810798"
+      }
+    },
+    "C": {
+      "primary": {
+        "status": "MEASURED",
+        "block": "C",
+        "kind": "odlyzko-primary",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros #10^21+1--#10^21+10,000",
+        "N": 10000,
+        "density": 7.095078917553774,
+        "physical_center_decimal": "144176897509546973768.84307882",
+        "g_min": 0.00530012,
+        "g_min_unfolded": 0.03760476967250511,
+        "initial_pair_index_1based": [
+          1635,
+          1636
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          1635,
+          1636
+        ],
+        "event_pair_index_1based": [
+          1635,
+          1636
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          1635,
+          1636
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 5.30012e-06,
+        "t_collision_predicted": 3.5114090018e-06,
+        "t_collision_actual_zero_estimate": 3.5139466202783334e-06,
+        "actual_to_predicted_ratio": 1.0007226781263683,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            1124,
+            2147
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 845,
+          "wall_seconds": 2.019805875000003,
+          "force_calls": 845,
+          "event_t": -3.5139431088693315e-06,
+          "event_abs_t": 3.5139431088693315e-06,
+          "zero_time_estimate": 3.5139466202783334e-06,
+          "tail_correction": 3.5114090018e-12,
+          "event_pair_index_0based": 1634,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 5.30012001063181e-06,
+          "minimum_gap_at_event": 5.30012001063181e-06,
+          "maximum_window_displacement": 0.002749515817520801,
+          "maximum_linearized_background_change": 0.013912093145416513
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              1572,
+              1699
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 917,
+            "wall_seconds": 0.06324183300000286,
+            "force_calls": 917,
+            "event_t": -3.5139431092160602e-06,
+            "event_abs_t": 3.5139431092160602e-06,
+            "zero_time_estimate": 3.513946620625062e-06,
+            "tail_correction": 3.5114090018e-12,
+            "event_pair_index_0based": 1634,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 5.300141097794534e-06,
+            "minimum_gap_at_event": 5.300141097794534e-06,
+            "maximum_window_displacement": 0.002749516201840099,
+            "maximum_linearized_background_change": 0.029116778018742556
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              1508,
+              1763
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 893,
+            "wall_seconds": 0.14950137499999983,
+            "force_calls": 893,
+            "event_t": -3.51394310915427e-06,
+            "event_abs_t": 3.51394310915427e-06,
+            "zero_time_estimate": 3.513946620563272e-06,
+            "tail_correction": 3.5114090018e-12,
+            "event_pair_index_0based": 1634,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 5.300120000069418e-06,
+            "minimum_gap_at_event": 5.300120000069418e-06,
+            "maximum_window_displacement": 0.0027495159888195407,
+            "maximum_linearized_background_change": 0.038680423466972556
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              1380,
+              1891
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 869,
+            "wall_seconds": 0.4740617500000006,
+            "force_calls": 869,
+            "event_t": -3.5139431090304194e-06,
+            "event_abs_t": 3.5139431090304194e-06,
+            "zero_time_estimate": 3.5139466204394213e-06,
+            "tail_correction": 3.5114090018e-12,
+            "event_pair_index_0based": 1634,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 5.300119999982465e-06,
+            "minimum_gap_at_event": 5.300119999982465e-06,
+            "maximum_window_displacement": 0.002749515874399902,
+            "maximum_linearized_background_change": 0.3816246283763575
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              1124,
+              2147
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 845,
+            "wall_seconds": 2.019805875000003,
+            "force_calls": 845,
+            "event_t": -3.5139431088693315e-06,
+            "event_abs_t": 3.5139431088693315e-06,
+            "zero_time_estimate": 3.5139466202783334e-06,
+            "tail_correction": 3.5114090018e-12,
+            "event_pair_index_0based": 1634,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 5.30012001063181e-06,
+            "minimum_gap_at_event": 5.30012001063181e-06,
+            "maximum_window_displacement": 0.002749515817520801,
+            "maximum_linearized_background_change": 0.013912093145416513
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 6.179020646925396e-17,
+              "relative_time_change": 1.758427578485789e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 1.2385061644868203e-16,
+              "relative_time_change": 3.524544616821596e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 1.6108787887587558e-16,
+              "relative_time_change": 4.584243765863356e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 4.584243765863356e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 3.5139465143376827e-06,
+            "relative_difference": 3.0148622657031995e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.1017001250000007,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 3.10047590188079e-85
+        },
+        "initial_pair_global_ordinals": [
+          "1000000000000000001635",
+          "1000000000000000001636"
+        ],
+        "event_pair_global_ordinals": [
+          "1000000000000000001635",
+          "1000000000000000001636"
+        ],
+        "offset_left_decimal": "768.84042876",
+        "offset_right_decimal": "768.84572888",
+        "g_min_decimal": "0.00530012",
+        "T_mid_decimal": "144176897509546974243.30009392"
+      },
+      "poisson_control": {
+        "status": "MEASURED",
+        "block": "C",
+        "kind": "poisson-control",
+        "measurement_kind": "finite active-window approximation",
+        "label": "Poisson seed 20260904, density matched to C",
+        "N": 10000,
+        "density": 7.095078917553774,
+        "physical_center_decimal": "144176897509546974216.35899149412541",
+        "g_min": 3.145274773956713e-05,
+        "g_min_unfolded": 0.00022315972738613988,
+        "initial_pair_index_1based": [
+          4800,
+          4801
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          4800,
+          4801
+        ],
+        "event_pair_index_1based": [
+          4800,
+          4801
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          4800,
+          4801
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 3.145274773956713e-08,
+        "t_collision_predicted": 1.2365941754610568e-10,
+        "t_collision_actual_zero_estimate": 1.2365954146884367e-10,
+        "actual_to_predicted_ratio": 1.0000010021294006,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            4289,
+            5312
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 545,
+          "wall_seconds": 1.2758272080000026,
+          "force_calls": 545,
+          "event_t": -1.2365941780942612e-10,
+          "event_abs_t": 1.2365941780942612e-10,
+          "zero_time_estimate": 1.2365954146884367e-10,
+          "tail_correction": 1.2365941754610564e-16,
+          "event_pair_index_0based": 4799,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 2.666025649343652e-08,
+          "minimum_gap_at_event": 2.666025649343652e-08,
+          "maximum_window_displacement": 1.5728463946548604e-05,
+          "maximum_linearized_background_change": 1.0616580332463249e-05
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              4737,
+              4864
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 653,
+            "wall_seconds": 0.045098084000002814,
+            "force_calls": 653,
+            "event_t": -1.2365938248219856e-10,
+            "event_abs_t": 1.2365938248219856e-10,
+            "zero_time_estimate": 1.2365950614161611e-10,
+            "tail_correction": 1.2365941754610564e-16,
+            "event_pair_index_0based": 4799,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 3.163661264497393e-08,
+            "minimum_gap_at_event": 3.163661264497393e-08,
+            "maximum_window_displacement": 1.5725975764067706e-05,
+            "maximum_linearized_background_change": 0.00017580558969963923
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              4673,
+              4928
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 641,
+            "wall_seconds": 0.10760700000000156,
+            "force_calls": 641,
+            "event_t": -1.2365932214046235e-10,
+            "event_abs_t": 1.2365932214046235e-10,
+            "zero_time_estimate": 1.236594457998799e-10,
+            "tail_correction": 1.2365941754610564e-16,
+            "event_pair_index_0based": 4799,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 3.850630352821535e-08,
+            "minimum_gap_at_event": 3.850630352821535e-08,
+            "maximum_window_displacement": 1.5722540911101408e-05,
+            "maximum_linearized_background_change": 2.469454299158165e-05
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              4545,
+              5056
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 593,
+            "wall_seconds": 0.33306324999999504,
+            "force_calls": 593,
+            "event_t": -1.236593578198935e-10,
+            "event_abs_t": 1.236593578198935e-10,
+            "zero_time_estimate": 1.2365948147931104e-10,
+            "tail_correction": 1.2365941754610564e-16,
+            "event_pair_index_0based": 4799,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 3.456720260908801e-08,
+            "minimum_gap_at_event": 3.456720260908801e-08,
+            "maximum_window_displacement": 1.572451046601014e-05,
+            "maximum_linearized_background_change": 1.1817155356427698e-05
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              4289,
+              5312
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 545,
+            "wall_seconds": 1.2758272080000026,
+            "force_calls": 545,
+            "event_t": -1.2365941780942612e-10,
+            "event_abs_t": 1.2365941780942612e-10,
+            "zero_time_estimate": 1.2365954146884367e-10,
+            "tail_correction": 1.2365941754610564e-16,
+            "event_pair_index_0based": 4799,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 2.666025649343652e-08,
+            "minimum_gap_at_event": 2.666025649343652e-08,
+            "maximum_window_displacement": 1.5728463946548604e-05,
+            "maximum_linearized_background_change": 1.0616580332463249e-05
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 6.034173621132845e-17,
+              "relative_time_change": 4.879670600253253e-07,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 3.56794311374703e-17,
+              "relative_time_change": 2.885296841830901e-07,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 5.998953263267073e-17,
+              "relative_time_change": 4.851185110352785e-07,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 4.851185110352785e-07,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 1.2365956007343923e-10,
+            "relative_difference": 1.5045014189990073e-07,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.09526245899999708,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 4.794215453626194e-86
+        },
+        "seed": 20260904,
+        "actual_time_to_odlyzko_ratio": 3.519106999384322e-05
+      },
+      "delete_pair_mutation": {
+        "status": "MEASURED",
+        "block": "C",
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros #10^21+1--#10^21+10,000; primary event pair deleted",
+        "N": 9998,
+        "density": 7.095078917553774,
+        "physical_center_decimal": "144176897509546974435.152495925",
+        "g_min": 0.00924875,
+        "g_min_unfolded": 0.06562061113872547,
+        "initial_pair_index_1based": [
+          6360,
+          6361
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6362,
+          6363
+        ],
+        "event_pair_index_1based": [
+          6360,
+          6361
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6362,
+          6363
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 9.24875e-06,
+        "t_collision_predicted": 1.06924220703125e-05,
+        "t_collision_actual_zero_estimate": 1.0709525646542662e-05,
+        "actual_to_predicted_ratio": 1.0015995979318522,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            5849,
+            6872
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 869,
+          "wall_seconds": 2.0997904160000047,
+          "force_calls": 869,
+          "event_t": -1.0709514954120592e-05,
+          "event_abs_t": 1.0709514954120592e-05,
+          "zero_time_estimate": 1.0709525646542662e-05,
+          "tail_correction": 1.06924220703125e-11,
+          "event_pair_index_0based": 6359,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 9.248750000207843e-06,
+          "minimum_gap_at_event": 9.248750000207843e-06,
+          "maximum_window_displacement": 0.004725449419180914,
+          "maximum_linearized_background_change": 0.018745207794505614
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              6297,
+              6424
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 965,
+            "wall_seconds": 0.06647091699999663,
+            "force_calls": 965,
+            "event_t": -1.0709514955083295e-05,
+            "event_abs_t": 1.0709514955083295e-05,
+            "zero_time_estimate": 1.0709525647505366e-05,
+            "tail_correction": 1.06924220703125e-11,
+            "event_pair_index_0based": 6359,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 9.248750004276556e-06,
+            "minimum_gap_at_event": 9.248750004276556e-06,
+            "maximum_window_displacement": 0.00472545063063602,
+            "maximum_linearized_background_change": 0.04147915308518796
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              6233,
+              6488
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 941,
+            "wall_seconds": 0.15761808299999558,
+            "force_calls": 941,
+            "event_t": -1.0709514954866685e-05,
+            "event_abs_t": 1.0709514954866685e-05,
+            "zero_time_estimate": 1.0709525647288756e-05,
+            "tail_correction": 1.06924220703125e-11,
+            "event_pair_index_0based": 6359,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 9.248749999834187e-06,
+            "minimum_gap_at_event": 9.248749999834187e-06,
+            "maximum_window_displacement": 0.00472544994733711,
+            "maximum_linearized_background_change": 0.04860451943564289
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              6105,
+              6616
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 893,
+            "wall_seconds": 0.4959252499999991,
+            "force_calls": 893,
+            "event_t": -1.0709514954550822e-05,
+            "event_abs_t": 1.0709514954550822e-05,
+            "zero_time_estimate": 1.0709525646972892e-05,
+            "tail_correction": 1.06924220703125e-11,
+            "event_pair_index_0based": 6359,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 9.248749999807448e-06,
+            "minimum_gap_at_event": 9.248749999807448e-06,
+            "maximum_window_displacement": 0.004725449600260039,
+            "maximum_linearized_background_change": 0.023690354099141612
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              5849,
+              6872
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 869,
+            "wall_seconds": 2.0997904160000047,
+            "force_calls": 869,
+            "event_t": -1.0709514954120592e-05,
+            "event_abs_t": 1.0709514954120592e-05,
+            "zero_time_estimate": 1.0709525646542662e-05,
+            "tail_correction": 1.06924220703125e-11,
+            "event_pair_index_0based": 6359,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 9.248750000207843e-06,
+            "minimum_gap_at_event": 9.248750000207843e-06,
+            "maximum_window_displacement": 0.004725449419180914,
+            "maximum_linearized_background_change": 0.018745207794505614
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 2.1661004153544772e-16,
+              "relative_time_change": 2.022592303985799e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 3.158636682288121e-16,
+              "relative_time_change": 2.94937122932324e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 4.3023005676708775e-16,
+              "relative_time_change": 4.0172652922865746e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 4.0172652922865746e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 1.0709525369202026e-05,
+            "relative_difference": 2.5896631283783726e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 9998,
+          "wall_seconds": 0.09587454199999712,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.0373734768349609e-85
+        },
+        "initial_pair_global_ordinals": [
+          "1000000000000000006362",
+          "1000000000000000006363"
+        ],
+        "event_pair_global_ordinals": [
+          "1000000000000000006362",
+          "1000000000000000006363"
+        ],
+        "deleted_original_block_ordinals_1based": [
+          1635,
+          1636
+        ],
+        "g_min_decimal": "0.00924875"
+      }
+    },
+    "D": {
+      "primary": {
+        "status": "MEASURED",
+        "block": "D",
+        "kind": "odlyzko-primary",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros #10^22+1--#10^22+10,000",
+        "N": 10000,
+        "density": 7.453527085149451,
+        "physical_center_decimal": "1370919909931995309091.04061921",
+        "g_min": 0.00881124,
+        "g_min_unfolded": 0.06567481599375224,
+        "initial_pair_index_1based": [
+          6442,
+          6443
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6442,
+          6443
+        ],
+        "event_pair_index_1based": [
+          6442,
+          6443
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6442,
+          6443
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 8.81124e-06,
+        "t_collision_predicted": 9.7047437922e-06,
+        "t_collision_actual_zero_estimate": 9.802134737137404e-06,
+        "actual_to_predicted_ratio": 1.0100353957840371,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            5931,
+            6954
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 869,
+          "wall_seconds": 1.995561666999997,
+          "force_calls": 869,
+          "event_t": -9.802125032393612e-06,
+          "event_abs_t": 9.802125032393612e-06,
+          "zero_time_estimate": 9.802134737137404e-06,
+          "tail_correction": 9.704743792200001e-12,
+          "event_pair_index_0based": 6441,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 8.811239997010716e-06,
+          "minimum_gap_at_event": 8.811239997010716e-06,
+          "maximum_window_displacement": 0.004686537791298449,
+          "maximum_linearized_background_change": 0.0463741266121228
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              6379,
+              6506
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 941,
+            "wall_seconds": 0.06491466699999648,
+            "force_calls": 941,
+            "event_t": -9.8021250332294e-06,
+            "event_abs_t": 9.8021250332294e-06,
+            "zero_time_estimate": 9.802134737973192e-06,
+            "tail_correction": 9.704743792200001e-12,
+            "event_pair_index_0based": 6441,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 8.811221668684013e-06,
+            "minimum_gap_at_event": 8.811221668684013e-06,
+            "maximum_window_displacement": 0.004686536477201903,
+            "maximum_linearized_background_change": 0.032110065262030016
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              6315,
+              6570
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 917,
+            "wall_seconds": 0.15431554100000255,
+            "force_calls": 917,
+            "event_t": -9.802125033049962e-06,
+            "event_abs_t": 9.802125033049962e-06,
+            "zero_time_estimate": 9.802134737793754e-06,
+            "tail_correction": 9.704743792200001e-12,
+            "event_pair_index_0based": 6441,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 8.811240000091477e-06,
+            "minimum_gap_at_event": 8.811240000091477e-06,
+            "maximum_window_displacement": 0.004686537235902177,
+            "maximum_linearized_background_change": 0.08358901704728124
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              6187,
+              6698
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 893,
+            "wall_seconds": 0.4892312919999995,
+            "force_calls": 893,
+            "event_t": -9.802125032783218e-06,
+            "event_abs_t": 9.802125032783218e-06,
+            "zero_time_estimate": 9.80213473752701e-06,
+            "tail_correction": 9.704743792200001e-12,
+            "event_pair_index_0based": 6441,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 8.811240012564572e-06,
+            "minimum_gap_at_event": 8.811240012564572e-06,
+            "maximum_window_displacement": 0.0046865376052161465,
+            "maximum_linearized_background_change": 0.04968438890860776
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              5931,
+              6954
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 869,
+            "wall_seconds": 1.995561666999997,
+            "force_calls": 869,
+            "event_t": -9.802125032393612e-06,
+            "event_abs_t": 9.802125032393612e-06,
+            "zero_time_estimate": 9.802134737137404e-06,
+            "tail_correction": 9.704743792200001e-12,
+            "event_pair_index_0based": 6441,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 8.811239997010716e-06,
+            "minimum_gap_at_event": 8.811239997010716e-06,
+            "maximum_window_displacement": 0.004686537791298449,
+            "maximum_linearized_background_change": 0.0463741266121228
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 1.794371536122455e-16,
+              "relative_time_change": 1.8305926046945246e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 2.6674422761753525e-16,
+              "relative_time_change": 2.7212870947010915e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 3.896063566167715e-16,
+              "relative_time_change": 3.9747092553285124e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 3.9747092553285124e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 9.802134434701949e-06,
+            "relative_difference": 3.085403977057928e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.1008459999999971,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.1527075707683898e-90
+        },
+        "initial_pair_global_ordinals": [
+          "10000000000000000006442",
+          "10000000000000000006443"
+        ],
+        "event_pair_global_ordinals": [
+          "10000000000000000006442",
+          "10000000000000000006443"
+        ],
+        "offset_left_decimal": "9091.03621359",
+        "offset_right_decimal": "9091.04502483",
+        "g_min_decimal": "0.00881124",
+        "T_mid_decimal": "1370919909931995308897.54512111"
+      },
+      "poisson_control": {
+        "status": "MEASURED",
+        "block": "D",
+        "kind": "poisson-control",
+        "measurement_kind": "finite active-window approximation",
+        "label": "Poisson seed 20260905, density matched to D",
+        "N": 10000,
+        "density": 7.453527085149451,
+        "physical_center_decimal": "1370919909931995308534.760963763142",
+        "g_min": 2.8123744905904068e-05,
+        "g_min_unfolded": 0.0002096210943919899,
+        "initial_pair_index_1based": [
+          2393,
+          2394
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          2393,
+          2394
+        ],
+        "event_pair_index_1based": [
+          2393,
+          2394
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          2393,
+          2394
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 2.812374490590407e-08,
+        "t_collision_predicted": 9.886812844154563e-11,
+        "t_collision_actual_zero_estimate": 9.886811779198644e-11,
+        "actual_to_predicted_ratio": 0.999999892285215,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            1882,
+            2905
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 545,
+          "wall_seconds": 1.282733499999999,
+          "force_calls": 545,
+          "event_t": -9.8868018923858e-11,
+          "event_abs_t": 9.8868018923858e-11,
+          "zero_time_estimate": 9.886811779198644e-11,
+          "tail_correction": 9.886812844154563e-17,
+          "event_pair_index_0based": 2392,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 3.3681512962394097e-08,
+          "minimum_gap_at_event": 3.3681512962394097e-08,
+          "maximum_window_displacement": 1.4050516275729952e-05,
+          "maximum_linearized_background_change": 0.0008631163207715056
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              2330,
+              2457
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 617,
+            "wall_seconds": 0.042138125000001025,
+            "force_calls": 617,
+            "event_t": -9.886806304471232e-11,
+            "event_abs_t": 9.886806304471232e-11,
+            "zero_time_estimate": 9.886816191284076e-11,
+            "tail_correction": 9.886812844154563e-17,
+            "event_pair_index_0based": 2392,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 2.8049843647502805e-08,
+            "minimum_gap_at_event": 2.8049843647502805e-08,
+            "maximum_window_displacement": 1.4053332112834703e-05,
+            "maximum_linearized_background_change": 4.433238215396759e-05
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              2266,
+              2521
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 605,
+            "wall_seconds": 0.09940483299999414,
+            "force_calls": 605,
+            "event_t": -9.886805305866199e-11,
+            "event_abs_t": 9.886805305866199e-11,
+            "zero_time_estimate": 9.886815192679043e-11,
+            "tail_correction": 9.886812844154563e-17,
+            "event_pair_index_0based": 2392,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 2.9416844134551645e-08,
+            "minimum_gap_at_event": 2.9416844134551645e-08,
+            "maximum_window_displacement": 1.4052648612037356e-05,
+            "maximum_linearized_background_change": 2.1330890435035988e-05
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              2138,
+              2649
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 569,
+            "wall_seconds": 0.3098566660000017,
+            "force_calls": 569,
+            "event_t": -9.886810302291851e-11,
+            "event_abs_t": 9.886810302291851e-11,
+            "zero_time_estimate": 9.886820189104695e-11,
+            "tail_correction": 9.886812844154563e-17,
+            "event_pair_index_0based": 2392,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 2.1557710222035434e-08,
+            "minimum_gap_at_event": 2.1557710222035434e-08,
+            "maximum_window_displacement": 1.405657818176538e-05,
+            "maximum_linearized_background_change": 4.379972458554774e-05
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              1882,
+              2905
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 545,
+            "wall_seconds": 1.282733499999999,
+            "force_calls": 545,
+            "event_t": -9.8868018923858e-11,
+            "event_abs_t": 9.8868018923858e-11,
+            "zero_time_estimate": 9.886811779198644e-11,
+            "tail_correction": 9.886812844154563e-17,
+            "event_pair_index_0based": 2392,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 3.3681512962394097e-08,
+            "minimum_gap_at_event": 3.3681512962394097e-08,
+            "maximum_window_displacement": 1.4050516275729952e-05,
+            "maximum_linearized_background_change": 0.0008631163207715056
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 9.986050328524981e-18,
+              "relative_time_change": 1.0100371185171358e-07,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 4.996425652061908e-17,
+              "relative_time_change": 5.053622455446276e-07,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 8.409906051031264e-17,
+              "relative_time_change": 8.506186057597743e-07,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 8.506186057597743e-07,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 9.886816911709981e-11,
+            "relative_difference": 5.191270403259499e-07,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 10000,
+          "wall_seconds": 0.09340633299999723,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 2.414466267916357e-90
+        },
+        "seed": 20260905,
+        "actual_time_to_odlyzko_ratio": 1.0086386327399095e-05
+      },
+      "delete_pair_mutation": {
+        "status": "MEASURED",
+        "block": "D",
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "finite active-window approximation",
+        "label": "zeros #10^22+1--#10^22+10,000; primary event pair deleted",
+        "N": 9998,
+        "density": 7.453527085149451,
+        "physical_center_decimal": "1370919909931995308731.515108205",
+        "g_min": 0.01053759,
+        "g_min_unfolded": 0.0785422124772,
+        "initial_pair_index_1based": [
+          3763,
+          3764
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          3763,
+          3764
+        ],
+        "event_pair_index_1based": [
+          3763,
+          3764
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          3763,
+          3764
+        ],
+        "same_as_initial_closest_pair": true,
+        "event_threshold": 1.053759e-05,
+        "t_collision_predicted": 1.3880100376012499e-05,
+        "t_collision_actual_zero_estimate": 1.3932893921879073e-05,
+        "actual_to_predicted_ratio": 1.003803542080849,
+        "largest_window_solver": {
+          "window": 1024,
+          "window_indices_1based": [
+            3252,
+            4275
+          ],
+          "background": "exact all-N force at t=0 plus diagonal linear response",
+          "event_found": true,
+          "solver_success": true,
+          "solver_message": "A termination event occurred.",
+          "nfev": 869,
+          "wall_seconds": 2.0455135830000017,
+          "force_calls": 869,
+          "event_t": -1.3932880041778698e-05,
+          "event_abs_t": 1.3932880041778698e-05,
+          "zero_time_estimate": 1.3932893921879073e-05,
+          "tail_correction": 1.38801003760125e-11,
+          "event_pair_index_0based": 3762,
+          "event_pair_local_index_0based": 511,
+          "event_gap": 1.0537589999817656e-05,
+          "minimum_gap_at_event": 1.0537589999817656e-05,
+          "maximum_window_displacement": 0.005302948113337909,
+          "maximum_linearized_background_change": 0.18388471446911248
+        },
+        "window_runs": [
+          {
+            "window": 128,
+            "window_indices_1based": [
+              3700,
+              3827
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 965,
+            "wall_seconds": 0.06512000000000029,
+            "force_calls": 965,
+            "event_t": -1.393288004268307e-05,
+            "event_abs_t": 1.393288004268307e-05,
+            "zero_time_estimate": 1.3932893922783445e-05,
+            "tail_correction": 1.38801003760125e-11,
+            "event_pair_index_0based": 3762,
+            "event_pair_local_index_0based": 63,
+            "event_gap": 1.0537589999819594e-05,
+            "minimum_gap_at_event": 1.0537589999819594e-05,
+            "maximum_window_displacement": 0.005302945724720942,
+            "maximum_linearized_background_change": 0.3428252725708223
+          },
+          {
+            "window": 256,
+            "window_indices_1based": [
+              3636,
+              3891
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 941,
+            "wall_seconds": 0.15583287500000154,
+            "force_calls": 941,
+            "event_t": -1.3932880042666056e-05,
+            "event_abs_t": 1.3932880042666056e-05,
+            "zero_time_estimate": 1.3932893922766432e-05,
+            "tail_correction": 1.38801003760125e-11,
+            "event_pair_index_0based": 3762,
+            "event_pair_local_index_0based": 127,
+            "event_gap": 1.0537590001799354e-05,
+            "minimum_gap_at_event": 1.0537590001799354e-05,
+            "maximum_window_displacement": 0.0053029471757985785,
+            "maximum_linearized_background_change": 0.06396054253277456
+          },
+          {
+            "window": 512,
+            "window_indices_1based": [
+              3508,
+              4019
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 917,
+            "wall_seconds": 0.5056278329999984,
+            "force_calls": 917,
+            "event_t": -1.3932880042308615e-05,
+            "event_abs_t": 1.3932880042308615e-05,
+            "zero_time_estimate": 1.393289392240899e-05,
+            "tail_correction": 1.38801003760125e-11,
+            "event_pair_index_0based": 3762,
+            "event_pair_local_index_0based": 255,
+            "event_gap": 1.0537589997981891e-05,
+            "minimum_gap_at_event": 1.0537589997981891e-05,
+            "maximum_window_displacement": 0.005302947786118971,
+            "maximum_linearized_background_change": 0.31046394305932323
+          },
+          {
+            "window": 1024,
+            "window_indices_1based": [
+              3252,
+              4275
+            ],
+            "background": "exact all-N force at t=0 plus diagonal linear response",
+            "event_found": true,
+            "solver_success": true,
+            "solver_message": "A termination event occurred.",
+            "nfev": 869,
+            "wall_seconds": 2.0455135830000017,
+            "force_calls": 869,
+            "event_t": -1.3932880041778698e-05,
+            "event_abs_t": 1.3932880041778698e-05,
+            "zero_time_estimate": 1.3932893921879073e-05,
+            "tail_correction": 1.38801003760125e-11,
+            "event_pair_index_0based": 3762,
+            "event_pair_local_index_0based": 511,
+            "event_gap": 1.0537589999817656e-05,
+            "minimum_gap_at_event": 1.0537589999817656e-05,
+            "maximum_window_displacement": 0.005302948113337909,
+            "maximum_linearized_background_change": 0.18388471446911248
+          }
+        ],
+        "convergence": {
+          "window_sequence": [
+            128,
+            256,
+            512,
+            1024
+          ],
+          "successive_window_changes": [
+            {
+              "from_window": 128,
+              "to_window": 256,
+              "absolute_time_change": 1.7013503778549877e-17,
+              "relative_time_change": 1.221103373991078e-12,
+              "same_pair": true
+            },
+            {
+              "from_window": 256,
+              "to_window": 512,
+              "absolute_time_change": 3.574411274777367e-16,
+              "relative_time_change": 2.565447849300322e-11,
+              "same_pair": true
+            },
+            {
+              "from_window": 512,
+              "to_window": 1024,
+              "absolute_time_change": 5.299173643294464e-16,
+              "relative_time_change": 3.8033546175020227e-11,
+              "same_pair": true
+            }
+          ],
+          "last_window_relative_change": 3.8033546175020227e-11,
+          "all_windows_same_pair": true,
+          "integrator_tolerance_check": {
+            "coarse_zero_time_estimate": 1.393289355547057e-05,
+            "relative_difference": 2.6298090311633987e-08,
+            "same_pair": true
+          }
+        },
+        "all_N_initial_field": {
+          "N": 9998,
+          "wall_seconds": 0.09475249999999846,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.0124684602975133e-90
+        },
+        "initial_pair_global_ordinals": [
+          "10000000000000000003763",
+          "10000000000000000003764"
+        ],
+        "event_pair_global_ordinals": [
+          "10000000000000000003763",
+          "10000000000000000003764"
+        ],
+        "deleted_original_block_ordinals_1based": [
+          6442,
+          6443
+        ],
+        "g_min_decimal": "0.01053759"
+      }
+    }
+  },
+  "scaling": {
+    "status": "MEASURED",
+    "registered_density_exponent": -2.0,
+    "literal_T_power_exponent": 0.0,
+    "actual_log_time_on_log_density_slope_four_blocks": -1.780353700509374,
+    "actual_intercept": -8.893521807330156,
+    "gmin2_over_8_log_time_on_log_density_slope_four_blocks": -1.7827812017141678,
+    "predicted_intercept": -8.893181781176951,
+    "actual_slope_is_negative": true,
+    "note": "The four-point slope includes extreme-gap fluctuations.  The registered -2 is an ensemble scale at fixed N, not a claim of monotonicity for four individual blocks."
+  }
+}

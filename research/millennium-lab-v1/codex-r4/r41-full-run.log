@@ -1,0 +1,25 @@
+2026-09-02 21:32:25,364 INFO A odlyzko-primary full-N start N=10000 pair=6709/6710 g=0.037698499 pred=0.000177647103357
+2026-09-02 21:33:05,781 INFO A odlyzko-primary full-N event 0.000177801161551 ratio 1.00086721 pair=6709/6710 nfev=377 wall=40.4s
+2026-09-02 21:33:05,784 INFO A poisson-control full-N start N=10000 pair=6184/6185 g=4.54753246204e-06 pred=2.58500643666e-12
+2026-09-02 21:33:35,666 INFO A poisson-control full-N event 2.58501260532e-12 ratio 1.00000239 pair=6184/6185 nfev=269 wall=29.9s
+2026-09-02 21:33:35,670 INFO A delete-event-pair-mutation full-N start N=9998 pair=4765/4766 g=0.04325406 pred=0.00023386421331
+2026-09-02 21:34:16,828 INFO A delete-event-pair-mutation full-N event 0.000234117738259 ratio 1.00108407 pair=4765/4766 nfev=377 wall=41.2s
+2026-09-02 21:34:16,835 INFO B odlyzko-primary full-N start N=10000 pair=8625/8626 g=0.0055569683 pred=3.8599870859e-06
+2026-09-02 21:34:41,105 INFO B odlyzko-primary full-N event 3.86067467174e-06 ratio 1.00017813 pair=8625/8626 nfev=413 wall=24.3s
+2026-09-02 21:34:41,107 INFO B poisson-control full-N start N=10000 pair=9099/9100 g=6.62481362919e-05 pred=5.48601945269e-10
+2026-09-02 21:34:58,206 INFO B poisson-control full-N event 5.48602043006e-10 ratio 1.00000018 pair=9099/9100 nfev=293 wall=17.1s
+2026-09-02 21:34:58,210 INFO B delete-event-pair-mutation full-N start N=9998 pair=4240/4241 g=0.0113810798 pred=1.61911221767e-05
+2026-09-02 21:35:21,796 INFO B delete-event-pair-mutation full-N event 1.62042893401e-05 ratio 1.00081323 pair=4240/4241 nfev=401 wall=23.6s
+2026-09-02 21:35:21,803 INFO C odlyzko-primary full-N start N=10000 pair=1635/1636 g=0.00530012 pred=3.5114090018e-06
+2026-09-02 21:35:49,125 INFO C odlyzko-primary full-N event 3.51394659562e-06 ratio 1.00072267 pair=1635/1636 nfev=413 wall=27.3s
+2026-09-02 21:35:49,126 INFO C poisson-control full-N start N=10000 pair=4800/4801 g=3.14527477396e-05 pred=1.23659417546e-10
+2026-09-02 21:36:05,294 INFO C poisson-control full-N event 1.23659616424e-10 ratio 1.00000161 pair=4800/4801 nfev=281 wall=16.2s
+2026-09-02 21:36:05,300 INFO C delete-event-pair-mutation full-N start N=9998 pair=6360/6361 g=0.00924875 pred=1.06924220703e-05
+2026-09-02 21:36:28,882 INFO C delete-event-pair-mutation full-N event 1.07095255722e-05 ratio 1.00159959 pair=6360/6361 nfev=401 wall=23.6s
+2026-09-02 21:36:28,890 INFO D odlyzko-primary full-N start N=10000 pair=6442/6443 g=0.00881124 pred=9.7047437922e-06
+2026-09-02 21:36:52,061 INFO D odlyzko-primary full-N event 9.80213466831e-06 ratio 1.01003539 pair=6442/6443 nfev=401 wall=23.2s
+2026-09-02 21:36:52,063 INFO D poisson-control full-N start N=10000 pair=2393/2394 g=2.81237449059e-05 pred=9.88681284415e-11
+2026-09-02 21:37:05,550 INFO D poisson-control full-N event 9.88679935155e-11 ratio 0.99999864 pair=2393/2394 nfev=233 wall=13.5s
+2026-09-02 21:37:05,553 INFO D delete-event-pair-mutation full-N start N=9998 pair=3763/3764 g=0.01053759 pred=1.3880100376e-05
+2026-09-02 21:37:29,034 INFO D delete-event-pair-mutation full-N event 1.39328938252e-05 ratio 1.00380354 pair=3763/3764 nfev=401 wall=23.5s
+2026-09-02 21:37:29,058 INFO all full-N cases complete in 303.9s

@@ -1,0 +1,26 @@
+2026-09-02 21:02:51,627 INFO T4 validation relative difference 0, same pair=True
+2026-09-02 21:02:51,657 INFO A odlyzko-primary: N=10000 gmin=0.037698499 pred=0.000177647103357 pair=6709/6710
+2026-09-02 21:02:57,233 INFO A odlyzko-primary: event 0.000177801162765 ratio 1.00086722 pair=6709/6710 nfev=917 conv=3.6e-11
+2026-09-02 21:02:57,235 INFO A poisson-control: N=10000 gmin=4.54753246204e-06 pred=2.58500643666e-12 pair=6184/6185
+2026-09-02 21:03:00,190 INFO A poisson-control: event 2.58500732042e-12 ratio 1.00000034 pair=6184/6185 nfev=521 conv=2.27e-08
+2026-09-02 21:03:00,194 INFO A delete-event-pair-mutation: N=9998 gmin=0.04325406 pred=0.00023386421331 pair=4765/4766
+2026-09-02 21:03:04,973 INFO A delete-event-pair-mutation: event 0.000234117739858 ratio 1.00108408 pair=4765/4766 nfev=917 conv=3.59e-11
+2026-09-02 21:03:04,979 INFO B odlyzko-primary: N=10000 gmin=0.0055569683 pred=3.8599870859e-06 pair=8625/8626
+2026-09-02 21:03:10,341 INFO B odlyzko-primary: event 3.86067469875e-06 ratio 1.00017814 pair=8625/8626 nfev=845 conv=4.57e-11
+2026-09-02 21:03:10,342 INFO B poisson-control: N=10000 gmin=6.62481362919e-05 pred=5.48601945269e-10 pair=9099/9100
+2026-09-02 21:03:13,387 INFO B poisson-control: event 5.48602158537e-10 ratio 1.00000039 pair=9099/9100 nfev=605 conv=1.81e-08
+2026-09-02 21:03:13,390 INFO B delete-event-pair-mutation: N=9998 gmin=0.0113810798 pred=1.61911221767e-05 pair=4240/4241
+2026-09-02 21:03:17,854 INFO B delete-event-pair-mutation: event 1.62042894524e-05 ratio 1.00081324 pair=4240/4241 nfev=869 conv=4.01e-11
+2026-09-02 21:03:17,859 INFO C odlyzko-primary: N=10000 gmin=0.00530012 pred=3.5114090018e-06 pair=1635/1636
+2026-09-02 21:03:21,937 INFO C odlyzko-primary: event 3.51394662028e-06 ratio 1.00072268 pair=1635/1636 nfev=845 conv=4.58e-11
+2026-09-02 21:03:21,938 INFO C poisson-control: N=10000 gmin=3.14527477396e-05 pred=1.23659417546e-10 pair=4800/4801
+2026-09-02 21:03:24,695 INFO C poisson-control: event 1.23659541469e-10 ratio 1.00000100 pair=4800/4801 nfev=545 conv=4.85e-07
+2026-09-02 21:03:24,698 INFO C delete-event-pair-mutation: N=9998 gmin=0.00924875 pred=1.06924220703e-05 pair=6360/6361
+2026-09-02 21:03:28,956 INFO C delete-event-pair-mutation: event 1.07095256465e-05 ratio 1.00159960 pair=6360/6361 nfev=869 conv=4.02e-11
+2026-09-02 21:03:28,961 INFO D odlyzko-primary: N=10000 gmin=0.00881124 pred=9.7047437922e-06 pair=6442/6443
+2026-09-02 21:03:33,088 INFO D odlyzko-primary: event 9.80213473714e-06 ratio 1.01003540 pair=6442/6443 nfev=869 conv=3.97e-11
+2026-09-02 21:03:33,089 INFO D poisson-control: N=10000 gmin=2.81237449059e-05 pred=9.88681284415e-11 pair=2393/2394
+2026-09-02 21:03:35,911 INFO D poisson-control: event 9.8868117792e-11 ratio 0.99999989 pair=2393/2394 nfev=545 conv=8.51e-07
+2026-09-02 21:03:35,914 INFO D delete-event-pair-mutation: N=9998 gmin=0.01053759 pred=1.3880100376e-05 pair=3763/3764
+2026-09-02 21:03:40,226 INFO D delete-event-pair-mutation: event 1.39328939219e-05 ratio 1.00380354 pair=3763/3764 nfev=869 conv=3.8e-11
+2026-09-02 21:03:40,246 INFO wrote /private/tmp/aukora-millennium-codex/research/millennium-lab-v1/codex-r4/r41-results.json and /private/tmp/aukora-millennium-codex/research/millennium-lab-v1/codex-r4/r41-results.csv

@@ -1,0 +1,988 @@
+{
+  "blocks": {
+    "A": {
+      "delete_pair_mutation": {
+        "N": 9998,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 6.830243867893066e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 0.00023411773985782263
+        },
+        "actual_to_predicted_ratio": 1.0010840690189517,
+        "block": "A",
+        "deleted_original_block_ordinals_1based": [
+          6709,
+          6710
+        ],
+        "density": 1.0767299035914693,
+        "event_pair_global_ordinals": [
+          "4765",
+          "4766"
+        ],
+        "event_pair_index_1based": [
+          4765,
+          4766
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          4765,
+          4766
+        ],
+        "g_min": 0.04325406,
+        "g_min_decimal": "0.043254060",
+        "g_min_unfolded": 0.04657293985373962,
+        "initial_pair_global_ordinals": [
+          "4765",
+          "4766"
+        ],
+        "initial_pair_index_1based": [
+          4765,
+          4766
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          4765,
+          4766
+        ],
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "5229.220184229",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 9998,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 0.00023409435183741035,
+          "event_found": true,
+          "event_gap": 0.00043254060000316605,
+          "event_pair_index_0based": 4764,
+          "event_pair_index_1based": [
+            4765,
+            4766
+          ],
+          "event_t": -0.00023409435183741035,
+          "event_threshold": 0.00043254059999999996,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 377,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.022006247688281678,
+          "minimum_gap_at_event": 0.00043254060000316605,
+          "mirror_mode": "direct-all-pairs",
+          "mirror_remainder_bound": 0.0,
+          "nfev": 377,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.0001,
+          "two_body_tail_correction": 2.3386421331044997e-08,
+          "wall_seconds": 41.15751900000001,
+          "zero_time_estimate": 0.00023411773825874138
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 0.00023411773825874138,
+        "t_collision_predicted": 0.00023386421331044997
+      },
+      "poisson_control": {
+        "N": 10000,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 2.04443938254816e-06,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 2.585007320417228e-12
+        },
+        "actual_time_to_odlyzko_ratio": 1.4538783564584973e-08,
+        "actual_to_predicted_ratio": 1.0000023863220624,
+        "block": "A",
+        "density": 1.0767299035914693,
+        "event_pair_index_1based": [
+          6184,
+          6185
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6184,
+          6185
+        ],
+        "g_min": 4.547532462037769e-06,
+        "g_min_unfolded": 4.896464189429004e-06,
+        "initial_pair_index_1based": [
+          6184,
+          6185
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6184,
+          6185
+        ],
+        "kind": "poisson-control",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "6565.510076135877",
+        "same_as_initial_closest_pair": true,
+        "seed": 20260902,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 2.584754104656494e-12,
+          "event_found": true,
+          "event_gap": 4.4669624747213736e-08,
+          "event_pair_index_0based": 6183,
+          "event_pair_index_1based": [
+            6184,
+            6185
+          ],
+          "event_t": -2.584754104656494e-12,
+          "event_threshold": 4.5475326260202566e-08,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 269,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 2.2514350311007053e-06,
+          "minimum_gap_at_event": 4.4669624747213736e-08,
+          "mirror_mode": "direct-all-pairs",
+          "mirror_remainder_bound": 0.0,
+          "nfev": 269,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.00010000000721193272,
+          "two_body_tail_correction": 2.5850066230898363e-16,
+          "wall_seconds": 29.880883917,
+          "zero_time_estimate": 2.585012605318803e-12
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 2.585012605318803e-12,
+        "t_collision_predicted": 2.5850064366609114e-12
+      },
+      "primary": {
+        "N": 10000,
+        "T_mid_decimal": "5448.908413286",
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 6.827620248787908e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 0.0001778011627647529
+        },
+        "actual_to_predicted_ratio": 1.0008672147828928,
+        "block": "A",
+        "density": 1.0767299035914693,
+        "event_pair_global_ordinals": [
+          "6709",
+          "6710"
+        ],
+        "event_pair_index_1based": [
+          6709,
+          6710
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6709,
+          6710
+        ],
+        "g_min": 0.037698499,
+        "g_min_decimal": "0.037698499",
+        "g_min_unfolded": 0.0405911011938131,
+        "initial_pair_global_ordinals": [
+          "6709",
+          "6710"
+        ],
+        "initial_pair_index_1based": [
+          6709,
+          6710
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6709,
+          6710
+        ],
+        "kind": "odlyzko-primary",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "7005.0817154245",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 0.00017778339684045843,
+          "event_found": true,
+          "event_gap": 0.0003769849900210892,
+          "event_pair_index_0based": 6708,
+          "event_pair_index_1based": [
+            6709,
+            6710
+          ],
+          "event_t": -0.00017778339684045843,
+          "event_threshold": 0.00037698499,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 377,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.019484974606385416,
+          "minimum_gap_at_event": 0.0003769849900210892,
+          "mirror_mode": "direct-all-pairs",
+          "mirror_remainder_bound": 0.0,
+          "nfev": 377,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 9.999999999999999e-05,
+          "two_body_tail_correction": 1.7764710335662515e-08,
+          "wall_seconds": 40.416420165999995,
+          "zero_time_estimate": 0.0001778011615507941
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 0.0001778011615507941,
+        "t_collision_predicted": 0.00017764710335662517
+      }
+    },
+    "B": {
+      "delete_pair_mutation": {
+        "N": 9998,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 6.9270541443845385e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 1.62042894523816e-05
+        },
+        "actual_to_predicted_ratio": 1.0008132335266122,
+        "block": "B",
+        "deleted_original_block_ordinals_1based": [
+          8625,
+          8626
+        ],
+        "density": 3.895330222240132,
+        "event_pair_global_ordinals": [
+          "1000000004240",
+          "1000000004241"
+        ],
+        "event_pair_index_1based": [
+          4240,
+          4241
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          4240,
+          4241
+        ],
+        "g_min": 0.0113810798,
+        "g_min_decimal": "0.0113810798",
+        "g_min_unfolded": 0.04433306410666668,
+        "initial_pair_global_ordinals": [
+          "1000000004240",
+          "1000000004241"
+        ],
+        "initial_pair_index_1based": [
+          4240,
+          4241
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          4240,
+          4241
+        ],
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "267653396737.4722921524",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 9998,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 1.6202670227915937e-05,
+          "event_found": true,
+          "event_gap": 0.00011381079800043899,
+          "event_pair_index_0based": 4239,
+          "event_pair_index_1based": [
+            4240,
+            4241
+          ],
+          "event_t": -1.6202670227915937e-05,
+          "event_threshold": 0.000113810798,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 401,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.005725769829099927,
+          "minimum_gap_at_event": 0.00011381079800043899,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 3.478736817664393e-41,
+          "nfev": 401,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.0001,
+          "two_body_tail_correction": 1.6191122176746007e-09,
+          "wall_seconds": 23.585445249999992,
+          "zero_time_estimate": 1.6204289340133612e-05
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 1.6204289340133612e-05,
+        "t_collision_predicted": 1.6191122176746006e-05
+      },
+      "poisson_control": {
+        "N": 10000,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 2.1059199507284723e-07,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 5.486021585371888e-10
+        },
+        "actual_time_to_odlyzko_ratio": 0.00014210004459120859,
+        "actual_to_predicted_ratio": 1.000000178156232,
+        "block": "B",
+        "density": 3.895330222240132,
+        "event_pair_index_1based": [
+          9099,
+          9100
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          9099,
+          9100
+        ],
+        "g_min": 6.624813629192204e-05,
+        "g_min_unfolded": 0.00025805836746500724,
+        "initial_pair_index_1based": [
+          9099,
+          9100
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          9099,
+          9100
+        ],
+        "kind": "poisson-control",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "267653398006.996942784211",
+        "same_as_initial_closest_pair": true,
+        "seed": 20260903,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 5.485471828117214e-10,
+          "event_found": true,
+          "event_gap": 6.627621655950614e-07,
+          "event_pair_index_0based": 9098,
+          "event_pair_index_1based": [
+            9099,
+            9100
+          ],
+          "event_t": -5.485471828117214e-10,
+          "event_threshold": 6.624813613598235e-07,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 293,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 3.2822028788811374e-05,
+          "minimum_gap_at_event": 6.627621655950614e-07,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 2.2763469540434692e-40,
+          "nfev": 293,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 9.999999952922542e-05,
+          "two_body_tail_correction": 5.4860194268645624e-14,
+          "wall_seconds": 17.098574582999987,
+          "zero_time_estimate": 5.486020430059901e-10
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 5.486020430059901e-10,
+        "t_collision_predicted": 5.486019452691347e-10
+      },
+      "primary": {
+        "N": 10000,
+        "T_mid_decimal": "267653396932.4000896404",
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 6.996995275462022e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 3.8606746987502125e-06
+        },
+        "actual_to_predicted_ratio": 1.0001781316416807,
+        "block": "B",
+        "density": 3.895330222240132,
+        "event_pair_global_ordinals": [
+          "1000000008625",
+          "1000000008626"
+        ],
+        "event_pair_index_1based": [
+          8625,
+          8626
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          8625,
+          8626
+        ],
+        "g_min": 0.0055569683,
+        "g_min_decimal": "0.0055569683",
+        "g_min_unfolded": 0.02164622656302037,
+        "initial_pair_global_ordinals": [
+          "1000000008625",
+          "1000000008626"
+        ],
+        "initial_pair_index_1based": [
+          8625,
+          8626
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          8625,
+          8626
+        ],
+        "kind": "odlyzko-primary",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "267653397863.13724357165",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 3.8602886730285e-06,
+          "event_found": true,
+          "event_gap": 5.556968299781169e-05,
+          "event_pair_index_0based": 8624,
+          "event_pair_index_1based": [
+            8625,
+            8626
+          ],
+          "event_t": -3.8602886730285e-06,
+          "event_threshold": 5.5569683000000004e-05,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 413,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.0028052259387049408,
+          "minimum_gap_at_event": 5.556968299781169e-05,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.750144766014185e-40,
+          "nfev": 413,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 9.999999999999999e-05,
+          "two_body_tail_correction": 3.859987085900612e-10,
+          "wall_seconds": 24.269942,
+          "zero_time_estimate": 3.86067467173709e-06
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 3.86067467173709e-06,
+        "t_collision_predicted": 3.859987085900612e-06
+      }
+    },
+    "C": {
+      "delete_pair_mutation": {
+        "N": 9998,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 6.940864747611659e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 1.0709525646542662e-05
+        },
+        "actual_to_predicted_ratio": 1.001599590979885,
+        "block": "C",
+        "deleted_original_block_ordinals_1based": [
+          1635,
+          1636
+        ],
+        "density": 7.095078917553774,
+        "event_pair_global_ordinals": [
+          "1000000000000000006362",
+          "1000000000000000006363"
+        ],
+        "event_pair_index_1based": [
+          6360,
+          6361
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6362,
+          6363
+        ],
+        "g_min": 0.00924875,
+        "g_min_decimal": "0.00924875",
+        "g_min_unfolded": 0.06562061113872547,
+        "initial_pair_global_ordinals": [
+          "1000000000000000006362",
+          "1000000000000000006363"
+        ],
+        "initial_pair_index_1based": [
+          6360,
+          6361
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6362,
+          6363
+        ],
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "144176897509546974435.152495925",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 9998,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 1.0708456330002263e-05,
+          "event_found": true,
+          "event_gap": 9.248749999998996e-05,
+          "event_pair_index_0based": 6359,
+          "event_pair_index_1based": [
+            6360,
+            6361
+          ],
+          "event_t": -1.0708456330002263e-05,
+          "event_threshold": 9.24875e-05,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 401,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.0046838194376913715,
+          "minimum_gap_at_event": 9.248749999998996e-05,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.0373734768349609e-85,
+          "nfev": 401,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.00010000000000000002,
+          "two_body_tail_correction": 1.06924220703125e-09,
+          "wall_seconds": 23.581893792000017,
+          "zero_time_estimate": 1.0709525572209294e-05
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 1.0709525572209294e-05,
+        "t_collision_predicted": 1.06924220703125e-05
+      },
+      "poisson_control": {
+        "N": 10000,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 6.061435827986526e-07,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 1.2365954146884367e-10
+        },
+        "actual_time_to_odlyzko_ratio": 3.519109157164313e-05,
+        "actual_to_predicted_ratio": 1.0000016082739582,
+        "block": "C",
+        "density": 7.095078917553774,
+        "event_pair_index_1based": [
+          4800,
+          4801
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          4800,
+          4801
+        ],
+        "g_min": 3.145274773956713e-05,
+        "g_min_unfolded": 0.00022315972738613988,
+        "initial_pair_index_1based": [
+          4800,
+          4801
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          4800,
+          4801
+        ],
+        "kind": "poisson-control",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "144176897509546974216.35899149412541",
+        "same_as_initial_closest_pair": true,
+        "seed": 20260904,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 1.2364725048256498e-10,
+          "event_found": true,
+          "event_gap": 3.1227928223361855e-07,
+          "event_pair_index_0based": 4799,
+          "event_pair_index_1based": [
+            4800,
+            4801
+          ],
+          "event_t": -1.2364725048256498e-10,
+          "event_threshold": 3.145274774851714e-07,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 281,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 1.5585652916424953e-05,
+          "minimum_gap_at_event": 3.1227928223361855e-07,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 4.794215453626194e-86,
+          "nfev": 281,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.00010000000005691082,
+          "two_body_tail_correction": 1.2365941761648126e-14,
+          "wall_seconds": 16.167357291000002,
+          "zero_time_estimate": 1.2365961642432662e-10
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 1.2365961642432662e-10,
+        "t_collision_predicted": 1.2365941754610568e-10
+      },
+      "primary": {
+        "N": 10000,
+        "T_mid_decimal": "144176897509546974243.30009392",
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 7.017279506928394e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 3.5139466202783334e-06
+        },
+        "actual_to_predicted_ratio": 1.0007226711040176,
+        "block": "C",
+        "density": 7.095078917553774,
+        "event_pair_global_ordinals": [
+          "1000000000000000001635",
+          "1000000000000000001636"
+        ],
+        "event_pair_index_1based": [
+          1635,
+          1636
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          1635,
+          1636
+        ],
+        "g_min": 0.00530012,
+        "g_min_decimal": "0.00530012",
+        "g_min_unfolded": 0.03760476967250511,
+        "initial_pair_global_ordinals": [
+          "1000000000000000001635",
+          "1000000000000000001636"
+        ],
+        "initial_pair_index_1based": [
+          1635,
+          1636
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          1635,
+          1636
+        ],
+        "kind": "odlyzko-primary",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "144176897509546973768.84307882",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 3.513595454719808e-06,
+          "event_found": true,
+          "event_gap": 5.3001199994964725e-05,
+          "event_pair_index_0based": 1634,
+          "event_pair_index_1based": [
+            1635,
+            1636
+          ],
+          "event_t": -3.513595454719808e-06,
+          "event_threshold": 5.3001200000000003e-05,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 413,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.002725655130285028,
+          "minimum_gap_at_event": 5.3001199994964725e-05,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 3.10047590188079e-85,
+          "nfev": 413,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.00010000000000000002,
+          "two_body_tail_correction": 3.5114090018000005e-10,
+          "wall_seconds": 27.321206375000003,
+          "zero_time_estimate": 3.513946595619988e-06
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 3.513946595619988e-06,
+        "t_collision_predicted": 3.5114090018e-06
+      }
+    },
+    "D": {
+      "delete_pair_mutation": {
+        "N": 9998,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 6.9366532760875335e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 1.3932893921879073e-05
+        },
+        "actual_to_predicted_ratio": 1.003803535117812,
+        "block": "D",
+        "deleted_original_block_ordinals_1based": [
+          6442,
+          6443
+        ],
+        "density": 7.453527085149451,
+        "event_pair_global_ordinals": [
+          "10000000000000000003763",
+          "10000000000000000003764"
+        ],
+        "event_pair_index_1based": [
+          3763,
+          3764
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          3763,
+          3764
+        ],
+        "g_min": 0.01053759,
+        "g_min_decimal": "0.01053759",
+        "g_min_unfolded": 0.0785422124772,
+        "initial_pair_global_ordinals": [
+          "10000000000000000003763",
+          "10000000000000000003764"
+        ],
+        "initial_pair_index_1based": [
+          3763,
+          3764
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          3763,
+          3764
+        ],
+        "kind": "delete-event-pair-mutation",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "1370919909931995308731.515108205",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 9998,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 1.3931505815193818e-05,
+          "event_found": true,
+          "event_gap": 0.0001053758999989875,
+          "event_pair_index_0based": 3762,
+          "event_pair_index_1based": [
+            3763,
+            3764
+          ],
+          "event_t": -1.3931505815193818e-05,
+          "event_threshold": 0.0001053759,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 401,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.005255525320844032,
+          "minimum_gap_at_event": 0.0001053758999989875,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.0124684602975133e-90,
+          "nfev": 401,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.0001,
+          "two_body_tail_correction": 1.3880100376012499e-09,
+          "wall_seconds": 23.479706291000014,
+          "zero_time_estimate": 1.393289382523142e-05
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 1.393289382523142e-05,
+        "t_collision_predicted": 1.3880100376012499e-05
+      },
+      "poisson_control": {
+        "N": 10000,
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 1.2569944211093682e-06,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 9.886811779198644e-11
+        },
+        "actual_time_to_odlyzko_ratio": 1.008637371970728e-05,
+        "actual_to_predicted_ratio": 0.9999986352925093,
+        "block": "D",
+        "density": 7.453527085149451,
+        "event_pair_index_1based": [
+          2393,
+          2394
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          2393,
+          2394
+        ],
+        "g_min": 2.8123744905904068e-05,
+        "g_min_unfolded": 0.0002096210943919899,
+        "initial_pair_index_1based": [
+          2393,
+          2394
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          2393,
+          2394
+        ],
+        "kind": "poisson-control",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "1370919909931995308534.760963763142",
+        "same_as_initial_closest_pair": true,
+        "seed": 20260905,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 9.885810670261203e-11,
+          "event_found": true,
+          "event_gap": 2.829696933670016e-07,
+          "event_pair_index_0based": 2392,
+          "event_pair_index_1based": [
+            2393,
+            2394
+          ],
+          "event_t": -9.885810670261203e-11,
+          "event_threshold": 2.812374492577874e-07,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 233,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 1.3925871635660533e-05,
+          "minimum_gap_at_event": 2.829696933670016e-07,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 2.414466267916357e-90,
+          "nfev": 233,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.0001000000001413373,
+          "two_body_tail_correction": 9.886812858128318e-15,
+          "wall_seconds": 13.486101374999976,
+          "zero_time_estimate": 9.886799351547016e-11
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 9.886799351547016e-11,
+        "t_collision_predicted": 9.886812844154563e-11
+      },
+      "primary": {
+        "N": 10000,
+        "T_mid_decimal": "1370919909931995308897.54512111",
+        "active_window_crosscheck": {
+          "relative_difference_from_full_flow": 7.021709878432788e-09,
+          "same_pair": true,
+          "surrogate_zero_time_estimate": 9.802134737137404e-06
+        },
+        "actual_to_predicted_ratio": 1.0100353886918616,
+        "block": "D",
+        "density": 7.453527085149451,
+        "event_pair_global_ordinals": [
+          "10000000000000000006442",
+          "10000000000000000006443"
+        ],
+        "event_pair_index_1based": [
+          6442,
+          6443
+        ],
+        "event_pair_original_block_ordinal_1based": [
+          6442,
+          6443
+        ],
+        "g_min": 0.00881124,
+        "g_min_decimal": "0.00881124",
+        "g_min_unfolded": 0.06567481599375224,
+        "initial_pair_global_ordinals": [
+          "10000000000000000006442",
+          "10000000000000000006443"
+        ],
+        "initial_pair_index_1based": [
+          6442,
+          6443
+        ],
+        "initial_pair_original_block_ordinal_1based": [
+          6442,
+          6443
+        ],
+        "kind": "odlyzko-primary",
+        "measurement_kind": "all-retained-node finite-block flow",
+        "physical_center_decimal": "1370919909931995309091.04061921",
+        "same_as_initial_closest_pair": true,
+        "solver": {
+          "N": 10000,
+          "all_nodes_dynamically_evolved": true,
+          "atol": 2e-12,
+          "event_abs_t": 9.801164193930438e-06,
+          "event_found": true,
+          "event_gap": 8.811240000002507e-05,
+          "event_pair_index_0based": 6441,
+          "event_pair_index_1based": [
+            6442,
+            6443
+          ],
+          "event_t": -9.801164193930438e-06,
+          "event_threshold": 8.81124e-05,
+          "event_threshold_fraction_of_initial_minimum": 0.01,
+          "force_calls": 401,
+          "global_minimum_gap_event": true,
+          "maximum_displacement": 0.0046468590458607255,
+          "minimum_gap_at_event": 8.811240000002507e-05,
+          "mirror_mode": "cubic-moment-expansion",
+          "mirror_remainder_bound": 1.1527075707683898e-90,
+          "nfev": 401,
+          "rtol": 2e-09,
+          "solver_message": "A termination event occurred.",
+          "solver_success": true,
+          "tail_fraction_of_two_body_prediction": 0.0001,
+          "two_body_tail_correction": 9.7047437922e-10,
+          "wall_seconds": 23.16970441699999,
+          "zero_time_estimate": 9.802134668309658e-06
+        },
+        "status": "MEASURED",
+        "t_collision_full_flow_zero_estimate": 9.802134668309658e-06,
+        "t_collision_predicted": 9.7047437922e-06
+      }
+    }
+  },
+  "elapsed_seconds": 303.90556783299996,
+  "environment": {
+    "chunk": 256,
+    "numpy": "2.0.2",
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "python": "3.9.6",
+    "scipy": "1.13.1",
+    "torch": "2.8.0",
+    "torch_threads": 4
+  },
+  "equation": "dx_j/dt=sum_{k!=j}2/(x_j-x_k)+sum_k2/(x_j+x_k)",
+  "input_hashes": {
+    "zeros1.txt": {
+      "bytes": 1800000,
+      "expected_sha256": "3436c916a7878261ac183fd7b9448c9a4736b8bbccf1356874a6ce1788541632",
+      "matches_expected": true,
+      "sha256": "3436c916a7878261ac183fd7b9448c9a4736b8bbccf1356874a6ce1788541632"
+    },
+    "zeros3.txt": {
+      "bytes": 180287,
+      "expected_sha256": "75a1f1a978d5e3eddd16518f661d41a95a40b33782389ba02ec4ed0ce0764807",
+      "matches_expected": true,
+      "sha256": "75a1f1a978d5e3eddd16518f661d41a95a40b33782389ba02ec4ed0ce0764807"
+    },
+    "zeros4.txt": {
+      "bytes": 160319,
+      "expected_sha256": "10d9f7dab2bbfff6b8befbe6f765969b0b3f38f6110ed1df423931addd52da8f",
+      "matches_expected": true,
+      "sha256": "10d9f7dab2bbfff6b8befbe6f765969b0b3f38f6110ed1df423931addd52da8f"
+    },
+    "zeros5.txt": {
+      "bytes": 170318,
+      "expected_sha256": "250ac4ba722c6face4d07c05777376fc2b9bc021b05232e8f53c91b1eb2b7e0d",
+      "matches_expected": true,
+      "sha256": "250ac4ba722c6face4d07c05777376fc2b9bc021b05232e8f53c91b1eb2b7e0d"
+    }
+  },
+  "prediction_commit": "c6f9358",
+  "scaling": {
+    "four_block_intercept": -8.8935218141602,
+    "four_block_log_time_on_log_density_slope": -1.7803537006099748,
+    "literal_T_power_exponent": 0.0,
+    "note": "Four realized extreme gaps do not measure the ensemble exponent.",
+    "registered_ensemble_density_exponent": -2.0,
+    "slope_is_negative": true,
+    "status": "MEASURED"
+  },
+  "schema": "codex-r4-r41-full-v1",
+  "scope": "All retained nodes dynamically evolved in each finite block; omitted exterior zeros make these neither measurements nor bounds for Lambda.",
+  "status": "MEASURED",
+  "toy_t4_full_node_reproduction": {
+    "N": 1000,
+    "all_nodes_dynamically_evolved": true,
+    "atol": 1e-10,
+    "event_abs_t": 0.003317670111905755,
+    "event_found": true,
+    "event_gap": 0.0009999999999763531,
+    "event_pair_index_0based": 921,
+    "event_pair_index_1based": [
+      922,
+      923
+    ],
+    "event_t": -0.003317670111905755,
+    "event_threshold": 0.001,
+    "event_threshold_fraction_of_initial_minimum": 0.006191920215428817,
+    "event_time_absolute_difference": 0.0,
+    "force_calls": 197,
+    "global_minimum_gap_event": true,
+    "maximum_displacement": 0.09623800388953896,
+    "minimum_gap_at_event": 0.0009999999999763531,
+    "mirror_mode": "direct-all-pairs",
+    "mirror_remainder_bound": 0.0,
+    "nfev": 197,
+    "published_event_abs_t": 0.003317670111905755,
+    "published_pair_index_1based": 922,
+    "rtol": 1e-08,
+    "same_pair_as_published": true,
+    "solver_message": "A termination event occurred.",
+    "solver_success": true,
+    "tail_fraction_of_two_body_prediction": 3.833987595423605e-05,
+    "two_body_tail_correction": 1.25e-07,
+    "wall_seconds": 0.18801954199999993,
+    "zero_time_estimate": 0.003317795111905755
+  }
+}
