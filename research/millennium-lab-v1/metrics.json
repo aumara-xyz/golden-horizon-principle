@@ -1,0 +1,96 @@
+{
+ "L1": {
+  "n_zeros": 1000,
+  "max_abs_re_minus_half_first200": 0.0,
+  "first5": [
+   14.134725141734695,
+   21.022039638771556,
+   25.01085758014569,
+   30.424876125859512,
+   32.93506158773919
+  ],
+  "dips_below_0.05": 200
+ },
+ "L2": {
+  "zeros": {
+   "mean": 1.0,
+   "L1_to_GUE": 0.150148084569522,
+   "L1_to_Poisson": 0.8608183131865209,
+   "frac_below_0.2": 0.003003003003003003,
+   "R2_L1_to_GUE": 0.06682379475236362,
+   "R2_L1_to_Poisson": 0.21266666666666664
+  },
+  "primes": {
+   "mean": 1.0,
+   "L1_to_GUE": 0.6561148536019455,
+   "L1_to_Poisson": 0.6621083645682333,
+   "frac_below_0.2": 0.0,
+   "R2_L1_to_GUE": 0.2811676280117105,
+   "R2_L1_to_Poisson": 0.3285381285381286
+  },
+  "random": {
+   "mean": 1.0,
+   "L1_to_GUE": 0.8284734461373171,
+   "L1_to_Poisson": 0.1384995635240528,
+   "frac_below_0.2": 0.198,
+   "R2_L1_to_GUE": 0.22754862511161592,
+   "R2_L1_to_Poisson": 0.09557109557109555
+  }
+ },
+ "L3": {
+  "note": "L tuned so periodic comb spacing 2pi/L equals mean spacing of first 20 zeros",
+  "target_mean_spacing": 3.316321838270532,
+  "L_tuned": 1.8946247118332398,
+  "reflecting": {
+   "first5": [
+    0.8270108122429201,
+    2.480981676921328,
+    4.134800265292684,
+    5.788365070204005,
+    7.441574600078658
+   ],
+   "spacing_std_over_mean": 0.0034683810849871393,
+   "RMS_raw": 34.64828486612896,
+   "RMS_after_affine_fit": 1.9816516268144908
+  },
+  "periodic": {
+   "first5": [
+    3.316185461683662,
+    3.3161854616837694,
+    6.6315527042260625,
+    6.631552704226122,
+    9.945283710368582
+   ],
+   "spacing_std_over_mean": 1.0541054398282579,
+   "RMS_raw": 33.042054371447335,
+   "RMS_after_affine_fit": 2.546905221165519
+  },
+  "twisted": {
+   "first5": [
+    0.5527196749977785,
+    2.763522609958708,
+    3.8688255846449735,
+    6.079083037062783,
+    7.183976919469688
+   ],
+   "spacing_std_over_mean": 0.32706881151305733,
+   "RMS_raw": 34.59764848815084,
+   "RMS_after_affine_fit": 2.044592671508991
+  },
+  "absorbing": {
+   "max_abs_imag": 211.12360537774248,
+   "n_complex": 400,
+   "verdict": "non-self-adjoint; complex spectrum; disqualified as Hilbert-Polya candidate"
+  },
+  "zeros": {
+   "spacing_std_over_mean": 0.4173994961170672,
+   "first_gap": 6.887314497036861,
+   "gap_19_20": 1.4401493697908734
+  },
+  "counting": {
+   "max_abs_dev_BK_smooth": 1.0109183258571193,
+   "max_abs_dev_comb": 570.988923220363
+  }
+ },
+ "runtime_s": 187.1560502052307
+}

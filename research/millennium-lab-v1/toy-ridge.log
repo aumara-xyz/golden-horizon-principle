@@ -1,0 +1,7 @@
+n=1 ridge for all gammas: True  max D_1 = -1.9162449405030202e-13
+fraction valley (D_n>0) over all (n,gamma): 0.29052
+fraction valley for n<=10: 0.0  for 100<n<=500: 0.35785
+first valley n for gamma_1..gamma_5: [33, 49, 58, 70, 76]
+max | |1-1/rho| - 1 | on line: 2.220446049250313e-16
+min on-line term over n<=500, 100 zeros: 7.895337827967808e-08
+sign agreement with -cos(n theta): 0.7853
