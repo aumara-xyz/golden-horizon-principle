@@ -10,3 +10,4 @@ Structure used (derived by hand, then confirmed by the positive control): a solu
 
 What this is: a bounded negative and a structural lemma (A=ΠQ, B=ΠP). Whether the lemma is already in the literature: UNVERIFIED. The known bound |P∪Q| ≥ 60 means any solution has a large union; the smaller set can still be small, which is what this search covers. Not a resolution of #307.
 Extension E1 (run after this file, not preregistered in the original file): |Q| = 8 over the first 30 primes (5.85M sets). PREDICTED: none.
+E1 outcome: |Q| = 8 over the first 30 primes, 5,852,925 sets, 0 solutions. MEASURED; prediction held. Cumulative bounded negative: no solution with the smaller set of size ≤ 8 drawn from the first 30 primes (8.66M sets total).
