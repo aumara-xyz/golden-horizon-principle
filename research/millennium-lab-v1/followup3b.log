@@ -1,0 +1,2 @@
+RESULT 13 {'sin_angle_prolate': 6.849731783020793e-05, 'sin_angle_hermite': 0.3446472997183015, 'ratio_hermite_over_prolate': 5031.544455107247, 'wall_s': 160.61141991615295}
+RESULT 14 {'sin_angle_prolate': 6.210357085716713e-05, 'sin_angle_hermite': 0.3578973402870821, 'ratio_hermite_over_prolate': 5762.910817321844, 'wall_s': 167.26181507110596}
