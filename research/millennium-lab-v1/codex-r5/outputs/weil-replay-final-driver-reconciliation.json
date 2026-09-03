@@ -1,0 +1,35 @@
+{
+  "comparisons": [
+    {
+      "audit_file_sha256": "9d479c6a2e98b35278afbb9eea5ef5f44fb64a804693850b77d5311a343dc2d6",
+      "digits": 100,
+      "driver_builder_sha256": "28aa0d44f7800f60316a3853db6fce1434ff495a04fff8595d6d0e9949f7f1ec",
+      "driver_file": "true-x13-N120-dps100.json",
+      "driver_file_sha256": "5a2ab929e47ce122d32404ae8f96411f065fe6a39872a12b0f3e99591026576c",
+      "maximum_absolute_difference_20_through_50": "6.29640164432184541310115e-49",
+      "maximum_absolute_difference_first_60": "8.841855325631617731500065e-47",
+      "worst_index_20_through_50": 49
+    },
+    {
+      "audit_file_sha256": "9d479c6a2e98b35278afbb9eea5ef5f44fb64a804693850b77d5311a343dc2d6",
+      "digits": 200,
+      "driver_builder_sha256": "28aa0d44f7800f60316a3853db6fce1434ff495a04fff8595d6d0e9949f7f1ec",
+      "driver_file": "true-x13-N120-dps200.json",
+      "driver_file_sha256": "d897a53261ea6e95fb1f1498d89d2c30f41cea8ab9278f56cbd98c2c15a4f27b",
+      "maximum_absolute_difference_20_through_50": "7.214688886582598855080932e-149",
+      "maximum_absolute_difference_first_60": "1.01361683737622510256373e-146",
+      "worst_index_20_through_50": 49
+    },
+    {
+      "audit_file_sha256": "9d479c6a2e98b35278afbb9eea5ef5f44fb64a804693850b77d5311a343dc2d6",
+      "digits": 400,
+      "driver_builder_sha256": "28aa0d44f7800f60316a3853db6fce1434ff495a04fff8595d6d0e9949f7f1ec",
+      "driver_file": "true-x13-N120-dps400.json",
+      "driver_file_sha256": "c1186f70fa3942700684e067579783b49666deaea8b26a8c115eeec1c49c273b",
+      "maximum_absolute_difference_20_through_50": "1.743007901622892171072653e-349",
+      "maximum_absolute_difference_first_60": "2.449260242453585448387521e-347",
+      "worst_index_20_through_50": 49
+    }
+  ],
+  "status": "MEASURED"
+}

@@ -1,0 +1,31 @@
+Command (blind construction; no target data):
+  PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/private/tmp/codex-r5-python python3 run_prolate_only_raw_control.py
+
+Generated UTC: 2026-09-03T00:58:08.887500+00:00
+Status: MEASURED under the disclosed post-hoc continuation labels
+Root count: 70
+4-vs-8-step maximum displacement: 8.0047347650557849e-154
+Contour counts, 512/1024 samples per side: 70 / 70
+Maximum relative rational residual: 8.5200986269169459e-182
+Maximum |Im(root)|, all 70: 0.70562318406897724
+Maximum raw/even complex shift, all 70: 0.75496415048643033
+Maximum raw/even complex shift, frozen 20--50: 0.00058788884937783233
+Maximum |Im(root)|, frozen 20--50: 0.00058788844736098573
+Arb rounded-polynomial audit: UNVERIFIED (optional all-root isolation not run)
+Blind artifact SHA-256: 2b9dece0a9f29633c9b183d3358dc836909504b5ed709036ab5dd85389c60455
+Construction source SHA-256: e3b79d8a52784b5e9c0fad69a7db2e47771d1f9e6ff37a791bc8900d18c38579
+
+Post-gate score (score_after_gate.py; pseudo-prime metrics emitted first):
+  convention: |z_j-gamma_j|, j=20,...,50
+  RMSE: 0.00036226793807255620647
+  MAE: 0.00012746972908111212687
+  median: 0.00000023583581029718528094
+  maximum: 0.0018001507270768203358 (ordinal 50)
+  lands under frozen rule: true
+
+Limits:
+  UNVERIFIED as a canonical ordering of non-real roots.
+  UNVERIFIED as an infinite-mode prolate statement.
+  The match is VOID as discriminating evidence because E contains a zeta
+  Dirichlet factor even though the software uses neither a prime matrix nor
+  a reference-zero table.

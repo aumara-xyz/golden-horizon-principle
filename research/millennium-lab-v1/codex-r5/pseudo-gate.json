@@ -1,0 +1,44 @@
+{
+  "all_root_counts": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60
+  ],
+  "blind_output": "blind-pseudo-spectra.json",
+  "blind_output_sha256": "9df471b66febd85933e629b47ad8dec02f22a4cfded7f5805b7eeae030b98fe0",
+  "builder_sha256": "35add5e4b96f679ece19c27503ec4ea1f8c429c285f521179ec9b8eb3ca1d844",
+  "completed_at_utc": "2026-09-02T23:17:43.883969+00:00",
+  "gate_complete": true,
+  "run_count": 10,
+  "runner_sha256": "bac15657b1f37a7c7ba549f2f0aeebbed1981ad466fb456aad51be73b890ab97",
+  "scoring_present": false,
+  "seeds": [
+    52025001,
+    52025002,
+    52025003,
+    52025004,
+    52025005,
+    52025006,
+    52025007,
+    52025008,
+    52025009,
+    52025010
+  ],
+  "static_audit": {
+    "banned_token_count": 4,
+    "findings": [],
+    "inspected": [
+      "run_pseudo_gate.py",
+      "weil_core.py"
+    ],
+    "passed": true
+  },
+  "target_data_present": false
+}

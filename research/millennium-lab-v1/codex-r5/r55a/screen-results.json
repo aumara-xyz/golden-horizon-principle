@@ -1,0 +1,378 @@
+{
+  "elapsed_seconds": 19.01752495765686,
+  "environment": {
+    "numpy": "2.0.2",
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "python": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]"
+  },
+  "gamma_cases": {
+    "100": {
+      "degrees": {
+        "2": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 0,
+          "near_zero_count": 0,
+          "near_zero_examples": [],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 100769,
+          "smallest_abs_discriminant": 1.3189904275456854e-06,
+          "smallest_abs_discriminant_n": 2560000
+        },
+        "3": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 18925,
+          "near_zero_count": 63750,
+          "near_zero_examples": [
+            {
+              "discriminant": 9.947598300641403e-13,
+              "n": 36454
+            },
+            {
+              "discriminant": 9.947598300641403e-13,
+              "n": 36541
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36564
+            },
+            {
+              "discriminant": 9.841016890277388e-13,
+              "n": 36575
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36590
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36602
+            },
+            {
+              "discriminant": 9.841016890277388e-13,
+              "n": 36613
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36614
+            },
+            {
+              "discriminant": 9.912071163853398e-13,
+              "n": 36629
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36639
+            }
+          ],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 100769,
+          "smallest_abs_discriminant": 0.0,
+          "smallest_abs_discriminant_n": 94584
+        },
+        "4": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 100632,
+          "near_zero_count": 10784,
+          "near_zero_examples": [
+            {
+              "discriminant": 0.0,
+              "n": 209
+            },
+            {
+              "discriminant": 0.0,
+              "n": 214
+            },
+            {
+              "discriminant": 0.0,
+              "n": 219
+            },
+            {
+              "discriminant": 0.0,
+              "n": 232
+            },
+            {
+              "discriminant": 0.0,
+              "n": 233
+            },
+            {
+              "discriminant": 0.0,
+              "n": 239
+            },
+            {
+              "discriminant": 0.0,
+              "n": 242
+            },
+            {
+              "discriminant": 0.0,
+              "n": 249
+            },
+            {
+              "discriminant": 0.0,
+              "n": 260
+            },
+            {
+              "discriminant": 0.0,
+              "n": 266
+            }
+          ],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 100769,
+          "smallest_abs_discriminant": 0.0,
+          "smallest_abs_discriminant_n": 209
+        }
+      },
+      "integer_exhaustive_through": 100000,
+      "points_above_exhaustive_limit": 768,
+      "registered_bound": 2560000
+    },
+    "1000": {
+      "degrees": {
+        "2": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 0,
+          "near_zero_count": 0,
+          "near_zero_examples": [],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 100769,
+          "smallest_abs_discriminant": 1.3800554921061803e-08,
+          "smallest_abs_discriminant_n": 256000000
+        },
+        "3": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 18839,
+          "near_zero_count": 63722,
+          "near_zero_examples": [
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36440
+            },
+            {
+              "discriminant": 9.805489753489383e-13,
+              "n": 36562
+            },
+            {
+              "discriminant": 9.947598300641403e-13,
+              "n": 36583
+            },
+            {
+              "discriminant": 9.912071163853398e-13,
+              "n": 36601
+            },
+            {
+              "discriminant": 9.912071163853398e-13,
+              "n": 36623
+            },
+            {
+              "discriminant": 9.805489753489383e-13,
+              "n": 36625
+            },
+            {
+              "discriminant": 9.947598300641403e-13,
+              "n": 36632
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36646
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36649
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36659
+            }
+          ],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 100769,
+          "smallest_abs_discriminant": 0.0,
+          "smallest_abs_discriminant_n": 90785
+        },
+        "4": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 100631,
+          "near_zero_count": 10812,
+          "near_zero_examples": [
+            {
+              "discriminant": 0.0,
+              "n": 205
+            },
+            {
+              "discriminant": 0.0,
+              "n": 218
+            },
+            {
+              "discriminant": 0.0,
+              "n": 232
+            },
+            {
+              "discriminant": 0.0,
+              "n": 235
+            },
+            {
+              "discriminant": 0.0,
+              "n": 248
+            },
+            {
+              "discriminant": 0.0,
+              "n": 263
+            },
+            {
+              "discriminant": 0.0,
+              "n": 268
+            },
+            {
+              "discriminant": 0.0,
+              "n": 303
+            },
+            {
+              "discriminant": 0.0,
+              "n": 311
+            },
+            {
+              "discriminant": 0.0,
+              "n": 315
+            }
+          ],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 100769,
+          "smallest_abs_discriminant": 0.0,
+          "smallest_abs_discriminant_n": 205
+        }
+      },
+      "integer_exhaustive_through": 100000,
+      "points_above_exhaustive_limit": 768,
+      "registered_bound": 256000000
+    },
+    "14.13": {
+      "degrees": {
+        "2": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 0,
+          "near_zero_count": 0,
+          "near_zero_examples": [],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 51113,
+          "smallest_abs_discriminant": 6.139344640354594e-05,
+          "smallest_abs_discriminant_n": 51112
+        },
+        "3": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 0,
+          "near_zero_count": 14077,
+          "near_zero_examples": [
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36516
+            },
+            {
+              "discriminant": 9.734435479913373e-13,
+              "n": 36559
+            },
+            {
+              "discriminant": 9.947598300641403e-13,
+              "n": 36570
+            },
+            {
+              "discriminant": 9.912071163853398e-13,
+              "n": 36601
+            },
+            {
+              "discriminant": 9.876544027065393e-13,
+              "n": 36609
+            },
+            {
+              "discriminant": 9.876544027065393e-13,
+              "n": 36624
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36653
+            },
+            {
+              "discriminant": 9.983125437429408e-13,
+              "n": 36660
+            },
+            {
+              "discriminant": 9.947598300641403e-13,
+              "n": 36666
+            },
+            {
+              "discriminant": 9.841016890277388e-13,
+              "n": 36668
+            }
+          ],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 51113,
+          "smallest_abs_discriminant": 3.268496584496461e-13,
+          "smallest_abs_discriminant_n": 50946
+        },
+        "4": {
+          "first_resolved_negative_discriminant": null,
+          "indeterminate_due_to_binary64_cancellation": 50972,
+          "near_zero_count": 5503,
+          "near_zero_examples": [
+            {
+              "discriminant": 0.0,
+              "n": 239
+            },
+            {
+              "discriminant": 0.0,
+              "n": 281
+            },
+            {
+              "discriminant": 0.0,
+              "n": 283
+            },
+            {
+              "discriminant": 0.0,
+              "n": 315
+            },
+            {
+              "discriminant": 0.0,
+              "n": 327
+            },
+            {
+              "discriminant": 0.0,
+              "n": 332
+            },
+            {
+              "discriminant": 0.0,
+              "n": 340
+            },
+            {
+              "discriminant": 0.0,
+              "n": 352
+            },
+            {
+              "discriminant": 0.0,
+              "n": 382
+            },
+            {
+              "discriminant": 0.0,
+              "n": 393
+            }
+          ],
+          "screen_conclusion": "no resolved nonhyperbolic candidate; Arb replay required in the indeterminate tail",
+          "screened_points": 51113,
+          "smallest_abs_discriminant": 0.0,
+          "smallest_abs_discriminant_n": 239
+        }
+      },
+      "integer_exhaustive_through": 51112,
+      "points_above_exhaustive_limit": 0,
+      "registered_bound": 51112
+    }
+  },
+  "method": {
+    "certification": "see certify_jensen.py and certificates.json",
+    "high_coefficients": "96-node saddle-local k=1 theta asymptotic screen",
+    "low_coefficients": "2048-node Gauss-Legendre theta-kernel integral on [0,7]"
+  },
+  "status": "UNVERIFIED",
+  "theta_normalization_check": {
+    "absolute_difference": 7.673417456999232e-12,
+    "computed_8xi_half": 3.9769662254988387,
+    "reference_decimal_not_from_zeros": 3.976966225506512
+  }
+}

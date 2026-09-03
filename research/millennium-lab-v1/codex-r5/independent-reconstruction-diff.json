@@ -1,0 +1,64 @@
+{
+  "fable_branch_head_at_comparison": "3a9452f9faae605a4e5b845cf6b4fb56cdec72bf",
+  "fable_builder_sha256": "837bd7086964fe2ec327331740eb92be6acf8b1e630a83e22869beac9d80826d",
+  "fable_reconstruction_commit": "bc6f3bd",
+  "matrix_diff_file": "independent-matrix-diff.json",
+  "matrix_entrywise_diff_reason": "the exact committed Fable source was replayed through construction of T; see independent-matrix-diff.json",
+  "matrix_entrywise_diff_status": "MEASURED",
+  "protocol_audit": {
+    "consequence_under_round5_rule": "Fable accuracy evidence is VOID for the shared gate-order rule; this does not alter the numerical implementation diff",
+    "hostile_control_commit": "3a9452f",
+    "prediction_commit": "213b1f6",
+    "primary_accuracy_commit": "bc6f3bd",
+    "pseudo_control_preceded_first_accuracy": false,
+    "x9_last_serialized_error_is_index": 49,
+    "x9_results_table_last_column_label": "k=50",
+    "x9_serialized_root_count": 49
+  },
+  "rows": [
+    {
+      "N": 120,
+      "codex_even_minimum": "2.954058092558568743399234700771056669113e-38",
+      "codex_nearest_competitor": "1.127563264141941989011026926495205286035e-34",
+      "common_precision_note": "Fable serialized roots_first5 to 30 significant digits and eps1/eps2 to 15",
+      "compared_absolute_error_count_from_index_20": 30,
+      "fable_eps1": "2.95405809255857e-38",
+      "fable_eps2": "1.12756326414194e-34",
+      "fable_full_root_vector_available": false,
+      "fable_raw_matrix_available": false,
+      "maximum_difference_between_fable_3sig_and_codex_absolute_errors_20_to_50": "0.00495653050222",
+      "maximum_root_absolute_difference_first5": "3.752957098277316498804963e-29",
+      "root_absolute_differences_first5": [
+        "3.752957098277316498804963e-29",
+        "2.891167636699994990262387e-30",
+        "2.25691327767673814962133e-29",
+        "2.222181944031938079808115e-29",
+        "2.050000545673311577459695e-29"
+      ],
+      "x": 9
+    },
+    {
+      "N": 120,
+      "codex_even_minimum": "3.483988199331277499198144939691799612562e-59",
+      "codex_nearest_competitor": "3.055913397515165668962579255176361279147e-55",
+      "common_precision_note": "Fable serialized roots_first5 to 30 significant digits and eps1/eps2 to 15",
+      "compared_absolute_error_count_from_index_20": 31,
+      "fable_eps1": "3.48398819933128e-59",
+      "fable_eps2": "3.05591339751517e-55",
+      "fable_full_root_vector_available": false,
+      "fable_raw_matrix_available": false,
+      "maximum_difference_between_fable_3sig_and_codex_absolute_errors_20_to_50": "4.44882920723e-6",
+      "maximum_root_absolute_difference_first5": "3.752972921574288430075682e-29",
+      "root_absolute_differences_first5": [
+        "3.752972921574288430075682e-29",
+        "3.097222665659475097217796e-30",
+        "3.717818134045032744196177e-29",
+        "1.590867981843997624804003e-29",
+        "2.509651118728439577158634e-29"
+      ],
+      "x": 13
+    }
+  ],
+  "scope": "diff limited to fields serialized by the independently committed Fable output",
+  "status": "MEASURED"
+}

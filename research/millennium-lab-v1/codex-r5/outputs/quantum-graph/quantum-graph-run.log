@@ -1,0 +1,106 @@
+R5.5b Kuipers-Hummel-Richter butterfly graph surgery
+run_utc: 2026-09-03T01:14:37.384736+00:00
+script_sha256: 248d4a4ebed931f758698cda869195be9a45bfe996b57c8fabcd5aa51c13a9ea
+source: https://arxiv.org/abs/1307.6055
+published_pdf_sha256: 252cd592227dbbea0a975f8b6c9513c1d4f561a343a0fb070ad3c36adf6e8834
+source_pdf_sha256: 0d2a6491a5b52096544f032fdff89dbaacfd971dd7f1c7507b02620505717837
+source_archive_sha256: 09e7f86796eec6d4ecea1c7e69d1fec51d67f4a84c5dc8dbea322b4123ed0df2
+k_interval: [0.0, 256.0] on 8193 points
+repetition_cutoff: m <= 8
+event_order: pseudo-prime control before corrected prime-trace match
+status_vocabulary: MEASURED / UNVERIFIED / PREDICTED / VOID
+
+P=29, m<=8
+  MEASURED pseudo-vs-prime RMSE: 6.840140331871e-01
+  MEASURED pseudo-own-trace RMSE: 4.295564169892e-15
+  MEASURED corrected prime-trace RMSE: 4.813328330707e-15
+  MEASURED Eq.14 printed-sign residual: 1.684037975548e+01
+  MEASURED corrected-sign residual: 2.497091668505e-15
+  MEASURED Weyl coefficient Ltot/pi: 2.588668528222e+02
+  MEASURED Weyl/oscillatory-RMS: 4.978604461685e+02
+  MEASURED identity spoiled primitive coefficients >1%: 0
+  MEASURED DFT spoiled primitive coefficients >1%: 10
+  MEASURED Haar spoiled primitive coefficients >1%: 10
+  MEASURED identity mixed r=2 L2: 0.000000000000e+00
+  MEASURED DFT mixed r=2 L2: 5.828053244429e-03
+  MEASURED Haar mixed r=2 L2: 1.231962650999e-01
+
+P=53, m<=8
+  MEASURED pseudo-vs-prime RMSE: 8.528230269674e-01
+  MEASURED pseudo-own-trace RMSE: 7.804078384682e-15
+  MEASURED corrected prime-trace RMSE: 6.649747205849e-15
+  MEASURED Eq.14 printed-sign residual: 1.684037975548e+01
+  MEASURED corrected-sign residual: 2.497091668505e-15
+  MEASURED Weyl coefficient Ltot/pi: 5.148657342855e+02
+  MEASURED Weyl/oscillatory-RMS: 8.424504276942e+02
+  MEASURED identity spoiled primitive coefficients >1%: 0
+  MEASURED DFT spoiled primitive coefficients >1%: 16
+  MEASURED Haar spoiled primitive coefficients >1%: 16
+  MEASURED identity mixed r=2 L2: 0.000000000000e+00
+  MEASURED DFT mixed r=2 L2: 4.720820148761e-03
+  MEASURED Haar mixed r=2 L2: 1.597588666158e-01
+
+P=97, m<=8
+  MEASURED pseudo-vs-prime RMSE: 9.222452775303e-01
+  MEASURED pseudo-own-trace RMSE: 1.177227970240e-14
+  MEASURED corrected prime-trace RMSE: 1.065719271825e-14
+  MEASURED Eq.14 printed-sign residual: 1.684037975548e+01
+  MEASURED corrected-sign residual: 2.497091668505e-15
+  MEASURED Weyl coefficient Ltot/pi: 9.594566790580e+02
+  MEASURED Weyl/oscillatory-RMS: 1.359078895676e+03
+  MEASURED identity spoiled primitive coefficients >1%: 0
+  MEASURED DFT spoiled primitive coefficients >1%: 25
+  MEASURED Haar spoiled primitive coefficients >1%: 25
+  MEASURED identity mixed r=2 L2: 0.000000000000e+00
+  MEASURED DFT mixed r=2 L2: 3.701801268015e-03
+  MEASURED Haar mixed r=2 L2: 1.853043162521e-01
+
+P=193, m<=8
+  MEASURED pseudo-vs-prime RMSE: 1.115762751351e+00
+  MEASURED pseudo-own-trace RMSE: 1.707770817364e-14
+  MEASURED corrected prime-trace RMSE: 1.817978877041e-14
+  MEASURED Eq.14 printed-sign residual: 1.684037975548e+01
+  MEASURED corrected-sign residual: 2.590787150611e-15
+  MEASURED Weyl coefficient Ltot/pi: 2.039580755490e+03
+  MEASURED Weyl/oscillatory-RMS: 2.500872056781e+03
+  MEASURED identity spoiled primitive coefficients >1%: 0
+  MEASURED DFT spoiled primitive coefficients >1%: 44
+  MEASURED Haar spoiled primitive coefficients >1%: 44
+  MEASURED identity mixed r=2 L2: 0.000000000000e+00
+  MEASURED DFT mixed r=2 L2: 2.626318394694e-03
+  MEASURED Haar mixed r=2 L2: 2.322386029337e-01
+
+P=193, m<=6
+  MEASURED pseudo-vs-prime RMSE: 1.114990644726e+00
+  MEASURED pseudo-own-trace RMSE: 1.126098668778e-14
+  MEASURED corrected prime-trace RMSE: 1.147719973721e-14
+  MEASURED Eq.14 printed-sign residual: 7.876505268123e+00
+  MEASURED corrected-sign residual: 2.341117751048e-15
+  MEASURED Weyl coefficient Ltot/pi: 1.189755440702e+03
+  MEASURED Weyl/oscillatory-RMS: 1.460562521036e+03
+  MEASURED identity spoiled primitive coefficients >1%: 0
+  MEASURED DFT spoiled primitive coefficients >1%: 44
+  MEASURED Haar spoiled primitive coefficients >1%: 44
+  MEASURED identity mixed r=2 L2: 0.000000000000e+00
+  MEASURED DFT mixed r=2 L2: 4.239607655095e-03
+  MEASURED Haar mixed r=2 L2: 2.979470092823e-01
+
+P=193, m<=10
+  MEASURED pseudo-vs-prime RMSE: 1.115727170728e+00
+  MEASURED pseudo-own-trace RMSE: 2.154867136644e-14
+  MEASURED corrected prime-trace RMSE: 2.314439835026e-14
+  MEASURED Eq.14 printed-sign residual: 2.779541576155e+01
+  MEASURED corrected-sign residual: 3.164500131445e-15
+  MEASURED Weyl coefficient Ltot/pi: 3.116026154220e+03
+  MEASURED Weyl/oscillatory-RMS: 3.820365695171e+03
+  MEASURED identity spoiled primitive coefficients >1%: 0
+  MEASURED DFT spoiled primitive coefficients >1%: 44
+  MEASURED Haar spoiled primitive coefficients >1%: 44
+  MEASURED identity mixed r=2 L2: 0.000000000000e+00
+  MEASURED DFT mixed r=2 L2: 1.860887316179e-03
+  MEASURED Haar mixed r=2 L2: 1.825712480784e-01
+
+UNVERIFIED: no claim about chaotic dynamics or a cutoff-limit spectrum is made.
+MEASURED: every finite scattering matrix tested is unitary to floating-point residual.
+MEASURED: genuine central coupling creates cross-prime two-step lengths and changes primitive prime coefficients.
+MEASURED: the Weyl term is not canceled; its ratio to the finite oscillatory RMS increases over the tested cutoffs.

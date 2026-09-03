@@ -1,0 +1,19 @@
+{
+  "N": 30,
+  "candidate_actual_sin_angle": "0.0005411930106769497793108036190313938267017",
+  "candidate_ground_overlap": "0.9999998535550518741480452950849916640428",
+  "candidate_mu": "(2.718334468341243317593370698295996704661e-30 + 0.0j)",
+  "candidate_residual": "(2.86516144047655050069945577309089158467e-15 + 0.0j)",
+  "coefficient_uncertainty_4_vs_8_panels_per_cycle": 1.4992096592517142e-15,
+  "even_ground": "4.0209984373547617947379268769537939952364013636575e-37",
+  "even_second": "1.9205062544889114902823153848850428339692074319375e-30",
+  "formal_residual_over_gap": "(2294835823475566815.98484421147465010227 + 0.0j)",
+  "gap": "1.2485256728026914375954224420997465096151889494487e-33",
+  "matrix_dps": 60,
+  "odd_ground": "1.2489277726464269137748962347874418890147125895851e-33",
+  "ratio_reason": "the double-precision candidate projection uncertainty dominates the 60-digit Weil gap",
+  "ratio_status": "UNVERIFIED",
+  "scope": "diagnostic x=9,N=30; not the registered N=120 decay fit",
+  "status": "MEASURED",
+  "x": 9
+}
