@@ -1,0 +1,11 @@
+{
+ "n_primes": 30,
+ "kmax": 7,
+ "allow_one": 0,
+ "stats": {
+  "sets": 2804011,
+  "B_squarefree_disjoint": 2179959
+ },
+ "hits": [],
+ "runtime_s": 543.2355070114136
+}

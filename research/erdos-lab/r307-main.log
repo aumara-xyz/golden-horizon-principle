@@ -1,0 +1,8 @@
+k=1 done sets=30 sqfree_disjoint=0 hits=0 t=0s
+k=2 done sets=465 sqfree_disjoint=169 hits=0 t=0s
+k=3 done sets=4525 sqfree_disjoint=3686 hits=0 t=0s
+k=4 done sets=31930 sqfree_disjoint=16268 hits=0 t=1s
+k=5 done sets=174436 sqfree_disjoint=137502 hits=0 t=12s
+k=6 done sets=768211 sqfree_disjoint=436814 hits=0 t=83s
+k=7 done sets=2804011 sqfree_disjoint=2179959 hits=0 t=543s
+DONE
