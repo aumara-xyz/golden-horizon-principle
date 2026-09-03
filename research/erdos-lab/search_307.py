@@ -9,7 +9,8 @@ def numer_and_prod(S):
     P=1
     for s in S: P*=s
     A=sum(P//s for s in S); return A,P
-for k in range(1,KMAX+1):
+KMIN=int(sys.argv[5]) if len(sys.argv)>5 else 1
+for k in range(KMIN,KMAX+1):
     for Q in itertools.combinations(base,k):
         stats["sets"]+=1
         B,PQ=numer_and_prod(Q)
