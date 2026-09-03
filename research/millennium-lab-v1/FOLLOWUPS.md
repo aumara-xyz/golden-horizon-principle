@@ -28,3 +28,18 @@ MEASURED: at x ≥ 30 the angle moves by factors of 1.5–2.4 under truncation c
 | 14 | 6.21e-5 | 0.358 | 5.8e3 |
 | 16 | 5.32e-5 | 0.382 | 7.2e3 |
 MEASURED: the undeformed Gaussian guess is NOT close to the ground state (angle ≈ 0.3, and not improving with λ), while the prolate guess is within 1e-4 and improving. The λ^{−2} closeness of h_λ to h (their Lemma 7.2) is destroyed by the dilation map E, which sums over ~λ/u copies. Consequence for the inequality room: (★) cannot be proved through the Hermite limit; it must be proved in prolate terms, where the trace formula lives. This narrows where a proof can be, which is the point of a negative result.
+
+## F2/F1 deep run (after the nap): angle convergence in N and prolate degree
+| x | N / degree | sin θ |
+|---|---|---|
+| 13 | 120/200 | 6.85e-5 |
+| 13 | 160/240 | 6.05e-5 |
+| 13 | 200/280 | 5.06e-5 |
+| 25 | 160/260 | 1.12e-5 (degree under-resolved) |
+| 25 | 200/300 | 2.06e-5 |
+| 25 | 240/340 | 1.95e-5 |
+| 30 | 200/300 | 6.15e-6 (degree under-resolved) |
+| 30 | 240/340 | 1.47e-5 |
+| 30 | 280/380 | 1.58e-5 |
+| 30 | 320/420 | 0.0000163437 |
+MEASURED: (i) at fixed x the angle still decreases with N (≈ −15 % per +40 at x=13), so every fixed-N value is an upper estimate of the N→∞ angle; (ii) at x ≥ 25 the prolate degree must be ≥ ~12x for the candidate to be resolved, and the earlier low values were under-resolution, not closeness; (iii) with resolved candidates, sin θ falls from ≈5e-5 (x=13) to ≈1.6e-5 (x=30): slope ≈ −1.4 in x, ≈ −2.8 in λ, shallower once N→∞ at x=13 is accounted for. Honest bracket: exponent between −2 and −3 in λ. Required: steeper than −½. Margin intact; the −3.9 and −2.8 point estimates earlier in this file are struck as precise numbers.

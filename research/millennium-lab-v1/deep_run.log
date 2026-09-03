@@ -1,3 +1,32 @@
 x=13: solving degree-240/200 prolate modes
 x=13 N=160: exact projection
 x=13 N=160: Weil matrix / low spectrum
+x=13 N=160: r/gap=2.002978235e+25 [MEASURED]
+RESULT x=13 N=160 lmax=240 sin_angle=0.0000604671 wall=152s
+x=13: solving degree-280/240 prolate modes
+x=13 N=200: exact projection
+x=13 N=200: Weil matrix / low spectrum
+x=13 N=200: r/gap=2.179544927e+25 [MEASURED]
+RESULT x=13 N=200 lmax=280 sin_angle=0.0000505637 wall=275s
+x=25: solving degree-240/200 prolate modes
+x=25 N=200: exact projection
+x=25 N=200: Weil matrix / low spectrum
+x=25 N=200: r/gap=3.241144596e+56 [UNVERIFIED]
+RESULT x=25 N=200 lmax=300 sin_angle=0.0000205839 wall=213s
+x=25: solving degree-240/200 prolate modes
+x=25 N=240: exact projection
+x=25 N=240: Weil matrix / low spectrum
+x=25 N=240: r/gap=4.538776801e+56 [UNVERIFIED]
+RESULT x=25 N=240 lmax=340 sin_angle=0.0000194618 wall=330s
+x=30: solving degree-240/200 prolate modes
+x=30 N=280: exact projection
+x=30 N=280: Weil matrix / low spectrum
+x=30 N=280: r/gap=9.863051392e+87 [UNVERIFIED]
+RESULT x=30 N=280 lmax=380 sin_angle=0.0000157649 wall=485s
+x=30: solving degree-240/200 prolate modes
+x=30 N=320: exact projection
+x=30 N=320: Weil matrix / low spectrum
+x=30 N=320: r/gap=1.164020384e+88 [UNVERIFIED]
+RESULT x=30 N=320 lmax=420 sin_angle=0.0000163437 wall=718s
+DEEP DONE
+DONE
