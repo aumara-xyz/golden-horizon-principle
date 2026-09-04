@@ -1,0 +1,40 @@
+{
+  "prime_radii": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29
+  ],
+  "heights": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "interpolation": "PCHIP (monotone piecewise cubic Hermite)",
+  "wall_thickness": 0.4,
+  "vertices": 51200,
+  "triangles": 102400,
+  "radius_min": 2.0,
+  "radius_max": 29.0,
+  "monotone_profile": true,
+  "mesh": {
+    "unique_edges": 153600,
+    "all_edges_have_two_faces": true,
+    "min_faces_per_edge": 2,
+    "max_faces_per_edge": 2
+  },
+  "claim_boundary": "data sculpture only; acoustic eigenfrequencies not computed"
+}
