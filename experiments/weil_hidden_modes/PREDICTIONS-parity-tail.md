@@ -22,3 +22,16 @@ Attempt an analytic infinite-tail estimate separately. PREDICTED: symmetry
 alone does not yield a usable bound. A finite hidden-block calculation is
 not an infinite-tail bound. All-domains positivity, RH and novelty remain
 UNVERIFIED unless actually proved. No extrapolated decay fit is a theorem.
+
+## Analytic-tail follow-up, frozen before its reported numerical evaluation
+
+The independent audit derived a Fourier leakage estimate for sine indices
+j>N. Evaluate it at the deliberately coarse fixed values N=4096, R=256,
+L=7/10 using ball arithmetic. PREDICTED: even-sector pure-tail bound >0.5,
+odd-sector pure-tail bound >0.3. Controls: same bound for the three altered
+models, expected also positive (a pure high-tail bound is not an arithmetic
+discriminator). Mutation N=8192, same R; bounds predicted to improve.
+This does not compute a 4096-mode matrix or bound its low-tail coupling.
+The derivation and these simple cutoff choices use no zero data. An agent's
+exploratory N=32,R=10 evaluation was inconclusive before this follow-up was
+frozen; it is exploratory, not a preregistered result.
