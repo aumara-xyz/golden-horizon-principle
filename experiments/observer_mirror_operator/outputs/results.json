@@ -1,0 +1,76 @@
+{
+  "test_id": "OBSERVER-MIRROR-OPERATOR-v0",
+  "uses_primes": false,
+  "uses_zeta_zeros": false,
+  "dimensions": {
+    "N": 40,
+    "modes_per_sector": 81,
+    "full_dimension": 162
+  },
+  "parameters": {
+    "alpha_left": 0.3333333333333333,
+    "alpha_right_authentic": 0.6180339887498948,
+    "q": 0.5334880910911033,
+    "cayley_phase_shift": 0.137
+  },
+  "execution_order": [
+    "rational_2_over_5",
+    "sqrt2_minus_1",
+    "200_random",
+    "one_over_phi"
+  ],
+  "controls": {
+    "named": {
+      "rational_2_over_5": {
+        "alpha_right": 0.4,
+        "max_fidelity_steps_100_to_2000": 0.5253246569905085,
+        "mean_visible_probability": 0.6716990499103805,
+        "min_visible_probability": 0.4027244486866861,
+        "max_visible_probability": 0.9610761456789757,
+        "max_total_norm_error": 3.2862601528904634e-14
+      },
+      "sqrt2_minus_1": {
+        "alpha_right": 0.41421356237309515,
+        "max_fidelity_steps_100_to_2000": 0.373858314054172,
+        "mean_visible_probability": 0.6554695570391291,
+        "min_visible_probability": 0.44202025523673144,
+        "max_visible_probability": 0.8663623170886872,
+        "max_total_norm_error": 4.1744385725905886e-14
+      }
+    },
+    "random": {
+      "count": 200,
+      "median": 0.3414428275220391,
+      "p05": 0.2855015660787859,
+      "p95": 0.4907904684258006
+    }
+  },
+  "authentic": {
+    "alpha_right": 0.6180339887498948,
+    "max_fidelity_steps_100_to_2000": 0.3749395277028581,
+    "mean_visible_probability": 0.6346911103926879,
+    "min_visible_probability": 0.39816402220726776,
+    "max_visible_probability": 0.901746311644337,
+    "max_total_norm_error": 8.881784197001252e-15,
+    "random_control_percentile": 0.695
+  },
+  "operator": {
+    "unitarity_residual": 2.85372867564228e-16,
+    "relative_self_adjoint_residual": 9.434050954037643e-15,
+    "max_eigenvalue_imaginary_part": 3.213297005954266e-13,
+    "eigenphase_spacing_ks": {
+      "poisson": 0.1222223472740197,
+      "goe": 0.1941768734004915,
+      "gue": 0.2622478166479972
+    },
+    "eigenphase_spacing_closest": "poisson"
+  },
+  "measure_theoretic_boundary": "Q intersect [0,1] has Lebesgue measure zero, so its ordinary L2 support projection is zero; the two channels are modeled sectors, not a literal rational/irrational spatial cut.",
+  "verdict": {
+    "global_unitarity": "MEASURED",
+    "cayley_self_adjointness": "MEASURED",
+    "observer_radiation_with_global_norm": "MEASURED",
+    "phi_whole_operator_recurrence": "VOID",
+    "zeta_identification": "UNVERIFIED"
+  }
+}

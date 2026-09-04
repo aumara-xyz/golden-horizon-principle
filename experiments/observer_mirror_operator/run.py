@@ -23,12 +23,16 @@ def matrices(alpha_right):
     modes = np.arange(-N, N + 1)
     pl = np.exp(2j * math.pi * modes / 3.0)
     pr = np.exp(2j * math.pi * modes * alpha_right)
-    z = np.zeros((len(modes), len(modes)), dtype=complex)
-    d = np.block([[np.diag(pl), z], [z, np.diag(pr)]])
-    eye_mode = np.eye(len(modes), dtype=complex)
     r, t = math.sqrt(1.0 - Q), 1j * math.sqrt(Q)
-    b = np.block([[r * eye_mode, t * eye_mode], [t * eye_mode, r * eye_mode]])
-    return b @ d
+    size = len(modes)
+    u = np.zeros((2 * size, 2 * size), dtype=complex)
+    # B @ D written blockwise. This avoids a spurious complex-BLAS warning emitted by
+    # the system NumPy build even when every input and output entry is finite.
+    u[:size, :size] = np.diag(r * pl)
+    u[:size, size:] = np.diag(t * pr)
+    u[size:, :size] = np.diag(t * pl)
+    u[size:, size:] = np.diag(r * pr)
+    return u
 
 
 def evolve(alpha_right, steps=2000):
@@ -67,9 +71,11 @@ def ks_distance(sample, cdf):
 def operator_checks(alpha_right):
     u = matrices(alpha_right)
     eye = np.eye(len(u), dtype=complex)
-    unitary = np.linalg.norm(u.conj().T @ u - eye, ord=2)
+    gram = np.einsum("ki,kj->ij", np.conjugate(u), u)
+    unitary = np.linalg.norm(gram - eye, ord=2)
     v = np.exp(1j * 0.137) * u
-    h = 1j * (eye + v) @ np.linalg.inv(eye - v)
+    # (I-v) commutes with (I+v), so the solve equals (I+v)(I-v)^(-1).
+    h = 1j * np.linalg.solve(eye - v, eye + v)
     self_adjoint = np.linalg.norm(h - h.conj().T, ord=2) / max(1.0, np.linalg.norm(h, ord=2))
     max_imag_eig = float(np.max(np.abs(np.linalg.eigvals(h).imag)))
 
