@@ -52,15 +52,17 @@ def analyze(fixed, pairs):
     j = mirror_matrix(fixed, pairs)
     ev = np.linalg.eigvalsh(j) if len(j) else np.asarray([])
     e, o = sector_bases(fixed, pairs)
-    even_ev = np.linalg.eigvalsh(e.T @ j @ e) if e.shape[1] else np.asarray([])
-    odd_ev = np.linalg.eigvalsh(o.T @ j @ o) if o.shape[1] else np.asarray([])
+    even_form = np.einsum("ia,ij,jb->ab", e, j, e) if e.shape[1] else np.zeros((0, 0))
+    odd_form = np.einsum("ia,ij,jb->ab", o, j, o) if o.shape[1] else np.zeros((0, 0))
+    even_ev = np.linalg.eigvalsh(even_form) if e.shape[1] else np.asarray([])
+    odd_ev = np.linalg.eigvalsh(odd_form) if o.shape[1] else np.asarray([])
     return {
         "fixed_points": fixed, "two_cycles": pairs, "dimension": len(j),
         "inertia": inertia(ev),
         "even_sector_inertia": inertia(even_ev),
         "odd_sector_inertia": inertia(odd_ev),
         "minimum_eigenvalue": float(ev.min()) if len(ev) else None,
-        "involution_residual": float(np.linalg.norm(j @ j - np.eye(len(j)), ord=2)) if len(j) else 0.0,
+        "involution_residual": float(np.linalg.norm(np.einsum("ik,kj->ij", j, j) - np.eye(len(j)), ord=2)) if len(j) else 0.0,
     }
 
 
@@ -85,8 +87,8 @@ def main():
     pair = mirror_matrix(0, 1)
     even_observer = np.asarray([1.0, 1.0]) / np.sqrt(2.0)
     odd_observer = np.asarray([1.0, -1.0]) / np.sqrt(2.0)
-    q_even = float(even_observer @ pair @ even_observer)
-    q_odd = float(odd_observer @ pair @ odd_observer)
+    q_even = float(np.einsum("i,ij,j", even_observer, pair, even_observer))
+    q_odd = float(np.einsum("i,ij,j", odd_observer, pair, odd_observer))
 
     result = {
         "test_id": "MIRROR-INERTIA-LEMMA-v0",

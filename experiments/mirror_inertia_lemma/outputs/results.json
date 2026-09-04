@@ -1,0 +1,1808 @@
+{
+  "test_id": "MIRROR-INERTIA-LEMMA-v0",
+  "configurations_checked": 80,
+  "maximum_involution_residual": 0.0,
+  "inertia_formula_exact_on_grid": true,
+  "even_restriction_hides_all_negative_directions": true,
+  "odd_sector_detects_every_two_cycle": true,
+  "single_pair": {
+    "Q_even": 0.9999999999999998,
+    "Q_odd": -0.9999999999999998,
+    "matrix": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ]
+  },
+  "regularizer_control_fixed_points_3_two_cycles_4": [
+    {
+      "c": 0.5,
+      "minimum_eigenvalue": -0.5,
+      "positive_semidefinite": false
+    },
+    {
+      "c": 1.0,
+      "minimum_eigenvalue": 0.0,
+      "positive_semidefinite": true
+    },
+    {
+      "c": 1.5,
+      "minimum_eigenvalue": 0.49999999999999994,
+      "positive_semidefinite": true
+    }
+  ],
+  "regularizer_threshold_exact_on_test": true,
+  "grid": [
+    {
+      "fixed_points": 0,
+      "two_cycles": 1,
+      "dimension": 2,
+      "inertia": {
+        "positive": 1,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 1,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 0,
+      "two_cycles": 2,
+      "dimension": 4,
+      "inertia": {
+        "positive": 2,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 2,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 0,
+      "two_cycles": 3,
+      "dimension": 6,
+      "inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 0,
+      "two_cycles": 4,
+      "dimension": 8,
+      "inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 0,
+      "two_cycles": 5,
+      "dimension": 10,
+      "inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 0,
+      "two_cycles": 6,
+      "dimension": 12,
+      "inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 0,
+      "two_cycles": 7,
+      "dimension": 14,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 0,
+      "two_cycles": 8,
+      "dimension": 16,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 0,
+      "dimension": 1,
+      "inertia": {
+        "positive": 1,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 1,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 1,
+      "dimension": 3,
+      "inertia": {
+        "positive": 2,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 2,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 2,
+      "dimension": 5,
+      "inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 3,
+      "dimension": 7,
+      "inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 4,
+      "dimension": 9,
+      "inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 5,
+      "dimension": 11,
+      "inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 6,
+      "dimension": 13,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 7,
+      "dimension": 15,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 1,
+      "two_cycles": 8,
+      "dimension": 17,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 0,
+      "dimension": 2,
+      "inertia": {
+        "positive": 2,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 2,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 1,
+      "dimension": 4,
+      "inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 2,
+      "dimension": 6,
+      "inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 3,
+      "dimension": 8,
+      "inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 4,
+      "dimension": 10,
+      "inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 5,
+      "dimension": 12,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 6,
+      "dimension": 14,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 7,
+      "dimension": 16,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 2,
+      "two_cycles": 8,
+      "dimension": 18,
+      "inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 0,
+      "dimension": 3,
+      "inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 3,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 1,
+      "dimension": 5,
+      "inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 2,
+      "dimension": 7,
+      "inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 3,
+      "dimension": 9,
+      "inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 4,
+      "dimension": 11,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 5,
+      "dimension": 13,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 6,
+      "dimension": 15,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 7,
+      "dimension": 17,
+      "inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 3,
+      "two_cycles": 8,
+      "dimension": 19,
+      "inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 0,
+      "dimension": 4,
+      "inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 4,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 1,
+      "dimension": 6,
+      "inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 2,
+      "dimension": 8,
+      "inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 3,
+      "dimension": 10,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 4,
+      "dimension": 12,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 5,
+      "dimension": 14,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 6,
+      "dimension": 16,
+      "inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 7,
+      "dimension": 18,
+      "inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 4,
+      "two_cycles": 8,
+      "dimension": 20,
+      "inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 0,
+      "dimension": 5,
+      "inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 5,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 1,
+      "dimension": 7,
+      "inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 2,
+      "dimension": 9,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 3,
+      "dimension": 11,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 4,
+      "dimension": 13,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 5,
+      "dimension": 15,
+      "inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 6,
+      "dimension": 17,
+      "inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 7,
+      "dimension": 19,
+      "inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 5,
+      "two_cycles": 8,
+      "dimension": 21,
+      "inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 0,
+      "dimension": 6,
+      "inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 6,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 1,
+      "dimension": 8,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 2,
+      "dimension": 10,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 3,
+      "dimension": 12,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 4,
+      "dimension": 14,
+      "inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 5,
+      "dimension": 16,
+      "inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 6,
+      "dimension": 18,
+      "inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 7,
+      "dimension": 20,
+      "inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 6,
+      "two_cycles": 8,
+      "dimension": 22,
+      "inertia": {
+        "positive": 14,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 14,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 0,
+      "dimension": 7,
+      "inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 7,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 1,
+      "dimension": 9,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 2,
+      "dimension": 11,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 3,
+      "dimension": 13,
+      "inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 4,
+      "dimension": 15,
+      "inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 5,
+      "dimension": 17,
+      "inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 6,
+      "dimension": 19,
+      "inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 7,
+      "dimension": 21,
+      "inertia": {
+        "positive": 14,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 14,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 7,
+      "two_cycles": 8,
+      "dimension": 23,
+      "inertia": {
+        "positive": 15,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 15,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 0,
+      "dimension": 8,
+      "inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "even_sector_inertia": {
+        "positive": 8,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 0
+      },
+      "minimum_eigenvalue": 1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 1,
+      "dimension": 10,
+      "inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 1
+      },
+      "even_sector_inertia": {
+        "positive": 9,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 1
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 2,
+      "dimension": 12,
+      "inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 2
+      },
+      "even_sector_inertia": {
+        "positive": 10,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 2
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 3,
+      "dimension": 14,
+      "inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 3
+      },
+      "even_sector_inertia": {
+        "positive": 11,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 3
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 4,
+      "dimension": 16,
+      "inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 4
+      },
+      "even_sector_inertia": {
+        "positive": 12,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 4
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 5,
+      "dimension": 18,
+      "inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 5
+      },
+      "even_sector_inertia": {
+        "positive": 13,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 5
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 6,
+      "dimension": 20,
+      "inertia": {
+        "positive": 14,
+        "zero": 0,
+        "negative": 6
+      },
+      "even_sector_inertia": {
+        "positive": 14,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 6
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 7,
+      "dimension": 22,
+      "inertia": {
+        "positive": 15,
+        "zero": 0,
+        "negative": 7
+      },
+      "even_sector_inertia": {
+        "positive": 15,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 7
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    },
+    {
+      "fixed_points": 8,
+      "two_cycles": 8,
+      "dimension": 24,
+      "inertia": {
+        "positive": 16,
+        "zero": 0,
+        "negative": 8
+      },
+      "even_sector_inertia": {
+        "positive": 16,
+        "zero": 0,
+        "negative": 0
+      },
+      "odd_sector_inertia": {
+        "positive": 0,
+        "zero": 0,
+        "negative": 8
+      },
+      "minimum_eigenvalue": -1.0,
+      "involution_residual": 0.0
+    }
+  ],
+  "verdict": {
+    "finite_mirror_inertia_lemma": "MEASURED",
+    "finite_regularizer_warning": "MEASURED",
+    "prime_side_infinite_positivity": "UNVERIFIED",
+    "RH": "UNVERIFIED"
+  }
+}
