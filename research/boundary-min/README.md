@@ -1,0 +1,2 @@
+# boundary-min
+The smallest runnable version of the AUKORA Boundary's three separated powers (Action / Amendment / Attestation), built to remove the ceilings aukora-cordis states about itself: separate processes, key only in the issuer, durable nonce book, sandboxed guest, RFC 6962 anchor with consistency proofs, off-host root. Read PREDICTIONS.md, then RESULTS.md. Run: `python3 run_tests.py` (needs `cryptography`; macOS for sandbox-exec).
