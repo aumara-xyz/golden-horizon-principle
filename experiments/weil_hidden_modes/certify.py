@@ -23,7 +23,7 @@ def pole(i,c,L):
     return (-c*L).exp()/L.sqrt()*a*(1-(-1)**i*(2*c*L).exp())/(a*a+c*c)
 
 
-def archimedean(L,N,eps):
+def archimedean(L,N,eps,tolerance='1e-35'):
     w = [[arb(0) for j in range(N)] for i in range(N)]
     cutoff = eps*(N*arb.pi()/(2*L)+(eps/2).exp()/2)
     for i in range(1,N+1):
@@ -35,7 +35,7 @@ def archimedean(L,N,eps):
                 # Meromorphic expression: poles produce nonfinite balls.
                 return (d-(u/2).exp()*corr(i,j,u,L))/u.sinh()
             integral = acb.integral(integrand,acb(eps),acb(2*L),
-                                    abs_tol=arb('1e-35'),rel_tol=arb('1e-35'),
+                                    abs_tol=arb(tolerance),rel_tol=arb(tolerance),
                                     eval_limit=100000,depth_limit=300)
             if not integral.is_finite() or not integral.imag.contains(0):
                 raise ArithmeticError('unresolved integral')

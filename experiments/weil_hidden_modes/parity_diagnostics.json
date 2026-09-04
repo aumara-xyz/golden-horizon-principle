@@ -1,0 +1,218 @@
+[
+  {
+    "model": "arch_only",
+    "N": 16,
+    "sector": "even",
+    "midpoint_minimum": "-0.2322142602463122006777596295863828524539",
+    "midpoint_eigen_residual": "4.925206667e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "arch_only",
+    "N": 16,
+    "sector": "odd",
+    "midpoint_minimum": "-0.7095902738082368813213087023831396301103",
+    "midpoint_eigen_residual": "4.227726617e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "arch_only",
+    "N": 24,
+    "sector": "even",
+    "midpoint_minimum": "-0.2372163740871054551998714979081834859471",
+    "midpoint_eigen_residual": "4.653172887e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "arch_only",
+    "N": 24,
+    "sector": "odd",
+    "midpoint_minimum": "-0.7168300495622262958296794252674635885622",
+    "midpoint_eigen_residual": "5.331411464e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "arch_only",
+    "N": 32,
+    "sector": "even",
+    "midpoint_minimum": "-0.2397838773374989281789825456262426211264",
+    "midpoint_eigen_residual": "5.728397377e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "arch_only",
+    "N": 32,
+    "sector": "odd",
+    "midpoint_minimum": "-0.7207130981892273917197216404911891987147",
+    "midpoint_eigen_residual": "5.062191503e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_plus",
+    "N": 16,
+    "sector": "even",
+    "midpoint_minimum": "-0.0957504306083378130212626589726257717981",
+    "midpoint_eigen_residual": "2.94178042e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_plus",
+    "N": 16,
+    "sector": "odd",
+    "midpoint_minimum": "-0.1198568329523023790960563775921044737908",
+    "midpoint_eigen_residual": "1.97269113e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_plus",
+    "N": 24,
+    "sector": "even",
+    "midpoint_minimum": "-0.09575248863077582518065396342885407027073",
+    "midpoint_eigen_residual": "1.052530989e-100",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_plus",
+    "N": 24,
+    "sector": "odd",
+    "midpoint_minimum": "-0.120050844508491549415500144048484830688",
+    "midpoint_eigen_residual": "1.446243735e-100",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_plus",
+    "N": 32,
+    "sector": "even",
+    "midpoint_minimum": "-0.09575292977896936111715595782865727545518",
+    "midpoint_eigen_residual": "8.786125225e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_plus",
+    "N": 32,
+    "sector": "odd",
+    "midpoint_minimum": "-0.1201493517745118962815596945527149551966",
+    "midpoint_eigen_residual": "6.61533247e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_minus",
+    "N": 16,
+    "sector": "even",
+    "midpoint_minimum": "-0.1967234232063325141896650840253679412489",
+    "midpoint_eigen_residual": "2.642363025e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_minus",
+    "N": 16,
+    "sector": "odd",
+    "midpoint_minimum": "0.105502807040497072882088647364589684316",
+    "midpoint_eigen_residual": "6.523507777e-102",
+    "interval_positive": true,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_minus",
+    "N": 24,
+    "sector": "even",
+    "midpoint_minimum": "-0.1984735878408816142587679658376298212696",
+    "midpoint_eigen_residual": "2.270278094e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_minus",
+    "N": 24,
+    "sector": "odd",
+    "midpoint_minimum": "0.1054928679382454142063035195220783494191",
+    "midpoint_eigen_residual": "3.489704383e-101",
+    "interval_positive": true,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_minus",
+    "N": 32,
+    "sector": "even",
+    "midpoint_minimum": "-0.1998248229587290348926613869322356515767",
+    "midpoint_eigen_residual": "8.861930635e-101",
+    "interval_positive": false,
+    "certified_lower_power": null
+  },
+  {
+    "model": "shift_minus",
+    "N": 32,
+    "sector": "odd",
+    "midpoint_minimum": "0.1054915124733334722157994750999440066393",
+    "midpoint_eigen_residual": "3.925465999e-101",
+    "interval_positive": true,
+    "certified_lower_power": null
+  },
+  {
+    "model": "authentic",
+    "N": 16,
+    "sector": "even",
+    "midpoint_minimum": "0.000000000001892390535499607610518479081338287963423",
+    "midpoint_eigen_residual": "1.777242923e-102",
+    "interval_positive": true,
+    "certified_lower_power": "12"
+  },
+  {
+    "model": "authentic",
+    "N": 16,
+    "sector": "odd",
+    "midpoint_minimum": "0.0000000007662189770162679871495149329123210221602",
+    "midpoint_eigen_residual": "4.540508521e-102",
+    "interval_positive": true,
+    "certified_lower_power": "12"
+  },
+  {
+    "model": "authentic",
+    "N": 24,
+    "sector": "even",
+    "midpoint_minimum": "6.290528632847133152110024405701594400859e-13",
+    "midpoint_eigen_residual": "5.417648276e-102",
+    "interval_positive": true,
+    "certified_lower_power": "16"
+  },
+  {
+    "model": "authentic",
+    "N": 24,
+    "sector": "odd",
+    "midpoint_minimum": "0.0000000004512422111576531839742488749370058670781",
+    "midpoint_eigen_residual": "3.553578507e-101",
+    "interval_positive": true,
+    "certified_lower_power": "12"
+  },
+  {
+    "model": "authentic",
+    "N": 32,
+    "sector": "even",
+    "midpoint_minimum": "5.972086223583974799140339071446494600463e-13",
+    "midpoint_eigen_residual": "2.429597602e-101",
+    "interval_positive": true,
+    "certified_lower_power": "16"
+  },
+  {
+    "model": "authentic",
+    "N": 32,
+    "sector": "odd",
+    "midpoint_minimum": "0.0000000003313125993658307640425204976071906662039",
+    "midpoint_eigen_residual": "3.516076066e-101",
+    "interval_positive": true,
+    "certified_lower_power": "12"
+  }
+]
