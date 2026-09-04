@@ -37,6 +37,11 @@ zero.
    same metric carrying a fixed irrational magnetic flux `2*pi/phi` through a deterministic
    edge orientation. The latter is a mutation, not part of the prime-return claim.
 
+Clarification locked before the first run: spectral spacings use positive eigen-wavenumber
+indices 21 through 180 inclusive; the Weyl-slope fit uses the same window. The cycle-score
+control percentile is the fraction of control scores less than or equal to the authentic
+score, so a surviving result must be below the 5th percentile in both random ensembles.
+
 ## Predictions and decision rules
 
 1. **PREDICTED — neutral state.** The connected Kirchhoff graph has exactly one zero
