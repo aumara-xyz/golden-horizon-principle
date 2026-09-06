@@ -1,0 +1,7 @@
+{
+  "scope": "Independent endpoint reparse and direct scalar finite-witness replay, same Arb stack",
+  "scalar_endpoint_records": 347,
+  "negative_finite_witnesses": 13,
+  "authentic_schur_certificates": 6,
+  "full_W_fixed_vector_endpoints": 10
+}

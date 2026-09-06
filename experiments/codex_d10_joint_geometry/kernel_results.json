@@ -1,0 +1,674 @@
+{
+  "status": "MEASURED",
+  "prediction": "P1 held",
+  "precision_bits": 320,
+  "python_flint": "0.6.0",
+  "source_sha256": "33cfbec5ca2e522ebfce5e2fbcf2981f91058d2cf3ecec03c27f9ee22ceb5d97",
+  "predictions_sha256": "b6ef496669bbb8e00335691a435218f6bc6e85df7d7c28d31df30387304912d1",
+  "support_half_width": "7/10",
+  "bump_radius": "1/100",
+  "center_shift": {
+    "display": "[0.223143551314209755766295090310 +/- 1.66e-31]",
+    "sign": "POSITIVE",
+    "endpoints": {
+      "lower_enclosure": "[0.223143551314209755766295090309834503374601085548007213671287872487391743768 +/- 2.69e-76]",
+      "upper_enclosure": "[0.223143551314209755766295090309834503374601085548007213671287872487391743768 +/- 2.69e-76]"
+    }
+  },
+  "exact_formulae": [
+    "-19/(18*sqrt(5))",
+    "5129/7380"
+  ],
+  "point_kernel_values": [
+    {
+      "display": "[-0.472058795249955602575269996732 +/- 1.59e-31]",
+      "sign": "NEGATIVE",
+      "endpoints": {
+        "lower_enclosure": "[-0.472058795249955602575269996732158316370797209251322097346078307364443306524 +/- 4.64e-76]",
+        "upper_enclosure": "[-0.472058795249955602575269996732158316370797209251322097346078307364443306524 +/- 4.64e-76]"
+      }
+    },
+    {
+      "display": "[0.694986449864498644986449864499 +/- 3.56e-31]",
+      "sign": "POSITIVE",
+      "endpoints": {
+        "lower_enclosure": "[0.694986449864498644986449864498644986449864498644986449864498644986449864499 +/- 3.56e-76]",
+        "upper_enclosure": "[0.694986449864498644986449864498644986449864498644986449864498644986449864499 +/- 3.56e-76]"
+      }
+    }
+  ],
+  "independent_algebraic_values": [
+    {
+      "display": "[-0.472058795249955602575269996732 +/- 1.59e-31]",
+      "sign": "NEGATIVE",
+      "endpoints": {
+        "lower_enclosure": "[-0.472058795249955602575269996732158316370797209251322097346078307364443306524 +/- 4.64e-76]",
+        "upper_enclosure": "[-0.472058795249955602575269996732158316370797209251322097346078307364443306524 +/- 4.64e-76]"
+      }
+    },
+    {
+      "display": "[0.694986449864498644986449864499 +/- 3.56e-31]",
+      "sign": "POSITIVE",
+      "endpoints": {
+        "lower_enclosure": "[0.694986449864498644986449864498644986449864498644986449864498644986449864499 +/- 3.56e-76]",
+        "upper_enclosure": "[0.694986449864498644986449864498644986449864498644986449864498644986449864499 +/- 3.56e-76]"
+      }
+    }
+  ],
+  "exact_formula_agreement": [
+    true,
+    true
+  ],
+  "bump_distance_intervals": [
+    {
+      "display": "[0.2 +/- 0.0432]",
+      "sign": "POSITIVE",
+      "endpoints": {
+        "lower_enclosure": "[0.203143551237375643360518112770772003374601085548007213671287872487391743768 +/- 2.69e-76]",
+        "upper_enclosure": "[0.243143551391043868172072067848897003374601085548007213671287872487391743768 +/- 2.69e-76]"
+      }
+    },
+    {
+      "display": "[0.4 +/- 0.0663]",
+      "sign": "POSITIVE",
+      "endpoints": {
+        "lower_enclosure": "[0.426287102551585399126813203080606506749202171096014427342575744974783487537 +/- 4.64e-76]",
+        "upper_enclosure": "[0.466287102705253623938367158158731506749202171096014427342575744974783487537 +/- 4.64e-76]"
+      }
+    }
+  ],
+  "neighborhood_kernel_values": [
+    {
+      "display": "[+/- 0.751]",
+      "sign": "NEGATIVE",
+      "endpoints": {
+        "lower_enclosure": "-0.750137687195092439651489257812500000000000000000000000000000000000000000000",
+        "upper_enclosure": "-0.239174250047653913497924804687500000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "display": "[0.7 +/- 0.0914]",
+      "sign": "POSITIVE",
+      "endpoints": {
+        "lower_enclosure": "0.608637530240230262279510498046875000000000000000000000000000000000000000000",
+        "upper_enclosure": "0.774459466454572975635528564453125000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "gauge_edge_order": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "authentic_gauges": [
+    {
+      "gauge": [
+        -1,
+        -1,
+        -1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        -1,
+        -1,
+        1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "POSITIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        -1,
+        1,
+        -1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "POSITIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        -1,
+        1,
+        1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "NEGATIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        -1,
+        -1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "NEGATIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        -1,
+        1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "POSITIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        1,
+        -1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "POSITIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        1,
+        1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          2
+        ]
+      ]
+    }
+  ],
+  "pole_free_gauges": [
+    {
+      "gauge": [
+        -1,
+        -1,
+        -1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "NEGATIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": true,
+      "strictly_positive_edges": []
+    },
+    {
+      "gauge": [
+        -1,
+        -1,
+        1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "POSITIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        -1,
+        1,
+        -1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "POSITIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        -1,
+        1,
+        1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        -1,
+        -1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        -1,
+        1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "POSITIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        1,
+        -1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "POSITIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        1,
+        1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "NEGATIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": true,
+      "strictly_positive_edges": []
+    }
+  ],
+  "long_edge_reversal_gauges": [
+    {
+      "gauge": [
+        -1,
+        -1,
+        -1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "NEGATIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": true,
+      "strictly_positive_edges": []
+    },
+    {
+      "gauge": [
+        -1,
+        -1,
+        1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "POSITIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        -1,
+        1,
+        -1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "POSITIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        -1,
+        1,
+        1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        -1,
+        -1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        -1,
+        1
+      ],
+      "edge_signs": [
+        "POSITIVE",
+        "POSITIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        1,
+        -1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "POSITIVE",
+        "POSITIVE"
+      ],
+      "all_nonpositive": false,
+      "strictly_positive_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "gauge": [
+        1,
+        1,
+        1
+      ],
+      "edge_signs": [
+        "NEGATIVE",
+        "NEGATIVE",
+        "NEGATIVE"
+      ],
+      "all_nonpositive": true,
+      "strictly_positive_edges": []
+    }
+  ],
+  "positive_joint_sos_control": {
+    "matrix": [
+      [
+        "1.5000000000000000000",
+        "-1.0000000000000000000",
+        "1.0000000000000000000"
+      ],
+      [
+        "-1.0000000000000000000",
+        "1.5000000000000000000",
+        "-1.0000000000000000000"
+      ],
+      [
+        "1.0000000000000000000",
+        "-1.0000000000000000000",
+        "1.5000000000000000000"
+      ]
+    ],
+    "eigenvalues_exact": [
+      "1/2",
+      "1/2",
+      "7/2"
+    ],
+    "comparison_negative_rayleigh": {
+      "display": "-0.500000000000000000000000000000",
+      "sign": "NEGATIVE",
+      "endpoints": {
+        "lower_enclosure": "-0.500000000000000000000000000000000000000000000000000000000000000000000000000",
+        "upper_enclosure": "-0.500000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "comparison_eigenvalues_exact": [
+      "-1/2",
+      "5/2",
+      "5/2"
+    ],
+    "note": "Independent toy matrix, not a restriction or discretization of W."
+  },
+  "controls": {
+    "positive_sign": true,
+    "negative_sign": true,
+    "singular_sign": true,
+    "ambiguous_sign": true,
+    "positive_exact_eigenpairs": true,
+    "positive_joint_sos_identity": true,
+    "comparison_negative_witness": true,
+    "positive_control_has_same_frustration": true,
+    "bumps_disjoint": true,
+    "bumps_inside_support": true,
+    "all_bump_cross_distances_below_first_prime_shift": true,
+    "pole_free_all_edges_negative": true,
+    "pole_free_unfrustrated": true,
+    "long_edge_reversal_unfrustrated": true
+  },
+  "scope": "Obstruction only to diagonal-gauge nonnegative-conductance pairwise-square representations. Not an obstruction to general SOS or positivity.",
+  "endpoint_reparse_checks": 10
+}

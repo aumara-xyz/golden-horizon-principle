@@ -12,6 +12,7 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 4. [Completed round's directive: Opus D7 independent audit](NEXT-ROUND-D7.md)
 5. [Fable D8: can confinement limit the arithmetic contribution? — lemma proved, combination obstructed](../experiments/fable_d8_confinement/REPORT.md)
 6. [Codex D9: exact fixed-wave scores with rigorous infinite-tail bounds](../experiments/codex_d9_exact_scores/RESULTS.md) · [proofs](../experiments/codex_d9_exact_scores/PROOF.md)
+7. [Codex D10: Viviani-inspired joint geometry — scoped local obstruction and finite square completion](../experiments/codex_d10_joint_geometry/RESULTS.md) · [proofs and scope](../experiments/codex_d10_joint_geometry/PROOF.md)
 
 **Status:** Opus D7 reports a separate derivation and implementation supporting Fable's compact-window positivity at L=0.7, both parity sectors. The two implementations share a machine and Arb build. Codex has reviewed the report and selected outputs, not independently replayed the full certificate; its readout note corrects overstated sandwich precision in D7. Analytic proof review and cross-stack validation remain outstanding. No RH proof, new all-window positivity argument, physical hologram result, or novelty claim has been established. GHP's c=0.7 central charge and the chosen L=0.7 cutoff are different quantities with no established bridge.
 
@@ -29,10 +30,13 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 | D7 independent reconstruction and checker attacks | [Opus D7 results](../experiments/weil_hidden_modes/OPUS-ROUND-D7-RESULTS.md), [Codex readout](D7-READOUT.md) | [Predictions](../experiments/weil_hidden_modes/OPUS-PREDICTIONS-D7.md), [independent implementation](../experiments/weil_hidden_modes/opus_d7_rebuild.py) |
 | D8 confinement lemma (truncated translations) and its combination with the archimedean term | [Fable D8 report](../experiments/fable_d8_confinement/REPORT.md) | [Predictions](../experiments/fable_d8_confinement/PREDICTIONS.md), [code and outputs](../experiments/fable_d8_confinement/) |
 | D9 exact fixed-vector test of the D8 mixing family | [Codex D9 results](../experiments/codex_d9_exact_scores/RESULTS.md), [analytic bounds](../experiments/codex_d9_exact_scores/PROOF.md) | [Predictions](../experiments/codex_d9_exact_scores/PREDICTIONS.md), [code, frozen vectors and endpoints](../experiments/codex_d9_exact_scores/) |
+| D10 joint-kernel geometry and pole-directed completion of squares | [Codex D10 results](../experiments/codex_d10_joint_geometry/RESULTS.md), [proofs and limits](../experiments/codex_d10_joint_geometry/PROOF.md) | [Predictions](../experiments/codex_d10_joint_geometry/PREDICTIONS.md), [code and interval endpoints](../experiments/codex_d10_joint_geometry/) |
 
 Read chronologically when reconstructing a claim: earlier claims were corrected or withdrawn, not deleted. D6 supersedes D5's upward-rounded odd constant and false pointwise complex-function identity.
 
 D9 supplies exact negative witnesses for the D8 modified form at theta=0.1,0.25,1, not for W itself. It also corrects D8's universal 'every theta>0 fails' claim: tiny positive theta preserves the D7 all-wave margin. Removing arithmetic makes the tested odd wave negative, so a small prime contribution relative to a crude bound must not be described as irrelevant to the residual score. D9 is a fixed-vector calculation, not a new all-window certificate.
+
+D10 excludes a local diagonal-gauge positive-conductance representation using an exact signed-kernel triangle, while a positive three-variable control shows that general sums of squares remain possible. A pole-directed joint completion is certified for finite D7 lower-envelope blocks: it substantially improves the remaining minimum eigenvalue but leaves small modes and a delicate scalar balance. It does not provide an all-window positivity mechanism. Separate full-W pole-mutation witnesses retain D9's entire tail. The Viviani connection is methodological inspiration, not mathematical evidence from family history or physical geometry.
 
 ## Mirror, geometry, and controlled toy track
 
