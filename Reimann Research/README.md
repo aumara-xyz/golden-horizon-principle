@@ -13,6 +13,7 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 5. [Fable D8: can confinement limit the arithmetic contribution? — lemma proved, combination obstructed](../experiments/fable_d8_confinement/REPORT.md)
 6. [Codex D9: exact fixed-wave scores with rigorous infinite-tail bounds](../experiments/codex_d9_exact_scores/RESULTS.md) · [proofs](../experiments/codex_d9_exact_scores/PROOF.md)
 7. [Codex D10: Viviani-inspired joint geometry — scoped local obstruction and finite square completion](../experiments/codex_d10_joint_geometry/RESULTS.md) · [proofs and scope](../experiments/codex_d10_joint_geometry/PROOF.md)
+8. [Next: Fable D11 — D10 audit and a short certificate for the joint balance](FABLE-HANDOFF-D10-D11.md) (directive only; not run)
 
 **Status:** Opus D7 reports a separate derivation and implementation supporting Fable's compact-window positivity at L=0.7, both parity sectors. The two implementations share a machine and Arb build. Codex has reviewed the report and selected outputs, not independently replayed the full certificate; its readout note corrects overstated sandwich precision in D7. Analytic proof review and cross-stack validation remain outstanding. No RH proof, new all-window positivity argument, physical hologram result, or novelty claim has been established. GHP's c=0.7 central charge and the chosen L=0.7 cutoff are different quantities with no established bridge.
 
@@ -66,7 +67,8 @@ Each experiment directory contains its available code, raw outputs, and predicti
 - This hub indexes the locally available recent research; it is not a verbatim archive of private chat, bathroom photographs, or friends' messages.
 - Earlier rounds discussed in `aukora-deep` have not been copied or independently inventoried here. Do not assume this is a complete archive of those other-repository rounds.
 - Toy predictions were committed at `8df1c25`; toy results at `b68b14c`. Fable D6 records result commit `af286a9` and prediction commit `bb517fe`.
-- The hub and recent files are local unless a successful GitHub push is explicitly confirmed. A GitHub-shaped URL alone is not evidence of publication.
+- Publication status is recorded in [PUBLICATION.md](PUBLICATION.md). Historical 'not pushed' notes describe the state when each report was written; consult the publication record for later uploads. A GitHub-shaped URL alone is not evidence of publication.
+- User instruction, 2026-09-06: publish every completed research round to `origin/codex/metatron-prime-return-v0` after committing its results and hub link. This supersedes older no-push instructions for future rounds, but never authorizes force-pushing, overwriting collaborator work, or merging to main. Predictions must still be committed before computation.
 - Future work: add a dated report and a link here; preserve predictions, controls, failures, exact scopes, and original author files. Keep MEASURED / UNVERIFIED / PREDICTED / VOID labels.
 
 Reproducibility commands should be run from the repository root unless the original script documents a different working directory.
