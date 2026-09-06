@@ -1,0 +1,26 @@
+{
+ "N": 48,
+ "prec_bits": 160,
+ "max_entry_radius": "[1.6582799548878308884025064675921297407956700454e-19 +/- 2.77e-66]",
+ "build_s": 8.501155138015747,
+ "even": {
+  "lambda_min_A(1..32)": "5.9720862e-13",
+  "lambda_min_D(33..48)": "1.7086627",
+  "lambda_min_full48": "4.9936997e-13",
+  "||C||_F": "0.49797",
+  "naive_schur_ok(||C||^2<lminA*lminD)": false,
+  "coupling_energy_k_along_xi": "8.5700871e-14",
+  "k_over_lambda_min_A": "0.143502",
+  "second_A": "1.10886e-7"
+ },
+ "odd": {
+  "lambda_min_A(1..32)": "3.313126e-10",
+  "lambda_min_D(33..48)": "1.722535",
+  "lambda_min_full48": "2.8947322e-10",
+  "||C||_F": "0.532602",
+  "naive_schur_ok(||C||^2<lminA*lminD)": false,
+  "coupling_energy_k_along_xi": "3.8568779e-11",
+  "k_over_lambda_min_A": "0.116412",
+  "second_A": "2.21301e-5"
+ }
+}
