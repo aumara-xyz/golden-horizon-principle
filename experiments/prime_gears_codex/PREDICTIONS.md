@@ -1,0 +1,13 @@
+# Prime gears — preregistration
+
+Scope: finite arithmetic toy, not RH evidence. No zero ordinates, physical identification, Fable code, or fit parameters. Commit this file before running the toy. Code/results owned by Codex only.
+
+## Frozen tests and predictions
+
+1. Gears: mask m(n)=product(1-[d divides n]), n modulo lcm(periods). Prime periods [2,3], [2,3,5], [2,3,5,7], [2,3,5,7,11]. PREDICTED exact minimal periods 6,30,210,2310. Composite coprime-period control [4,9,25] should also have exact period 900 and Fourier peaks. Mutation: append redundant period 4 to [2,3,5]; mask and minimal period remain unchanged. A phase configuration returning is distinct from a sieve mask's period.
+2. Frozen truth range integers 2..10000, elementary trial-division primality. Report survivor false positives for each prime wheel, excluding its own base primes. PREDICTED smallest surviving composite is next_prime squared. Mutation: add the next prime; its square is removed but the next square survives. These are finite checks of known sieve properties, not statistical independence assumptions.
+3. Arithmetic coordinates: factor integers 1..1000 into prime-exponent vectors; PREDICTED exact reconstruction, but collapsing all prime axes to one (sum exponents) is noninjective. Control: signed integers -1000..-1 and 1..1000 reconstruct with a separate sign; mutation: drop sign and collide n with -n. Zero has no factorization vector in this model.
+4. Ternary: balanced trits (a,b,c) mapped to 9a+3b+c bijectively cover -13..13. Compare cyclic addition modulo 27 versus coordinatewise addition modulo 3: PREDICTED max additive orders 27 versus 3 despite equal state count. Controls base 3 with two digits and base 5 with two digits: same distinction, 9 vs3 and25 vs5. Shared cardinality does not force shared algebra or topology.
+5. Phi: scale ALL gear periods by c in [1,sqrt(2),phi,2], sample normalized times u=t/c from linspace(0,30,301). PREDICTED normalized phase trajectories agree to 1e-12; no phi-specific effect. This tests only a global scale, NOT arbitrary relative phi couplings. Analytic cancellation is the primary result. Mutation: scale only the 5-period gear by phi; predict original return at t=30 disappears, as for sqrt(2). Do not optimize recurrence windows.
+
+Controls run first. Write raw JSON and a static scientific figure. Tolerances apply only to floating phase/FFT diagnostics; all masks, factorization and additive-order tests are integer-exact. Every prediction retains its outcome. No theorem novelty claimed. Infinite-limit behavior and RH remain UNVERIFIED by this toy; physical interpretations are unsupported.
