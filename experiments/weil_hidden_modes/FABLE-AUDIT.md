@@ -35,7 +35,8 @@ The pretty coincidence in Codex's ternary control (a=3 roots at −φ², −φ�
 |---|---|---|---|---|---|
 | 120 | 40 (78) | 0.00764 | +1.039e-13 | 1.9e-8 | 1.7e-7 |
 | 150 | 60 (118) | 0.23078 | +2.495e-13 | 5.1e-8 | 3.0e-9 |
-Predictions held: β* > 0 with margin ≈0.23 at T♯=150 (predicted ~0.23); λmin(R) positive and inside [1e-18, 1e-12]; λmin(R) ≤ true minimum 4.47e-13 (R ≤ Q). Prediction on the tail was optimistic: coefficients decay geometrically (×1/60 per 40 modes), not yet super-exponentially at n ≈ 118; tail energy ≈ 1e-17, comfortably below λmin(R) ≈ 2.5e-13 but not the < 1e-30 I wrote. Kept.
+| 120 | 80 (158) | 0.00764 | +1.031e-13 | 1.9e-08 | 5.0e-31 |
+Predictions held: β* > 0 with margin ≈0.23 at T♯=150 (predicted ~0.23); λmin(R) positive and inside [1e-18, 1e-12]; λmin(R) ≤ true minimum 4.47e-13 (R ≤ Q). Prediction on the tail was optimistic: coefficients decay geometrically (×1/60 per 40 modes), not yet super-exponentially at n ≈ 118; tail energy ≈ 1e-17, comfortably below λmin(R) ≈ 2.5e-13 but not the < 1e-30 I wrote. Kept. Mutation: at T♯=120 the 40→80 mode change moves λmin(R) by the amount shown in the extra row; the tail coefficient at n≈158 is the last column. 
 Reading: on the window [−0.7, 0.7], for ALL even f (not a mode subset), the Weil form is bounded below by a finite 60×60 matrix problem plus a tail of order 1e-17, and that matrix is positive with margin 2.5e-13. This numerically closes the gap Codex left open at this window, by Zhu's route, with no zero ordinate anywhere in the construction. What it is NOT: interval-certified (his is), odd-sector (his Cor. 6.3 covers all f; my run is even only), or new (Zhu 2026). Independent partial reproduction: MEASURED. Full reproduction of his L=0.8, N=200 certificate: not attempted; UNVERIFIED.
 
 ## 5. Failed approaches this session (kept)
