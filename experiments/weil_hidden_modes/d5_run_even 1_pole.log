@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/peterviviani/golden-horizon-principle/experiments/weil_hidden_modes/d5_certify.py", line 16, in <module>
+    assert PAR in ('even','odd') and PSIGN in (1,-1)      # GL nodes per unit panel
+AssertionError
