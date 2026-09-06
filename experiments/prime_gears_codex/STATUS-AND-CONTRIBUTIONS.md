@@ -2,6 +2,12 @@
 
 2026-09-06. Scope: evidence-backed synthesis, not a new computation, certificate replay, or novelty assessment by exhaustive literature search.
 
+## D7 update (same date, supersedes the pending-reconstruction status below)
+
+Opus now reports an independent derivation and implementation in OPUS-ROUND-D7-RESULTS.md (commit e09a3d6), supporting the same advertised even/odd constants. This is implementation independence on the same machine and Arb build, not independent arithmetic infrastructure. Its alternative quadrature bound removes dependence on the unresolved Trefethen constant citation for this reconstruction. Codex has inspected the report and selected outputs, not replayed the complete implementation. The central research blocker remains all-window positivity.
+
+Codex identified overstated minimum-sandwich precision in D7: displayed endpoint centres give relative widths about 2.34e-11 even and 5.63e-14 odd, not 2.3e-14 and 5.6e-15. Rigorous summaries must also use outward endpoints of the serialized balls, not just printed centres. This readout discrepancy does not threaten the advertised rounded lower constants. See the hub's D7-READOUT.md. The remaining sections preserve the pre-D7 assessment and contribution history.
+
 ## The two 0.7s
 
 The user correctly remembered GHP's c=7/10. GHP_CORE_v3.md section 3 records the central charge of the antiferromagnetic Fibonacci golden chain's continuum theory, tricritical Ising. This is established prior mathematics/physics: [Feiguin et al., PRL 98,160409 (2007)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.98.160409), [preprint](https://arxiv.org/abs/cond-mat/0612341). The repository reports reproducing aspects of it; that computation was not re-audited for this note.
