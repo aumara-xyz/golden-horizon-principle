@@ -1,0 +1,5 @@
+# Repairs retained
+
+Before accepting authentic scores, the zero-overlap control initially demanded an exact Arb zero at shift=2L. L=7/10 is represented as a ball, so comparing separately computed 2L balls did not certify >= and the tiny overlap enclosure was not exactly zero. This was a test of interval equality, not a counterexample to zero overlap. Replaced with strict shift=2>2L (exact-zero branch) plus a touching-endpoint check that the enclosure contains zero. The mathematical touching case has measure-zero overlap. All other initial controls passed.
+
+The first successful score run printed wide positive score intervals in Arb's compact `[+/- radius]` format, which outwardly encloses the interval but loses the positive sign on reparse. Added separate lower/upper endpoint enclosures and assertions that reparsing them preserves each reported sign. Re-ran the same frozen candidates and quadrature; no selection, formula or tolerance change. Compact display strings remain for readability, but exported endpoint enclosures are the sign evidence.

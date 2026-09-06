@@ -1,0 +1,10 @@
+{
+  "even": {
+    "all_exported_signs_reverified": true,
+    "candidate_small_interval_64_80_overlap": true
+  },
+  "odd": {
+    "all_exported_signs_reverified": true,
+    "candidate_small_interval_64_80_overlap": true
+  }
+}

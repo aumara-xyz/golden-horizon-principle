@@ -1,0 +1,14 @@
+{
+  "constant_shift_exact": true,
+  "linear_shift_exact": true,
+  "zero_overlap": true,
+  "touching_endpoints_encloses_zero": true,
+  "P2_derivative": true,
+  "quadrature_64_80_overlap": true,
+  "missing_tail_refused": true,
+  "negative_tail_refused": true,
+  "nonfinite_tail_refused": true,
+  "crossing_interval_refused": true,
+  "negative_control": true,
+  "positive_control": true
+}
