@@ -1,0 +1,16 @@
+{
+ "NE": 80,
+ "ncut": 160,
+ "prec_bits": 128,
+ "beta_star": "[0.0076382575953959615868 +/- 3.18e-24]",
+ "sup_psi_minus_beta": "[8.3217952020446819993236637120297978546 +/- 1.52e-38]",
+ "lambda0_certified": null,
+ "ldl_status_at_1e-13": "UNVERIFIED",
+ "eps_D": "[3.05321e-38 +/- 4.51e-44]",
+ "eps_C": "[3.88501e-16 +/- 4.69e-22]",
+ "eps_p": "[2.41824e-406 +/- 1.26e-412]",
+ "norm_pN": "[1.20771838681 +/- 2.43e-13]",
+ "max_entry_radius": "[5.0631482427967629729180428397290721709e+56 +/- 4.56e+18]",
+ "verdict": "NO_VERDICT: lambda0 not interval-certified",
+ "runtime_s": 247.4065179824829
+}
