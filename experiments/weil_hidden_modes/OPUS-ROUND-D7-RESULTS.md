@@ -4,7 +4,9 @@ Auditor: Claude Opus 5, acting as an independent third party. Fable produced D4�
 
 Repository `/Users/peterviviani/golden-horizon-principle`, branch `codex/metatron-prime-return-v0`.
 **HEAD when the audit opened: `b68b14c988c6a8e14ab565135fcea14c3700de55`.**
-Predictions committed BEFORE any computation at **`b372ccecda2410f029f9fd98e2069b175e204696`** (`OPUS-PREDICTIONS-D7.md`). Committed locally; not pushed. No existing file was edited or deleted. No zeta zero ordinates were used. No novelty is claimed.
+Between that snapshot and my first commit the branch advanced by one commit made by the repository owner, `18f0005` ("Add central Reimann Research hub and Opus audit handoff"), which added `Reimann Research/README.md`, `Reimann Research/NEXT-ROUND-D7.md` and tracked `experiments/prime_gears_codex/STATUS-AND-CONTRIBUTIONS.md`. `git diff b68b14c 18f0005 -- experiments/weil_hidden_modes` is **empty**: no file under audit changed, and `b68b14c` is an ancestor of my commits. Recording both hashes rather than the one I first wrote down.
+Predictions committed BEFORE any computation at **`b372ccecda2410f029f9fd98e2069b175e204696`** (`OPUS-PREDICTIONS-D7.md`), parent `18f0005`. Audit results committed at **`e09a3d6a35aeaa6fcf0907a63cda193034e62fce`**. Committed locally; not pushed.
+`NEXT-ROUND-D7.md` asks that this file be linked from the hub. I did not do that: my instructions forbid editing any pre-existing file, so the link must be added by the repository owner. No existing file was edited or deleted. No zeta zero ordinates were used. No novelty is claimed.
 
 Compute budget set in advance: ≤ 90 min total, ≤ 20 min per run. **Actual: ~14 min** (four 27 s reconstructions, two 40 s replays, a 3 min normalization control, seconds for the checker controls).
 
@@ -238,7 +240,9 @@ Both advertised constants are valid after downward rounding, and D6's withdrawal
 ```
 repo   /Users/peterviviani/golden-horizon-principle   branch codex/metatron-prime-return-v0
 HEAD at audit open  b68b14c988c6a8e14ab565135fcea14c3700de55
+owner commit landed mid-audit  18f0005  (no audited file touched)
 predictions commit  b372ccecda2410f029f9fd98e2069b175e204696   (before any compute)
+results commit      e09a3d6a35aeaa6fcf0907a63cda193034e62fce
 python  /private/tmp/weil-arb-gTYWza/venv/bin/python   python-flint 0.6.0 (Arb), mpmath 1.4.1
 cd experiments/weil_hidden_modes
 python opus_d7_rebuild.py even 80 1     # -> opus_d7_even_NE80_pole+1.json   (27 s)
