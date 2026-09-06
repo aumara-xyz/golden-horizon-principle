@@ -1,0 +1,24 @@
+{
+ "even": {
+  "full_form_lower_outward": "1.0310178164889178600e-13",
+  "score_upper_outward": "1.0310178165130018200e-13",
+  "relative_width": "2.3359e-11",
+  "printed_lower": "[1.03101781648892e-13 +/- 2.14e-28]",
+  "printed_upper": "[1.03101781651300e-13 +/- 1.82e-28]",
+  "advertised_supported": [
+   "1.031e-13",
+   true
+  ]
+ },
+ "odd": {
+  "full_form_lower_outward": "5.8590708539890263400e-11",
+  "score_upper_outward": "5.8590708539893630300e-11",
+  "relative_width": "5.7465e-14",
+  "printed_lower": "[5.85907085398903e-11 +/- 3.66e-26]",
+  "printed_upper": "[5.85907085398936e-11 +/- 3.03e-26]",
+  "advertised_supported": [
+   "5.859e-11",
+   true
+  ]
+ }
+}

@@ -1,0 +1,58 @@
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:29: RuntimeWarning: divide by zero encountered in matmul
+  M=2*(F*(ws*sym))@F.T
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:29: RuntimeWarning: overflow encountered in matmul
+  M=2*(F*(ws*sym))@F.T
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:29: RuntimeWarning: invalid value encountered in matmul
+  M=2*(F*(ws*sym))@F.T
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:41: RuntimeWarning: divide by zero encountered in matmul
+  Gs=(Q1*wxx)@Q2.T; G+=w*(Gs+Gs.T)/2
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:41: RuntimeWarning: overflow encountered in matmul
+  Gs=(Q1*wxx)@Q2.T; G+=w*(Gs+Gs.T)/2
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:41: RuntimeWarning: invalid value encountered in matmul
+  Gs=(Q1*wxx)@Q2.T; G+=w*(Gs+Gs.T)/2
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:50: RuntimeWarning: divide by zero encountered in matmul
+  sat=float(v@b['G']@v); persh=[float(v@(b['G']*0+1)@v)]
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:50: RuntimeWarning: overflow encountered in matmul
+  sat=float(v@b['G']@v); persh=[float(v@(b['G']*0+1)@v)]
+/Users/peterviviani/golden-horizon-principle/experiments/fable_d8_confinement/d8_combined.py:50: RuntimeWarning: invalid value encountered in matmul
+  sat=float(v@b['G']@v); persh=[float(v@(b['G']*0+1)@v)]
+0.4 even 0.0 {'T': 16.916, 'beta': np.float64(0.009953), 'const': 0.980258, 'c': 0.490129, 'B': 0.980258, 'modes': 48, 'lambda_min': -0.000181, 'lambda_2': 0.003162, 'minimizer_prime_saturation': -0.014075, 'G_top_eig': 0.490129}
+0.4 even 0.25 {'T': 14.965, 'beta': np.float64(0.009954), 'const': 0.857726, 'c': 0.490129, 'B': 0.980258, 'modes': 47, 'lambda_min': -0.124368, 'lambda_2': -0.012827, 'minimizer_prime_saturation': -0.004752, 'G_top_eig': 0.490129}
+0.4 even 0.5 {'T': 13.24, 'beta': np.float64(0.009955), 'const': 0.735194, 'c': 0.490129, 'B': 0.980258, 'modes': 46, 'lambda_min': -0.24785, 'lambda_2': -0.019728, 'minimizer_prime_saturation': -0.005313, 'G_top_eig': 0.490129}
+0.4 even 0.75 {'T': 11.714, 'beta': np.float64(0.009956), 'const': 0.612661, 'c': 0.490129, 'B': 0.980258, 'modes': 45, 'lambda_min': -0.371753, 'lambda_2': -0.046542, 'minimizer_prime_saturation': -0.004724, 'G_top_eig': 0.490129}
+0.4 even 1.0 {'T': 10.364, 'beta': np.float64(0.009958), 'const': 0.490129, 'c': 0.490129, 'B': 0.980258, 'modes': 44, 'lambda_min': -0.494788, 'lambda_2': -0.050481, 'minimizer_prime_saturation': -0.005024, 'G_top_eig': 0.490129}
+0.4 odd 0.0 {'T': 16.916, 'beta': np.float64(0.009953), 'const': 0.980258, 'c': 0.490129, 'B': 0.980258, 'modes': 48, 'lambda_min': -0.001474, 'lambda_2': 0.009781, 'minimizer_prime_saturation': -0.135184, 'G_top_eig': 0.490129}
+0.4 odd 0.25 {'T': 14.965, 'beta': np.float64(0.009954), 'const': 0.857726, 'c': 0.490129, 'B': 0.980258, 'modes': 47, 'lambda_min': -0.155445, 'lambda_2': 0.00883, 'minimizer_prime_saturation': -0.15073, 'G_top_eig': 0.490129}
+0.4 odd 0.5 {'T': 13.24, 'beta': np.float64(0.009955), 'const': 0.735194, 'c': 0.490129, 'B': 0.980258, 'modes': 46, 'lambda_min': -0.31558, 'lambda_2': 0.004615, 'minimizer_prime_saturation': -0.188913, 'G_top_eig': 0.490129}
+0.4 odd 0.75 {'T': 11.714, 'beta': np.float64(0.009956), 'const': 0.612661, 'c': 0.490129, 'B': 0.980258, 'modes': 45, 'lambda_min': -0.47429, 'lambda_2': -0.012595, 'minimizer_prime_saturation': -0.204773, 'G_top_eig': 0.490129}
+0.4 odd 1.0 {'T': 10.364, 'beta': np.float64(0.009958), 'const': 0.490129, 'c': 0.490129, 'B': 0.980258, 'modes': 44, 'lambda_min': -0.633471, 'lambda_2': -0.021565, 'minimizer_prime_saturation': -0.211897, 'G_top_eig': 0.490129}
+0.7 even 0.0 {'T': 120.278, 'beta': np.float64(0.00995), 'const': 2.941974, 'c': 1.674005, 'B': 2.941974, 'modes': 141, 'lambda_min': 1.0872315810922838e-13, 'lambda_2': 2.0520191855428932e-08, 'minimizer_prime_saturation': 0.032755, 'G_top_eig': 1.163824}
+0.7 even 0.25 {'T': 87.603, 'beta': np.float64(0.00995), 'const': 2.624981, 'c': 1.674005, 'B': 2.941974, 'modes': 113, 'lambda_min': -0.475088, 'lambda_2': -0.314418, 'minimizer_prime_saturation': -0.24395, 'G_top_eig': 1.152994}
+0.7 even 0.5 {'T': 63.805, 'beta': np.float64(0.009951), 'const': 2.307989, 'c': 1.674005, 'B': 2.941974, 'modes': 93, 'lambda_min': -0.956603, 'lambda_2': -0.634786, 'minimizer_prime_saturation': -0.26034, 'G_top_eig': 1.13563}
+0.7 even 0.75 {'T': 46.472, 'beta': np.float64(0.009951), 'const': 1.990997, 'c': 1.674005, 'B': 2.941974, 'modes': 79, 'lambda_min': -1.440946, 'lambda_2': -0.95892, 'minimizer_prime_saturation': -0.270698, 'G_top_eig': 1.116401}
+0.7 even 1.0 {'T': 33.848, 'beta': np.float64(0.009951), 'const': 1.674005, 'c': 1.674005, 'B': 2.941974, 'modes': 68, 'lambda_min': -1.926376, 'lambda_2': -1.286018, 'minimizer_prime_saturation': -0.278539, 'G_top_eig': 1.101174}
+0.7 odd 0.0 {'T': 120.278, 'beta': np.float64(0.00995), 'const': 2.941974, 'c': 1.674005, 'B': 2.941974, 'modes': 141, 'lambda_min': 6.23647551405631e-11, 'lambda_2': 4.967646493914646e-06, 'minimizer_prime_saturation': -0.249944, 'G_top_eig': 1.081264}
+0.7 odd 0.25 {'T': 87.603, 'beta': np.float64(0.00995), 'const': 2.624981, 'c': 1.674005, 'B': 2.941974, 'modes': 113, 'lambda_min': -0.593984, 'lambda_2': -0.356054, 'minimizer_prime_saturation': -0.726936, 'G_top_eig': 1.030514}
+0.7 odd 0.5 {'T': 63.805, 'beta': np.float64(0.009951), 'const': 2.307989, 'c': 1.674005, 'B': 2.941974, 'modes': 93, 'lambda_min': -1.196566, 'lambda_2': -0.719464, 'minimizer_prime_saturation': -0.749063, 'G_top_eig': 0.979032}
+0.7 odd 0.75 {'T': 46.472, 'beta': np.float64(0.009951), 'const': 1.990997, 'c': 1.674005, 'B': 2.941974, 'modes': 79, 'lambda_min': -1.803743, 'lambda_2': -1.088627, 'minimizer_prime_saturation': -0.76653, 'G_top_eig': 0.948613}
+0.7 odd 1.0 {'T': 33.848, 'beta': np.float64(0.009951), 'const': 1.674005, 'c': 1.674005, 'B': 2.941974, 'modes': 68, 'lambda_min': -2.413627, 'lambda_2': -1.466698, 'minimizer_prime_saturation': -0.780019, 'G_top_eig': 0.926101}
+0.8 even 0.0 {'T': 120.278, 'beta': np.float64(0.00995), 'const': 2.941974, 'c': 1.674005, 'B': 2.941974, 'modes': 155, 'lambda_min': -6.518442526783483e-08, 'lambda_2': -1.9012968325895957e-14, 'minimizer_prime_saturation': 0.628911, 'G_top_eig': 1.219138}
+0.8 even 0.25 {'T': 87.603, 'beta': np.float64(0.00995), 'const': 2.624981, 'c': 1.674005, 'B': 2.941974, 'modes': 124, 'lambda_min': -0.503947, 'lambda_2': -0.339179, 'minimizer_prime_saturation': -0.353765, 'G_top_eig': 1.219138}
+0.8 even 0.5 {'T': 63.805, 'beta': np.float64(0.009951), 'const': 2.307989, 'c': 1.674005, 'B': 2.941974, 'modes': 101, 'lambda_min': -1.013265, 'lambda_2': -0.683148, 'minimizer_prime_saturation': -0.373716, 'G_top_eig': 1.219138}
+0.8 even 0.75 {'T': 46.472, 'beta': np.float64(0.009951), 'const': 1.990997, 'c': 1.674005, 'B': 2.941974, 'modes': 84, 'lambda_min': -1.527212, 'lambda_2': -1.033431, 'minimizer_prime_saturation': -0.393714, 'G_top_eig': 1.219138}
+0.8 even 1.0 {'T': 33.848, 'beta': np.float64(0.009951), 'const': 1.674005, 'c': 1.674005, 'B': 2.941974, 'modes': 72, 'lambda_min': -2.045131, 'lambda_2': -1.39452, 'minimizer_prime_saturation': -0.413022, 'G_top_eig': 1.219138}
+0.8 odd 0.0 {'T': 120.278, 'beta': np.float64(0.00995), 'const': 2.941974, 'c': 1.674005, 'B': 2.941974, 'modes': 155, 'lambda_min': -0.001961, 'lambda_2': 3.2600457374555005e-15, 'minimizer_prime_saturation': 0.009838, 'G_top_eig': 1.219138}
+0.8 odd 0.25 {'T': 87.603, 'beta': np.float64(0.00995), 'const': 2.624981, 'c': 1.674005, 'B': 2.941974, 'modes': 124, 'lambda_min': -0.646713, 'lambda_2': -0.395474, 'minimizer_prime_saturation': -0.932949, 'G_top_eig': 1.219138}
+0.8 odd 0.5 {'T': 63.805, 'beta': np.float64(0.009951), 'const': 2.307989, 'c': 1.674005, 'B': 2.941974, 'modes': 101, 'lambda_min': -1.299011, 'lambda_2': -0.7967, 'minimizer_prime_saturation': -0.941483, 'G_top_eig': 1.219138}
+0.8 odd 0.75 {'T': 46.472, 'beta': np.float64(0.009951), 'const': 1.990997, 'c': 1.674005, 'B': 2.941974, 'modes': 84, 'lambda_min': -1.952573, 'lambda_2': -1.199947, 'minimizer_prime_saturation': -0.945511, 'G_top_eig': 1.219138}
+0.8 odd 1.0 {'T': 33.848, 'beta': np.float64(0.009951), 'const': 1.674005, 'c': 1.674005, 'B': 2.941974, 'modes': 72, 'lambda_min': -2.605793, 'lambda_2': -1.603771, 'minimizer_prime_saturation': -0.948209, 'G_top_eig': 1.219135}
+1.0 even 1.0 {'T': 145.05, 'beta': np.float64(0.00995), 'const': 3.129252, 'c': 3.129252, 'B': 5.852468, 'modes': 214, 'lambda_min': -3.714412, 'lambda_2': -3.054325, 'minimizer_prime_saturation': -0.613652, 'G_top_eig': 2.062815}
+1.0 odd 1.0 {'T': 145.05, 'beta': np.float64(0.00995), 'const': 3.129252, 'c': 3.129252, 'B': 5.852468, 'modes': 214, 'lambda_min': -4.454246, 'lambda_2': -3.288807, 'minimizer_prime_saturation': -1.346605, 'G_top_eig': 2.07792}
+combo [0, 0, 0] {'T': 120.28, 'lambda_min': 1.0855736149785835e-13, 'const': 2.94197352522362}
+combo [1, 0, 0] {'T': 90.26, 'lambda_min': -1.1524722449154672, 'const': 2.6548625623150186}
+combo [0, 1, 0] {'T': 85.05, 'lambda_min': -0.34657359028011053, 'const': 2.595399934943648}
+combo [1, 1, 0] {'T': 63.82, 'lambda_min': -1.494776004751566, 'const': 2.3082889720350463}
+combo [0, 0, 1] {'T': 63.79, 'lambda_min': -0.7565052920073373, 'const': 2.3076894246260564}
+combo [1, 0, 1] {'T': 47.87, 'lambda_min': -1.585548672123403, 'const': 2.020578461717455}
+combo [0, 1, 1] {'T': 45.1, 'lambda_min': -1.0927605548321275, 'const': 1.961115834346084}
+combo [1, 1, 1] {'T': 33.85, 'lambda_min': -1.9263761061413165, 'const': 1.6740048714374822}

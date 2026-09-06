@@ -10,6 +10,7 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 2. [Latest independent implementation audit: Opus D7](../experiments/weil_hidden_modes/OPUS-ROUND-D7-RESULTS.md) · [Codex scope/readout note](D7-READOUT.md)
 3. [Codex gear / prime-coordinate / ternary toy results](../experiments/prime_gears_codex/RESULTS.md)
 4. [Completed round's directive: Opus D7 independent audit](NEXT-ROUND-D7.md)
+5. [Fable D8: can confinement limit the arithmetic contribution? — lemma proved, combination obstructed](../experiments/fable_d8_confinement/REPORT.md)
 
 **Status:** Opus D7 reports a separate derivation and implementation supporting Fable's compact-window positivity at L=0.7, both parity sectors. The two implementations share a machine and Arb build. Codex has reviewed the report and selected outputs, not independently replayed the full certificate; its readout note corrects overstated sandwich precision in D7. Analytic proof review and cross-stack validation remain outstanding. No RH proof, new all-window positivity argument, physical hologram result, or novelty claim has been established. GHP's c=0.7 central charge and the chosen L=0.7 cutoff are different quantities with no established bridge.
 
@@ -25,6 +26,7 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 | D5 odd sector / unitary dilation | [D5 results](../experiments/weil_hidden_modes/FABLE-ROUND-D5-RESULTS.md) | [Predictions](../experiments/weil_hidden_modes/FABLE-PREDICTIONS-D5.md) |
 | D6 analytic and endpoint corrections | [D6 results](../experiments/weil_hidden_modes/FABLE-ROUND-D6-RESULTS.md) | [Predictions](../experiments/weil_hidden_modes/FABLE-PREDICTIONS-D6.md) |
 | D7 independent reconstruction and checker attacks | [Opus D7 results](../experiments/weil_hidden_modes/OPUS-ROUND-D7-RESULTS.md), [Codex readout](D7-READOUT.md) | [Predictions](../experiments/weil_hidden_modes/OPUS-PREDICTIONS-D7.md), [independent implementation](../experiments/weil_hidden_modes/opus_d7_rebuild.py) |
+| D8 confinement lemma (truncated translations) and its combination with the archimedean term | [Fable D8 report](../experiments/fable_d8_confinement/REPORT.md) | [Predictions](../experiments/fable_d8_confinement/PREDICTIONS.md), [code and outputs](../experiments/fable_d8_confinement/) |
 
 Read chronologically when reconstructing a claim: earlier claims were corrected or withdrawn, not deleted. D6 supersedes D5's upward-rounded odd constant and false pointwise complex-function identity.
 
