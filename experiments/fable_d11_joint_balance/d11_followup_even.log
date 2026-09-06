@@ -1,0 +1,7 @@
+even doubled precision m= 32 CERTIFIED sigma>0 [2.1677871544523715172e-13 +/- 1.80e-33] [2.1677872363069089844e-13 +/- 1.24e-33]
+N=40 replay (principal block of my H) m=2 UNVERIFIED sigma in [ [-441388.72524174201261 +/- 1.90e-15] , [0.0070488844303184108168 +/- 7.41e-24] ] width [441388.73 +/- 2.30e-3] |r| [0.0738744096151 +/- 2.56e-14]
+N=40 replay (principal block of my H) m=4 UNVERIFIED sigma in [ [-39245.699859750775598 +/- 2.81e-16] , [0.0010880522203999273151 +/- 1.67e-23] ] width [39245.701 +/- 5.23e-5] |r| [0.0220282221225 +/- 2.74e-14]
+N=40 replay (principal block of my H) m=8 UNVERIFIED sigma in [ [-758.60231454694410203 +/- 2.43e-18] , [0.00013482227454916118295 +/- 6.83e-25] ] width [758.60245 +/- 6.33e-7] |r| [0.00306260172122 +/- 3.70e-15]
+N=40 replay (principal block of my H) m=16 UNVERIFIED sigma in [ [-59.019375265462362362 +/- 1.91e-19] , [0.00010610162221932033767 +/- 9.95e-25] ] width [59.019481 +/- 3.68e-7] |r| [0.000854242346300 +/- 1.80e-16]
+N=40 replay (principal block of my H) m=32 CERTIFIED sigma>0 sigma in [ [2.1849878653615438631e-13 +/- 3.89e-33] , [2.1849878659237279719e-13 +/- 3.19e-33] ] width [7.4899890e-24 +/- 2.73e-32] |r| [3.04315443536e-16 +/- 3.78e-28]
+even N=40 first verdicts {'2': 'UNVERIFIED', '4': 'UNVERIFIED', '8': 'UNVERIFIED', '16': 'UNVERIFIED', '32': 'CERTIFIED sigma>0'}

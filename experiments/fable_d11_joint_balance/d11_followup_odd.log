@@ -1,0 +1,7 @@
+odd doubled precision m= 32 CERTIFIED sigma>0 [2.5319788666142611293e-10 +/- 4.83e-30] [2.5319788666161128458e-10 +/- 4.94e-30]
+N=40 replay (principal block of my H) m=2 UNVERIFIED sigma in [ [-3319.5742962280614008 +/- 2.49e-17] , [0.013323792945480645421 +/- 1.91e-22] ] width [3319.5876 +/- 2.01e-5] |r| [0.0756790277658 +/- 3.49e-14]
+N=40 replay (principal block of my H) m=4 UNVERIFIED sigma in [ [-573.90543963937451997 +/- 2.08e-18] , [0.0092329022294021046665 +/- 1.91e-24] ] width [573.91467 +/- 2.55e-6] |r| [0.0314671304079 +/- 4.17e-14]
+N=40 replay (principal block of my H) m=8 UNVERIFIED sigma in [ [-201.46572211760933876 +/- 1.38e-18] , [0.0043913108207965705236 +/- 5.24e-24] ] width [201.47011 +/- 3.43e-6] |r| [0.0186439870012 +/- 2.63e-14]
+N=40 replay (principal block of my H) m=16 UNVERIFIED sigma in [ [-22.294303960780702009 +/- 4.83e-19] , [0.00025905427088794405427 +/- 1.50e-24] ] width [22.294563 +/- 1.51e-8] |r| [0.00620201708364 +/- 4.60e-15]
+N=40 replay (principal block of my H) m=32 CERTIFIED sigma>0 sigma in [ [2.5321967871240569564e-10 +/- 4.11e-30] , [2.5321967871259086508e-10 +/- 4.87e-30] ] width [2.9418496e-37 +/- 1.73e-45] |r| [7.12432479010e-22 +/- 3.94e-34]
+odd N=40 first verdicts {'2': 'UNVERIFIED', '4': 'UNVERIFIED', '8': 'UNVERIFIED', '16': 'UNVERIFIED', '32': 'CERTIFIED sigma>0'}
