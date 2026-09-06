@@ -1,0 +1,99 @@
+{
+ "C1 missing eps_D": {
+  "want": "NO_VERDICT",
+  "got": "NO_VERDICT",
+  "pass": true,
+  "detail": "NO_VERDICT: missing tail/coupling/pole/beta evidence"
+ },
+ "C2 coupling 1e-5 vs lambda0 1e-13": {
+  "want": "REJECT",
+  "got": "REJECT",
+  "pass": true,
+  "detail": "REJECT: mu = [-1.9990000e-10 +/- 8.02e-20]"
+ },
+ "C2b positive control coupling 1e-9": {
+  "want": "ACCEPT",
+  "got": "ACCEPT",
+  "pass": true,
+  "detail": "ACCEPT: mu = [9.9998000e-14 +/- 3e-25]"
+ },
+ "C3 lambda0 not certified": {
+  "want": "NO_VERDICT",
+  "got": "NO_VERDICT",
+  "pass": true,
+  "detail": "NO_VERDICT: lambda0 not interval-certified"
+ },
+ "C4 eps_D swamps beta": {
+  "want": "REJECT",
+  "got": "REJECT",
+  "pass": true,
+  "detail": "REJECT: discarded block not certified positive"
+ },
+ "C5 even advertised 1.031e-13": {
+  "want": "ACCEPT",
+  "got": "ACCEPT",
+  "pass": true,
+  "detail": "endpoint [1.03101781648892e-13 +/- 2.15e-28]"
+ },
+ "C5 even advertised 1.032e-13": {
+  "want": "REJECT",
+  "got": "REJECT",
+  "pass": true,
+  "detail": "endpoint [1.03101781648892e-13 +/- 2.15e-28]"
+ },
+ "C5 even advertised 1.03e-13": {
+  "want": "ACCEPT",
+  "got": "ACCEPT",
+  "pass": true,
+  "detail": "endpoint [1.03101781648892e-13 +/- 2.15e-28]"
+ },
+ "C5 even advertised 1.0311e-13": {
+  "want": "REJECT",
+  "got": "REJECT",
+  "pass": true,
+  "detail": "endpoint [1.03101781648892e-13 +/- 2.15e-28]"
+ },
+ "C5 odd advertised 5.859e-11": {
+  "want": "ACCEPT",
+  "got": "ACCEPT",
+  "pass": true,
+  "detail": "endpoint [5.85907085398903e-11 +/- 3.67e-26]"
+ },
+ "C5 odd advertised 5.86e-11": {
+  "want": "REJECT",
+  "got": "REJECT",
+  "pass": true,
+  "detail": "endpoint [5.85907085398903e-11 +/- 3.67e-26]"
+ },
+ "C5 odd advertised 5.85e-11": {
+  "want": "ACCEPT",
+  "got": "ACCEPT",
+  "pass": true,
+  "detail": "endpoint [5.85907085398903e-11 +/- 3.67e-26]"
+ },
+ "C5 odd advertised 5.8591e-11": {
+  "want": "REJECT",
+  "got": "REJECT",
+  "pass": true,
+  "detail": "endpoint [5.85907085398903e-11 +/- 3.67e-26]"
+ },
+ "C6 orthogonal V recovers 1e-13": {
+  "want": "OK",
+  "got": "OK",
+  "pass": true,
+  "detail": "[1.0000000e-13 +/- 3e-25]"
+ },
+ "C7 singular V refused": {
+  "want": "REFUSED",
+  "got": "REFUSED",
+  "pass": true,
+  "detail": "REFUSED: V not certified invertible (Gershgorin lower bound on V^T V is [-1.34707e-40 +/- 1.31e-46], must be > 0)"
+ },
+ "C8 nonorthogonal invertible V: correct norm conversion": {
+  "want": "VALID",
+  "got": "VALID",
+  "pass": true,
+  "detail": "correct bound [1.0000000e-13 +/- 3e-25]; naive (no /lambda_max(V^TV)) would claim [1.0000000e-9 +/- 3e-21], which is ABOVE the true 1e-13 -> the naive conversion is demonstrably unsound"
+ },
+ "all_pass": true
+}
