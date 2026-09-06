@@ -1,0 +1,47 @@
+{
+ "run": 3,
+ "NE": 80,
+ "ncut": 160,
+ "prec_bits": 192,
+ "GL_nodes_per_unit_panel": 48,
+ "rho": 2,
+ "cover_boxes": 6,
+ "beta_star": "[0.0076382575953959615868 +/- 3.18e-24]",
+ "sup_psi_minus_beta": "[8.32179520204468199932366371202979785431277284300298478050 +/- 3.34e-57]",
+ "lambda0_certified": null,
+ "ldl_statuses": {
+  "1e-12": "UNVERIFIED",
+  "1e-13": "UNVERIFIED",
+  "1e-14": "UNVERIFIED",
+  "1e-15": "UNVERIFIED",
+  "1e-16": "UNVERIFIED",
+  "1e-17": "UNVERIFIED",
+  "1e-18": "UNVERIFIED"
+ },
+ "ldl_at_0_positive": null,
+ "eps_D": "[3.05321e-38 +/- 4.51e-44]",
+ "eps_C": "[3.88501e-16 +/- 4.69e-22]",
+ "eps_p": "[2.41824e-406 +/- 1.26e-412]",
+ "norm_pN": "[1.20771838681 +/- 2.43e-13]",
+ "max_entry_radius": "257668.956542968750000000000000000000000000000000000000000",
+ "max_quadrature_error_bound": "[128834.477859949660311008994478612873631182844519576791145 +/- 3.50e-52]",
+ "verdict": "NO_VERDICT: lambda0 not interval-certified",
+ "cross_check_vs_acb_integral": {
+  "0,0": {
+   "new": "[-2.8719459474324615205 +/- 5.56e-20]",
+   "old": "[-2.8719459474324615205 +/- 4.41e-20]",
+   "overlap": true
+  },
+  "0,2": {
+   "new": "[0.066388923568830598971 +/- 2.57e-22]",
+   "old": "[0.066388923568830598971 +/- 2.79e-22]",
+   "overlap": true
+  },
+  "20,40": {
+   "new": "[0.05574101729476333842 +/- 4.97e-21]",
+   "old": "[0.055741017294763338419 +/- 2.71e-22]",
+   "overlap": true
+  }
+ },
+ "runtime_s": 30.20535182952881
+}
