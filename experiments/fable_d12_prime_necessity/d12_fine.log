@@ -1,0 +1,21 @@
+odd L=0.347 prime-free +6.644e-02 full +6.277e-02
+odd L=0.350 prime-free +5.751e-02 full +5.713e-02
+odd L=0.353 prime-free +4.865e-02 full +5.206e-02
+odd L=0.356 prime-free +3.984e-02 full +4.751e-02
+odd L=0.359 prime-free +3.111e-02 full +4.343e-02
+odd L=0.362 prime-free +2.243e-02 full +3.976e-02
+odd L=0.365 prime-free +1.381e-02 full +3.644e-02
+odd L=0.368 prime-free +5.258e-03 full +3.342e-02
+odd L=0.371 prime-free -3.240e-03 full +3.066e-02
+odd L=0.374 prime-free -1.168e-02 full +2.813e-02
+even L=0.400 prime-free +5.408e-04 full +1.479e-04
+even L=0.403 prime-free +3.747e-04 full +1.299e-04
+even L=0.406 prime-free +1.765e-04 full +1.139e-04
+even L=0.409 prime-free -5.645e-05 full +9.971e-05
+even L=0.412 prime-free -3.269e-04 full +8.704e-05
+even L=0.415 prime-free -6.374e-04 full +7.577e-05
+even L=0.418 prime-free -9.904e-04 full +6.578e-05
+even L=0.421 prime-free -1.388e-03 full +5.693e-05
+even L=0.424 prime-free -1.834e-03 full +4.913e-05
+even: log lambda_min(full) ~ 17.09 -64.13 L  (i.e. factor e^-6.41 per 0.1 in L)
+odd: log lambda_min(full) ~ 18.91 -57.36 L  (i.e. factor e^-5.74 per 0.1 in L)
