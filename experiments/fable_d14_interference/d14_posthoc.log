@@ -1,4 +1,4 @@
-  File "<stdin>", line 25
-    out[f"{name} {lab}"]=dict(mean_cos_tlog2=c2,frac_near_antinode_4.53=near); print(f"POST-HOC {name} {lab:10s} <cos(t log2)> = {c2:+.3f}   frac within 1.5 of 4.53: {near:.3f}")
-                                                                    ^
-SyntaxError: positional argument follows keyword argument
+POST-HOC even perturbed  <cos(t log2)> = -0.136   frac within 1.5 of 4.53: 0.404
+POST-HOC even authentic  <cos(t log2)> = +0.022   frac within 1.5 of 4.53: 0.317
+POST-HOC odd perturbed  <cos(t log2)> = -0.480   frac within 1.5 of 4.53: 0.587
+POST-HOC odd authentic  <cos(t log2)> = -0.219   frac within 1.5 of 4.53: 0.448

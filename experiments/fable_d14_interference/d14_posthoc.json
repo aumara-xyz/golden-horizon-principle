@@ -1,0 +1,18 @@
+{
+ "even perturbed": {
+  "mean_cos_tlog2": -0.13634844259204645,
+  "frac_near_antinode": 0.4035448913046271
+ },
+ "even authentic": {
+  "mean_cos_tlog2": 0.02198058651848555,
+  "frac_near_antinode": 0.3169016256722702
+ },
+ "odd perturbed": {
+  "mean_cos_tlog2": -0.4801269755511372,
+  "frac_near_antinode": 0.5874623575609204
+ },
+ "odd authentic": {
+  "mean_cos_tlog2": -0.21894405278790025,
+  "frac_near_antinode": 0.44753959351401773
+ }
+}
