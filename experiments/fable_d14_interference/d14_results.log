@@ -1,0 +1,12 @@
+Test A: L=0.60, theta=0.9 on n=2. t1=9.065 t2=18.129
+  even perturbed_minimizer  lam=-9.12e-03 peak t=  5.11 frac near 9.07: 0.135 near 18.1: 0.002
+  even authentic_minimizer  lam=+7.58e-10 peak t=  0.01 frac near 9.07: 0.035 near 18.1: 0.000
+  even random               lam=+7.58e-10 peak t=  0.01 frac near 9.07: 0.022 near 18.1: 0.022
+  odd perturbed_minimizer  lam=-4.56e-02 peak t=  4.07 frac near 9.07: 0.022 near 18.1: 0.009
+  odd authentic_minimizer  lam=+2.79e-07 peak t=  5.33 frac near 9.07: 0.193 near 18.1: 0.000
+  odd random               lam=+2.79e-07 peak t= 25.01 frac near 9.07: 0.041 near 18.1: 0.099
+Test B: intrinsic dimension of the full-form minimizer vs certificate modes
+  L=0.4: even d=17 odd d=16  certificate modes N=68 (T=60)
+  L=0.5: even d=17 odd d=19  certificate modes N=76 (T=60)
+  L=0.6: even d=25 odd d=27  certificate modes N=95 (T=77.4)
+  L=0.7: even d=13 odd d=47  certificate modes N=170 (T=154.8)

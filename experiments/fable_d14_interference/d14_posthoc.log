@@ -1,0 +1,4 @@
+  File "<stdin>", line 25
+    out[f"{name} {lab}"]=dict(mean_cos_tlog2=c2,frac_near_antinode_4.53=near); print(f"POST-HOC {name} {lab:10s} <cos(t log2)> = {c2:+.3f}   frac within 1.5 of 4.53: {near:.3f}")
+                                                                    ^
+SyntaxError: positional argument follows keyword argument
