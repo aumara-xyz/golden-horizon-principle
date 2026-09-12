@@ -1,0 +1,11 @@
+SLACK chi_-3 L=0.9 prime 2 x1.0: even +4.78e-08 odd +2.38e-05 (T=60)
+SLACK chi_-3 L=0.9 prime 2 x0.999: even -3.41e-04 odd +4.52e-04 (T=60)
+SLACK chi_-3 L=0.9 prime 2 x0.0: even -5.92e-01 odd +2.37e-01 (T=60)
+SLACK chi_-4 L=1.0 prime 3 x1.0: even +4.98e-07 odd +2.61e-04 (T=171)
+SLACK chi_-4 L=1.0 prime 3 x0.999: even -1.50e-04 odd +8.84e-04 (T=171)
+SLACK chi_-4 L=1.0 prime 3 x0.0: even -5.27e-01 odd +6.04e-01 (T=60)
+SLACK chi_5 L=1.0 prime 2 x1.0: even +1.75e-06 odd +5.01e-04 (T=171)
+SLACK chi_5 L=1.0 prime 2 x0.999: even -4.21e-04 odd +7.78e-04 (T=171)
+SLACK chi_5 L=1.0 prime 2 x0.0: even -6.50e-01 odd +1.86e-01 (T=60)
+REMOVE2 chi_-3 L=0.5: even +2.02e-02->-1.49e-01 odd +3.82e-01->+8.18e-01
+REMOVE2 chi_5 L=0.5: even +8.74e-02->-1.14e-01 odd +8.84e-01->+1.32e+00
