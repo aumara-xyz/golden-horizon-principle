@@ -61,7 +61,7 @@ def exact_score(coeffs_dec,degrees,parity,keep,T=128,K=64,prec=320):
                 excess_W_minus_R=excess.str(12),excess_nonneg_certain=bool(excess>=0) or bool(excess.upper()>=0 and not excess<0),
                 arch_full=A.str(15),pole=pol.str(15),prime_kept=prime_full.str(15),shift_corr={str((2,3,4)[i]):shifts[i].str(12) for i in range(3)},
                 tail_upper=tail.str(8),deriv_order=m,norm=nrm.str(12))
-t0=time.time(); out=dict(base_commit='07913fa',scorer_sha=open('PROVENANCE.txt').read().split()[0],numpy=np.__version__,cases={})
+t0=time.time(); out=dict(trial=2,base_commit='07913fa',scorer_sha=open('PROVENANCE.txt').read().split()[0],numpy=np.__version__,cases={})
 # ---- controls first
 print('controls: D9 scorer controls()',flush=True); ns9['sys'].argv=['x','controls']; ns9['controls']()
 # D9 replay control: rescore D9's frozen even wave with the copied scorer and compare to saved W
@@ -74,9 +74,13 @@ cases={'delete_4':[0,1],'delete_2':[1,2],'prime_free':[]}
 for cname,keep in cases.items():
     for parity,pn in ((0,'even'),(1,'odd')):
         for T in (160,240):
-            ns,c,lam_red,beta=proposal(parity,T,keep); degs=[int(n) for n in ns]; dec=[repr(float(v)) for v in c]
+            ns,c,lam_red,beta=proposal(parity,T,keep); c=np.where(np.abs(c)<1e-13,0.0,c); keepidx=[i for i in range(len(c)) if c[i]!=0]; degs=[int(ns[i]) for i in keepidx]; dec=[repr(float(c[i])) for i in keepidx]
             key=f"{cname} {pn} T{T}"; print(f"{key}: fixed-ruler reduced lambda_min = {lam_red:+.3e} (beta={beta:.4f}); scoring exact W ...",flush=True)
-            sc=exact_score(dec,degs,parity,keep); sc.update(proposal_T=T,fixed_ruler_reduced_lambda_min=lam_red,frozen_coefficients=dec,degrees=degs)
+            sc=exact_score(dec,degs,parity,keep); sc.update(proposal_T=T,fixed_ruler_reduced_lambda_min=lam_red,frozen_coefficients=dec,degrees=degs,modes_kept=len(degs))
+            if cname=='delete_4':   # operator route, CONDITIONAL on the D7 certificate: W_del4(f)/||f||^2 >= m_par + w4*I4(f)/||f||^2
+                m_par=arb('1.031e-13') if parity==0 else arb('5.859e-11'); I4=arb(sc['shift_corr']['4']); bound=m_par+PP[2][1]*I4
+                sc['operator_route_conditional_D7']=dict(I4=I4.str(15),lower_bound_W_del4=bound.str(15),positive=bool(bound>0))
+                if bound>0 and sc['W_sign']=='UNVERIFIED': sc['W_sign']='POSITIVE (conditional on D7 operator certificate)'
             cls='(a) certified W-negative witness' if sc['W_sign']=='NEGATIVE' else ('(b) R-negative but W '+sc['W_sign'] if (lam_red<0 or sc['R_sign']=='NEGATIVE') else '(b*) R positive, W '+sc['W_sign'])
             sc['class']=cls; out['cases'][key]=sc
             print(f"   W_mut = {sc['W']}  [{sc['W_sign']}]  R_128 = {sc['R_T128']} [{sc['R_sign']}]  excess>=0: {sc['excess_nonneg_certain']}  corr4 {sc['shift_corr']['4']}  -> {cls}",flush=True)

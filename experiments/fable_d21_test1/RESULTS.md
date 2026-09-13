@@ -1,0 +1,35 @@
+# D21 — Astra's Test 1 executed: the deletion failures are in the lower approximation, not (yet) in W (Fable, 2026-09-13)
+Predictions: PREDICTIONS.md (trial 1 and trial 2 sections, each committed before its run). Scorer: provenance-recorded copy of D9's score.py (PROVENANCE.txt has both hashes), functions only, with `compact2` extended to accumulate the compact prime integral so the fixed-ruler reduced score R_T can be evaluated on the same frozen wave. Interpreter: fresh venv, python-flint 0.6.0, numpy 2.0.2 (the old /private/tmp venv was wiped; recorded). Controls: D9's 11 scorer controls PASS; D9 frozen even wave rescored → overlaps D9's saved W interval (PASS). Trial 1 kept (d21_results_trial1.*): 160-mode double-precision waves carry ~1e-17 noise in degrees to 319 that the 12th-derivative tail bounds amplify to useless W enclosures (radii 1e10–1e20); trial 2 freezes the same eigenvectors with |c| < 1e-13 zeroed (74–134 modes) and adds the operator route for delete-4. All scores normalized by the enclosed norm; W − R_T ≥ 0 certain on every wave (identity check PASS, 24/24).
+
+## Results (ζ, L = 0.7, frozen waves from the fixed-ruler reduced form at T = 160 and 240; exact scores at compact cutoff 128 with complete tail)
+| case | parity, wave | fixed-ruler reduced score R | exact W_mut on the same wave | class |
+|---|---|---|---|---|
+| delete n = 4 | even, T160 | +1.73e-13 (POSITIVE) | UNVERIFIED (134 modes, noise) | (b*) R positive |
+| delete n = 4 | even, T240 | +4.45e-13 (POSITIVE) | POSITIVE, W ∈ (0, 3e-8]; operator route: 1.031e-13 + w₄I₄ = +6.8e-14 > 0 (I₄ = −5.0e-14) | (b*) R positive, W positive |
+| delete n = 4 | odd, T160 | −3.13e-5 (NEGATIVE) | **POSITIVE**, W ∈ (0, 3.1e-3] | (b) R-negative, W positive |
+| delete n = 4 | odd, T240 | −7.07e-6 (NEGATIVE) | **POSITIVE**, W ∈ (0, 7.9e-4] | (b) R-negative, W positive |
+| delete n = 2 | even, T160 / T240 | −0.460 / −0.458 | NEGATIVE / NEGATIVE ([−0.4 ± 0.06] at T240) | (a) certified W-negative |
+| delete n = 2 | odd, T160 / T240 | −0.489 / −0.489 | NEGATIVE, −0.489 ± 6e-4 | (a) certified W-negative |
+| prime-free | even, T160 / T240 | −0.255 / −0.253 | NEGATIVE ([−0.2 ± 0.056] at T240) | (a) certified W-negative |
+| prime-free | odd, T160 / T240 | −0.742 / −0.740 | NEGATIVE, −0.7 ± 0.05 | (a) certified W-negative |
+Survivor mutation (K = 80 nodes, 400 bits, same vectors): all eight class-(a) signs unchanged.
+
+## What this changes
+1. The old D16/D17 "−8.4e-13 after deleting 4 (even)" was a moving-ruler artifact: with β, T fixed the reduced score is +1.7e-13 / +4.5e-13, and the exact W on the T240 wave is certified positive by two routes. Astra's prediction HELD. D13's +3.1e-13 (fixed β) was the right protocol.
+2. **Deleting n = 4 in the odd sector does not produce a negative W on the waves that make the reduced form negative.** R is −3e-5 and −7e-6 on those waves; their exact W is positive, because the discarded tail ∫_{|t|>T}(Ψ − β)|F|² is 1e-3 to 3e-3 on them: the mutated minimizers are high-frequency waves that the envelope undervalues. My prediction (2) FAILED. Consequence: D13's "odd needs {2,3,4} at L = 0.7", D16's "every visible place is load-bearing within ΔL ≈ 0.03 (32/32)" and D17's "prime powers alone are load-bearing (4/4)" are statements about the reduced form R_{L,T}; for the full W they are established only where the deleted term is large (delete 2, prime-free: class a here), and for the marginal newly-entered places they are UNVERIFIED — with the ζ/odd/n = 4 case now known to be POSITIVE on the two tested waves. Class (b) never proves positivity of the mutated W on all waves; it removes the evidence for negativity.
+3. What survives as full-W fact at L = 0.7: prime 2 is load-bearing in both parities (class a, four waves, survivor-checked); the prime-free form is negative in both parities (class a, agreeing with D9's frozen witness). Everything about places that have just entered the room is downgraded to reduced-form-only.
+
+## Prediction ledger
+| prediction | outcome |
+|---|---|
+| Astra: even delete-4 gives no certified negative W witness | HELD |
+| Astra: prime-free odd witness survives | HELD (both parities) |
+| Fable (1): delete-4 even reduced score positive with fixed ruler; W positive | HELD (W certified on the T240 wave; T160 wave UNVERIFIED from noise) |
+| Fable (2): delete-4 odd W certified NEGATIVE | **FAILED** — W positive on both waves |
+| Fable (3): delete-2 and prime-free class (a) both parities | HELD |
+| Fable (4): W − R_T ≥ 0 on every wave; tail < 1e-6 relative | first part HELD (24/24); second part FAILED — tails are 1e-3–0.18 on the mutated minimizers (that is exactly why R misleads) |
+| Fable (5): D9 replay overlaps | HELD |
+| trial-1 expectation that 160-mode waves score cleanly | FAILED (noise amplification); repaired in trial 2, kept |
+
+## Corrections propagated
+Dated correction notes appended (not edited in place) to D13, D16 and D17 RESULTS.md: their deletion results are reduced-form statements; full-W status per this round.
