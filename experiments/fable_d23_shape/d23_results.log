@@ -1,0 +1,14 @@
+A. profile models on certified lower bounds
+  even M1 linear  : params +18.604, 66.810 | measured slopes [53.1 64.8 83.2] model [66.8 66.8 66.8] | rel RMS slope err 0.188 | max |log resid| 0.856
+  even M2 exp(2L) : params +15.676, 10.981 | measured slopes [53.1 64.8 83.2] model [54.1 66.1 80.7] | rel RMS slope err 0.024 | max |log resid| 0.154
+  odd  M1 linear  : params +20.573, 60.366 | measured slopes [44.7 58.4 78.6] model [60.4 60.4 60.4] | rel RMS slope err 0.244 | max |log resid| 0.947
+  odd  M2 exp(2L) : params +17.995, 9.943 | measured slopes [44.7 58.4 78.6] model [49.  59.8 73.1] | rel RMS slope err 0.070 | max |log resid| 0.318
+B. prolate overlap of the certified minimizers
+  even L=0.4: max overlap with top prolate 0.99984 at Omega*=13.1 (c=Omega*L=5.24); overlap with 2nd prolate there 0.0011
+  odd  L=0.4: max overlap with top prolate 0.99707 at Omega*=11.8 (c=Omega*L=4.72); overlap with 2nd prolate there 0.0076
+  even L=0.5: max overlap with top prolate 0.99990 at Omega*=14.6 (c=Omega*L=7.30); overlap with 2nd prolate there 0.0004
+  odd  L=0.5: max overlap with top prolate 0.99897 at Omega*=13.3 (c=Omega*L=6.65); overlap with 2nd prolate there 0.0079
+  even L=0.6: max overlap with top prolate 0.99992 at Omega*=16.1 (c=Omega*L=9.66); overlap with 2nd prolate there 0.0006
+  odd  L=0.6: max overlap with top prolate 0.99922 at Omega*=14.9 (c=Omega*L=8.94); overlap with 2nd prolate there 0.0035
+  even L=0.7: max overlap with top prolate 0.99992 at Omega*=17.7 (c=Omega*L=12.39); overlap with 2nd prolate there 0.0007
+  odd  L=0.7: max overlap with top prolate 0.99930 at Omega*=16.5 (c=Omega*L=11.55); overlap with 2nd prolate there 0.0022
