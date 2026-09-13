@@ -1,0 +1,44 @@
+== d22_cand2_even_L0.4.json
+even 0.4 cutoff 128 W [+/- 6.81e-3] tail [0.00664579 +/- 1.49e-9] rel width [45.9554 +/- 1.13e-5] accepted False
+even 0.4 cutoff 256 W [+/- 2.08e-3] tail [0.00189880 +/- 2.44e-9] rel width [13.2884 +/- 8.38e-6] accepted False
+even 0.4 cutoff 512 W [+/- 7.15e-4] tail [0.000534037 +/- 1.85e-10] rel width [3.92968 +/- 4.67e-6] accepted False
+SCORE DONE 91 s
+== d22_cand2_odd_L0.4.json
+odd 0.4 cutoff 128 W [+/- 0.128] tail [0.114578 +/- 3.46e-7] rel width [9.31718 +/- 2.35e-6] accepted False
+odd 0.4 cutoff 256 W [+/- 0.0469] tail [0.0327365 +/- 2.73e-8] rel width [2.77816 +/- 4.23e-6] accepted False
+odd 0.4 cutoff 512 W [0.02 +/- 4.81e-3] tail [0.00920713 +/- 2.97e-9] rel width [0.922657 +/- 1.65e-7] accepted False
+SCORE DONE 91 s
+== d22_cand2_even_L0.5.json
+even 0.5 cutoff 128 W [+/- 1.81e-3] tail [0.00180784 +/- 4.12e-10] rel width [2529.33 +/- 4.36e-3] accepted False
+even 0.5 cutoff 256 W [+/- 1.31e-4] tail [0.000129131 +/- 4.00e-10] rel width [180.893 +/- 3.36e-4] accepted False
+even 0.5 cutoff 512 W [+/- 1.01e-5] tail [9.07955e-6 +/- 1.51e-12] rel width [13.0139 +/- 3.73e-5] accepted False
+SCORE DONE 104 s
+== d22_cand2_odd_L0.5.json
+odd 0.5 cutoff 128 W [+/- 0.0146] tail [0.0143963 +/- 5.54e-9] rel width [101.437 +/- 2.00e-4] accepted False
+odd 0.5 cutoff 256 W [+/- 4.30e-3] tail [0.00411323 +/- 1.54e-10] rel width [29.2183 +/- 2.12e-5] accepted False
+odd 0.5 cutoff 512 W [+/- 1.36e-3] tail [0.00115685 +/- 4.02e-9] rel width [8.50736 +/- 1.59e-6] accepted False
+SCORE DONE 102 s
+== d22_cand2_even_L0.6.json
+even 0.6 cutoff 128 W [+/- 1.44e-5] tail [1.43462e-5 +/- 2.33e-11] rel width [13026.0 +/- 0.0128] accepted False
+even 0.6 cutoff 256 W [+/- 1.03e-6] tail [1.02473e-6 +/- 2.33e-13] rel width [930.777 +/- 2.58e-4] accepted False
+even 0.6 cutoff 512 W [+/- 7.39e-8] tail [7.20513e-8 +/- 4.45e-14] rel width [66.0111 +/- 1.71e-5] accepted False
+SCORE DONE 113 s
+== d22_cand2_odd_L0.6.json
+odd 0.6 cutoff 128 W [+/- 1.93e-3] tail [0.00191965 +/- 2.19e-9] rel width [4649.61 +/- 1.19e-3] accepted False
+odd 0.6 cutoff 256 W [+/- 1.38e-4] tail [0.000137118 +/- 3.00e-10] rel width [332.456 +/- 3.80e-4] accepted False
+odd 0.6 cutoff 512 W [+/- 1.03e-5] tail [9.64109e-6 +/- 1.67e-12] rel width [23.9281 +/- 3.77e-5] accepted False
+SCORE DONE 112 s
+== d22_cand2_even_L0.7.json
+even 0.7 cutoff 128 W [+/- 5.69e-7] tail [5.68978e-7 +/- 6.74e-14] rel width [2.12967e+6 +/- 0.526] accepted False
+even 0.7 cutoff 256 W [+/- 1.02e-8] tail [1.01603e-8 +/- 2.03e-14] rel width [38030.6 +/- 0.0192] accepted False
+even 0.7 cutoff 512 W [+/- 1.80e-10] tail [1.78599e-10 +/- 3.79e-16] rel width [670.078 +/- 2.93e-4] accepted False
+SCORE DONE 125 s
+== d22_cand2_odd_L0.7.json
+odd 0.7 cutoff 128 W [+/- 3.87e-5] tail [3.86606e-5 +/- 2.70e-11] rel width [2.43767e+5 +/- 2.77e-3] accepted False
+odd 0.7 cutoff 256 W [+/- 2.77e-6] tail [2.76147e-6 +/- 4.98e-13] rel width [17412.8 +/- 2.03e-3] accepted False
+odd 0.7 cutoff 512 W [+/- 1.13e-7] tail [1.11970e-7 +/- 3.98e-13] rel width [707.740 +/- 1.65e-4] accepted False
+SCORE DONE 131 s
+== control R160<=R240<=W on even L0.5
+Traceback (most recent call last):
+KeyError: 'modes'
+SCORES4 DONE

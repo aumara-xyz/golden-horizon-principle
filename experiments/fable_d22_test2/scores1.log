@@ -1,0 +1,10 @@
+even 0.4 cutoff 128 W [+/- 2.44e-3] tail [0.00230905 +/- 1.99e-9] rel width [15.8103 +/- 2.29e-5] accepted False
+even 0.4 cutoff 256 W [+/- 6.54e-4] tail [0.000464274 +/- 2.42e-10] rel width [3.51065 +/- 3.47e-6] accepted False
+even 0.4 cutoff 512 W [+/- 4.64e-4] tail [0.000220119 +/- 3.81e-10] rel width [2.19666 +/- 2.50e-6] accepted False
+SCORE DONE 227 s
+odd 0.4 cutoff 128 W [+/- 0.154] tail [0.142242 +/- 3.63e-7] rel width [11.3941 +/- 3.04e-5] accepted False
+odd 0.4 cutoff 256 W [+/- 0.0475] tail [0.0324307 +/- 4.68e-8] rel width [2.82485 +/- 1.97e-6] accepted False
+odd 0.4 cutoff 512 W [0.03 +/- 7.67e-3] tail [0.0147633 +/- 3.40e-8] rel width [1.68396 +/- 1.93e-6] accepted False
+SCORE DONE 222 s
+even 0.5 cutoff 128 W [+/- 1.14e-5] tail [1.07330e-5 +/- 1.83e-11] rel width [14.8767 +/- 1.33e-5] accepted False
+even 0.5 cutoff 256 W [+/- 3.23e-6] tail [2.26524e-6 +/- 2.51e-12] rel width [3.50913 +/- 6.26e-7] accepted False
