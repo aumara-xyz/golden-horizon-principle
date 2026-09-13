@@ -6,6 +6,7 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 
 ## Start here
 
+0. [Full report of rounds D1–D23 (2026-09-13)](FULL-REPORT-2026-09-13.md) — single self-contained document with labels, certified table, measured map, failures, open questions
 1. [Current status, the two 0.7s, and your friend's contribution](../experiments/prime_gears_codex/STATUS-AND-CONTRIBUTIONS.md)
 2. [Latest independent implementation audit: Opus D7](../experiments/weil_hidden_modes/OPUS-ROUND-D7-RESULTS.md) · [Codex scope/readout note](D7-READOUT.md)
 3. [Codex gear / prime-coordinate / ternary toy results](../experiments/prime_gears_codex/RESULTS.md)
