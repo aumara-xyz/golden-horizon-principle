@@ -33,3 +33,15 @@ Survivor mutation (K = 80 nodes, 400 bits, same vectors): all eight class-(a) si
 
 ## Corrections propagated
 Dated correction notes appended (not edited in place) to D13, D16 and D17 RESULTS.md: their deletion results are reduced-form statements; full-W status per this round.
+
+## D21.1 — repairs requested by the Codex/Astra review (appended 2026-09-13; frozen trial-2 vectors reused, no reselection; d21_1.py, d21_1_results.json/.log)
+Repairs: (1) crossing-zero rejection — "certainly ≥ 0" now requires the lower endpoint ≥ 0, with planted controls ([−1,1] → not certain; [1,2] → certain; [−2,−1] → NEGATIVE; [±1e-40] → UNRESOLVED) that must pass before scoring; (2) cutoffs separated — every table score is R₁₂₈ / W on a wave SELECTED at T = 160 or 240; the selector minimum is reported as "not a score"; (3) ledger — trial 2 predicted I₄ > 0 for the even delete-4 wave; measured I₄ = −5.0e-14 (NEGATIVE) on the T240 wave: FAILED, kept; the W sign stays positive because w₄|I₄| = 3.5e-14 < 1.031e-13; (4) quadrature bound — the compact prime integral's error now carries the complex-cosine growth allowance Σ|w_n| cosh(u_n b) on the Bernstein ellipse (Mp ≈ 1.2–3.4; resulting error 3.9e-33, immaterial here; the point is that it is now justified rather than covered by unused weight); rigorous lower/upper endpoints exported for W, R₁₂₈, the excess W − R₁₂₈ and I₄, and each accepted sign re-derived by reparsing the exported endpoint strings; survivor rechecks (K = 80, 400 bits, same vectors) run for positive AND negative signs.
+| case, wave | R₁₂₈ | W (route) | excess ≥ 0 certain | survivor K80/400 | endpoint reparse |
+|---|---|---|---|---|---|
+| delete-4 even, T160 wave | POSITIVE | POSITIVE via monotonicity W ≥ R₁₂₈ (direct enclosure useless, noise) | not certain (UNRESOLVED, correctly) | POSITIVE | UNRESOLVED (direct), sign from route |
+| delete-4 even, T240 | POSITIVE | POSITIVE (direct) | yes | POSITIVE | POSITIVE |
+| delete-4 odd, T160 / T240 | NEGATIVE / NEGATIVE | POSITIVE / POSITIVE (direct) | yes / yes | POSITIVE / POSITIVE | POSITIVE / POSITIVE |
+| delete-2 even, T160 / T240 | NEGATIVE | NEGATIVE / NEGATIVE | yes | NEGATIVE | NEGATIVE |
+| delete-2 odd, T160 / T240 | NEGATIVE | NEGATIVE / NEGATIVE | yes | NEGATIVE | NEGATIVE |
+| prime-free even / odd, both waves | NEGATIVE | NEGATIVE (4/4) | yes | NEGATIVE | NEGATIVE |
+Every D21 classification survives the stricter checker. Fixed-wave versus all-wave: every W sign above is a statement about ONE frozen wave. Class (a) signs are genuine negative witnesses for the mutated full form (a single negative wave suffices). Class (b) positive signs say nothing about other waves; the mutated "delete-4" forms may or may not be positive definite — UNVERIFIED.

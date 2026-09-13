@@ -1,0 +1,13 @@
+delete_4 even T160       selT=160 R128 POSITIVE   W POSITIVE   via monotonicity W excess>=0 certain: False I4 UNRESOLVED survivor POSITIVE reparse UNRESOLVED errPrime [3.85036e-33 +/- 3.50e-40]
+delete_4 even T240       selT=240 R128 POSITIVE   W POSITIVE   via direct         excess>=0 certain: True I4 NEGATIVE   survivor POSITIVE reparse POSITIVE errPrime [3.85036e-33 +/- 3.50e-40]
+delete_4 odd T160        selT=160 R128 NEGATIVE   W POSITIVE   via direct         excess>=0 certain: True I4 NEGATIVE   survivor POSITIVE reparse POSITIVE errPrime [3.85036e-33 +/- 3.50e-40]
+delete_4 odd T240        selT=240 R128 NEGATIVE   W POSITIVE   via direct         excess>=0 certain: True I4 NEGATIVE   survivor POSITIVE reparse POSITIVE errPrime [3.85036e-33 +/- 3.50e-40]
+delete_2 even T160       selT=160 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 POSITIVE   survivor NEGATIVE reparse NEGATIVE errPrime [3.46832e-33 +/- 7.56e-40]
+delete_2 even T240       selT=240 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 POSITIVE   survivor NEGATIVE reparse NEGATIVE errPrime [3.46832e-33 +/- 7.56e-40]
+delete_2 odd T160        selT=160 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 NEGATIVE   survivor NEGATIVE reparse NEGATIVE errPrime [3.46832e-33 +/- 7.56e-40]
+delete_2 odd T240        selT=240 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 NEGATIVE   survivor NEGATIVE reparse NEGATIVE errPrime [3.46832e-33 +/- 7.56e-40]
+prime_free even T160     selT=160 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 POSITIVE   survivor NEGATIVE reparse NEGATIVE errPrime 0
+prime_free even T240     selT=240 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 POSITIVE   survivor NEGATIVE reparse NEGATIVE errPrime 0
+prime_free odd T160      selT=160 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 NEGATIVE   survivor NEGATIVE reparse NEGATIVE errPrime 0
+prime_free odd T240      selT=240 R128 NEGATIVE   W NEGATIVE   via direct         excess>=0 certain: True I4 NEGATIVE   survivor NEGATIVE reparse NEGATIVE errPrime 0
+DONE 378
