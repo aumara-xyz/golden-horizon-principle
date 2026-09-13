@@ -1,0 +1,20 @@
+Test A: remove all prime POWERS (k>=2) vs remove all PRIMES (k=1)
+  zeta L=0.7 powers=[4]: base +2.40e-13/+1.52e-10 | no powers -8.37e-13/-1.15e-04 | no primes -2.56e-01/-7.35e-01
+  chi_-4 L=1.2 powers=[9]: base +1.33e-11/+1.60e-08 | no powers -2.97e-03/-8.86e-02 | no primes -4.42e-01/+2.93e-01
+  chi_-3 L=1.1 powers=[4, 8]: base +9.75e-13/+9.14e-10 | no powers -1.60e-01/-3.21e-01 | no primes -8.70e-01/+3.50e-01
+  chi_5 L=1.2 powers=[4, 8, 9]: base +2.94e-10/+2.37e-07 | no powers -8.59e-02/-3.11e-01 | no primes -1.52e+00/+6.82e-01
+Test B: weight exponent sigma (0.5 = critical line)
+  zeta L=0.6 sigma=0.45: even -1.76e-02 odd -9.14e-03
+  zeta L=0.6 sigma=0.48: even -6.91e-03 odd -2.11e-03
+  zeta L=0.6 sigma=0.49: even -3.42e-03 odd -2.02e-04
+  zeta L=0.6 sigma=0.50: even +7.58e-10 odd +2.79e-07
+  zeta L=0.6 sigma=0.51: even -2.94e-04 odd -2.60e-03
+  zeta L=0.6 sigma=0.52: even -6.30e-04 odd -6.01e-03
+  zeta L=0.6 sigma=0.55: even -1.81e-03 odd -1.69e-02
+  chi_-4 L=1.0 sigma=0.45: even -3.66e-02 odd -2.63e-02
+  chi_-4 L=1.0 sigma=0.48: even -2.14e-03 odd -1.00e-02
+  chi_-4 L=1.0 sigma=0.49: even +7.67e-04 odd -4.83e-03
+  chi_-4 L=1.0 sigma=0.50: even +4.98e-07 odd +2.61e-04
+  chi_-4 L=1.0 sigma=0.51: even -1.89e-03 odd +5.21e-03
+  chi_-4 L=1.0 sigma=0.52: even -4.16e-03 odd +1.01e-02
+  chi_-4 L=1.0 sigma=0.55: even -1.18e-02 odd +2.41e-02
