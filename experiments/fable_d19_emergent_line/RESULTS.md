@@ -29,3 +29,13 @@ Predictions first (PREDICTIONS.md). Floating numpy (D17 mutation n^{−σ}), bis
 | (2) joint width shrinks monotonically, > 0.05 at L = 0.30, < 1e-6 at L = 0.60 | HELD except the last number: 1.86e-6 at 0.60 (FAILED narrowly) |
 | (3) midpoint off 0.5 by > 10 % of width at small L, converging to 0.5 | HELD (28 % at L = 0.40; 9e-7 at 0.60) |
 | (4) χ₋₄ parity intervals on opposite sides of 0.5, intersection a shrinking neighborhood | HELD (sides swapped relative to ζ, as the character is odd) |
+
+## D19b — susceptibility to the exponent (appended; predictions in PREDICTIONS.md §D19b; d19b_susceptibility.log/json)
+| form, L | even: margin, dλ/dσ | odd: margin, dλ/dσ |
+|---|---|---|
+| ζ 0.40 | 1.5e-4, +2.3e-3 | 1.3e-2, −4.5e-2 |
+| ζ 0.50 | 7.3e-7, +8.9e-3 | 1.5e-4, −1.1e-1 |
+| ζ 0.60 | 7.6e-10, +3.2e-2 | 2.8e-7, −1.5e-1 |
+| χ₋₄ 0.70 | 6.1e-3, −8.0e-2 | 3.3e-1, +5.7e-1 |
+| χ₋₄ 1.00 | 5.0e-7, −1.5e-1 | 2.6e-4, +5.0e-1 |
+Signs: ζ even dλ/dσ > 0 (heavier primes, σ < ½, hurt), odd < 0 (heavier primes help); reversed for the odd character. HELD. Magnitudes: while the ζ margins fall by six (even) and five (odd) orders, |dλ/dσ| RISES from 2.3e-3 to 3.2e-2 (even) and from 0.045 to 0.15 (odd); for χ₋₄ it is flat at 0.08–0.15 (even) and 0.5–0.57 (odd). The band half-width is margin/|dλ/dσ| to within the bisection accuracy. So the exponent sensitivity is a second, independent, slowly varying quantity; the band collapse in D19 is entirely the collapse of the margin. Prediction HELD; kill (three-order drop) not triggered. In the finite-size-scaling analogy: the "susceptibility" does not diverge or vanish; the transition-like collapse is carried by the gap alone. Reading: the exponent is not what the room is sensitive to; the room is sensitive to positivity itself, and the exponent inherits that sensitivity. No RH content.

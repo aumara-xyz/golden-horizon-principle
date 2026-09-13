@@ -1,0 +1,8 @@
+zeta L=0.40: even margin 1.48e-04 dλ/dσ +2.302e-03 | odd margin 1.27e-02 dλ/dσ -4.541e-02
+zeta L=0.45: even margin 1.24e-05 dλ/dσ +5.685e-03 | odd margin 1.97e-03 dλ/dσ -8.534e-02
+zeta L=0.50: even margin 7.29e-07 dλ/dσ +8.934e-03 | odd margin 1.47e-04 dλ/dσ -1.128e-01
+zeta L=0.55: even margin 2.65e-08 dλ/dσ +1.312e-02 | odd margin 7.68e-06 dλ/dσ -1.332e-01
+zeta L=0.60: even margin 7.58e-10 dλ/dσ +3.228e-02 | odd margin 2.79e-07 dλ/dσ -1.490e-01
+chi_-4 L=0.70: even margin 6.08e-03 dλ/dσ -8.011e-02 | odd margin 3.30e-01 dλ/dσ +5.734e-01
+chi_-4 L=0.90: even margin 1.92e-05 dλ/dσ -1.395e-01 | odd margin 6.26e-03 dλ/dσ +5.671e-01
+chi_-4 L=1.00: even margin 4.98e-07 dλ/dσ -1.524e-01 | odd margin 2.61e-04 dλ/dσ +5.037e-01
