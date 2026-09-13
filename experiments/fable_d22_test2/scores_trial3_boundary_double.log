@@ -1,0 +1,8 @@
+== d22_cand_even_L0.4.json
+even 0.4 cutoff 128 W [+/- 5.22e+19] tail [0.0113120 +/- 2.48e-8] rel width [3.60042e+23 +/- 4.88e+17] accepted False
+even 0.4 cutoff 256 W [+/- 5.22e+19] tail [0.00323199 +/- 2.93e-9] rel width [3.60042e+23 +/- 4.88e+17] accepted False
+even 0.4 cutoff 512 W [+/- 9.70e+27] tail [0.000908998 +/- 1.08e-11] rel width [6.68793e+31 +/- 2.82e+25] accepted False
+SCORE DONE 215 s
+== d22_cand_odd_L0.4.json
+odd 0.4 cutoff 128 W [+/- 3.12e+21] tail [0.403944 +/- 5.06e-8] rel width [2.50881e+23 +/- 1.02e+17] accepted False
+odd 0.4 cutoff 256 W [+/- 3.12e+21] tail [0.115413 +/- 4.15e-7] rel width [2.50881e+23 +/- 1.02e+17] accepted False
