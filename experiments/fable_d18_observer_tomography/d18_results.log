@@ -1,0 +1,30 @@
+T1 directions (3x3x3, GF(3)):
+  axes                  : 27 line sums, rank 19, ghosts 8
+                          real rank 19, real ghosts 8
+  axes+face             : 81 line sums, rank 27, ghosts 0
+                          real rank 27, real ghosts 0
+  axes+face+body (13)   : 109 line sums, rank 27, ghosts 0
+                          real rank 27, real ghosts 0
+T2 minimal forgery weight (3-axis observer): enumerate 3^8 ghosts
+  ghost dimension 8, minimum weight 8, number of minimum-weight ghosts 54; weight histogram {8: 54, 12: 162, 14: 540, 15: 216, 17: 1728, 18: 1266, 20: 1944, 21: 540, 23: 108, 27: 2}
+  one minimum-weight ghost (values in {0,1,2}=({0,+1,-1})):
+[[[2 0 1]
+  [0 0 0]
+  [1 0 2]]
+
+ [[0 0 0]
+  [0 0 0]
+  [0 0 0]]
+
+ [[1 0 2]
+  [0 0 0]
+  [2 0 1]]]
+  with face diagonals: ghost dimension 0
+T3 one 4D observer vs four 3D observers:
+  3^4 cube, 4 axes: 108 sums, rank 65, ghosts 16 (19.8%); four separate 27-cubes: ghosts 32/108 (29.6%)
+  3^4 cube, all 40 lattice directions: 888 sums, rank 81, ghosts 0
+  axes+2-diagonals (16 dirs): ghosts 0
+  axes+2+3-diagonals (32 dirs): ghosts 0
+T4 how many sums a single honest change moves:
+  axes          : one change (center cell) moves 3 of 27 sums; two-cell changes move between 5 and 6
+  13 directions : one change (center cell) moves 13 of 109 sums; two-cell changes move between 13 and 25
