@@ -1,0 +1,44 @@
+zeta L=0.7: base even +2.40e-13 odd +1.52e-10; visible [2, 4, 3]
+   remove  2 (chi=+1, dL=0.353): even -4.66e-01 odd -4.89e-01 -> LOAD-BEARING
+   remove  4 (chi=+1, dL=0.007): even -8.37e-13 odd -1.15e-04 -> LOAD-BEARING
+   remove  3 (chi=+1, dL=0.151): even -1.24e-01 odd -5.13e-01 -> LOAD-BEARING
+chi_-4 L=1.0: base even +4.98e-07 odd +2.61e-04; visible [3, 5, 7]
+   remove  3 (chi=-1, dL=0.451): even -5.27e-01 odd +6.04e-01 -> LOAD-BEARING
+   remove  5 (chi=+1, dL=0.195): even -7.37e-03 odd -2.28e-01 -> LOAD-BEARING
+   remove  7 (chi=-1, dL=0.027): even -1.65e-02 odd +5.80e-04 -> LOAD-BEARING
+chi_-4 L=1.1: base even +3.91e-09 odd +3.47e-06; visible [3, 9, 5, 7]
+   remove  3 (chi=-1, dL=0.551): even -5.96e-01 odd +3.35e-01 -> LOAD-BEARING
+   remove  9 (chi=+1, dL=0.001): even +4.01e-09 odd +2.94e-06 -> removable
+   remove  5 (chi=+1, dL=0.295): even -2.80e-02 odd -4.37e-01 -> LOAD-BEARING
+   remove  7 (chi=-1, dL=0.127): even -2.33e-01 odd -8.38e-03 -> LOAD-BEARING
+chi_-4 L=1.2: base even +1.33e-11 odd +1.60e-08; visible [3, 9, 5, 7, 11]
+   remove  3 (chi=-1, dL=0.651): even -6.65e-01 odd +2.24e-01 -> LOAD-BEARING
+   remove  9 (chi=+1, dL=0.101): even -2.97e-03 odd -8.86e-02 -> LOAD-BEARING
+   remove  5 (chi=+1, dL=0.395): even -1.00e-01 odd -5.27e-01 -> LOAD-BEARING
+   remove  7 (chi=-1, dL=0.227): even -4.50e-01 odd -3.38e-02 -> LOAD-BEARING
+   remove 11 (chi=-1, dL=0.001): even +7.81e-12 odd +1.53e-08 -> removable
+chi_-3 L=1.0: base even +5.74e-10 odd +3.86e-07; visible [2, 4, 5, 7]
+   remove  2 (chi=-1, dL=0.653): even -6.30e-01 odd -6.36e-03 -> LOAD-BEARING
+   remove  4 (chi=+1, dL=0.307): even -1.34e-02 odd -2.86e-01 -> LOAD-BEARING
+   remove  5 (chi=-1, dL=0.195): even -3.72e-01 odd -3.75e-02 -> LOAD-BEARING
+   remove  7 (chi=+1, dL=0.027): even -2.55e-08 odd -5.01e-02 -> LOAD-BEARING
+chi_-3 L=1.1: base even +9.75e-13 odd +9.14e-10; visible [2, 4, 8, 5, 7]
+   remove  2 (chi=-1, dL=0.753): even -6.88e-01 odd -4.53e-02 -> LOAD-BEARING
+   remove  4 (chi=+1, dL=0.407): even -1.15e-01 odd -3.29e-01 -> LOAD-BEARING
+   remove  8 (chi=-1, dL=0.060): even -4.90e-02 odd -2.87e-07 -> LOAD-BEARING
+   remove  5 (chi=-1, dL=0.295): even -5.67e-01 odd -1.07e-01 -> LOAD-BEARING
+   remove  7 (chi=+1, dL=0.127): even -1.18e-02 odd -2.98e-01 -> LOAD-BEARING
+chi_5 L=1.0: base even +1.75e-06 odd +5.01e-04; visible [2, 4, 3, 7]
+   remove  2 (chi=-1, dL=0.653): even -6.50e-01 odd +1.86e-01 -> LOAD-BEARING
+   remove  4 (chi=+1, dL=0.307): even -2.77e-02 odd -1.93e-01 -> LOAD-BEARING
+   remove  3 (chi=-1, dL=0.451): even -5.64e-01 odd +4.25e-01 -> LOAD-BEARING
+   remove  7 (chi=-1, dL=0.027): even -1.68e-04 odd +9.62e-04 -> LOAD-BEARING
+chi_5 L=1.1: base even +4.10e-08 odd +2.48e-05; visible [2, 4, 8, 3, 9, 7]
+   remove  2 (chi=-1, dL=0.753): even -6.81e-01 odd -2.78e-02 -> LOAD-BEARING
+   remove  4 (chi=+1, dL=0.407): even -4.63e-02 odd -2.65e-01 -> LOAD-BEARING
+   remove  8 (chi=-1, dL=0.060): even -4.08e-03 odd +1.00e-04 -> LOAD-BEARING
+   remove  3 (chi=-1, dL=0.551): even -6.18e-01 odd +3.85e-02 -> LOAD-BEARING
+   remove  9 (chi=+1, dL=0.001): even +3.89e-08 odd +2.11e-05 -> removable
+   remove  7 (chi=-1, dL=0.127): even -1.75e-01 odd -5.23e-03 -> LOAD-BEARING
+chi_5 L=1.2: base even +2.94e-10 odd +2.37e-07; visible [2, 4, 8, 3, 9, 7, 11]
+   remove  2 (chi=-1, dL=0.853): even -7.07e-01 odd -1.74e-01 -> LOAD-BEARING
