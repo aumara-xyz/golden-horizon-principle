@@ -21,6 +21,7 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 
 | Stage | Canonical report | Predictions / implementation |
 |---|---|---|
+| D24 Codex/Astra audit: D21 witnesses retained; D22 quadrature/checker repaired at conservative floors; all old trial4 bracket pairs excluded by their scalar lower scores; D23 overlap is not an energy identity | [D24 verdict, claim ledger and prior art](../experiments/astra_d24_review/RESULTS.md) | [One capped D25 protocol for Fable — not run](../experiments/astra_d24_review/PREDICTIONS.md), [source map and exact-rational checkers](../experiments/astra_d24_review/SOURCE-MAP.md) |
 | Initial finite Weil forms | [Results](../experiments/weil_hidden_modes/RESULTS.md), [Interpretation](../experiments/weil_hidden_modes/INTERPRETATION.md) | [Predictions](../experiments/weil_hidden_modes/PREDICTIONS.md), [all source and data](../experiments/weil_hidden_modes/) |
 | Higher precision | [Results](../experiments/weil_hidden_modes/RESULTS-high-precision.md) | [Predictions](../experiments/weil_hidden_modes/PREDICTIONS-high-precision.md) |
 | Codex finite certificate | [Certificate](../experiments/weil_hidden_modes/CERTIFICATE.md) | [Predictions](../experiments/weil_hidden_modes/PREDICTIONS-certified.md) |

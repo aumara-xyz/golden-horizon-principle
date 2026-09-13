@@ -1,0 +1,231 @@
+{
+  "status": "MEASURED: exact-rational saved-evidence audit",
+  "scope": "Conditional on the saved scalar evidence and analytic bounds; no matrix replay",
+  "quadrature_repair": {
+    "rho": 2,
+    "factor": 4,
+    "extra_operator_error": "6*N*maxq_upper",
+    "source": "https://appliedmaths.sun.ac.za/~nhale/publications/HaleTrefethen2008.pdf",
+    "location": "Theorem 2.1, equation (2.3), printed page 932"
+  },
+  "controls": {
+    "exact_decimal_enclosure": true,
+    "crossing_enclosure_rejected": true,
+    "upward_rounded_claim_rejected": true,
+    "lower_claim_accepted": true,
+    "arbitrarily_tiny_tail_not_zero": true,
+    "tiny_coupling_can_reject_near_endpoint": true,
+    "pole_tail_retained_in_discarded_bound": true,
+    "excess_coupling_rejected": true
+  },
+  "source_sha256": {
+    "experiments/fable_d22_test2/d22_certify.py": "c94e4a1de435082c5bea2feecc601d3fdd2486e0f15b40694264cb51e34f7cbb",
+    "experiments/weil_hidden_modes/d5_certify.py": "43f947310afce68a4975929b4b706a82002d46e0251cb2bc48cebc7c897cddf8",
+    "experiments/weil_hidden_modes/d4_checker.py": "a1cea1c6afae50825d58aa2cfb083f3f85387c708a3831358c04d8b5206e410d",
+    "experiments/weil_hidden_modes/certify.py": "756eb8327d42943210a3c72075103d7310ff6e98690a0d31c85b8b39d0c3adb8"
+  },
+  "certificates": [
+    {
+      "advertised_mu": "1.44919e-4",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "1596360593167655344538105086129853977982137361061918884797059/31250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "4528723875153348403639406832344655461894913870146022017862638938081115202941/31250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_even_L0.4_T160_N160.json",
+      "certificate_sha256": "664d398262be1d565585de7a96bd0034de9adee6148767316d02e4eb9e921368",
+      "effective_source_sha256": "34c24b6cdaa808a3efacfc06041b45d4f0165dc5c2defed72370d653bb5a8171",
+      "parameters": {
+        "L": "0.4",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "even"
+      }
+    },
+    {
+      "advertised_mu": "7.14785e-7",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "1075432364045128069749443263369278769711399233558803426599881/15625000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "11168521081725971442635954871930250556736630721230288600766441196573400119/15625000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_even_L0.5_T160_N160.json",
+      "certificate_sha256": "f3a8cd5f7ac5f4011c3bf1df6a8105d56eea483d97710dd169d021a3cfde880b",
+      "effective_source_sha256": "8951fe2c76ee1acfa2ea28ce3bef031c9293777d080c93b9aeac329555b6c486",
+      "parameters": {
+        "L": "0.5",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "even"
+      }
+    },
+    {
+      "advertised_mu": "1.10135e-9",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "347757450165790444453675927070600298818308424751286939574367/3906250000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "4302174727923492549834209555546324072929399701181691575248713060425633/3906250000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_even_L0.6_T160_N160.json",
+      "certificate_sha256": "6509746c2c749c7982a84dff73168917788b668e135450bb030e9a67b8f65e12",
+      "effective_source_sha256": "28ae01a4f473a7d8f5e9bc045b85acd061a4cee33a34c4848bf47050424aa233",
+      "parameters": {
+        "L": "0.6",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "even"
+      }
+    },
+    {
+      "advertised_mu": "2.67167e-13",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "349852760960040426188807643485448521801576401638532903483119/3125000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "834897239761979664959573811192356514551478198423598361467096516881/3125000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_even_L0.7_T160_N160.json",
+      "certificate_sha256": "12f378b69e54a87ef3c235f72ecea7c9c77a8921e3df2e8c18707de82c7f9d63",
+      "effective_source_sha256": "ea90f97768b2238f4a48252ef1ab5b0b0778fee08a4575dd0687a3c82f1fb4cb",
+      "parameters": {
+        "L": "0.7",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "even"
+      }
+    },
+    {
+      "advertised_mu": "3.37581e-13",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "2532497049060640096899439896647765639094875930180218104681/15625000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "5274714851421419689359903100560103352234360905124069819781895319/15625000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_even_L0.7_T240_N192.json",
+      "certificate_sha256": "14b6b8c1cb586c8426958c89cd7dd7b4abb33f5914c0ac87885a58f1897e3143",
+      "effective_source_sha256": "c03d3bc9ead9f2730df7c281323e907c16a768d046d8db0fa29749d8203fb6ca",
+      "parameters": {
+        "L": "0.7",
+        "T": 240,
+        "N": 192,
+        "K": 48,
+        "parity": "even"
+      }
+    },
+    {
+      "advertised_mu": "1.24019e-2",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "320274542867859266926169277876601787105364450147116536071723/6250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "77512041106874593429725457132140733073830722123398212894635549852883463928277/6250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_odd_L0.4_T160_N160.json",
+      "certificate_sha256": "e0908cc2c8e18f8d67c4725a6cbcc8c9e2126773e4b235c3c75d652f1ebf66d3",
+      "effective_source_sha256": "34c24b6cdaa808a3efacfc06041b45d4f0165dc5c2defed72370d653bb5a8171",
+      "parameters": {
+        "L": "0.4",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "odd"
+      }
+    },
+    {
+      "advertised_mu": "1.42134e-4",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "21576178355567875559494324812966063857004210682702524006219/312500000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "44417041404634040923821644432124440505675187033936142995789317297475993781/312500000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_odd_L0.5_T160_N160.json",
+      "certificate_sha256": "e6d58afeb12a9afc447f2404d69a3bbcd3af08ea21671326053dd7b76a5e147a",
+      "effective_source_sha256": "8951fe2c76ee1acfa2ea28ce3bef031c9293777d080c93b9aeac329555b6c486",
+      "parameters": {
+        "L": "0.5",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "odd"
+      }
+    },
+    {
+      "advertised_mu": "4.12866e-7",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "558158896467039482589385035850834765324707273886523967065661/6250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "2580417148847935591103532960517410614964149165234675292726113476032934339/6250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_odd_L0.6_T160_N160.json",
+      "certificate_sha256": "d476356720ce8fe7c5be475181b8ec9f03d663cc71f7afe72ca759eaffdc66c7",
+      "effective_source_sha256": "28ae01a4f473a7d8f5e9bc045b85acd061a4cee33a34c4848bf47050424aa233",
+      "parameters": {
+        "L": "0.6",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "odd"
+      }
+    },
+    {
+      "advertised_mu": "1.58596e-10",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "1754755998849810300899906469287296745927843961122625787485231/15625000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "2478068265909587751150189699100093530712703254072156038877374212514769/15625000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_odd_L0.7_T160_N160.json",
+      "certificate_sha256": "72e1b6eb0fb7ef23cf15031327cce82127eda491408e28dfbcf6182fdefbe88d",
+      "effective_source_sha256": "ea90f97768b2238f4a48252ef1ab5b0b0778fee08a4575dd0687a3c82f1fb4cb",
+      "parameters": {
+        "L": "0.7",
+        "T": 160,
+        "N": 160,
+        "K": 48,
+        "parity": "odd"
+      }
+    },
+    {
+      "advertised_mu": "2.03304e-10",
+      "accepted": true,
+      "finite_block_minus_mu_positive": true,
+      "discarded_block_minus_mu_positive": true,
+      "shifted_determinant_positive": true,
+      "extra_quadrature_operator_error_exact_rational": "4959214758551651742039089054148376851475106817933586821627/30517578125000000000000000000000000000000000000000000000000000000000000000000",
+      "repaired_finite_lower_exact_rational": "6204352809276960778557723257960910945851623148524893182066413178373/30517578125000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_pole_tail_preserved": true,
+      "certificate": "experiments/fable_d22_test2/d22_cert_odd_L0.7_T240_N192.json",
+      "certificate_sha256": "d5c9d263301cb24b3f4e7e81e1f0c882e2fcd297450c635b5bdd62341b2e2309",
+      "effective_source_sha256": "c03d3bc9ead9f2730df7c281323e907c16a768d046d8db0fa29749d8203fb6ca",
+      "parameters": {
+        "L": "0.7",
+        "T": 240,
+        "N": 192,
+        "K": 48,
+        "parity": "odd"
+      }
+    }
+  ],
+  "all_safe_constants_accepted": true,
+  "warning": "Original 12-digit midpoint constants are not validated by this replacement certificate."
+}
