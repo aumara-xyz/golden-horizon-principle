@@ -1,5 +1,5 @@
 # D16 — a place becomes load-bearing almost the moment it enters the room (Fable, 2026-09-13)
-Predictions first (PREDICTIONS.md). Floating numpy (D15 machinery), noise floor 3e-14. Raw rows in d16_results.log; the χ₅, L = 1.2 row was still computing at write-up time and is appended below if/when it finishes (its T is large). MEASURED (floating); nothing certified.
+Predictions first (PREDICTIONS.md). Floating numpy (D15 machinery), noise floor 3e-14. Raw rows in d16_results.log; the χ₅, L = 1.2 row finished after the first write-up and is appended in the table (marked). MEASURED (floating); nothing certified.
 
 ## Removal of one visible prime power n at a time (λmin even / odd after removal; ΔL = L − log(n)/2 = how long the place has been visible)
 | form, L | base even / odd | n (χ(n), ΔL) → result |
@@ -12,7 +12,8 @@ Predictions first (PREDICTIONS.md). Floating numpy (D15 machinery), noise floor 
 | χ₋₃, 1.1 | 9.8e-13 / 9.1e-10 | 2, 4, 5, 7 LB; 8 (−, 0.060) −4.9e-2/−2.9e-7 LB |
 | χ₅, 1.0 | 1.8e-6 / 5.0e-4 | 2 (−, 0.653) −0.65/+0.19 LB; 4 (+, 0.307) −2.8e-2/−0.19 LB; 3 (−, 0.451) −0.56/+0.43 LB; 7 (−, 0.027) −1.7e-4/+9.6e-4 LB |
 | χ₅, 1.1 | 4.1e-8 / 2.5e-5 | 2, 4, 3, 7 LB; 8 (−, 0.060) −4.1e-3/+1.0e-4 LB; 9 (+, 0.001) +3.9e-8/+2.1e-5 removable |
-LB = load-bearing (removal makes at least one parity negative). 14 forms × places tested: every place visible for ΔL ≥ 0.027 is load-bearing (26 of 26); the only removable places are those visible for ΔL = 0.001 (9 at L = 1.1; 11 at L = 1.2), and 9 becomes load-bearing by ΔL = 0.101.
+| χ₅, 1.2 (appended after completion) | 2.9e-10 / 2.4e-7 | 2, 4, 3, 7 LB; 8 (−, 0.160) −3.4e-2/−6.9e-4 LB; 9 (+, 0.101) −1.0e-6/−0.12 LB; 11 (+, 0.001) +2.9e-10/+2.0e-7 removable |
+LB = load-bearing (removal makes at least one parity negative). 15 forms, 46 place removals: every place visible for ΔL ≥ 0.027 is load-bearing (32 of 32); the only removable places are those visible for ΔL = 0.001 (9 at L = 1.1; 11 at L = 1.2, both characters), and 9 becomes load-bearing by ΔL = 0.101 in both χ₋₄ and χ₅.
 
 ## Prediction ledger
 | prediction | outcome |
