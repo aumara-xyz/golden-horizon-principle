@@ -1,0 +1,21 @@
+== d22_cert_even_L0.4_T160_N160.json
+even 0.4 cutoff 128 W [+/- 2.44e-3] tail [0.00230905 +/- 1.99e-9] rel width [15.8103 +/- 2.29e-5] accepted False
+even 0.4 cutoff 256 W [+/- 6.54e-4] tail [0.000464456 +/- 3.78e-10] rel width [3.51190 +/- 1.87e-6] accepted False
+even 0.4 cutoff 512 W [+/- 4.64e-4] tail [0.000220119 +/- 3.46e-10] rel width [2.19666 +/- 2.26e-6] accepted False
+even 0.4 cutoff 1024 W [0.0003 +/- 8.83e-5] tail [0.000113290 +/- 2.28e-10] rel width [1.67917 +/- 1.52e-6] accepted False
+SCORE DONE 146 s
+== d22_cert_odd_L0.4_T160_N160.json
+odd 0.4 cutoff 128 W [+/- 0.154] tail [0.142242 +/- 3.63e-7] rel width [11.3941 +/- 3.04e-5] accepted False
+odd 0.4 cutoff 256 W [+/- 0.0475] tail [0.0324322 +/- 1.96e-8] rel width [2.82496 +/- 3.64e-6] accepted False
+odd 0.4 cutoff 512 W [0.03 +/- 7.67e-3] tail [0.0147633 +/- 3.37e-8] rel width [1.68396 +/- 1.91e-6] accepted False
+odd 0.4 cutoff 1024 W [0.03 +/- 7.24e-3] tail [0.00745108 +/- 2.66e-9] rel width [1.25852 +/- 2.89e-7] accepted False
+SCORE DONE 139 s
+== d22_cert_even_L0.5_T160_N160.json
+even 0.5 cutoff 128 W [+/- 1.14e-5] tail [1.07330e-5 +/- 1.83e-11] rel width [14.8767 +/- 1.33e-5] accepted False
+even 0.5 cutoff 256 W [+/- 3.24e-6] tail [2.27224e-6 +/- 1.11e-12] rel width [3.51892 +/- 2.53e-6] accepted False
+even 0.5 cutoff 512 W [2e-6 +/- 4.22e-7] tail [1.15917e-6 +/- 3.26e-12] rel width [2.38835 +/- 1.13e-6] accepted False
+even 0.5 cutoff 1024 W [2e-6 +/- 3.64e-7] tail [6.18946e-7 +/- 3.39e-13] rel width [1.88380 +/- 3.14e-6] accepted False
+SCORE DONE 196 s
+== d22_cert_odd_L0.5_T160_N160.json
+odd 0.5 cutoff 128 W [+/- 2.68e-3] tail [0.00255171 +/- 3.91e-9] rel width [17.8129 +/- 2.49e-5] accepted False
+odd 0.5 cutoff 256 W [+/- 7.61e-4] tail [0.000564203 +/- 4.81e-11] rel width [4.34789 +/- 2.83e-6] accepted False
