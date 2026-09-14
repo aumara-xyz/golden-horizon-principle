@@ -1,0 +1,18 @@
+{
+ "L": "0.4",
+ "parity": "odd",
+ "T_R": 160,
+ "K": 64,
+ "floor_float_N160": 0.014171576522266804,
+ "floor_certified_N160": 0.014171560517918456,
+ "correction_N160": 1.6004348347979085e-08,
+ "floor_float_N80": 0.014171576522266804,
+ "floor_certified_N80": 0.014171568517918457,
+ "floor_float_redundant": "skipped (construction artifact; see comment)",
+ "monotonicity_N80_ge_N160": true,
+ "a_saved": 0.0151928770501,
+ "1.1_mu": 0.015588716569710302,
+ "gate_passes": true,
+ "route": "float64/longdouble build + generous per-entry bound (1e-10) + LAPACK backward allowance; quadrature truncation ~1e-30 dominated by float term",
+ "labels": "certified finite-N floor (interval-eigenvalue route); rational Schur route not run (declared deviation)"
+}
