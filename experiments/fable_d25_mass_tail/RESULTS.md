@@ -62,3 +62,24 @@ upper/lower = **1.0288 ≤ 1.1**.
 
 - `PREDICTIONS.md` (pre-registered), `stage-a-floor.py` / `stage-a-floor.json`,
   `stage-c-mass-tail.py` / `stage-c-result.json`, run logs.
+
+---
+
+## Correction appended 2026-09-14 (D26 Task 0; no text above edited)
+
+The D25 headline "first closed two-sided bracket" was **wrong as written** and is
+withdrawn. What D25 measured was the width of ONE FROZEN WAVE'S OWN score
+enclosure (its upper over its lower, 1.0288 = 2.9%). That is not a bracket of
+the infimum. An infimum bracket has an all-function certified floor ℓ at its
+lower end (ℓ ≤ m_R ≤ m_W). D25's Stage A floor was a **finite-N minimum**,
+which finite compression bounds from **above** — not an all-function lower
+bound (D24 §1). The honest D25-era statement: the infimum ratio was
+0.01563021/0.0141716 = **1.1029, open by a hair** against the preregistered
+10% gate.
+
+**Corrected wall sentence:** *the L = 0.4 odd wave is enclosed to 2.9 percent;
+the infimum bracket is open at ≥ 10.3 percent pending an all-function floor.*
+
+The favorable-direction prediction miss recorded in the D25 ledger stands
+(open 1.2–1.9 predicted; wave enclosure 1.0288 measured — a wave enclosure,
+as the correction now states).
