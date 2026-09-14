@@ -1,0 +1,8 @@
+# D29 (Fable) — cross-machine replay of the three closed brackets (2026-09-14)
+The three T = 1024 brackets closed on the Nebius box (D26, D28) were replayed on a different machine (Apple Silicon arm64 Mac, Darwin 25.1, python-flint 0.6.0 in a fresh venv; the Nebius box is x86-64 Linux) with the frozen court files at their recorded hashes, the frozen candidates, and no changes. Same library version, different hardware and OS: this is an independent-hardware replay, not an independent implementation.
+| case | Nebius (D26/D28) | Mac replay | match |
+|---|---|---|---|
+| L = 0.4 odd, T = 1024 (D26 script) | W ∈ [0.0152551596769, 0.0154249372795], inf ratio 1.0884 | W ∈ [0.0152551596769330854, 0.0154249372794626538], inf ratio 1.088441872 | digit-for-digit |
+| L = 0.5 odd, T = 1024 (D28 final) | inf ratio 1.0882 | W ∈ [1.9542035634994e-4, 1.9689390556837e-4], inf ratio 1.0882072 | digit-for-digit |
+| L = 0.4 even, T = 1024 (D28 final) | W ∈ [1.8246843602559e-4, 1.8338253361065e-4], inf ratio 1.0642663 | same | digit-for-digit |
+Gate definition note: D28's "gate ratio" column uses the wave's LOWER endpoint (W_lo/ℓ). The infimum bracket is [ℓ, W_hi], so the gate must use W_hi/ℓ (the "inf ratio" column). On that criterion all three still close: 1.0884, 1.0882, 1.0643 — all < 1.10. The W_lo column is not a bound on the infimum and should not be advertised as the gate. Minor: the D26 script uses the printed value of the certified floor rather than its lower endpoint; with the floor's radius ~1e-13 relative this does not change any digit shown, but the endpoint should be used. Logs: mac_replay_*.log.
