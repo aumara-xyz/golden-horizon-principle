@@ -29,6 +29,24 @@ CASES = {
         'eps_p': '2.366e-957', 'norm_pN': '0.14524224', 'beta': '2.25703698',
         'default_cand': '/Users/peterviviani/golden-horizon-principle/experiments/fable_d22_test2/d22_cand2_odd_L0.5.json',
     },
+    'l05-even': {
+        'L': arb(0.5), 'parity': 0,
+        'lam0': '8.76931872434759E-7', 'eps_D': '6.93876438E-297', 'eps_C': '3.880130749E-145',
+        'eps_p': '6.07546299E-954', 'norm_pN': '1.01049260536322', 'beta': '2.2570369777406411502431',
+        'default_cand': '/Users/peterviviani/golden-horizon-principle/experiments/deepseek_d28_construction_loop/candidate_l05_even_d30.json',
+    },
+    'l06-odd': {
+        'L': arb(0.6), 'parity': 1,
+        'lam0': '4.89029307909781E-7', 'eps_D': '6.83156111E-246', 'eps_C': '1.32897283E-119',
+        'eps_p': '6.77274230E-932', 'norm_pN': '0.191451252668248', 'beta': '0.988468776545513195870299',
+        'default_cand': '/Users/peterviviani/golden-horizon-principle/experiments/deepseek_d28_construction_loop/candidate_l06_odd_d30.json',
+    },
+    'l06-even': {
+        'L': arb(0.6), 'parity': 0,
+        'lam0': '1.31162554371630E-9', 'eps_D': '3.19500354E-244', 'eps_C': '9.05883436E-119',
+        'eps_p': '1.44936443E-928', 'norm_pN': '1.11204927146292', 'beta': '0.988468776545513195870299',
+        'default_cand': '/Users/peterviviani/golden-horizon-principle/experiments/deepseek_d28_construction_loop/candidate_l06_even_d30.json',
+    },
     'l04-even': {
         'L': arb(2) / 5, 'parity': 0,
         'lam0': '0.000172308870206', 'eps_D': '1.44842e-360', 'eps_C': '5.04218e-177',

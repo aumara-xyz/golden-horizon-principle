@@ -67,3 +67,22 @@ class. One home per fact; scripts cite this file.
   nodes in ~5 s; rebuild: `graphify update <path>`).
 - Query: `graphify explain "<file-or-symbol>"`, `graphify path "A" "B"`.
 - Skill deployed to `~/.config/opencode/skills/graphify/`.
+
+## Gate rule (appended 2026-09-14, per D29; supersedes any W_lo wording)
+The certified enclosure is `W(f) ∈ [W_lo, W_hi]` with the infimum floor `ℓ` below both. The gate that
+decides a room is **`W_hi / ℓ < 1.10`**. `W_lo / ℓ` bounds nothing above and is never the gate; both
+endpoints may be reported, but any closure statement made on `W_lo` is void. Bracket tables must label
+the gate column unambiguously: `gate ratio = W_hi / ℓ`.
+
+## Visible set, explicit per L (appended 2026-09-14, D30; the {2}-only copy error of this round)
+A prime power n is visible iff log n < 2L. Do not copy one L's patch to another; use this table:
+| L | visible shifts (n, weight) |
+|---|---|
+| 0.4 | n=2 only |
+| 0.5 | n=2 only |
+| 0.6 | n=2, n=3 |
+| 0.7 | n=2, n=3, n=4 (2^2) |
+| 0.8 | n=2, n=3, n=5 |
+| 0.9 | n=2, n=3, n=4, n=5 |
+D30 ran L=0.6 and L=0.7 with the {2}-only list first; those runs are void (quarantined) and the
+floors.json rows come from the corrected runs only.

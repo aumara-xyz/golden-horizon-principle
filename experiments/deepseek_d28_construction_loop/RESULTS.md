@@ -89,3 +89,15 @@ both outcomes fall inside, on the favorable side.
   tombstoned and re-proposed. The near-miss check that the even-case bracket may have used the wrong
   floor was resolved by the bracket's own `note` field: the in-run correction was present; no D27 number
   changes.
+
+## Correction (appended 2026-09-14, per D29; nothing above edited)
+The gate definition in the D28 tables used W_lo/ell. The infimum bracket is [ell, W_hi], so the gate
+must use **W_hi/ell**; the W_lo column is not a bound on the infimum and is not the gate. Restated on
+the corrected criterion, all three closures stand: L=0.4 odd 1.0884, L=0.5 odd 1.0882, L=0.4 even
+1.0643, all < 1.10. D29 reproduced all three digit-for-digit on a second machine (arm64 Mac) from the
+frozen court and candidates. CONVENTIONS.md now carries the gate rule.
+
+## Task 3 addendum (appended, per D29 gate correction)
+The Task 3 control C2 verdict (floor-only not gate-rejected) was stated on the W_lo criterion; under
+the corrected criterion its inf ratio is 1.0926 (also a pass), enclosure 2.28 percent. The qualitative
+finding (tail value = precision, not pass/fail, at T=1024 for this case) is unchanged.
