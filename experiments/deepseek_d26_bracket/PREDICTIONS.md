@@ -38,3 +38,12 @@ ell = interval-certified all-function floor (if the Schur certifies);
 wave scores = interval enclosures for a fixed wave; no RH claim; court bounds
 audited as Task 3 of this directive; if the audit finds a defect, every
 downstream number carries "court unaudited/defective" and the run stops.
+
+## Addendum (before the L=0.5 run, same session)
+
+6. **L=0.5 odd**: ell within 1e-6 of its visible finite floor (tails negligible,
+   as at L=0.4); infimum ratio at T=1024 predicted ≤ 1.10 (the L=0.4 pattern:
+   wave enclosure collapses at 1024, floor certified by Schur).
+7. **C5 control placement**: corrected plant — crossing intervals arise from
+   loose ensembles (small T), not from rescaling (W is scale-invariant); T=8
+   on the frozen wave yields a crossing at [-0.054, 1.247].

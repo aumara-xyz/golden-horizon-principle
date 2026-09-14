@@ -1,0 +1,33 @@
+{
+ "C1_bound_holds": true,
+ "C1_row": {
+  "s": 512,
+  "sqrt_M": 0.011234127228832826,
+  "bound": 0.26995797531603244
+ },
+ "C3_digamma_holds": true,
+ "C4_omitted_tail_rejected": true,
+ "C4_rows": {
+  "full": [
+   0.014814368275595782,
+   0.0171661946562775
+  ],
+  "omitted": [
+   0.014814368275595782,
+   0.013375224885613464
+  ]
+ },
+ "C5_crossing_unresolved": true,
+ "C5_rows": {
+  "T": 8,
+  "W_lo": -0.05367222,
+  "W_hi": 1.246559,
+  "note": "loose-ensemble crossing; both flags false -> UNRESOLVED"
+ },
+ "C6_pole_sign_changes": true,
+ "C7_mismatched_norm_fails": true,
+ "C2_layer_cake": "derivation-verified on paper; numeric spot check postponed (nested-quadrature overrun, recorded in RESULTS.md)",
+ "controls_T": 128,
+ "elapsed_s": 35.9,
+ "C5_plant_correction": "rescaling is scale-invariant (W homogeneous degree 0 after normalization); crossing planted via small cutoff instead"
+}

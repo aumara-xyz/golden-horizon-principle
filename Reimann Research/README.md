@@ -22,6 +22,7 @@ This is the single entry point for the recent Riemann-related work in Golden Hor
 
 | Stage | Canonical report | Predictions / implementation |
 |---|---|---|
+| D26 DeepSeek: visible-form all-function floor ell = 0.0141715765223 (L=0.4 odd); frozen trial-4 wave enclosed [0.0152552, 0.0154249] at T=1024; infimum bracket CLOSED at 8.8% via the mass-conditioned tail (T=512 was open at 10.29%); court audit passed all planted controls; L=0.5 leg UNVERIFIED (scratch-parameter error, recorded) | [D26 results](../experiments/deepseek_d26_bracket/RESULTS.md) | [Ledger](../experiments/deepseek_d26_bracket/PREDICTIONS.md) |
 | D24 Codex/Astra audit: D21 witnesses retained; D22 quadrature/checker repaired at conservative floors; all old trial4 bracket pairs excluded by their scalar lower scores; D23 overlap is not an energy identity | [D24 verdict, claim ledger and prior art](../experiments/astra_d24_review/RESULTS.md) | [One capped D25 protocol for Fable — not run](../experiments/astra_d24_review/PREDICTIONS.md), [source map and exact-rational checkers](../experiments/astra_d24_review/SOURCE-MAP.md) |
 | Initial finite Weil forms | [Results](../experiments/weil_hidden_modes/RESULTS.md), [Interpretation](../experiments/weil_hidden_modes/INTERPRETATION.md) | [Predictions](../experiments/weil_hidden_modes/PREDICTIONS.md), [all source and data](../experiments/weil_hidden_modes/) |
 | Higher precision | [Results](../experiments/weil_hidden_modes/RESULTS-high-precision.md) | [Predictions](../experiments/weil_hidden_modes/PREDICTIONS-high-precision.md) |
