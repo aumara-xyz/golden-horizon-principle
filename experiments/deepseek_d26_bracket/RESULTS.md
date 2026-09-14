@@ -127,3 +127,22 @@ Riemann Hypothesis is made or implied.
 `d26-stage-c-1024.py` + `d26-bracket.json`, `d26-court-audit-lean.py` + `d26-court-audit.json`,
 `d26_cert_visible_L05_*` (L=0.5 cert), `d26-stage-c-1024-L05.py` (VOID scores, kept for the record),
 `d26_cand_unconstrained_odd_L0.5.json` (convention-defective, kept for the record).
+
+---
+
+## Corrections appended 2026-09-14 (D27 Task 0; no text above edited)
+
+**(a) Logic slip in Task 4.** D26 said the saved D22 L=0.5 lower bound
+(1.4213e-4) was "impossible for a valid lower enclosure" because it sits below
+the new all-function floor. That reasoning is wrong: two valid lower bounds may
+differ freely; the weaker one is simply weaker. The D22 value is void for the
+reason D24 gave (defective quadrature allowance and unshifted checker), **not**
+for being numerically smaller. Corrected.
+
+**(b) Court audit incomplete (C2).** The D26 L=0.4 closure rests on a court
+whose C2 layer-cake identity was derivation-verified with the numeric check
+postponed. Until the D27 C2 spot check passes, the 8.8% closure carries the
+label **"court audit incomplete (C2)"**. Updated wall sentence:
+
+*odd L = 0.4 enclosed at 8.8% (court audit incomplete: C2 pending); infimum
+closure conditional on the C2 check.*
