@@ -2,3 +2,4 @@ iter*/
 fast_tier_data.npz
 __pycache__/
 *.receipt.log
+control_gaming_iter/

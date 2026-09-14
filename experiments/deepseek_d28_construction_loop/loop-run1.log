@@ -1,0 +1,2 @@
+[incumbent l05-odd] {'inf_ratio_T160': 1.2661746, 'wave_lo_ratio_T160': 1.0606599, 'gate_lo_T160': True, 'seconds': 12.8, 'court_min': 0.21370995044708252}
+[incumbent l04-even] {'inf_ratio_T160': 1.1820994, 'wave_lo_ratio_T160': 1.0447629, 'gate_lo_T160': True, 'seconds': 12.4, 'court_min': 0.2059560020764669}

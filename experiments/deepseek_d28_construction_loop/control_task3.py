@@ -60,7 +60,7 @@ def main():
                 'constraint': 'none (floor minimizer)', 'smoothness_lambda': 0.0,
                 'reduced_min_unconstrained': float(wv[0]), 'reduced_min_selected': float(wv[0]),
                 'boundary_residual': abs(fp) + abs(fm), 'proxy_A_up': A_up,
-                'modes': [int(n) for n in ns], 'minimizer_40dig': [repr(float(x)) for x in c]}
+                'modes': [int(n) for n in ns], 'minimizer_frozen_40dig': [repr(float(x)) for x in c]}
         p = HERE / 'control_C2_floor_only.json'
         p.write_text(json.dumps(cand, indent=1) + '\n')
         r = run('l05-odd', p, T=160)

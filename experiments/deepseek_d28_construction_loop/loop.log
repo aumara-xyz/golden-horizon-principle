@@ -1,0 +1,11 @@
+[incumbent l05-odd] {'inf_ratio_T160': 1.2661746, 'wave_lo_ratio_T160': 1.0606599, 'gate_lo_T160': True, 'seconds': 10.7, 'court_min': 0.17810723384221394}
+[incumbent l04-even] {'inf_ratio_T160': 1.1820994, 'wave_lo_ratio_T160': 1.0447629, 'gate_lo_T160': True, 'seconds': 10.0, 'court_min': 0.1661898136138916}
+[iter 1] model=deepseek/deepseek-v4.1-flash action=reject-no-improvement court_min_total=0.0 fails=1
+[iter 2] model=deepseek/deepseek-v4.1-flash action=keep court_min_total=0.3 fails=0
+[iter 3] tombstone: no code block (content_chars=0)
+[iter 4] model=deepseek/deepseek-v4.1-flash action=reject-no-improvement court_min_total=0.7 fails=2
+[iter 5] model=z-ai/glm-5.3-flash action=reject-no-improvement court_min_total=1.0 fails=3
+[iter 6] model=qwen/qwen3.8-27b action=reject-no-improvement court_min_total=1.4 fails=4
+[iter 7] tombstone: no code block (content_chars=0)
+[iter 8] model=qwen/qwen3.8-27b action=keep court_min_total=1.8 fails=0
+[loop] done; court minutes used ~1.8

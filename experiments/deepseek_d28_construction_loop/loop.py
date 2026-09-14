@@ -29,7 +29,7 @@ KEY_FOR = {'deepseek/deepseek-v4.1-flash': 'OPENROUTER_API_KEY',
 def load_keys():
     keys = {}
     for line in CRED.read_text().splitlines():
-        m = re.match(r'^([A-Z_]+):\s*(\S+)', line)
+        m = re.match(r'^\s*([A-Z_]+):\s*(\S+)', line)
         if m:
             keys[m.group(1)] = m.group(2).strip().strip('"')
     return keys
@@ -40,7 +40,7 @@ def frozen_hashes():
 def llm_call(model, messages, keys, timeout=300):
     key = keys[KEY_FOR[model]]
     body = json.dumps({'model': model, 'messages': messages, 'temperature': 0.4,
-                       'max_tokens': 16000}).encode()
+                       'max_tokens': 32000, 'reasoning': {'max_tokens': 3000}}).encode()
     req = urllib.request.Request('https://openrouter.ai/api/v1/chat/completions', data=body,
                                  headers={'Authorization': f'Bearer {key}', 'Content-Type': 'application/json'})
     t0 = time.time()
@@ -49,8 +49,16 @@ def llm_call(model, messages, keys, timeout=300):
     return data, round(time.time() - t0, 1)
 
 def extract_code(text):
-    blocks = re.findall(r'```(?:python)?\n(.*?)```', text, re.S)
-    return blocks[-1] if blocks else None
+    import ast
+    blocks = re.findall(r'```(?:python)?\s*\n(.*?)(?:\n```|\Z)', text, re.S)
+    valid = []
+    for b in blocks:
+        try:
+            ast.parse(b)
+            valid.append(b.rstrip())
+        except SyntaxError:
+            pass
+    return valid[-1] if valid else None
 
 def run_iteration_source(src, iter_dir, timeout=420):
     iter_dir.mkdir(exist_ok=True)
@@ -65,7 +73,7 @@ def court_T160(case, cand_path):
     r = subprocess.run([sys.executable, str(HERE / 'court_score.py'), case, str(cand_path), '--T', '160'],
                        cwd=HERE, capture_output=True, text=True, timeout=1800)
     secs = time.time() - t0
-    m = re.search(r'inf_ratio=([0-9.]+) wave_lo_ratio=([0-9.]+) gate\(lo<1\.1\)=(\w+)', r.stdout)
+    m = re.search(r'inf_ratio=\[?([0-9.]+) wave_lo_ratio=\[?([0-9.]+) gate\(lo<1\.1\)=(\w+)', r.stdout)
     if not m:
         return None
     return {'inf_ratio_T160': float(m.group(1)), 'wave_lo_ratio_T160': float(m.group(2)),
@@ -89,7 +97,7 @@ LATEST MEASUREMENTS (proxy at T=1024 from the current file; court receipts at T=
 CURRENT FILE (iteration {iteration}, {'ESCALATED' if escalated else 'cheap model'}):
 {current_src}
 
-Reply with exactly one fenced python code block containing the complete replacement file. Keep it runnable as-is: `python3 construct_candidate.py` must run to completion in under 6 minutes and print `[saved] <file>  proxy_ratio=<value>` for each case. Improve the proxy while honestly reducing the certified ratio: penalize tail mass (boundary jump, derivative norm), and prefer candidates whose wave enclosure is tight."""
+Return ONLY one fenced python code block containing the complete replacement file -- no prose before or after, and do not truncate it (the file is small). Keep it runnable as-is: `python3 construct_candidate.py` must run to completion in under 6 minutes and, for EACH case, must write a JSON named candidate_<case>_vN.json (case tokens l05_odd, l04_even) and print `[saved] <that filename>  proxy_ratio=<value>`. File naming and the proxy_ratio JSON field are the harness contract; the construction rule is yours. Improve the proxy while honestly reducing the certified ratio: penalize tail mass (boundary jump, derivative norm), and prefer candidates whose wave enclosure is tight."""
 
 def main():
     ap = argparse.ArgumentParser()
@@ -123,8 +131,10 @@ def main():
             content = data['choices'][0]['message']['content']
             usage = data.get('usage', {})
         except Exception as e:
+            rec = {'iter': it, 'model': model, 'action': 'tombstone', 'reason': f'llm-failed: {e}'}
+            receipts.append(rec); fails += 1
+            (HERE / 'loop-receipts.jsonl').write_text('\n'.join(json.dumps(r) for r in receipts) + '\n')
             print(f"[iter {it}] LLM call failed: {e}", flush=True)
-            fails += 1
             continue
         code = extract_code(content or '')
         rec = {'iter': it, 'model': model, 'call_seconds': secs, 'usage': usage,
@@ -132,7 +142,8 @@ def main():
         if not code:
             rec.update({'action': 'tombstone', 'reason': 'no code block'})
             receipts.append(rec); fails += 1
-            print(f"[iter {it}] tombstone: no code block", flush=True)
+            (HERE / 'loop-receipts.jsonl').write_text('\n'.join(json.dumps(r) for r in receipts) + '\n')
+            print(f"[iter {it}] tombstone: no code block (content_chars={rec['content_chars']})", flush=True)
             continue
         rec['proposal_sha256'] = hashlib.sha256(code.encode()).hexdigest()
         # guard: run in isolated dir, frozen files untouched
@@ -141,6 +152,7 @@ def main():
         except Exception as e:
             rec.update({'action': 'tombstone', 'reason': f'run failed: {e}'})
             receipts.append(rec); fails += 1
+            (HERE / 'loop-receipts.jsonl').write_text('\n'.join(json.dumps(r) for r in receipts) + '\n')
             continue
         after = frozen_hashes()
         if after != hashes_before:
@@ -151,16 +163,25 @@ def main():
         rec['saved'] = saved
         rec['rc'] = rc
         rec['stderr_tail'] = (err or '')[-400:]
+        if rc != 0 and err:
+            state['last_error'] = err[-600:]
         improved = False
         if rc == 0 and saved:
             for case in CASES:
-                cand = iter_dir / f'candidate_{case.replace("-", "_")}_v0.json'
-                if not cand.exists():
+                token = case.replace('-', '_')
+                cands = sorted(iter_dir.glob(f'*{token}*.json'), key=lambda q: q.stat().st_mtime)
+                if not cands:
                     continue
+                cand = cands[-1]
                 proxy = None
                 for name, val in saved:
                     if name == cand.name:
                         proxy = float(val)
+                if proxy is None:
+                    try:
+                        proxy = float(json.loads(cand.read_text()).get('proxy_ratio'))
+                    except Exception:
+                        proxy = None
                 c = court_T160(case, cand)
                 if c:
                     court_used += c['court_min']

@@ -1,0 +1,7 @@
+{
+ "C2_omitted_tail": {
+  "run_line": "T=160: W in [[0.00018874027583916, [0.00022898569428153] inf_ratio=[1.2655744 wave_lo_ratio=[1.0431431 gate(lo<1.1)=True (10.6s)",
+  "verdict": "floor-only construction carried to the court; its W_hi/W_lo enclosure decides.",
+  "rejected_if": "W_hi/ell >= 1.1"
+ }
+}
