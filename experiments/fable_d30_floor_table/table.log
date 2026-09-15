@@ -1,0 +1,11 @@
+CERT DONE even 0.4 160 160 visible ['[0.693'] 95 s
+CERT DONE odd 0.4 160 160 visible ['[0.693'] 96 s
+CERT DONE even 0.5 160 160 visible ['[0.693'] 106 s
+CERT DONE odd 0.5 160 160 visible ['[0.693'] 102 s
+CERT DONE even 0.6 160 160 visible ['[0.693', '[1.098'] 110 s
+CERT DONE odd 0.6 160 160 visible ['[0.693', '[1.098'] 135 s
+CERT DONE even 0.7 160 160 visible ['[0.693', '[1.098', '[1.386'] 129 s
+CERT DONE odd 0.7 160 160 visible ['[0.693', '[1.098', '[1.386'] 166 s
+CERT DONE even 0.7 240 192 visible ['[0.693', '[1.098', '[1.386'] 235 s
+CERT DONE odd 0.7 240 192 visible ['[0.693', '[1.098', '[1.386'] 249 s
+TABLE DONE
