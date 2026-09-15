@@ -12,3 +12,5 @@ T = 320 with 256 modes at 192 bits FAILED (NO_VERDICT): the closed-form Bessel e
 2. But it is not the whole gap. My prediction ℓ_240/ℓ_160 ∈ [1.15, 1.35] FAILED (measured 1.09); the kill threshold (< 1.05) was not reached, so the hypothesis survives in weakened form: roughly 9 of the 25 points are floor slack at this T step, the rest sit in the candidate or in further T-dependence. The T = 320 rows decide how much more the floor can give.
 3. At L = 0.7 the same step gave +26 %; at 0.6 it gives +9 %. The floor's T-sensitivity grows with L, consistent with the reduced form undercharging the boundary-jump tail of its own minimizer more severely as the margin collapses.
 4. New toolchain trap recorded (precision loss of the closed-form Bessel near n ≈ |z|; use ≥ 320 bits for T·L ≳ 170).
+
+**Provenance note (2026-09-15):** the 320-bit T=320 rerun finished (odd 587 s, even 517 s; run320.log "RUN320 DONE"). Its certificates d33_cert_{odd,even}_L0.6_T320_N256.json and logs log_{odd,even}_T320_320bit.log are the inputs to the D34 axis step (ℓ_320/ℓ_240 = 1.036) and were committed with this note; the D34/D35 rows live in experiments/fable_d34_*/ and fable_d35_*/.
