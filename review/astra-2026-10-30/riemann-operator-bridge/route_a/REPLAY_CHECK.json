@@ -1,0 +1,13 @@
+{
+  "scope": "Packaged replay from relocated directory; same environment and implementation, not independent reimplementation.",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "run.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.6782282459998896
+    }
+  ]
+}
