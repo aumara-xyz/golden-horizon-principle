@@ -167,3 +167,27 @@ Single canonical source: **`DO_NOT_CLAIM.md`** (60 rules + safe/avoid phrase lis
 ## Archive of record — the frozen 2026-07-04 ledger
 
 > The complete prior `GHP_RESEARCH_LEDGER.md` (111,151 bytes, 161 claim rows, frozen 2026-07-04, headers frozen "May 2026" retained for provenance) is preserved **byte-for-byte** at **`archive/GHP_RESEARCH_LEDGER.2026-07-04.md`** — sha256 `4b7ecf8e10ef4d81b5cf4cb455255ae78dbcc46ea07f653a3626064c879e5697`, git blob `f7f5b73167678d035a6432d7f94e862aa512eec7`. Nothing was deleted or edited. Where the frozen archive disagrees with Part I of this ledger, **Part I is current** (notably: SEL-CLOSE-001 and GH-RECOV are now settled results, and the Bridge Order's "P-002 as best falsification lane" is stale — the lane reports pipeline-validation at best). The frozen archive also remains visible in git history on `main` at `GHP_RESEARCH_LEDGER.md` prior to this hardening branch.
+
+
+---
+
+## External research submission — 2026-10-30 — Astra round four
+
+**Status: draft contribution, pending resident adversarial review and owner adjudication.** This section registers the external result package; it does not upgrade the canonical RH, physics, product, or authority claims. Authorship: ChatGPT/Astra, with a separate internal read-only audit; Argon's supplied targets are acknowledged as replication inputs. Published under the workflow in [review/EXTERNAL_CONTRIBUTIONS.md](review/EXTERNAL_CONTRIBUTIONS.md).
+
+Two independently usable research folders:
+
+- [PENTORA exact spherical instrument](review/astra-2026-10-30/pentora-exact-instrument/README.md), including the full no-float contract and standard-library specification oracle.
+- [Riemann operator bridge](review/astra-2026-10-30/riemann-operator-bridge/README.md), including bounded prolate tests, complete Weil matrices, a certified support window, compact meshes, Cayley intervals, negative witnesses, and the Claude review brief.
+
+| Local claim ID | Submitted result | Evidence and limit |
+| --- | --- | --- |
+| ASTRA-R4-P1 | Degree-eleven weighted 110-direction cubature; degree-five norm profile; 33 test groups pass | Exact rational/algebraic computation against X2 geometry SHA-256 96b27c9b4de41cd961612be5b1e88d40e973a2fded16bd320415b3e15e3b8c61; x^12 fails by 29/640640; no all-degree sampling claim |
+| ASTRA-R4-P2 | No-float research contract requires Q(sqrt(2),sqrt(3),sqrt(5)) for samples | Proposed contract and Python oracle; coefficients remain Q(phi); not an implemented or adopted X2 operation |
+| ASTRA-R4-R1 | Supplied D25A values independently reproduce | Floating finite sweep; all-L Hermite ceiling remains open; visible shifts only |
+| ASTRA-R4-R2 | W(f) >= 1/10000 norm(f_even)^2 + 9/1000 norm(f_odd)^2 for supported form-domain functions on [-2/5,2/5] | Analytic complete-tail bounds and outward-rounded ball certificate; rational scalar verifier; internal independent proof/code audit; fixed window only; pending resident review |
+| ASTRA-R4-R3 | Authentic finite Weil sections stay positive through degree 47 at L=.4 and .7; artificial bounce odd control first fails at degree 15 | Certified finite matrices and negative Rayleigh witness; attempted L=.7 infinite complement does not close |
+| ASTRA-R4-R4 | Rational Suzuki mesh has no intrinsic conditioning gain in the matched test | Floating comparison; exact congruence preserves inertia; negative controls retained |
+| ASTRA-R4-R5 | Cayley Toeplitz sections through dimension 16 and sixteen Schur parameters pass; off-line polynomial fails exactly at dimension 3 | Outward-rounded arithmetic/Gamma continuation; exact rational negative witness; no all-orders invariant |
+
+**Guardrails:** no RH proof, novelty or priority claim, physical selection claim, cryptographic strengthening claim, deployment, product permission, or change to two-person pairing. A third participant remains optional. A research display's external analytic tail stays unknown unless separately certified. The read-only X2 source snapshot is b2c7aaffc40694a94dc5f621421e728115cd8ae5. Both packages include source, receipts, scope, deviations, reproduction instructions, and byte manifests.

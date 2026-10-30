@@ -1,0 +1,188 @@
+{
+  "Fourier_crosschecks": [
+    {
+      "L": 0.4,
+      "wave": "e0",
+      "T": 512,
+      "time_domain_Arb_midpoint": -1.3849314879237569,
+      "Fourier_prefix": -1.3933406127133652,
+      "remaining_mass_numeric": 0.0015577674243014705,
+      "predicted_full_arch_lower_numeric": -1.3864857391017849,
+      "predicted_full_arch_upper_numeric": -1.3838421741637483,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.4,
+      "wave": "e0",
+      "T": 1024,
+      "time_domain_Arb_midpoint": -1.3849314879237569,
+      "Fourier_prefix": -1.389670286497723,
+      "remaining_mass_numeric": 0.0007777759871943069,
+      "predicted_full_arch_lower_numeric": -1.3857086108519878,
+      "predicted_full_arch_upper_numeric": -1.3843899878369608,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.4,
+      "wave": "e1",
+      "T": 512,
+      "time_domain_Arb_midpoint": 0.13618488638385043,
+      "Fourier_prefix": 0.11105047584747516,
+      "remaining_mass_numeric": 0.004652178215829417,
+      "predicted_full_arch_lower_numeric": 0.13152214138018983,
+      "predicted_full_arch_upper_numeric": 0.1402191948997499,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.4,
+      "wave": "e1",
+      "T": 1024,
+      "time_domain_Arb_midpoint": 0.13618488638385043,
+      "Fourier_prefix": 0.12198834261661769,
+      "remaining_mass_numeric": 0.0023294292340448886,
+      "predicted_full_arch_lower_numeric": 0.13385351101590115,
+      "predicted_full_arch_upper_numeric": 0.13808659403094894,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.4,
+      "wave": "even_mix",
+      "T": 512,
+      "time_domain_Arb_midpoint": 0.019350382769034197,
+      "Fourier_prefix": -0.024681060287514156,
+      "remaining_mass_numeric": 0.008156733309882647,
+      "predicted_full_arch_lower_numeric": 0.011212215595877553,
+      "predicted_full_arch_upper_numeric": 0.02668030124936794,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.4,
+      "wave": "even_mix",
+      "T": 1024,
+      "time_domain_Arb_midpoint": 0.019350382769034197,
+      "Fourier_prefix": -0.005462108678571033,
+      "remaining_mass_numeric": 0.004072452526590942,
+      "predicted_full_arch_lower_numeric": 0.0152813139246493,
+      "predicted_full_arch_upper_numeric": 0.02276802824978233,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.4,
+      "wave": "odd_mix",
+      "T": 512,
+      "time_domain_Arb_midpoint": 1.0353046563336354,
+      "Fourier_prefix": 0.9550238352562493,
+      "remaining_mass_numeric": 0.014859223847816572,
+      "predicted_full_arch_lower_numeric": 1.0204110681987013,
+      "predicted_full_arch_upper_numeric": 1.0497773970469304,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.4,
+      "wave": "odd_mix",
+      "T": 1024,
+      "time_domain_Arb_midpoint": 1.0353046563336354,
+      "Fourier_prefix": 0.9899579066882571,
+      "remaining_mass_numeric": 0.0074406987669809466,
+      "predicted_full_arch_lower_numeric": 1.0278578104879827,
+      "predicted_full_arch_upper_numeric": 1.0419588028895745,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "e0",
+      "T": 512,
+      "time_domain_Arb_midpoint": -2.0749461770543065,
+      "Fourier_prefix": -2.079745220788957,
+      "remaining_mass_numeric": 0.000888750700365537,
+      "predicted_full_arch_lower_numeric": -2.0758343200805656,
+      "predicted_full_arch_upper_numeric": -2.0743246899527703,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "e0",
+      "T": 1024,
+      "time_domain_Arb_midpoint": -2.0749461770543065,
+      "Fourier_prefix": -2.0776535186546603,
+      "remaining_mass_numeric": 0.00044433664223242353,
+      "predicted_full_arch_lower_numeric": -2.075390247889012,
+      "predicted_full_arch_upper_numeric": -2.074636823287717,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "e1",
+      "T": 512,
+      "time_domain_Arb_midpoint": -0.43884572474212225,
+      "Fourier_prefix": -0.45322671361581995,
+      "remaining_mass_numeric": 0.002662585292753983,
+      "predicted_full_arch_lower_numeric": -0.44151014708788294,
+      "predicted_full_arch_upper_numeric": -0.43664245882450875,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "e1",
+      "T": 1024,
+      "time_domain_Arb_midpoint": -0.43884572474212225,
+      "Fourier_prefix": -0.44695961954301155,
+      "remaining_mass_numeric": 0.0013314138784913387,
+      "predicted_full_arch_lower_numeric": -0.440177936868749,
+      "predicted_full_arch_upper_numeric": -0.4377969505792382,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "even_mix",
+      "T": 512,
+      "time_domain_Arb_midpoint": -0.6000084919011268,
+      "Fourier_prefix": -0.6251369065693687,
+      "remaining_mass_numeric": 0.004653626095724506,
+      "predicted_full_arch_lower_numeric": -0.6046588697173346,
+      "predicted_full_arch_upper_numeric": -0.5960446167458506,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "even_mix",
+      "T": 1024,
+      "time_domain_Arb_midpoint": -0.6000084919011268,
+      "Fourier_prefix": -0.6141843422063433,
+      "remaining_mass_numeric": 0.002326581885034984,
+      "predicted_full_arch_lower_numeric": -0.6023336770488842,
+      "predicted_full_arch_upper_numeric": -0.5981350345011417,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "odd_mix",
+      "T": 512,
+      "time_domain_Arb_midpoint": 0.4685767781965227,
+      "Fourier_prefix": 0.4226422099627022,
+      "remaining_mass_numeric": 0.00850457014614392,
+      "predicted_full_arch_lower_numeric": 0.46006612354773424,
+      "predicted_full_arch_upper_numeric": 0.47631883418714743,
+      "bracket_contains_time_domain_value": true
+    },
+    {
+      "L": 0.7,
+      "wave": "odd_mix",
+      "T": 1024,
+      "time_domain_Arb_midpoint": 0.4685767781965227,
+      "Fourier_prefix": 0.44265955003352775,
+      "remaining_mass_numeric": 0.004252770580418841,
+      "predicted_full_arch_lower_numeric": 0.46432143971994166,
+      "predicted_full_arch_upper_numeric": 0.47218196088686065,
+      "bracket_contains_time_domain_value": true
+    }
+  ],
+  "Fourier_arithmetic": "float64; not interval certificates",
+  "independent_moment_check": {
+    "L": "7/10",
+    "k": 1,
+    "Acb_integral": "[1.8002403236528408645854926500567094476688810247285055946636988204848642642287496 +/- 2.45e-80]",
+    "rational_Taylor_Cauchy_enclosure": "[1.8002403236528408645854926500567094476688810247285055946636988204848642642287496 +/- 2.45e-80]",
+    "overlap": true
+  }
+}

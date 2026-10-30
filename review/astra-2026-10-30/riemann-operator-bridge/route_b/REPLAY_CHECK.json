@@ -1,0 +1,37 @@
+{
+  "scope": "Packaged replay from relocated directory; same environment and implementation, not independent reimplementation.",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "weil_schur.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.0955149659994277
+    },
+    {
+      "command": [
+        "python3",
+        "certify_small_window.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.1595567579997805
+    },
+    {
+      "command": [
+        "python3",
+        "verify_scalar_certificate.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.03843211399998836
+    },
+    {
+      "command": [
+        "python3",
+        "validate_formula.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 16.654911120999714
+    }
+  ]
+}

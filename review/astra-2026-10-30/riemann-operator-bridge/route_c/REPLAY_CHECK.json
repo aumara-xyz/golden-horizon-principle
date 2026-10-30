@@ -1,0 +1,13 @@
+{
+  "scope": "Packaged replay from relocated directory; same environment and implementation, not independent reimplementation.",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "cayley_interval.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.2873222580001311
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "profile": "pentora.research.all-function-window.v1",
+  "L": "2/5",
+  "T": 32,
+  "N": 48,
+  "basis": "normalized Legendre degrees0..47, both parities",
+  "no_zero_inputs": true,
+  "precision_decimal_digits": 100,
+  "quadrature_points_per_unit_panel": 32,
+  "ellipse_rho": "2",
+  "ellipse_imaginary_semiaxis": "3/8",
+  "digamma_real_part_lower": "1/16",
+  "Gauss_error_formula": "64 M h / (15 (1-rho^-2) rho^(2*order))",
+  "total_two_sided_entry_error": "[1.7728276248231999504298803648695e-16 +/- 2.98e-49]",
+  "beta": "[0.64755999586020798154846906792694 +/- 3.41e-33]",
+  "tail_tau": "[2.0792412633363118145525901746567e-44 +/- 2.53e-76]",
+  "tail_pole_norm_squared": "[1.2102450022058386569743242401704e-218 +/- 5.20e-251]",
+  "complement_gap_lower": "[0.64755999586020798154846906792694 +/- 3.41e-33]",
+  "coupling_upper": "[1.0093704338449467811509337809437e-21 +/- 3.38e-53]",
+  "parities": {
+    "even": {
+      "finite_R_floor": {
+        "numeric_eigenvalue": 0.00010208364461578781,
+        "certified_lower_bound": "[0.00010106280816962993000000000000000 +/- 3e-40]",
+        "selected_vector_Rayleigh": "[0.000102083644616 +/- 5.59e-16]",
+        "negative_witness_certified": false,
+        "positive_lower_bound": true,
+        "LDL_min_pivot": "[0.0023414101277 +/- 6.52e-14]",
+        "candidate_attempts": 1
+      },
+      "finite_R_Schur": {
+        "numeric_eigenvalue": 0.00010208753698886447,
+        "certified_lower_bound": "[0.00010106666161897582000000000000000 +/- 3e-40]",
+        "selected_vector_Rayleigh": "[0.000102087536989 +/- 6.11e-16]",
+        "negative_witness_certified": false,
+        "positive_lower_bound": true,
+        "LDL_min_pivot": "[8.01772155e-5 +/- 5.70e-14]",
+        "candidate_attempts": 1
+      },
+      "requested_global_lower_bound": "[0.00010000000000000000000000000000000 +/- 1e-40]",
+      "shifted_block_determinant": "[6.8812577310878970002093500865340e-7 +/- 1.74e-39]",
+      "all_function_positive_certificate": true,
+      "simplified_rational_certificate": {
+        "finite_block_lower": "5053/50000000",
+        "complement_lower": "12951/20000",
+        "coupling_upper": "101/100000000000000000000000",
+        "target_mu": "1/10000",
+        "shifted_determinant": "6862969999999999999999999999999999989799/10000000000000000000000000000000000000000000000",
+        "certified_by_ball_enclosures": true
+      },
+      "finite_LDL_min_pivot_at_mu": "[0.0024245409060 +/- 7.87e-14]"
+    },
+    "odd": {
+      "finite_R_floor": {
+        "numeric_eigenvalue": 0.00937680600284364,
+        "certified_lower_bound": "[0.0092830379428152036000000000000000 +/- 1e-38]",
+        "selected_vector_Rayleigh": "[0.009376806002844 +/- 5.80e-16]",
+        "negative_witness_certified": false,
+        "positive_lower_bound": true,
+        "LDL_min_pivot": "[0.01269486734918 +/- 3.08e-15]",
+        "candidate_attempts": 1
+      },
+      "finite_R_Schur": {
+        "numeric_eigenvalue": 0.009383331071546349,
+        "certified_lower_bound": "[0.0092894977608308851000000000000000 +/- 1e-38]",
+        "selected_vector_Rayleigh": "[0.00938333107155 +/- 4.34e-15]",
+        "negative_witness_certified": false,
+        "positive_lower_bound": true,
+        "LDL_min_pivot": "[0.01117509491300 +/- 5.16e-15]",
+        "candidate_attempts": 1
+      },
+      "requested_global_lower_bound": "[0.0090000000000000000000000000000000 +/- 1e-38]",
+      "shifted_block_determinant": "[0.00018073670759235819423067930154375 +/- 4.19e-36]",
+      "all_function_positive_certificate": true,
+      "simplified_rational_certificate": {
+        "finite_block_lower": "9283/1000000",
+        "complement_lower": "12951/20000",
+        "coupling_upper": "101/100000000000000000000000",
+        "target_mu": "9/1000",
+        "shifted_determinant": "1807096499999999999999999999999999999989799/10000000000000000000000000000000000000000000000",
+        "certified_by_ball_enclosures": true
+      },
+      "finite_LDL_min_pivot_at_mu": "[0.01376391571045 +/- 2.95e-15]"
+    }
+  },
+  "scope": "All L2 functions supported on[-2/5,2/5] in the Weil form domain; no larger L or RH claim.",
+  "elapsed_seconds": 1.1607087709999178,
+  "all_functions_both_parities_certified": true
+}
